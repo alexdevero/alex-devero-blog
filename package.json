@@ -16,11 +16,13 @@
     "name": "Alex Devero",
     "url": "https://alexdevero.com/"
   },
-  "contributors": [{
-    "name": "",
-    "email": "",
-    "url": ""
-  }],
+  "contributors": [
+    {
+      "name": "",
+      "email": "",
+      "url": ""
+    }
+  ],
   "keywords": [
     "blog",
     "wordpress",
@@ -33,9 +35,11 @@
   },
   "main": "src/main.js",
   "scripts": {
-    "test": "echo 'test'",
-    "start": "echo 'start'",
+    "start": "wpxml2md -i blog-dev-files/exports/export.xml -o ./dist -r",
+    "test": "echo 'test'"
   },
-  "dependencies": {},
   "devDependencies": {},
+  "dependencies": {
+    "wpxml2md": "^1.1.3"
+  }
 }
