@@ -36,9 +36,15 @@
   "main": "src/main.js",
   "scripts": {
     "start": "wpxml2md -i blog-dev-files/exports/export.xml -o ./dist -r",
+    "print": "markdown-pdf ts.md",
+    "publish:medium": "markdown-to-medium <path to markdown> --token=\"\" --id=\"\" --title=\"\" --tags=\"\"",
     "test": "echo 'test'"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "markdown-pdf": "^8.1.1",
+    "markdown-to-medium": "^1.4.4",
+    "wordpress": "^1.4.1"
+  },
   "dependencies": {
     "wpxml2md": "^1.1.3"
   }
