@@ -4,6 +4,10 @@
 dist/
 node_modules/
 
+# Documents #
+#############
+*.odt
+
 # Folder config file #
 ######################
 Desktop.ini
