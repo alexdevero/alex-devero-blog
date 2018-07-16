@@ -101,6 +101,7 @@ Ask yourself and look for the answer inside yourself, not outside. Listen to you
 [Mindset: The New Psychology of Success]: https://www.goodreads.com/book/show/40745.Mindset
 [pivot]: https://blog.alexdevero.com/pivot-how-to-go-from-survival-to-epic-success/
 
-<!-- ### Inspiration
+<!--
+### Inspiration
 -
  -->
