@@ -41,7 +41,7 @@
     "test": "echo 'test'"
   },
   "devDependencies": {
-    "markdown-pdf": "^8.1.1",
+    "markdown-pdf": "~>9.0.0",
     "markdown-to-medium": "^1.4.4",
     "wordpress": "^1.4.1"
   },
