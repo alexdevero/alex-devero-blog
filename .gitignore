@@ -1,6 +1,8 @@
 # Development folders and files #
 #################################
 .tmp/
+blog-dev-files/
+blog-post-dev-files/
 dist/
 node_modules/
 
@@ -40,6 +42,7 @@ npm-debug.log*
 #######################
 *.pdf
 *.png
+*.xmind
 
 # Photoshop & Illustrator files #
 #################################
