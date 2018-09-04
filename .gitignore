@@ -1,6 +1,7 @@
 # Development folders and files #
 #################################
 .tmp/
+_drafts/
 blog-dev-files/
 blog-post-dev-files/
 dist/
