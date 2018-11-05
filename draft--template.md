@@ -6,7 +6,7 @@ Table of Contents:
 ### h3
 ### h3
 ## h2
-## Closing thoughts on ...
+## Epilogue: ...
 -->
 
 ## h2
@@ -17,7 +17,7 @@ Table of Contents:
 
 ## h2
 
-## Closing thoughts on [...]
+## Epilogue: [...]
 
 [xyz-ihs snippet="thank-you-message"]
 
