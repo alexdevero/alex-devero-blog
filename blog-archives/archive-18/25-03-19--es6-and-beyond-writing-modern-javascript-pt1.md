@@ -1,4 +1,4 @@
-# ES6, ES7, ES8 and Beyond Pt1 – Scope, let, const, var
+# ES6, ES7, ES8 & Writing Modern JavaScript Pt1 - Scope, let, const, var
 
 Have you ever wondered what is the difference between `var`, `let` and `const`? Do you know when to use them? And what about scope and hoisting, and why so many JavaScript developers hate `var`? Learn about all these topics in this article. Master the nuts and bolts of ES6, ES7, ES8. Learn how to write modern JavaScript!
 
