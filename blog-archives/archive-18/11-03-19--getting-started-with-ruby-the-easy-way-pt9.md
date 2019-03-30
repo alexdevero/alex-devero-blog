@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt9
+# Getting Started With Ruby the Easy Way Pt9 - OOP Pt3
 
 So far, you've learned mostly about the basics of Ruby and object-oriented programming. Now, it is time to take your skills further and explore more advanced concepts of OOP. In this part, you will learn about inheritance, method overriding, super and operator overloading. This will bring you closer to becoming a Ruby programmer!
 
@@ -11,24 +11,26 @@ Table of Contents:
 ### Inheritance on multiple levels
 ### Super
 ### Operator overloading
-## Epilogue: Getting started with Ruby – The Easy Way Pt9
+## Epilogue: Getting Started With Ruby the Easy Way Pt9
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-Getting started with Ruby – The Easy Way [Part 5].
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
 
-Getting started with Ruby – The Easy Way [Part 6].
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
 
-Getting started with Ruby – The Easy Way [Part 7].
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
 
-Getting started with Ruby – The Easy Way [Part 8].
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Ruby and OOP (Object-Oriented Programming) pt3
 
@@ -371,30 +373,31 @@ puts shapeZ.width
 # Outputs: 18 (7 + 11)
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt9
+## Epilogue: Getting Started With Ruby the Easy Way Pt9
 
 Congratulations! You've just finished another part of Getting started with Ruby series. Today, you've made big progress on your journey to learn Ruby. A large part of object-oriented programming is no longer a mystery for you. You can define new classes and their instances with confidence and achieve what do you need.
 
 By now, you also know what is inheritance and how to use it to create superclasses and subclasses. You also know how to use method overriding and super when you need. Lastly, you also know that weird thing called "operator overloading", as well as how to use it. This means writing more powerful, but also cleaner and maintainable code in Ruby.
 
-In the next part, you will learn about concepts such as access modifiers and to_s method. This will make your journey to the world of Ruby and object-oriented programming complete. Next, you will learn about modules, mixins and other interesting things Ruby has to offer. For now, practice what you've learned today.
+In the [next part], you will learn about concepts such as access modifiers and to_s method. This will make your journey to the world of Ruby and object-oriented programming complete. Next, you will learn about modules, mixins and other interesting things Ruby has to offer. For now, practice what you've learned today.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
-[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3
-[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4
-[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5
-[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6
-[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7
-[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [previous part]: https://blog.alexdevero.com/getting-started-ruby-pt8
 [classes]: https://blog.alexdevero.com/getting-started-ruby-pt7/#classes
 [instances]: https://blog.alexdevero.com/getting-started-ruby-pt7/
 #objects
-<!-- [next part]: https://blog.alexdevero.com/getting-started-ruby-pt10 -->
+[next part]: https://blog.alexdevero.com/getting-started-ruby-pt10
 
 <!-- Resources: -->
 <!--

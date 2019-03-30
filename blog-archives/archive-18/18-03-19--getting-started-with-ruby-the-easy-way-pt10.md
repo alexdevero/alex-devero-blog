@@ -1,5 +1,4 @@
-# Getting started with Ruby Pt10 - OOP and Beyond
-<!-- Getting started with Ruby Pt10 - OOP and Beyond -->
+# Getting Started With Ruby the Easy Way Pt10 - OOP Pt4 and Beyond
 
 There are few things every serious Ruby programmer must know about. These things include concepts such as access modifiers, to_s method, modules, mixins, structs, procs and lambdas. Learn about all these concepts and more in this part of Getting started with Ruby. Expand your knowledge and become an advanced Ruby programmer!
 
@@ -21,26 +20,26 @@ Table of Contents:
 ### OStruct
 ### Procs
 ### Lambdas
-## Epilogue: Getting started with Ruby – The Easy Way Pt10
+## Epilogue: Getting Started With Ruby the Easy Way Pt10
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-Getting started with Ruby – The Easy Way [Part 5].
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
 
-Getting started with Ruby – The Easy Way [Part 6].
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
 
-Getting started with Ruby – The Easy Way [Part 7].
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
 
-Getting started with Ruby – The Easy Way [Part 8].
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
 
-Getting started with Ruby – The Easy Way [Part 9].
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
 
 ## Ruby and OOP (Object-Oriented Programming) pt4
 
@@ -693,7 +692,7 @@ test_lambda
 test_proc
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt10
+## Epilogue: Getting Started With Ruby the Easy Way Pt10
 
 Congratulations! You've just finished another part of Getting started with Ruby series. Let's do a quick recap, today you've learned about public, private and protected access modifiers. Next, you've learned how to define your own custom `to_s` method.  After that, you've learned about modules and mixins and how and when to use them.
 

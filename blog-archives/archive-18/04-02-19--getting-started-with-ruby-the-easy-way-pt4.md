@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt4
+# Getting Started With Ruby the Easy Way Pt4 - Control Flow Pt2
 
 Ruby is one of the programming languages you can use almost everywhere. It is also simple and very easy to learn. This makes it a very good choice if you want to learn new programming language, especially if it is your first programming language. Will you give Ruby a chance? If so, you are on the right place. This series will teach you all you need to learn this programming language.
 
@@ -11,16 +11,26 @@ Table of Contents:
 ### While and until loops
 ### For loop
 ### Loop do
-## Epilogue: Getting started with Ruby – The Easy Way Pt4
+## Epilogue: Getting Started With Ruby the Easy Way Pt4
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-<!-- Getting started with Ruby – The Easy Way [Part 5]. -->
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
+
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Control flow Pt2
 
@@ -380,7 +390,7 @@ end
 # 7
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt4
+## Epilogue: Getting Started With Ruby the Easy Way Pt4
 
 Congratulations! You've just finished another part of this series and made progress on your way to learn how to program in Ruby. Let's do a quick recap. First, you've learned about what are ternary and logical operators. Next, you've learned about `case` statements. After that, you've learned about loops. These were the `while`, `until`, `for` and `loop do`.
 

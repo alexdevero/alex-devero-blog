@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt3
+# Getting Started With Ruby the Easy Way Pt3 - Data Types Pt2, Control Flow Pt1
 
 Ruby is dynamic, flexible and robust programming language. It is also very easy language to start with. If you are new to programming Ruby will help you start the easy way. Take the next step on your journey to learn Ruby. Learn about topics such as hashes, symbols and control flow.
 
@@ -9,10 +9,28 @@ Table of Contents:
 ### Symbols
 ## Control flow Pt1
 ### Conditionals
-## Epilogue: Getting started with Ruby – The Easy Way Pt3
+## Epilogue: Getting Started With Ruby the Easy Way Pt3
 -->
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
+
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
+
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
+
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
+
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
+
+Getting Started With Ruby the Easy Way [Part 2].
 
 ## Data Types Pt2
 
@@ -302,7 +320,7 @@ end
 # Outputs: x is bigger than 3 and 8, but smaller than 12.
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt3
+## Epilogue: Getting Started With Ruby the Easy Way Pt3
 
 Congratulations! You've just finished the third part of this mini series. Let's quickly recap. First, you've learned about the last two primary data types. These were `hashes` and `symbols`. After that, you've learned about control flow and how to use conditionals, or `if` statements. This was just the tip of an iceberg. There is much more to learn.
 
@@ -311,8 +329,15 @@ However, there is no reason to rush it. Take some time and let all you've learne
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [the first part]: https://blog.alexdevero.com/getting-started-ruby-pt1
 [second part]: https://blog.alexdevero.com/getting-started-ruby-pt2
 [Ruby docs]: https://ruby-doc.org/core-2.6/Hash.html

@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt6
+# Getting Started With Ruby the Easy Way Pt6 - Methods
 
 There are many interesting topics in Ruby. One of these topics are methods. If you don't know what are methods, don't worry. This part will help you fix this. Today, you will learn all you need to know in order to create and use methods so you can make them part of your toolkit. With that, you will get one step closer to becoming a Ruby programmer.
 
@@ -6,7 +6,7 @@ There are many interesting topics in Ruby. One of these topics are methods. If y
 Table of Contents:
 ## A short intro
 ## Methods
-### Calling pethods
+### Calling methods
 ### Parameters
 ### Multiple parameters
 ### Default parameters
@@ -14,18 +14,26 @@ Table of Contents:
 ### Returning values
 ### Chaining methods
 ### Methods as arguments
-## Epilogue: Getting started with Ruby – The Easy Way Pt6
+## Epilogue: Getting Started With Ruby the Easy Way Pt6
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-Getting started with Ruby – The Easy Way [Part 5].
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## A short intro
 
@@ -485,7 +493,7 @@ puts result
 # Outputs: 55
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt6
+## Epilogue: Getting Started With Ruby the Easy Way Pt6
 
 Congratulations! You've just finished another part of this series. What's more, you've also reached another milestone on your journey to learn programming Ruby. From now, not only that you know how to use Ruby built-in methods. You know how to create your own! And, you also know how to make your methods flexible with parameters.
 
@@ -494,11 +502,15 @@ With this knowledge, you can now write more complex code and create your own pro
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
-[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3
-[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4
-[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [fourth]: https://blog.alexdevero.com/getting-started-ruby-pt4
 [fifth part]: https://blog.alexdevero.com/getting-started-ruby-pt5
 [first part]: https://blog.alexdevero.com/getting-started-ruby-pt1/#it-all-starts-with-console

@@ -1,4 +1,4 @@
-# Getting started with [Ruby] – The Easy Way Pt1
+# Getting Started With [Ruby] the Easy Way Pt1 - Comments, Variables, Strings
 
 Have you ever heard about Ruby? Ruby is one of the most popular programming languages in the World. It is also a programming language that is incredibly easy to learn. This will be the goal of this mini series. It will help you learn core concepts of Ruby and become proficient in this interesting programming language. Your journey to learn Ruby starts now.
 
@@ -10,8 +10,26 @@ Table of Contents:
 ## Variables
 ## Strings
 ## Ruby and Math
-## Epilogue: Getting started with Ruby – The Easy Way Pt1
+## Epilogue: Getting Started With Ruby the Easy Way Pt1
 -->
+
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
+
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
+
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
+
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
+
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## A brief introduction
 
@@ -378,7 +396,7 @@ x = ((10 + 2) - 8) * (8 - 2)
 puts x # Outputs: 24
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt1
+## Epilogue: Getting Started With Ruby the Easy Way Pt1
 
 Congratulations! You've just finished the first part of this mini series about learning Ruby! You've learned a lot of things about Ruby itself and some of its core concepts. I hope you enjoyed it. In a recap, you've learned about how to use console, comments, variables and strings. And, you've also learned how to perform mathematical operations in Ruby.
 
@@ -387,6 +405,15 @@ In the next part you will go deeper and explore other parts of Ruby. For example
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [TIOBE index]: https://www.tiobe.com/tiobe-index/
 [David Heinemeier Hansson]: https://en.wikipedia.org/wiki/David_Heinemeier_Hansson
 [Basecamp]: https://basecamp.com

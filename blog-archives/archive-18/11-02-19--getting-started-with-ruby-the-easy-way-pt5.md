@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt5
+# Getting Started With Ruby the Easy Way Pt5 - Control Flow Pt3
 
 Ruby is incredibly simple, powerful and beautiful language. It is also a language that is easy to learn, even for people who are new to programming. If you want to start with programming, or learn another programming language, this is your chance. This series will help you learn all you need to start programming in Ruby.
 
@@ -8,18 +8,26 @@ Table of Contents:
 ### Ranges
 ### Iterators
 ### Final note on iterators
-## Epilogue: Getting started with Ruby – The Easy Way Pt5
+## Epilogue: Getting Started With Ruby the Easy Way Pt5
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-<!-- Getting started with Ruby – The Easy Way [Part 5]. -->
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Control flow Pt3
 
@@ -285,7 +293,7 @@ end
 # Outputs: undefined method `step' for "A":String (NoMethodError)
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt5
+## Epilogue: Getting Started With Ruby the Easy Way Pt5
 
 Congratulations! You've just finished another lesson and made another step to learn programming in Ruby. Today, you've learned about ranges and iterators, when to use which, and what to pay attention to. This also means that you've just finished the fundamentals of control flow, a major milestone on your path to learn Ruby.
 
@@ -296,11 +304,15 @@ When you finish this, you will dive into the world of OOP in Ruby, or object-ori
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
-[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3
-[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4
-<!-- [Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5 -->
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [previous part]: https://blog.alexdevero.com/getting-started-ruby-pt4
 [second part]: https://blog.alexdevero.com/getting-started-ruby-pt2/#arrays
 [first part]: https://blog.alexdevero.com/getting-started-ruby-pt1/#it-all-starts-with-console

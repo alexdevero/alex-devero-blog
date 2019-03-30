@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt8
+# Getting Started With Ruby the Easy Way Pt8 - OOP Pt2
 
 Another part of Getting started with Ruby series just arrived! Learn about concepts such as instance and class variables and methods, accessors and ... The self. Expand your knowledge of Ruby and object-oriented programming. Take the next step to becoming a Ruby programmer. You are closer than ever before!
 
@@ -15,22 +15,26 @@ Table of Contents:
 ### Class variables
 ### Class methods
 ### Class constants
-## Epilogue: Getting started with Ruby – The Easy Way Pt8
+## Epilogue: Getting Started With Ruby the Easy Way Pt8
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-Getting started with Ruby – The Easy Way [Part 5].
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
 
-Getting started with Ruby – The Easy Way [Part 6].
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
 
-Getting started with Ruby – The Easy Way [Part 7].
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Ruby and OOP (Object-Oriented Programming) pt2
 
@@ -454,7 +458,7 @@ puts Calculator::PI
 # Outputs 3.14159265358979323846
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt8
+## Epilogue: Getting Started With Ruby the Easy Way Pt8
 
 Congratulations! You've finished the eight part of the Getting started with Ruby series. Today, you've learned a lot new concepts from the world of Ruby and OOP. From now, instance and class variables and methods (and constants) and accessors will no longer be a puzzle for you. You will recognize them when you will see them in code.
 
@@ -464,13 +468,15 @@ This will make it easier for you to read code of other Ruby programmers and unde
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
-[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3
-[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4
-[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5
-[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6
-[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 [previous part]: https://blog.alexdevero.com/getting-started-ruby-pt7/#objects
 [local variables]: https://blog.alexdevero.com/getting-started-ruby-pt7/#local-scope
 

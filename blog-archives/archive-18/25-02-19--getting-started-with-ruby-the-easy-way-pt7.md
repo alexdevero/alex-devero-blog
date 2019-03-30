@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt7
+# Getting Started With Ruby the Easy Way Pt7 - Recursion, Scope, OOP Pt1
 
 Have you ever heard about scope, recursion or OOP? If not, don't worry. You will learn about these topics in this part of Getting started with Ruby series. Today, you will learn about what recursion is and how to use it. Next, you will learn about scope and its types. Lastly, you will learn about classes and objects. Without further ado, let's begin!
 
@@ -14,20 +14,26 @@ Table of Contents:
 ## Ruby and OOP Pt1
 ### Classes
 ### Objects
-## Epilogue: Getting started with Ruby – The Easy Way Pt7
+## Epilogue: Getting Started With Ruby the Easy Way Pt7
 -->
 
-Getting started with Ruby – The Easy Way [Part 1].
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
 
-Getting started with Ruby – The Easy Way [Part 2].
+Getting Started With Ruby the Easy Way [Part 2] (Data Types Pt1).
 
-Getting started with Ruby – The Easy Way [Part 3].
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
 
-Getting started with Ruby – The Easy Way [Part 4].
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
 
-Getting started with Ruby – The Easy Way [Part 5].
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
 
-Getting started with Ruby – The Easy Way [Part 6].
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Recursion
 
@@ -293,7 +299,7 @@ tesla = Car.new
 
 In Ruby, and other object-oriented programming languages, objects are also called "instances" of a class. The process of creating an object of a class is called "instantiation". So, when you hear object of a class and "instances" of a class, or instantiation and creating an object of a class, remember that it is about the same thing.
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt7
+## Epilogue: Getting Started With Ruby the Easy Way Pt7
 
 This is where we will end it today. You've learned a lot. In a recap, you've learned how to create loops with recursion. Then, you've learned about different types of variable scope, their differences and why some types are better then others. Lastly, you've learned the basics about classes and objects, or instances.
 
@@ -302,12 +308,15 @@ You will learn about the rest in the next part. For now, revisit what you've lea
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1
-[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2
-[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3
-[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4
-[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5
-[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 
 <!-- Resources: -->
 <!--

@@ -1,4 +1,4 @@
-# Getting started with Ruby – The Easy Way Pt2
+# Getting Started With [Ruby] the Easy Way Pt2 - Data Types Pt1
 
 Some programming languages are hard to learn and some are easy. Ruby is one of the later. Although Ruby has simple syntax it is very powerful programming language. What's more, it is also quite versatile. You can use it to for web projects as well as for desktop applications. Give a Ruby a chance. Learn what you need to become a Ruby programmer. This article will help you with it.
 
@@ -10,8 +10,26 @@ Table of Contents:
 ### Booleans
 ### Nill
 ### Arrays
-## Epilogue: Getting started with Ruby – The Easy Way Pt2
+## Epilogue: Getting Started With Ruby the Easy Way Pt2
 -->
+
+Getting Started With Ruby the Easy Way [Part 1] (Comments, Variables, Strings).
+
+Getting Started With Ruby the Easy Way [Part 3] (Data Types Pt2, Control Flow Pt1).
+
+Getting Started With Ruby the Easy Way [Part 4] (Control Flow Pt2).
+
+Getting Started With Ruby the Easy Way [Part 5] (Control Flow Pt3).
+
+Getting Started With Ruby the Easy Way [Part 6] (Methods).
+
+Getting Started With Ruby the Easy Way [Part 7] (Recursion, Scope, OOP Pt1).
+
+Getting Started With Ruby the Easy Way [Part 8] (OOP Pt2).
+
+Getting Started With Ruby the Easy Way [Part 9] (OOP Pt3).
+
+Getting Started With Ruby the Easy Way [Part 10] (OOP Pt4 and Beyond).
 
 ## Getting User Input
 
@@ -289,11 +307,21 @@ What if your array contains some `nil` values you want to remove? Ruby has a met
 [1, 2, 3, 4, 5].rotate(4) # Result: [5, 1, 2, 3, 4]
 ```
 
-## Epilogue: Getting started with Ruby – The Easy Way Pt2
+## Epilogue: Getting Started With Ruby the Easy Way Pt2
 
 This is all for today. To quickly recap, you've learned how to ask users for input. Then, you've learned about the first four primary data types that exist in Ruby. These were numbers, booleans, nill and arrays. You will learn about the rest and much more in the next part. For now, give yourself a break so you can digest what you've learned today. With that, thank your for your time.
 
 [xyz-ihs snippet="thank-you-message"]
+
+[Part 1]: https://blog.alexdevero.com/getting-started-ruby-pt1/
+[Part 3]: https://blog.alexdevero.com/getting-started-ruby-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-ruby-pt4/
+[Part 5]: https://blog.alexdevero.com/getting-started-ruby-pt5/
+[Part 6]: https://blog.alexdevero.com/getting-started-ruby-pt6/
+[Part 7]: https://blog.alexdevero.com/getting-started-ruby-pt7/
+[Part 8]: https://blog.alexdevero.com/getting-started-ruby-pt8/
+[Part 9]: https://blog.alexdevero.com/getting-started-ruby-pt9/
+[Part 10]: https://blog.alexdevero.com/getting-started-ruby-pt10/
 
 <!-- ### Links -->
 [the first part]: https://blog.alexdevero.com/getting-started-ruby-pt1/
