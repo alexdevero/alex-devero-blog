@@ -514,8 +514,8 @@ With this knowledge, you can now write more complex code and create your own pro
 [fourth]: https://blog.alexdevero.com/getting-started-ruby-pt4
 [fifth part]: https://blog.alexdevero.com/getting-started-ruby-pt5
 [first part]: https://blog.alexdevero.com/getting-started-ruby-pt1/#it-all-starts-with-console
-[second part]: blog.alexdevero.com/getting-started-ruby-pt2/
-[arrays]: blog.alexdevero.com/getting-started-ruby-pt2/#arrays
+[second part]: https://blog.alexdevero.com/getting-started-ruby-pt2/
+[arrays]: https://blog.alexdevero.com/getting-started-ruby-pt2/#arrays
 [string interpolation]: https://blog.alexdevero.com/getting-started-ruby-pt1/#strings
 [iterators]: https://blog.alexdevero.com/getting-started-ruby-pt5/#iterators
 
