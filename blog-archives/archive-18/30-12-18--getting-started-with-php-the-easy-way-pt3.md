@@ -1,23 +1,25 @@
-# Getting started with PHP – The Easy Way Pt3
+# Getting Started with PHP the Easy Way Pt3 - OOP Pt1
 
 Do you want to learn PHP? Or, do you want to improve your current knowledge of PHP? This mini series will help you with both! In this part, you will learn about functions, OOP, classes. You will also learn about things such as class instances, inheritance and visibility types. Make the step towards PHP mastery!
 
 <!--
 Table of Contents:
 ## Functions
-## PHP, OOP and classes
+## PHP, OOP and classes pt1
 ### PHP & classes
 ### PHP & class instances
 ### Classes & $this
 ### Classes and inheritance
 ### Classes & visibility
 ### PHP Interfaces
-## Epilogue: Getting started with PHP - The Easy Way Pt3
+## Epilogue: Getting Started with PHP the Easy Way Pt3
 -->
 
-Getting started with PHP - The Easy Way [Part 2].
+Getting Started with PHP the Easy Way [Part 1] (Variables & Data types).
 
-Getting started with PHP - The Easy Way [Part 1].
+Getting Started with PHP the Easy Way [Part 2] (Control Flow).
+
+Getting Started with PHP the Easy Way [Part 4] (OOP Pt2 and Beyond).
 
 ## Functions
 
@@ -63,7 +65,7 @@ _Side note: You probably noticed that I referred to "parameters" as "arguments",
 
 _When you talk about calling or invoking the function, you use "argument". This is also called "passing". So, when you create function you specify "parameters". When you use the function, and pass some value, you are using, or passing, "argument". One good trick to remember this is by thinking about "arguing" with the function when you call it. When you argue, you need to use arguments._
 
-## PHP, OOP and classes
+## PHP, OOP and classes pt1
 
 You will probably work with functions on a daily basis. Well, if your projects includes writing PHP. However, functions are not everything. There is one important concept you need to learn to master PHP. This is OOP, or object-oriented programming. PHP is not the only programming language with OOP features. There are many many [more]. Anyway, what is OOP about?
 
@@ -314,7 +316,7 @@ The second thing is that one `interface` can be inherited by another `interface`
 ?>
 ```
 
-## Epilogue: Getting started with PHP - The Easy Way Pt3
+## Epilogue: Getting Started with PHP the Easy Way Pt3
 
 Congratulations! You've just completed another part of this mini series about PHP. Today, you've learned a lot about how to work with functions and classes. Knowing this will help you write more complex and advanced PHP code and work on more complex projects. This makes your learning path to learn PHP almost complete. There are only a couple more topics you need to know about.
 
@@ -323,8 +325,9 @@ You will learn about all these topics in the next and final part. More specifica
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- Links -->
-[Part 1]: https://blog.alexdevero.com/getting-started-php-pt2/
+[Part 1]: https://blog.alexdevero.com/getting-started-php-pt1/
 [Part 2]: https://blog.alexdevero.com/getting-started-php-pt2/
+[Part 4]: https://blog.alexdevero.com/getting-started-php-pt4/
 [first part]: https://blog.alexdevero.com/getting-started-php-pt1/#the-basics
 [more]: https://en.wikipedia.org/wiki/List_of_object-oriented_programming_languages
 [rules]: https://blog.alexdevero.com/getting-started-php-pt1/#variables

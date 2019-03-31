@@ -1,4 +1,4 @@
-# Getting started with PHP - The Easy Way Pt2
+# Getting Started with PHP the Easy Way Pt2 - Control Flow
 
 PHP is one of the programming languages that are very easy to learn. You can learn the basic in just a few days. This mini series will show you how. In this part, you will learn all you need about conditional statements, loops and `break`, `continue`, `include` and `require` statements. Make another step towards reaching PHP mastery!
 
@@ -13,8 +13,14 @@ Table of Contents:
 ### The foreach loop
 ### The continue statement
 ### Include & require statements
-## Epilogue: Getting started with PHP - The Easy Way Pt2
+## Epilogue: Getting Started with PHP the Easy Way Pt2
 -->
+
+Getting Started with PHP the Easy Way [Part 1] (Variables & Data types).
+
+Getting Started with PHP the Easy Way [Part 3] (OOP Pt1).
+
+Getting Started with PHP the Easy Way [Part 4] (OOP Pt2 and Beyond).
 
 ## PHP and control structures
 
@@ -448,7 +454,7 @@ What is the difference between `include` and `require`? They are almost identica
 </html>
 ```
 
-## Epilogue: Getting started with PHP - The Easy Way Pt2
+## Epilogue: Getting Started with PHP the Easy Way Pt2
 
 Congratulations! You've just finished the second part of this mini series about PHP. Today, you've learned about conditional statements, or the `if else`, `elseif` and `switch`. Then, you've learned about `while`, `do-while`, `for` and `foreach` loops. At the end, you've also learned about `break`, `continue`, `include` and `require` statements. What's next?
 
@@ -458,3 +464,6 @@ In the third and final part, you will learn about PHP functions, OOP and classes
 
 <!-- Links -->
 [the first part]: https://blog.alexdevero.com/getting-started-php-pt1/
+[Part 1]: https://blog.alexdevero.com/getting-started-php-pt1/
+[Part 3]: https://blog.alexdevero.com/getting-started-php-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-php-pt4/

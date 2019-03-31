@@ -1,10 +1,10 @@
-﻿# Getting started with PHP – The Easy Way Pt4
+﻿# Getting Started with PHP the Easy Way Pt4 - OOP Pt2 and Beyond
 
 PHP is one of the most widely used programming languages, with large community of dedicated developers and rich ecosystem of frameworks. If that is not enough, the incredibly popular WordPress platform and CMS is based on it. This makes PHP a very good language to learn. So, give it a try. Learn all you need to become a PHP programmer. This series will help you with that.
 
 <!--
 Table of Contents:
-## PHP, OOP and classes Pt2
+## PHP, OOP and classes pt2
 ### Class Constructor
 ### Class destructor
 ### Abstract classes
@@ -13,8 +13,14 @@ Table of Contents:
 ## Working with files
 ## What to do now
 ## Going further and deeper
-## Epilogue: Getting started with PHP - The Easy Way Pt4
+## Epilogue: Getting Started with PHP the Easy Way Pt4
 -->
+
+Getting Started with PHP the Easy Way [Part 1] (Variables & Data types).
+
+Getting Started with PHP the Easy Way [Part 2] (Control Flow).
+
+Getting Started with PHP the Easy Way [Part 3] (OOP Pt1).
 
 ## PHP, OOP and classes Pt2
 
@@ -285,13 +291,16 @@ Don't let the small size deceive you. Yes, CodeIgniter is small. However, it sti
 
 Any other frameworks worth mentioning? You can also take a look at [Phalcon], [CakePHP], [Zend Framework], [FuelPHP], [PHPixie] and [Slim]. Each of these, and the top three, PHP frameworks has its benefits. Try them out and find that fits your needs and taste the best. If you are looking for a job or clients, take into account how popular each framework is on marketplace. Don't waste your time learning a framework nobody wants to use.
 
-## Epilogue: Getting started with PHP - The Easy Way Pt4
+## Epilogue: Getting Started with PHP the Easy Way Pt4
 
 Congratulations to completing this mini series. Now you know everything you need to start implementing PHP into your projects and work with it on a daily basis. Now, you can follow what we discussed in the "what to do now" part. Or, you can choose the "going further and deeper" and start tinkering with PHP frameworks. Or, you can do something different. Next steps are up to you.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[Part 1]: https://blog.alexdevero.com/getting-started-php-pt1/
+[Part 2]: https://blog.alexdevero.com/getting-started-php-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-php-pt3/
 [previous part]: https://blog.alexdevero.com/getting-started-php-pt3/
 [Laravel]: https://laravel.com
 [Symfony]: https://symfony.com

@@ -1,4 +1,4 @@
-# Getting started with PHP - The Easy Way Pt1
+# Getting started with PHP the Easy Way Pt1 - Variables & Data types
 
 PHP is one of the most popular programming languages in the world. It is a programming language with a long history and it is also very powerful programming language. PHP can help you get done a lot things. Use this short mini series to learn all you need to know about PHP to get started. As you will see, learning PHP is easier than you may think.
 
@@ -11,11 +11,17 @@ Table of Contents:
 ### Variable variables
 ### Predefined variables
 ### Constants
-## Data types part 1
+## Data types
 ### Integers, floats and booleans
 ### Arrays
-## Epilogue: Getting started with PHP - The Easy Way Pt1
+## Epilogue: Getting Started with PHP the Easy Way Pt1
 -->
+
+Getting Started with PHP the Easy Way [Part 2] (Control Flow).
+
+Getting Started with PHP the Easy Way [Part 3] (OOP Pt1).
+
+Getting Started with PHP the Easy Way [Part 4] (OOP Pt2 and Beyond).
 
 ## Why PHP
 
@@ -241,7 +247,7 @@ For example, a two-dimensional array contains 3 arrays and has two indices: row 
 ?>
 ```
 
-## Epilogue: Getting started with PHP - The Easy Way Pt1
+## Epilogue: Getting Started with PHP the Easy Way Pt1
 
 This is where we will end this first part. You've done a good job and learned a lot. In a recap, we started with a brief review of the current state of PHP and potential reasons why to learn it. Then, you've learned learned about the absolute basics of PHP, the syntax, comments, `echo` and the difference between single and double quotes.
 
@@ -252,6 +258,9 @@ After that, you will also learn about if statements, switches, loops, include an
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[Part 2]: https://blog.alexdevero.com/getting-started-php-pt2/
+[Part 3]: https://blog.alexdevero.com/getting-started-php-pt3/
+[Part 4]: https://blog.alexdevero.com/getting-started-php-pt4/
 [Tiobe index]: https://www.tiobe.com/tiobe-index/
 [sources]: https://w3techs.com/technologies/details/pl-php/all/all
 [faster]: https://kinsta.com/blog/php-benchmarks/
