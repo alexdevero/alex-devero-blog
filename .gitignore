@@ -67,3 +67,7 @@ ehthumbs.db
 # Windows shortcuts #
 #####################
 *.lnk
+
+# WordPress exports #
+#####################
+*.xml
