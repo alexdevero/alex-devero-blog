@@ -452,10 +452,19 @@ promiseExample.then(resolvedData => {
 }).then(foo => {
   // Do something
   console.log(foo)
+
+  // Return the value so you can use it in the next then()
+  return newValue
 }).then(bar => {
   console.log(bar)
+
+  // Return the value so you can use it in the next then()
+  return newValue
 }).then(bazz => {
   console.log(bazz)
+
+  // Return the value so you can use it in the next then()
+  return newValue
 }).catch((error) => {
   console.log(error)
 })
