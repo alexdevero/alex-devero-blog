@@ -1,9 +1,9 @@
 # Development folders and files #
 #################################
 .tmp/
-_drafts/
-blog-dev-files/
-blog-post-dev-files/
+__drafts__/
+__blog-dev-files__/
+__blog-post-dev-files__/
 dist/
 node_modules/
 
