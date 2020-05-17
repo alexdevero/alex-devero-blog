@@ -1,4 +1,4 @@
-# Error handling in JavaScript
+# Error Handling in JavaScript for Beginners
 <!--more-->
 <!--
 Table of Contents:
