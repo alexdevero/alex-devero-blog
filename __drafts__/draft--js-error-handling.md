@@ -272,17 +272,21 @@ finally {
 }
 ```
 
-## Throwing errors with throw statement
+## Creating and throwing errors
 
-For error handling you can rely on built-in JavaScript errors. You can also define your own. You can do this in two ways. One is by using `throw` statement with a string, number or any other [data type]. The `throw` statement specifies the value you want to throw as an error.
+For error handling you can rely on built-in JavaScript errors. You can also define your own. You can do this in two ways.
 
-We already used this statement in example in the "Try, catch and control" section, inside the `declaration myFuncWithError() function`. So, let's create a simple function that when invoked throws an error. This error will be a string.
+### Creating simple errors
+
+The first way to create an error is by using `throw` statement with a string, number or any other [data type]. The `throw` statement specifies the value you want to throw as an error. You already used this statement in example in the "Try, catch and control" section, inside the `declaration myFuncWithError() function`.
+
+You can use it again now to create a simple error. So, let's create a simple function that when you invoke it it will throw a custom error. This custom error will be a string.
 
 ```JavaScript
 // Create function
 function myFunc() {
   // Throw a custom error
-  throw 'Error'
+  throw 'My custom error.'
 }
 
 // Create try...catch statement
@@ -299,7 +303,7 @@ catch(err) {
 }
 
 // Output:
-// 'Error: ' 'Error'
+// 'Error: ' 'My custom error.'
 // 'Error name: ' undefined
 // 'Error message: ' undefined
 // 'Error stack: ' undefined
@@ -341,7 +345,7 @@ catch(err) {
 // 'Error stack: ' 'myFunc()'
 ```
 
-### Using JavaScript built-in error constructors
+### Creating errors with JavaScript built-in error constructors
 
 Another way is by creating new errors by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError` and `SyntaxError`. You again use `throw` to throw these custom errors. However, you use keyword `new` along with one the constructor's names instead of some primitive data or an object.
 
@@ -384,6 +388,74 @@ catch(err) {
 //     at <anonymous>:7:47
 ```
 
+### Creating custom errors with Function constructor
+
+Along with JavaScript built-in error constructors you can also create custom errors with [Function constructor] or [class]. Here is how. You have to use function constructor to create a new custom error. This function constructor will take one parameter when you use it. This will be the error message.
+
+Inside this constructor, you will add three properties, `name`, `message` and `stack`. The `name` property will contain the name of your custom error. The `message` will refer to the value passed as `message` parameter. The `stack` will use `stack` property from newly instantiated `Error` constructor.
+
+When you have this you have to set the `prototype` property of this new Function constructor to error constructor. Finally, you also have to set the `constructor` property of the Function constructor under `prototype` property to the Function constructor. When you have this, you use `throw` and `new` statements to create new errors based on your custom error constructor.
+
+```JavaScript
+// Create new custom error using Function constructor
+const MyCustomError = function(message) {
+  // Add name property with some custom name
+  this.name = 'MyCustomError'
+  // Add message property referencing the value passed as "message" parameter
+  this.message = message
+  // Add stack property from Error constructor
+  this.stack = (new Error()).stack
+}
+
+// Set "prototype" property of custom error constructor to Error constructor
+MyCustomError.prototype = new Error()
+
+// Set the "constructor" property of custom error constructor to the custom error constructor
+MyCustomError.prototype.constructor = MyCustomError
+
+
+// Usage:
+// Create function
+function myFunc() {
+  // Use custom error constructor to create new error
+  throw new MyCustomError('An error occurred.')
+}
+
+// Create try...catch statement
+try {
+  // Invoke function with custom error
+  myFunc()
+}
+catch(err) {
+  // Log error data
+  console.log('Error: ', err)
+  console.log('Error name: ', err.name)
+  console.log('Error message: ', err.message)
+  console.log('Error stack: ', err.stack)
+}
+
+// Output:
+// 'Error: ' Error
+//     at new MyCustomError (eval at <anonymous> (:7:47), <anonymous>:6:16)
+//     at myFunc (eval at <anonymous> (:7:47), <anonymous>:13:9)
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:17:3)
+//     at <anonymous>:7:47
+//     at <anonymous>:26:9
+//     ...
+
+// 'Error name: ' 'MyCustomError'
+
+// 'Error message: ' 'An error occurred.'
+
+// 'Error stack: ' `Error
+//     at new MyCustomError (eval at <anonymous> (:7:47), <anonymous>:6:16)
+//     at myFunc (eval at <anonymous> (:7:47), <anonymous>:13:9)
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:17:3)
+//     at <anonymous>:7:47
+//     at <anonymous>:28:9
+//     ...
+```
+
 ## Error handling and Promises
 
 ## onerror() method
@@ -400,6 +472,8 @@ catch(err) {
 [unit tests]: https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870
 [function]: https://blog.alexdevero.com/javascript-functions-pt1/
 [data type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[Function constructor]: https://blog.alexdevero.com/javascript-functions-pt2/#function-constructor
+[class]: https://blog.alexdevero.com/javascript-classes-pt1/
 
 <!--
 ### Meta:
