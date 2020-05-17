@@ -2,14 +2,19 @@
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
-## h2
+## Two types of errors
+
+## Throw statement
+
+## Try...catch
+
+### Finally
+
+## Errors and Promises
+
+## onerror() method
 
 ## Conclusion: [...] ...
 
