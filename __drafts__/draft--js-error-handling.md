@@ -2,6 +2,22 @@
 <!--more-->
 <!--
 Table of Contents:
+## Two main types of errors
+### Syntax errors
+### Runtime errors
+## Error handling and try...catch statement
+### Catch
+### Try, catch and control
+### Using multiple try...catch statements
+### Finally
+### Somewhat optional catch
+### Try...catch statement inside functions
+## Creating and throwing errors
+### Creating simple errors
+### Creating errors with JavaScript built-in error constructors
+### Creating custom errors with Function constructor and class
+## Error handling globally
+## Conclusion: Error Handling in JavaScript
 -->
 
 ## Two main types of errors
@@ -562,7 +578,7 @@ window.addEventListener('error', function(event) {
 })
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Error Handling in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
