@@ -121,7 +121,7 @@ catch { // Omit parenthesis and error object
 
 ### Try, catch and control
 
-The code inside `catch` block is invoked immediately when some runtime error occurs. This is important remember. If some code you invoke in `try` block leads to an error any code that follows, inside the same `try` block, will not be invoked. The `catch` block will automatically assumes control and processes the error.
+The code inside `catch` block is execute immediately when some runtime error occurs. This is important remember. If some code you execute in `try` block leads to an error any code that follows, inside the same `try` block, will not be execute. The `catch` block will automatically assumes control and processes the error.
 
 ```JavaScript
 // Create function that leads to an error
@@ -162,7 +162,7 @@ catch(error) {
 
 There is a way to fix this. In JavaScript, there is no limit to how many `try...catch` statements you can use. There is also no rule that you have to use one for all your code. If anything, you should actually do the opposite. Using multiple `try...catch` statements allows you to isolate errors and not let it affect the rest of your code.
 
-If you want to invoke both functions, the easiest thing you can do is to create two `try...catch` statements. Then, you can will invoke one function in the first statement and another function in the second.
+If you want to invoke both functions, the easiest thing you can do is to create two `try...catch` statements. Then, you can invoke one function in the first statement and another function in the second.
 
 ```JavaScript
 // Create function that leads to an error
@@ -205,7 +205,7 @@ catch(error) {
 // and had no effect on the second function
 ```
 
-The example would work with any number of function, or code, you want to invoke. You could create tens or more `try...catch` statements each to handle one specific use case. Then, any error that would occur would not affect the rest of your code, invoked in other `try...catch` statements.
+The example would work with any number of function, or code, you want to invoke or execute. You could create tens or more `try...catch` statements each to handle one specific use case. Then, any error that would occur would not affect the rest of your code, invoked or executed in other `try...catch` statements.
 
 As you can see, the `try...catch` statement is really powerful tool for error handling. It allows you to run pieces of your code without letting it crash other pieces, or your whole application. That said, there is more.
 
