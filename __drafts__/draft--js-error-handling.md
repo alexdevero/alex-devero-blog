@@ -272,7 +272,117 @@ finally {
 }
 ```
 
-## Throw statement
+## Throwing errors with throw statement
+
+For error handling you can rely on built-in JavaScript errors. You can also define your own. You can do this in two ways. One is by using `throw` statement with a string, number or any other [data type]. The `throw` statement specifies the value you want to throw as an error.
+
+We already used this statement in example in the "Try, catch and control" section, inside the `declaration myFuncWithError() function`. So, let's create a simple function that when invoked throws an error. This error will be a string.
+
+```JavaScript
+// Create function
+function myFunc() {
+  // Throw a custom error
+  throw 'Error'
+}
+
+// Create try...catch statement
+try {
+  // Invoke the myFunc() function
+  myFunc()
+}
+catch(err) {
+  // Log the error
+  console.log('Error: ', err)
+  console.log('Error name: ', err.name)
+  console.log('Error message: ', err.message)
+  console.log('Error stack: ', err.stack)
+}
+
+// Output:
+// 'Error: ' 'Error'
+// 'Error name: ' undefined
+// 'Error message: ' undefined
+// 'Error stack: ' undefined
+```
+
+As you can see the downside of this that these custom errors will not have `name`, `message` and `stack` properties. You can overcome this by using an object instead of a primitive data type. You can then define `name`, `message` and `stack` as properties of this object and throw it using the `throw` statement.
+
+```JavaScript
+// Create function
+function myFunc() {
+  // Throw a custom error object
+  throw {
+    name: 'MyCustomError',
+    message: 'An error occurred.',
+    stack: 'myFunc()'
+  }
+}
+
+try {
+  // Invoke the myFunc() function
+  myFunc()
+}
+catch(err) {
+  // Log the error
+  console.log('Error: ', err)
+  console.log('Error name: ', err.name)
+  console.log('Error message: ', err.message)
+  console.log('Error stack: ', err.stack)
+}
+
+// Output:
+// 'Error: ' {
+//   name: 'MyCustomError',
+//   message: 'An error occurred.',
+//   stack: 'myFunc()'
+// }
+// 'Error name: ' 'MyCustomError'
+// 'Error message: ' 'An error occurred.'
+// 'Error stack: ' 'myFunc()'
+```
+
+### Using JavaScript built-in error constructors
+
+Another way is by creating new errors by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError` and `SyntaxError`. You again use `throw` to throw these custom errors. However, you use keyword `new` along with one the constructor's names instead of some primitive data or an object.
+
+The `new` keyword says that you are creating a new instance of a constructor. In this case, some error constructor. When you use one of these constructors the `name` property inside the `error` object will be the constructor you used. The `message` will be the string you pass as an argument when you instantiate the constructor.
+
+```JavaScript
+// Create function
+function myFunc() {
+  // Throw a custom error using Error constructor
+  // The Error will be the "name" property in error object
+  // The 'An error occurred.' will be the "message" property in error object
+  throw new Error('An error occurred.')
+}
+
+try {
+  myFunc()
+}
+catch(err) {
+  console.log('Error: ', err)
+  console.log('Error name: ', err.name)
+  console.log('Error message: ', err.message)
+  console.log('Error stack: ', err.stack)
+}
+
+// Output:
+// 'Error: ' Error: An error occurred.
+//     at myFunc (eval at <anonymous> (:7:47), <anonymous>:4:9)
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:8:3)
+//     at <anonymous>:7:47
+//     at <anonymous>:20:9
+//     ...
+
+// 'Error name: ' 'Error'
+
+// 'Error message: ' 'An error occurred.'
+
+// 'Error stack: ' `Error: An error occurred.
+//     at myFunc (eval at <anonymous> (:7:47), <anonymous>:4:9)
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:8:3)
+//     at <anonymous>:7:47
+```
 
 ## Error handling and Promises
 
@@ -289,6 +399,7 @@ finally {
 [TypeScript]: https://www.typescriptlang.org
 [unit tests]: https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870
 [function]: https://blog.alexdevero.com/javascript-functions-pt1/
+[data type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 
 <!--
 ### Meta:
