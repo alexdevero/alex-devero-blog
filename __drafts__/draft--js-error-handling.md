@@ -84,7 +84,7 @@ catch(error) {
   console.log('Error: ', error)
 }
 
-// Output:
+// Outputs:
 // 'Error name: ' 'ReferenceError'
 
 // 'Error message: ' 'myFunction is not defined'
@@ -115,7 +115,7 @@ catch { // Omit parenthesis and error object
   console.log('An error occurred.')
 }
 
-// Output:
+// Outputs:
 // 'An error occurred.'
 ```
 
@@ -149,7 +149,7 @@ catch(error) {
   console.log(error)
 }
 
-// Output:
+// Outputs:
 // 'Error'
 
 // Note:
@@ -195,7 +195,7 @@ catch(error) {
   console.log(error)
 }
 
-// Output:
+// Outputs:
 // 'Error'
 // 'Hello.'
 
@@ -245,7 +245,7 @@ finally {
   console.log('The end of try...catch...finally statement.')
 }
 
-// Output:
+// Outputs:
 // 'myFunc is not defined'
 // 'The end of try...catch...finally statement.'
 ```
@@ -270,6 +270,43 @@ try {
 finally {
   console.log('try...finally is finished.')
 }
+```
+
+### Try...catch statement inside functions
+
+All previous show error handling sing `try...catch` in a global scope, outside any functions. This doesn't mean `try...catch` statement is restricted to global scope. It is not. You can use in a global scope or a local scope, created by a function for example. It will work just as well.
+
+```JavaScript
+// Declare new function that takes one parameter
+function myFunction(name) {
+  // Add try...catch statement
+  try {
+    // If value passed as name parameter is not a string
+    if (typeof name !== 'string') {
+      // Throw a TypeError
+      throw new TypeError('The name value of parameter must be a string!')
+    } else {
+      console.log(`Hello ${name}.`)
+    }
+  }
+  catch(err) {
+    // Log
+    console.log(err)
+  }
+}
+
+myFunction(11)
+// Outputs:
+// TypeError: The name value of parameter must be a string!
+//     at myFunction (eval at <anonymous> (:7:47), <anonymous>:6:13)
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:13:1)
+//     at <anonymous>:7:47
+//     at <anonymous>:19:23
+//     ...
+
+myFunction('Jack')
+// Outputs:
+// 'Hello Jack.'
 ```
 
 ## Creating and throwing errors
@@ -302,7 +339,7 @@ catch(err) {
   console.log('Error stack: ', err.stack)
 }
 
-// Output:
+// Outputs:
 // 'Error: ' 'My custom error.'
 // 'Error name: ' undefined
 // 'Error message: ' undefined
@@ -334,7 +371,7 @@ catch(err) {
   console.log('Error stack: ', err.stack)
 }
 
-// Output:
+// Outputs:
 // 'Error: ' {
 //   name: 'MyCustomError',
 //   message: 'An error occurred.',
@@ -370,7 +407,7 @@ catch(err) {
   console.log('Error stack: ', err.stack)
 }
 
-// Output:
+// Outputs:
 // 'Error: ' Error: An error occurred.
 //     at myFunc (eval at <anonymous> (:7:47), <anonymous>:4:9)
 //     at eval (eval at <anonymous> (:7:47), <anonymous>:8:3)
@@ -434,7 +471,7 @@ catch(err) {
   console.log('Error stack: ', err.stack)
 }
 
-// Output:
+// Outputs:
 // 'Error: ' Error
 //     at new MyCustomError (eval at <anonymous> (:7:47), <anonymous>:6:16)
 //     at myFunc (eval at <anonymous> (:7:47), <anonymous>:13:9)
