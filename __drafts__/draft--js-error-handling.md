@@ -1,4 +1,7 @@
 # Error Handling in JavaScript for Beginners
+
+Knowing how to manage errors is important part of programming. This tutorial will give you an easy introduction to error handling in JavaScript. You will learn about two types of errors and how to handle each. You will also learn how to use `try...catch` and `throw` statements to make your code safer and much more.
+
 <!--more-->
 <!--
 Table of Contents:
