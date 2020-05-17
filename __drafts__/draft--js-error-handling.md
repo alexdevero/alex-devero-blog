@@ -532,9 +532,35 @@ catch(err) {
 //     ...
 ```
 
-## Error handling and Promises
+## Error handling globally
 
-## onerror() method
+The `try...catch` and `try...catch...finally` statements are powerful. These two can make error handling very easy. One problem might be if you can't isolate code you want to execute with `try` block. For example, when some code is executed in a global scope from a place where you cannot access it.
+
+In this case, you can use `onerror()` method. This is an error event handler. You can use it to catch and process errors occurring in a global scope. Aside to `window` object you can also use it with elements in the DOM. Alternatively, you can attach new event listener for `error` event, either on `window` or some element.
+
+```JavaScript
+// Option no.1: onerror() method
+window.onerror = function(message, url, lineNumber, columnNumber, error) {
+  console.log(`
+    error message: ${message},
+    error URL: ${url},
+    line with error: ${lineNumber},
+    column with error: ${columnNumber}
+  `)
+}
+
+
+// Option no.2: listening to 'error' event
+window.addEventListener('error', function(event) {
+  console.log(`
+    error message: ${event.message},
+    error URL: ${event.filename},
+    line with error: ${event.lineno},
+    column with error: ${event.colno},
+    error object: ${JSON.stringify(event.error)}
+  `)
+})
+```
 
 ## Conclusion: [...] ...
 
