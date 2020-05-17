@@ -425,7 +425,7 @@ catch(err) {
 //     at <anonymous>:7:47
 ```
 
-### Creating custom errors with Function constructor
+### Creating custom errors with Function constructor and class
 
 Along with JavaScript built-in error constructors you can also create custom errors with [Function constructor] or [class]. Here is how. You have to use function constructor to create a new custom error. This function constructor will take one parameter when you use it. This will be the error message.
 
@@ -490,6 +490,45 @@ catch(err) {
 //     at eval (eval at <anonymous> (:7:47), <anonymous>:17:3)
 //     at <anonymous>:7:47
 //     at <anonymous>:28:9
+//     ...
+```
+
+With JavaScript class creating custom error constructor is even easier. First, you have to create new class for your custom error constructor. This class will `extend` the `Error` class. Inside the class, you will add `constructor` with one parameter. this will be the error message.
+
+Inside the `constructor`, you have to call `super` with `message` passed as argument. This will call the constructor of parent class `Error`. After that, still inside the `constructor`, you will override the `name` property by adding your own `name` property with name for your custom constructor.
+
+```JavaScript
+// Create new error constructor with JavaScript class
+class MyCustomError extends Error {
+  constructor(message) {
+    // Call constructor of parent class Error
+    super(message)
+
+    // Set your custom error name
+    this.name = 'MyCustomError'
+  }
+}
+
+// Create try...catch statement
+try {
+  // Throw new custom error
+  throw new MyCustomError('An error occurred')
+}
+catch(err) {
+  console.log('Error name: ', err.name)
+  console.log('Error message: ', err.message)
+  console.log('Error stack: ', err.stack)
+}
+
+// Outputs:
+// 'Error name: ' 'MyCustomError'
+
+// 'Error message: ' 'An error occurred'
+
+// 'Error stack: ' `MyCustomError: An error occurred
+//     at eval (eval at <anonymous> (:7:47), <anonymous>:12:9)
+//     at <anonymous>:7:47
+//     at <anonymous>:23:9
 //     ...
 ```
 
