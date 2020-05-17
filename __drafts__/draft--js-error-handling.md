@@ -311,13 +311,11 @@ myFunction('Jack')
 
 ## Creating and throwing errors
 
-For error handling you can rely on built-in JavaScript errors. You can also define your own. You can do this in two ways.
+For error handling you can use either built-in JavaScript errors or you can define your own. With both approaches, you will use `throw` statement. This statement specifies the value you want to throw as an error. You already used this statement in example in the "Try, catch and control" section, inside the `declaration myFuncWithError() function`.
 
 ### Creating simple errors
 
-The first way to create an error is by using `throw` statement with a string, number or any other [data type]. The `throw` statement specifies the value you want to throw as an error. You already used this statement in example in the "Try, catch and control" section, inside the `declaration myFuncWithError() function`.
-
-You can use it again now to create a simple error. So, let's create a simple function that when you invoke it it will throw a custom error. This custom error will be a string.
+Let's take a look at the first way to create a custom error. This will be a very simple error. You will do it by using `throw` statement with a string, number or any other [data type]. For example, let's create a simple function that when you invoke it it will throw a custom error. This custom error will be a string.
 
 ```JavaScript
 // Create function
@@ -346,7 +344,9 @@ catch(err) {
 // 'Error stack: ' undefined
 ```
 
-As you can see the downside of this that these custom errors will not have `name`, `message` and `stack` properties. You can overcome this by using an object instead of a primitive data type. You can then define `name`, `message` and `stack` as properties of this object and throw it using the `throw` statement.
+As you can see, creating a simple error is easy. The downside of creating errors this way is that these custom errors will not have `name`, `message` and `stack` properties. There is a way to fix this. A simple way to do it is by using an object instead of a primitive data type.
+
+So, instead of throwing a string or other primitive, you will throw an object. Inside this object, you will define all the properties that would normally exist in an error object, the `name`, `message` and `stack`. Now, when this custom error occurs you can also access its `name`, `message` and `stack`.
 
 ```JavaScript
 // Create function
@@ -384,7 +384,7 @@ catch(err) {
 
 ### Creating errors with JavaScript built-in error constructors
 
-Another way is by creating new errors by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError` and `SyntaxError`. You again use `throw` to throw these custom errors. However, you use keyword `new` along with one the constructor's names instead of some primitive data or an object.
+Another option for creating new errors is by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError` and `SyntaxError`. You will use `throw` statement to throw these custom errors as well. You will also have to use keyword `new` along with one the constructor's names.
 
 The `new` keyword says that you are creating a new instance of a constructor. In this case, some error constructor. When you use one of these constructors the `name` property inside the `error` object will be the constructor you used. The `message` will be the string you pass as an argument when you instantiate the constructor.
 
