@@ -583,6 +583,12 @@ window.addEventListener('error', function(event) {
 
 ## Conclusion: Error Handling in JavaScript
 
+Congratulation! You've just finished this tutorial on error handling in JavaScript. I hope you enjoyed it. If you've followed along with me you should have a good idea about how to handle errors in JavaScript. You should know what are syntax and runtime errors and what is the difference between them.
+
+You should also know how `try...catch` statement, and `Finally`, works, and how to use it execute your code, and catch any errors that occur. You also know how to throw JavaScript built-in errors. Not only that. You also know how to create your own errors with primitives, function constructors and JavaScript classes.
+
+And, if some error occurs in a global scope, you know how to use `onerror()` method or error event listener to catch it. Now it is up to you to take what you've learned in this tutorial about error handling and use it to write better and safer code.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
