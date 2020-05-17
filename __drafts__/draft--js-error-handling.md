@@ -211,6 +211,47 @@ As you can see, the `try...catch` statement is really powerful tool for error ha
 
 ### Finally
 
+The `try...catch` statement can help you make error handling easy.However, there is also `finally` block you can use. The `try` invokes the code inside the block. The `catch` is invoked when error occurs. The `finally` is invoked at the end of each `try...catch...finally` statement.
+
+The important thing is that the `finally` is invoked in all cases. It doesn't matter if there is an error or not. The `finally` will be invoked. This can be useful when you do something at the end of each block. The syntax of `finally` is the same as the syntax for `try`.
+
+There is the `finally` keyword followed by block of code to execute wrapped with curly braces. There are no parenthesis, even optional.
+
+```JavaScript
+// Create try...catch...finally statement
+try {
+  // Run some code
+}
+catch(err) {
+  // Log any error message
+  console.log(err)
+}
+finally {
+  // Do something whether is an error or not
+}
+
+
+// Example:
+try {
+  // Try to invoke non-existing function
+  myFunc()
+}
+catch(err) {
+  // Log any error message
+  console.log(err.message)
+}
+finally {
+  // Log a message at the end of execution of the try...catch...finally statement
+  console.log('The end of try...catch...finally statement.')
+}
+
+// Output:
+// 'myFunc is not defined'
+// 'The end of try...catch...finally statement.'
+```
+
+### Try and try...finally
+
 ## Throw statement
 
 ## Error handling and Promises
