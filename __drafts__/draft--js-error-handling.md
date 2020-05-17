@@ -384,7 +384,7 @@ catch(err) {
 
 ### Creating errors with JavaScript built-in error constructors
 
-Another option for creating new errors is by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError` and `SyntaxError`. You will use `throw` statement to throw these custom errors as well. You will also have to use keyword `new` along with one the constructor's names.
+Another option for creating new errors is by using JavaScript built-in error constructors, such as `Error`, `TypeError`, `ReferenceError`, `SyntaxError`, `RangeError`, `EvalError`, `InternalError` and `URIError`. You will use `throw` statement to throw these custom errors as well. You will also have to use keyword `new` along with one the constructor's names.
 
 The `new` keyword says that you are creating a new instance of a constructor. In this case, some error constructor. When you use one of these constructors the `name` property inside the `error` object will be the constructor you used. The `message` will be the string you pass as an argument when you instantiate the constructor.
 
