@@ -250,7 +250,27 @@ finally {
 // 'The end of try...catch...finally statement.'
 ```
 
-### Try and try...finally
+### Somewhat optional catch
+
+So far, we always did error handling using all blocks of `try...catch` or `try...catch...finally` statement. One thing you should know is that the `catch` is, similarly to the `finally`, also optional. Having said that, that doesn't mean it is a good idea to omit it.
+
+When you omit the `catch` block any error that occurs during execution of `try` block will "leak" outside. Without the `catch` block, there is nothing that catch any error and process it. So, can you omit it? Yes. You can use only `try` or `try...finally`. Both, will works. However, no errors will be caught.
+
+```JavaScript
+// Create try statement
+try {
+  myFunc()
+}
+
+
+// Create try...finally statement
+try {
+  myFunc()
+}
+finally {
+  console.log('try...finally is finished.')
+}
+```
 
 ## Throw statement
 
