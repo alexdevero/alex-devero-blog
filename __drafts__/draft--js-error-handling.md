@@ -1,4 +1,4 @@
-# Error Handling in JavaScript for Beginners
+# Error Handling in JavaScript
 
 Knowing how to manage errors is important part of programming. This tutorial will give you an easy introduction to error handling in JavaScript. You will learn about two types of errors and how to handle each. You will also learn how to use `try...catch` and `throw` statements to make your code safer and much more.
 
@@ -45,7 +45,7 @@ Important is that each of these errors is valid in the view of JavaScript. Yes, 
 
 This is also what makes runtime errors more difficult to handle. It is also why it is a very good idea to write and also run [unit tests]. Aside to that, there is no plugin that would help you spot these errors before they occur. Well, this is true only partially. You can use a JavaScript superset, such as [TypeScript].
 
-If your IDE has support for one of these supersets, it it will help you detect runtime errors. For example, when you use TypeScript in VS Code it will warn you when some function or variable you want to use is undefined. It will also suggest methods and variables you previously defined while you write your code.
+If your IDE has support for one of these supersets, it will help you detect runtime errors. For example, when you use TypeScript in VS Code it will warn you when some function or variable you want to use is undefined. It will also suggest methods and variables you previously defined while you write your code.
 
 Aside to this, there are some JavaScript built-in tools that will make error handling easier for you. Let's take a look at these tools.
 
@@ -59,7 +59,7 @@ try {
 }
 ```
 
-That said, your whole code doesn't have to defined in one giant `try` block. Instead, you put into the `try` block only what you want to run. For example, let's say you want to declare some [function]. You can declare this function somewhere outside the `try` block, but you invoke the function inside it.
+That said, your whole code doesn't have to be defined in one giant `try` block. Instead, you put into the `try` block only what you want to run. For example, let's say you want to declare some [function]. You can declare this function somewhere outside the `try` block, but you invoke the function inside it.
 
 ```JavaScript
 // Declare function outside try block
@@ -78,7 +78,7 @@ try {
 
 When you do this, the `try` block will call that function. If your function runs without any errors nothing will happen. If there are some runtime errors? This is where `catch` block comes into play. The `catch` block looks similar to `try`. One difference is that there are parenthesis after the `catch` keyword and before opening curly brace.
 
-Inside these parenthesis is defined one parameter. This parameter is a error object. This object contains information about the error that occurred. It contains name of the error, the error message and current call stack. The `catch` block is a place where you define what to do when an error occurs.
+Inside these parenthesis is defined one parameter. This parameter is an error object. This object contains information about the error that occurred. It contains name of the error, the error message and current call stack. The `catch` block is a place where you define what to do when an error occurs.
 
 ```JavaScript
 // Create try...catch statement
@@ -140,7 +140,7 @@ catch { // Omit parenthesis and error object
 
 ### Try, catch and control
 
-The code inside `catch` block is execute immediately when some runtime error occurs. This is important remember. If some code you execute in `try` block leads to an error any code that follows, inside the same `try` block, will not be execute. The `catch` block will automatically assumes control and processes the error.
+The code inside `catch` block is execute immediately when some runtime error occurs. This is important remember. If some code you execute in `try` block leads to an error any code that follows, inside the same `try` block, will not be execute. The `catch` block will automatically assume control and processes the error.
 
 ```JavaScript
 // Create function that leads to an error
@@ -226,11 +226,11 @@ catch(error) {
 
 The example would work with any number of function, or code, you want to invoke or execute. You could create tens or more `try...catch` statements each to handle one specific use case. Then, any error that would occur would not affect the rest of your code, invoked or executed in other `try...catch` statements.
 
-As you can see, the `try...catch` statement is really powerful tool for error handling. It allows you to run pieces of your code without letting it crash other pieces, or your whole application. That said, there is more.
+As you can see, the `try...catch` statement is very powerful tool for error handling. It allows you to run pieces of your code without letting it crash other pieces, or your whole application. That said, there is more.
 
 ### Finally
 
-The `try...catch` statement can help you make error handling easy.However, there is also `finally` block you can use. The `try` invokes the code inside the block. The `catch` is invoked when error occurs. The `finally` is invoked at the end of each `try...catch...finally` statement.
+The `try...catch` statement can help you make error handling easy. However, there is also `finally` block you can use. The `try` invokes the code inside the block. The `catch` is invoked when error occurs. The `finally` is invoked at the end of each `try...catch...finally` statement.
 
 The important thing is that the `finally` is invoked in all cases. It doesn't matter if there is an error or not. The `finally` will be invoked. This can be useful when you do something at the end of each block. The syntax of `finally` is the same as the syntax for `try`.
 
@@ -512,7 +512,7 @@ catch(err) {
 //     ...
 ```
 
-With JavaScript class creating custom error constructor is even easier. First, you have to create new class for your custom error constructor. This class will `extend` the `Error` class. Inside the class, you will add `constructor` with one parameter. this will be the error message.
+With JavaScript class creating custom error constructor is even easier. First, you have to create new class for your custom error constructor. This class will `extend` the `Error` class. Inside the class, you will add `constructor` with one parameter. This will be the error message.
 
 Inside the `constructor`, you have to call `super` with `message` passed as argument. This will call the constructor of parent class `Error`. After that, still inside the `constructor`, you will override the `name` property by adding your own `name` property with name for your custom constructor.
 
@@ -583,7 +583,7 @@ window.addEventListener('error', function(event) {
 
 ## Conclusion: Error Handling in JavaScript
 
-Congratulation! You've just finished this tutorial on error handling in JavaScript. I hope you enjoyed it. If you've followed along with me you should have a good idea about how to handle errors in JavaScript. You should know what are syntax and runtime errors and what is the difference between them.
+Congratulations! You've just finished this tutorial on error handling in JavaScript. I hope you enjoyed it. If you've followed along with me you should have a good idea about how to handle errors in JavaScript. You should know what are syntax and runtime errors and what is the difference between them.
 
 You should also know how `try...catch` statement, and `Finally`, works, and how to use it execute your code, and catch any errors that occur. You also know how to throw JavaScript built-in errors. Not only that. You also know how to create your own errors with primitives, function constructors and JavaScript classes.
 
@@ -609,10 +609,5 @@ And, if some error occurs in a global scope, you know how to use `onerror()` met
 
 <!--
 ### Resources:
-- https://javascript.info/error-handling
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-- https://www.sitepoint.com/proper-error-handling-javascript/
-- https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af
-- https://www.tutorialspoint.com/javascript/javascript_error_handling.htm
+-
 -->
