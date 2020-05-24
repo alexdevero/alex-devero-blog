@@ -20,7 +20,86 @@ Another option is to set this in a way that when your washing machine finishes, 
 
 ## Creating a Promise
 
-That was the theory. Now, to the practice. When you want to create a Promise you use Promise constructor. In the terms of syntax, this means using keyword `new` followed by `Promise()`.
+That was the theory. Now, to the practice. When you want to create a Promise you use Promise constructor. In the terms of syntax, this means using keyword `new` followed by `Promise()`. The constructor takes one parameter. This parameter is a function called executor. The executor is invoked automatically when you create a Promise.
+
+The executor function takes two parameters, both of which are callbacks. These parameters are `resolve` and `reject`. When Promise is resolved the `resolve` callback is invoked. This is when the job a Promise is supposed to do is successful. When it is not, when there is some error, Promise is rejected and the `reject` callback is invoked.
+
+```JavaScript
+// Promise syntax example
+const myPromise = new Promise(function(resolve, reject) {
+  // ... some code
+})
+
+
+// Promise syntax example using an arrow function
+const myPromise = new Promise((resolve, reject) => {
+  // ... some code
+})
+```
+
+When you want the Promise to return some data, you pass those data into the `resolve`. For example, when your Promises makes a call to an API you pass into the `resolve` the data returned from the API. If some error occurs you can pass the data about the error to the `reject` callback. Or, some error message.
+
+```JavaScript
+// Promise syntax example
+const myPromise = new Promise(function(resolve, reject) {
+  // Resolving a Promise passing a message as a data
+  resolve('Success: promise resolved.')
+
+  // Rejecting a Promise passing a message as a data
+  reject('Failure: promise rejected')
+})
+
+// Invoke the Promise
+myPromise
+
+
+// Promise syntax example using an arrow function
+const myPromise = new Promise((resolve, reject) => {
+  // Resolving a Promise passing a message as a data
+  resolve('Success: promise resolved.')
+
+  // Rejecting a Promise passing a message as a data
+  reject('Failure: promise rejected')
+})
+
+// Invoke the Promise
+myPromise
+```
+
+When you do this, Promise will be able to pass these data to handler functions you attached to that Promise. Two more things about creating JavaScript Promises you need to know. One, you can assign Promise to a variable and then invoke it. This is similar to a [function expression].
+
+```JavaScript
+// Creating Promise no.1: assigning to a variable
+const myPromise = new Promise((resolve, reject) => {
+  // Resolving a Promise passing a message as a data
+  resolve('Success: promise resolved.')
+
+  // Rejecting a Promise passing a message as a data
+  reject('Failure: promise rejected')
+})
+
+// Invoke the Promise
+myPromise
+```
+
+Another option is to return a Promise from a function. Then, when you want to invoke that Promise, you call the function that returns it. This will work in the same way is the first way. Remember that when you want to return a Promise you still have to use the `new` keyword before Promise constructor.
+
+```JavaScript
+// Creating Promise no.2: returning it from a function
+function myFunc() {
+  // Return new Promise
+  return new Promise(function(resolve, reject) {
+  // Resolving a Promise passing a message as a data
+  resolve('Success: promise resolved.')
+
+  // Rejecting a Promise passing a message as a data
+  reject('Failure: promise rejected')
+  })
+}
+
+// Invoke myFunc() to invoke the Promise inside it
+myFunc()
+```
 
 ## Promises and states
 
@@ -34,7 +113,7 @@ rejected: meaning that the operation failed.
 
 settled: Has fulfilled or rejected
 
-## Resolving JavaScript Promises
+## Resolving and rejecting Promises
 
 ### Promise.resolve()
 
@@ -73,7 +152,7 @@ The Promise.race() method returns a promise that fulfills or rejects as soon as 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[function expression]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
 
 <!--
 ### Meta:
