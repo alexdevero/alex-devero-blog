@@ -418,7 +418,7 @@ const myPromiseThree = new Promise((resolve, reject) => {
   setTimeout(function() {
     // Resolve the Promise with a message
     resolve('myPromiseThree has been resolved.')
-  }, 1000)
+  }, 1500)
 })
 
 // Use Promise.allSettled() to process all Promises
