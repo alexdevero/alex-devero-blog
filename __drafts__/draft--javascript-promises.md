@@ -290,15 +290,15 @@ myPromise
 
 ## Promise methods
 
-### Promise.all()
+Working with JavaScript Promises is easy when you have to handle just one or two. What if you have to handle more Promise at once? Fortunately, JavaScript offers some methods that will make this easier for you. These methods are `all(),` `allSettled(),` `race()` and `any()`.
 
-Promise.all will immediately reject if any of the promises fail to resolve, wherease Promise.allSettled will await the completion of all promises.
-
-Promise.all() is passed an iterable (usually an array of other promises) and will attempt to resolve all of them. If any of these promises throws an exception or rejects, Promise.all will immediateley invoke its reject.
+All these methods accept an iterable object such as an array. This object contains Promises you want to invoke. The difference is that each of these methods works in a different way and leads to different results. So, let's take a look at each.
 
 ### Promise.allSettled()
 
 Promise.allSettled() is also passed an iterable (usually an array of other promises) and will attempt to resolve all of them. If any of these promises throws an exception or rejects, its status is set to rejected.
+
+wherease Promise.allSettled will await the completion of all promises.
 
 An important note is that Promise.allSettled can never throw. You do not need to wrap it with try/catch - it will always resolve.
 
