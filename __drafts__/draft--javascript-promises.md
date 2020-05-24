@@ -294,6 +294,96 @@ Working with JavaScript Promises is easy when you have to handle just one or two
 
 All these methods accept an iterable object such as an array. This object contains Promises you want to invoke. The difference is that each of these methods works in a different way and leads to different results. So, let's take a look at each.
 
+### Promise.all()
+
+When you pass Promises into `Promise.all()` it will try to resolve all of them. When all Promises you passed are resolved `Promise.all()` will return one Promise that contains all values. You can than access this value by attaching `then()` handler to the `Promise.all()`, along with callback function.
+
+When something happens and one of those Promises gets rejected the `Promise.all()` will immediately return the rejected value. This is important to remember. If one Promise "fails" `Promise.all()` will return only the rejected value. It will not return data from any previously resolved Promise(s).
+
+```JavaScript
+// Example no.2: all Promises resolve
+// Create first Promise that resolves
+const myPromiseOne = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseOne has been resolved.')
+  }, 500)
+})
+
+// Create second Promise that resolves
+const myPromiseTwo = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseTwo has been resolved.')
+  }, 1000)
+})
+
+// Use Promise.all() to process all Promises
+Promise.all([myPromiseOne, myPromiseTwo])
+  .then((data) => {
+    // Log data when all Promises are resolved
+    console.log(data)
+  })
+  .catch((error) => {
+    // Log error message when some Promise is rejected
+    console.log(error)
+  })
+
+// Output:
+// [
+//   'myPromiseOne has been resolved.',
+//   'myPromiseTwo has been resolved.'
+// ]
+
+
+// Example no.2: the middle Promise rejects
+// Create first Promise that resolves
+const myPromiseOne = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseOne has been resolved.')
+  }, 500)
+})
+
+// Create second Promise that rejects
+const myPromiseTwo = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Reject the Promise with a message
+    reject('myPromiseTwo has been rejected.')
+  }, 1000)
+})
+
+// Create third Promise that resolves
+const myPromiseThree = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseThree has been resolved.')
+  }, 1500)
+})
+
+// Use Promise.all() to process all Promises
+Promise.all([myPromiseOne, myPromiseTwo, myPromiseThree])
+  .then((data) => {
+    // Log data when all Promises are resolved
+    console.log(data)
+  })
+  .catch((error) => {
+    // Log error message when some Promise is rejected
+    console.log(error)
+  })
+
+// Output:
+// 'Error: myPromiseTwo has been rejected'
+
+// !! Notice that the data from myPromiseOne that was resolved
+// before the myPromiseTwo was rejected are missing
+```
+
 ### Promise.allSettled()
 
 Promise.allSettled() is also passed an iterable (usually an array of other promises) and will attempt to resolve all of them. If any of these promises throws an exception or rejects, its status is set to rejected.
