@@ -1,7 +1,21 @@
-# JavaScript Promises - An Introduction
+# JavaScript Promises - All You Need to Know
 <!--more-->
 <!--
 Table of Contents:
+## Introduction
+## Creating a Promise
+## Resolving and rejecting Promises with static methods
+## Four states of JavaScript Promises
+## Handling JavaScript Promises with handler functions
+### The then() handler function
+### The catch() handler function
+### The finally() handler function
+## Promise methods
+### Promise.all()
+### Promise.allSettled()
+### Promise.race()
+### Promise.any()
+## Conclusion: JavaScript Promises
 -->
 
 ## Introduction
@@ -123,7 +137,7 @@ The first state is called `pending`. This is the initial state when you create a
 
 The third state is called `rejected`. When this happens it means there was some problem that prevented the Promise from being successfully fulfilled (resolved). The fourth and last state is called `settled`. This means that the job of the Promise is finished and the Promise was either fulfilled or rejected.
 
-## Handling JavaScript Promises with prototype methods
+## Handling JavaScript Promises with handler functions
 
 You know how to create a Promise and the four states in which it can be. What you need to next is how to handle Promise. You need to know how you can work with the data returned by a Promise, data passed into `resolve` and `reject` callbacks. This is where `then()`, `catch()` and `finally()` comes into game.
 
@@ -545,7 +559,7 @@ Promise.any([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 *Note: At the time of writing this article Promise.any() is at [Stage 3] proposal. This means that it is not a stable part of JavaScript language and is still experimental. It is also not supported in all browsers.*
 
-## Conclusion: [...] ...
+## Conclusion: JavaScript Promises
 
 [xyz-ihs snippet="thank-you-message"]
 
