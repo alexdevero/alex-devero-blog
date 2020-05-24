@@ -44,12 +44,12 @@ When you want the Promise to return some data, you pass those data into the `res
 ```JavaScript
 // Promise syntax example
 const myPromise = new Promise(function(resolve, reject) {
-  // Resolving a Promise passing a message as a data
+  // Resolve the Promise passing a message as a data
   resolve('Success: promise resolved.')
 
   // If some error happens
   if (error) {
-    // Rejecting a Promise passing a message as a data
+    // Reject the Promise passing a message as a data
     reject('Failure: promise rejected')
   }
 })
@@ -60,12 +60,12 @@ myPromise
 
 // Promise syntax example using an arrow function
 const myPromise = new Promise((resolve, reject) => {
-  // Resolving a Promise passing a message as a data
+  // Resolve the Promise passing a message as a data
   resolve('Success: promise resolved.')
 
   // If some error happens
   if (error) {
-    // Rejecting a Promise passing a message as a data
+    // Reject the Promise passing a message as a data
     reject('Failure: promise rejected')
   }
 })
@@ -79,12 +79,12 @@ When you do this, Promise will be able to pass these data to handler functions y
 ```JavaScript
 // Creating Promise no.1: assigning to a variable
 const myPromise = new Promise((resolve, reject) => {
-  // Resolving a Promise passing a message as a data
+  // Resolve the Promise passing a message as a data
   resolve('Success: promise resolved.')
 
   // If some error happens
   if (error) {
-    // Rejecting a Promise passing a message as a data
+    // Reject the Promise passing a message as a data
     reject('Failure: promise rejected')
   }
 })
@@ -100,12 +100,12 @@ Another option is to return a Promise from a function. Then, when you want to in
 function myFunc() {
   // Return new Promise
   return new Promise(function(resolve, reject) {
-    // Resolving a Promise passing a message as a data
+    // Resolve the Promise passing a message as a data
     resolve('Success: promise resolved.')
 
     // If some error happens
     if (error) {
-      // Rejecting a Promise passing a message as a data
+      // Reject the Promise passing a message as a data
       reject('Failure: promise rejected')
     }
   })
@@ -207,7 +207,7 @@ When you attach it, you pass in a callback function that accepts one parameter. 
 const myPromise = new Promise((resolve, reject) => {
   // Fake a delay
   setTimeout(function() {
-    // Resolve the Promise with a message
+    // Reject the Promise with a message
     reject('Promise has been rejected...')
   }, 1000)
 })
@@ -252,6 +252,41 @@ myPromise
 ```
 
 ### The finally() handler function
+
+The `finally()` is the last handler function you can use. What's special on this handler is that it will be invoked every time the Promise is `settled`. It will be invoked whether the Promise is `fulfilled` or `rejected`. This can be useful when you want to do something regardless of the final state of a Promise.
+
+The `finally()` handler is used in the same way as the `then()` and `catch()`. You attach it to the Promise when you invoke it. The  `finally()` is usually attached as the last, after `then()` and `catch()` handlers. Unlike the previous two, this handler doesn't require any parameter because there is nothing passed into it.
+
+```JavaScript
+const myPromise = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('Promise has been resolved.')
+  }, 1000)
+})
+
+// Invoke the myPromise and attach then() handler
+// then attach catch() handler
+// and then attach finally() handler
+myPromise
+  .then((receivedData) => {
+    // Log the data received by Promise
+    console.log(receivedData)
+  })
+  .catch((error) => {
+    // Log the error message received by Promise
+    console.log(error)
+  })
+  .finally(() => {
+    // Log some notification message
+    console.log('Promise is done.')
+  })
+
+// Output:
+// 'Promise has been resolved.'
+// 'Promise is done.'
+```
 
 ## Promise methods
 
