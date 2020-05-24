@@ -386,15 +386,71 @@ Promise.all([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 ### Promise.allSettled()
 
-Promise.allSettled() is also passed an iterable (usually an array of other promises) and will attempt to resolve all of them. If any of these promises throws an exception or rejects, its status is set to rejected.
+The `Promise.allSettled()` is another method you can use to work with multiple Promises. The `Promise.allSettled()` works similarly to the `Promise.all()`. It will also try to resolve all Promises you passed into it. The difference is that if any Promise is rejected the `Promise.allSettled()` waits for other Promises.
 
-wherease Promise.allSettled will await the completion of all promises.
+It is only when all Promises are settled when the `Promise.allSettled()` returns the values it got from all Promises. This is another difference from `Promise.all()`. The `Promise.allSettled()` will return all values regardless if any of the Promises gets rejected or not.
 
-An important note is that Promise.allSettled can never throw. You do not need to wrap it with try/catch - it will always resolve.
+Values returned by `Promise.allSettled()` are in the form of an objects. Each object contains status of the Promises. It can be `fulfilled` or `rejected`. When Promise is resolved corresponding object contains a `value` with value received from that Promise. If Promise is rejected the corresponding object contains `reason` with error data.
+
+This makes it a better choice than `Promise.all()`. You don't have to worry about losing resolved values just because one Promise fails. Instead, you will get all values, from those Promises that are resolved as well as from those that are rejected.
+
+```JavaScript
+const myPromiseOne = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseOne has been resolved.')
+  }, 500)
+})
+
+// Create second Promise that rejects
+const myPromiseTwo = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Reject the Promise with a message
+    reject('myPromiseTwo has been rejected!')
+  }, 1000)
+})
+
+// Create third Promise that resolves
+const myPromiseThree = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseThree has been resolved.')
+  }, 1000)
+})
+
+// Use Promise.allSettled() to process all Promises
+Promise.allSettled([myPromiseOne, myPromiseTwo, myPromiseThree])
+  .then((data) => {
+    // Log data when all Promises are resolved
+    console.log(data)
+  })
+  .catch((error) => {
+    // Log error message when some Promise is rejected
+    console.log(error)
+  })
+
+// Output:
+// [
+//   {
+//     status: 'fulfilled',
+//     value: 'myPromiseOne has been resolved.'
+//   },
+//   {
+//     status: 'rejected',
+//     reason: 'myPromiseTwo has been rejected!' },
+//   {
+//     status: 'fulfilled',
+//     value: 'myPromiseThree has been resolved.'
+//   }
+// ]
+```
 
 ### Promise.race()
 
-The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise. 1
+The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
 
 ### Promise.any()
 
