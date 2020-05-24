@@ -395,6 +395,7 @@ Values returned by `Promise.allSettled()` are in the form of an objects. Each ob
 This makes it a better choice than `Promise.all()`. You don't have to worry about losing resolved values just because one Promise fails. Instead, you will get all values, from those Promises that are resolved as well as from those that are rejected.
 
 ```JavaScript
+// Create first Promise that resolves
 const myPromiseOne = new Promise((resolve, reject) => {
   // Fake a delay
   setTimeout(function() {
@@ -450,7 +451,49 @@ Promise.allSettled([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 ### Promise.race()
 
-The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+The `Promise.race()` does what its name implies. It takes a couple of Promises and let them race. Meaning, it will return new Promise when one of the Promises that you passed into it fulfills or rejects as first. This new Promise will contain either value or reason. Value if the fastest Promise fulfills and reason if it fails.
+
+```JavaScript
+const myPromiseOne = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseOne has been resolved.')
+  }, 500)
+})
+
+// Create second Promise that resolves
+const myPromiseTwo = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseTwo has been rejected!')
+  }, 1000)
+})
+
+// Create third Promise that resolves
+const myPromiseThree = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseThree has been resolved.')
+  }, 1500)
+})
+
+// Use Promise.race() to process all Promises
+Promise.race([myPromiseOne, myPromiseTwo, myPromiseThree])
+  .then((data) => {
+    // Log data when all Promises are resolved
+    console.log(data)
+  })
+  .catch((error) => {
+    // Log error message when some Promise is rejected
+    console.log(error)
+  })
+
+// Output:
+// 'myPromiseOne has been resolved.'
+```
 
 ### Promise.any()
 
