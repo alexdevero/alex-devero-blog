@@ -37,6 +37,8 @@ const myPromise = new Promise((resolve, reject) => {
 })
 ```
 
+## Resolving and rejecting Promises
+
 When you want the Promise to return some data, you pass those data into the `resolve`. For example, when your Promises makes a call to an API you pass into the `resolve` the data returned from the API. If some error occurs you can pass the data about the error to the `reject` callback. Or, some error message.
 
 ```JavaScript
@@ -101,23 +103,13 @@ function myFunc() {
 myFunc()
 ```
 
-## Promises and states
+## Four states of JavaScript Promises
 
+On the lines above you read about Promises being resolved or rejected. These two are related to states JavaScript Promises have. These states describe in which state Promise is, and if any handler function should attached to that Promise should be invoked. JavaScript Promises have four states.
 
+The first state is called `pending`. This is the initial state when you create a Promise and invoke it. This state says that the Promise is neither fulfilled (resolved) nor rejected. The second state is called `fulfilled`. This means that Promise was successfully resolved.
 
-pending: initial state, neither fulfilled nor rejected.
-
-fulfilled: meaning that the operation completed successfully.
-
-rejected: meaning that the operation failed.
-
-settled: Has fulfilled or rejected
-
-## Resolving and rejecting Promises
-
-### Promise.resolve()
-
-### Promise.reject()
+The third state is called `rejected`. When this happens it means there was some problem that prevented the Promise from being successfully fulfilled (resolved). The fourth and last state is called `settled`. This means that the job of the Promise is finished and the Promise was either fulfilled or rejected.
 
 ## Handling JavaScript Promises
 
