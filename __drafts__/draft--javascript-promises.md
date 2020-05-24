@@ -1,4 +1,4 @@
-# Blog post title [...]
+# JavaScript Promises - An Introduction
 <!--more-->
 <!--
 Table of Contents:
@@ -6,7 +6,25 @@ Table of Contents:
 
 ## Introduction
 
+What are JavaScript promises? Promises are objects that represent some value. You don't know that value when you create a promise. You will get this value in the future when a promise is resolved or rejected. Code that follows the promise is not block by it. This makes writing asynchronous code much easier and more manageable.
+
+Imagine you have an app. When you start this app it needs to fetch data from some API. The problem is that you don't know whn you will receive this data. Sometimes, you get them quickly. Sometimes, it might take more time. How can you write your app in a way so it takes this uncertainty into account?
+
+One option could be checking the data in specific intervals. You would do this until you finally get the data you need. This is neither effective nor clean. Another option is to use a Promise. You can use a Promise to make that API call. When this Promises is settled, that is it is resolved or rejected, you can update your app.
+
+How is this easier? When JavaScript Promise is settled, resolved or rejected, it automatically triggers events you listen to with specific handler methods. So, unlike in the first solution, you don't have to regularly check the status of Promises. The Promise will automatically execute any code you want at the right moment.
+
+I hope this makes a bit sense. If not, let's try more real-life like example. Let's say you are washing your clothes. The problem is that your washing machine doesn't show the time it will take to complete its job. What can you do? One, you can regularly check if it is done, and if you can take your clothes out and put them in a dryer.
+
+Another option is to set this in a way that when your washing machine finishes, there will be something that will automatically take your clothes from the washing machine and put it into dryer, and start drying your clothes. Ideally, it would also put your clothes in a closet when drying is finished. That something, the "bridge" between washing machine and dryer, is a Promise.
+
+## Creating a Promise
+
+That was the theory. Now, to the practice. When you want to create a Promise you use Promise constructor. In the terms of syntax, this means using keyword `new` followed by `Promise()`.
+
 ## Promises and states
+
+
 
 pending: initial state, neither fulfilled nor rejected.
 
@@ -14,15 +32,23 @@ fulfilled: meaning that the operation completed successfully.
 
 rejected: meaning that the operation failed.
 
-## Promise methods
+settled: Has fulfilled or rejected
+
+## Resolving JavaScript Promises
 
 ### Promise.resolve()
 
 ### Promise.reject()
 
+## Handling JavaScript Promises
+
+What if some code depends on the value returned by that promise?
+
+Promise.prototype.then()
 Promise.prototype.catch()
 Promise.prototype.finally()
-Promise.prototype.then()
+
+## Promise methods
 
 ### Promise.all()
 
