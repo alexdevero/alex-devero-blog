@@ -137,7 +137,9 @@ However, there would be nothing processing the data it returns. The data would b
 
 Let's stat with the first handler function, the `then()`. This handler is usually used to handle `fulfilled` state of JavaScript Promises. In order to use the `then()`, or any other handler, you have to attach it after the Promise when you invoke it. This means referencing the Promise by its name and then adding `.then()`
 
- When the Promise is settled (resolved or rejected) the data will be passed to the `then()` handler. Accessing this data is easy. All you need is to pass a callback function to the `then()` handler. This callback function should accept one parameter. Any data returned by the Promise will then be available through this parameter.
+When the Promise is settled (resolved or rejected) the data will be passed to the `then()` handler. These data are the data passed into the `resolve()` handler inside the Promise. When you want to access this data all you need to do is to pass a callback function to the `then()` handler.
+
+This callback function should accept one parameter. Any data returned by the Promise (resolved) will then be available through this parameter.
 
 ```JavaScript
 // Create a Promise
@@ -170,7 +172,7 @@ This second callback should also accept one parameter. Through this parameter yo
 const myPromise = new Promise((resolve, reject) => {
   // Fake a delay
   setTimeout(function() {
-    // Resolve the Promise with a simple message
+    // Reject the Promise with a message
     reject('Promise has been rejected...')
   }, 1000)
 })
@@ -192,6 +194,64 @@ myPromise.then((receivedData) => {
 ```
 
 *Note: Remember to separate handlers for `fulfilled` and `rejected` state with comma if you decide to use `then()` handler function for both.*
+
+### The catch() handler function
+
+Another way, the usual, for handling `rejected` states of JavaScript Promises is by using `catch()` handler. Using tis handler and accessing any data passed into it is the same as with `then()`. When you attach it to a Promise it is a good practice to attach it after the `then()` handler.
+
+When you attach it, you pass in a callback function that accepts one parameter. When Promise gets rejected any data passed into the `reject()` handler inside the Promise will be available through parameter.
+
+```JavaScript
+// Reject example no.1: without then()
+// Create a Promise
+const myPromise = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    reject('Promise has been rejected...')
+  }, 1000)
+})
+
+// Invoke the myPromise and attach catch() handler
+// Pass a callback function to the catch() handler
+// Make that callback function accept one parameter
+myPromise.catch((error) => {
+  // Log the error message received by Promise
+  console.log(error)
+})
+
+// Output:
+// 'Promise has been rejected...'
+
+
+// Reject example no.2: with then()
+// Create a Promise
+const myPromise = new Promise((resolve, reject) => {
+  // Fake a delay
+  if (error) {
+    // Resolve the Promise with a message
+    reject('Promise has been rejected...')
+  } else {
+    resolve('Promise has been resolved.')
+  }
+})
+
+// Invoke the myPromise and first attach then() handler
+// with a callback function to that accepts one parameter
+// then attach catch() handler also with a callback function
+// that accepts one parameter
+myPromise
+  .then((receivedData) => {
+    // Log the data received by Promise
+    console.log(receivedData)
+  })
+  .catch((error) => {
+    // Log the error message received by Promise
+    console.log(error)
+  })
+```
+
+### The finally() handler function
 
 ## Promise methods
 
