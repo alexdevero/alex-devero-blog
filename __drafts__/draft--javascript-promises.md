@@ -37,7 +37,7 @@ const myPromise = new Promise((resolve, reject) => {
 })
 ```
 
-## Resolving and rejecting Promises
+## Resolving and rejecting Promises with static methods
 
 When you want the Promise to return some data, you pass those data into the `resolve`. For example, when your Promises makes a call to an API you pass into the `resolve` the data returned from the API. If some error occurs you can pass the data about the error to the `reject` callback. Or, some error message.
 
