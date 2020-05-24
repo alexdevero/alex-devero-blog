@@ -133,6 +133,66 @@ If you want to work with the data returned by a Promise these handlers are the p
 
 However, there would be nothing processing the data it returns. The data would be basically locked inside the Promise object. This is why these handlers are important. They are like messengers that transport the message from Promise further down the chain.
 
+### The then() handler function
+
+Let's stat with the first handler function, the `then()`. This handler is usually used to handle `fulfilled` state of JavaScript Promises. In order to use the `then()`, or any other handler, you have to attach it after the Promise when you invoke it. This means referencing the Promise by its name and then adding `.then()`
+
+ When the Promise is settled (resolved or rejected) the data will be passed to the `then()` handler. Accessing this data is easy. All you need is to pass a callback function to the `then()` handler. This callback function should accept one parameter. Any data returned by the Promise will then be available through this parameter.
+
+```JavaScript
+// Create a Promise
+const myPromise = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a simple message
+    resolve('Promise has been resolved!')
+  }, 1000)
+})
+
+// Invoke the myPromise and attach then() handler
+// Pass a callback function to the then() handler
+// Make that callback function accept one parameter
+myPromise.then((receivedData) => {
+  // Log the data received by Promise
+  console.log(receivedData)
+})
+
+// Output:
+// 'Promise has been resolved!'
+```
+
+There is one interesting thing on `then()` handler. You can use this handler also to handle `rejected` state of Promise. Well, to handle both states. This is because the primary function of this handler is to handle `fulfilled` state. When you want it to handle `rejected` state you need to pass a second callback function to it.
+
+This second callback should also accept one parameter. Through this parameter you will be able to access any error data passed by the Promise. This is why the `then()` handler is primarily used for `fulfilled` state and not `rejected`. It is hard to pass a second callback to handle the `rejected` state without passing the first to handle the `fulfilled` state first.
+
+```JavaScript
+// Create a Promise
+const myPromise = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a simple message
+    reject('Promise has been rejected...')
+  }, 1000)
+})
+
+// Invoke the myPromise and attach then() handler
+// Pass a callback function to the then() handler
+// Make that callback function accept one parameter
+myPromise.then((receivedData) => {
+  // This is the first callback, for 'fulfilled' state
+  // Log the data received by Promise
+  console.log(receivedData)
+}, (error) => { // <= Remember to separate handlers with comma
+  // This is the second callback, for 'rejected' state
+  console.log(error)
+})
+
+// Output:
+// 'Promise has been rejected...'
+```
+
+*Note: Remember to separate handlers for `fulfilled` and `rejected` state with comma if you decide to use `then()` handler function for both.*
+
 ## Promise methods
 
 ### Promise.all()
