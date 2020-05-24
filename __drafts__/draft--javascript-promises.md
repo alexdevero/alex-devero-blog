@@ -47,8 +47,11 @@ const myPromise = new Promise(function(resolve, reject) {
   // Resolving a Promise passing a message as a data
   resolve('Success: promise resolved.')
 
-  // Rejecting a Promise passing a message as a data
-  reject('Failure: promise rejected')
+  // If some error happens
+  if (error) {
+    // Rejecting a Promise passing a message as a data
+    reject('Failure: promise rejected')
+  }
 })
 
 // Invoke the Promise
@@ -60,8 +63,11 @@ const myPromise = new Promise((resolve, reject) => {
   // Resolving a Promise passing a message as a data
   resolve('Success: promise resolved.')
 
-  // Rejecting a Promise passing a message as a data
-  reject('Failure: promise rejected')
+  // If some error happens
+  if (error) {
+    // Rejecting a Promise passing a message as a data
+    reject('Failure: promise rejected')
+  }
 })
 
 // Invoke the Promise
@@ -76,8 +82,11 @@ const myPromise = new Promise((resolve, reject) => {
   // Resolving a Promise passing a message as a data
   resolve('Success: promise resolved.')
 
-  // Rejecting a Promise passing a message as a data
-  reject('Failure: promise rejected')
+  // If some error happens
+  if (error) {
+    // Rejecting a Promise passing a message as a data
+    reject('Failure: promise rejected')
+  }
 })
 
 // Invoke the Promise
@@ -91,11 +100,14 @@ Another option is to return a Promise from a function. Then, when you want to in
 function myFunc() {
   // Return new Promise
   return new Promise(function(resolve, reject) {
-  // Resolving a Promise passing a message as a data
-  resolve('Success: promise resolved.')
+    // Resolving a Promise passing a message as a data
+    resolve('Success: promise resolved.')
 
-  // Rejecting a Promise passing a message as a data
-  reject('Failure: promise rejected')
+    // If some error happens
+    if (error) {
+      // Rejecting a Promise passing a message as a data
+      reject('Failure: promise rejected')
+    }
   })
 }
 
@@ -113,11 +125,13 @@ The third state is called `rejected`. When this happens it means there was some 
 
 ## Handling JavaScript Promises
 
-What if some code depends on the value returned by that promise?
+You know how to create a Promise and the four states in which it can be. What you need to next is how to handle Promise. You need to know how you can work with the data returned by a Promise, data passed into `resolve` and `reject` callbacks. This is where `then()`, `catch()` and `finally()` comes into game.
 
-Promise.prototype.then()
-Promise.prototype.catch()
-Promise.prototype.finally()
+The `then()`, `catch()` and `finally()` are handler function you can attach to a Promise. These handlers are important. When you invoke a Promise and the promise is settled (resolved or rejected) one of these handlers will be automatically invoked. When there are some data returned from a Promise it is passed into these handlers.
+
+If you want to work with the data returned by a Promise these handlers are the place where to do it. For example, you could put logic for updating your app with the data you received from API into these handlers. What if you don't use any of these handlers?The Promise would still run after you invoke it.
+
+However, there would be nothing processing the data it returns. The data would be basically locked inside the Promise object. This is why these handlers are important. They are like messengers that transport the message from Promise further down the chain.
 
 ## Promise methods
 
