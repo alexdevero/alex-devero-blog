@@ -563,6 +563,10 @@ Promise.any([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 ## Conclusion: JavaScript Promises
 
+Congratulations! You've just finished this article about JavaScript Promises. If you followed along you should know what Promises are, how to create them and how to resolve or reject them. You should also know how to use `then()`, `catch()` and `finally()` handler functions to handle data returned by settled Promises.
+
+Lastly, you should be able to use `Promise.all()`, `Promise.allSettled()`, `Promise.race()` and `Promise.any()` methods to handle multiple Promises at the same time. With this, you are well-equipped to write cleaner and more intuitive asynchronous JavaScript code. You can also finally say goodbye to callback hell.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
