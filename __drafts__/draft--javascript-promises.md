@@ -123,7 +123,7 @@ The first state is called `pending`. This is the initial state when you create a
 
 The third state is called `rejected`. When this happens it means there was some problem that prevented the Promise from being successfully fulfilled (resolved). The fourth and last state is called `settled`. This means that the job of the Promise is finished and the Promise was either fulfilled or rejected.
 
-## Handling JavaScript Promises
+## Handling JavaScript Promises with prototype methods
 
 You know how to create a Promise and the four states in which it can be. What you need to next is how to handle Promise. You need to know how you can work with the data returned by a Promise, data passed into `resolve` and `reject` callbacks. This is where `then()`, `catch()` and `finally()` comes into game.
 
