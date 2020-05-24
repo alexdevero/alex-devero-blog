@@ -384,6 +384,8 @@ Promise.all([myPromiseOne, myPromiseTwo, myPromiseThree])
 // before the myPromiseTwo was rejected are missing
 ```
 
+*Note: Make sure to add `catch()` handler when you use `Promise.all()`. Or, add a second callback to `then()`. Otherwise, you will not get any error data if any Promise gets rejected.*
+
 ### Promise.allSettled()
 
 The `Promise.allSettled()` is another method you can use to work with multiple Promises. The `Promise.allSettled()` works similarly to the `Promise.all()`. It will also try to resolve all Promises you passed into it. The difference is that if any Promise is rejected the `Promise.allSettled()` waits for other Promises.
@@ -428,10 +430,6 @@ Promise.allSettled([myPromiseOne, myPromiseTwo, myPromiseThree])
     // Log data when all Promises are resolved
     console.log(data)
   })
-  .catch((error) => {
-    // Log error message when some Promise is rejected
-    console.log(error)
-  })
 
 // Output:
 // [
@@ -454,6 +452,7 @@ Promise.allSettled([myPromiseOne, myPromiseTwo, myPromiseThree])
 The `Promise.race()` does what its name implies. It takes a couple of Promises and let them race. Meaning, it will return new Promise when one of the Promises that you passed into it fulfills or rejects as first. This new Promise will contain either value or reason. Value if the fastest Promise fulfills and reason if it fails.
 
 ```JavaScript
+// Create first Promise that resolves
 const myPromiseOne = new Promise((resolve, reject) => {
   // Fake a delay
   setTimeout(function() {
@@ -495,7 +494,56 @@ Promise.race([myPromiseOne, myPromiseTwo, myPromiseThree])
 // 'myPromiseOne has been resolved.'
 ```
 
+*Note: Similarly to `Promise.all()`, also add `catch()` handler when you use `Promise.race()`. Or, add a second callback to `then()`. Otherwise, you will not get any error data if the first Promise  gets rejected.*
+
 ### Promise.any()
+
+The `Promise.any()` is similar to `Promise.race()`. The difference between thm is that `Promise.any()` will ignore any Promise that is settled as first if it is rejected. It will return only Promise that is first and also `fulfilled` (resolved).
+
+```JavaScript
+// Create first Promise that rejects
+const myPromiseOne = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Reject the Promise with a message
+    reject('myPromiseOne has been resolved.')
+  }, 500)
+})
+
+// Create second Promise that rejects
+const myPromiseTwo = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Reject the Promise with a message
+    reject('myPromiseTwo has been rejected!')
+  }, 1000)
+})
+
+// Create third Promise that resolves
+const myPromiseThree = new Promise((resolve, reject) => {
+  // Fake a delay
+  setTimeout(function() {
+    // Resolve the Promise with a message
+    resolve('myPromiseThree has been resolved.')
+  }, 1500)
+})
+
+// Use Promise.all() to process all Promises
+Promise.any([myPromiseOne, myPromiseTwo, myPromiseThree])
+  .then((data) => {
+    // Log data when all Promises are resolved
+    console.log(data)
+  })
+  .catch((error) => {
+    // Log error message when some Promise is rejected
+    console.log(error)
+  })
+
+// Output:
+// 'myPromiseThree has been resolved.'
+```
+
+*Note: At the time of writing this article Promise.any() is at [Stage 3] proposal. This means that it is not a stable part of JavaScript language and is still experimental. It is also not supported in all browsers.*
 
 ## Conclusion: [...] ...
 
@@ -503,6 +551,7 @@ Promise.race([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 <!-- ### Links -->
 [function expression]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
+[Stage 3]: https://github.com/tc39/proposal-promise-any
 
 <!--
 ### Meta:
