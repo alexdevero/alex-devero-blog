@@ -1,4 +1,6 @@
 # JavaScript Promises - All You Need to Know
+
+JavaScript Promises provide cleaner and more intuitive way to deal with asynchronous code. This tutorial will help you understand what Promises are and how to create them. You will also learn how to use them with handler functions. At the end, you will also learn how to handle multiple Promises.
 <!--more-->
 <!--
 Table of Contents:
