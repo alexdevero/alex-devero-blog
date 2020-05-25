@@ -1,4 +1,4 @@
-# JavaScript Promises - All You Need to Know
+# JavaScript Promises - All You Need to Know to Get Started
 
 JavaScript Promises provide cleaner and more intuitive way to deal with asynchronous code. This tutorial will help you understand what Promises are and how to create them. You will also learn how to use them with handler functions. At the end, you will also learn how to handle multiple Promises.
 <!--more-->
@@ -578,6 +578,5 @@ Lastly, you should be able to use `Promise.all()`, `Promise.allSettled()`, `Prom
 
 <!--
 ### Resources:
-- https://blog.jonlu.ca/posts/promises
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+-
 -->
