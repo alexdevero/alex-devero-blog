@@ -28,11 +28,9 @@ Imagine you have an app. When you start this app it needs to fetch data from som
 
 One option could be checking the data in specific intervals. You would do this until you finally get the data you need. This is neither effective nor clean. Another option is to use a Promise. You can use a Promise to make that API call. When this Promises is settled, that is it is resolved or rejected, you can update your app.
 
-How is this easier? When JavaScript Promise is settled, resolved or rejected, it automatically triggers events you listen to with specific handler methods. So, unlike in the first solution, you don't have to regularly check the status of Promises. The Promise will automatically execute any code you want at the right moment.
+How is this easier? When JavaScript Promise is settled, resolved or rejected, it automatically triggers events you can listen to with specific handler methods. With that, you don't have to regularly check the status of Promises like in the first solution.
 
-I hope this makes a bit sense. If not, let's try more real-life like example. Let's say you are washing your clothes. The problem is that your washing machine doesn't show the time it will take to complete its job. What can you do? One, you can regularly check if it is done, and if you can take your clothes out and put them in a dryer.
-
-Another option is to set this in a way that when your washing machine finishes, there will be something that will automatically take your clothes from the washing machine and put it into dryer, and start drying your clothes. Ideally, it would also put your clothes in a closet when drying is finished. That something, the "bridge" between washing machine and dryer, is a Promise.
+Instead, your handlers will automatically execute any code you want at the right moment when Promise returns some value. I hope this makes sense.
 
 ## Creating a Promise
 
