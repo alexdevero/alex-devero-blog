@@ -22,9 +22,9 @@ Table of Contents:
 
 ## Introduction
 
-What are JavaScript promises? Promises are objects that represent some value. You don't know that value when you create a promise. You will get this value in the future when a promise is resolved or rejected. Code that follows the promise is not block by it. This makes writing asynchronous code much easier and more manageable.
+What are JavaScript promises? Promises are objects that represent some value. You don't know that value when you create a Promise. You will get this value in the future when a promise is resolved or rejected. Code that follows the Promise is not block by it. This makes writing asynchronous code much easier and more manageable.
 
-Imagine you have an app. When you start this app it needs to fetch data from some API. The problem is that you don't know whn you will receive this data. Sometimes, you get them quickly. Sometimes, it might take more time. How can you write your app in a way so it takes this uncertainty into account?
+Imagine you have an app. When you start this app it needs to fetch data from some API. The problem is that you don't know when you will receive this data. Sometimes, you get them quickly. Sometimes, it might take more time. How can you write your app in a way so it takes this uncertainty into account?
 
 One option could be checking the data in specific intervals. You would do this until you finally get the data you need. This is neither effective nor clean. Another option is to use a Promise. You can use a Promise to make that API call. When this Promises is settled, that is it is resolved or rejected, you can update your app.
 
@@ -131,7 +131,7 @@ myFunc()
 
 ## Four states of JavaScript Promises
 
-On the lines above you read about Promises being resolved or rejected. These two are related to states JavaScript Promises have. These states describe in which state Promise is, and if any handler function should attached to that Promise should be invoked. JavaScript Promises have four states.
+On the lines above you read about Promises being resolved or rejected. These two are related to states JavaScript Promises have. These states describe in which state Promise is, and if any handler function that is attached to that Promise should be invoked. JavaScript Promises have four states.
 
 The first state is called `pending`. This is the initial state when you create a Promise and invoke it. This state says that the Promise is neither fulfilled (resolved) nor rejected. The second state is called `fulfilled`. This means that Promise was successfully resolved.
 
@@ -143,7 +143,7 @@ You know how to create a Promise and the four states in which it can be. What yo
 
 The `then()`, `catch()` and `finally()` are handler function you can attach to a Promise. These handlers are important. When you invoke a Promise and the promise is settled (resolved or rejected) one of these handlers will be automatically invoked. When there are some data returned from a Promise it is passed into these handlers.
 
-If you want to work with the data returned by a Promise these handlers are the place where to do it. For example, you could put logic for updating your app with the data you received from API into these handlers. What if you don't use any of these handlers?The Promise would still run after you invoke it.
+If you want to work with the data returned by a Promise these handlers are the place where to do it. For example, you could put logic for updating your app with the data you received from API into these handlers. What if you don't use any of these handlers? The Promise would still run after you invoke it.
 
 However, there would be nothing processing the data it returns. The data would be basically locked inside the Promise object. This is why these handlers are important. They are like messengers that transport the message from Promise further down the chain.
 
@@ -211,7 +211,7 @@ myPromise.then((receivedData) => {
 
 ### The catch() handler function
 
-Another way, the usual, for handling `rejected` states of JavaScript Promises is by using `catch()` handler. Using tis handler and accessing any data passed into it is the same as with `then()`. When you attach it to a Promise it is a good practice to attach it after the `then()` handler.
+Another way, the usual, for handling `rejected` states of JavaScript Promises is by using `catch()` handler. Using this handler and accessing any data passed into it is the same as with `then()`. When you attach it to a Promise it is a good practice to attach it after the `then()` handler.
 
 When you attach it, you pass in a callback function that accepts one parameter. When Promise gets rejected any data passed into the `reject()` handler inside the Promise will be available through parameter.
 
@@ -306,7 +306,7 @@ myPromise
 
 Working with JavaScript Promises is easy when you have to handle just one or two. What if you have to handle more Promise at once? Fortunately, JavaScript offers some methods that will make this easier for you. These methods are `all(),` `allSettled(),` `race()` and `any()`.
 
-All these methods accept an iterable object such as an array. This object contains Promises you want to invoke. The difference is that each of these methods works in a different way and leads to different results. So, let's take a look at each.
+All these methods accept an iterable object, like an array for example. This object contains Promises you want to invoke. The difference is that each of these methods works in a different way and leads to different results. So, let's take a look at each.
 
 ### Promise.all()
 
@@ -402,7 +402,7 @@ Promise.all([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 ### Promise.allSettled()
 
-The `Promise.allSettled()` is another method you can use to work with multiple Promises. The `Promise.allSettled()` works similarly to the `Promise.all()`. It will also try to resolve all Promises you passed into it. The difference is that if any Promise is rejected the `Promise.allSettled()` waits for other Promises.
+The `Promise.allSettled()` is another method you can use to handle multiple Promises. The `Promise.allSettled()` works similarly to the `Promise.all()`. It will also try to resolve all Promises you passed into it. The difference is that if any Promise is rejected the `Promise.allSettled()` waits for other Promises.
 
 It is only when all Promises are settled when the `Promise.allSettled()` returns the values it got from all Promises. This is another difference from `Promise.all()`. The `Promise.allSettled()` will return all values regardless if any of the Promises gets rejected or not.
 
@@ -512,7 +512,7 @@ Promise.race([myPromiseOne, myPromiseTwo, myPromiseThree])
 
 ### Promise.any()
 
-The `Promise.any()` is similar to `Promise.race()`. The difference between thm is that `Promise.any()` will ignore any Promise that is settled as first if it is rejected. It will return only Promise that is first and also `fulfilled` (resolved).
+The `Promise.any()` is similar to `Promise.race()`. The difference between them is that `Promise.any()` will ignore any Promise that is settled as first if it is rejected. It will return only Promise that is first and also `fulfilled` (resolved).
 
 ```JavaScript
 // Create first Promise that rejects
