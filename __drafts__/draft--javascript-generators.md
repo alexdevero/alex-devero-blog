@@ -29,13 +29,13 @@ This means that you can suspend, or pause, the generator for as long as you want
 
 You can do this, starting and pausing and starting, as many times as you want. Interesting fact. You can create generator that never finishes, something like an infinite loop. Don't worry, infinite generator will not cause a mess like infinite loop. What's more, generator can communicate with the rest of code with each start and restart.
 
-What I meaning is that you can pass a data to generator when you start it, or restart it. You can also return, or yield data, when you pause it. Wrapping one's head around generators can be difficult. Let's take a look at the code. That might give you a better picture.
+What I mean is that you can pass a data to generator when you start it, or restart it. You can also return, or yield data, when you pause it. Wrapping one's head around generators can be difficult. Let's take a look at the code. That might give you a better picture.
 
 ## Generator syntax
 
-The syntax of generators is very simple. You define a generator in a similar way you would define a function. The difference is that you put asterix (`*`) right before the name of the function, or generator, such as `function *myGen() { }`. This asterix is a signal for JavaScript that the function a type of generator function.
+The syntax of generators is very simple. You define a generator in a similar way you would define a function. The difference is that you put asterisk (`*`) right before the name of the function, or generator, such as `function *myGen() { }`. This asterisk is a signal for JavaScript that the function a type of generator function.
 
-Another option you may have seen is to put the asterix right after the `function` keyword, such as `function* myGen() { }`. Both ways are valid, but JavaScript developers tend to use more often the former, with asterix right before the name. I think that asterix right before the name is more readable.
+Another option you may have seen is to put the asterisk right after the `function` keyword, such as `function* myGen() { }`. Both ways are valid, but JavaScript developers tend to use more often the former, with asterisk right before the name. I think that asterisk right before the name is more readable.
 
 ```JavaScript
 // Generator syntax
@@ -48,11 +48,12 @@ function* myGenerator() {
   // ... some code
 }
 ```
+
 What about the content? Well, generators are very similar to normal JavaScript functions. What you do inside normal functions you can also do inside generators. So, there are special or required things you would have to learn. Maybe except one thing called `yield`.
 
 ## Assigning generator to a variable
 
-When you create a generator, and call it, will not execute the code inside it. Instead, it will return `Generator` object. What you need to do with this Generator object is to assign it to a variable. When you want to work with the generator, that is start it, pause it and start it again, you reference the variable.
+When you create a generator, and call it, will not execute the code inside it. Instead, it will return `Generator` object. What you need to do with this Generator object is to assign it to a variable. When you want to work with the generator, that is to start it, pause it and start it again, you reference the variable.
 
 What if you don't assign the generator to a variable? It will always yield, or return, only the value that follows the first `yield` keyword. This will happen every time you resume it using `next()`. The generator will not remember the last value it returned, or the last yield it encountered. It will always start from the beginning.
 
@@ -136,7 +137,7 @@ What if there is no third `yield`? The generator will return `undefined`. The sa
 
 This object always contains two key/value pairs. The first is for a `value` returned by `yield` from generator. If there is no `yield` or value returned, the value of `value` key is `undefined`. The second is for `done`. The value of `done` is always boolean. The `done` indicates if generator is done or not.
 
-A generator is done when there is no `yield` to be processed. If generator contains one `yield` it will require two starts to complete it. First start will yield the value you specified after the `yield` keyword. The value of `done` with be `false`. Second start will return `undefined`. The value of `done` with be `true`.
+A generator is done when there is no `yield` to be processed. If generator contains one `yield` it will require two starts to complete it. The first start will yield the value you specified after the `yield` keyword. The value of `done` with be `false`. The second start will return `undefined`. The value of `done` with be `true`.
 
 If you don't add any `yield` keyword inside the generator it will return value set to `undefined` and `done` set to `true` on the first start.
 
@@ -242,7 +243,7 @@ console.log(myGeneratorVar.next())
 
 JavaScript generators are very similar to normal JavaScript functions. One of these similarities is that you can also use `return` statement inside them. When you do this, the generator will still pause with every `yield` it encounters. However, it will do so only with those that precede the `return` statement.
 
-When generator encounters `return` statement it stops its execution,forever. If you return some value, the `return` statement will cause the generator to return that value. Otherwise, it will return `undefined` as a `value` of the returned object. At the same time, it will also return the `done` set to `true`.
+When generator encounters `return` statement it stops its execution, forever. If you return some value, the `return` statement will cause the generator to return that value. Otherwise, it will return `undefined` as a `value` of the returned object. At the same time, it will also return the `done` set to `true`.
 
 This means that `return` statement will cause the generator to finish immediately. When you try to resume the generator you will get the same result as if the generator reached the last yield or end of the block. The `value` of returned object will be set to `undefined` and `done` will be set to `true`.
 
@@ -327,7 +328,7 @@ console.log(message.next())
 // { value: undefined, done: true }
 ```
 
-Once the generator is done, once there are no more `yield` keywords the `next()` will always return the same. it will return object where value will be set to `undefined` and `done` to true. This will also happen generator reaches the end of its block.
+Once the generator is done, once there are no more `yield` keywords the `next()` will always return the same. It will return object where value will be set to `undefined` and `done` to true. This will also happen generator reaches the end of its block.
 
 ```JavaScript
 // Create generator
@@ -367,7 +368,7 @@ Since we are talking about `next()` this is worth repeating. If you don't assign
 
 ### The next() method and arguments
 
-One interesting thing about JavaScript generators is that it is possible to can pass values into them. You can do this by passing values as arguments to the `next()` method when you call it. We briefly touched talked about this in the "Assigning yield to variables" section.
+One interesting thing about JavaScript generators is that it is possible to pass values into them. You can do this by passing values as arguments to the `next()` method when you call it. We briefly touched talked about this in the "Assigning yield to variables" section.
 
 What this means is that JavaScript generators can not only send data out via `yield`, they can also accept data from the outside. However, there is a catch. Passing data to `next()` method will not work the first time you will call it. Or, when you start the generator for the first time.
 
@@ -442,7 +443,7 @@ This is one of the tricky parts of JavaScript generators. It might require some 
 
 ## Yield*
 
-Until now we've been talking only about `yield`. There is also `yield*`, a `yield` ending with asterix. When you start a generator, the `yield*` allows you to delegate, or switch, to another generator and complete that. Only when the second generator is done first generator can continue.
+Until now we've been talking only about `yield`. There is also `yield*`, a `yield` ending with asterisk. When you start a generator, the `yield*` allows you to delegate, or switch, to another generator and complete that. Only when the second generator is done first generator can continue.
 
 When you want to use `yield*` you use it followed by call of another generator. That is, followed by the name of another generator that is followed by pair of parenthesis. Then, call the main generator and use `next()` to iterate over yields. One thing to remember. You can use `yield*` only inside a generator.
 
