@@ -2,14 +2,19 @@
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
-## h2
+## What are generators
+
+## Generator syntax
+
+## Yield
+
+## next() method
+
+## Return
+
+## Yield*
 
 ## Conclusion: [...] ...
 
