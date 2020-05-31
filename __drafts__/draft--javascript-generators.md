@@ -22,11 +22,25 @@ What I meaning is that you can pass a data to generator when you start it, or re
 
 ## Generator syntax
 
+The syntax of generators is very simple. You define a generator in a similar way you would define a function. The difference is that you put asterix (`*`) right before the name of the function, or generator, such as `function *myGen() { }`. This asterix is a signal for JavaScript that the function a type of generator function.
+
+Another option you may have seen is to put the asterix right after the `function` keyword, such as `function* myGen() { }`. Both ways are valid, but JavaScript developers tend to use more often the former, with asterix right before the name. I think that asterix right before the name is more readable.
+
+```JavaScript
+// Generator syntax
+function *myGenerator() {
+  // ... some code
+}
+
+// Or
+function* myGenerator() {
+  // ... some code
+}
+```
+
+What about the content? Well, generators are very similar to normal JavaScript functions. What you do inside normal functions you can also do inside generators. So, there are special or required things you would have to learn. Maybe except one thing called `yield`.
+
 ## Yield
-
-you use the new yield keyword to pause the function from inside itself. Nothing can pause a generator from the outside. It pauses itself only when it comes across a yield.
-
-However, once a generator has yield-paused itself, it cannot resume on its own. An external control must be used to restart the generator.
 
 ## next() method
 
