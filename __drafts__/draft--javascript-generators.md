@@ -37,8 +37,74 @@ function* myGenerator() {
   // ... some code
 }
 ```
-
 What about the content? Well, generators are very similar to normal JavaScript functions. What you do inside normal functions you can also do inside generators. So, there are special or required things you would have to learn. Maybe except one thing called `yield`.
+
+## Assigning to a variable
+
+When you create a generator, and call it, will not execute the code inside it. Instead, it will return `Generator` object. What you need to do with this Generator object is to assign it to a variable. When you want to work with the generator, that is start it, pause it and start it again, you reference the variable.
+
+What if you don't assign the generator to a variable? It will always yield, or return, only the value that follows the first `yield` keyword. This will happen every time you resume it using `next()`. The generator will not remember the last value it returned, or the last yield it encountered. It will always start from the beginning.
+
+So, always assign a generator to a variable, unless you want the generator to always start and resume from the begging. Remember that the variable you assign the generator is what stores the last value returned by the generator. This variable is basically the memory of the generator. Make sure to use it
+
+```JavaScript
+// Example no.1: without variable assignment
+// Create generator
+function *myGenerator() {
+  yield 1
+  yield 2
+  yield 3
+}
+
+// Call the generator without assigning it to a variable
+console.log(myGenerator().next())
+// Output:
+// { value: 1, done: false }
+
+console.log(myGenerator().next())
+// Output:
+// { value: 1, done: false }
+
+console.log(myGenerator().next())
+// Output:
+// { value: 1, done: false }
+
+console.log(myGenerator().next())
+// Output:
+// { value: 1, done: false }
+
+
+// Example no.2: with variable assignment
+// Example no.1: without variable assignment
+// Create generator
+function *myGenerator() {
+  yield 1
+  yield 2
+  yield 3
+}
+
+// Assign generator to a variable
+const myGeneratorVariable = myGenerator()
+
+// Call the generator referencing 'myGeneratorVariable' variable
+console.log(myGeneratorVariable.next())
+// Output:
+// { value: 1, done: false }
+
+console.log(myGeneratorVariable.next())
+// Output:
+// { value: 2, done: false }
+
+console.log(myGeneratorVariable.next())
+// Output:
+// { value: 3, done: false }
+
+console.log(myGeneratorVariable.next())
+// Output:
+// { value: undefined, done: true }
+```
+
+*Note: Don't worry about what `yield` keyword and `next()` method are. You will learn about both in this tutorial.*
 
 ## Yield
 
@@ -95,7 +161,7 @@ One thing about `yield` and pausing JavaScript generators. You use the `yield` k
 
 This also works in the opposite way for resuming a generator. Once it is paused generator can't resume itself on its own. The only way to resume it is by doing it from the outside. This brings us to the `next()` method.
 
-## next() method
+## The next() method
 
 ## Return
 
