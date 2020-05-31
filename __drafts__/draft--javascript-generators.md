@@ -42,6 +42,59 @@ What about the content? Well, generators are very similar to normal JavaScript f
 
 ## Yield
 
+When it comes to JavaScript generators `yield` keyword is very important. It is this `yield` keyword what pauses execution of a generator. It is also this keyword what can return some value when the generator is paused. You can think about `yield` keyword as a cousin of `return` statement.
+
+Both can be used to return a value. One difference is that while `return` statement terminates function execution the `yield` doesn't. It only pauses the generator. The `yield` works more like a breakpoint. Another difference is that when `yield` returns a value only once.
+
+When you resume the generator it will automatically move on to the next `yield` keyword. It will ignore the first one. The same if you resume the generator for the third time. It will ignore the previous two `yield` keywords and move on to the third one. If there is no third `yield`? The generator will return `undefined`.
+
+The same will also happen if the generator doesn't contain any `yield` keyword. It will return `undefined` the first time you start it. Since we are talking about returned values. This is the third difference between `return` and `yield`. `yield` always returns an object.
+
+This object always contains two key/value pairs. The first is for a `value` returned by `yield` from generator. If there is no `yield` or value returned, the value of `value` key is `undefined`. The second is for `done`. The value of `done` is always boolean. The `done` indicates if generator is finished or not.
+
+A generator is finished when there is no `yield` to be processed. If generator contains one `yield` it will require two starts to complete it. First start will yield the value you specified after the `yield` keyword. The value of `done` with be `false`. Second start will return `undefined`. The value of `done` with be `true`.
+
+If you don't add any `yield` keyword inside the generator it will return value set to `undefined` and `done` set to `true` on the first start.
+
+```JavaScript
+// Generator syntax
+function *myGenerator() {
+  // Yield, or return, a message when myGenerator is started
+  yield 'Message from myGenerator.'
+}
+
+// Assign generator to a variable
+const message = myGenerator()
+
+// Call the generator and log the message (first start)
+console.log(message.next())
+// Call the generator and log the message (second start)
+console.log(message.next())
+
+// Output from the first start:
+// { value: 'Message from myGenerator.', done: false }
+
+// Output from the second start:
+// { value: undefined, done: true }
+
+
+// Generator with no yield
+function *myGenerator() { }
+
+// Assign generator to a variable
+const message = myGenerator()
+
+// Call the generator and log the message
+console.log(message.next())
+
+// Output from the first start:
+// { value: undefined, done: true }
+```
+
+One thing about `yield` and pausing JavaScript generators. You use the `yield` keyword to pause the generator only from the inside of the generator. You can't use it from the outside. There is actually no way to pause a generator from the outside. Generator will pause itself only when it encounters a `yield` inside itself.
+
+This also works in the opposite way for resuming a generator. Once it is paused generator can't resume itself on its own. The only way to resume it is by doing it from the outside. This brings us to the `next()` method.
+
 ## next() method
 
 ## Return
