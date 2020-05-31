@@ -24,6 +24,10 @@ What I meaning is that you can pass a data to generator when you start it, or re
 
 ## Yield
 
+you use the new yield keyword to pause the function from inside itself. Nothing can pause a generator from the outside. It pauses itself only when it comes across a yield.
+
+However, once a generator has yield-paused itself, it cannot resume on its own. An external control must be used to restart the generator.
+
 ## next() method
 
 ## Return
