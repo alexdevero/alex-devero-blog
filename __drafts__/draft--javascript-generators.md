@@ -39,7 +39,7 @@ function* myGenerator() {
 ```
 What about the content? Well, generators are very similar to normal JavaScript functions. What you do inside normal functions you can also do inside generators. So, there are special or required things you would have to learn. Maybe except one thing called `yield`.
 
-## Assigning to a variable
+## Assigning generator to a variable
 
 When you create a generator, and call it, will not execute the code inside it. Instead, it will return `Generator` object. What you need to do with this Generator object is to assign it to a variable. When you want to work with the generator, that is start it, pause it and start it again, you reference the variable.
 
@@ -132,20 +132,37 @@ If you don't add any `yield` keyword inside the generator it will return value s
 ```JavaScript
 // Create generator
 function *myGenerator() {
-  // Yield, or return, a message when myGenerator is started
-  yield 'Message from myGenerator.'
+  yield 1
+  yield 2
+  yield 3
+  yield 4
 }
 
 // Assign generator to a variable
-const message = myGenerator()
+const myGeneratorValue = myGenerator()
 
-// Call the generator and log the message (the first start)
-console.log(message.next())
+// Call the generator for the first time
+console.log(myGeneratorValue.next())
 // Output:
-// { value: 'Message from myGenerator.', done: false }
+// { value: 1, done: false }
 
-// Call the generator and log the message (the second start)
-console.log(message.next())
+// Call the generator for the second time
+console.log(myGeneratorValue.next())
+// Output:
+// { value: 2, done: false }
+
+// Call the generator for the third time
+console.log(myGeneratorValue.next())
+// Output:
+// { value: 3, done: false }
+
+// Call the generator for the fourth time
+console.log(myGeneratorValue.next())
+// Output:
+// { value: 4, done: false }
+
+// Call the generator for the fifth time
+console.log(myGeneratorValue.next())
 // Output:
 // { value: undefined, done: true }
 
@@ -165,6 +182,10 @@ console.log(message.next())
 One thing about `yield` and pausing JavaScript generators. You use the `yield` keyword to pause the generator only from the inside of the generator. You can't use it from the outside. There is actually no way to pause a generator from the outside. Generator will pause itself only when it encounters a `yield` inside itself.
 
 This also works in the opposite way for resuming a generator. Once it is paused generator can't resume itself on its own. The only way to resume it is by doing it from the outside. This brings us to the `next()` method.
+
+### Assigning yield to variables
+
+
 
 ## The next() method
 
