@@ -4,6 +4,17 @@ JavaScript generators, or generator functions, are one of the lesser known featu
 <!--more-->
 <!--
 Table of Contents:
+## What are generators
+## Generator syntax
+## Assigning generator to a variable
+## Yield
+### Assigning yield to variables
+### Yield and return
+## The next() method
+### The next() method and arguments
+## Yield*
+## JavaScript generators and for...of loop
+## Conclusion: A Simple Introduction to JavaScript Generators
 -->
 
 ## What are generators
@@ -227,6 +238,47 @@ console.log(myGeneratorVar.next())
 // { value: undefined, done: true }
 ```
 
+### Yield and return
+
+JavaScript generators are very similar to normal JavaScript functions. One of these similarities is that you can also use `return` statement inside them. When you do this, the generator will still pause with every `yield` it encounters. However, it will do so only with those that precede the `return` statement.
+
+When generator encounters `return` statement it stops its execution,forever. If you return some value, the `return` statement will cause the generator to return that value. Otherwise, it will return `undefined` as a `value` of the returned object. At the same time, it will also return the `done` set to `true`.
+
+This means that `return` statement will cause the generator to finish immediately. When you try to resume the generator you will get the same result as if the generator reached the last yield or end of the block. The `value` of returned object will be set to `undefined` and `done` will be set to `true`.
+
+This also means that if there is any `yield` after `return` statement generator will never get to it.
+
+```JavaScript
+// Create generator
+function *myGenerator() {
+  // Yield a number when myGenerator is started
+  yield 1
+  // Return some value, and terminate the generator
+  return 'The end.'
+  // This second yield will never be reached
+  yield 2
+}
+
+// Assign generator to a variable
+const message = myGenerator()
+
+// Call the generator and log the number (first start)
+console.log(message.next())
+// Output:
+// { value: 1, done: false }
+
+// Call the generator and log the message returned by return statement (second start)
+console.log(message.next())
+// Output:
+// { value: 'The end.', done: true }
+
+// Try to call the generator and log the second yield (third start)
+// Generator is finished and calling next() will now always return the same value
+console.log(message.next())
+// Output:
+// { value: undefined, done: true }
+```
+
 ## The next() method
 
 You know that when you call a generator it will not execute its code. You also know that `yield` keyword is used to pause a generator. One question is, how can start a generator? Another one is, how can you resume paused one? The answer for both question is `next()` method.
@@ -388,47 +440,6 @@ console.log(message.next('Four'))
 
 This is one of the tricky parts of JavaScript generators. It might require some time to understand this. How `next()` method and arguments work together. So, take your time. Go through the example above few times and play with it. Sooner or later, it will click.
 
-## Yield and return
-
-JavaScript generators are very similar to normal JavaScript functions. One of these similarities is that you can also use `return` statement inside them. When you do this, the generator will still pause with every `yield` it encounters. However, it will do so only with those that precede the `return` statement.
-
-When generator encounters `return` statement it stops its execution,forever. If you return some value, the `return` statement will cause the generator to return that value. Otherwise, it will return `undefined` as a `value` of the returned object. At the same time, it will also return the `done` set to `true`.
-
-This means that `return` statement will cause the generator to finish immediately. When you try to resume the generator you will get the same result as if the generator reached the last yield or end of the block. The `value` of returned object will be set to `undefined` and `done` will be set to `true`.
-
-This also means that if there is any `yield` after `return` statement generator will never get to it.
-
-```JavaScript
-// Create generator
-function *myGenerator() {
-  // Yield a number when myGenerator is started
-  yield 1
-  // Return some value, and terminate the generator
-  return 'The end.'
-  // This second yield will never be reached
-  yield 2
-}
-
-// Assign generator to a variable
-const message = myGenerator()
-
-// Call the generator and log the number (first start)
-console.log(message.next())
-// Output:
-// { value: 1, done: false }
-
-// Call the generator and log the message returned by return statement (second start)
-console.log(message.next())
-// Output:
-// { value: 'The end.', done: true }
-
-// Try to call the generator and log the second yield (third start)
-// Generator is finished and calling next() will now always return the same value
-console.log(message.next())
-// Output:
-// { value: undefined, done: true }
-```
-
 ## Yield*
 
 Until now we've been talking only about `yield`. There is also `yield*`, a `yield` ending with asterix. When you start a generator, the `yield*` allows you to delegate, or switch, to another generator and complete that. Only when the second generator is done first generator can continue.
@@ -522,6 +533,12 @@ for (let val of myGeneratorTwo()) {
 ```
 
 ## Conclusion: A Simple Introduction to JavaScript Generators
+
+That's it. You've just finished this simple introduction to JavaScript generators. I hope this tutorial helped you understand JavaScript generators. If you followed along you've learned know how to create generators and why you should assign them to a variable.
+
+Next, you've learned how `yield` works and what happens when you combine it with `return` statement inside a generator. After that, you've learned what the `next()` method does and how to use it. This also includes calling this method with arguments to pass data into generators.
+
+You've also learned about `yield*` and how to delegate to other generators. The last thing you've learned is that you can iterate over generators with `for...of` loop. I hope you enjoyed this tutorial.
 
 [xyz-ihs snippet="thank-you-message"]
 
