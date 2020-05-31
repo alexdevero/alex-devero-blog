@@ -495,6 +495,32 @@ console.log(myGen.next())
 // { value: 3, done: false }
 ```
 
+## JavaScript generators and for...of loop
+
+One interesting thing about JavaScript generators is that you can iterate over them with `for...of` loop. You can do this even without assigning the generator to a variable. The `for...of` loop will automatically iterate over all yields inside the generator. For each iteration, it will return its value.
+
+When the generator returns `done` set to `true` the `for...of` loop will stop. There is one thing `for...of` loop will not capture, any value returned with `return` statement. It will capture only values returned with `yield`.
+
+```JavaScript
+// Create generator
+function *myGeneratorTwo() {
+  yield 1
+  yield 2
+  yield 3
+  return 'The end.'
+}
+
+// Use for...of loop to iterate over myGeneratorTwo()
+for (let val of myGeneratorTwo()) {
+  console.log(val)
+}
+
+// Output:
+// 1
+// 2
+// 3
+```
+
 ## Conclusion: A Simple Introduction to JavaScript Generators
 
 [xyz-ihs snippet="thank-you-message"]
