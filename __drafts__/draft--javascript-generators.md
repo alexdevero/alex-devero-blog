@@ -185,7 +185,47 @@ This also works in the opposite way for resuming a generator. Once it is paused 
 
 ### Assigning yield to variables
 
+Yielding, or "returning" a value from JavaScript generators is not the only thing you can do with `yield`. You can also assign it to a variable. At this moment, when you try to assign the `yield` to a variable the value assigned will be `undefined`. Why do you get this `undefined`?
 
+You get `undefined` because the value of `yield` is what you pass into `next()` method as an argument. If you don't pass anything, if you call it without any argument, there is no other value you could get. Don't worry about `next()` method and passing arguments into it. You will learn about both in the next two sections.
+
+```JavaScript
+// Create generator
+function *myGenerator() {
+  // Assign yield to variable
+  let myYieldVarOne = yield 1
+
+  // Log the value of myYieldVarOne
+  console.log(myYieldVarOne)
+
+  // Assign yield to variable
+  let myYieldVarTwo = yield 2
+
+  // Log the value of myYieldVarTwo
+  console.log(myYieldVarTwo)
+}
+
+// Assign generator to a variable
+const myGeneratorVar = myGenerator()
+
+// Call the generator for the first time
+console.log(myGeneratorVar.next())
+// Output:
+// { value: 1, done: false }
+
+// Call the generator for the second time
+console.log(myGeneratorVar.next())
+// Output:
+// undefined <= log from  'console.log(myYieldVarOne)' line
+// { value: 2, done: false }
+
+
+// Call the generator for the third time
+console.log(myGeneratorVar.next())
+// Output:
+// undefined <= log from 'console.log(myYieldVarTwo)' line
+// { value: undefined, done: true }
+```
 
 ## The next() method
 
@@ -275,13 +315,15 @@ Since we are talking about `next()` this is worth repeating. If you don't assign
 
 ### The next() method and arguments
 
-One interesting thing about JavaScript generators is that it is possible to can pass values into them. You can do this by passing values as arguments to the `next()` method when you call it. This means that JavaScript generators can not only send data out via `yield`, they can also accept data from the outside.
+One interesting thing about JavaScript generators is that it is possible to can pass values into them. You can do this by passing values as arguments to the `next()` method when you call it. We briefly touched talked about this in the "Assigning yield to variables" section.
 
-However, there is a catch. Passing data to `next()` method will not work on the first call, when you start the generator for the first time. When you call the `next()` method for the first time every line of code before the first `yield` will be executed printed. Here is the problem.
+What this means is that JavaScript generators can not only send data out via `yield`, they can also accept data from the outside. However, there is a catch. Passing data to `next()` method will not work the first time you will call it. Or, when you start the generator for the first time.
 
-It is through the `yield` generator can access any value you passed into the `next()` method. As I sad, the first `next()` will execute only code that precedes the first `yield`. The generator will not execute that first `yield`. Instead, it will pause. No `yield` has been executed and so the value you passed has been discarded.
+When you call the `next()` method for the first time every line of code before the first `yield` will be executed printed. Here is the problem. It is through the `yield` generator can access any value you passed into the `next()` method. As I sad, the first `next()` will execute only code that precedes the first `yield`. The generator will not execute that first `yield`.
 
-It is only on the second call of `next()`, and additional calls, where the value passed will be available through `yield` inside the generator. Let's take a look at one code example with comments to illustrate and explain how this works.
+Instead, the generator will pause itself before it can execute the first `yield`. Since no `yield` has been executed the value you passed into `next()` has been discarded. It is only on the second call of `next()`, and additional calls, where the value passed will be available through `yield` inside the generator.
+
+Let's take a look at one code example with comments to illustrate and explain how this works.
 
 ```JavaScript
 // Create generator
