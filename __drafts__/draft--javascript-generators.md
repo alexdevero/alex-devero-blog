@@ -1,6 +1,6 @@
-# An Easy Introduction to JavaScript [Generators]
+# A Simple Introduction to JavaScript Generators
 
-JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work and how to use them.
+JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work, how to create them and how to use them.
 <!--more-->
 <!--
 Table of Contents:
@@ -431,7 +431,71 @@ console.log(message.next())
 
 ## Yield*
 
-## Conclusion: [...] ...
+Until now we've been talking only about `yield`. There is also `yield*`, a `yield` ending with asterix. When you start a generator, the `yield*` allows you to delegate, or switch, to another generator and complete that. Only when the second generator is done first generator can continue.
+
+When you want to use `yield*` you use it followed by call of another generator. That is, followed by the name of another generator that is followed by pair of parenthesis. Then, call the main generator and use `next()` to iterate over yields. One thing to remember. You can use `yield*` only inside a generator.
+
+```JavaScript
+// Create first generator
+function *myGeneratorOne() {
+  yield 'One'
+  yield 'Two'
+  yield 'Three'
+}
+
+function *myGeneratorTwo() {
+  yield 1
+
+  // Use yield to delegate to myGeneratorOne
+  yield* myGeneratorOne()
+
+  // When myGeneratorOne
+  yield 2
+  yield 3
+}
+
+// Assign myGeneratorTwo to a variable
+const myGen = myGeneratorTwo()
+
+// Call myGen
+console.log(myGen.next())
+// Output:
+// { value: 1, done: false }
+
+// Call myGen
+// Now, the yield* delegates to myGeneratorOne
+// and next calls of next() method will call myGeneratorOne
+// Until the myGeneratorOne is done
+console.log(myGen.next())
+// Output:
+// { value: 'One', done: false }
+
+// Call myGen
+console.log(myGen.next())
+// Output:
+// { value: 'Two', done: false }
+
+// Call myGen
+// This is the last call to myGeneratorOne
+// After this call myGeneratorOne is done
+// and next calls of next() method will again call myGeneratorTwo
+// and process any remaining yields
+console.log(myGen.next())
+// Output:
+// { value: 'Three', done: false }
+
+// Call myGen
+console.log(myGen.next())
+// Output:
+// { value: 2, done: false }
+
+// Call myGen
+console.log(myGen.next())
+// Output:
+// { value: 3, done: false }
+```
+
+## Conclusion: A Simple Introduction to JavaScript Generators
 
 [xyz-ihs snippet="thank-you-message"]
 
