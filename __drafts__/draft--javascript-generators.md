@@ -1,4 +1,4 @@
-# Introduction to JavaScript [Generators]
+# An Introduction to JavaScript [Generators]
 
 JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work and how to use them.
 <!--more-->
@@ -188,25 +188,25 @@ function *myGenerator() {
 // Assign generator to a variable
 const message = myGenerator()
 
-// Call the generator and log the returned number (the first start)
+// Call the generator and log the number (the first start)
 // This call returns the first yield
 console.log(message.next())
 // Output:
 // { value: 1, done: false }
 
-// Call the generator and log the returned number (the second start)
+// Call the generator and log the number (the second start)
 // This call returns the second yield
 console.log(message.next())
 // Output:
 // { value: 2, done: false }
 
-// Call the generator and log the returned number (the third start)
+// Call the generator and log the number (the third start)
 // This call returns the third yield
 console.log(message.next())
 // Output:
 // { value: 3, done: false }
 
-// Call the generator and log the returned number (the fourth start)
+// Call the generator and log the number (the fourth start)
 // This call doesn't return any yield because there is no fourth
 // And since there is no other yield the generator is done
 console.log(message.next())
@@ -227,23 +227,23 @@ function *myGenerator() {
 // Assign generator to a variable
 const message = myGenerator()
 
-// Call the generator and log the returned number (the first start)
+// Call the generator and log the number (the first start)
 console.log(message.next())
 // Output:
 // { value: 1, done: false }
 
-// Call the generator and log the returned number (the second start)
+// Call the generator and log the number (the second start)
 console.log(message.next())
 // Output:
 // { value: 2, done: false }
 
-// Call the generator and log the returned number (the third start)
+// Try to call the generator and log the number (the third start)
 // Generator is done and calling next() will always return the same value
 console.log(message.next())
 // Output:
 // { value: undefined, done: true }
 
-// Call the generator and log the returned number (the fourth start)
+// Try to call the generator and log the number (the fourth start)
 // The same value as after previous call
 console.log(message.next())
 // Output:
@@ -253,6 +253,45 @@ console.log(message.next())
 Since we are talking about `next()` this is worth repeating. If you don't assign generator to a variable, calling `next()` will always return the first yield. The generator will not remember previous calls and values. We discussed this in the "Assigning to a variable" section.
 
 ## Yield and return
+
+JavaScript generators are very similar to normal JavaScript functions. One of these similarities is that you can also use `return` statement inside them. When you do this, the generator will still pause with every `yield` it encounters. However, it will do so only with those that precede the `return` statement.
+
+When generator encounters `return` statement it stops its execution,forever. If you return some value, the `return` statement will cause the generator to return that value. Otherwise, it will return `undefined` as a `value` of the returned object. At the same time, it will also return the `done` set to `true`.
+
+This means that `return` statement will cause the generator to finish immediately. When you try to resume the generator you will get the same result as if the generator reached the last yield or end of the block. The `value` of returned object will be set to `undefined` and `done` will be set to `true`.
+
+This also means that if there is any `yield` after `return` statement generator will never get to it.
+
+```JavaScript
+// Create generator
+function *myGenerator() {
+  // Yield a number when myGenerator is started
+  yield 1
+  // Return some value, and terminate the generator
+  return 'The end.'
+  // This second yield will never be reached
+  yield 2
+}
+
+// Assign generator to a variable
+const message = myGenerator()
+
+// Call the generator and log the number (first start)
+console.log(message.next())
+// Output:
+// { value: 1, done: false }
+
+// Call the generator and log the message returned by return statement (second start)
+console.log(message.next())
+// Output:
+// { value: 'The end.', done: true }
+
+// Try to call the generator and log the second yield (third start)
+// Generator is finished and calling next() will now always return the same value
+console.log(message.next())
+// Output:
+// { value: undefined, done: true }
+```
 
 ## Yield*
 
