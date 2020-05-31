@@ -1,4 +1,4 @@
-# An Introduction to JavaScript [Generators]
+# An Easy Introduction to JavaScript [Generators]
 
 JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work and how to use them.
 <!--more-->
@@ -251,6 +251,79 @@ console.log(message.next())
 ```
 
 Since we are talking about `next()` this is worth repeating. If you don't assign generator to a variable, calling `next()` will always return the first yield. The generator will not remember previous calls and values. We discussed this in the "Assigning to a variable" section.
+
+### The next() method and arguments
+
+One interesting thing about JavaScript generators is that it is possible to can pass values into them. You can do this by passing values as arguments to the `next()` method when you call it. This means that JavaScript generators can not only send data out via `yield`, they can also accept data from the outside.
+
+However, there is a catch. Passing data to `next()` method will not work on the first call, when you start the generator for the first time. When you call the `next()` method for the first time every line of code before the first `yield` will be executed printed. Here is the problem.
+
+It is through the `yield` generator can access any value you passed into the `next()` method. As I sad, the first `next()` will execute only code that precedes the first `yield`. The generator will not execute that first `yield`. Instead, it will pause. No `yield` has been executed and so the value you passed has been discarded.
+
+It is only on the second call of `next()`, and additional calls, where the value passed will be available through `yield` inside the generator. Let's take a look at one code example with comments to illustrate and explain how this works.
+
+```JavaScript
+// Create generator
+function *myGenerator() {
+  // This will be executed on the first call
+  // because it precedes the first yield
+  console.log('I will be executed on the first call.')
+
+  // This variable will not be assigned on the first call
+  // because the generator will pause right before it, before the first yield that is assigned to this variable
+  // It will be assigned only on the second call
+  let assignedOnTheSecondStart = yield 1
+  console.log(`assignedOnTheSecondStart: ${assignedOnTheSecondStart}`)
+
+  // This variable will be assigned on the third call and not sooner
+  let assignedOnTheThirdStart = yield 2
+  console.log(`assignedOnTheThirdStart: ${assignedOnTheThirdStart}`)
+
+  // This variable will be assigned on the fourth call and not sooner
+  let assignedOnTheFourthStart = yield 3
+  console.log(`assignedOnTheFourthStart: ${assignedOnTheFourthStart}`)
+}
+
+// Assign generator to a variable
+const message = myGenerator()
+
+// Call the generator (first start)
+// This will start the generator and execute any code
+// that precedes the first yield
+console.log(message.next())
+// Output:
+// 'I will be executed on the first call.'
+// { value: 1, done: false }
+
+
+// Call the generator (second start)
+// This will create the assignedOnTheSecondStart variable
+// and assign it the value passed to next(), the "Two"
+console.log(message.next('Two'))
+// Output:
+// 'assignedOnTheSecondStart: Two'
+// { value: 2, done: false }
+
+
+// Call the generator (third start)
+// This will create the assignedOnTheThirdStart variable
+// and assign it the value passed to next(), the "Three"
+console.log(message.next('Three'))
+// Output:
+// 'assignedOnTheThirdStart: Three'
+// { value: 3, done: false }
+
+
+// Call the generator (third start)
+// This will create the assignedOnTheFourthStart variable
+// and assign it the value passed to next(), the "Four"
+console.log(message.next('Four'))
+// Output:
+// 'assignedOnTheFourthStart: Four'
+// { value: undefined, done: true }
+```
+
+This is one of the tricky parts of JavaScript generators. It might require some time to understand this. How `next()` method and arguments work together. So, take your time. Go through the example above few times and play with it. Sooner or later, it will click.
 
 ## Yield and return
 
