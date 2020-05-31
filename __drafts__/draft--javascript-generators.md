@@ -24,6 +24,12 @@ Table of Contents:
 -->
 
 <!--
+### Keywords:
+- generators
+- JavaScript generators
+-->
+
+<!--
 ### Resources:
 -
 -->
