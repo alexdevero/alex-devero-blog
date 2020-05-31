@@ -108,13 +108,13 @@ console.log(myGeneratorVariable.next())
 
 ## Yield
 
-When it comes to JavaScript generators `yield` keyword is very important. It is this `yield` keyword what pauses execution of a generator. It is also this keyword what can return some value when the generator is paused. You can think about `yield` keyword as a cousin of `return` statement.
+When it comes to JavaScript generators `yield` keyword is very important. It is this `yield` keyword what pauses execution of a generator. After you start it, the generator will run until it encounters `yield`. When it does it will pause itself. It is also this keyword what can return some value when the generator is paused.
 
-Both can be used to return a value. One difference is that while `return` statement terminates function execution the `yield` doesn't. It only pauses the generator. The `yield` works more like a breakpoint. Another difference is that when `yield` returns a value only once.
+You can think about `yield` keyword as a cousin of `return` statement. Both can be used to return a value. One difference is that while `return` statement terminates function execution the `yield` doesn't. It only pauses the generator. The `yield` works more like a breakpoint.
 
-When you resume the generator it will automatically move on to the next `yield` keyword. It will ignore the first one. The same if you resume the generator for the third time. It will ignore the previous two `yield` keywords and move on to the third one. If there is no third `yield`? The generator will return `undefined`.
+Another difference is that when `yield` returns a value only once. When you resume the generator it will automatically move on to the next `yield` keyword. It will ignore the first one. The same if you resume the generator for the third time. It will ignore the previous two `yield` keywords and move on to the third one.
 
-The same will also happen if the generator doesn't contain any `yield` keyword. It will return `undefined` the first time you start it. Since we are talking about returned values. This is the third difference between `return` and `yield`. `yield` always returns an object.
+What if there is no third `yield`? The generator will return `undefined`. The same will also happen if the generator doesn't contain any `yield` keyword. It will return `undefined` the first time you start it. Since we are talking about returned values. This is the third difference between `return` and `yield`. `yield` always returns an object.
 
 This object always contains two key/value pairs. The first is for a `value` returned by `yield` from generator. If there is no `yield` or value returned, the value of `value` key is `undefined`. The second is for `done`. The value of `done` is always boolean. The `done` indicates if generator is finished or not.
 
