@@ -19,7 +19,7 @@ Table of Contents:
 
 ## What are generators
 
-Generators sit somewhere between [iterators] and [functions]. The way normal functions work is very simple. When you invoke a function it will run until it completion. It will execute all code inside it or until it encounters `return` statement. Iterators work in a similar way. Let's take `for` loop for example.
+Generators sit somewhere between [iterators] and [functions]. The way normal functions work is very simple. When you invoke a function it will run until it completion. It will execute all code inside it or until it encounters [return] statement. Iterators work in a similar way. Let's take `for` loop for example.
 
 Imagine you have an array with some data and you want to use `for` loop to iterate over it. When the `for` loop start it will run until it is stopped by the condition you specified. Or, it will run infinitely. This is what distinguishes JavaScript generators from functions and iterators.
 
@@ -544,6 +544,7 @@ You've also learned about `yield*` and how to delegate to other generators. The 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[return]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
 [iterators]: https://blog.alexdevero.com/javascript-loops/
 [functions]: https://blog.alexdevero.com/javascript-functions-pt1/
 
