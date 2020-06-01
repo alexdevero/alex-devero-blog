@@ -1,4 +1,4 @@
-# An Introduction to JavaScript Generators
+# An Introduction to JavaScript Generators - What You Need to Know
 
 JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work, how to create them and how to use them.
 <!--more-->
