@@ -1,4 +1,4 @@
-# A Simple Introduction to JavaScript Generators
+# An Introduction to JavaScript Generators
 
 JavaScript generators, or generator functions, are one of the lesser known features of ECMAScript 6 (ES6). They can look a bit strange. This tutorial will help you wrap your head around them and understand the basics. You will learn about what JavaScript generators are, how they work, how to create them and how to use them.
 <!--more-->
@@ -14,7 +14,7 @@ Table of Contents:
 ### The next() method and arguments
 ## Yield*
 ## JavaScript generators and for...of loop
-## Conclusion: A Simple Introduction to JavaScript Generators
+## Conclusion: An Introduction to JavaScript Generators
 -->
 
 ## What are generators
@@ -533,9 +533,9 @@ for (let val of myGeneratorTwo()) {
 // 3
 ```
 
-## Conclusion: A Simple Introduction to JavaScript Generators
+## Conclusion: An Introduction to JavaScript Generators
 
-That's it. You've just finished this simple introduction to JavaScript generators. I hope this tutorial helped you understand JavaScript generators. If you followed along you've learned know how to create generators and why you should assign them to a variable.
+That's it. You've just finished this introduction to JavaScript generators. I hope this tutorial helped you understand JavaScript generators. If you followed along you've learned know how to create generators and why you should assign them to a variable.
 
 Next, you've learned how `yield` works and what happens when you combine it with `return` statement inside a generator. After that, you've learned what the `next()` method does and how to use it. This also includes calling this method with arguments to pass data into generators.
 
