@@ -1,12 +1,7 @@
-# Blog post title [...]
+# How JavaScript Async Await Works and How to Use It
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
 ## h2
