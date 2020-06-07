@@ -25,13 +25,33 @@ Async/await are one way to make writing and working with asynchronous code. Let'
 
 ## Async functions
 
-There are two fundamental building blocks of async/await. The first are async functions. Async function is very similar to a regular [function]. The difference is that async function always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
+There are two fundamental building blocks of async/await. The first are async functions. Let's take a look at how can you create a new async function.
+
+### The async keyword
+
+The most important part of an async function is `async` keyword. This is will tell JavaScript that you are want to declare an async function instead of regular. It is also this `async` keyword what will allow you to use `await` keyword inside that async function. Otherwise, JavaScript will throw SyntaxError. More about this later.
+
+When you want to create an async you put the `async` keyword before the `function` keyword and its name, `async function myAsyncFunc() {}`. This is [function declaration]. In case of [function expression] the `async` keyword goes between the equal sign and `function` keyword, `const myAsyncFunc = async function() {}`. This is all you need to create an async function.
+
+```JavaScript
+// Create async function with function declaration
+async function myAsyncFunc() {
+  // some code
+}
+
+// Create async function with function expression
+const myAsyncFunc = async function() {
+  // some code
+}
+```
+
+### Returning a value from async function
+
+Creating async functions s very similar creating a regular [functions]. One difference is the `async` keyword. Another, and more important, is that async function always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
 
 When you use `return` statement to return a value from an async function that function will still return resolved promise. The value of this promise will be the value you returned. You can also return resolved promise directly. You can use `Promise` object and `resolve()` method, pass the value as parameter to `resolve()`.
 
 This also means one thing. If a function returns a promise you have to handle that returned promise in the right way. This means using `then()` method to get and process the returned value from that promise. Since we are talking about promises you can also use other [handler functions] such as `catch()` and `finally()`.
-
-### The async keyword
 
 ## The await keyword
 
@@ -50,6 +70,8 @@ The second fundamental building block of async/await is the `await`.
 [function]: https://blog.alexdevero.com/javascript-functions-pt1/
 [main thread]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts#Threads
 [handler functions]: https://blog.alexdevero.com/javascript-promises/#handling-javascript-promises-with-handler-functions
+[function declaration]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
+[function expression]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
 
 <!--
 ### Meta:
