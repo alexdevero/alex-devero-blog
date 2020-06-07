@@ -427,6 +427,11 @@ As you can see, the updated `myAsyncFunc()` function ran almost twice as fast, t
 
 ## A real world example
 
+You've learned a lot about async functions, `await` and asynchronous code. How about to put all this knowledge to practice? Let's create a function that will fetch GitHub API and return data for one specific user. This function will be async. It will use JavaScript `fetch()` API to fetch the GitHub API and wait for the response.
+
+When the response arrives, the async function will translate received data to JSON format and return the result. Since this is an async function the data will be returned in the form of a promise. To get the data from the resolved promise will need to use `then()` method. Then, we will log these data to console.
+
+Now, use what you've learned today to do this exercise. If you get stuck, need a hint, or just want to compare your solution, take a look one possible solution in the example below.
 
 ```JavaScript
 // Create async function to fetch GitHub API
@@ -434,10 +439,10 @@ async function asyncFetchGitHub(name) {
   // Fetch GitHub API and wait until the request is settled
   const serverResponse = await fetch(`https://api.github.com/users/${name}`)
 
-  // Convert the response to JSON format
+  // Translate the response to JSON format
   const serverData = serverResponse.json()
 
-  // Return the converted data
+  // Return the translated data
   return serverData
 }
 
