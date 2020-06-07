@@ -414,6 +414,39 @@ myAsyncFunc()
 
 As you can see, the updated `myAsyncFunc()` function ran almost twice as fast, thanks to `Promise.all()` method and running all promises in parallel. Remember this the next time you will want to use `await` and make you use it properly.
 
+## A real world example
+
+
+```JavaScript
+// Create async function to fetch GitHub API
+async function asyncFetchGitHub(name) {
+  // Fetch GitHub API and wait until the request is settled
+  const serverResponse = await fetch(`https://api.github.com/users/${name}`)
+
+  // Convert the response to JSON format
+  const serverData = serverResponse.json()
+
+  // Return the converted data
+  return serverData
+}
+
+// Invoke the asyncFetchGitHub() function
+asyncFetchGitHub('alexdevero')
+  .then(data => {
+    // Log the data to console
+    console.log(data)
+  })
+
+// Output:
+// {
+//   login: 'alexdevero',
+//   url: 'https://api.github.com/users/alexdevero',
+//   html_url: 'https://github.com/alexdevero',
+//   followers_url: 'https://api.github.com/users/alexdevero/followers',
+//   ...
+// }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
