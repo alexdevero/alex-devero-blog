@@ -47,17 +47,94 @@ const myAsyncFunc = async function() {
 
 ### Returning a value from async function
 
-Creating async functions s very similar creating a regular [functions]. One difference is the `async` keyword. Another, and more important, is that async function always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
+Creating async functions s very similar creating a regular [functions]. One difference is the `async` keyword. Another, and more important, is that async functions always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
 
-When you use `return` statement to return a value from an async function that function will still return resolved promise. The value of this promise will be the value you returned. You can also return resolved promise directly. You can use `Promise` object and `resolve()` method, pass the value as parameter to `resolve()`.
+When you use `return` statement to return a value from an async function that function will still return resolved promise. The value of this promise will be the value you returned. You can also return resolved promise directly. To do this you can use `Promise` object and `resolve()` method, the value being passed as a parameter to `resolve()`.
 
-This also means one thing. If a function returns a promise you have to handle that returned promise in the right way. This means using `then()` method to get and process the returned value from that promise. Since we are talking about promises you can also use other [handler functions] such as `catch()` and `finally()`.
+This also means one thing. If a function returns a promise you have to handle that returned promise in the right way. This means using `then()` method to get and process the returned value from that promise. Since you are working with promise you can also use other [handler functions], such as `catch()` and `finally()`.
+
+```JavaScript
+// Example no.1: using return statement
+// Create async function
+async function myAsyncFunc() {
+  // Return some value using 'return' statement
+  return 'There will be dragons.'
+}
+
+// Invoke the async function
+// and get and process the returned promise
+// to get the value
+myAsyncFunc()
+  .then(res => console.log(res))
+  // Optionally catch and log any errors
+  .catch(err => console.log(err))
+
+// Output:
+// 'There will be dragons.'
+
+
+// Example no.2: using Promise.resolve()
+// Create async function
+async function myAsyncFunc() {
+  // Return some value using 'return' statement
+  return Promise.resolve('There will be dragons.')
+}
+
+// Invoke the async function
+// and get and process the returned promise
+// to get the value
+myAsyncFunc()
+  .then(res => console.log(res))
+  // Optionally catch and log any errors
+  .catch(err => console.log(err))
+
+
+// Or store the result in variable
+async function myAsyncFunc() {
+  // Return some value using 'return' statement
+  return Promise.resolve('There will be dragons.')
+}
+
+// Invoke the async function
+// and get and process the returned promise
+// to get the value
+// and store the result in variable
+const result = myAsyncFunc()
+  .then(res => console.log(res))
+  // Optionally catch and log any errors
+  .catch(err => console.log(err))
+
+// Output:
+// 'There will be dragons.'
+
+
+// What not to do: not using then()
+async function myAsyncFunc() {
+  // Return some value using 'return' statement
+  return Promise.resolve('There will be dragons.')
+}
+
+console.log(myAsyncFunc())
+
+// Or
+const result = myAsyncFunc()
+console.log(result)
+
+// Output:
+// [object Promise] { ... }
+```
 
 ## The await keyword
 
 The second fundamental building block of async/await is the `await`.
 
+```JavaScript
+```
+
 ## Async await and error handling
+
+```JavaScript
+```
 
 ## Async await and parallelism
 
