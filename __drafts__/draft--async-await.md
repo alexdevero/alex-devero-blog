@@ -25,7 +25,17 @@ Async/await are one way to make writing and working with asynchronous code. Let'
 
 ## Async functions
 
-## Await
+There are two fundamental building blocks of async/await. The first are async functions. Async function is very similar to a regular [function]. The difference is that async function always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
+
+When you use `return` statement to return a value from an async function that function will still return resolved promise. The value of this promise will be the value you returned. You can also return resolved promise directly. You can use `Promise` object and `resolve()` method, pass the value as parameter to `resolve()`.
+
+This also means one thing. If a function returns a promise you have to handle that returned promise in the right way. This means using `then()` method to get and process the returned value from that promise. Since we are talking about promises you can also use other [handler functions] such as `catch()` and `finally()`.
+
+### The async keyword
+
+## The await keyword
+
+The second fundamental building block of async/await is the `await`.
 
 ## Async await and error handling
 
@@ -39,6 +49,7 @@ Async/await are one way to make writing and working with asynchronous code. Let'
 [Promises]: https://blog.alexdevero.com/javascript-promises/
 [function]: https://blog.alexdevero.com/javascript-functions-pt1/
 [main thread]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts#Threads
+[handler functions]: https://blog.alexdevero.com/javascript-promises/#handling-javascript-promises-with-handler-functions
 
 <!--
 ### Meta:
