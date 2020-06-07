@@ -147,6 +147,46 @@ async function myAsyncFunction() {
     }, 500)
   })
 
+  // Invoke messagePromise and wait until it is resolved
+  // Once it is resolved assign the resolved promise to a variable
+  const messageResult = await messagePromise
+  // NOTE: await will cause myAsyncFunction() to pause here
+  // until the messagePromise is settled (resolved or rejected)
+
+  // Log the result
+  console.log(messageResult)
+}
+
+// Invoke the myAsyncFunction() function
+myAsyncFunction()
+
+// Output:
+// 'Promise is finished.'
+```
+
+### Await and promise.then()
+
+Notice one thing on the example above. You are creating a promise that resolves after 0.5s. Next, you are using `await` to invoke this promise, the `messagePromise`. At the same time you are assigning the resolved promise to a variable `messageResult`. After that, you are logging the value of that variable.
+
+There is one thing missing, one thing that should be there and it is not. This thing that is missing is the `then()` function. This function is supposed to get the value from the returned promise. Yet, the code still works. When you invoke the `myAsyncFunction()` function you will still see the message logged in console.
+
+This is another thing `await` does for you. It replaces the `then()` function. When you use `await` to assign some resolved Promise to a variable it will automatically "extract" the resolved value. You don't need to use `then()`. The work `then()` would do has been already done by `await`.
+
+This is why you didn't need to use `then()` function on `messageResult` variable. Yet, you still managed to get the message, the value returned by resolved promise. So, remember, when you use `await` to wait for resolved promise you don't to use `then()`function.
+
+```JavaScript
+// This:
+// Create async function
+async function myAsyncFunction() {
+  // Create new promise
+  const messagePromise = new Promise((resolve, reject) => {
+    // Wait for 0.5s
+    setTimeout(() => {
+      // Resolve the promise
+      resolve('There will be dragons.')
+    }, 500)
+  })
+
   // Wait until messagePromise is resolved
   // NOTE: await will cause myAsyncFunction() to pause here
   // until the messagePromise is settled (resolved or rejected)
@@ -156,10 +196,31 @@ async function myAsyncFunction() {
   console.log(messageResult)
 }
 
+// Invoke the myAsyncFunction() function
 myAsyncFunction()
 
-// Output:
-// 'Promise is finished.'
+
+// Is the same as:
+// Create async function
+async function myAsyncFunction() {
+  // Create new promise
+  const messagePromise = new Promise((resolve, reject) => {
+    // Wait for 0.5s
+    setTimeout(() => {
+      // Resolve the promise
+      resolve('There will be dragons.')
+    }, 500)
+  })
+    // Use then() to process resolved promise
+    // and get the returned value
+    .then(res => {
+      console.log(res)
+    })
+}
+
+// Invoke the myAsyncFunction() function
+myAsyncFunction()
+// 'There will be dragons.'
 ```
 
 ## Async await and error handling
