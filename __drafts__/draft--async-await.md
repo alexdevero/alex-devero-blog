@@ -1,11 +1,27 @@
 # How JavaScript Async/Await Works and How to Use It
 
-[Promises] made dealing with asynchronous code became easier. ES8 introduced one feature that makes this even easier. This feature is async/await. This tutorial will help you learn about what async/await is and how it works. You will also learn how to use async/await to write asynchronous JavaScript.
+[Promises] made dealing with asynchronous code became easier. ES8 introduced one feature that makes this even easier. This feature is async/await. This tutorial will help you learn about what async/await is and how it works. You will also learn how to use async/await to write  JavaScript.
 
 <!--more-->
 <!--
 Table of Contents:
 -->
+
+## Synchronous vs asynchronous code
+
+JavaScript is a synchronous single-threaded programming language. What this means that it can perform only one operation at the time. When one operation is executed other operations are blocked and have to wait. They can be executed only when the currently executed operation is finished. This is also called blocking.
+
+Now, what if code is asynchronous? It works in the opposite way. When asynchronous code is executed it doesn't block other code. Other code can still be executed while the asynchronous operation is being executed. That asynchronous code is basically running in the background making space for other operations to take place.
+
+You may not need to execute asynchronous operation all the time. However, there are situations when performing some operations asynchronously will be better, maybe even necessary. One example is fetching data from server. This may sound like something that is easy to do. Well, there is at least one problem.
+
+When you fetch data from a server you never really know how fast you get them. Let's say you fetch these data in synchronous way. This means that you are blocking the [main thread]. When this happens other operations has to wait until the fetching is done and the main thread is available to use.
+
+This will not happen if you fetch these data in asynchronous way. If the response from server is not immediate it doesn't block the main thread. In this case, you data fetching is moved to the siding until it is finished, metaphorically speaking. Any other code that needs to be executed can be executed right away.
+
+It is only when that data fetching is complete, either with success or failure, when that operation moves to the main thread again. This doesn't mean you should re-write all your synchronous code to asynchronous. All it means is that there are some situations when asynchronous code can be quite useful.
+
+Async/await are one way to make writing and working with asynchronous code. Let's take a look how it works and how you can use it.
 
 ## Async functions
 
@@ -21,6 +37,8 @@ Table of Contents:
 
 <!-- ### Links -->
 [Promises]: https://blog.alexdevero.com/javascript-promises/
+[function]: https://blog.alexdevero.com/javascript-functions-pt1/
+[main thread]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts#Threads
 
 <!--
 ### Meta:
