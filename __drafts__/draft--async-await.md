@@ -43,6 +43,11 @@ async function myAsyncFunc() {
 const myAsyncFunc = async function() {
   // some code
 }
+
+// Create async function with arrow function
+const myAsyncFunc = async () => {
+  // some code
+}
 ```
 
 ### Returning a value from async function
@@ -89,7 +94,7 @@ myAsyncFunc()
   .catch(err => console.log(err))
 
 
-// Or store the result in variable
+// Or assign the result to variable
 async function myAsyncFunc() {
   // Return some value using 'return' statement
   return Promise.resolve('There will be dragons.')
@@ -98,7 +103,7 @@ async function myAsyncFunc() {
 // Invoke the async function
 // and get and process the returned promise
 // to get the value
-// and store the result in variable
+// and assign the result to variable
 const result = myAsyncFunc()
   .then(res => console.log(res))
   // Optionally catch and log any errors
@@ -126,9 +131,35 @@ console.log(result)
 
 ## The await keyword
 
-The second fundamental building block of async/await is the `await`.
+The second fundamental building block of async/await is the `await` keyword. This keyword is inseparable from async functions. You can use `await` only inside an async function. You can't use it outside it, [yet]. You also can't use it inside regular functions. If you try it JavaScript will throw SyntaxError.
+
+The `await` keyword tells JavaScript to wait until a promise, that follows this keyword, settles and returns some result. The `await` keyword is what moves the executed code the siding until it is finished. In the meantime, other operations can take space in the main thread be executed.
 
 ```JavaScript
+// Create async function
+async function myAsyncFunction() {
+  // Create new promise
+  const messagePromise = new Promise((resolve, reject) => {
+    // Wait for 0.5s
+    setTimeout(() => {
+      // Resolve the promise
+      resolve('There will be dragons.')
+    }, 500)
+  })
+
+  // Wait until messagePromise is resolved
+  // NOTE: await will cause myAsyncFunction() to pause here
+  // until the messagePromise is settled (resolved or rejected)
+  const messageResult = await messagePromise
+
+  // Log the result
+  console.log(messageResult)
+}
+
+myAsyncFunction()
+
+// Output:
+// 'Promise is finished.'
 ```
 
 ## Async await and error handling
@@ -149,6 +180,7 @@ The second fundamental building block of async/await is the `await`.
 [handler functions]: https://blog.alexdevero.com/javascript-promises/#handling-javascript-promises-with-handler-functions
 [function declaration]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
 [function expression]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
+[yet]: https://github.com/tc39/proposal-top-level-await
 
 <!--
 ### Meta:
