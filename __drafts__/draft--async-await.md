@@ -223,6 +223,36 @@ myAsyncFunction()
 // 'There will be dragons.'
 ```
 
+### Top-level await
+
+At the time of writing this tutorial, it is not possible to use `await` keyword in a global scope. As you know, `await` keyword can be used only inside async function. One good news is that there as a [proposal] for top-level `await`. This proposal is at stage three so it might be too long until it is part of JavaScript.
+
+Second good news is that you don't have to wait for top-level `await` to happen. There is a workaround you can use today. What you can do is to create top-level async [IIFE] (Immediately-invoked function expression).
+
+Since this function is async you can use `await` inside it. When top-level `await` is part of JavaScript specification you can remove the async IIFE and. Until then, it will do the job.
+
+```JavaScript
+// Pseudo-top-level await
+// Create async function
+(async () => {
+  // Create new promise
+  const myPromise = new Promise((resolve, reject) => {
+    // Resolve the promise
+    resolve('Promise resolved!.')
+  })
+
+  // Await the promise
+  // and assign the result to a variable
+  const message = await myPromise
+
+  // Log the message from resolved promise
+  console.log(message)
+})()
+
+// Output:
+// 'Promise resolved!.'
+```
+
 ## Async await and error handling
 
 ```JavaScript
@@ -242,6 +272,8 @@ myAsyncFunction()
 [function declaration]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
 [function expression]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
 [yet]: https://github.com/tc39/proposal-top-level-await
+[proposal]: https://github.com/tc39/proposal-top-level-await
+[IIFE]: https://blog.alexdevero.com/javascript-functions-pt3/#immediately-invoked-functions
 
 <!--
 ### Meta:
