@@ -253,9 +253,52 @@ Since this function is async you can use `await` inside it. When top-level `awai
 // 'Promise resolved!.'
 ```
 
-## Async await and error handling
+## Async/await and error handling
+
+When it comes to async/await and errors, there are two ways to deal with them. One way is by using `catch()` function. Async function returns a promise. When promise gets rejected it is `catch()` function what allows you to catch and handle this error. This works also for Async/await.
 
 ```JavaScript
+// Create async function
+async function myAsyncFunc() {
+  // Create promise that rejects
+  // and wait for its completion
+  await new Promise((resolve, reject) => {
+    reject('Promise rejected!')
+  })
+}
+
+// Invoke myAsyncFunc and catch the error
+myAsyncFunc()
+  .catch(err => {
+    console.log(`error: ${err}`)
+  })
+// 'error: Promise rejected!'
+```
+
+The second option is to use `try...catch` statement. In this case, you use `try` block to wrap the part of your code that contains `await`. Next, you use the `catch` block to handle any error that occurs.
+
+```JavaScript
+// Create async function
+async function myAsyncFunc() {
+  // Create new promise that rejects
+  const myPromise = new Promise((resolve, reject) => {
+    reject('Promise rejected!')
+  })
+
+  // Create try...catch statement
+  try {
+    // Await the promise to get rejected
+    const message = await myPromise
+  }
+  catch(err) {
+    // Catch any error and log it
+    console.log(`error: ${err}`)
+  }
+}
+
+// Invoke the myAsyncFunc() function
+myAsyncFunc()
+// 'error: Promise rejected!'
 ```
 
 ## Async await and parallelism
