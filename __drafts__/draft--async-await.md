@@ -5,6 +5,17 @@
 <!--more-->
 <!--
 Table of Contents:
+## Synchronous vs asynchronous code
+## Async functions
+### The async keyword
+### Returning a value from async function
+## The await keyword
+### Await and promise.then()
+### Top-level await
+## Async/await and error handling
+## Word of caution
+## A real world example
+## Conclusion: How JavaScript Async/Await Works and How to Use It
 -->
 
 ## Synchronous vs asynchronous code
@@ -447,7 +458,7 @@ asyncFetchGitHub('alexdevero')
 // }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: How JavaScript Async/Await Works and How to Use It
 
 [xyz-ihs snippet="thank-you-message"]
 
