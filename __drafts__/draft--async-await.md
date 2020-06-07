@@ -465,6 +465,12 @@ asyncFetchGitHub('alexdevero')
 
 ## Conclusion: How JavaScript Async/Await Works and How to Use It
 
+Congratulations! You've just finished this tutorial on async/await. I hope you enjoyed it. Let's do a quick recap. Today, you've learned that JavaScript is a synchronous single-threaded programming language and what is the difference between synchronous vs asynchronous code.
+
+Next, you've learned what are async functions and how to create them. You've also learned about `await` keyword, how to use it and when. After that, you've learned about one workaround that will allow you to use `await` in a global scope (hint: IIFE), and how to use `try...catch` and `catch()` to handle errors.
+
+As the last thing, you put your knowledge of async/await to test. You've created your own async function to fetch user data from GitHub API, await the response and return translated data.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
@@ -491,11 +497,5 @@ asyncFetchGitHub('alexdevero')
 
 <!--
 ### Resources:
-- https://medium.com/javascript-in-plain-english/async-await-javascript-5038668ec6eb
-- https://javascript.info/async-await
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
-- https://blog.alexdevero.com/es6-es7-es8-modern-javascript-pt7/
-- https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
+-
 -->
