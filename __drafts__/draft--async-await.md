@@ -133,7 +133,7 @@ console.log(result)
 
 The second fundamental building block of async/await is the `await` keyword. This keyword is inseparable from async functions. You can use `await` only inside an async function. You can't use it outside it, [yet]. You also can't use it inside regular functions. If you try it JavaScript will throw SyntaxError.
 
-The `await` keyword tells JavaScript to wait until a promise, that follows this keyword, settles and returns some result. The `await` keyword is what moves the executed code the siding until it is finished. In the meantime, other operations can take space in the main thread be executed.
+The `await` keyword tells JavaScript to pause the execution of the async function in which it is. This function is then paused until a promise, that follows this keyword, settles and returns some result. So, it is  this `await` keyword what moves the executed code the siding until it is finished. In the meantime, other operations can take space in the main thread be executed.
 
 ```JavaScript
 // Create async function
@@ -301,7 +301,118 @@ myAsyncFunc()
 // 'error: Promise rejected!'
 ```
 
-## Async await and parallelism
+## Word of caution
+
+As you know, `await` pauses execution of async function in which it is. This is good. It means you don't have worry about when your promise will be settled, resolved or rejected. However, this has some consequences. Since the `await` paused the async function this function can't finish its execution until the promise is settled.
+
+This may not be a problem if you await one promise and the response is fast. What if you await multiple promises? What if getting some responses takes more time than others? Then, the execution of that async function will also take more time. Let's take a look at one example of an async function with three awaited promises.
+
+```JavaScript
+// Create async function
+async function myAsyncFunc() {
+  // Create timestamp when function is invoked
+  const dateStart = Date.now()
+
+  // Create new promise and await its completion
+  // Until then, pause execution of this function
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Promise 1 is done.')
+    }, 450)
+  })
+
+  // Create new promise and await its completion
+  // Until then, pause execution of this function
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Promise 2 is done.')
+    }, 750)
+  })
+
+  // Create another promise and also await its completion
+  // Until then, pause execution of this function
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Promise 3 is done.')
+    }, 1250)
+  })
+
+  // Create timestamp when all promises are resolved
+  const dateFinished = Date.now()
+
+  // Return a message a the end of function execution
+  // with time it took to execute it
+  return `All promises are done. Time: ${(dateFinished - dateStart) / 1000}s.`
+}
+
+// Invoke the myAsyncFunc() function
+myAsyncFunc()
+  // Process the resolved promise returned by myAsyncFunc() function
+  .then(res => {
+    // Log the message from myAsyncFunc() function
+    console.log(res)
+  })
+// 'All promises are done. Time: 2.468s.'
+```
+
+As you can see, when the function waited for all promises to settle it took it around 2 seconds to execute the whole block. This is because all promises in the example above that are preceded by `await` keyword are executed in a sequence. So, when one awaited promise is being executed other promises that follow it has to wait.
+
+It is only when the first one is settled the other can be executed. This applies to all awaited promises in the "chain". The second has to wait for the first. The third has to wait for the second. This repeats until all awaited promises are settled. During this time the async function is paused with each `await` keyword.
+
+Fortunately, there is a way to make this faster. You can run all those promises in parallel and await only the final result of of those promises. To do that you can use `Promise.all()` method. This method accepts an iterable object of promises, like an array. When all promises are settled it returns one promise withe all values.
+
+So, what you need to do is to take those promises and put them inside the `Promise.all()`. Then, instead of awaiting all those promises you will await only the `Promise.all()`.
+
+```JavaScript
+// Create async function
+async function myAsyncFunc() {
+  // Create timestamp when function is invoked
+  const dateStart = Date.now()
+
+  // Use Promise.all() to wrap all promises and await its completion
+  await Promise.all([
+    // Create new promise and await its completion
+    // Until then, pause execution of this function
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Promise 1 is done.')
+      }, 450)
+    }),
+    // Create new promise and await its completion
+    // Until then, pause execution of this function
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Promise 2 is done.')
+      }, 750)
+    }),
+    // Create another promise and also await its completion
+    // Until then, pause execution of this function
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Promise 3 is done.')
+      }, 1250)
+    })
+  ])
+
+  // Create timestamp when all promises are resolved
+  const dateFinished = Date.now()
+
+  // Return a message a the end of function execution
+  // with time it took to execute it
+  return `All promises are done. Time: ${(dateFinished - dateStart) / 1000}s.`
+}
+
+// Invoke the myAsyncFunc() function
+myAsyncFunc()
+  // Process the resolved promise returned by myAsyncFunc() function
+  .then(res => {
+    // Log the message from myAsyncFunc() function
+    console.log(res)
+  })
+// 'All promises are done. Time: 1.264s.'
+```
+
+As you can see, the updated `myAsyncFunc()` function ran almost twice as fast, thanks to `Promise.all()` method and running all promises in parallel. Remember this the next time you will want to use `await` and make you use it properly.
 
 ## Conclusion: [...] ...
 
