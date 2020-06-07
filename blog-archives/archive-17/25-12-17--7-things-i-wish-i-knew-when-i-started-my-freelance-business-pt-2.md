@@ -97,6 +97,6 @@ Willingness to take risks, leap into the unknown, and learn on the go and willin
 [pomodoro]: https://blog.alexdevero.com/pomodoro-technique-secret-productivity/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

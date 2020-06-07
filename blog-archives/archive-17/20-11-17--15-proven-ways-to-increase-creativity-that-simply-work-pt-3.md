@@ -119,6 +119,6 @@ Sometimes, creativity is full of joy and pleasure. It is about having fun. Other
 [part 2]: https://blog.alexdevero.com/ways-increase-creativity-pt2/
 
 <!--
-### Inspiration:
+### Resources:
 -
 -->

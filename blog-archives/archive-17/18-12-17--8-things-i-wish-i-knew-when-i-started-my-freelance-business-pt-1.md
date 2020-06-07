@@ -100,6 +100,6 @@ First things first. Congratulations to your decision to take the leap and start 
 [part 2]: https://blog.alexdevero.com/freelance-business-pt2/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

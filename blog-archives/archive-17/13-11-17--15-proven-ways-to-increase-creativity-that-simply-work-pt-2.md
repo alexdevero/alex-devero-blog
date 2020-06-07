@@ -93,6 +93,6 @@ In the end, it is usually easier to learn a new language or play a musical instr
 [Abraham Maslow]: https://en.wikipedia.org/wiki/Abraham_Maslow
 
 <!--
-### Inspiration:
+### Resources:
 -
 -->

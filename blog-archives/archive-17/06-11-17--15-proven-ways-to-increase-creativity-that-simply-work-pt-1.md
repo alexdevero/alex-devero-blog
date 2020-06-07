@@ -115,6 +115,6 @@ So, start with your mindset. Believe that you are already creative person. You j
 [Leonardo Da Vinci]: https://en.wikipedia.org/wiki/Leonardo_da_Vinci
 
 <!--
-### Inspiration:
+### Resources:
 -
 -->
