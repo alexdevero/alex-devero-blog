@@ -1,6 +1,6 @@
 # How JavaScript Async/Await Works and How to Use It
 
-[Promises] made dealing with asynchronous code became easier. ES8 introduced one feature that makes this even easier. This feature is async/await. This tutorial will help you learn about what async/await is and how it works. You will also learn how to use async/await to write  JavaScript.
+[Promises] made dealing with asynchronous code easier. ES8 introduced one feature that makes this even easier. This feature is async/await. This tutorial will help you learn about what async/await is and how it works. You will also learn how to use async/await to write asynchronous JavaScript.
 
 <!--more-->
 <!--
@@ -28,7 +28,7 @@ You may not need to execute asynchronous operation all the time. However, there 
 
 When you fetch data from a server you never really know how fast you get them. Let's say you fetch these data in synchronous way. This means that you are blocking the [main thread]. When this happens other operations has to wait until the fetching is done and the main thread is available to use.
 
-This will not happen if you fetch these data in asynchronous way. If the response from server is not immediate it doesn't block the main thread. In this case, you data fetching is moved to the siding until it is finished, metaphorically speaking. Any other code that needs to be executed can be executed right away.
+This will not happen if you fetch these data in asynchronous way. If the response from server is not immediate it doesn't block the main thread. In this case, your data fetching is moved to the siding until it is finished, metaphorically speaking. Any other code that needs to be executed can be executed right away.
 
 It is only when that data fetching is complete, either with success or failure, when that operation moves to the main thread again. This doesn't mean you should re-write all your synchronous code to asynchronous. All it means is that there are some situations when asynchronous code can be quite useful.
 
@@ -40,7 +40,7 @@ There are two fundamental building blocks of async/await. The first are async fu
 
 ### The async keyword
 
-The most important part of an async function is `async` keyword. This is will tell JavaScript that you are want to declare an async function instead of regular. It is also this `async` keyword what will allow you to use `await` keyword inside that async function. Otherwise, JavaScript will throw SyntaxError. More about this later.
+The most important part of an async function is `async` keyword. This will tell JavaScript that you are want to declare an async function instead of regular. It is also this `async` keyword what will allow you to use `await` keyword inside that async function. Otherwise, JavaScript will throw SyntaxError. More about this later.
 
 When you want to create an async you put the `async` keyword before the `function` keyword and its name, `async function myAsyncFunc() {}`. This is [function declaration]. In case of [function expression] the `async` keyword goes between the equal sign and `function` keyword, `const myAsyncFunc = async function() {}`. This is all you need to create an async function.
 
@@ -63,7 +63,7 @@ const myAsyncFunc = async () => {
 
 ### Returning a value from async function
 
-Creating async functions s very similar creating a regular [functions]. One difference is the `async` keyword. Another, and more important, is that async functions always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
+Creating async functions is very similar creating a regular [functions]. One difference is the `async` keyword. Another, and more important, is that async functions always return a promise. This doesn't mean that you should not use `return` statement inside async functions. You still can.
 
 When you use `return` statement to return a value from an async function that function will still return resolved promise. The value of this promise will be the value you returned. You can also return resolved promise directly. To do this you can use `Promise` object and `resolve()` method, the value being passed as a parameter to `resolve()`.
 
@@ -177,7 +177,7 @@ myAsyncFunction()
 
 ### Await and promise.then()
 
-Notice one thing on the example above. You are creating a promise that resolves after 0.5s. Next, you are using `await` to invoke this promise, the `messagePromise`. At the same time you are assigning the resolved promise to a variable `messageResult`. After that, you are logging the value of that variable.
+Notice one thing on the example above. You are creating a promise that resolves after 0.5s. Next, you are using `await` to invoke this promise, the `messagePromise`. At the same time, you are assigning the resolved promise to a variable `messageResult`. After that, you are logging the value of that variable.
 
 There is one thing missing, one thing that should be there and it is not. This thing that is missing is the `then()` function. This function is supposed to get the value from the returned promise. Yet, the code still works. When you invoke the `myAsyncFunction()` function you will still see the message logged in console.
 
@@ -314,7 +314,7 @@ myAsyncFunc()
 
 ## Word of caution
 
-As you know, `await` pauses execution of async function in which it is. This is good. It means you don't have worry about when your promise will be settled, resolved or rejected. However, this has some consequences. Since the `await` paused the async function this function can't finish its execution until the promise is settled.
+As you know, `await` pauses execution of async function in which it is. This is good. It means you don't have to worry about when your promise will be settled, resolved or rejected. However, this has some consequences. Since the `await` paused the async function this function can't finish its execution until the promise is settled.
 
 This may not be a problem if you await one promise and the response is fast. What if you await multiple promises? What if getting some responses takes more time than others? Then, the execution of that async function will also take more time. Let's take a look at one example of an async function with three awaited promises.
 
@@ -370,7 +370,7 @@ As you can see, when the function waited for all promises to settle it took it a
 
 It is only when the first one is settled the other can be executed. This applies to all awaited promises in the "chain". The second has to wait for the first. The third has to wait for the second. This repeats until all awaited promises are settled. During this time the async function is paused with each `await` keyword.
 
-Fortunately, there is a way to make this faster. You can run all those promises in parallel and await only the final result of of those promises. To do that you can use `Promise.all()` method. This method accepts an iterable object of promises, like an array. When all promises are settled it returns one promise withe all values.
+Fortunately, there is a way to make this faster. You can run all those promises in parallel and await only the final result of those promises. To do that you can use `Promise.all()` method. This method accepts an iterable object of promises, like an array. When all promises are settled it returns one promise withe all values.
 
 So, what you need to do is to take those promises and put them inside the `Promise.all()`. Then, instead of awaiting all those promises you will await only the `Promise.all()`.
 
