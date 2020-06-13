@@ -43,21 +43,29 @@ When you want to add a new case block you add it to the body of switch statement
 switch (expression) {
   case value:
     // Do something if 'value' matches the 'expression'
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 }
+
 
 // Switch statement with multiple case blocks
 switch (expression) {
   case value:
     // Do something if 'value' matches the 'expression'
-    break // stop execution of switch
-  case differentValue:
-    // Do something if 'differentValue' matches the 'expression'
-    break // stop execution of switch
+    break // Stop the execution of switch statement
+  case firstDifferentValue:
+    // Do something if 'firstDifferentValue' matches the 'expression'
+    break // Stop the execution of switch statement
+  case secondDifferentValue:
+    // Do something if 'secondDifferentValue' matches the 'expression'
+    break // Stop the execution of switch statement
+  case thirdDifferentValue:
+    // Do something if 'thirdDifferentValue' matches the 'expression'
+    break // Stop the execution of switch statement
 }
 
+
 // Example with calendar
-// Create some expression to check
+// Create expression to check
 const today = 'Monday'
 
 // Create a switch statement
@@ -66,37 +74,37 @@ switch (today) {
   case 'Monday':
     // If value of today is 'Monday' do following
     console.log('It\'s Monday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Tuesday':
     // If value of today is 'Tuesday' do following
     console.log('It\'s Tuesday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Wednesday':
     // If value of today is 'Wednesday' do following
     console.log('It\'s Wednesday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Thursday':
     // If value of today is 'Thursday' do following
     console.log('It\'s Thursday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Friday':
     // If value of today is 'Friday' do following
     console.log('It\'s Friday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Saturday':
     // If value of today is 'Saturday' do following
     console.log('It\'s Saturday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 
   case 'Sunday':
     // If value of today is 'Sunday' do following
     console.log('It\'s Sunday.')
-    break // stop execution of switch
+    break // Stop the execution of switch statement
 }
 
 // Note 1:
@@ -129,6 +137,51 @@ switch (expression) {
     // Do something if either no case value matches the 'expression'
     // or if none of the cases stops the execution of switch statement
     break // Stop the switch statement
+}
+
+
+// Example with calendar and default case
+// Create expression to check
+const today = 'Monday'
+
+// Create a switch statement
+// and pass value of 'today' variable as an argument
+switch (today) {
+  case 'Monday':
+    // If value of today is 'Monday' do following
+    console.log('It\'s Monday.')
+    break // Stop the execution of switch statement
+
+  case 'Tuesday':
+    // If value of today is 'Tuesday' do following
+    console.log('It\'s Tuesday.')
+    break // Stop the execution of switch statement
+
+  case 'Wednesday':
+    // If value of today is 'Wednesday' do following
+    console.log('It\'s Wednesday.')
+    break // Stop the execution of switch statement
+
+  case 'Thursday':
+    // If value of today is 'Thursday' do following
+    console.log('It\'s Thursday.')
+    break // Stop the execution of switch statement
+
+  case 'Friday':
+    // If value of today is 'Friday' do following
+    console.log('It\'s Friday.')
+    break // Stop the execution of switch statement
+
+  case 'Saturday':
+    // If value of today is 'Saturday' do following
+    console.log('It\'s Saturday.')
+    break // Stop the execution of switch statement
+
+  default:
+    // If no other case matches the expression
+    // use the default and assume the day is Sunday
+    console.log('It\'s Sunday.')
+    break // Stop the execution of switch statement
 }
 ```
 
