@@ -191,6 +191,8 @@ switch (today) {
 // 'It\'s Sunday.'
 ```
 
+### Grouping cases
+
 ## The break statement
 
 By default the switch statement will stop only after it executed all code inside it. This may not be what you want. You may to stop it right after a value of some case matches the expression you passed to switch statement and its code block is executed. You don't want the switch statement to continue to other case, including the default.
@@ -240,7 +242,7 @@ The `break` statement is not required. This means two things. One, JavaScript wi
 
 The result will be following. The switch statement will execute the code inside the first case that matches. Then, it will continue to other cases and executes as well. Remember that these subsequent cases don't have to match the expression! Switch statement will execute these subsequent cases no matter what their values are.
 
-The only way to stop the switch statement is to put the `break` statement in one of the subsequent cases. Otherwise, this will execute of those subsequent cases until it reaches the end of itself.
+The only way to stop the switch statement is to put the `break` statement in one of the subsequent cases. Otherwise, it will execute all subsequent cases until it reaches the end of itself.
 
 ```JavaScript
 // Create switch statement that executes multiple cases
@@ -292,9 +294,23 @@ switch (3) {
 // 'Value is 5.'
 ```
 
-## Grouping cases
+## From if...else to switch
 
-## Conclusion: [...] ...
+## When to use switch statement
+
+Use switch instead of if when:
+
+- You are comparing multiple possible conditions of an expression and the expression itself is non-trivial.
+- You have multiple values that may require the same code.
+- You have some values that will require essentially all of another value's execution, plus only a few statements.
+
+Use if instead of switch when:
+
+- You want to test for the truthiness of an expression.
+- You only have a single match test.
+- You need to evaluate different expressions for each scenario
+
+## Conclusion: JavaScript Switch Statement
 
 [xyz-ihs snippet="thank-you-message"]
 
