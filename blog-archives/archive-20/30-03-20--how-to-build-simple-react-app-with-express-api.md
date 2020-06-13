@@ -651,11 +651,11 @@ Next, you extended the `create-react-app` boilerplate workflow with new scripts,
 [router]: https://expressjs.com/en/guide/routing.html
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

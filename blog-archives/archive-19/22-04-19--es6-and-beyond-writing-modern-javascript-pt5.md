@@ -359,12 +359,12 @@ In the next part learn about probably the most powerful and advanced ES6 feature
 [stage 3 proposal]: https://github.com/tc39/proposal-dynamic-import/#import
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://webapplog.com/es6/
 - https://zellwk.com/blog/es6/
 - https://markpollmann.com/ES6/

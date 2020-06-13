@@ -430,11 +430,11 @@ What's coming next? In the next part, you will learn about types and interfaces 
 [installation instructions]: https://create-react-app.dev/docs/adding-a-sass-stylesheet
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

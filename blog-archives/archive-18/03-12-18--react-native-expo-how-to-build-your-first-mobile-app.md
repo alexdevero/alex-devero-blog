@@ -682,11 +682,11 @@ The second is documentation for React native. These two places contain all infor
 [documentation]: https://facebook.github.io/react-native/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

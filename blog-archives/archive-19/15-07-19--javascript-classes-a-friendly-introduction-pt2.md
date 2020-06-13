@@ -656,6 +656,6 @@ This is it! You've just finished the second, and last, part of this miniseries f
 [previous part]: https://blog.alexdevero.com/javascript-classes-pt1/#class-inheritance-extends
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

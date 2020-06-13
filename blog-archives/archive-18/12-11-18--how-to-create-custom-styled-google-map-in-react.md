@@ -678,11 +678,11 @@ Congratulations, you've made it! You've created your own custom-styled Google Ma
 <!-- https://codesandbox.io/s/0qzkqp5vxp -->
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

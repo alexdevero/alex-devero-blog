@@ -111,6 +111,6 @@ This brings us to the final step, the application. From now on, it is only up to
 [job]: https://hbr.org/ideacast/2016/12/the-jobs-to-be-done-theory-of-innovation
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

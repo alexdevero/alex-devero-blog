@@ -546,10 +546,10 @@ Congratulations! You've just finished the third and last part of this mini serie
 [Function constructor]: https://blog.alexdevero.com/javascript-functions-pt2/#function-constructor
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -->

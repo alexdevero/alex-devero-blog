@@ -381,12 +381,12 @@ Next steps? Revisit what you've learned today and go through code examples we wo
 [theoretically]: https://stackoverflow.com/questions/22747068/is-there-a-max-number-of-arguments-javascript-functions-can-accept
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.geeksforgeeks.org/functions-in-javascript/
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 - https://javascript.info/advanced-functions

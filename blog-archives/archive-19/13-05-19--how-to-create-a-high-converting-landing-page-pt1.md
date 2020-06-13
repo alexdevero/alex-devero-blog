@@ -132,12 +132,12 @@ However, this was only the first batch. There is more you can learn about how to
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.renderforest.com/blog/how-to-create-a-landing-page
 - https://blog.hubspot.com/marketing/7-landing-page-design-tips
 - https://business.tutsplus.com/tutorials/high-converting-landing-pages--cms-32090

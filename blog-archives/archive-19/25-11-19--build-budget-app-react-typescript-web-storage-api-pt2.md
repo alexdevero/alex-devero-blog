@@ -1524,11 +1524,11 @@ Congratulations, you've just built your own budget app! However, why stop here? 
 [React Router docs]: https://reacttraining.com/react-router/web/guides/quick-start
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

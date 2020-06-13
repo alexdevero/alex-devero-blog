@@ -110,13 +110,12 @@ This is it. Now you know about the 8 big mistakes that might be holding you back
 [Supernova]: https://supernova.io/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.creativebloq.com/computer-arts/30-self-promotion-tips-1108942
 - https://www.creativebloq.com/self-promotion/essential-rules-61515385
 -->
-

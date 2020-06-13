@@ -343,12 +343,12 @@ What is next? In the next part we will work on individual components, or parts, 
 [here]: https://yarnpkg.com/en/docs/install#windows-stable
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://codesandbox.io/s/29xv0n51y
 - https://designmodo.com/create-style-guides/
 - https://www.kickstarter.com/help/brand_assets

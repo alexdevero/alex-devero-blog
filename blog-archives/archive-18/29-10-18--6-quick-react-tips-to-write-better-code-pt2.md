@@ -308,7 +308,7 @@ So, apply what you've read about and take your React code to another level. And,
 [book series]: https://github.com/getify/You-Dont-Know-JS
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://logrocket-blog.ghost.io/death-by-a-thousand-cuts-a-checklist-for-eliminating-common-react-performance-issues/?utm_source=reactdigest
 - https://blog.usejournal.com/how-to-apply-solid-principles-in-react-applications-6c964091a982
 - https://vasanthk.gitbooks.io/react-bits/

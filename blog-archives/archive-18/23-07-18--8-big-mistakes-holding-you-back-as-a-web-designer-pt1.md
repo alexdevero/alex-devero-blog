@@ -106,11 +106,11 @@ What's next? In the next part we will talk about other big mistakes holding you 
 [Pareto principle]: https://en.wikipedia.org/wiki/Pareto_principle
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

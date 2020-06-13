@@ -168,12 +168,12 @@ Finally, treat your ability to design like a muscle. Remember that none of those
 [uimovement]: https://uimovement.com/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.canva.com/learn/10-tips-to-teach-yourself-design-boost-your-design-skills/
 - https://rafaltomal.com/5-tips-to-improve-your-design-skills/
 -->

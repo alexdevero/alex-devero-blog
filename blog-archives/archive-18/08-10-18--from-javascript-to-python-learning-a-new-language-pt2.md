@@ -353,12 +353,12 @@ Aside to this, work on what you've learned in the [first part] and also on your 
 [formatting operator]: https://www.learnpython.org/en/String_Formatting
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://dev.to/underdogio/python-for-javascript-developers
 - https://docs.python.org/3/library/index.html
 - https://www.tutorialspoint.com/python/python_variable_types.htm

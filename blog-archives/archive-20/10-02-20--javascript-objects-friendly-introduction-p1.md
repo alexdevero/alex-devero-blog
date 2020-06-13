@@ -489,11 +489,11 @@ You are at the end of the first part of this mini series focused on JavaScript o
 [function]: https://blog.alexdevero.com/javascript-functions-pt1/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

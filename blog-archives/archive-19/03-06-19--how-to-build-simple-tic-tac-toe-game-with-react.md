@@ -583,11 +583,11 @@ Congratulations! You did it! You've just finished this tutorial and build your o
 [npx]: https://github.com/zkat/npx
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

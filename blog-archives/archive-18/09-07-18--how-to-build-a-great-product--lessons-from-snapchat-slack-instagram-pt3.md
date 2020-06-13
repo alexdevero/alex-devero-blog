@@ -127,6 +127,6 @@ One last thing. Remember that every great product started small. So, yes have am
 []:
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

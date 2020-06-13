@@ -372,10 +372,10 @@ As next, you've also learned about Function constructor and how to use rest para
 [bind()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -->

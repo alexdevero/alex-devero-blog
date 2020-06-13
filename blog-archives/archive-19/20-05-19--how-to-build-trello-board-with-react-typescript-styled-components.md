@@ -492,11 +492,11 @@ TypeScript can help you take your code to a whole new level. The same also appli
 [website]: https://www.typescriptlang.org/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

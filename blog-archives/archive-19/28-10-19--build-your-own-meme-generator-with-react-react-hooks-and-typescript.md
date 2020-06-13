@@ -754,11 +754,11 @@ Good job! You've just built your own meme generator with React, React hooks and 
 [TypeScript]: https://www.typescriptlang.org/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

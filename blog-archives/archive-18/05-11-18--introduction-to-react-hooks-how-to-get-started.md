@@ -389,7 +389,7 @@ The second place is [awesome-react-hooks]. This is a GitHub repo full of tutoria
 [awesome-react-hooks]: https://github.com/rehooks/awesome-react-hooks
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://scotch.io/tutorials/getting-started-with-react-hooks
 - https://daveceddia.com/usestate-hook-examples/
 - https://medium.com/@JhonnyMichel/global-state-management-with-react-hooks-5e453468c5bf
@@ -403,6 +403,6 @@ The second place is [awesome-react-hooks]. This is a GitHub repo full of tutoria
 -->
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

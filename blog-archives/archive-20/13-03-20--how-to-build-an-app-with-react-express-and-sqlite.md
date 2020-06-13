@@ -1031,11 +1031,11 @@ After that, you've learned how to build a React app. Here, you've learned how to
 [fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

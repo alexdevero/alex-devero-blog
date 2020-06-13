@@ -560,11 +560,11 @@ Congratulations! You've just finished this tutorial on JavaScript variables. By 
 [array]: https://developer.mozilla.org/en-US/docs/Glossary/array
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

@@ -406,6 +406,6 @@ Do you have any questions, recommendations, thoughts, advice or tip you would li
 [mail]: https://alexdevero.com/contact.html
 
 <!--
-#### Inspiration:
+#### Resources:
 - build scripts for different platforms: https://www.christianengvall.se/electron-packager-tutorial/
 -->

@@ -782,11 +782,11 @@ Good job! You've just finished the second, and also last, part of this mini seri
 [Object.assign()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://javascript.info/number#tests-isfinite-and-isnan
 -->

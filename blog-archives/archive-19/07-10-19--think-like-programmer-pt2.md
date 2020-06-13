@@ -163,12 +163,12 @@ Lastly, develop a thirst for learning and become a lifelong student. No matter y
 [high-level]: https://en.wikipedia.org/wiki/High-level_programming_language
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://zapier.com/blog/think-like-a-programmer/
 - https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/
 - https://www.wikihow.com/Think-Like-a-Programmer

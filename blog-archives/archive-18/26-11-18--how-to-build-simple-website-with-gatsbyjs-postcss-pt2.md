@@ -998,6 +998,6 @@ Use the code from this tutorial, and what you know about GatsbyJS, and start bui
 [Bootstrap 4]: http://getbootstrap.com
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

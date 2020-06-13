@@ -816,11 +816,11 @@ Congratulations! You've just finished this tutorial and build your own Tetris ga
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

@@ -620,6 +620,6 @@ What's coming in the next part of this getting started with React and TypeScript
 [template literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

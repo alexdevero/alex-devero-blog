@@ -240,11 +240,11 @@ It contains code examples demonstrating how to use TypeScript with React. This m
 [React+TypeScript Cheatsheets]: https://github.com/typescript-cheatsheets/react-typescript-cheatsheet
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

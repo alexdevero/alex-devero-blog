@@ -304,12 +304,12 @@ Where to go from here? I suggest working on tutorials. Next, you can follow onli
 [Python Fiddle]: http://pythonfiddle.com
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://dev.to/underdogio/python-for-javascript-developers
 - https://docs.python.org/3/library/index.html
 - https://www.tutorialspoint.com/python/python_classes_objects.htm

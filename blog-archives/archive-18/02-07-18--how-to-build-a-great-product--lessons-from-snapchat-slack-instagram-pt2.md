@@ -123,6 +123,6 @@ Lastly, we talked about focusing on the core of the product, avoiding feature cr
 [Basecamp]: https://basecamp.com/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

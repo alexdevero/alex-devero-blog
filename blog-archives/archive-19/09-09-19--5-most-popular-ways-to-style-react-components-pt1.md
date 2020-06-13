@@ -696,12 +696,12 @@ So, for now, try those three ways we discussed today and see which one you like.
 [react-app-rewire-postcss]: https://github.com/csstools/react-app-rewire-postcss
 
 <!--
-#### Meta:
+### Meta:
 - There are many ways to style React components. In this article, we will review the first three most popular ways and how to implement each in your React app.
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://blog.bitsrc.io/5-ways-to-style-React-components-in-2019-30f1ccc2b5b
 - https://codeburst.io/4-four-ways-to-style-React-components-ac6f323da822
 - https://css-tricks.com/css-modules-part-3-React/

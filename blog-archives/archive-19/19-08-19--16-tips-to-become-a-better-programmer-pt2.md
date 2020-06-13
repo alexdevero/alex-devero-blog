@@ -155,12 +155,12 @@ If you want to become a better programmer, focus on breadth of knowledge instead
 [Reddit]: https://www.reddit.com/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.git-tower.com/blog/become-a-better-programmer-5-essentials/
 - https://www.techrepublic.com/article/10-tips-for-becoming-a-better-programmer/
 - https://www.dodgycoder.net/2011/10/how-to-become-better-programmer.html

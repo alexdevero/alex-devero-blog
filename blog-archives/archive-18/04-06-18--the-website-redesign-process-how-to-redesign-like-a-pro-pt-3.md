@@ -124,6 +124,6 @@ I hope you enjoyed this part just as much as the previous and that you learned s
 []:
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

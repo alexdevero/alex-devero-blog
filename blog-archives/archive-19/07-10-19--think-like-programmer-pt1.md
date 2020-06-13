@@ -127,12 +127,12 @@ Sixth, review and reflect on your work and learn from it. When you finish a proj
 [brute force]: https://en.wikipedia.org/wiki/Brute-force_search
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://zapier.com/blog/think-like-a-programmer/
 - https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/
 - https://www.wikihow.com/Think-Like-a-Programmer

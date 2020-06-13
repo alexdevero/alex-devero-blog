@@ -486,12 +486,12 @@ There is still space for improving your knowledge of JavaScript. So, what's next
 [object literal]: https://blog.alexdevero.com/es6-es7-es8-modern-javascript-pt3/#object-literal
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://webapplog.com/es6/
 - https://zellwk.com/blog/es6/
 - https://markpollmann.com/ES6/

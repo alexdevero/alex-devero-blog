@@ -548,6 +548,6 @@ Congratulations! You've just created your first app with electron and React from
 [documentation]: https://github.com/electron/electron-packager
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

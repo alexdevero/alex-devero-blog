@@ -423,10 +423,10 @@ After that, you've also learned about implicit and explicit return,  when you ca
 [function constructor]: https://blog.alexdevero.com/javascript-functions-pt2/#function-constructor
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -->

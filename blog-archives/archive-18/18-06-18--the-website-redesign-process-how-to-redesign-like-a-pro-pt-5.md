@@ -136,6 +136,6 @@ I will dedicate an article especially to that topic. And I will give you all inf
 [Usability testing hints, tips and guidelines]: http://www.uxforthemasses.com/usability-testing/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

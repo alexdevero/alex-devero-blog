@@ -369,7 +369,7 @@ When put together, these two batches of React tips will help you take your exper
 [CSS-in-JS]: https://github.com/MicheleBertoli/css-in-js
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://vasanthk.gitbooks.io/react-bits/
 - https://camjackson.net/post/9-things-every-reactjs-beginner-should-know
 - https://blog.risingstack.com/8-tips-to-build-better-react-apps-in-2018/

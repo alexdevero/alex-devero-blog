@@ -150,12 +150,12 @@ Lastly, learning to code takes time. You will not learn it in the matter of days
 [C#]: https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://medium.com/javascript-scene/learn-to-code-13-tips-that-could-save-you-years-of-effort-92ce799a3e1f
 - https://lifehacker.com/top-10-ways-to-teach-yourself-to-code-1684250889
 - https://www.codementor.io/learn-programming/how-to-learn-to-code-fast

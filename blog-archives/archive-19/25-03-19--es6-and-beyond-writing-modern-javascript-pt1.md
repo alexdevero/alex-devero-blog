@@ -375,12 +375,12 @@ In the next part you will learn about topics such as template and object literal
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://medium.com/podiihq/javascript-variables-should-you-use-let-var-or-const-394f7645c88f
 - https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
 - https://scotch.io/tutorials/understanding-scope-in-javascript#toc-execution-context

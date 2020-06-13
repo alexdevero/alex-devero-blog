@@ -129,12 +129,12 @@ So, make sure this is something you actually want. Make sure you are building so
 [pivot]: https://blog.alexdevero.com/pivot-how-to-go-from-survival-to-epic-success/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://rubygarage.org/blog/how-to-build-a-minimum-viable-product
 - https://medium.com/swlh/how-to-build-an-mvp-in-the-right-way-in-2018-f538df0f2bba
 - https://clearbridgemobile.com/planning-a-minimum-viable-product-a-step-by-step-guide/

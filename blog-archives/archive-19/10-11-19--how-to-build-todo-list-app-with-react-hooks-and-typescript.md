@@ -779,11 +779,11 @@ Congratulations, you've just built your own todo list app using React hooks and 
 [interfaces]: https://www.typescriptlang.org/docs/handbook/interfaces.html
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

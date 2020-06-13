@@ -575,12 +575,12 @@ In the next part you will learn about ES6 features such as async function and aw
 [TypeScript]: https://www.typescriptlang.org
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://webapplog.com/es6/
 - https://zellwk.com/blog/es6/
 - https://markpollmann.com/ES6/

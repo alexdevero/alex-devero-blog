@@ -521,6 +521,6 @@ After that, we will dive into the best part of this tutorial-build all pages for
 [Font Awesome]: https://fontawesome.com
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

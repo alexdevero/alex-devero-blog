@@ -131,11 +131,11 @@ It will also make the whole learning experience more difficult than it has to be
 [deepforge]: http://deepforge.org/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

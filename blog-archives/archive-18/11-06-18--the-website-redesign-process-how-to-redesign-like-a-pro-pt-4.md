@@ -126,5 +126,5 @@ In the next and final part we will close this series. We will focus on mood boar
 []:
 
 <!--
-#### Inspiration:
+#### Resources:
 -->

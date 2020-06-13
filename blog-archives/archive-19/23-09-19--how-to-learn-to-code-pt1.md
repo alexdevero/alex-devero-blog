@@ -144,12 +144,12 @@ Remember, the most important thing is to get started. Everything else is a waste
 <!-- [Part 2]: -->
 
 <!--
-#### Meta:
+### Meta:
 - If you want to learn to code, the first steps might seem daunting. It is also easy to waste a lot of your time. These tips wil help you learn to code faster
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://medium.com/javascript-scene/learn-to-code-13-tips-that-could-save-you-years-of-effort-92ce799a3e1f
 - https://lifehacker.com/top-10-ways-to-teach-yourself-to-code-1684250889
 - https://www.codementor.io/learn-programming/how-to-learn-to-code-fast

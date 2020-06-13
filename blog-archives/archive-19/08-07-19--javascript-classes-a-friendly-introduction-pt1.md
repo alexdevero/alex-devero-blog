@@ -645,12 +645,12 @@ These parts and concepts include constructor, class properties and methods, inhe
 <!-- [Part 2]: -->
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://javascript.info
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 - https://alligator.io/js/objects-prototypes-classes/

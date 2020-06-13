@@ -122,6 +122,6 @@ I hope that what we covered today will help you refine and polish your redesign 
 [xyz-ihs snippet="thank-you-message"]
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

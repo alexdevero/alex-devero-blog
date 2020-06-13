@@ -456,11 +456,11 @@ After scope, you've also learned about how `var`, `let` and `const` work inside 
 [execution context]: https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

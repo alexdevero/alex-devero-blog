@@ -640,6 +640,6 @@ This is all for this part. In a recap, today, you've learned about the two first
 [base]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

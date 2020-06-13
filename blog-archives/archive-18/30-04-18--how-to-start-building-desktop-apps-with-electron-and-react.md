@@ -589,6 +589,6 @@ And, this is all for this article! You created your own simple starting template
 [official documentation]: https://github.com/electron/electron/tree/master/docs
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

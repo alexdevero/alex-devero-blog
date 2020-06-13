@@ -157,11 +157,11 @@ Congratulations! You've just finished this article on how to create great user o
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

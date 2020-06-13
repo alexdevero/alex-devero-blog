@@ -115,6 +115,6 @@ In the next part we will focus on topics such as pivots, the importance of eatin
 [Minimum loveable product]: https://medium.com/the-happy-startup-school/beyond-mvp-10-steps-to-make-your-product-minimum-loveable-51800164ae0c
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

@@ -467,12 +467,12 @@ Now, take a break and let everything you've learned today settle down. Allow you
 [try...catch]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://webapplog.com/es6/
 - https://zellwk.com/blog/es6/
 - https://markpollmann.com/ES6/

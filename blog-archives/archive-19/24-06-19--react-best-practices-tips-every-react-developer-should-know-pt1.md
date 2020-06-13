@@ -353,12 +353,12 @@ In the next part, you will learn about another set of React best practices, and 
 [context]: https://reactjs.org/docs/context.html
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://reactpatterns.com
 - https://medium.com/@User3141592/react-gotchas-and-best-practices-2d47fd67dd22
 - https://codeburst.io/how-to-not-react-common-anti-patterns-and-gotchas-in-react-40141fe0dcd

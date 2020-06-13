@@ -141,7 +141,7 @@ User interface design is about creating interfaces that help users achieve their
 [ghost buttons]: https://designmodo.com/ghost-buttons/
 
 <!--
-#### Meta:
+### Meta:
 What is one of the deadliest traps we can fall into in user interface design? What is the difference between simple and dumb user interface? How can we make interfaces more intuitive? What are some good practices for user interface design? This article will give you the answers you've been looking for.
  -->
 
@@ -150,6 +150,6 @@ What is one of the deadliest traps we can fall into in user interface design? Wh
  -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

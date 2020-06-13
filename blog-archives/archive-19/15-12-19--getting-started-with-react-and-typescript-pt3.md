@@ -591,6 +591,6 @@ Now,take what you've learned today and apply it. For example, give it a try and 
 [import]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

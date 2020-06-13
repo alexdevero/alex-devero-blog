@@ -502,6 +502,6 @@ JavaScript loops offer a great way to run block of code multiple times. This tut
 -->
 
 <!--
-### Inspiration:
+### Resources:
 -
 -->

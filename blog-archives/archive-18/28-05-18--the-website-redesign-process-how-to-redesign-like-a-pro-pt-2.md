@@ -117,6 +117,6 @@ I hope that you enjoyed this part and that you've learned something you can use 
 [Behance]: https://www.behance.net/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

@@ -277,12 +277,12 @@ What's next? In the second part of this mini series we will discuss concepts suc
 [clean code]: https://blog.alexdevero.com/6-simple-tips-writing-clean-code/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://dev.to/underdogio/python-for-javascript-developers
 - https://docs.python.org/3/library/index.html
 -->

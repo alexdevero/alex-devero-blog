@@ -133,12 +133,12 @@ These were the first four tips that will help you become a better programmer. Th
 [Clean Architecture]: https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.git-tower.com/blog/become-a-better-programmer-5-essentials/
 - https://www.techrepublic.com/article/10-tips-for-becoming-a-better-programmer/
 - https://www.dodgycoder.net/2011/10/how-to-become-better-programmer.html

@@ -698,11 +698,11 @@ What can you expect in the next part? We will take a look at other sections for 
 [part 1]: https://blog.alexdevero.com/style-guide-react-pt1/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

@@ -753,12 +753,12 @@ When you find one, stick to it. Learn how to use it and how it works. Then, mast
 [Styled-Components – Mastering the Fundamentals Through Practice]: https://blog.alexdevero.com/styled-components-mastering-fundamentals/
 
 <!--
-#### Meta:
+### Meta:
 - Choosing the right way to style React components is hard. There are too many options to choose from. This article will help you make this choice easier.
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://blog.bitsrc.io/5-ways-to-style-react-components-in-2019-30f1ccc2b5b
 - https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822
 - https://css-tricks.com/css-modules-part-3-react/

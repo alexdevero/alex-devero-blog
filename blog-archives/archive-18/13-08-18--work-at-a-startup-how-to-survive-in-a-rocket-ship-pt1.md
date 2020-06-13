@@ -112,11 +112,11 @@ This all for this first part. I hope you enjoyed this article and the two advice
 [phonetic mnemonic system]: http://www.skillstoolbox.com/career-and-education-skills/learning-skills/memory-skills/mnemonics/mnemonic-systems/phonetic-mnemonic-system/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

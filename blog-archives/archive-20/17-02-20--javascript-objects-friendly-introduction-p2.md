@@ -584,12 +584,12 @@ Next, you've also learned how to freeze objects, either completely or partially,
 [primitive data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer

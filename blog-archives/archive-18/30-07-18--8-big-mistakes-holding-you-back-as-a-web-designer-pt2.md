@@ -106,12 +106,11 @@ We will discuss topics from the “soft” side as well as from the “hard” s
 [first part]: https://blog.alexdevero.com/mistakes-web-designer-pt1/
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
-- 
+#### Resources:
+-
 -->
-

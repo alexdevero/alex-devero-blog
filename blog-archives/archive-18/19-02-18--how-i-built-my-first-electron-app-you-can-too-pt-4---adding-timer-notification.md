@@ -473,6 +473,6 @@ In next part, we will take a look at how to improve the UI of our electron app. 
 [part 3]: https://blog.alexdevero.com/electron-app-pt3/
 
 <!--
-#### Inspiration:
+#### Resources:
 -
 -->

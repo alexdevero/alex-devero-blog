@@ -427,12 +427,12 @@ What's coming next? In the next part, you will learn about another set of ES6, E
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md
 - https://github.com/lukehoban/es6features
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

@@ -173,11 +173,11 @@ Keeping your design skills up to date is hard. It is even harder to constantly p
 [first part]: https://blog.alexdevero.com/improve-design-skills-pt1/#good-and-the-great
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://www.canva.com/learn/10-tips-to-teach-yourself-design-boost-your-design-skills/
 -->

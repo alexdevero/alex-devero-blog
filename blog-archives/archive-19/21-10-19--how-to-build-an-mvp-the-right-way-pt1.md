@@ -141,12 +141,12 @@ And as the final step, identify your ideal customer/user. Focus on people who wi
 []:
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
 
 <!--
-#### Inspiration:
+#### Resources:
 - https://rubygarage.org/blog/how-to-build-a-minimum-viable-product
 - https://medium.com/swlh/how-to-build-an-mvp-in-the-right-way-in-2018-f538df0f2bba
 - https://clearbridgemobile.com/planning-a-minimum-viable-product-a-step-by-step-guide/

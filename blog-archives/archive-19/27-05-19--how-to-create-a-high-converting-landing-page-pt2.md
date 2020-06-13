@@ -143,6 +143,6 @@ Congratulations! You've finished the second, and last, part of this mini series.
 [spellcheckplus]: https://spellcheckplus.com
 
 <!--
-#### Meta:
+### Meta:
 -
 -->

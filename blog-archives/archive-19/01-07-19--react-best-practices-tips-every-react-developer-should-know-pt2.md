@@ -541,6 +541,6 @@ As the last thing, you've learned about `defaultProps` and `prop-types`, and how
 <!-- [Part 3]: https://blog.alexdevero.com/react-best-practices-pt3/ -->
 
 <!--
-#### Meta:
+### Meta:
 -
 -->
