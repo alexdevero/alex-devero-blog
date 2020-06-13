@@ -11,7 +11,17 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
-## h2
+## The basics of switch statement
+
+Every JavaScript switch statement must have three things in order to work. The first thing is the `switch` keyword. Every switch statement has to start with this keyword. The second thing is a value you want to compare. This value goes between the parenthesis that follow after the `switch` keyword, and before curly braces with block of code.
+
+```JavaScript
+// Switch statement syntax
+switch (someValue) {
+  // body with block of code
+}
+```
+
 
 ## Conclusion: [...] ...
 
