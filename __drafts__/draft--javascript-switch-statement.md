@@ -22,6 +22,13 @@ switch (someValue) {
 }
 ```
 
+### Value and case blocks
+
+JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
+
+What switch does is it operates with two parts. The first one is the value you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to switch statement has to have some value.
+
+When you execute a switch statement, it will do two things. First, it will take the value you passed in parenthesis that follow after the `switch` keyword. Second, it will compare this value with values you specified for each statement.
 
 ## Conclusion: [...] ...
 
