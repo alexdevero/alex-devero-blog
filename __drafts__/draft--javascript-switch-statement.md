@@ -28,7 +28,7 @@ switch (expression) {
 
 JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
 
-What JavaScript switch statement does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to a switch statement should have some value.
+What JavaScript switch statement does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch work. Every case block you add to a switch statement should have some value.
 
 A bit how it works. When you execute a switch statement, it will do two things. First, it will take the expression you passed in parenthesis, that follow after the `switch` keyword. Second, it will compare this expression with values you specified for each statement. Now, let's talk about the case blocks.
 
@@ -36,7 +36,7 @@ A case block consists of two parts. First, there is the `case` keyword. This key
 
 Case blocks don't use curly braces. There are only colons at the end of the line. Then, on the next line is the code you want to execute if the case is used. That is, if the switch expression matches the value you specified after the `case` keyword.
 
-When you want to add a new case block you add it to the body of switch statement, inside the curly braces. When it comes to case blocks, there is no limit to how many of them you can use. You can add as many case blocks in a switch statement as you want.
+When you want to add a new case block you add it to the body of switch statement, inside the curly braces. When it comes to case blocks, there is no limit to how many of them you can use. You can add as many case blocks as you want.
 
 ```JavaScript
 // Switch statement with one case block
@@ -125,7 +125,7 @@ switch (today) {
 
 We discussed that every case block should have some value. There is one exception to this rule. The only exception here is a default case. This default case doesn't need any value. This also means one thing. If any preceding case either fails or doesn't stop the execution of the switch statement the default will be executed.
 
-The purpose of default case is to serve as a backup. It should be executed when, for whatever reason, neither of cases in a switch statement match the expression passed to switch as an argument. One thing to remember. The default case will be also applied if any other case matches the expression, but it didn't stop the execution of switch statement.
+The purpose of default case is to serve as a backup. It should be executed when, for whatever reason, neither of cases in a switch match the expression passed to switch as an argument. One thing to remember. The default case will be also applied if any other case matches the expression, but it didn't stop the execution of switch statement.
 
 So, make sure you know what is the result you want. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
 
@@ -193,13 +193,14 @@ switch (today) {
 
 ### Grouping cases
 
+
 ## The break statement
 
-By default the switch statement will stop only after it executed all code inside it. This may not be what you want. You may to stop it right after a value of some case matches the expression you passed to switch statement and its code block is executed. You don't want the switch statement to continue to other case, including the default.
+By default the switch statement will stop only after it executed all code inside it. This may not be what you want. You may to stop it right after a value of some case matches the expression you passed to switch and its code block is executed. You don't want the switch to continue to other case, including the default.
 
-The easiest way to do this is by using `break` statement. You've already seen this statement a couple of times on previous examples. Now, it's time to finally talk about it. Let's say that value of some case matches the expression you passed to switch statement. Then, the switch statement will automatically start executing the code inside this case.
+The easiest way to do this is by using `break` statement. You've already seen this statement a couple of times on previous examples. Now, it's time to finally talk about it. Let's say that value of some case matches the expression you passed to switch. Then, switch will automatically start executing the code inside this case.
 
-When this happens the switch statement also looks for any `break` statements inside that case. If it finds any `break` statement it immediately stops execution of the case inside which it is. It also stops execution of the whole switch statement. Otherwise, it will continue to other cases, including the default case until there is no code left.
+When this happens switch also looks for any `break` statements inside that case. If it finds any `break` statement it immediately stops execution of the case inside which it is. It also stops execution of the whole switch statement. Otherwise, it will continue to other cases, including the default case until there is no code left.
 
 ```JavaScript
 // Example 1: using the 'break' statement
@@ -240,9 +241,9 @@ switch (expression) {
 
 The `break` statement is not required. This means two things. One, JavaScript will not throw an error if you forget it. Two, you can omit it when you want in order to get the result you want. For example, you can omit it in one case block if you want the statement to continue executing and add it to another to stop the execution.
 
-The result will be following. The switch statement will execute the code inside the first case that matches. Then, it will continue to other cases and executes as well. Remember that these subsequent cases don't have to match the expression! Switch statement will execute these subsequent cases no matter what their values are.
+The result will be following. The switch statement will execute the code inside the first case that matches. Then, it will continue to other cases and executes as well. Remember that these subsequent cases don't have to match the expression! Switch will execute these subsequent cases no matter what their values are.
 
-The only way to stop the switch statement is to put the `break` statement in one of the subsequent cases. Otherwise, it will execute all subsequent cases until it reaches the end of itself.
+The only way to stop execution of a switch is to put the `break` statement in one of the subsequent cases. Otherwise, it will execute all subsequent cases until it reaches the end of itself.
 
 ```JavaScript
 // Create switch statement that executes multiple cases
