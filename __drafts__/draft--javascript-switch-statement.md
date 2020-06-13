@@ -24,11 +24,11 @@ switch (expression) {
 }
 ```
 
-## Case blocks
+## The case block
 
 JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
 
-What switch does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to a switch statement should have some value.
+What JavaScript switch statement does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to a switch statement should have some value.
 
 A bit how it works. When you execute a switch statement, it will do two things. First, it will take the expression you passed in parenthesis, that follow after the `switch` keyword. Second, it will compare this expression with values you specified for each statement. Now, let's talk about the case blocks.
 
@@ -66,7 +66,7 @@ switch (expression) {
 
 // Example with calendar
 // Create expression to check
-const today = 'Monday'
+const today = 'Wednesday'
 
 // Create a switch statement
 // and pass value of 'today' variable as an argument
@@ -107,22 +107,27 @@ switch (today) {
     break // Stop the execution of switch statement
 }
 
+// Output:
+// 'It\'s Wednesday.'
+
+
 // Note 1:
 // Empty lines between case blocks
-// are just for improving readability of the code.
+// are just to improve readability of the code.
+
 
 // Note 2:
 // You could also pass the string
 // to switch statement directly: switch ('Monday') { ... }
 ```
 
-### Default case
+### The default case
 
 We discussed that every case block should have some value. There is one exception to this rule. The only exception here is a default case. This default case doesn't need any value. This also means one thing. If any preceding case either fails or doesn't stop the execution of the switch statement the default will be executed.
 
 The purpose of default case is to serve as a backup. It should be executed when, for whatever reason, neither of cases in a switch statement match the expression passed to switch as an argument. One thing to remember. The default case will be also applied if any other case matches the expression, but it didn't stop the execution of switch statement.
 
-So, make sure you know what you are trying to achieve. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
+So, make sure you know what is the result you want. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
 
 Creating a default case is similar to a normal case with value. In case of default case, you start with `default` keyword, instead of `case`. This keyword is then followed by colons and block of code. Remember that this code will be executed by default, either if no case matches or if no case block stops the execution of switch statement.
 
@@ -136,13 +141,12 @@ switch (expression) {
   default:
     // Do something if either no case value matches the 'expression'
     // or if none of the cases stops the execution of switch statement
-    break // Stop the switch statement
 }
 
 
 // Example with calendar and default case
 // Create expression to check
-const today = 'Monday'
+const today = 'Who knows.'
 
 // Create a switch statement
 // and pass value of 'today' variable as an argument
@@ -181,11 +185,114 @@ switch (today) {
     // If no other case matches the expression
     // use the default and assume the day is Sunday
     console.log('It\'s Sunday.')
+}
+
+// Output:
+// 'It\'s Sunday.'
+```
+
+## The break statement
+
+By default the switch statement will stop only after it executed all code inside it. This may not be what you want. You may to stop it right after a value of some case matches the expression you passed to switch statement and its code block is executed. You don't want the switch statement to continue to other case, including the default.
+
+The easiest way to do this is by using `break` statement. You've already seen this statement a couple of times on previous examples. Now, it's time to finally talk about it. Let's say that value of some case matches the expression you passed to switch statement. Then, the switch statement will automatically start executing the code inside this case.
+
+When this happens the switch statement also looks for any `break` statements inside that case. If it finds any `break` statement it immediately stops execution of the case inside which it is. It also stops execution of the whole switch statement. Otherwise, it will continue to other cases, including the default case until there is no code left.
+
+```JavaScript
+// Example 1: using the 'break' statement
+// Create switch statement that stops
+// when any case matches the expression
+switch (expression) {
+  case value:
+    // Do something if 'value' matches the 'expression'
     break // Stop the execution of switch statement
+
+  case value:
+    // Do something if 'value' matches the 'expression'
+    break // Stop the execution of switch statement
+
+  default:
+    // Do something if no case matches the 'expression'
+}
+
+
+// Example 2: omitting the 'break' statement
+// Create switch statement that doesn't stop
+// when some case matches the expression
+switch (expression) {
+  case value:
+    // Do something if 'value' matches the 'expression'
+    // and then continue to other cases
+
+  case value:
+    // Do something if 'value' matches the 'expression'
+    // and then continue to other cases
+
+  default:
+    // Do something if no case matches the 'expression'
 }
 ```
 
-## Break statement
+### Omitting break statement
+
+The `break` statement is not required. This means two things. One, JavaScript will not throw an error if you forget it. Two, you can omit it when you want in order to get the result you want. For example, you can omit it in one case block if you want the statement to continue executing and add it to another to stop the execution.
+
+The result will be following. The switch statement will execute the code inside the first case that matches. Then, it will continue to other cases and executes as well. Remember that these subsequent cases don't have to match the expression! Switch statement will execute these subsequent cases no matter what their values are.
+
+The only way to stop the switch statement is to put the `break` statement in one of the subsequent cases. Otherwise, this will execute of those subsequent cases until it reaches the end of itself.
+
+```JavaScript
+// Create switch statement that executes multiple cases
+switch (3) {
+  case 1:
+    console.log('Value is 1.')
+    break // Stop the execution of switch statement
+    // Note: this break will not be applied
+    // because the value is 1 and expression is 3
+
+  case 2:
+    console.log('Value is 2.')
+
+  case 3:
+    // Value is 3 so this case will be exceed
+    console.log('Value is 3.')
+    // break is missing so switch will continue
+    // and execute any subsequent cases
+    // The match between expression
+    // and value of these cases doesn't matter anymore
+
+  case 4:
+    // Previous case was executed
+    // and there was no break to stop the statement
+    // This statement will be executed
+    // even if the value doesn't match the expression
+    console.log('Value is 4.')
+
+  case 5:
+    // There was no break to stop the statement
+    // in previous statement so this statement
+    // will also be executed
+    // The value again doesn't matter
+    console.log('Value is 5.')
+    break // Stop the execution of switch statement
+
+  case 6:
+    // Case above contains break statement
+    // so this case will not be executed
+    console.log('Value is 6.')
+
+  default:
+    break
+}
+
+// Output
+// 'Value is 3.'
+// 'Value is 4.'
+// 'Value is 5.'
+```
+
+## Grouping cases
 
 ## Conclusion: [...] ...
 
