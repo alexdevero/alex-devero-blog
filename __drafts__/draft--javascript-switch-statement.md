@@ -193,6 +193,51 @@ switch (today) {
 
 ### Grouping cases
 
+One interesting thing on JavaScript switch statement cases is that you can group them together. This can be helpful when you want to check for two different conditions and execute the same code. Otherwise, you would have to create two cases and copy and paste your code from one case to another.
+
+Grouping two or more cases is simple and quick. First, you have to put these cases together, literally. All items must go in sequence, one after the other. Second, you must omit the case block in all cases that precede the last in the group. Only the last case in the group will have a case block.
+
+```JavaScript
+// Example of switch statement with grouped cases
+const language = 'JavaScript'
+
+// Create switch statement
+switch (language) {
+  // This is the beginning of the first group of cases
+  // The 'This is a loosely typed language.' message
+  // will be printed for if language is equal to 'JavaScript',
+  // 'Pearl', 'Python' or 'Ruby'
+  case 'JavaScript':
+  case 'Pearl':
+  case 'Python':
+  case 'Ruby':
+    console.log('This is a loosely typed language.')
+    break
+  // This is the end of the first group of cases
+
+  // This is the beginning of the second group of cases
+  // The 'This is a strongly typed language.' message
+  // will be printed for if language is equal to 'C',
+  // 'Go' or 'Java'
+  case 'C':
+  case 'Go':
+  case 'Java':
+    console.log('This is a strongly typed language.')
+    break
+  // This is the end of the second group of cases
+
+  // This is usual separate case block
+  case 'English':
+    console.log('This is not a programming language.')
+    break
+
+  default:
+    console.log('This language is unknown.')
+}
+
+// Output:
+// 'This is a loosely typed language.'
+```
 
 ## The break statement
 
