@@ -28,7 +28,7 @@ switch (someExpression) {
 
 JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
 
-What switch does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to switch statement has to have some value.
+What switch does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch statement work. Every case block you add to a switch statement should have some value.
 
 A bit how it works. When you execute a switch statement, it will do two things. First, it will take the expression you passed in parenthesis, that follow after the `switch` keyword. Second, it will compare this expression with values you specified for each statement. Now, let's talk about the case blocks.
 
@@ -43,23 +43,58 @@ When you want to add a new case block you add it to the body of switch statement
 switch (someExpression) {
   case 'someValue':
     // do something
-    break
+    break // stop execution of switch
 }
 
 // Switch statement with multiple case blocks
 switch (someExpression) {
   case 'someValue':
     // do something
-    break
+    break // stop execution of switch
   case 'someOtherValue':
     // do something
-    break
+    break // stop execution of switch
+}
+
+// Example with calendar
+// Create some expression to check
+const today = 'Monday'
+
+// Create a switch statement
+// and pass value of 'today' variable as an argument
+switch (today) {
+  case 'Monday':
+    // If value of today is 'Monday' do following
+    console.log('It\'s Monday.')
+    break // stop execution of switch
+  case 'Tuesday':
+    // If value of today is 'Tuesday' do following
+    console.log('It\'s Tuesday.')
+    break // stop execution of switch
+  case 'Wednesday':
+    // If value of today is 'Wednesday' do following
+    console.log('It\'s Wednesday.')
+    break // stop execution of switch
+  case 'Thursday':
+    // If value of today is 'Thursday' do following
+    console.log('It\'s Thursday.')
+    break // stop execution of switch
+  case 'Friday':
+    // If value of today is 'Friday' do following
+    console.log('It\'s Friday.')
+    break // stop execution of switch
+  case 'Saturday':
+    // If value of today is 'Saturday' do following
+    console.log('It\'s Saturday.')
+    break // stop execution of switch
+  case 'Sunday':
+    // If value of today is 'Sunday' do following
+    console.log('It\'s Sunday.')
+    break // stop execution of switch
 }
 ```
 
 ### Default case
-
-The only exception here is a `default` case. This case doesn't need any value. This also means one thing. It will used if any preceding case will either fail or will not stop the execution of the switch statement.
 
 ## Labels
 
