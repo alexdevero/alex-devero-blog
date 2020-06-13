@@ -13,18 +13,18 @@ Table of Contents:
 
 ## Introduction to switch statement
 
-Every JavaScript switch statement must have three things in order to work. The first thing is the `switch` keyword. Every switch statement has to start with this keyword. The second thing is an expression you want to compare with case value. You will learn more about case later.
+Every JavaScript switch statement must have three things in order to work. The first thing is the `switch` keyword. Every switch statement has to start with this keyword. The second thing is an expression you want to compare with case value. You will learn more about case blocks in "Case blocks" section.
 
 The expression goes between the parenthesis, that follow after the `switch` keyword. What follows next are curly braces with block of code. This block of code is the body of a switch statement.
 
 ```JavaScript
 // Switch statement syntax
-switch (someExpression) {
+switch (expression) {
   // body with block of code
 }
 ```
 
-## Value and case blocks
+## Case blocks
 
 JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
 
@@ -40,19 +40,19 @@ When you want to add a new case block you add it to the body of switch statement
 
 ```JavaScript
 // Switch statement with one case block
-switch (someExpression) {
-  case 'someValue':
-    // do something
+switch (expression) {
+  case value:
+    // Do something if 'value' matches the 'expression'
     break // stop execution of switch
 }
 
 // Switch statement with multiple case blocks
-switch (someExpression) {
-  case 'someValue':
-    // do something
+switch (expression) {
+  case value:
+    // Do something if 'value' matches the 'expression'
     break // stop execution of switch
-  case 'someOtherValue':
-    // do something
+  case differentValue:
+    // Do something if 'differentValue' matches the 'expression'
     break // stop execution of switch
 }
 
@@ -67,36 +67,72 @@ switch (today) {
     // If value of today is 'Monday' do following
     console.log('It\'s Monday.')
     break // stop execution of switch
+
   case 'Tuesday':
     // If value of today is 'Tuesday' do following
     console.log('It\'s Tuesday.')
     break // stop execution of switch
+
   case 'Wednesday':
     // If value of today is 'Wednesday' do following
     console.log('It\'s Wednesday.')
     break // stop execution of switch
+
   case 'Thursday':
     // If value of today is 'Thursday' do following
     console.log('It\'s Thursday.')
     break // stop execution of switch
+
   case 'Friday':
     // If value of today is 'Friday' do following
     console.log('It\'s Friday.')
     break // stop execution of switch
+
   case 'Saturday':
     // If value of today is 'Saturday' do following
     console.log('It\'s Saturday.')
     break // stop execution of switch
+
   case 'Sunday':
     // If value of today is 'Sunday' do following
     console.log('It\'s Sunday.')
     break // stop execution of switch
 }
+
+// Note 1:
+// Empty lines between case blocks
+// are just for improving readability of the code.
+
+// Note 2:
+// You could also pass the string
+// to switch statement directly: switch ('Monday') { ... }
 ```
 
 ### Default case
 
-## Labels
+We discussed that every case block should have some value. There is one exception to this rule. The only exception here is a default case. This default case doesn't need any value. This also means one thing. If any preceding case either fails or doesn't stop the execution of the switch statement the default will be executed.
+
+The purpose of default case is to serve as a backup. It should be executed when, for whatever reason, neither of cases in a switch statement match the expression passed to switch as an argument. One thing to remember. The default case will be also applied if any other case matches the expression, but it didn't stop the execution of switch statement.
+
+So, make sure you know what you are trying to achieve. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
+
+Creating a default case is similar to a normal case with value. In case of default case, you start with `default` keyword, instead of `case`. This keyword is then followed by colons and block of code. Remember that this code will be executed by default, either if no case matches or if no case block stops the execution of switch statement.
+
+```JavaScript
+// Create switch statement
+switch (expression) {
+  case value:
+    // Do something if 'value' matches the 'expression'
+    break // Stop the switch statement
+
+  default:
+    // Do something if either no case value matches the 'expression'
+    // or if none of the cases stops the execution of switch statement
+    break // Stop the switch statement
+}
+```
+
+## Break statement
 
 ## Conclusion: [...] ...
 
