@@ -18,7 +18,7 @@ Table of Contents:
 
 Every JavaScript switch statement must have three things in order to work. The first thing is the `switch` keyword. Every switch statement has to start with this keyword. The second thing is an expression you want to compare with case value. You will learn more about case blocks in "Case blocks" section.
 
-The expression goes between the parenthesis, that follow after the `switch` keyword. What follows next are curly braces with block of code. This block of code is the body of a switch statement.
+The expression goes between the parentheses that follow after the `switch` keyword. What follows next are curly braces with block of code. This block of code is the body of a switch statement.
 
 ```JavaScript
 // Switch statement syntax
@@ -29,11 +29,11 @@ switch (expression) {
 
 ## The case block
 
-JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is same.
+JavaScript switch statement works in a similar way to `if....else` statement. In case of `if....else`, there is some condition and you "test" if that condition is either `true` or `false`. Then, you can execute code specific for each boolean value, or one of them. Switch statement uses different syntax, but the result is the same.
 
 What JavaScript switch statement does is it operates with two parts. The first one is the expression you want to check. The second part is a case block. This, the case block, is also the third thing you need to make switch work. Every case block you add to a switch statement should have some value.
 
-A bit how it works. When you execute a switch statement, it will do two things. First, it will take the expression you passed in parenthesis, that follow after the `switch` keyword. Second, it will compare this expression with values you specified for each statement. Now, let's talk about the case blocks.
+A bit how it works. When you execute a switch statement, it will do two things. First, it will take the expression you passed in parentheses, that follow after the `switch` keyword. Second, it will compare this expression with values you specified for each statement. Now, let's talk about the case blocks.
 
 A case block consists of two parts. First, there is the `case` keyword. This keyword defines a case block. This keyword is then followed by some value, colons and code you want to execute if switch expression matches the value a case. This can be a little bit confusing.
 
@@ -130,7 +130,7 @@ We discussed that every case block should have some value. There is one exceptio
 
 The purpose of default case is to serve as a backup. It should be executed when, for whatever reason, neither of cases in a switch match the expression passed to switch as an argument. One thing to remember. The default case will be also applied if any other case matches the expression, but it didn't stop the execution of switch statement.
 
-So, make sure you know what is the result you want. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
+So, make sure you know what the result you want is. Do you want to use the default case only when no other case matches the expression passed to switch as an argument? Or, do you want to use it regardless? If you want the first to happen, then make sure to stop the switch statement right after it executes the code you want it to execute (more about this in "Break statement" section).
 
 Creating a default case is similar to a normal case with value. In case of default case, you start with `default` keyword, instead of `case`. This keyword is then followed by colons and block of code. Remember that this code will be executed by default, either if no case matches or if no case block stops the execution of switch statement.
 
@@ -361,7 +361,7 @@ Third and last, use switch when some cases may use the same code. Switch makes g
 
 ## Conclusion: JavaScript Switch Statement
 
-JavaScript switch statement might look quirky. It might require a some time to learn. However, it is worth it. Switch can help you make your code more readable and cleaner. I hope this tutorial helped you learn what JavaScript switch statement is, how it works and how to use it, and also when.
+JavaScript switch statement might look quirky. It might require some time to learn. However, it is worth it. Switch can help you make your code more readable and cleaner. I hope this tutorial helped you learn what JavaScript switch statement is, how it works and how to use it, and also when.
 
 [xyz-ihs snippet="thank-you-message"]
 
