@@ -226,7 +226,7 @@ switch (language) {
     break
   // This is the end of the second group of cases
 
-  // This is usual separate case block
+  // This is a normal separate case block
   case 'English':
     console.log('This is not a programming language.')
     break
@@ -275,7 +275,7 @@ switch (expression) {
 
   case value:
     // Do something if 'value' matches the 'expression'
-    // and then continue to other cases
+    // and then continue to default case
 
   default:
     // Do something if no case matches the 'expression'
