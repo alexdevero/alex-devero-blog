@@ -361,6 +361,8 @@ Third and last, use switch when some cases may use the same code. Switch makes g
 
 ## Conclusion: JavaScript Switch Statement
 
+JavaScript switch statement might look quirky. It might require a some time to learn. However, it is worth it. Switch can help you make your code more readable and cleaner. I hope this tutorial helped you learn what JavaScript switch statement is, how it works and how to use it, and also when.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
