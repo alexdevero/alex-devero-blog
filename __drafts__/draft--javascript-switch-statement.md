@@ -191,6 +191,8 @@ switch (today) {
 // 'It\'s Sunday.'
 ```
 
+Notice that `break` statement is not necessary in `default` case. This is because the purpose of `break` statement is to stop the execution of switch. The `default` case is the last case that will be executed. When switch encounters the `default` case it will stop executing itself automatically. So, there is no need for `break`.
+
 ### Grouping cases
 
 One interesting thing on JavaScript switch statement cases is that you can group them together. This can be helpful when you want to check for two different conditions and execute the same code. Otherwise, you would have to create two cases and copy and paste your code from one case to another.
