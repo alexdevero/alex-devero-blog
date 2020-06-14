@@ -346,24 +346,24 @@ switch (3) {
 
 ## When to use switch statement
 
-Use switch instead of if when:
+When is it better to use switch statement and when `if...else`? The general answer is that it depends. It mostly depends on what you like and prefer. When you compare the performance of switch and `if...else` the difference will not be significant. It could be few milliseconds, something be barely noticeable.
 
-- You are comparing multiple possible conditions of an expression and the expression itself is non-trivial.
-- You have multiple values that may require the same code.
-- You have some values that will require essentially all of another value's execution, plus only a few statements.
+The main reason for using switch over `if...else` statement in some situations is usually improving code clarity and readability. Let's first talk about when to use `if...else` statement and then when switch. The `if...else` statement will probably be better if you want to do one or two match tests.
 
-Use if instead of switch when:
+It will be also better to use `if...else` if you only want to test for truthiness, if something is either `true` or `false`. The last situation where you should use `if...else` is when you want to test different expressions for each case. If some expression is `true` or `false`, else if some other expression is `true` or `false` and so on.
 
-- You want to test for the truthiness of an expression.
-- You only have a single match test.
-- You need to evaluate different expressions for each scenario
+This is easier to do with `if...else` statement because it is better suited to handle different expressions. Using `if...else` in this situation will probably lead to cleaner and more readable code. That was about when to use `if...else`. When to use switch are the opposite situations we just talked about.
+
+First, use switch if the expressions you want to test is based only one integer, string or some variable value. Second, use it when you need to test multiple values, multiple case blocks. Switch tends to perform better than large `if...else`. Larger switch is often also more readable than large `if...else`.
+
+Third and last, use switch when some cases may use the same code. Switch makes grouping case blocks easy. With `if...else` you can "group" various conditions using [binary logical operators]. This can work for a while, but it can quickly turn your code into unreadable mess.
 
 ## Conclusion: JavaScript Switch Statement
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[binary logical operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Binary_logical_operators
 
 <!--
 ### Meta:
