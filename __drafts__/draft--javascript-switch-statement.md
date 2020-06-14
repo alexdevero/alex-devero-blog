@@ -4,11 +4,14 @@ Switch statement is one of the oldest features of JavaScript. Yet, it is not use
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
+## Introduction to switch statement
+## The case block
+### The default case
+### Grouping cases
+## The break statement
+### Omitting break statement
+## When to use switch statement
+## Conclusion: JavaScript Switch Statement
 -->
 
 ## Introduction to switch statement
@@ -341,8 +344,6 @@ switch (3) {
 // 'Value is 4.'
 // 'Value is 5.'
 ```
-
-## From if...else to switch
 
 ## When to use switch statement
 
