@@ -1,4 +1,4 @@
-# JavaScript Switch Statement - All You Need to Know
+# Javascript Switch Statement - How It Works and How to Use It
 
 Switch statement is one of the oldest features of JavaScript. Yet, it is not used as often as `if...else`. This is unfortunate. Switch statement can sometimes do a better job and make your code more readable. This tutorial will teach you what JavaScript switch statement is, how to use it and when.
 <!--more-->
