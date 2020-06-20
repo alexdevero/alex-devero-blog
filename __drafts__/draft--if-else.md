@@ -14,7 +14,8 @@ Table of Contents:
 ## Nested if else statements
 ### Word of caution
 ## Omitting the curly brackets
-## From if else statement to ternary operator
+## Ternary operator
+### Multiple ternary operators
 ## Conclusion: JavaScript If Else Statement Made Simple
 -->
 
