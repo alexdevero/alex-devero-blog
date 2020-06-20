@@ -4,6 +4,17 @@ JavaScript if else statement is the most frequently used tools to execute code b
 <!--more-->
 <!--
 Table of Contents:
+## The if statement
+### Negating the condition
+## The else statement
+## The else if
+## The if else statement and multiple conditions
+### Multiple conditions and else if
+### Else if or multiple ifs
+## Nested if else statements
+### Word of caution
+## From if else statement to ternary operator
+Conclusion: JavaScript If Else Statement Made Simple
 -->
 
 ## The if statement
@@ -330,7 +341,7 @@ if (conditionOne) {
 
 ## From if else statement to ternary operator
 
-## Conclusion: [...] ...
+## Conclusion: JavaScript If Else Statement Made Simple
 
 [xyz-ihs snippet="thank-you-message"]
 
