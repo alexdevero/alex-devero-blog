@@ -26,7 +26,7 @@ if (condition) {
 // Create a variable and assign it a number
 const num = 10
 
-// Create an if statement that checks
+// Create an if statement that tests
 // if the value of num variable is bigger than 5
 // this is the condition
 if (num > 5) {
@@ -42,7 +42,7 @@ if (num > 5) {
 // Create a variable and assign it a string
 const name = 'Rick'
 
-// Create an if statement that checks
+// Create an if statement that tests
 // if the value of name variable starts with 'A'
 // this is the condition
 if (name[0] === 'A') {
@@ -54,6 +54,8 @@ if (name[0] === 'A') {
 // ... nothing
 ```
 
+### Negating the condition
+
 There is one thing about if statement, and the condition, worth mentioning. You can quickly make any condition truthy or falsy, by using [logical NOT operator] (`!`). This logical operator will negate any boolean expression. It will transform `true` to `false` and `false` to `true`.
 
 ```JavaScript
@@ -61,7 +63,7 @@ There is one thing about if statement, and the condition, worth mentioning. You 
 // Create a variable and assign it a number
 const num = 10
 
-// Create an if statement that checks
+// Create an if statement that tests
 // if the value of num variable is NOT bigger than 5
 if (!num > 5) { // <= the '!' negates the who condition
   // If num is bigger than 5 run the code below
@@ -76,7 +78,7 @@ if (!num > 5) { // <= the '!' negates the who condition
 // Create a variable and assign it a string
 const name = 'Rick'
 
-// Create an if statement that checks
+// Create an if statement that tests
 // if the value of name variable doesn't start with 'A'
 // this is the condition
 if (name[0] !== 'A') { // or (!(name[0] === 'A'))
@@ -88,7 +90,7 @@ if (name[0] !== 'A') { // or (!(name[0] === 'A'))
 // 'The value of name doesn\'t start with \'A\'.'
 ```
 
-## The if else statement
+## The else statement
 
 Having the option execute code only when some condition is met is definitely useful. That's not all the if else statement allows you to do. You can also add code that will be executed if the condition evaluates to `false`, if it is falsy. What you need to do is to add `else` keyword and another code block right after the `if` code block.
 
@@ -111,7 +113,7 @@ if (condition) {
 // Create a variable and assign it a number
 const num = 53
 
-// Create an if statement that checks
+// Create an if statement that tests
 // if the value of num variable is bigger than 5
 // this is the condition
 if (num >= 50) {
@@ -130,6 +132,100 @@ One thing about the else statement. This part of if else statement is purely opt
 
 ## The else if
 
+You know how to use if else statement to execute one snippet of code when condition is truthy. You also know how to execute another when the condition is falsy. There is another thing you can do with if else statement. You can test for one condition and then check the condition, still being in the same if else statement.
+
+This can be done with `else if`. This looks very similar to the `else` we just discussed. There are two differences. First, you have to add `if` keyword after the `else`. Second, you have to add new condition you want to test. Then, similarly to `else`, or `if`, what follows is the code block you want to execute if new condition is truthy.
+
+```JavaScript
+// Syntax of else if
+if (condition) {
+  // This is the "if" code block
+  // This block of code will be executed
+  // if condition is truthy
+} else if (newCondition) {
+  // This is the "else if" code block
+  // This block of code will be executed
+  // if the new condition is truthy
+}
+
+
+// Syntax of else if
+if (condition) {
+  // This is the "if" code block
+  // This block of code will be executed
+  // if condition is truthy
+} else if (newCondition) {
+  // This is the "else if" code block
+  // This block of code will be executed
+  // if the new condition is truthy
+}
+```
+
+## The if else statement and multiple condition
+
+The else if is a very powerful tool. It can help you create more controlled code quickly and easily. That being said, there is one thing you have to pay attention to. Let's say you have an if else statement with one `else if`. That means one `if`, one `else if` and maybe `else`.
+
+When JavaScript executes this code, it will test the `else if` condition only if the `if` condition is falsy. If the `if` condition is truthy, JavaScript will execute its code block and then move on to the code that follows after the if else statement. It will not get to the `else if` and that new condition.
+
+In short, JavaScript will not execute multiple blocks of code if preceding conditions are truthy. It will always execute only the code block for the first truthy condition. The rest will be ignored.
+
+```JavaScript
+// Create else if statement
+if (condition) {
+  // Do something only if "condition" is truthy
+} else if (newCondition) {
+  // Do something only if "condition" is falsy
+  // and "newCondition" is truthy
+
+  // This "else if" block will be ignored
+  // if the preceding "if" condition is truthy
+} else {
+  // Do something only if neither "condition"
+  // nor "newCondition" are truthy
+
+  // This "else if" block will be ignored
+  // if any of the preceding condition is truthy
+}
+```
+
+What if you want to test for multiple conditions and execute different snippets of code. You can do two things. First, let's suppose the code is the same. Then, you can use all the conditions as one complex condition for the first `if` block. If you also use [logical OR operator] (`||`) you can make sure that if any of these conditions applies following code block will be executed.
+
+```JavaScript
+// If statement with multiple conditions:
+// using logical OR operator to test if any condition applies
+if (condition || newCondition || anotherCondition) {
+  // Do something if either "condition", "newCondition" or "anotherCondition" are truthy
+}
+
+
+// Or,
+// If statement with multiple conditions
+// using logical AND operator to test if all conditions apply
+if (condition && newCondition && anotherCondition) {
+  // Do something only if "condition", "newCondition" and "anotherCondition" are all truthy
+}
+```
+
+## Else if or multiple ifs
+
+Problem might arise if you want to test for different conditions and also execute different code for each. This is something `else if`, or if else statement in general, can't help you with. The only way to do this, if you want to use if else statement, is by using two or more if statements, or if else.
+
+```JavaScript
+// Create one if statement to test for one condition
+// JavaScript will execute this statement first
+if (someCondition) {
+  // Do one thing
+}
+
+// Then, it will execute this statement as second
+if (someOtherCondition) {
+  // Do something else
+}
+
+// If both apply both code blocks will be executed.
+// If one, one code block will be executed. Otherwise, none.
+```
+
 ## Nested if else statement
 
 ## From if else statement to ternary operator
@@ -141,6 +237,7 @@ One thing about the else statement. This part of if else statement is purely opt
 <!-- ### Links -->
 [boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
 [logical NOT operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
+[logical OR operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
 
 <!--
 ### Meta:
