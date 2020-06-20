@@ -1,6 +1,6 @@
 # JavaScript If Else Statement Made Simple
 
-JavaScript if else statement is the most frequently used tools to execute code based on different conditions. This tutorial will help you understand how it works and how to use it. You will learn how to use `if`, `else`, `else if` and nested if else. You will also learn about ternary operator.
+JavaScript if else statement makes it easy to execute code based on different conditions. This tutorial will help you learn all you need to know about if else statement. You will learn how to use `if`, `else`, `else if` and nested if else. You will also learn about ternary operator and much more.
 <!--more-->
 <!--
 Table of Contents:
