@@ -137,7 +137,7 @@ You know how to use if else statement to execute one snippet of code when condit
 This can be done with `else if`. This looks very similar to the `else` we just discussed. There are two differences. First, you have to add `if` keyword after the `else`. Second, you have to add new condition you want to test. Then, similarly to `else`, or `if`, what follows is the code block you want to execute if new condition is truthy.
 
 ```JavaScript
-// Syntax of else if
+// Syntax of else if (or if else if statement)
 if (condition) {
   // This is the "if" code block
   // This block of code will be executed
@@ -149,7 +149,7 @@ if (condition) {
 }
 
 
-// Syntax of else if
+// Syntax of else if (or if else if statement)
 if (condition) {
   // This is the "if" code block
   // This block of code will be executed
@@ -170,7 +170,7 @@ When JavaScript executes this code, it will test the `else if` condition only if
 In short, JavaScript will not execute multiple blocks of code if preceding conditions are truthy. It will always execute only the code block for the first truthy condition. The rest will be ignored.
 
 ```JavaScript
-// Create else if statement
+// Create if else if statement
 if (condition) {
   // Do something only if "condition" is truthy
 } else if (newCondition) {
@@ -206,6 +206,21 @@ if (condition && newCondition && anotherCondition) {
 }
 ```
 
+### Multiple condition and else if
+
+Using logical OR operator and multiple conditions also works with `else if` statement. So, you can test for one condition and then use `else if` to test for set of multiple conditions.
+
+```JavaScript
+// Create if else if statement
+if (condition) {
+  // Do something if "condition" is truthy
+} else if (conditionTwo || conditionThree || conditionFour) {
+  // Do something if either "conditionTwo", "conditionThree" or "conditionFour" is truthy
+} else if (conditionFive && conditionFive) {
+  // Do something only if "conditionFive" and "conditionFive" are both truthy
+}
+```
+
 ## Else if or multiple ifs
 
 Problem might arise if you want to test for different conditions and also execute different code for each. This is something `else if`, or if else statement in general, can't help you with. The only way to do this, if you want to use if else statement, is by using two or more if statements, or if else.
@@ -227,6 +242,8 @@ if (someOtherCondition) {
 ```
 
 ## Nested if else statement
+
+You know that you can use multiple conditions in a single `if`, or `else if`.
 
 ## From if else statement to ternary operator
 
