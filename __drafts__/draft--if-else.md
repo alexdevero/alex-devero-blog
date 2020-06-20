@@ -1,10 +1,58 @@
 # JavaScript If Else Statement Made Simple
+
+JavaScript if else statement is the most frequently used tools to execute code based on different conditions. This tutorial will help you understand how it works and how to use it. You will learn how to use `if`, `else`, `else if` and nested if else. You will also learn about ternary operator.
 <!--more-->
 <!--
 Table of Contents:
 -->
 
 ## The basics of if else statement
+
+JavaScript if else statement makes it very easy to execute your code if specific conditions is truthy. Its syntax is just as a easy. It is composed of three parts. First part is `if` keyword. You use this keyword to tell JavaScript that you are about to create an if else statement.
+
+The second part is a condition you want to test for. Condition is wrapped with parentheses and it follows the `if` keyword. This can condition can range from very simple to very complex expressions. The only thing that matters is if the result of that expression is [boolean], either `true` or `false`.
+
+The third part is a block of code you want to execute. This block of code is surrounded by curly brackets. It follows right after the condition. Remember that this block of code will be executed only if the condition evaluates to `true`, is truthy. If it evaluates to `false`, it is falsy, the block of code will not be executed.
+
+```JavaScript
+// If else statement syntax
+if (condition) {
+  // block of code to execute
+  // if condition is truthy
+}
+
+
+// Example of if else statement: truthy condition
+// Create a variable and assign it a number
+const num = 10
+
+// Create an if statement that checks
+// if the value of num variable is bigger than 5
+// this is the condition
+if (num > 5) {
+  // If num is bigger than 5 run the code below
+  console.log('The value of num is bigger than 5.')
+}
+
+// Output:
+// 'The value of num is bigger than 5.'
+
+
+// Example of if else statement: falsy condition
+// Create a variable and assign it a string
+const name = 'Rick'
+
+// Create an if statement that checks
+// if the value of name variable is starts with 'A'
+// this is the condition
+if (name[0] === 'A') {
+  // If the value of name starts with 'A' run the code below
+  console.log('The value of name starts with \'A\'.')
+}
+
+// Output:
+// ... nothing
+```
 
 ## The else
 
@@ -19,7 +67,7 @@ Table of Contents:
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
 
 <!--
 ### Meta:
