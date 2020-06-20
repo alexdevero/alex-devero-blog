@@ -4,7 +4,15 @@
 Table of Contents:
 -->
 
-## h2
+## The basics of if else statement
+
+## The else
+
+## The else if
+
+## Nested if else statement
+
+## From if else statement to ternary operator
 
 ## Conclusion: [...] ...
 
@@ -20,7 +28,10 @@ Table of Contents:
 
 <!--
 ### Keywords:
--
+- javascript if else statement
+- if else statement
+- javascript if else
+- if else
 -->
 
 <!--
