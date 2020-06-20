@@ -161,6 +161,24 @@ if (condition) {
 }
 ```
 
+Just like with `if` statement you can use `else` statement also with `if else`. The only thing you need to watch for is always using the `else` statement, and its code blok at the end.
+
+```JavaScript
+if (condition) {
+  // This is the "if" code block
+  // This block of code will be executed
+  // if condition is truthy
+} else if (newCondition) {
+  // This is the "else if" code block
+  // This block of code will be executed
+  // if the new condition is truthy
+} else {
+  // This is the "else" code block
+  // This block of code will be executed
+  // if neither the first nor the second condition is truthy
+}
+```
+
 ## The if else statement and multiple condition
 
 The else if is a very powerful tool. It can help you create more controlled code quickly and easily. That being said, there is one thing you have to pay attention to. Let's say you have an if else statement with one `else if`. That means one `if`, one `else if` and maybe `else`.
@@ -218,6 +236,8 @@ if (condition) {
   // Do something if either "conditionTwo", "conditionThree" or "conditionFour" is truthy
 } else if (conditionFive && conditionFive) {
   // Do something only if "conditionFive" and "conditionFive" are both truthy
+} else {
+  // If no condition applies do something else
 }
 ```
 
