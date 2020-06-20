@@ -90,6 +90,44 @@ if (name[0] !== 'A') { // or (!(name[0] === 'A'))
 
 ## The if else statement
 
+Having the option execute code only when some condition is met is definitely useful. That's not all the if else statement allows you to do. You can also add code that will be executed if the condition evaluates to `false`, if it is falsy. What you need to do is to add `else` keyword and another code block right after the `if` code block.
+
+Doing this allows you to cover both cases, truthy and falsy. If condition is truthy, the `if` code block will be executed. If it is falsy, the `else` code block will be executed.
+
+```JavaScript
+// Syntax of if else
+if (condition) {
+  // This is the "if" code block
+  // This block of code will be executed
+  // if condition is truthy
+} else {
+  // This is the "else" code block
+  // This block of code will be executed
+  // if condition is falsy
+}
+
+
+// Example of if else statement
+// Create a variable and assign it a number
+const num = 53
+
+// Create an if statement that checks
+// if the value of num variable is bigger than 5
+// this is the condition
+if (num >= 50) {
+  // If num is bigger than or equal to 50 run the code below
+  console.log('The value of num is bigger than 50.')
+} else {
+  // If num is smaller than 50 run the code below
+  console.log('The value of num is bigger than 50.')
+}
+
+// Output:
+// 'The value of num is bigger than 50.'
+```
+
+One thing about the else statement. This part of if else statement is purely optional. You don't have to use it if you don't want to, or if there is no reason to do so.
+
 ## The else if
 
 ## Nested if else statement
