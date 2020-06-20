@@ -356,9 +356,43 @@ if (condition) {
 }
 ```
 
-## From if else statement to ternary operator
+## Ternary operator
 
-The syntax of if else statement is short and simple.
+The syntax of if else statement is short and simple. That said, there is a way to make it even shorter. You can achieve this by using something called "ternary operator", also called "conditional operator". Ternary operator is like a shortcut for if else statement. It also works in the same way.
+
+Similarly to if else statement, ternary operator is also composed of three parts. First is a condition. Second and third are both an expression. Condition and first expression are separated by question mark (`?`). Second and third expression are separated by colons (`:`). So, `condition ? expressionOne : expressionTwo`.
+
+If condition evaluates to `true`, the first expression is executed. If it evaluates to `false`, then evaluated is the second expression. As you can see on the example below, ternary operator can be very useful for example when you want to quickly assign a variable based on specific condition.
+
+```JavaScript
+// Ternary operator vs if else statement
+
+// Option no.1: if else statement
+// Create variable isUser and set it to true
+// and another variable message and leave it undefined
+let isUser = true
+let message
+
+// Using if to assign "message" variable a value
+if (isUser) {
+  message = 'Welcome back user.'
+} else {
+  message = 'You are not registered.'
+}
+
+
+// Option no.1: ternary operator
+// Create variable isUser and set it to true
+let isUser = true
+
+// and another variable message and use ternary operator
+// to assign it a value right away based on specific condition
+let message = isUser ? 'Welcome back user.' : 'You are not registered.'
+
+// Explanation:
+// If "isUser" is true the value of "message" will be 'Welcome back user.'
+// If "isUser" is false the value of "message" will be 'You are not registered.'
+```
 
 ## Conclusion: JavaScript If Else Statement Made Simple
 
