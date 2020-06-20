@@ -13,6 +13,7 @@ Table of Contents:
 ### Else if or multiple ifs
 ## Nested if else statements
 ### Word of caution
+## Omitting the curly brackets
 ## From if else statement to ternary operator
 ## Conclusion: JavaScript If Else Statement Made Simple
 -->
