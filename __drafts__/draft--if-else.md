@@ -261,9 +261,72 @@ if (someOtherCondition) {
 // If one, one code block will be executed. Otherwise, none.
 ```
 
-## Nested if else statement
+## Nested if else statements
 
-You know that you can use multiple conditions in a single `if`, or `else if`.
+You know that you can use multiple conditions in a single `if`, or `else if`. Another thing you can do with if else statements is nesting them. Put simply, you can put one if else statement into another. This can be useful if you want to test for some conditions. Then, you want to narrow it down even more and test for another.
+
+Some JavaScript developers like to use this to make their code more readable. Although, this might be debatable. Let's say you want to test for three conditions and all three must be truthy. One thing you do is to create one `if` statement and use logical AND operator to create a complex condition composed of multiple conditions.
+
+The second option is to use nested if else statement. You can create one `if` statement with one of the three conditions. Nex, you can create another `if` statement with second condition and put it inside the first `if` statement. Then, you can repeat this process with the third `if` statement and third condition.
+
+```JavaScript
+// Nested if else statements examples
+if (condition) {
+  if (anotherCondition) {
+    if (yetAnotherCondition) {
+      // Do something if "condition", "anotherCondition"
+      // and "yetAnotherCondition" are all truthy
+    }
+  }
+}
+
+
+// Single-if alternative
+if (condition && anotherCondition && yetAnotherCondition) {
+  // Do something if "condition", "anotherCondition"
+  // and "yetAnotherCondition" are all truthy
+}
+```
+
+### Word of caution
+
+As a mentioned, some JavaScript developers use nested if else statements to make code more readable. This may work in theory. In reality, it is very go over the edge. You nest one `if` statement then another and, before you realize it, you have a deep chain of `if` statements that make your code harder to work with instead of easier.
+
+So, don't start converting all `if` statements with complex conditions to multiple nested `if` statements. Instead, try to use line breaks to make that complex condition more readable, while sticking to one `if` statement. In the end, JavaScript doesn't treat white space and line breaks in the same way Python does.
+
+```JavaScript
+// Using line breaks to make complex condition more readable
+if (
+  conditionOne && conditionTwo &&
+  conditionThree && conditionFour &&
+  conditionFive
+) {
+  // Do something if all conditions apply
+}
+
+// Alternative with logical OR operator
+if (
+  conditionOne || conditionTwo ||
+  conditionThree || conditionFour ||
+  conditionFive
+) {
+  // Do something if all conditions apply
+}
+
+
+// The first example Looks better than this [nightmare]
+if (conditionOne) {
+  if (conditionTwo) {
+    if (conditionThree) {
+      if (conditionFour) {
+        if (conditionFive) {
+          // Do something if all conditions apply
+        }
+      }
+    }
+  }
+}
+```
 
 ## From if else statement to ternary operator
 
