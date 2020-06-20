@@ -431,6 +431,10 @@ let lifeStage = (age <= 3) ? 'infancy' :
 
 ## Conclusion: JavaScript If Else Statement Made Simple
 
+The if else statement is a great tool that can give you more control over what code should be executed and under what conditions. I hope that this tutorial made it easier for you to understand all you need to know about if else statement so you can start using it in your code.
+
+I also hope it showed you what are some potentially dangerous things to look for and avoid. For example, too deeply nested `if` statements, or ternary operators. Now, take what you've learned today and apply it.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
