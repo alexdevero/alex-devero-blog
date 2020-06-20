@@ -14,7 +14,7 @@ Table of Contents:
 ## Nested if else statements
 ### Word of caution
 ## From if else statement to ternary operator
-Conclusion: JavaScript If Else Statement Made Simple
+## Conclusion: JavaScript If Else Statement Made Simple
 -->
 
 ## The if statement
