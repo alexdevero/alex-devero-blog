@@ -339,7 +339,25 @@ if (conditionOne) {
 }
 ```
 
+## Omitting the curly brackets
+
+You know that the `else`, also the `else if`, is optional. Another thing that is sometimes optional are the curly brackets surrounding the code block. Important thing is that "sometimes". Curly brackets are not required if two conditions are true. First, the code you want to execute is a one-liner.
+
+Second, that one-liner you want to execute is on the same line as the `if` keyword and condition. If these two conditions are true you can safely omit the curly braces and that `if` statement will still work and your code will be valid. This is basically how curly brackets work in [arrow functions].
+
+```JavaScript
+// If statement without curly brackets
+if (condition) // do something
+
+// Is the same as
+if (condition) {
+  // do something
+}
+```
+
 ## From if else statement to ternary operator
+
+The syntax of if else statement is short and simple.
 
 ## Conclusion: JavaScript If Else Statement Made Simple
 
@@ -349,6 +367,7 @@ if (conditionOne) {
 [boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
 [logical NOT operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
 [logical OR operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+[arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
 
 <!--
 ### Meta:
