@@ -360,7 +360,7 @@ if (condition) {
 
 The syntax of if else statement is short and simple. That said, there is a way to make it even shorter. You can achieve this by using something called "ternary operator", also called "conditional operator". Ternary operator is like a shortcut for if else statement. It also works in the same way.
 
-Similarly to if else statement, ternary operator is also composed of three parts. First is a condition. Second and third are both an expression. Condition and first expression are separated by question mark (`?`). Second and third expression are separated by colons (`:`). So, `condition ? expressionOne : expressionTwo`.
+Similarly to if else statement, ternary operator is also composed of three parts. First is a condition. Second and third are both an expression. Condition and first expression are separated by question mark (`?`). Second and third expression are separated by colons (`:`), `condition ? expressionOne : expressionTwo`.
 
 If condition evaluates to `true`, the first expression is executed. If it evaluates to `false`, then evaluated is the second expression. As you can see on the example below, ternary operator can be very useful for example when you want to quickly assign a variable based on specific condition.
 
@@ -368,30 +368,64 @@ If condition evaluates to `true`, the first expression is executed. If it evalua
 // Ternary operator vs if else statement
 
 // Option no.1: if else statement
-// Create variable isUser and set it to true
-// and another variable message and leave it undefined
-let isUser = true
-let message
+// Create variable age and set it to 17
+// and another variable lifeStage and leave it undefined
+let age = 17
+let lifeStage
 
-// Using if to assign "message" variable a value
-if (isUser) {
-  message = 'Welcome back user.'
+// Using if to assign "lifeStage" variable a value
+if (age >= 18) {
+  lifeStage = 'You are an adult.'
 } else {
-  message = 'You are not registered.'
+  lifeStage = 'You are not an adult.'
 }
 
 
 // Option no.1: ternary operator
-// Create variable isUser and set it to true
-let isUser = true
+// Create variable age and set it to 17
+let age = 17
 
-// and another variable message and use ternary operator
+// and another variable lifeStage and use ternary operator
 // to assign it a value right away based on specific condition
-let message = isUser ? 'Welcome back user.' : 'You are not registered.'
+let lifeStage = age >= 18 ? 'You are an adult.' : 'You are not an adult.'
 
 // Explanation:
-// If "isUser" is true the value of "message" will be 'Welcome back user.'
-// If "isUser" is false the value of "message" will be 'You are not registered.'
+// If "age" is more than, or equal to, 18 the value of "lifeStage" will be 'You are an adult.'
+// If "age" is less than 18 the value of "lifeStage" will be 'You are an not adult.'
+```
+
+Similarly to `if` statement, you can wrap the condition with parentheses. This can help you make your code more readable.
+
+```JavaScript
+// Ternary operator with parentheses
+let age = 17
+
+// Wrap condition with parentheses
+let lifeStage = (age >= 18) ? 'You are an adult.' : 'You are not an adult.'
+```
+
+### Multiple ternary operators
+
+Similarly to `if` statement you can also nest ternary operators. The upside is that you can create more complex logic. The downside? It can quickly reduce readability of your code. One way to counter this is by using line breaks. Still, I recommend not overusing ternary operators.
+
+Using multiple ternary operators is easy. First, you have to create one ternary operator. After that, you replace one expression with another ternary operator. For example, `condition ? expressionOne : differentCondition ? expressionThree : expressionFour`.
+
+This way, by replacing expressions in existing ternary operators with new ternary operators, you can use as many ternary operators as you want. Having said that, use this with caution. Otherwise, not even you will be able to read your code.
+
+```JavaScript
+// Multiple ternary operators
+let age = 7
+
+// use multiple ternary operators to assign lifeStage a value
+let lifeStage = (age <= 3) ? 'infancy' :
+  (age > 3 && age) <= 6 ? 'early childhood' :
+  (age > 6 && age) <= 8 ? 'middle childhood' :
+  (age > 8 && age) <= 11 ? 'late childhood' :
+  (age > 11 && age) <= 20 ? 'adolescence ' :
+  (age > 20 && age) <= 35 ? 'early adulthood' :
+  (age > 35 && age) <= 50 ? 'midlife' :
+  (age > 50 && age) <= 80 ? 'mature adulthood' :
+  (age > 80) ? 'late adulthood' :
 ```
 
 ## Conclusion: JavaScript If Else Statement Made Simple
