@@ -6,7 +6,7 @@ JavaScript if else statement is the most frequently used tools to execute code b
 Table of Contents:
 -->
 
-## The basics of if else statement
+## The if statement
 
 JavaScript if else statement makes it very easy to execute your code if specific conditions is truthy. Its syntax is just as a easy. It is composed of three parts. First part is `if` keyword. You use this keyword to tell JavaScript that you are about to create an if else statement.
 
@@ -22,7 +22,7 @@ if (condition) {
 }
 
 
-// Example of if else statement: truthy condition
+// Example of if statement: truthy condition
 // Create a variable and assign it a number
 const num = 10
 
@@ -38,12 +38,12 @@ if (num > 5) {
 // 'The value of num is bigger than 5.'
 
 
-// Example of if else statement: falsy condition
+// Example of if statement: falsy condition
 // Create a variable and assign it a string
 const name = 'Rick'
 
 // Create an if statement that checks
-// if the value of name variable is starts with 'A'
+// if the value of name variable starts with 'A'
 // this is the condition
 if (name[0] === 'A') {
   // If the value of name starts with 'A' run the code below
@@ -54,7 +54,41 @@ if (name[0] === 'A') {
 // ... nothing
 ```
 
-## The else
+There is one thing about if statement, and the condition, worth mentioning. You can quickly make any condition truthy or falsy, by using [logical NOT operator] (`!`). This logical operator will negate any boolean expression. It will transform `true` to `false` and `false` to `true`.
+
+```JavaScript
+// Example of if statement: using logical NOT operator
+// Create a variable and assign it a number
+const num = 10
+
+// Create an if statement that checks
+// if the value of num variable is NOT bigger than 5
+if (!num > 5) { // <= the '!' negates the who condition
+  // If num is bigger than 5 run the code below
+  console.log('The value of num is bigger than 5.')
+}
+
+// Output:
+// ... nothing
+
+
+// Or
+// Create a variable and assign it a string
+const name = 'Rick'
+
+// Create an if statement that checks
+// if the value of name variable doesn't start with 'A'
+// this is the condition
+if (name[0] !== 'A') { // or (!(name[0] === 'A'))
+  // If the value of name doesn't start with 'A' run the code below
+  console.log('The value of name doesn\'t start with \'A\'.')
+}
+
+// Output:
+// 'The value of name doesn\'t start with \'A\'.'
+```
+
+## The if else statement
 
 ## The else if
 
@@ -68,6 +102,7 @@ if (name[0] === 'A') {
 
 <!-- ### Links -->
 [boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
+[logical NOT operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
 
 <!--
 ### Meta:
