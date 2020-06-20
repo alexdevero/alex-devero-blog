@@ -179,7 +179,7 @@ if (condition) {
 }
 ```
 
-## The if else statement and multiple condition
+## The if else statement and multiple conditions
 
 The else if is a very powerful tool. It can help you create more controlled code quickly and easily. That being said, there is one thing you have to pay attention to. Let's say you have an if else statement with one `else if`. That means one `if`, one `else if` and maybe `else`.
 
@@ -224,7 +224,7 @@ if (condition && newCondition && anotherCondition) {
 }
 ```
 
-### Multiple condition and else if
+### Multiple conditions and else if
 
 Using logical OR operator and multiple conditions also works with `else if` statement. So, you can test for one condition and then use `else if` to test for set of multiple conditions.
 
@@ -241,7 +241,7 @@ if (condition) {
 }
 ```
 
-## Else if or multiple ifs
+### Else if or multiple ifs
 
 Problem might arise if you want to test for different conditions and also execute different code for each. This is something `else if`, or if else statement in general, can't help you with. The only way to do this, if you want to use if else statement, is by using two or more if statements, or if else.
 
