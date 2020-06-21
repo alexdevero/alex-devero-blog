@@ -21,7 +21,7 @@ Table of Contents:
 
 ## The if statement
 
-JavaScript if else statement makes it very easy to execute your code if specific conditions is truthy. Its syntax is just as a easy. It is composed of three parts. First part is `if` keyword. You use this keyword to tell JavaScript that you are about to create an if else statement.
+JavaScript if else statement makes it very easy to execute your code if specific conditions is truthy. Its syntax is just as easy. It is composed of three parts. The first part is `if` keyword. You use this keyword to tell JavaScript that you are about to create an if else statement.
 
 The second part is a condition you want to test for. Condition is wrapped with parentheses and it follows the `if` keyword. This can condition can range from very simple to very complex expressions. The only thing that matters is if the result of that expression is [boolean], either `true` or `false`.
 
@@ -174,7 +174,7 @@ if (condition) {
 }
 ```
 
-Just like with `if` statement you can use `else` statement also with `if else`. The only thing you need to watch for is always using the `else` statement, and its code blok at the end.
+Just like with `if` statement you can use `else` statement also with `if else`. The only thing you need to watch for is always using the `else` statement, and its code block at the end.
 
 ```JavaScript
 if (condition) {
@@ -194,7 +194,7 @@ if (condition) {
 
 ## The if else statement and multiple conditions
 
-The else if is a very powerful tool. It can help you create more controlled code quickly and easily. That being said, there is one thing you have to pay attention to. Let's say you have an if else statement with one `else if`. That means one `if`, one `else if` and maybe `else`.
+The else if is a very powerful tool. It can help you create more controlled code quickly and easily. That being said, there is one thing you have to pay attention to. Let's say you have one if else statement with one `else if`. That means one `if`, one `else if` and maybe `else`.
 
 When JavaScript executes this code, it will test the `else if` condition only if the `if` condition is falsy. If the `if` condition is truthy, JavaScript will execute its code block and then move on to the code that follows after the if else statement. It will not get to the `else if` and that new condition.
 
@@ -239,7 +239,7 @@ if (condition && newCondition && anotherCondition) {
 
 ### Multiple conditions and else if
 
-Using logical OR operator and multiple conditions also works with `else if` statement. So, you can test for one condition and then use `else if` to test for set of multiple conditions.
+Using logical OR operator and multiple conditions also works with `else if` statement. So, you can test for one condition and then use `else if` to test for a set of multiple conditions.
 
 ```JavaScript
 // Create if else if statement
@@ -280,7 +280,7 @@ You know that you can use multiple conditions in a single `if`, or `else if`. An
 
 Some JavaScript developers like to use this to make their code more readable. Although, this might be debatable. Let's say you want to test for three conditions and all three must be truthy. One thing you do is to create one `if` statement and use logical AND operator to create a complex condition composed of multiple conditions.
 
-The second option is to use nested if else statement. You can create one `if` statement with one of the three conditions. Nex, you can create another `if` statement with second condition and put it inside the first `if` statement. Then, you can repeat this process with the third `if` statement and third condition.
+The second option is to use nested if else statement. You can create one `if` statement with one of the three conditions. Next, you can create another `if` statement with second condition and put it inside the first `if` statement. Then, you can repeat this process with the third `if` statement and third condition.
 
 ```JavaScript
 // Nested if else statements examples
@@ -303,7 +303,7 @@ if (condition && anotherCondition && yetAnotherCondition) {
 
 ### Word of caution
 
-As a mentioned, some JavaScript developers use nested if else statements to make code more readable. This may work in theory. In reality, it is very go over the edge. You nest one `if` statement then another and, before you realize it, you have a deep chain of `if` statements that make your code harder to work with instead of easier.
+As a mentioned, some JavaScript developers use nested if else statements to make code more readable. This may work in theory. In reality, it is very easy to go over the edge. You nest one `if` statement then another and, before you realize it, you have a deep chain of `if` statements that make your code harder to work with instead of easier.
 
 So, don't start converting all `if` statements with complex conditions to multiple nested `if` statements. Instead, try to use line breaks to make that complex condition more readable, while sticking to one `if` statement. In the end, JavaScript doesn't treat white space and line breaks in the same way Python does.
 
@@ -361,7 +361,7 @@ if (condition) {
 
 The syntax of if else statement is short and simple. That said, there is a way to make it even shorter. You can achieve this by using something called "ternary operator", also called "conditional operator". Ternary operator is like a shortcut for if else statement. It also works in the same way.
 
-Similarly to if else statement, ternary operator is also composed of three parts. First is a condition. Second and third are both an expression. Condition and first expression are separated by question mark (`?`). Second and third expression are separated by colons (`:`), `condition ? expressionOne : expressionTwo`.
+Similarly to if else statement, ternary operator is also composed of three parts. The first is a condition. The second and third are both expressions. The condition and first expression are separated by question mark (`?`). Second and third expression are separated by colons (`:`), `condition ? expressionOne : expressionTwo`.
 
 If condition evaluates to `true`, the first expression is executed. If it evaluates to `false`, then evaluated is the second expression. As you can see on the example below, ternary operator can be very useful for example when you want to quickly assign a variable based on specific condition.
 
