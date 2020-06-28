@@ -1,17 +1,39 @@
-# Blog post title [...]
+# Getting Started with JavaScript Proxy Object
+
+JavaScript Proxy Object is one of the lesser known features of JavaScript. It was introduced in ES2015. This tutorial will teach what you need to know about it. You will learn...
 <!--more-->
 <!--
 Table of Contents:
 -->
 
-## h2
+## Introduction
+
+When you work with [JavaScript objects] there is always some default behavior. When you try get a value from an object JavaScript will return it, if it exists. If it doesn't exist, JavaScript will throw an error. When you try to set or change a value, or add new prop, JavaScript will do that.
+
+Well, this will work unless the object is [frozen]. Note: you can also [seal] an object to forbid adding or removing properties, but allow changing existing values. What JavaScript Proxy does is it allows you to change this default behavior. You can define your own behavior and use JavaScript Proxy to override the default.
+
+What happens when you try to execute some operation on the object you altered? It will be the behavior you defined what will be executed, not the default. This is, in short, what JavaScript Proxy does. It allows you to hijack or override the default behavior of JavaScript objects.
+
+## How to create JavaScript Proxy
+
+## JavaScript Proxy handlers
+
+### get()
+
+### set()
+
+### ownKeys()
+
+### deleteProperty()
 
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[JavaScript objects]: https://blog.alexdevero.com/javascript-objects-pt1/
+[frozen]: https://blog.alexdevero.com/javascript-objects-pt2/#freezing-javascript-objects
+[seal]: https://blog.alexdevero.com/javascript-objects-pt2/#partially-freezing-javascript-objects
 
 <!--
 ### Meta:
