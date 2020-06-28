@@ -242,6 +242,87 @@ The `get()` trap also accepts optional third parameter. This parameter is a `rec
 
 ### The set() trap
 
+Another trap you can create is `set()`. This trap allows you to change the default behavior of changing a value of existing property. The `set()` trap takes three parameters. First is `target`. This is again automatically set the `target` of the Proxy, the target object.
+
+The second parametry is `prop`, or the property name. The third is `value`, the new value you want to set, or write. Similarly to `get()`, the `set()` trap also accepts the `receiver` as an optional parameter. However, since its usage is very specific you may not need to use it, or not that often.
+
+You create the `set()` trap just like the `get()`. As an object method, using either `set() {}`, `set: function() {}` or an arrow function `set: () => {}`. The `set()` trap has access to both, property you want to change and the value you want to assign to it. This makes `set()` a good candidate for a value validation.
+
+For example, let's say you have an object. This object contains some property and the value of this property should be always a string. With `set()`, you can create a test for value type and allow the value change to happen only if the type of the new value is a string. Otherwise, you can reject that change.
+
+```JavaScript
+// Create an object
+const user = {
+  name: 'Toby',
+  age: 29
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  set(target, prop, value) {
+    if (prop in target) {
+      if (prop === 'name') {
+        // Check if the value is a string
+        if (typeof value === 'string') {
+          // If the value is a string
+          // allow to change the property
+          target[prop] = value
+
+          // Return true if setting
+          // new value was successful
+          return true
+        } else {
+          // If the value is not a string
+          // you can throw an error to notify the user
+          throw new TypeError('The value of "name" must be a string.')
+        }
+      } else if (prop === 'age') {
+        // Check if the value is a number
+        if (Number.isInteger(value)) {
+          // If the value is a number
+          // allow to change the property
+          target[prop] = value
+
+          // Always return true if setting
+          // new value was successful
+          return true
+        } else {
+          // If the value is not a number
+          // you can throw an error to notify the user
+          throw new TypeError('The value of "age" must be a number.')
+        }
+      }
+    }
+  }
+})
+
+// Try to change the value of "name" to another string
+userProxy.name = 'Jacob'
+console.log(userProxy.name)
+// Output:
+// 'Jacob'
+
+// Try to change the value of "name" to a boolean
+userProxy.name = false
+console.log(userProxy.name)
+// Output:
+// TypeError: The value of "name" must be a string.
+
+// Try to change the value of "age" to another number
+userProxy.age = 33
+console.log(userProxy.age)
+// Output:
+// 33
+
+// Try to change the value of "age" to a string
+userProxy.age = 'twenty'
+console.log(userProxy.age)
+// Output:
+// TypeError: The value of "age" must be a number.
+```
+
+When you work with `set()` trap, and the change is accepted, you should always return `true`. This is will indicate that the change was successful. If the change wasn't successful, if it was rejected, you can throw appropriate [error]. In this case, you should also use [try...catch] to safely catch that error.
+
 ### The ownKeys() trap
 
 ### The deleteProperty() trap
@@ -256,6 +337,9 @@ The `get()` trap also accepts optional third parameter. This parameter is a `rec
 [seal]: https://blog.alexdevero.com/javascript-objects-pt2/#partially-freezing-javascript-objects
 [variable]: https://blog.alexdevero.com/javascript-variables-introduction/
 [arrow function]: https://blog.alexdevero.com/javascript-arrow-functions/
+[getter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
+[error]: https://blog.alexdevero.com/error-handling-javascript/
+[try...catch]: https://blog.alexdevero.com/error-handling-javascript/#error-handling-and-try8230catch-statement
 
 <!--
 ### Meta:
