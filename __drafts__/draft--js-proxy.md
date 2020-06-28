@@ -1,6 +1,6 @@
 # Getting Started with JavaScript Proxy Object
 
-JavaScript Proxy Object is one of the lesser known features of JavaScript. It was introduced in ES2015. This tutorial will teach what you need to know about it. You will learn...
+JavaScript Proxy Object is one of the lesser known and a bit esoteric JavaScript features introduced in ES2015. In this tutorial, you will learn about what a Proxy object is, how it works and how to create it. You will also learn about the six most useful JavaScript Proxy handlers, or traps, and how to use them.
 <!--more-->
 <!--
 Table of Contents:
