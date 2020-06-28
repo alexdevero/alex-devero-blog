@@ -112,11 +112,11 @@ JavaScript Proxy allows you to control behavior of `target` object. You can do t
 
 
 
-### set()
+### set() trap
 
-### ownKeys()
+### ownKeys() trap
 
-### deleteProperty()
+### deleteProperty() trap
 
 ## Conclusion: [...] ...
 
