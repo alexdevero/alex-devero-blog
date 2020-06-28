@@ -483,7 +483,9 @@ const user = {
 const userProxy = new Proxy(user, {
   // Create deleteProperty() trap
   deleteProperty(target, prop) {
+    // Check if property exists
     if (prop in target) {
+      // Check if property is not a "username"
       if (prop !== 'username') {
         // Delete the property
         delete target[prop]
