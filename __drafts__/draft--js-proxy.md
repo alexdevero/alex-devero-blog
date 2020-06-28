@@ -325,7 +325,144 @@ When you work with `set()` trap, and the change is accepted, you should always r
 
 ### The ownKeys() trap
 
-### The deleteProperty() trap
+Have you ever used `Object.keys()`, `Object.getOwnPropertyNames()` or `Object.getOwnPropertySymbols()`? These methods basically "ask" the object for a list of properties it contains. You can change what these methods get from the object, and return to you, by using the `ownKeys()` trap.
+
+The `ownKeys()` trap takes a single parameter, the `target`. This is the `target` of the Proxy itself, the object you want to change. Since the returned result is expected to be a list, or an array, this is also what the `ownKeys()` trap should return. Each element inside this array can be either a string or symbol.
+
+One example of how you can use the `ownKeys()` trap is to filter which object properties you want to show and which to hide. Inside the `ownKeys()` trap, you can use `Object.keys(target)` method to get all keys of the target object. Then, you can use `filter()` method to filter the array of keys based on a specific condition.
+
+From now on, when someone use the `Object.keys()` or `Object.getOwnPropertyNames()` methods it will always show only the properties that pass your filter.
+
+```JavaScript
+// Create an object
+const user = {
+  _dateOfRegistration: '2017-03-12T10:12:45.910Z',
+  _password: 'justSomeNumbersAndStrings8785fals',
+  _userType: 'user',
+  name: 'Toby',
+  email: 'toby@tobyuser.com',
+  age: 29
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  // Create ownKeys() trap
+  ownKeys(target) {
+    // Return only keys that don't start with '_'
+    return Object.keys(target).filter(key => !key.startsWith('_'))
+  }
+})
+
+// Use Object.keys()
+// to get all properties of user object
+console.log(Object.keys(userProxy))
+// Output:
+// [ 'name', 'email', 'age' ]
+
+
+// Use Object.getOwnPropertyNames()
+// to get all properties of user object
+console.log(Object.getOwnPropertyNames(userProxy))
+// Output:
+// [ 'name', 'email', 'age' ]
+```
+
+There is another interesting thing you can do with `ownKeys()`. You can also return a different list of keys than those inside the target object. There is one catch. This, returning a completely different list of keys, will work from the get-go only with `Object.getOwnPropertyNames()` method (fix for this in the next section).
+
+```JavaScript
+// Create an object
+const user = {
+  _dateOfRegistration: '2017-03-12T10:12:45.910Z',
+  _password: 'justSomeNumbersAndStrings8785fals',
+  _userType: 'user',
+  name: 'Toby',
+  email: 'toby@tobyuser.com',
+  age: 29
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  // Create ownKeys() trap
+  ownKeys(target) {
+    // Return a list of nonexisting keys
+    return ['favorite book', 'favorite author', 'currently reading']
+  }
+})
+
+// Use Object.getOwnPropertyNames()
+// to get all properties of user object
+console.log(Object.getOwnPropertyNames(userProxy))
+// Output:
+// [ 'favorite book', 'favorite author', 'currently reading' ]
+
+
+// Use Object.keys()
+// to get all properties of user object
+// NOTE: this will not work, yet
+console.log(Object.keys(userProxy))
+// Output:
+// []
+```
+
+### The getOwnPropertyDescriptor() trap
+
+The "problem" with `Object.keys()` is that works only with enumerable object properties. Every object has `GetOwnProperty()` method. This method is used for each property to check if specific property is enumerable or not, if it has `enumerable` flag. If it is not enumerable it will not show up when you use `Object.keys()`.
+
+Let's say that you want to return a list of nonexisting properties. in this case, the object will call the `GetOwnProperty()` method for each imagery property on that list. Unfortunately, since these properties actually doesn't exist in the target object there is no record saying they are enumerable.
+
+If there is no record saying that all those imagery properties in the returned list are enumerable they will not show up if you use the `Object.keys()` method. These properties will only show up when you use `(Object.getOwnPropertyNames()`. That said, there is a way to make this work.
+
+You have to use another Proxy trap called `getOwnPropertyDescriptor()`. This trap allows you to manually set property flags and descriptors. One of these flags is also the `enumerable`. When you use this trap, and set the `enumerable` to `true`, your imagery properties will show up when you use `Object.keys()`.
+
+The `getOwnPropertyDescriptor()` trap takes two parameters: `target` and `prop`. The `target` is the target object for the Proxy. The `prop` is for each property its descriptors you want to get. The value this trap returns is an object with flags you want to apply to object properties in the target object.
+
+Let's get to our example with list of imagery properties. What we need is to create the `getOwnPropertyDescriptor()` trap. We also need this trap to return two flags, `enumerable` and `configurable`, both set to `true`.
+
+Theoretically, we need only first, but ignoring the second will cause `TypeError`. With this, our imagery list of properties will work even with `Object.keys()` method.
+
+```JavaScript
+// Create an object
+const user = {
+  _dateOfRegistration: '2017-03-12T10:12:45.910Z',
+  _password: 'justSomeNumbersAndStrings8785fals',
+  _userType: 'user',
+  name: 'Toby',
+  email: 'toby@tobyuser.com',
+  age: 29
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  // Create ownKeys() trap
+  ownKeys(target) {
+    // Return a list of nonexisting keys
+    return ['favorite book', 'favorite author', 'currently reading']
+  },
+  // Create getOwnPropertyDescriptor() trap
+  // This trap will be automatically used for every property
+  getOwnPropertyDescriptor(target, prop) {
+    // Set enumerable and configurable flags to true
+    return {
+      enumerable: true,
+      configurable: true
+    }
+  }
+})
+
+// Use Object.getOwnPropertyNames()
+// to get all properties of user object
+console.log(Object.getOwnPropertyNames(userProxy))
+// Output:
+// [ 'favorite book', 'favorite author', 'currently reading' ]
+
+
+// Use Object.keys()
+// to get all properties of user object
+// NOTE: this will finally work!
+console.log(Object.keys(userProxy))
+// Output:
+// [ 'favorite book', 'favorite author', 'currently reading' ]
+```
 
 ## Conclusion: [...] ...
 
