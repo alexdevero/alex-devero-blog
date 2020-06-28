@@ -19,7 +19,7 @@ Table of Contents:
 
 ## Introduction
 
-When you work with [JavaScript objects] there is always some default behavior. When you try get a value from an object JavaScript will return it, if it exists. If it doesn't exist, JavaScript will throw an error. When you try to set or change a value, or add new prop, JavaScript will do that.
+When you work with [JavaScript objects] there is always some default behavior. When you try to get a value from an object JavaScript will return it, if it exists. If it doesn't exist, JavaScript will throw an error. When you try to set or change a value, or add new prop, JavaScript will do that.
 
 Well, this will work unless the object is [frozen]. Note: you can also [seal] an object to forbid adding or removing properties, but allow changing existing values. What JavaScript Proxy does is it allows you to change this default behavior. You can define your own behavior and use JavaScript Proxy to override the default.
 
@@ -109,7 +109,7 @@ console.log(myObj.name)
 // Output:
 // 'Tony'
 
-// Try to access nonexisting "age" property
+// Try to access non-existing "age" property
 console.log(myObj.age)
 // Output:
 // undefined
@@ -121,9 +121,9 @@ JavaScript Proxy allows you to control behavior of `target` object. You can do t
 
 ### The get() trap
 
-The first trap is `get()`. You've seen this trap in the example in "How JavaScript Proxy works" section. This trap allows changing the default behavior that is triggered when you try to access a object property. In the previous example, we used this trap to change the error message you get when you try to access nonexisting property.
+The first trap is `get()`. You've seen this trap in the example in "How JavaScript Proxy works" section. This trap allows changing the default behavior that is triggered when you try to access a object property. In the previous example, we used this trap to change the error message you get when you try to access non-existing property.
 
-There are other ways to use this trap. You can use it to restrict access to certain properties. Or, you can use it to return only parts of the values. For example, when you ask for a credit card number you can return only last 4 numbers while keeping the rest hidden. Or, if you ask for a password you can return only asterisks.
+There are other ways to use this trap. You can use it to restrict access to certain properties. Or, you can use it to return only parts of the values. For example, when you ask for a credit card number you can return only last four numbers while keeping the rest hidden. Or, if you ask for a password you can return only asterisks.
 
 Creating `get()` method, or trap, is easy. You create it as any other object method, either as `get() {}` or `get: function() {}`, or an [arrow function] equivalent `get: () => {}`. Remember to always use the `get` keyword. This method takes two parameters: `target` and `prop` (or property).
 
@@ -249,13 +249,13 @@ console.log(userProxy.creditCardNum)
 
 The `get()` trap also accepts optional third parameter. This parameter is a `receiver`. This optional parameter is useful when the target object property is a getter. In this case, the `receiver` is the object that will be used as `this` when it is called. This object is usually the JavaScript Proxy object itself.
 
-*Note: the first example above is for illustration purpose only. Don't store your passwords, or credit card numbers, anywhere in your code where someone else an find them.*
+*Note: the first example above is for illustration purpose only. Don't store your passwords, or credit card numbers, anywhere in your code where someone else can find them.*
 
 ### The set() trap
 
-Another trap you can create is `set()`. This trap allows you to change the default behavior of changing a value of existing property. The `set()` trap takes three parameters. First is `target`. This is again automatically set the `target` of the Proxy, the target object.
+Another trap you can create is `set()`. This trap allows you to change the default behavior of changing a value of existing property. The `set()` trap takes three parameters. First parameter is `target`. This is again automatically set the `target` of the Proxy, the target object.
 
-The second parametry is `prop`, or the property name. The third is `value`, the new value you want to set, or write. Similarly to `get()`, the `set()` trap also accepts the `receiver` as an optional parameter. However, since its usage is very specific you may not need to use it, or not that often.
+The second parameter is `prop`, or the property name. The third is `value`, the new value you want to set, or write. Similarly to `get()`, the `set()` trap also accepts the `receiver` as an optional parameter. However, since its usage is very specific you may not need to use it, or not that often.
 
 You create the `set()` trap just like the `get()`. As an object method, using either `set() {}`, `set: function() {}` or an arrow function `set: () => {}`. The `set()` trap has access to both, property you want to change and the value you want to assign to it. This makes `set()` a good candidate for a value validation.
 
@@ -332,7 +332,7 @@ console.log(userProxy.age)
 // TypeError: The value of "age" must be a number.
 ```
 
-When you work with `set()` trap, and the change is accepted, you should always return `true`. This is will indicate that the change was successful. If the change wasn't successful, if it was rejected, you can throw appropriate [error]. In this case, you should also use [try...catch] to safely catch that error.
+When you work with `set()` trap, and the change is accepted, you should always return `true`. This will indicate that the change was successful. If the change wasn't successful, if it was rejected, you can throw appropriate [error]. In this case, you should also use [try...catch] to safely catch that error.
 
 ### The ownKeys() trap
 
@@ -395,7 +395,7 @@ const user = {
 const userProxy = new Proxy(user, {
   // Create ownKeys() trap
   ownKeys(target) {
-    // Return a list of nonexisting keys
+    // Return a list of non-existing keys
     return ['favorite book', 'favorite author', 'currently reading']
   }
 })
@@ -419,7 +419,7 @@ console.log(Object.keys(userProxy))
 
 The "problem" with `Object.keys()` is that works only with enumerable object properties. Every object has `GetOwnProperty()` method. This method is used for each property to check if specific property is enumerable or not, if it has `enumerable` flag. If it is not enumerable it will not show up when you use `Object.keys()`.
 
-Let's say that you want to return a list of nonexisting properties. in this case, the object will call the `GetOwnProperty()` method for each imagery property on that list. Unfortunately, since these properties actually doesn't exist in the target object there is no record saying they are enumerable.
+Let's say that you want to return a list of non-existing properties. In this case, the object will call the `GetOwnProperty()` method for each imagery property on that list. Unfortunately, since these properties actually doesn't exist in the target object there is no record saying they are enumerable.
 
 If there is no record saying that all those imagery properties in the returned list are enumerable they will not show up if you use the `Object.keys()` method. These properties will only show up when you use `(Object.getOwnPropertyNames()`. That said, there is a way to make this work.
 
@@ -446,7 +446,7 @@ const user = {
 const userProxy = new Proxy(user, {
   // Create ownKeys() trap
   ownKeys(target) {
-    // Return a list of nonexisting keys
+    // Return a list of non-existing keys
     return ['favorite book', 'favorite author', 'currently reading']
   },
   // Create getOwnPropertyDescriptor() trap
@@ -509,7 +509,7 @@ const userProxy = new Proxy(user, {
         throw new Error('Property "username" can\'t be deleted.')
       }
     } else {
-      // Throw an error about nonexisting property
+      // Throw an error about non-existing property
       throw new Error(`Property "${prop}" does not exist.`)
     }
   }
@@ -579,7 +579,7 @@ console.log('_secret' in userProxy)
 
 ## Conclusion: Getting Started with JavaScript Proxy Object
 
-It's been a while since JavaScript Proxy object was introduced in in ES2015 (ES6). However, it never became as popular as other ES6 features such as [classes], [arrow functions] or [promises]. Popular or not, Proxy can be very useful when you work with JavaScript objects.
+It's been a while since JavaScript Proxy object was introduced in ES2015 (ES6). However, it never became as popular as other ES6 features such as [classes], [arrow functions] or [promises]. Popular or not, Proxy can still be useful when you work with JavaScript objects.
 
 I hope that you enjoyed this tutorial and that it helped you understand what JavaScript Proxy object is and how it works. I also hope it made it easier for you to understand how to create Proxy objects and how to use them, along with some handy traps.
 
