@@ -114,16 +114,19 @@ The first trap is `get()`. You've seen this trap in the example in "How JavaScri
 
 There are other ways to use this trap. You can use it to restrict access to certain properties. Or, you can use it to return only parts of the values. For example, when you ask for a credit card number you can return only last 4 numbers while keeping the rest hidden. Or, if you ask for a password you can return only asterisks.
 
-Creating `get()` method, or trap, is easy. You create it as any other object method, either as `get() {}` or `get: function() {}`, or an [arrow function] equivalent `get: () => {}`. This method takes two parameters: `target` and `prop` (or property). The `target` is automatically set the `target` of the Proxy, the target object.
+Creating `get()` method, or trap, is easy. You create it as any other object method, either as `get() {}` or `get: function() {}`, or an [arrow function] equivalent `get: () => {}`. Remember to always use the `get` keyword. This method takes two parameters: `target` and `prop` (or property).
 
-The `prop` parameter is always automatically set to the property you want to access. If you want to access property `name` on some object, the "name" will become the value of `prop` parameter. Thanks to this, the `prop` parameter, you can target and change behavior for any object property you want.
+The `target` is automatically set the `target` of the Proxy, the target object. The `prop` parameter is always automatically set to the property you want to access. If you want to access property `name` on some object, the "name" will become the value of `prop` parameter.
+
+Thanks to this, having the access to the `prop` parameter, you can target any object property you want and change access behavior only for that property. This way, you can also forbid the access.
 
 ```JavaScript
 // Create an object
 const user = {
   name: 'Jackie',
   creditCardNum: '4510 6459 8301 6543',
-  password: 'justSomeStringsAndNumbers1359tru'
+  password: 'justSomeStringsAndNumbers1359tru',
+  secret: 'This should remain private.'
 }
 
 // Create a Proxy and apply it to "user" object
@@ -134,7 +137,9 @@ const userProxy = new Proxy(user, {
     // Check if property exists in target object
     if (prop in target) {
       // If it does exist, return the property value
-      if (prop === 'creditCardNum') {
+      if (prop === 'secret') {
+        return 'You are not allowed to access this property.'
+      } else if (prop === 'creditCardNum') {
         // If accessed property is "creditCardNum"
         // return only last four numbers
         return `---- ---- ---- ${target[prop].substring(target[prop].length -4)}`
@@ -169,6 +174,11 @@ console.log(userProxy.password)
 // Output:
 // '********************************'
 
+// Try to access "secret" in "userProxy" object
+console.log(userProxy.secret)
+// Output:
+// 'You are not allowed to access this property.'
+
 
 // If you try to work with the original object:
 console.log(user.name)
@@ -182,6 +192,10 @@ console.log(user.creditCardNum)
 console.log(user.password)
 // Output:
 // 'justSomeStringsAndNumbers1359tru'
+
+console.log(user.secret)
+// Output:
+// 'This should remain private.'
 ```
 
 Last thing. Make sure the `get()` trap always returns something, with `return` statement. If it doesn't when you try to access some property you will get `undefined`.
@@ -220,8 +234,9 @@ console.log(userProxy.name)
 console.log(userProxy.creditCardNum)
 // Output:
 // '---- ---- ---- 6543'
-
 ```
+
+The `get()` trap also accepts optional third parameter. This parameter is a `receiver`. This optional parameter is useful when the target object property is a getter. In this case, the `receiver` is the object that will be used as `this` when it is called. This object is usually the JavaScript Proxy object itself.
 
 *Note: the first example above is for illustration purpose only. Don't store your passwords, or credit card numbers, anywhere in your code where someone else an find them.*
 
