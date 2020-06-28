@@ -1,6 +1,6 @@
 # Getting Started with JavaScript Proxy Object
 
-JavaScript Proxy Object is one of the lesser known and a bit esoteric JavaScript features introduced in ES2015. In this tutorial, you will learn about what a Proxy object is, how it works and how to create it. You will also learn about the six most useful JavaScript Proxy handlers, or traps, and how to use them.
+JavaScript Proxy object is one of the lesser known and a bit esoteric JavaScript features introduced in ES2015 (ES6). In this tutorial, you will learn about what a Proxy object is, how it works and how to create it. You will also learn about the six most useful JavaScript Proxy handlers, or traps, and how to use them.
 <!--more-->
 <!--
 Table of Contents:
@@ -579,6 +579,10 @@ console.log('_secret' in userProxy)
 
 ## Conclusion: Getting Started with JavaScript Proxy Object
 
+It's been a while since JavaScript Proxy object was introduced in in ES2015 (ES6). However, it never became as popular as other ES6 features such as [classes], [arrow functions] or [promises]. Popular or not, Proxy can be very useful when you work with JavaScript objects.
+
+I hope that you enjoyed this tutorial and that it helped you understand what JavaScript Proxy object is and how it works. I also hope it made it easier for you to understand how to create Proxy objects and how to use them, along with some handy traps.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
@@ -591,6 +595,9 @@ console.log('_secret' in userProxy)
 [error]: https://blog.alexdevero.com/error-handling-javascript/
 [try...catch]: https://blog.alexdevero.com/error-handling-javascript/#error-handling-and-try8230catch-statement
 [many default traps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy
+[classes]: https://blog.alexdevero.com/javascript-classes-pt1/
+[arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
+[promises]: https://blog.alexdevero.com/javascript-promises/
 
 <!--
 ### Meta:
