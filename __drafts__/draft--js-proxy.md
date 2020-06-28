@@ -71,7 +71,7 @@ const myProxy = new Proxy(myObj, {
   get(target, prop) {
     // Check if property exists in target object
     if (prop in target) {
-      // If it does, return it
+      // If it does exist, return the property value
       return target[prop]
     } else {
       // Otherwise, show some friendly message
@@ -108,9 +108,122 @@ console.log(myObj.age)
 
 JavaScript Proxy allows you to control behavior of `target` object. You can do this by creating handler methods, or traps. There many default traps you can use to override specific behavior of JavaScript object. To make things simple, let's focus on few of these traps that might be the most useful.
 
-### get()
+### The get() trap
+
+The first trap is `get()`. You've seen this trap in the example in "How JavaScript Proxy works" section. This trap allows changing the default behavior that is triggered when you try to access a object property. In the previous example, we used this trap to change the error message you get when you try to access nonexisting property.
+
+There are other ways to use this trap. You can use it to restrict access to certain properties. Or, you can use it to return only parts of the values. For example, when you ask for a credit card number you can return only last 4 numbers while keeping the rest hidden. Or, if you ask for a password you can return only asterisks.
+
+Creating `get()` method, or trap, is easy. You create it as any other object method, either as `get() {}` or `get: function() {}`, or an [arrow function] equivalent `get: () => {}`. This method takes two parameters: `target` and `prop` (or property). The `target` is automatically set the `target` of the Proxy, the target object.
+
+The `prop` parameter is always automatically set to the property you want to access. If you want to access property `name` on some object, the "name" will become the value of `prop` parameter. Thanks to this, the `prop` parameter, you can target and change behavior for any object property you want.
+
+```JavaScript
+// Create an object
+const user = {
+  name: 'Jackie',
+  creditCardNum: '4510 6459 8301 6543',
+  password: 'justSomeStringsAndNumbers1359tru'
+}
+
+// Create a Proxy and apply it to "user" object
+const userProxy = new Proxy(user, {
+  // Create get() trap to change the default behavior
+  // for accessing object properties
+  get(target, prop) {
+    // Check if property exists in target object
+    if (prop in target) {
+      // If it does exist, return the property value
+      if (prop === 'creditCardNum') {
+        // If accessed property is "creditCardNum"
+        // return only last four numbers
+        return `---- ---- ---- ${target[prop].substring(target[prop].length -4)}`
+      } else if (prop === 'password') {
+        // If accessed property is "password"
+        // return masked string
+        return '*'.repeat(target[prop].length)
+      } else {
+        // Otherwise, return the whole value
+        return target[prop]
+      }
+    } else {
+      // Otherwise, show some friendly message
+      return 'Sorry, such property doesn\'t exist.'
+    }
+  }
+})
+
+// Try to access "name" in "userProxy" object
+// Note: remember to work with the Proxy, not the original object
+console.log(userProxy.name)
+// Output:
+// 'Jackie'
+
+// Try to access "creditCardNum" in "userProxy" object
+console.log(userProxy.creditCardNum)
+// Output:
+// '---- ---- ---- 6543'
+
+// Try to access "password" in "userProxy" object
+console.log(userProxy.password)
+// Output:
+// '********************************'
 
 
+// If you try to work with the original object:
+console.log(user.name)
+// Output:
+// 'Jackie'
+
+console.log(user.creditCardNum)
+// Output:
+// '4510 6459 8301 6543'
+
+console.log(user.password)
+// Output:
+// 'justSomeStringsAndNumbers1359tru'
+```
+
+Last thing. Make sure the `get()` trap always returns something, with `return` statement. If it doesn't when you try to access some property you will get `undefined`.
+
+```JavaScript
+// Create an object
+const user = {
+  name: 'Jackie',
+  creditCardNum: '4510 6459 8301 6543',
+  password: 'justSomeStringsAndNumbers1359tru'
+}
+
+// Create a Proxy and apply it to "user" object
+const userProxy = new Proxy(user, {
+  // Create get() trap to change the default behavior
+  // for accessing object properties
+  get(target, prop) {
+    // Check if property exists in target object
+    if (prop in target) {
+      // If it does exist, return the property value
+      if (prop === 'creditCardNum') {
+        // If accessed property is "creditCardNum"
+        // return only last four numbers
+        return `---- ---- ---- ${target[prop].substring(target[prop].length -4)}`
+      }
+    }
+    // Forget to return something if accessed property
+    // is not "creditCardNum"
+  }
+})
+
+console.log(userProxy.name)
+// Output:
+// undefined
+
+console.log(userProxy.creditCardNum)
+// Output:
+// '---- ---- ---- 6543'
+
+```
+
+*Note: the first example above is for illustration purpose only. Don't store your passwords, or credit card numbers, anywhere in your code where someone else an find them.*
 
 ### set() trap
 
@@ -127,6 +240,7 @@ JavaScript Proxy allows you to control behavior of `target` object. You can do t
 [frozen]: https://blog.alexdevero.com/javascript-objects-pt2/#freezing-javascript-objects
 [seal]: https://blog.alexdevero.com/javascript-objects-pt2/#partially-freezing-javascript-objects
 [variable]: https://blog.alexdevero.com/javascript-variables-introduction/
+[arrow function]: https://blog.alexdevero.com/javascript-arrow-functions/
 
 <!--
 ### Meta:
