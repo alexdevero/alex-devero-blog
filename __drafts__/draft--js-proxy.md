@@ -2,18 +2,7 @@
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
-
-## h2
-
-### h3
-
-### h3
 
 ## h2
 
@@ -31,7 +20,9 @@ Table of Contents:
 
 <!--
 ### Keywords:
--
+- Javascript Proxy Object
+- Javascript Proxy
+- Proxy
 -->
 
 <!--
