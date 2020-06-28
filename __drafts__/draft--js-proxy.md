@@ -104,9 +104,13 @@ console.log(myObj.age)
 // undefined
 ```
 
-## JavaScript Proxy handlers
+## JavaScript Proxy handlers, or traps
+
+JavaScript Proxy allows you to control behavior of `target` object. You can do this by creating handler methods, or traps. There many default traps you can use to override specific behavior of JavaScript object. To make things simple, let's focus on few of these traps that might be the most useful.
 
 ### get()
+
+
 
 ### set()
 
