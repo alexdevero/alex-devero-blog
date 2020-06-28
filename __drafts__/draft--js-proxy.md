@@ -98,7 +98,7 @@ console.log(myObj.name)
 // Output:
 // 'Tony'
 
-// Try to access non-existing "name" property
+// Try to access nonexisting "age" property
 console.log(myObj.age)
 // Output:
 // undefined
