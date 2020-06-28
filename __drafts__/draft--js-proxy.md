@@ -524,6 +524,48 @@ console.log(userProxy)
 // { username: 'jack' }
 ```
 
+### The has() trap
+
+The `has()` trap works in a similar way to the `ownKeys()`. It also allows you to filter which properties should be visible and which not. The difference between `has()` and `ownKeys()` is that the `has()` trap works with `in` operator. This operator is useful when you want to check if some property exists in an object.
+
+The `has()` trap allows you to change the boolean value `in` operator returns for a specific property, or all. This trap takes two parameters: `target` and `prop`. The target is as always the target of the JavaScript Proxy object. The `prop` is for the property its existence you want to check for.
+
+When you want to show some existing property as nonexistent, when you use `in` operator, you can simply return `false` for that property. Otherwise, you return `key in target`.
+
+```JavaScript
+// Create an object
+const user = {
+  username: 'anonymous',
+  _secret: 'Some secret that should remain hidden.'
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  has(target, prop) {
+    // Check if property is "_secret"
+    if (prop === '_secret') {
+      // If so, return false to disallow detecting
+      // this property with "in" operator
+      return false
+    } else {
+      // Otherwise, allow the property to be detected
+      // by "in" operator
+      return prop in target
+    }
+  }
+})
+
+// Test if "username" property exists in "userProxy" object
+console.log('username' in userProxy)
+// Output:
+// true
+
+// Test if "_secret" property exists in "userProxy" object
+console.log('_secret' in userProxy)
+// Output:
+// false
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
