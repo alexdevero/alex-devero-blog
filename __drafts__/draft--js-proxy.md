@@ -464,6 +464,64 @@ console.log(Object.keys(userProxy))
 // [ 'favorite book', 'favorite author', 'currently reading' ]
 ```
 
+### The deleteProperty() trap
+
+You know how to change accessing and setting individual properties and getting all of them. Another thing you can change is which properties can be deleted and which can't. This can be useful in situations where you want to protect specific object properties from being deleted.
+
+To do this you have to use the `deleteProperty()` trap. This trap takes two parameters: `target`, and `prop`. As usually, the `target` is the target object for the Proxy. The `prop` is for the property you want to delete. When you you want to allow to delete some property, you can allow do that by using `delete` statement.
+
+Successful deletion should always return `true` to indicate the operation was indeed successful. What if you don't want some property to be deleted? You can either return `false` or you can throw some custom `Error`.
+
+```JavaScript
+// Create an object
+const user = {
+  username: 'jack',
+  email: 'jack@fowley.com'
+}
+
+// Create a Proxy for "user" object
+const userProxy = new Proxy(user, {
+  // Create deleteProperty() trap
+  deleteProperty(target, prop) {
+    if (prop in target) {
+      if (prop !== 'username') {
+        // Delete the property
+        delete target[prop]
+
+        // Always return true if setting
+        // new value was successful
+        return true
+      } else {
+        // Reject the deletion and throw an error
+        throw new Error('Property "username" can\'t be deleted.')
+      }
+    } else {
+      // Throw an error about nonexisting property
+      throw new Error(`Property "${prop}" does not exist.`)
+    }
+  }
+})
+
+// Try to delete "email" property
+delete userProxy.email
+// Output:
+
+// Try to delete "username" property
+delete userProxy.username
+// Output:
+// Error: Property "username" can't be deleted.
+
+// Try to delete "age" property
+delete userProxy.age
+// Output:
+// Error: Property "age" does not exist.
+
+// Log the content of "userProxy" object
+console.log(userProxy)
+// Output:
+// { username: 'jack' }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
