@@ -4,6 +4,17 @@ JavaScript Proxy Object is one of the lesser known and a bit esoteric JavaScript
 <!--more-->
 <!--
 Table of Contents:
+## Introduction
+## How to create JavaScript Proxy
+## How JavaScript Proxy works
+## JavaScript Proxy handlers, or traps
+### The get() trap
+### The set() trap
+### The ownKeys() trap
+### The getOwnPropertyDescriptor() trap
+### The deleteProperty() trap
+### The has() trap
+## Conclusion: Getting Started with JavaScript Proxy Object
 -->
 
 ## Introduction
