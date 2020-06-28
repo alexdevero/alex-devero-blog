@@ -225,11 +225,11 @@ console.log(userProxy.creditCardNum)
 
 *Note: the first example above is for illustration purpose only. Don't store your passwords, or credit card numbers, anywhere in your code where someone else an find them.*
 
-### set() trap
+### The set() trap
 
-### ownKeys() trap
+### The ownKeys() trap
 
-### deleteProperty() trap
+### The deleteProperty() trap
 
 ## Conclusion: [...] ...
 
