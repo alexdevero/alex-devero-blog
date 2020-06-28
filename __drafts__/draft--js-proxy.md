@@ -28,6 +28,80 @@ The methods inside the `handler` object are called traps. So, the next time your
 // handler – is an object with methods (traps) to control
 // the behaviors of the target
 const myProxy = new Proxy(target, handler)
+
+
+// Using Proxy on an object
+// Create an object
+const myObj = {
+  name: 'Tony',
+  gender: 'male'
+}
+
+// Create new Proxy and apply it to myObj object
+// Set myObj variable as the "target" parameter
+// and empty object as the "handler" parameter
+const myProxy = new Proxy(myObj, {})
+```
+
+## How JavaScript Proxy works
+
+You know how to create a Proxy. The next thing you need to know is how it works, at least in general. JavaScript Proxy is wrapper. It wraps the object you specified as the `target` parameter. This means two things. First, as you already know, it means that Proxy will be applied to the object you pass as the `target` parameter.
+
+The second thing is that you will usually want to assign new Proxy to a [variable]. JavaScript Proxy wraps the `target` object, but it doesn't change it. It only connects to that object, to its reference. Any change in behavior you make is always kept inside the Proxy, not the object you want to change.
+
+If you use a Proxy on some object, from now on, you have to work with that Proxy. Only then, will the new behavior apply. When you interact with the Proxy it will automatically connect with the object and execute that task you want, while applying the behavior you specified.
+
+If you try to interact with the original object itself no change you made via the Proxy will be applied. This is a good thing and it is also a bad thing. It is a bad thing because you have to remember to interact with the Proxy to get the behavior you want, not the original object.
+
+It is a good thing because you can switch to the original object any time you want, and easily. All you have to do is to reference the original object instead of the Proxy. When you want to work with the Proxy again, you just have to reference it.
+
+Let's take a look at one example of how you can switch between original object and JavaScript Proxy (You will learn about the `get()` trap in the next section).
+
+```JavaScript
+// Create an object
+const myObj = {
+  name: 'Tony',
+  gender: 'male'
+}
+
+// Create new Proxy and apply it to myObj object
+const myProxy = new Proxy(myObj, {
+  // Create get method "trap"
+  // This will alter getting properties inside myObj
+  get(target, prop) {
+    // Check if property exists in target object
+    if (prop in target) {
+      // If it does, return it
+      return target[prop]
+    } else {
+      // Otherwise, show some friendly message
+      return 'Sorry, such property doesn\'t exist.'
+    }
+  }
+})
+
+// Example no.1: Working with proxy
+// Try to access existing "name" property
+console.log(myProxy.name)
+// Output:
+// 'Tony'
+
+// Try to access non-existing "name" property
+console.log(myProxy.age)
+// Output:
+// 'Sorry, such property doesn\'t exist.'
+
+
+// Example no.2: Switching to the original object
+// Try to access existing "name" property
+console.log(myObj.name)
+// Output:
+// 'Tony'
+
+// Try to access non-existing "name" property
+console.log(myObj.age)
+// Output:
+// undefined
 ```
 
 ## JavaScript Proxy handlers
@@ -48,6 +122,7 @@ const myProxy = new Proxy(target, handler)
 [JavaScript objects]: https://blog.alexdevero.com/javascript-objects-pt1/
 [frozen]: https://blog.alexdevero.com/javascript-objects-pt2/#freezing-javascript-objects
 [seal]: https://blog.alexdevero.com/javascript-objects-pt2/#partially-freezing-javascript-objects
+[variable]: https://blog.alexdevero.com/javascript-variables-introduction/
 
 <!--
 ### Meta:
