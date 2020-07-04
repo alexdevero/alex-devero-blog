@@ -368,8 +368,38 @@ sessionStorage.length
 
 ### The key() method
 
+The `key()` method provides a simple and quick way to retrieve an item from web storage based on its index number. When you want to use this method you pass the index number as the only argument. As a result, you will get the key of the item, the name of the key from the key/value pair.
+
+If you try to get a value of an item that doesn't exist the `key()` method will return `null`.
+
 ```JavaScript
+// Retrieving data from local storage with key() metod
+// Store some data in local storage
+localStorage.name = 'Stan'
+localStorage.email = 'stan@stan.com'
+localStorage.gender = 'male'
+
+// Retrieve the second item from local storage with key() metod
+localStorage.key(1)
+// Output:
+// "name"
+
+
+// Retrieving data from session storage with key() metod
+// Store some data in session storage
+sessionStorage.name = 'Stan'
+sessionStorage.email = 'stan@stan.com'
+sessionStorage.gender = 'male'
+
+// Retrieve the second item from session storage with key() metod
+sessionStorage.key(1)
+// Output:
+// "name"
 ```
+
+You may have notice something weird in the example above. That key we got for index "1" was "name". Shouldn't we get "email" instead? This is the problem with `key()` method. The items are not order in the order you created them. They are not even ordered alphabetically.
+
+If that was the case, index "1" would return "gender" instead of "name". The actual order of items is hard to say because it is defined by the user-agent, the browser you are using. Switch browser and you may get different results. So, don't rely too much on the `key()` method as it can be quite unpredictable.
 
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
