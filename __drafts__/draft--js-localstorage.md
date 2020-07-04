@@ -122,12 +122,14 @@ The difference is that when you want to store some data in a key, an assignment 
 localStorage.book = 'Zero to One'
 
 console.log(localStorage.book)
+// Output:
 // "Zero to One"
 
 // Adding data to session storage with dot notation
 sessionStorage.book = 'Hard Things About Hard Things'
 
 console.log(sessionStorage.book)
+// Output:
 // "Hard Things About Hard Things"
 ```
 
