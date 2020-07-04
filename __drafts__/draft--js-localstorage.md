@@ -219,7 +219,55 @@ if (sessionStorage.favoriteColor) {
 
 ### The removeItem() method
 
+When you want to delete a single key/value pair from web storage the `removeItem()` is your go-to method. This method takes a single parameter, the name of the key you want to remove. When you use this method it will always return `undefined`, no matter if the key actually existed and was removed or if it didn't exist at all.
+
 ```JavaScript
+// Removing data from local storage with removeItem() method
+// Store some data in local storage
+localStorage.setItem('username', 'jackblack')
+
+// Check if "username" key exists
+if (localStorage.getItem('username')) {
+  // Retrieve value of "username"
+  localStorage.getItem('username')
+}
+// Output:
+// "jackblack"
+
+// Remove "username" from local storage
+localStorage.removeItem('username')
+
+// Check if "username" key exists
+if (localStorage.getItem('username')) {
+  // Retrieve value of "username"
+  localStorage.getItem('username')
+}
+// Output:
+// undefined
+
+
+// Removing data from session storage with removeItem() method
+// Store some data in session storage
+sessionStorage.setItem('username', 'skyhigh')
+
+// Check if "username" key exists
+if (sessionStorage.getItem('username')) {
+  // Retrieve value of "username"
+  sessionStorage.getItem('username')
+}
+// Output:
+// "skyhigh"
+
+// Remove "username" from session storage
+sessionStorage.removeItem('username')
+
+// Check if "username" key exists
+if (sessionStorage.getItem('username')) {
+  // Retrieve value of "username"
+  sessionStorage.getItem('username')
+}
+// Output:
+// undefined
 ```
 
 ### The clear() method
