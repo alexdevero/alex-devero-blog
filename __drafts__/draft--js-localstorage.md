@@ -270,6 +270,59 @@ if (sessionStorage.getItem('username')) {
 // undefined
 ```
 
+### An alternative to the removeItem() method
+
+When you work with JavaScript objects, there is a quick way to delete their properties. You can o that with the help of `delete` operator. You can use this operator also to delete property from a web storage. The syntax is the same. There is the `delete` operator, storage type and property to delete, in a dot notation.
+
+```JavaScript
+// Removing data from local storage with delete operator
+// Store some data in local storage
+localStorage.setItem('season', 'summer')
+
+// Check if "season" key exists
+if (localStorage.getItem('season')) {
+  // Retrieve value of "season"
+  localStorage.getItem('season')
+}
+// Output:
+// "summer"
+
+// Remove "season" from local storage
+delete localStorage.season
+
+// Check if "season" key exists
+if (localStorage.getItem('season')) {
+  // Retrieve value of "season"
+  localStorage.getItem('season')
+}
+// Output:
+// undefined
+
+
+// Removing data from session storage with delete operator
+// Store some data in session storage
+sessionStorage.setItem('season', 'spring')
+
+// Check if "season" key exists
+if (sessionStorage.getItem('season')) {
+  // Retrieve value of "season"
+  sessionStorage.getItem('season')
+}
+// Output:
+// "spring"
+
+// Remove "season" from session storage
+delete sessionStorage.season
+
+// Check if "season" key exists
+if (sessionStorage.getItem('season')) {
+  // Retrieve value of "season"
+  sessionStorage.getItem('season')
+}
+// Output:
+// undefined
+```
+
 ### The clear() method
 
 ```JavaScript
