@@ -184,6 +184,39 @@ if (localStorage.getItem('favoriteLanguage')) {
 // "Assembly"
 ```
 
+### An alternative to the getItem() method
+
+Similarly to the storing data in web storage, you can also use object dot notation to retrieve data from it. This is what we already done in previous examples. You can also use the dot notation to check if specific key exists in web storage. It works in the same way as with the `getItem()` method.
+
+When object, such as the web storage, doesn't have specific key it will return `null` if you ask for that key. Otherwise, you will get the value assigned to that key.
+
+```JavaScript
+// Retrieving and accessing data in local storage using dot notation
+// Store some data in local storage
+localStorage.setItem('favoriteColor', 'black')
+
+// Check if "favoriteColor" key exists
+if (localStorage.favoriteColor) {
+  // Retrieve value of "favoriteColor"
+  localStorage.favoriteColor
+}
+// Output:
+// "black"
+
+
+// Retrieving and accessing data in session storage using dot notation
+// Store some data in session storage
+sessionStorage.setItem('favoriteColor', 'red')
+
+// Check if "favoriteColor" key exists
+if (sessionStorage.favoriteColor) {
+  // Retrieve value of "favoriteColor"
+  sessionStorage.favoriteColor
+}
+// Output:
+// "red"
+```
+
 ### The removeItem() method
 
 ```JavaScript
