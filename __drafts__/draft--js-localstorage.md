@@ -111,9 +111,24 @@ console.log(sessionStorage.name)
 // "Victoria"
 ```
 
-### The getItem() method
+### An alternative to the setItem() method
+
+There is one thing you may have notice on the previous examples. We were able to access data in web storage by using object dot notation. You can use the object dot notation not only to access data in a web storage but also to store them there. The syntax is similar to accessing.
+
+The difference is that when you want to store some data in a key, an assignment has to follow the dot notation. You have to add equal sign and some expression you want to store, like `localStorage.newKey = 'some value'` or `sessionStorage.newKey = 'some value'`. This way, you can store data just as easily as with `setItem()` method.
 
 ```JavaScript
+// Adding data to local storage with dot notation
+localStorage.book = 'Zero to One'
+
+console.log(localStorage.book)
+// "Zero to One"
+
+// Adding data to session storage with dot notation
+sessionStorage.book = 'Hard Things About Hard Things'
+
+console.log(sessionStorage.book)
+// "Hard Things About Hard Things"
 ```
 
 ### The removeItem() method
@@ -139,6 +154,7 @@ console.log(sessionStorage.name)
 [IndexedDB]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 [Cache]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
 [some sources]: http://www.gwtproject.org/doc/latest/DevGuideHtml5Storage.html
+[objects]: https://blog.alexdevero.com/javascript-objects-pt1/
 
 <!--
 ### Meta:
