@@ -35,6 +35,102 @@ What about the session storage? When you store data in session storage these dat
 
 Similarly to local storage, the data you store in session storage are never send to the server. They are always kept in the browser. Unlike the local storage, session storage can handle more data. According to [some sources], session storage is limited only by only by system memory, at least in some browsers.
 
+## Web Storage API methods
+
+The Web Storage API provides couple of methods to store, retrieve and remove data in web storage. The nice thing is that all these methods work with local storage and also with session storage. When you want to use these methods, make sure to use the correct storage you want. let's take a look at these methods and how to use them.
+
+### The setItem() method
+
+The setItem() method is what you need when you want to store data, either in local storage or in sessions storage. This methods accepts two parameters. The first parameter is the `key`. The second parameter is the `value`. As you may guess, the storage is created as an object.
+
+This is one reason why working with Web Storage API is easier than working with cookies. With Web Storage API, you can work with the data as you would with [objects]. You save data in the form of a key/value pairs. Then, you retrieve any stored data also by using specific key. This will give you the value assigned to this key.
+
+```JavaScript
+// Storing data in local storage
+localStorage.setItem('name', 'Alex')
+
+console.log(localStorage.name)
+// Output:
+// "Alex"
+
+
+// Storing data in session storage
+sessionStorage.setItem('name', 'Tom')
+
+console.log(sessionStorage.name)
+// Output:
+// "Tom"
+```
+
+There are two things to remember when you want to store data in storage. First, The value you pass to `setItem()` method as a `key` and `value` must be strings. If you pass something else, it will be automatically converted to a string. This is important if you want to check for the type of value. That value will always be a string.
+
+```JavaScript
+// Storing data in local storage
+localStorage.setItem('age', '35')
+
+console.log(localStorage.age)
+// Output:
+// "35"
+
+console.log(typeof localStorage.age)
+// Output:
+// "string"
+
+// Storing data in session storage
+sessionStorage.setItem('isAlive', true)
+
+console.log(sessionStorage.isAlive)
+// Output:
+// "true"
+
+console.log(typeof localStorage.isAlive)
+// Output:
+// "string"
+```
+
+The second thing is that there is no "updateItem" method. When you want to update some value the process is simple. You just have to use the same key. When you use the same key, new value will automatically overwrite the old one. This can be a good thing as well as a bad thing.
+
+It can be a good thing because it makes it easier to work with Web Storage API. You don't have to remember another method. It can also be a bad thing because it makes it easier to accidentally overwrite your data. Way to avoid this is by paying attention to the keys you use. Make sure you are using unique, or make sure you really want to overwrite the data.
+
+```JavaScript
+// Overwriting data in local storage
+localStorage.setItem('name', 'Jack')
+localStorage.setItem('name', 'Andrei')
+
+console.log(localStorage.name)
+// Output:
+// "Andrei"
+
+
+// Overwriting data in session storage
+sessionStorage.setItem('name', 'Sandra')
+sessionStorage.setItem('name', 'Victoria')
+
+console.log(sessionStorage.name)
+// Output:
+// "Victoria"
+```
+
+### The getItem() method
+
+```JavaScript
+```
+
+### The removeItem() method
+
+```JavaScript
+```
+
+### The clear() method
+
+```JavaScript
+```
+
+### The key() method
+
+```JavaScript
+```
+
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
 [xyz-ihs snippet="thank-you-message"]
