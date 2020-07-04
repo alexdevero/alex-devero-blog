@@ -31,6 +31,10 @@ The second way to remove data stored in local storage is by cleaning Browser cac
 
 ### Session storage
 
+What about the session storage? When you store data in session storage these data will be available only for that page session. When you close the tab, or the browser, data in session storage are gone. If you open multiple browser windows, or tabs, with the same site all windows and tabs will use different session storage.
+
+Similarly to local storage, the data you store in session storage are never send to the server. They are always kept in the browser. Unlike the local storage, session storage can handle more data. According to [some sources], session storage is limited only by only by system memory, at least in some browsers.
+
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
 [xyz-ihs snippet="thank-you-message"]
@@ -38,6 +42,7 @@ The second way to remove data stored in local storage is by cleaning Browser cac
 <!-- ### Links -->
 [IndexedDB]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 [Cache]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[some sources]: http://www.gwtproject.org/doc/latest/DevGuideHtml5Storage.html
 
 <!--
 ### Meta:
