@@ -438,6 +438,61 @@ sessionStorage.length
 
 ## Looping over web storage
 
+You know that you can add, retrieve and also delete data from web storage in the same way as with objects. That is by using dot notation. Another thing you can do with web storage, just like with objects, is looping over them. You can do this using either [for loop] or [for...in loop].
+
+There is one thing you need to know before you try to loop over a web storage. Looping will also retrieve built-in properties. These properties include the `length` property and also all the methods we discussed today. One way to avoid this by using `hasOwnProperty()` method.
+
+This method returns `true` if some object contains specific property as its own property. It returns `false` for all properties that were inherited. This means all built-in properties that exist on the object prototype. With this method and conditional statement we can quickly check if specific property is built-in or not and return only those that are not.
+
+```JavaScript
+// Looping over web storage - getting all keys
+// Add some data to local storage
+localStorage.firstName = 'John'
+localStorage.lastName = 'Doe'
+localStorage.age = '47'
+
+// First check if local storage contains any items
+if (localStorage.length > 0) {
+  // Then, use for...in loop to loop over all items in localStorage
+  for (let key in localStorage) {
+    // Check if each property is not built-in
+    if (localStorage.hasOwnProperty(key)) {
+      // Log only keys of properties that are not built-in
+      console.log(key)
+    }
+  }
+}
+
+// Output:
+// firstName
+// lastName
+// age
+
+
+// Looping over web storage - getting all values
+// Add some data to session storage
+sessionStorage.firstName = 'John'
+sessionStorage.lastName = 'Doe'
+sessionStorage.age = '47'
+
+// First check if session storage contains any items
+if (sessionStorage.length > 0) {
+  // Then, use for...in loop to loop over all items in sessionStorage
+  for (let key in sessionStorage) {
+    // Check if each property is not built-in
+    if (sessionStorage.hasOwnProperty(key)) {
+      // Log only values of properties that are not built-in
+      console.log(sessionStorage[key])
+    }
+  }
+}
+
+// Output:
+// 'John'
+// 'Doe'
+// '47'
+```
+
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
 The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. I hope that this tutorial helped you learn about what local storage and session storage are, how to use them and when to use which.
@@ -450,6 +505,8 @@ The Web Storage API with its local storage and session storage mechanisms provid
 [some sources]: http://www.gwtproject.org/doc/latest/DevGuideHtml5Storage.html
 [objects]: https://blog.alexdevero.com/javascript-objects-pt1/
 [eight]: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+[for loop]: https://blog.alexdevero.com/javascript-loops/#for-loop
+[for...in loop]: https://blog.alexdevero.com/javascript-loops/#for8230in-loop
 
 <!--
 ### Meta:
