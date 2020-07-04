@@ -1,5 +1,7 @@
 # Blog post title [...]
 
+The LocalStorage and SessionStorage are two storage mechanisms of The Web Storage API. This API provides an easy way to store data in the browser. This tutorial will help you learn what LocalStorage and SessionStorage are and how to use them. You will also learn when to use which.
+
 <!--more-->
 <!--
 Table of Contents:
