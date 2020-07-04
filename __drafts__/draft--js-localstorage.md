@@ -25,7 +25,7 @@ When you store some data in local storage these data will persist even when you 
 
 The only way to delete data in local storage is by deleting them explicitly. You can do this in two ways. First, you can delete the data with JavaScript. The process similar to storing the data. The only difference is that you will use a different method.
 
-The second way to remove data stored in local storage is by cleaning Browser cache and especially the Locally Stored Data. The amount of data you can store in a local storage will differ based on the device and browser you use. However, it is a lot. It is definitely more than you can store in a cookie.
+The second way to remove data stored in local storage is by cleaning Browser cache and especially the Locally Stored Data. The amount of data you can store in a local storage will differ based on the device and browser you use. However, it is definitely more than you can store in a cookie.
 
 ### Session storage
 
