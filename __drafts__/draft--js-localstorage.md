@@ -17,11 +17,11 @@ Another benefit of Web Storage API is that all data store are private. When you 
 
 These privacy restrictions also apply to severs. Web Storage is available only in the browser. You access it via the `window` object. This object doesn't exist on the server. So, you don't have to worry about your storage data being send to the server, like cookies often are.
 
-## The local storage and session storage
+## The local storage and the session storage
 
 The Web Storage API offers two types of storage. The first one is local storage. The second is session storage. Both these storage types work with the same methods and store, and retrieve, the data in the same format. Where these storage types differ is how long they store the data.
 
-### Local storage
+### The local storage
 
 When you store some data in local storage these data will persist even when you close the browser. If you open the browser again, you will be able to retrieve the data you stored previously. There is also no expiration date. So, even if you give it a few days, or weeks, your data will persist.
 
@@ -29,7 +29,7 @@ The only way to delete data in local storage is by deleting them explicitly. You
 
 The second way to remove data stored in local storage is by cleaning Browser cache and especially the Locally Stored Data. The amount of data you can store in a local storage will differ based on the device and browser you use. The average is usually somewhere around 5MB. This is still more than you can store in a cookie.
 
-### Session storage
+### The session storage
 
 What about the session storage? When you store data in session storage these data will be available only for that page session. When you close the tab, or the browser, data in session storage are gone. If you open multiple browser windows, or tabs, with the same site all windows and tabs will use different session storage.
 
@@ -439,6 +439,8 @@ sessionStorage.length
 ## Looping over web storage
 
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
+
+The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. I hope that this tutorial helped you learn about what local storage and session storage are, how to use them and when to use which.
 
 [xyz-ihs snippet="thank-you-message"]
 
