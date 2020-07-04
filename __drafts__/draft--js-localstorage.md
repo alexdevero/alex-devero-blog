@@ -13,7 +13,9 @@ There are multiple ways methods to store data in the browser. You can store data
 
 One benefit of this additional Web Storage API is that it makes it easier to store data in the browser. Yes, you can store some simple data with cookies. However, even that can be tedious. This can't be said about Web Storage API. With The Web Storage API, saving, retrieving, deleting and also checking for existence of data is simple and easy.
 
-Another benefit of Web Storage API is that all data store are private. When you store some data either in local storage or in session other websites can't access them.
+Another benefit of Web Storage API is that all data store are private. When you store some data either in local storage or in session other websites can't access them. This applies also if you open a page over HTTP protocol and then over HTTPS protocol. The later will not be able to access data stored over HTTP.
+
+These privacy restrictions also apply to severs. Web Storage is available only in the browser. You access it via the `window` object. This object doesn't exist on the server. So, you don't have to worry about your storage data being send to the server, like cookies often are.
 
 ## The local storage and session storage
 
