@@ -49,7 +49,7 @@ This is one reason why working with Web Storage API is easier than working with 
 // Storing data in local storage with setItem() method
 localStorage.setItem('name', 'Alex')
 
-console.log(localStorage.name)
+localStorage.name
 // Output:
 // "Alex"
 
@@ -57,7 +57,7 @@ console.log(localStorage.name)
 // Storing data in session storage with setItem() method
 sessionStorage.setItem('name', 'Tom')
 
-console.log(sessionStorage.name)
+sessionStorage.name
 // Output:
 // "Tom"
 ```
@@ -72,22 +72,22 @@ Later, when you will want to retrieve the data, you can use `JSON.parse()`. This
 // Storing data in local storage with setItem() method
 localStorage.setItem('age', '35')
 
-console.log(localStorage.age)
+localStorage.age
 // Output:
 // "35"
 
-console.log(typeof localStorage.age)
+typeof localStorage.age
 // Output:
 // "string"
 
 // Storing data in session storage with setItem() method
 sessionStorage.setItem('isAlive', true)
 
-console.log(sessionStorage.isAlive)
+sessionStorage.isAlive
 // Output:
 // "true"
 
-console.log(typeof localStorage.isAlive)
+typeof localStorage.isAlive
 // Output:
 // "string"
 
@@ -95,7 +95,7 @@ console.log(typeof localStorage.isAlive)
 // Storing objects in web storage using JSON.stringify()
 sessionStorage.setItem('name', JSON.stringify({ status: 'living'}))
 
-console.log(sessionStorage.name)
+sessionStorage.name
 // Output:
 // "{"status":"living"}"
 
@@ -114,7 +114,7 @@ It can be a good thing because it makes it easier to work with Web Storage API. 
 localStorage.setItem('name', 'Jack')
 localStorage.setItem('name', 'Andrei')
 
-console.log(localStorage.name)
+localStorage.name
 // Output:
 // "Andrei"
 
@@ -123,7 +123,7 @@ console.log(localStorage.name)
 sessionStorage.setItem('name', 'Sandra')
 sessionStorage.setItem('name', 'Victoria')
 
-console.log(sessionStorage.name)
+sessionStorage.name
 // Output:
 // "Victoria"
 ```
@@ -138,14 +138,14 @@ The difference is that when you want to store some data in a key, an assignment 
 // Adding data to local storage with dot notation
 localStorage.book = 'Zero to One'
 
-console.log(localStorage.book)
+localStorage.book
 // Output:
 // "Zero to One"
 
 // Adding data to session storage with dot notation
 sessionStorage.book = 'Hard Things About Hard Things'
 
-console.log(sessionStorage.book)
+sessionStorage.book
 // Output:
 // "Hard Things About Hard Things"
 ```
