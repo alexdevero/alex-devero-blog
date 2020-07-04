@@ -495,7 +495,7 @@ if (sessionStorage.length > 0) {
 
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
-The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. I hope that this tutorial helped you learn about what local storage and session storage are, how to use them and when to use which.
+The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. I hope that this tutorial helped you understand what local storage and session storage mechanisms are, how to use them and when to use which depending on how persistent the data you want to be.
 
 [xyz-ihs snippet="thank-you-message"]
 
