@@ -64,6 +64,10 @@ console.log(sessionStorage.name)
 
 There are two things to remember when you want to store data in storage. First, The value you pass to `setItem()` method as a `key` and `value` must be strings. If you pass something else, it will be automatically converted to a string. This is important if you want to check for the type of value. That value will always be a string.
 
+The is especially important if you want to store complex data such as objects or arrays. In that case, one thing you can do is to use `JSON.stringify()`. This will convert the object, or an array, into a string and store it in this format in web storage.
+
+Later, when you will want to retrieve the data, you can use `JSON.parse()`. This will convert the string back to the original format, such as an object or an array.
+
 ```JavaScript
 // Storing data in local storage with setItem() method
 localStorage.setItem('age', '35')
@@ -86,6 +90,19 @@ console.log(sessionStorage.isAlive)
 console.log(typeof localStorage.isAlive)
 // Output:
 // "string"
+
+
+// Storing objects in web storage using JSON.stringify()
+sessionStorage.setItem('name', JSON.stringify({ status: 'living'}))
+
+console.log(sessionStorage.name)
+// Output:
+// "{"status":"living"}"
+
+// Retrieving objects from web storage using JSON.parse()
+JSON.parse(sessionStorage.name)
+// Output:
+// {status: "living"}
 ```
 
 The second thing is that there is no "updateItem" method. When you want to update some value the process is simple. You just have to use the same key. When you use the same key, new value will automatically overwrite the old one. This can be a good thing as well as a bad thing.
