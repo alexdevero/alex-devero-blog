@@ -150,6 +150,40 @@ console.log(sessionStorage.book)
 // "Hard Things About Hard Things"
 ```
 
+### The getItem() method
+
+So far, we retrieved and accessed the values in web storage by using specific key and object dot notation. This is one way to do this. You can do this also by using the `getItem()` method. This method is created for this purpose, of retrieving data from web storage. It accepts a single parameter, the `value`.
+
+When you pass in some key that doesn't exists `getItem()` method will return `null`. Otherwise, it will return the value assigned to that key. This also makes `getItem()` method useful for testing if some specific key exists in a storage before you try to retrieve it. Or, if you want to avoid rewriting existing values.
+
+This works because `null` is a one of the [eight] values that is considered falsy in JavaScript. This means that you can use `getItem()` method in a conditional statement to check if key exists before you try to access it or create it, or update it.
+
+```JavaScript
+// Retrieving and accessing data in local storage with getItem() method
+// Store some data in local storage
+localStorage.setItem('favoriteLanguage', 'JavaScript')
+
+// Check if "favoriteLanguage" key exists
+if (localStorage.getItem('favoriteLanguage')) {
+  // Retrieve value of "favoriteLanguage"
+  localStorage.getItem('favoriteLanguage')
+}
+// Output:
+// "JavaScript"
+
+
+// Retrieving and accessing data in session storage with getItem() method
+sessionStorage.setItem('favoriteLanguage', 'Assembly')
+
+// Check if "favoriteLanguage" key exists
+if (localStorage.getItem('favoriteLanguage')) {
+  // Retrieve value of "favoriteLanguage"
+  localStorage.getItem('favoriteLanguage')
+}
+// Output:
+// "Assembly"
+```
+
 ### The removeItem() method
 
 ```JavaScript
@@ -174,6 +208,7 @@ console.log(sessionStorage.book)
 [Cache]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
 [some sources]: http://www.gwtproject.org/doc/latest/DevGuideHtml5Storage.html
 [objects]: https://blog.alexdevero.com/javascript-objects-pt1/
+[eight]: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 
 <!--
 ### Meta:
