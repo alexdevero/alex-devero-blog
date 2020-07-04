@@ -46,7 +46,7 @@ The setItem() method is what you need when you want to store data, either in loc
 This is one reason why working with Web Storage API is easier than working with cookies. With Web Storage API, you can work with the data as you would with [objects]. You save data in the form of a key/value pairs. Then, you retrieve any stored data also by using specific key. This will give you the value assigned to this key.
 
 ```JavaScript
-// Storing data in local storage
+// Storing data in local storage with setItem() method
 localStorage.setItem('name', 'Alex')
 
 console.log(localStorage.name)
@@ -54,7 +54,7 @@ console.log(localStorage.name)
 // "Alex"
 
 
-// Storing data in session storage
+// Storing data in session storage with setItem() method
 sessionStorage.setItem('name', 'Tom')
 
 console.log(sessionStorage.name)
