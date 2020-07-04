@@ -325,7 +325,45 @@ if (sessionStorage.getItem('season')) {
 
 ### The clear() method
 
+The `removeItem()` method will suffice when you want to remove some data from web storage. When you want to remove all data a better choice will be `clear()` method. This method is as simple as it can be. It doesn't accept any parameter. You just use it as it is and will remove everything in the storage you work with.
+
 ```JavaScript
+// Removing data from local storage with clear() metod
+// Store some data in local storage
+localStorage.setItem('firstName', 'Mark')
+localStorage.setItem('lastName', 'Zuck')
+
+// Check the amount of items in stored in local storage
+localStorage.length
+// Output:
+// 2
+
+// Remove all data from local storage
+localStorage.clear()
+
+// Check the amount of items in stored in local storage again
+localStorage.length
+// Output:
+// 0
+
+
+// Removing data from session storage with clear() metod
+// Store some data in session storage
+sessionStorage.setItem('brand', 'Tesla')
+sessionStorage.setItem('model', 'X')
+
+// Check the amount of items in stored in session storage
+sessionStorage.length
+// Output:
+// 2
+
+// Remove all data from session storage
+sessionStorage.clear()
+
+// Check the amount of items in stored in session storage again
+sessionStorage.length
+// Output:
+// 0
 ```
 
 ### The key() method
