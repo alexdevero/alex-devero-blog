@@ -401,6 +401,43 @@ You may have notice something weird in the example above. That key we got for in
 
 If that was the case, index "1" would return "gender" instead of "name". The actual order of items is hard to say because it is defined by the user-agent, the browser you are using. Switch browser and you may get different results. So, don't rely too much on the `key()` method as it can be quite unpredictable.
 
+## The length property
+
+When you want to quickly check if storage contains any data one thing you can use `length`. This can be especially handy if you don't know the name of items' keys. From the get-go, the value of `length` property is always 0. This means that storage doesn't contain any data. This number will increase with the items you add.
+
+```JavaScript
+// Checking if local storage contains data with length property
+localStorage.length
+// Output:
+// 0
+
+// Add some data to local storage
+localStorage.day = 'Monday'
+localStorage.month = 'January'
+
+// Check if local storage contains data again
+localStorage.length
+// Output:
+// 2
+
+
+// Checking if session storage contains data with length property
+sessionStorage.length
+// Output:
+// 0
+
+// Add some data to session storage
+sessionStorage.currentlyReading = 'JavaScript: The Definitive Guide'
+sessionStorage.onTheShelf = 'JavaScript: The Good Parts'
+
+// Check if session storage contains data again
+sessionStorage.length
+// Output:
+// 2
+```
+
+## Looping over web storage
+
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
 [xyz-ihs snippet="thank-you-message"]
