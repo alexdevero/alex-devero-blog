@@ -65,7 +65,7 @@ console.log(sessionStorage.name)
 There are two things to remember when you want to store data in storage. First, The value you pass to `setItem()` method as a `key` and `value` must be strings. If you pass something else, it will be automatically converted to a string. This is important if you want to check for the type of value. That value will always be a string.
 
 ```JavaScript
-// Storing data in local storage
+// Storing data in local storage with setItem() method
 localStorage.setItem('age', '35')
 
 console.log(localStorage.age)
@@ -76,7 +76,7 @@ console.log(typeof localStorage.age)
 // Output:
 // "string"
 
-// Storing data in session storage
+// Storing data in session storage with setItem() method
 sessionStorage.setItem('isAlive', true)
 
 console.log(sessionStorage.isAlive)
@@ -93,7 +93,7 @@ The second thing is that there is no "updateItem" method. When you want to updat
 It can be a good thing because it makes it easier to work with Web Storage API. You don't have to remember another method. It can also be a bad thing because it makes it easier to accidentally overwrite your data. Way to avoid this is by paying attention to the keys you use. Make sure you are using unique, or make sure you really want to overwrite the data.
 
 ```JavaScript
-// Overwriting data in local storage
+// Overwriting data in local storage with setItem() method
 localStorage.setItem('name', 'Jack')
 localStorage.setItem('name', 'Andrei')
 
@@ -102,7 +102,7 @@ console.log(localStorage.name)
 // "Andrei"
 
 
-// Overwriting data in session storage
+// Overwriting data in session storage with setItem() method
 sessionStorage.setItem('name', 'Sandra')
 sessionStorage.setItem('name', 'Victoria')
 
