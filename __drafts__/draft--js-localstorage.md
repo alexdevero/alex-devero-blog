@@ -1,6 +1,6 @@
 # Getting Started with Web Storage API - Local Storage and Session Storage
 
-The local storage and session storage are two storage mechanisms of The Web Storage API. This API provides an easy way to store data in the browser. This tutorial will help you learn what local storage and session storage are and how to use them. You will also learn when to use which.
+The local storage and session storage are two storage mechanisms of the Web Storage API. This API provides an easy way to store data in the browser. This tutorial will help you learn what local storage and session storage are and how to use them. You will also learn when to use which.
 
 <!--more-->
 <!--
@@ -25,9 +25,9 @@ Table of Contents:
 
 ## A quick introduction
 
-There are multiple ways methods to store data in the browser. You can store data using [IndexedDB], [Cache] and cookies. Aside to these, there is also the Web Storage API. This API provides two additional mechanisms you can use to store data in the browser. These mechanisms are local storage and session storage.
+There are multiple ways to store data in the browser. You can store data using [IndexedDB], [Cache] and cookies. Aside to these, there is also the Web Storage API. This API provides two additional mechanisms you can use to store data in the browser. These mechanisms are local storage and session storage.
 
-One benefit of this additional Web Storage API is that it makes it easier to store data in the browser. Yes, you can store some simple data with cookies. However, even that can be tedious. This can't be said about Web Storage API. With The Web Storage API, saving, retrieving, deleting and also checking for existence of data is simple and easy.
+One benefit of this additional Web Storage API is that it makes it easier to store data in the browser. Yes, you can store some simple data with cookies. However, even that can be tedious. This can't be said about Web Storage API. With the Web Storage API, saving, retrieving, deleting and also checking for existence of data is simple and easy.
 
 Another benefit of Web Storage API is that all data store are private. When you store some data either in local storage or in session other websites can't access them. This applies also if you open a page over HTTP protocol and then over HTTPS protocol. The later will not be able to access data stored over HTTP.
 
@@ -53,11 +53,11 @@ Similarly to local storage, the data you store in session storage are never send
 
 ## Web Storage API methods
 
-The Web Storage API provides couple of methods to store, retrieve and remove data in web storage. The nice thing is that all these methods work with local storage and also with session storage. When you want to use these methods, make sure to use the correct storage you want. let's take a look at these methods and how to use them.
+The Web Storage API provides couple of methods to store, retrieve and remove data in web storage. The nice thing is that all these methods work with local storage and also with session storage. When you want to use these methods, make sure to use the correct storage you want. Let's take a look at these methods and how to use them.
 
 ### The setItem() method
 
-The setItem() method is what you need when you want to store data, either in local storage or in sessions storage. This methods accepts two parameters. The first parameter is the `key`. The second parameter is the `value`. As you may guess, the storage is created as an object.
+The setItem() method is what you need when you want to store data, either in local storage or in sessions storage. This method accepts two parameters. The first parameter is the `key`. The second parameter is the `value`. As you may guess, the storage is created as an object.
 
 This is one reason why working with Web Storage API is easier than working with cookies. With Web Storage API, you can work with the data as you would with [objects]. You save data in the form of a key/value pairs. Then, you retrieve any stored data also by using specific key. This will give you the value assigned to this key.
 
@@ -78,9 +78,9 @@ sessionStorage.name
 // "Tom"
 ```
 
-There are two things to remember when you want to store data in storage. First, The value you pass to `setItem()` method as a `key` and `value` must be strings. If you pass something else, it will be automatically converted to a string. This is important if you want to check for the type of value. That value will always be a string.
+There are two things to remember when you want to store data in storage. First, the value you pass to `setItem()` method as a `key` and `value` must be strings. If you pass something else, it will be automatically converted to a string. This is important if you want to check for the type of value. That value will always be a string.
 
-The is especially important if you want to store complex data such as objects or arrays. In that case, one thing you can do is to use `JSON.stringify()`. This will convert the object, or an array, into a string and store it in this format in web storage.
+This is especially important if you want to store complex data such as objects or arrays. In that case, one thing you can do is to use `JSON.stringify()`. This will convert the object, or an array, into a string and store it in this format in web storage.
 
 Later, when you will want to retrieve the data, you can use `JSON.parse()`. This will convert the string back to the original format, such as an object or an array.
 
@@ -146,7 +146,7 @@ sessionStorage.name
 
 ### An alternative to the setItem() method
 
-There is one thing you may have notice on the previous examples. We were able to access data in web storage by using object dot notation. You can use the object dot notation not only to access data in a web storage but also to store them there. The syntax is similar to accessing.
+There is one thing you may have noticed on the previous examples. We were able to access data in web storage by using object dot notation. You can use the object dot notation not only to access data in a web storage but also to store them there. The syntax is similar to accessing.
 
 The difference is that when you want to store some data in a key, an assignment has to follow the dot notation. You have to add equal sign and some expression you want to store, like `localStorage.newKey = 'some value'` or `sessionStorage.newKey = 'some value'`. This way, you can store data just as easily as with `setItem()` method.
 
@@ -170,7 +170,7 @@ sessionStorage.book
 
 So far, we retrieved and accessed the values in web storage by using specific key and object dot notation. This is one way to do this. You can do this also by using the `getItem()` method. This method is created for this purpose, of retrieving data from web storage. It accepts a single parameter, the `value`.
 
-When you pass in some key that doesn't exists `getItem()` method will return `null`. Otherwise, it will return the value assigned to that key. This also makes `getItem()` method useful for testing if some specific key exists in a storage before you try to retrieve it. Or, if you want to avoid rewriting existing values.
+When you pass in some key that doesn't exist `getItem()` method will return `null`. Otherwise, it will return the value assigned to that key. This also makes `getItem()` method useful for testing if some specific key exists in a storage before you try to retrieve it. Or, if you want to avoid rewriting existing values.
 
 This works because `null` is a one of the [eight] values that is considered falsy in JavaScript. This means that you can use `getItem()` method in a conditional statement to check if key exists before you try to access it or create it, or update it.
 
@@ -202,7 +202,7 @@ if (localStorage.getItem('favoriteLanguage')) {
 
 ### An alternative to the getItem() method
 
-Similarly to the storing data in web storage, you can also use object dot notation to retrieve data from it. This is what we already done in previous examples. You can also use the dot notation to check if specific key exists in web storage. It works in the same way as with the `getItem()` method.
+Similarly to the storing data in web storage, you can also use object dot notation to retrieve data from it. This is what we have already done in previous examples. You can also use the dot notation to check if specific key exists in web storage. It works in the same way as with the `getItem()` method.
 
 When object, such as the web storage, doesn't have specific key it will return `null` if you ask for that key. Otherwise, you will get the value assigned to that key.
 
@@ -413,7 +413,7 @@ sessionStorage.key(1)
 // "name"
 ```
 
-You may have notice something weird in the example above. That key we got for index "1" was "name". Shouldn't we get "email" instead? This is the problem with `key()` method. The items are not order in the order you created them. They are not even ordered alphabetically.
+You may have noticed something weird in the example above. That key we got for index "1" was "name". Shouldn't we get "email" instead? This is the problem with `key()` method. The items are not ordered in the order you created them. They are not even ordered alphabetically.
 
 If that was the case, index "1" would return "gender" instead of "name". The actual order of items is hard to say because it is defined by the user-agent, the browser you are using. Switch browser and you may get different results. So, don't rely too much on the `key()` method as it can be quite unpredictable.
 
@@ -511,7 +511,9 @@ if (sessionStorage.length > 0) {
 
 ## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 
-The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. I hope that this tutorial helped you understand what local storage and session storage mechanisms are, how to use them and when to use which depending on how persistent the data you want to be.
+The Web Storage API with its local storage and session storage mechanisms provides a nice and comfortable way to store data in the browser. In a recap, you've learned what local and session storage mechanisms are. Next, you've learned what are the main differences between those two.
+
+After that, you've also learned about the default Web Storage API methods, what each does and how to use it. Lastly, you've learned how to use for and for...in loops to loop over web storage. I hope you enjoyed this tutorial and learned something that will help you become a better JavaScript developer.
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -539,9 +541,5 @@ The Web Storage API with its local storage and session storage mechanisms provid
 
 <!--
 ### Resources:
-- https://flaviocopes.com/web-storage-api/
-- https://javascript.info/localstorage
-- https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/
-- https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
-- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+-
 -->
