@@ -5,6 +5,22 @@ The local storage and session storage are two storage mechanisms of The Web Stor
 <!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## The local storage and the session storage
+### The local storage
+### The session storage
+## Web Storage API methods
+### The setItem() method
+### An alternative to the setItem() method
+### The getItem() method
+### An alternative to the getItem() method
+### The removeItem() method
+### An alternative to the removeItem() method
+### The clear() method
+### The key() method
+## The length property
+## Looping over web storage
+## Conclusion: Getting Started with Web Storage API - Local Storage and Session Storage
 -->
 
 ## A quick introduction
