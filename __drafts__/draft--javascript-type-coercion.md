@@ -1,4 +1,7 @@
 # How Type Coercion in JavaScript Works
+
+In JavaScript, you can convert a value from one type to another. This is called type coercion. Type coercion is one of the topics that can be hard to understand. This tutorial will help you with it. It will show you what it is, how it works, and how to use it to become a better JavaScript developer.
+
 <!-- Type coercion in Javascript Explained -->
 <!--more-->
 <!--
@@ -8,8 +11,6 @@ Table of Contents:
 -->
 
 ## h2
-
-### h3
 
 ## Conclusion: [...] ...
 
