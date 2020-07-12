@@ -96,6 +96,49 @@ String(null) // 'null'
 String(undefined) // 'undefined'
 ```
 
+## Three types of type conversion
+
+In JavaScript, there are only three types of type conversion. These are to number, to string and to boolean. Let's take a look at each.
+
+### Conversion to number
+
+Explicit conversion, or type casting, to a type of number is simple and can be done quickly. The easiest way to do it is by using the `Number()` function. Implicit, or type coercion, is more tricky. There are multiple ways in which it can be triggered. The first one are comparison operators, the `>`, `<`, `<=` and `>=`.
+
+When you use any of these operators JavaScript will automatically coerce the values you used with one of these operators to number. Implicit coercion to number will also happen when you use bitwise operators, the `|`, `&`, `^` and `~`. It will also happen if you use arithmetic operators, the `-`, `+`, `*`, `/` and `%`.
+
+One exception here is the that `+` operator. This operator will not trigger coercion to number if any of the values is type of a string. What will happen instead is coercion to a string. Lastly, implicit coercion will happen if you use the loose equality operator `==`. This also includes the loose not equal `!=`.
+
+Another exception here. JavaScript will not do implicit coercion to a number if you use `==` or `!=` and both values are strings. This probably makes sense, but it is still worth mention, just in case. One last thing about coercion to number. When you want to convert a string to a number, JavaScript will first remove any leading and trailing whitespace.
+
+JavaScript will also remove any new line (`\n`) and tab (`\t`) characters in the string. If the remaining string doesn't contain a valid number it will be coerced to `NaN`. Otherwise, it will be coerced into a number. If the remaining string will be empty it will be coerced to 0. This will also happen with `null`.
+
+```JavaScript
+// Implicit coercion to number type
+7 > '10' // false => becomes: 7 > 10
++'88' // becomes 88
+65 != '56' // true, => becomes: 65 != 56
+15 / null // infinity
+false | 0 // 0
+
+
+// Explicit coercion to number type
+Number('678') // 678
+Number('13m') // NaN
+Number(' 51 ') // 51
+Number('-65.9') // -65.9
+Number('\n') // 0
+Number('\n13') // 13
+Number('\t') // 0
+Number('\t695') // 695
+Number([]) // 0
+Number(null) // 0
+Number(undefined) // NaN
+```
+
+### Conversion to string
+
+### Conversion to boolean
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
