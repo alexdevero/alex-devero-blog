@@ -91,7 +91,7 @@ String(false) // 'false'
 String([]) // ''
 String(['one', 'two']) // 'one,two'
 String({}) // '[object Object]'
-String(Infinity) // Infinity
+String(Infinity) // 'Infinity'
 String(null) // 'null'
 String(undefined) // 'undefined'
 ```
