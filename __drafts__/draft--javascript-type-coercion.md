@@ -212,6 +212,35 @@ Boolean(Symbol()) // true
 Boolean(function() {}) // true
 ```
 
+## Strict and loose equality
+
+One topic related to type coercion is equality. In JavaScript, there are two types of eventuality. The first one is loose equality, either `==` or `!=`. The second one is strict equality, either `===` or `!==`. The difference between those is that one allows for type coercion to happen while the other doesn't.
+
+The first one, loose equality, is the one that allows for type coercion to happen. When you use loose equality to check if some values are equal, JavaScript will do two things. First, it will check if the two values are the same type. If not, it will coerce one into another. Then, it will check if those values are the same.
+
+When you use strict equality, JavaScript will not try to coerce one value into another. Instead, it will do two checks. First, it will check if those values are the same. Second, it will check if their types are the same. Only if both conditions are true, the result will be `true`. Otherwise, the result will be `false`.
+
+```JavaScript
+// Loose equality and coercion
+0 == false // true (0 is falsy value) - coerced to false == false
+0 == true // false - coerced to false == false
+1 == true // true (1 is truthy value) - coerced to true == true
+1 == false // false - coerced to true == false
+'15' == 15 // true - coerced to '15' == '15'
+15 == '15' // true - coerced to '15' == '15'
+
+
+// Strict equality and coercion
+0 === false // false - number is not a boolean
+0 === true // false - number is not a boolean
+1 === true // false - number is not a boolean
+1 === false // false - number is not a boolean
+'15' === 15 // false - string is not a number
+15 === '15' // false - number is not a string
+```
+
+As you can see, loose equality can lead to results you might not expect. The best way to avoid this, and also to create more reliable equality checks, is to use strict equal. With strict equal, JavaScript will not be able to use type coercion. It will also always compare types of values, instead of only the values.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
