@@ -24,7 +24,7 @@ JavaScript as a programming language is weakly and dynamically typed. This means
 
 JavaScript allows you to change types as you go. You can declare a variable and assign it a string. Later, you can decide to change it to a number. You can also declare a variable leave it empty and assign it a value later, without specifying its type. This is what it means when some programming language is dynamically typed.
 
-### Implicit type coercion
+### Implicit coercion
 
 One advantage, or disadvantage, of weakly typed languages is that it allows for implicit type coercion to happen. This usually happens in two situations. The first one is when you use some operator along with two or more different values. Here, JavaScript will take those values and convert them as needed to make that operation happen.
 
@@ -57,6 +57,7 @@ if ('test') true // true
 if ({}) true // true
 if ([]) true // true
 
+
 // Some falsy values
 '' ? true : false // false
 if (!'') true // true
@@ -68,12 +69,41 @@ NaN ? true : false // false
 if (!NaN) // true
 ```
 
+## Explicit coercion
+
+That was about implicit coercion. Now, let's talk about explicit, or type casting. This will be quick. Explicit coercion happens when JavaScript developers decide to convert value from another using specific object or method. For example, you can use `Number()` object to convert some type to a number, or `String()` to a string.
+
+```JavaScript
+// Using explicit coercion to convert types to a number
+Number('55') // 55
+Number('dwarf') // Nan
+Number(false) // 0
+Number(true) // 1
+Number([]) // 1
+Number({}) // NaN
+Number(null) // 0
+Number(undefined) // NaN
+
+// Use explicit coercion to convert types to a string
+String(99) // '99'
+String(true) // 'true'
+String(false) // 'false'
+String([]) // ''
+String(['one', 'two']) // 'one,two'
+String({}) // '[object Object]'
+String(Infinity) // Infinity
+String(null) // 'null'
+String(undefined) // 'undefined'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 [type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[falsy]: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+[truthy]: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
 
 <!--
 ### Meta:
