@@ -10,14 +10,18 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
-## h2
+## Introduction
+
+JavaScript is an interesting language. It allows you to convert value of one [type] into another. This process of type conversion is called "type coercion", when it is done implicitly. When it is done explicitly, it is called "type casting". This process applies to primitive types such as `number`, `string`, `boolean`, `null`, `undefined` and `Symbol`. It also applies to objects.
+
+When type coercion or type casting happens, the result is always some primitive type, like `string`, `number`, or `boolean`. It will never happen that the result of type coercion, or casting, will be either object or a function.
 
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 
 <!--
 ### Meta:
