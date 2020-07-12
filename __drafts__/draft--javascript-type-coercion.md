@@ -113,7 +113,7 @@ Another exception here. JavaScript will not do implicit coercion to a number if 
 JavaScript will also remove any new line (`\n`) and tab (`\t`) characters in the string. If the remaining string doesn't contain a valid number it will be coerced to `NaN`. Otherwise, it will be coerced into a number. If the remaining string will be empty it will be coerced to 0. This will also happen with `null`.
 
 ```JavaScript
-// Implicit coercion to number type
+// Implicit coercion to number
 7 > '10' // false => becomes: 7 > 10
 +'88' // becomes 88
 65 != '56' // true, => becomes: 65 != 56
@@ -121,7 +121,7 @@ JavaScript will also remove any new line (`\n`) and tab (`\t`) characters in the
 false | 0 // 0
 
 
-// Explicit coercion to number type
+// Explicit coercion to number
 Number('678') // 678
 Number('13m') // NaN
 Number(' 51 ') // 51
@@ -140,13 +140,13 @@ Number(undefined) // NaN
 Explicit coercion to a string is just as easy as coercion to a number. All you have to do is use `String()` function. Implicit coercion to a string is just as easy. When you want to trigger implicit coercion you have to use the binary `+` operator, along with at least one string.
 
 ```JavaScript
-// Implicit coercion to string type
+// Implicit coercion to string
 56 + ' words' // '56 words'
 'number ' + 17 // 'number 17'
 7 + ' dwarfs and ' + 1 + ' Snow White' // '7 dwarfs and 1 Snow White'
 
 
-// Explicit coercion to string type
+// Explicit coercion to string
 String(true) // 'true'
 String(false) // 'false'
 String(15.5) // '15.5'
@@ -183,6 +183,34 @@ Symbol('name').toString() // 'Symbol(name)'
 ```
 
 ### Coercion to boolean
+
+When you want to explicitly convert something in boolean you can do that with `Boolean()` function. Implicit coercion will happen in two situations. First is in logical context. For example, inside the `if...else` statement. The second situation is when you use one of the logical operators, the `||`, `&&` or `!`.
+
+```JavaScript
+// Implicit coercion to boolean
+
+if (0) {/* Do something */} // logical context
+!!7 // true
+99 || 'JS' // 99
+
+// Explicit coercion to boolean
+Boolean(15) // true
+Boolean(-15) // true
+Boolean('') // false
+Boolean('Syntax') // true
+Boolean(true) // true
+Boolean(0) // false
+Boolean(-0) // false
+Boolean(Infinity) // true
+Boolean(-Infinity) // true
+Boolean(null) // false
+Boolean(undefined) // false
+Boolean(NaN) // false
+Boolean([]) // true
+Boolean({}) // true
+Boolean(Symbol()) // true
+Boolean(function() {}) // true
+```
 
 ## Conclusion: [...] ...
 
