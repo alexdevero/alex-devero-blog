@@ -249,7 +249,9 @@ undefined === null // false - undefined is not null
 
 As you can see, loose equality can lead to results you might not expect. The best way to avoid this, and also to create more reliable equality checks, is to use strict equal. With strict equal, JavaScript will not be able to use type coercion. It will also always compare the types of values, instead of only the values.
 
-## Conclusion: [...] ...
+## Conclusion: How Type Coercion in JavaScript Works
+
+Type coercion in JavaScript is one of the topics that can be tricky. It is also one of the topics every JavaScript developer has to learn and understand. I hope this tutorial made this easier. I hope it helped you understand what type coercion in JavaScript is and how it works. I also hope it showed you how to use it to your advantage.
 
 [xyz-ihs snippet="thank-you-message"]
 
