@@ -6,8 +6,16 @@ In JavaScript, you can convert a value from one type to another. This is called 
 <!--more-->
 <!--
 Table of Contents:
-## h2
-## Conclusion: [...] ...
+## Introduction
+## Implicit and explicit type coercion
+### Implicit coercion
+## Explicit coercion
+## Three types of type Coercion
+### Coercion to number
+### Coercion to string
+### Coercion to boolean
+## Strict and loose equality
+## Conclusion: How Type Coercion in JavaScript Works
 -->
 
 ## Introduction
