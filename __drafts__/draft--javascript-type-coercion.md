@@ -106,17 +106,17 @@ String(undefined) // 'undefined'
 
 ## Three types of type Coercion
 
-In JavaScript, there are only three types of type conversion. These are to number, to string and to boolean. Let's take a look at each.
+In JavaScript, there are only three types of type conversion. These conversion types are to number, to string and to boolean. Let's take a look at each.
 
 ### Coercion to number
 
-Explicit conversion, or type casting, to a type of number is simple and can be done quickly. The easiest way to do it is by using the `Number()` function. Implicit, or type coercion, is more tricky. There are multiple ways in which it can be triggered. The first one are comparison operators, the `>`, `<`, `<=` and `>=`.
+Explicit conversion, or type casting, to a type of number is simple and can be done quickly. The easiest way to do this is by using the `Number()` function. Implicit, or type coercion, is more tricky. There are multiple ways in which it can be triggered. The first one are comparison operators, the `>`, `<`, `<=` and `>=`.
 
 When you use any of these operators JavaScript will automatically coerce the values you used with one of these operators to number. Implicit coercion to number will also happen when you use bitwise operators, the `|`, `&`, `^` and `~`. It will also happen if you use arithmetic operators, the `-`, `+`, `*`, `/` and `%`.
 
-One exception here is the that binary `+` operator. This operator will not trigger coercion to number if any of the values is type of a string. What will happen instead is coercion to a string. Lastly, implicit coercion will happen if you use the loose equality operator `==`. This also includes the loose not equal `!=`.
+One exception here is the binary `+` operator. This operator will not trigger coercion to number if any of the values is type of a string. What will happen instead is coercion to a string. Lastly, implicit coercion will happen if you use the loose equality operator `==`. This also includes the loose not equal `!=`.
 
-Another exception here. JavaScript will not do implicit coercion to a number if you use `==` or `!=` and both values are strings. This probably makes sense, but it is still worth mention, just in case. One last thing about coercion to number. When you want to convert a string to a number, JavaScript will first remove any leading and trailing whitespace.
+Another exception here. JavaScript will not do implicit coercion to a number if you use `==` or `!=` and both values are strings. This probably makes sense, but it is still worth mentioning, just in case. One last thing about coercion to number. When you want to convert a string to a number, JavaScript will first remove any leading and trailing white space.
 
 JavaScript will also remove any new line (`\n`) and tab (`\t`) characters in the string. If the remaining string doesn't contain a valid number it will be coerced to `NaN`. Otherwise, it will be coerced into a number. If the remaining string will be empty it will be coerced to 0. This will also happen with `null`.
 
@@ -192,7 +192,7 @@ Symbol('name').toString() // 'Symbol(name)'
 
 ### Coercion to boolean
 
-When you want to explicitly convert something in boolean you can do that with `Boolean()` function. Implicit coercion will happen in two situations. First is in logical context. For example, inside the `if...else` statement. The second situation is when you use one of the logical operators, the `||`, `&&` or `!`.
+When you want to explicitly convert something in boolean you can do that with `Boolean()` function. Implicit coercion will happen in two situations. The first situations is a logical context. For example, inside the `if...else` statement. The second situation is when you use one of the logical operators, the `||`, `&&` or `!`.
 
 ```JavaScript
 // Implicit coercion to boolean
