@@ -96,11 +96,11 @@ String(null) // 'null'
 String(undefined) // 'undefined'
 ```
 
-## Three types of type conversion
+## Three types of type Coercion
 
 In JavaScript, there are only three types of type conversion. These are to number, to string and to boolean. Let's take a look at each.
 
-### Conversion to number
+### Coercion to number
 
 Explicit conversion, or type casting, to a type of number is simple and can be done quickly. The easiest way to do it is by using the `Number()` function. Implicit, or type coercion, is more tricky. There are multiple ways in which it can be triggered. The first one are comparison operators, the `>`, `<`, `<=` and `>=`.
 
@@ -159,7 +159,7 @@ String(undefined) // 'undefined'
 String({}) // '[object Object]'
 ```
 
-### Conversion to boolean
+### Coercion to boolean
 
 ## Conclusion: [...] ...
 
