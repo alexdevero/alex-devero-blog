@@ -135,7 +135,29 @@ Number(null) // 0
 Number(undefined) // NaN
 ```
 
-### Conversion to string
+### Coercion to string
+
+Explicit coercion to a string is just as easy as coercion to a number. All you have to do is use `String()` function. Implicit coercion to a string is just as easy. When you want to trigger implicit coercion you have to use the binary `+` operator, along with at least one string.
+
+```JavaScript
+// Implicit coercion to string type
+56 + ' words' // '56 words'
+'number ' + 17 // 'number 17'
+7 + ' dwarfs and ' + 1 + ' Snow White' // '7 dwarfs and 1 Snow White'
+
+
+// Explicit coercion to string type
+String(true) // 'true'
+String(false) // 'false'
+String(15.5) // '15.5'
+String(-650) // '-650'
+String(Infinity) // 'Infinity'
+String([]) // ''
+String(['Jacket', 15]) // 'Jacket,15'
+String(null) // 'null'
+String(undefined) // 'undefined'
+String({}) // '[object Object]'
+```
 
 ### Conversion to boolean
 
