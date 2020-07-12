@@ -71,7 +71,7 @@ if (!NaN) // true
 
 ## Explicit coercion
 
-That was about implicit coercion. Now, let's talk about explicit, or type casting. This will be quick. Explicit coercion happens when JavaScript developers decide to convert value from another using specific object or method. For example, you can use `Number()` object to convert some type to a number, or `String()` to a string.
+That was about implicit coercion. Now, let's talk about explicit, or type casting. This will be quick. Explicit coercion happens when JavaScript developers decide to convert value from another using specific function. For example, you can use `Number()` function to convert some type to a number, or `String()` to a string.
 
 ```JavaScript
 // Using explicit coercion to convert types to a number
