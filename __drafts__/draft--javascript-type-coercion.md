@@ -1,4 +1,5 @@
-# How Type Coercion in JavaScript works
+# How Type Coercion in JavaScript Works
+<!-- Type coercion in Javascript Explained -->
 <!--more-->
 <!--
 Table of Contents:
