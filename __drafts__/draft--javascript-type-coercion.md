@@ -159,6 +159,28 @@ String(undefined) // 'undefined'
 String({}) // '[object Object]'
 ```
 
+Aside to the `String()` there is also `toString()` method. This method also allows you to coerce various types to strings. You can use this method with numbers, booleans, arrays, objects, dates and also Symbols. Don't use it with `null` or `undefined`. If you want to use it to convert a number, or an object, you have to wrap it with parentheses to avoid syntax errors.
+
+One more thing for numbers. You can also specify radix parameter. The method will then convert the number to the base according to the radix parameter and then into a string.
+
+```JavaScript
+// Coercing types to string with toString() method
+58.toString() // SyntaxError: Identifier directly after number
+(58).toString() // '58'
+true.toString() // 'true'
+false.toString() // 'false'
+['JS', 'TS'].toString() // 'JS,TS'
+undefined.toString() // TypeError: Cannot read property 'toString' of undefined
+null.toString() // TypeError: Cannot read property 'toString' of null
+({name: 'Joe'}).toString() // '[object Object]'
+
+
+// Using toString() with radix parameter
+(15).toString(2) // '1111'
+(15).toString(8) // '30'
+(15).toString(16) // 'f'
+```
+
 ### Coercion to boolean
 
 ## Conclusion: [...] ...
