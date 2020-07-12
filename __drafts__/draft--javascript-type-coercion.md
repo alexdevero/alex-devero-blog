@@ -192,6 +192,10 @@ When you want to explicitly convert something in boolean you can do that with `B
 if (0) {/* Do something */} // logical context
 !!7 // true
 99 || 'JS' // 99
+!!0 // false (0 is falsy value)
+!!'' // false (empty string is falsy value)
+!!null // false (null is falsy value)
+!!undefined // false (null is falsy value)
 
 // Explicit coercion to boolean
 Boolean(15) // true
