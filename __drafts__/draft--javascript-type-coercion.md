@@ -106,7 +106,7 @@ Explicit conversion, or type casting, to a type of number is simple and can be d
 
 When you use any of these operators JavaScript will automatically coerce the values you used with one of these operators to number. Implicit coercion to number will also happen when you use bitwise operators, the `|`, `&`, `^` and `~`. It will also happen if you use arithmetic operators, the `-`, `+`, `*`, `/` and `%`.
 
-One exception here is the that `+` operator. This operator will not trigger coercion to number if any of the values is type of a string. What will happen instead is coercion to a string. Lastly, implicit coercion will happen if you use the loose equality operator `==`. This also includes the loose not equal `!=`.
+One exception here is the that binary `+` operator. This operator will not trigger coercion to number if any of the values is type of a string. What will happen instead is coercion to a string. Lastly, implicit coercion will happen if you use the loose equality operator `==`. This also includes the loose not equal `!=`.
 
 Another exception here. JavaScript will not do implicit coercion to a number if you use `==` or `!=` and both values are strings. This probably makes sense, but it is still worth mention, just in case. One last thing about coercion to number. When you want to convert a string to a number, JavaScript will first remove any leading and trailing whitespace.
 
