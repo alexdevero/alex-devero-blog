@@ -228,6 +228,8 @@ When you use strict equality, JavaScript will not try to coerce one value into a
 1 == false // false - coerced to true == false
 '15' == 15 // true - coerced to '15' == '15'
 15 == '15' // true - coerced to '15' == '15'
+null == undefined // true - coerced to false == false
+undefined == null // true - coerced to false == false
 
 
 // Strict equality and coercion
@@ -237,6 +239,8 @@ When you use strict equality, JavaScript will not try to coerce one value into a
 1 === false // false - number is not a boolean
 '15' === 15 // false - string is not a number
 15 === '15' // false - number is not a string
+null === undefined // false - null is not undefined
+undefined === null // false - undefined is not null
 ```
 
 As you can see, loose equality can lead to results you might not expect. The best way to avoid this, and also to create more reliable equality checks, is to use strict equal. With strict equal, JavaScript will not be able to use type coercion. It will also always compare types of values, instead of only the values.
