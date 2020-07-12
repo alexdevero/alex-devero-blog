@@ -173,6 +173,7 @@ false.toString() // 'false'
 undefined.toString() // TypeError: Cannot read property 'toString' of undefined
 null.toString() // TypeError: Cannot read property 'toString' of null
 ({name: 'Joe'}).toString() // '[object Object]'
+Symbol('name').toString() // 'Symbol(name)'
 
 
 // Using toString() with radix parameter
