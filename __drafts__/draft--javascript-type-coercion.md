@@ -16,6 +16,58 @@ JavaScript is an interesting language. It allows you to convert value of one [ty
 
 When type coercion or type casting happens, the result is always some primitive type, like `string`, `number`, or `boolean`. It will never happen that the result of type coercion, or casting, will be either object or a function.
 
+## Implicit and explicit type coercion
+
+As you know, type coercion refers to implicit type conversion while type casting to explicit. When JavaScript developers talk about type coercion, they usually refer to both types, implicit and explicit. The main difference between these two is that one is usually done on purpose while the other automatically, by the language.
+
+JavaScript as a programming language is weakly and dynamically typed. This means few things. Weakly means you don't have to specify what type some value is before you can use it. For example, you don't have to tell that a function requires string as a parameter or that some variable is, or will be, an integer.
+
+JavaScript allows you to change types as you go. You can declare a variable and assign it a string. Later, you can decide to change it to a number. You can also declare a variable leave it empty and assign it a value later, without specifying its type. This is what it means when some programming language is dynamically typed.
+
+### Implicit type coercion
+
+One advantage, or disadvantage, of weakly typed languages is that it allows for implicit type coercion to happen. This usually happens in two situations. The first one is when you use some operator along with two or more different values. Here, JavaScript will take those values and convert them as needed to make that operation happen.
+
+For example, let's say you try to add a string to a number. In this case, JavaScript will take the number, convert it to a string. After that, it will concatenate that converted number, now string, with the string you wanted to add.
+
+```JavaScript
+// Implicit conversion of a number to string
+13 + '14' // '1314'
+123 + '' // '123
+7 + ' roses' // '7 roses'
+```
+
+Another example can be when you try to compare a number with another number that is defined as a string. In this case, JavaScript will first convert that number defined as a string to a number. After that, it will convert the real number with the converted. The same happens if you try to multiply those numbers.
+
+```JavaScript
+// Implicit conversion of a string to number
+4 < '5' // true
+6 > '15' // false
+95 * '15' // 1425
+```
+
+The second situation when implicit type coercion happens is when you use `if...else` statement or ternary operator. It doesn't matter what you use as the condition. The result will always be a boolean, either `true` or `false`. This is also why it is important to remember what are [falsy] and [truthy] values in JavaScript.
+
+```JavaScript
+// Implicit conversion and truthy and falsy values
+
+// Some truthy values
+if (5) true // true
+if ('test') true // true
+if ({}) true // true
+if ([]) true // true
+
+// Some falsy values
+'' ? true : false // false
+if (!'') true // true
+0 ? true : false // false
+if (!0) true // true
+null ? true : false // false
+if (!null) true // true
+NaN ? true : false // false
+if (!NaN) // true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
