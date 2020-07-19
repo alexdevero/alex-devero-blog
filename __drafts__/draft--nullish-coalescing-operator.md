@@ -241,7 +241,7 @@ hoursWorked ?? 1 * hourlyRate ?? 25
 
 ## Conclusion: Nullish coalescing operator explained
 
-The nullish coalescing operator looks simple. Its just two question marks. However, even simple things can be difficult. I hope this tutorial helped you understand how nullish coalescing operator works and how to use it to write cleaner and safer code. I also hope it showed you what to pay attention to when you use it. Now, try to use it on your own.
+The nullish coalescing operator looks simple. It's just two question marks. However, even simple things can be difficult. I hope this tutorial helped you understand how nullish coalescing operator works and how to use it to write cleaner and safer code. I also hope it showed you what to pay attention to when you use it. Now, try to use it on your own.
 
 [xyz-ihs snippet="thank-you-message"]
 
