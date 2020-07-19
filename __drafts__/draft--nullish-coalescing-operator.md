@@ -182,6 +182,35 @@ true || false ?? 'You should see me.'
 // true
 ```
 
+## Nullish coalescing operator and operator precedence
+
+In JavaScript, there is something called operator precedence. This specifies how, if you combine multiple operators, JavaScript will parse these operators. Every operator when it is added in the language specification is also assign some number that determines this precedence.
+
+The number for the highest precedence is currently 21. The lowest is 1. Operators with higher precedence are evaluated before operators with lower precedence. You can see the precedence for existing operators in [this table]. What this means for nullish coalescing operator?
+
+The nullish coalescing operator has precedence of 5. Logical operator OR has precedence of 6, AND 7. This means two things. First, it puts it in the bottom of the precedence table. Second, if you use nullish coalescing operator in more complex expression nullish coalescing operator will likely be evaluated as last.
+
+This can result to very different outcomes than you may want. If you want to increase precedence of nullish coalescing operator you can wrap it in parentheses. Parentheses, or grouping operator, have precedence of 21. This is the highest number in the precedence table. It should provide sufficient boost.
+
+```JavaScript
+// Declare variables for calculating reward for work
+const hoursWorked = null;
+const hourlyRate = null;
+
+// Without parentheses
+// The * has higher precedence than nullish coalescing operator
+hoursWorked ?? 1 * hourlyRate ?? 25
+// Output:
+// 0
+// because hoursWorked * hourlyRate = 0 (null * null = 0)
+
+// With parentheses
+// Parentheses boost precedence of nullish coalescing operator
+(hoursWorked ?? 1) * (hourlyRate ?? 25)
+// Output:
+// 25
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
@@ -195,6 +224,7 @@ true || false ?? 'You should see me.'
 [falsy]: https://developer.mozilla.org/en-US/docs/Glossary/falsy
 [if...else statement]: https://blog.alexdevero.com/javascript-if-else-statement
 [ternary operator]: https://blog.alexdevero.com/javascript-if-else-statement/#ternary-operator
+[this table]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table
 
 <!--
 ### Meta:
