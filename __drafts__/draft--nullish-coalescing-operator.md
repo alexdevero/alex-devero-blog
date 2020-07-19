@@ -1,6 +1,6 @@
 # Nullish Coalescing Operator Explained
 
-Nullish coalescing operator
+Nullish coalescing operator is one of those features that look simple, but can be difficult to understand. This tutorial will help you learn about. It will explain what nullish coalescing operator is, you how it works and how to use it. It will also show you some gotchas and how to deal with them.
 
 <!--more-->
 <!--
