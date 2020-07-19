@@ -146,22 +146,27 @@ const user = {
 
 // Log the value of name property
 console.log(user.name ?? 'Anonymous')
+// Output:
 // 'Justin Lambert'
 
 // Log the value of age property
 console.log(user.age ?? 29)
+// Output:
 // 0
 
 // Log the value of jobTitle property
 console.log(user.jobTitle ?? 'Unemployed')
+// Output:
 // ''
 
 // Log the value of property hobbies
 console.log(user.hobbies ?? 'No hobbies.')
+// Output:
 // 'No hobbies.'
 
 // Log the value of non-existing property height
 console.log(user.height ?? 'Height is unknown.')
+// Output:
 // 'Height is unknown.'
 ```
 
