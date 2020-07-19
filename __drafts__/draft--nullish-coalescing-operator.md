@@ -155,6 +155,33 @@ console.log(user.height ?? 'Height is unknown.')
 // 'Height is unknown.'
 ```
 
+## Combining nullish coalescing operator with logical operators
+
+One thing to remember is that you can't use nullish coalescing operator with logical operators, directly. When you try it, JavaScript will throw a syntax error. A way to fix this problem is to wrap the logical operator and its operands with parenthesis. Then, you add the nullish coalescing operator and its operand.
+
+```JavaScript
+// This will not work
+null || undefined ?? 'You should see me.'
+// SyntaxError: Unexpected token '??'
+
+null || false ?? 'You should see me.'
+// SyntaxError: Unexpected token '??'
+
+true || false ?? 'You should see me.'
+// SyntaxError: Unexpected token '??'
+
+
+// This will work
+(null || undefined) ?? 'You should see me.'
+// 'You should see me.'
+
+(null || false) ?? 'You should not see me.'
+// false
+
+(true || false) ?? 'You still should not see me.'
+// true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
