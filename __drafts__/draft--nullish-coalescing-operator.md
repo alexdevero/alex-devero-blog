@@ -162,23 +162,29 @@ One thing to remember is that you can't use nullish coalescing operator with log
 ```JavaScript
 // This will not work
 null || undefined ?? 'You should see me.'
+// Output:
 // SyntaxError: Unexpected token '??'
 
 null || false ?? 'You should see me.'
+// Output:
 // SyntaxError: Unexpected token '??'
 
 true || false ?? 'You should see me.'
+// Output:
 // SyntaxError: Unexpected token '??'
 
 
 // This will work
 (null || undefined) ?? 'You should see me.'
+// Output:
 // 'You should see me.'
 
 (null || false) ?? 'You should not see me.'
+// Output:
 // false
 
 (true || false) ?? 'You still should not see me.'
+// Output:
 // true
 ```
 
