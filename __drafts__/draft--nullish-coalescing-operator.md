@@ -24,7 +24,7 @@ What happens if that property has value, but that value is falsy? Just to remind
 What if the value exists, but it 0 or ""? In that case, JavaScript convert that value to `false` and OR operator will return your default value. It doesn't matter there is value actually some value. The only thing that matters for OR operator is that the value is falsy.
 
 ```JavaScript
-const userProfile = {
+const user = {
   name: 'Justin Lambert',
   age: 0, // 0 is a falsy value
   jobTitle: '', // Empty string is a falsy value
@@ -33,31 +33,32 @@ const userProfile = {
 
 // Log the value of name property
 // this will work as you expect
-console.log(userProfile.name || 'Anonymous')
+console.log(user.name || 'Anonymous')
 // 'Justin Lambert'
 
 // Log the value of age property
 // this not will work as you expect
-console.log(userProfile.age || 29)
+console.log(user.age || 29)
 // 29
 
 // Log the value of jobTitle property
 // this not will work as you expect
-console.log(userProfile.jobTitle || 'Unemployed')
+console.log(user.jobTitle || 'Unemployed')
 // 'Unemployed'
 
 // Log the value of property hobbies
 // this will work as you expect
-console.log(userProfile.hobbies || 'No hobbies.')
+console.log(user.hobbies || 'No hobbies.')
 // 'No hobbies.'
 
 // Log the value of non-existing property height
 // this will work as you expect
-console.log(userProfile.height || 'Height is unknown.')
+console.log(user.height || 'Height is unknown.')
 // 'No hobbies.'
 ```
 
 ## Nullish coalescing operator to the rescue
+
 
 
 ## Conclusion: [...] ...
