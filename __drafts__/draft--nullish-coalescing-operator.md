@@ -110,6 +110,51 @@ console.log(user.height !== null && user.height !== undefined ? user.height : 'H
 
 ## Nullish coalescing operator to the rescue
 
+So, there is a way to fix gotchas of falsy values and logical operators. The downside is that can make your code less readable and also less clean. A better solution is the newly added nullish coalescing operator. One could say that this operator is a shortcut for the ternary operator with `null` nor `undefined` check you just saw.
+
+This is actually true. The nullish coalescing operator does the same thing as that ternary operator. It first check if the operand on the left side is either `null` or `undefined`. If it is one of these it will return the operand on the right side, the default value. Otherwise, it will return the operand on the left side.
+
+The syntax of nullish coalescing operator is simple. There is one operand on the left side. This is what you want to return if it is not null or undefined. Then, there is the nullish coalescing operator (`??`). After that is the operand on the right side. This is what will be returned if what you check is `null` nor `undefined`.
+
+Let's go back to the "user" example and use nullish coalescent operator to log either existing properties or default values. We can basically remove the whole ternary operator. After that, we just have to replace the colons with `??`. As you can see on the example below, code will become much shorter and more readable.
+
+```JavaScript
+// Nullish coalescing operator
+// leftOperand - something you want to return
+// if it is neither null nor undefined
+// rightOperand - something you want to return
+// if leftOperand is null or undefined
+// ?? - symbol of nullish coalescing operator
+// Syntax: leftOperand ?? rightOperand
+
+const user = {
+  name: 'Justin Lambert',
+  age: 0, // 0 is a falsy value
+  jobTitle: '', // Empty string is a falsy value
+  hobbies: null // Null is also a falsy value
+}
+
+// Log the value of name property
+console.log(user.name ?? 'Anonymous')
+// 'Justin Lambert'
+
+// Log the value of age property
+console.log(user.age ?? 29)
+// 0
+
+// Log the value of jobTitle property
+console.log(user.jobTitle ?? 'Unemployed')
+// ''
+
+// Log the value of property hobbies
+console.log(user.hobbies ?? 'No hobbies.')
+// 'No hobbies.'
+
+// Log the value of non-existing property height
+console.log(user.height ?? 'Height is unknown.')
+// 'Height is unknown.'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
