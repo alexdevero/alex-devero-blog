@@ -122,7 +122,7 @@ console.log(user.height !== null && user.height !== undefined ? user.height : 'H
 
 So, there is a way to fix gotchas of falsy values and logical operators. The downside is that can make your code less readable and also less clean. A better solution is the newly added nullish coalescing operator. One could say that this operator is a shortcut for the ternary operator with `null` nor `undefined` check you just saw.
 
-This is actually true. The nullish coalescing operator does the same thing as that ternary operator. It first check if the operand on the left side is either `null` or `undefined`. If it is one of these it will return the operand on the right side, the default value. Otherwise, it will return the operand on the left side.
+This is actually true. The nullish coalescing operator is a new operator in JavaScript that does similar thing as that ternary operator. It first check if the operand on the left side is either `null` or `undefined`. If it is one of these it will return the operand on the right side, the default value. Otherwise, it will return the operand on the left side.
 
 The syntax of nullish coalescing operator is simple. There is one operand on the left side. This is what you want to return if it is not null or undefined. Then, there is the nullish coalescing operator (`??`). After that is the operand on the right side. This is what will be returned if what you check is `null` nor `undefined`.
 
