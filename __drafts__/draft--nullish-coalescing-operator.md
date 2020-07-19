@@ -62,7 +62,7 @@ console.log(user.height || 'Height is unknown.')
 // 'Height is unknown.'
 ```
 
-## Fixing logical operators gotchas
+### Fixing logical operators gotchas
 
 When logical operator encounters falsy value it will return the right operand. This is the value you on the right side you provided as the default. This is what happened on the example above when you tried to access the `age` and `jobTitle` properties. Both values were falsy and logical operator returned the default value.
 
