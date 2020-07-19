@@ -83,26 +83,31 @@ const user = {
 // Log the value of name property
 // this will work as you expect
 console.log((user.name !== null && user.name !== undefined) ? user.name : 'Anonymous')
+// Output:
 // 'Justin Lambert'
 
 // Log the value of age property
 // this will finally work as you expect
 console.log((user.age !== null && user.age !== undefined) ? user.age : 29)
+// Output:
 // 0
 
 // Log the value of jobTitle property
 // this will finally work as you expect
 console.log((user.jobTitle !== null && user.jobTitle !== undefined) ? user.jobTitle : 'Unemployed')
+// Output:
 // ''
 
 // Log the value of property hobbies
 // this will work as you expect
 console.log((user.hobbies !== null && user.hobbies !== undefined) ? user.hobbies : 'No hobbies.')
+// Output:
 // 'No hobbies.'
 
 // Log the value of non-existing property height
 // this will also work as you expect
 console.log(user.height !== null && user.height !== undefined ? user.height : 'Height is unknown.')
+// Output:
 // 'Height is unknown.'
 
 
