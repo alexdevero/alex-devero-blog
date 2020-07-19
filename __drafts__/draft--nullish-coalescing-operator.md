@@ -5,6 +5,13 @@ Nullish coalescing operator is one of those features that look simple, but can b
 <!--more-->
 <!--
 Table of Contents:
+## The problem with logical operators
+### Logical operators and truthy and falsy values
+### Fixing logical operators gotchas
+## Nullish coalescing operator to the rescue
+## Combining nullish coalescing operator with logical operators
+## Nullish coalescing operator and operator precedence
+## Conclusion: Nullish coalescing operator explained
 -->
 
 ## The problem with logical operators
@@ -232,7 +239,7 @@ hoursWorked ?? 1 * hourlyRate ?? 25
 // 25
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Nullish Coalescing Operator Explained
 
 [xyz-ihs snippet="thank-you-message"]
 
