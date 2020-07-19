@@ -54,12 +54,61 @@ console.log(user.hobbies || 'No hobbies.')
 // Log the value of non-existing property height
 // this will work as you expect
 console.log(user.height || 'Height is unknown.')
+// 'Height is unknown.'
+```
+
+## Fixing logical operators gotchas
+
+When logical operator encounters falsy value it will return the right operand. This is the value you on the right side you provided as the default. This is what happened on the example above when you tried to access the `age` and `jobTitle` properties. Both values were falsy and logical operator returned the default value.
+
+There is a way to fix this. You fix this problem by changing the condition. The downside is that it introduces more complexity. Anyway, here it is. You will not say some value OR some default value. Instead, you will first check if a property is neither `null` nor `undefined`, by using AND operator.
+
+If the property is neither `null` nor `undefined` it means the property exists. It doesn't matter if the value is truthy or falsy. At this moment, there is no conversion to truthy or falsy value because the condition doesn't operate with the value itself. It only looks if the property itself exists.
+
+If the property exists, you will try to access it and return its value. Otherwise, you will return the default. You can do this either with [if...else statement] or [ternary operator]. This solution will work well with both, existing and non-existing values.
+
+```JavaScript
+const user = {
+  name: 'Justin Lambert',
+  age: 0, // 0 is a falsy value
+  jobTitle: '', // Empty string is a falsy value
+  hobbies: null // Null is also a falsy value
+}
+
+// Log the value of name property
+// this will work as you expect
+console.log((user.name !== null && user.name !== undefined) ? user.name : 'Anonymous')
+// 'Justin Lambert'
+
+// Log the value of age property
+// this will finally work as you expect
+console.log((user.age !== null && user.age !== undefined) ? user.age : 29)
+// 0
+
+// Log the value of jobTitle property
+// this will finally work as you expect
+console.log((user.jobTitle !== null && user.jobTitle !== undefined) ? user.jobTitle : 'Unemployed')
+// ''
+
+// Log the value of property hobbies
+// this will work as you expect
+console.log((user.hobbies !== null && user.hobbies !== undefined) ? user.hobbies : 'No hobbies.')
 // 'No hobbies.'
+
+// Log the value of non-existing property height
+// this will also work as you expect
+console.log(user.height !== null && user.height !== undefined ? user.height : 'Height is unknown.')
+// 'Height is unknown.'
+
+
+// Notes:
+// first check if property is neither null nor undefined:
+// user.name !== null && user.name !== undefined
+// according to this condition return either property or default
+// obj.someProp : 'Some default value'
 ```
 
 ## Nullish coalescing operator to the rescue
-
-
 
 ## Conclusion: [...] ...
 
@@ -72,6 +121,8 @@ console.log(user.height || 'Height is unknown.')
 [boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
 [truthy]: https://developer.mozilla.org/en-US/docs/Glossary/truthy
 [falsy]: https://developer.mozilla.org/en-US/docs/Glossary/falsy
+[if...else statement]: https://blog.alexdevero.com/javascript-if-else-statement
+[ternary operator]: https://blog.alexdevero.com/javascript-if-else-statement/#ternary-operator
 
 <!--
 ### Meta:
