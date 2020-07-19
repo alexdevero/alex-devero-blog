@@ -34,26 +34,31 @@ const user = {
 // Log the value of name property
 // this will work as you expect
 console.log(user.name || 'Anonymous')
+// Output:
 // 'Justin Lambert'
 
 // Log the value of age property
 // this not will work as you expect
 console.log(user.age || 29)
+// Output:
 // 29
 
 // Log the value of jobTitle property
 // this not will work as you expect
 console.log(user.jobTitle || 'Unemployed')
+// Output:
 // 'Unemployed'
 
 // Log the value of property hobbies
 // this will work as you expect
 console.log(user.hobbies || 'No hobbies.')
+// Output:
 // 'No hobbies.'
 
 // Log the value of non-existing property height
 // this will work as you expect
 console.log(user.height || 'Height is unknown.')
+// Output:
 // 'Height is unknown.'
 ```
 
