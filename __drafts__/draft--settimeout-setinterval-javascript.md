@@ -125,9 +125,47 @@ const newTimeout = setTimeout(() => {
 'I will run automatically after 3 seconds.'
 ```
 
-### Intervals with nested setTimeout functions
+### Intervals with nested setTimeout method
+
+One interesting thing you can do with `setTimeout` methods is nesting them. This means that you can put one timeout inside another. This can be useful if you want to execute some code in different intervals. When it comes to nesting, there are two thing you have to know about.
+
+The first thing is that browser can start to penalize your timeouts. This will happen if you create five or more nested timeouts. In that case, browser will automatically force the delay to be at least four milliseconds. If all your nested intervals use delay bigger than four milliseconds you nothing will happen.
+
+The second thing is that it is not guaranteed your nested intervals will be executed precisely on the schedule. The precision of execution delays depends on CPU load, function execution, and other tasks that are running on your device at the moment. If your computer is busy, the schedule might have some small additional delays.
 
 ```JavaScript
+// Extreme example of nested timeouts
+setTimeout(() => {
+  console.log('Timeout number 1.')
+
+  setTimeout(() => {
+    console.log('Timeout number 2.')
+
+    setTimeout(() => {
+      console.log('Timeout number 3.')
+
+      setTimeout(() => {
+        console.log('Timeout number 4.')
+
+        setTimeout(() => {
+          console.log('Timeout number 5.')
+
+          setTimeout(() => {
+            console.log('Timeout number 6.')
+          }, 150)
+        }, 350)
+      }, 250)
+    }, 150)
+  }, 200)
+}, 100)
+
+// Output:
+'Timeout number 1.'
+'Timeout number 2.'
+'Timeout number 3.'
+'Timeout number 4.'
+'Timeout number 5.'
+'Timeout number 6.'
 ```
 
 ## The setInterval method
