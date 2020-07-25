@@ -267,7 +267,9 @@ const myInterval = setInterval(() => {
 ```JavaScript
 ```
 
-## Conclusion: [...] ...
+## Conclusion: setTimeout, setInterval and how to schedule tasks in JavaScript
+
+The `setTimeout()` and `setInterval()` are two methods that help you execute your code according to your schedule. These methods might look simple, but they can be very powerful, especially when you combine them. I hope this tutorial helped you understand how these methods work, how to use them and to watch out for.
 
 [xyz-ihs snippet="thank-you-message"]
 
