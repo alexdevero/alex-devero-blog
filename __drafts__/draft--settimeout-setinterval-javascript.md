@@ -4,6 +4,18 @@
 Table of Contents:
 -->
 
+## Introduction
+
+## setTimeout
+
+### Intervals with nested setTimeout functions
+
+### Immediate setTimeout
+
+## setInterval
+
+## Combining setTimeout and setInterval
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
