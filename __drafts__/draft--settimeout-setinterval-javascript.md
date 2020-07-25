@@ -34,16 +34,18 @@ setTimeout(callbackFunction, delay, argument1, argument2, ...)
 setTimeout(function() {
   console.log('The time is up.')
 }, 2000) // Delay is specified in milliseconds
+
 // Output (after 2 seconds):
-// 'The time is up.'
+'The time is up.'
 
 
 // setTimeout method example no.2: with arrow function
 setTimeout(() => {
   console.log('The time is up.')
 }, 2000) // Delay is specified in milliseconds
+
 // Output (after 2 seconds):
-// 'The time is up.'
+'The time is up.'
 
 
 // setTimeout method example no.3: additional arguments
