@@ -1,4 +1,4 @@
-# Blog post title [...]
+# setTimeout, setInterval and how to Schedule Tasks in JavaScript
 <!--more-->
 <!--
 Table of Contents:
