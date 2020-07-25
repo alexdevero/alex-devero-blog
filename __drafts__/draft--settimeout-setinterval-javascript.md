@@ -55,7 +55,41 @@ setTimeout((name, message) => {
   console.log(`${message} ${name}.`)
 }, 2000, 'John Doe', 'Welcome back')
 // Output (after 2 seconds):
-// 'Welcome back John Doe.'
+
+'Welcome back John Doe.'
+```
+
+### (Sometimes) immediate setTimeout
+
+As you just learned, the delay parameter is optional. When you omit it the `setTimeout` method will execute the callback function immediately. Well, almost. The callback function will be executed immediately only if there is no more code to execute. Otherwise the callback will be executed after the rest of code is executed.
+
+```JavaScript
+// Example no.1: setTimeout method that executes immediately
+setTimeout(() => {
+  console.log('I will be printed right away.')
+}) // Omit the delay parameter
+
+// Output (immediate):
+'I will be printed right away.'
+
+
+// Example no.2: setTimeout method that execute (almost) immediately
+setTimeout(() => {
+  console.log('I was supposed to be printed right away...')
+})
+
+console.log('I will be printed as first.')
+
+function printMessage() {
+  console.log('I will be printed as second.')
+}
+
+printMessage()
+
+// Output:
+'I will be printed as first.' // First console.log
+'I will be printed as second.' // log in printMessage function
+'I was supposed to be printed right away...' // Log in setTimeout
 ```
 
 ### Immediate setTimeout
