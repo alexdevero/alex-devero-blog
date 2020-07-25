@@ -92,7 +92,48 @@ printMessage()
 'I was supposed to be printed right away...' // Log in setTimeout
 ```
 
-### Immediate setTimeout
+### Canceling setTimeout
+
+Every time you use the `setTimeout` method it returns something called "timer identifier". This identifier is useful when you want to cancel existing timeout that didn't execute yet. You can do this with `clearTimeout` method. This method accepts only one parameter, the timer identifier of a timeout you want to cancel.
+
+In order to clear a timeout you have to store its reference somewhere. To do this, you assign the timeout to a variable. Since the `setTimeout` returns the identifier when it is declared that  identifier will be assigned to that variable. You can then use that variable to cancel the timeout.
+
+```JavaScript
+// Create timeout and assign it to a variable
+const newTimeout = setTimeout(() => {
+  console.log('I was supposed to run after 3 seconds.')
+}, 3000)
+
+// Log the timer identifier of newTimeout
+console.log(newTimeout)
+// Output:
+1
+
+// Use clearTimeout() to cancel the "newTimeout" timeout
+clearTimeout(newTimeout)
+```
+
+When you assign timeout to a variable you don't have to call it, like you would have a function. When you assign it, the timer will run automatically after the delay. Or, it will run immediately if there is no delay, and no other code to execute.
+
+```JavaScript
+// Create timeout and assign it to a variable
+const newTimeout = setTimeout(() => {
+  console.log('I will run automatically.')
+}, 3000)
+
+// Output:
+'I will run automatically after 3 seconds.'
+```
+
+### Intervals with nested setTimeout functions
+
+```JavaScript
+```
+
+## The setInterval method
+
+```JavaScript
+```
 
 ## setInterval
 
