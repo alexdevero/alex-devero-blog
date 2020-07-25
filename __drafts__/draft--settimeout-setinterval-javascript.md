@@ -170,7 +170,19 @@ setTimeout(() => {
 
 ## The setInterval method
 
+The `setInterval` method is useful when you want to execute some code repeatedly in same intervals. The `setInterval` method has the same syntax as the `setTimeout` method. It accepts some callback functions, a delay and additional optional arguments. This delay is the time `setInterval` method waits until it executes the first, or another, interval.
+
+The `setInterval` method works in a similar way to the `setTimeout` method. It runs automatically once you declare it. Unlike the `setTimeout` method, it runs until you stop it, or cancel it. If you don't stop it will run forever.
+
 ```JavaScript
+// Create an interval that will run every 5 seconds
+setInterval(() => {
+  console.log('I will show up every 5 seconds.')
+}, 5000) // Delay is in milliseconds
+
+// Output:
+'I will show up every 5 seconds.'
+'I will show up every 5 seconds.'
 ```
 
 ## setInterval
