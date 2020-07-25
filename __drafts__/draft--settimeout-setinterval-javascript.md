@@ -15,7 +15,46 @@ There is one interesting thing about these two methods. None of them is a part o
 
 ## setTimeout
 
-### Intervals with nested setTimeout functions
+The `setTimeout` method allows you to execute your code after a delay. You set this delay, in milliseconds, as one the parameters this method accepts. When the `setTimeout` method executes your code, after the delay, it executes it only once. So, no need to worry about your code being executed multiple times.
+
+The `delay` parameter is optional. You can use it, but don't have to. You will soon learn why. Another parameter this method accepts is a callback function. When the delay runs out, the `setTimeout` method executes the callback function you passed as an argument, and whatever content you put inside it.
+
+Aside these two parameters, you can also pass an infinite number of additional arguments. There are two things you have to remember if you want to pass any additional arguments. First, these will not work in versions of Internet Explorer below 9. This is probably not a problem nowadays.
+
+The second might be more important. If you want to access these additional arguments you have to add parameters to your callback function. You can then use these parameters inside the callback function to access the data you want. One last thing. As a callback function, you can use either [normal function] or [arrow function], both will work.
+
+```JavaScript
+// setTimeout method syntax
+setTimeout(callbackFunction, delay, argument1, argument2, ...)
+
+
+// setTimeout method example no.1: with normal function
+// Create a setTimeout method that waits for 2 seconds
+// and then prints a message to console
+setTimeout(function() {
+  console.log('The time is up.')
+}, 2000) // Delay is specified in milliseconds
+// Output (after 2 seconds):
+// 'The time is up.'
+
+
+// setTimeout method example no.2: with arrow function
+setTimeout(() => {
+  console.log('The time is up.')
+}, 2000) // Delay is specified in milliseconds
+// Output (after 2 seconds):
+// 'The time is up.'
+
+
+// setTimeout method example no.3: additional arguments
+// The "name" parameter is for accessing the 'John Doe'
+// The "message" parameter is for accessing the 'Welcome back'
+setTimeout((name, message) => {
+  console.log(`${message} ${name}.`)
+}, 2000, 'John Doe', 'Welcome back')
+// Output (after 2 seconds):
+// 'Welcome back John Doe.'
+```
 
 ### Immediate setTimeout
 
