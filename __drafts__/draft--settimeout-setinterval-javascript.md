@@ -11,7 +11,7 @@ Table of Contents:
 
 Usually, you want to execute your code as you write it. That said, there will be situations when you will want to delay the execution. Or, you may want to repeat the execution in specific intervals. JavaScript provides two methods, one for each of these goals. The `setTimeout()` to delay execution and `setInterval()` to repeat it.
 
-There is one interesting thing about these two methods. None of them is a part of JavaScript language specification. These methods are actually part of [HTML Living Standard specification], defined as "timers". Fortunately, they are supported in all browsers, even in Node.js. So, we can use them safely. Let's take a look at them.
+There is one interesting thing about these two methods to schedule tasks. None of them is a part of JavaScript language specification. These methods are actually part of [HTML Living Standard specification], defined as "timers". Fortunately, they are supported in all browsers, even in Node.js. So, we can use them safely. Let's take a look at them.
 
 ## The setTimeout method
 
