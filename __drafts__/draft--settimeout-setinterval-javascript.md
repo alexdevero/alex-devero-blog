@@ -61,7 +61,7 @@ setTimeout((name, message) => {
 
 ### (Sometimes) immediate setTimeout
 
-As you just learned, the delay parameter is optional. When you omit it the `setTimeout()` method will execute the callback function immediately. Well, almost. The callback function will be executed immediately only if there is no more code to execute. Otherwise the callback will be executed after the rest of code is executed.
+As you just learned, the delay parameter is optional. When you omit it the `setTimeout()` method will execute the callback function immediately. Well, almost. The callback function will be executed immediately only if there is no more code to execute. Otherwise, the callback will be executed after the rest of code is executed.
 
 ```JavaScript
 // Example no.1: setTimeout method that executes immediately
@@ -129,7 +129,7 @@ const newTimeout = setTimeout(() => {
 
 One interesting thing you can do with `setTimeout()` methods is nesting them. This means that you can put one timeout inside another. This can be useful if you want to execute some code in different intervals. When it comes to nesting, there are two thing you have to know about.
 
-The first thing is that browser can start to penalize your timeouts. This will happen if you create five or more nested timeouts. In that case, browser will automatically force the delay to be at least four milliseconds. If all your nested intervals use delay bigger than four milliseconds you nothing will happen.
+The first thing is that browser can start to penalize your timeouts. This will happen if you create five or more nested timeouts. In that case, browser will automatically force the delay to be at least four milliseconds. If all your nested intervals use delay bigger than four milliseconds nothing will happen.
 
 The second thing is that it is not guaranteed your nested intervals will be executed precisely on the schedule. The precision of execution delays depends on CPU load, function execution, and other tasks that are running on your device at the moment. If your computer is busy, the schedule might have some small additional delays.
 
@@ -192,8 +192,6 @@ In order to stop the `setInterval()` method from running again you have to use t
 The `setInterval()` method also returns timer identifier you can than pass to the `clearInterval()`. Since the `setInterval()` method runs forever, and requires canceling manually, it is usually assigned to a variable. When you assign it to a variable, the identifier it returns is assigned to that variable.
 
 Now, you can pass that variable to the `clearInterval()` method as an argument to cancel the interval.
-
-Another
 
 ```JavaScript
 // Example no.1: using setTimeout method to cancel interval
@@ -286,7 +284,7 @@ setTimeout(function() {
 }, 6000)
 ```
 
-You can also combine these two method to schedule tasks the other way around. For example, you can create an interval with `setInterval` method and put it inside the `setTimeout` method to delay it. Then, you can also use another `setTimeout` method as a fallback to cancel the interval after some time.
+You can also combine these two methods to schedule tasks the other way around. For example, you can create an interval with `setInterval` method and put it inside the `setTimeout` method to delay it. Then, you can also use another `setTimeout` method as a fallback to cancel the interval after some time.
 
 ```JavaScript
 // Declare unassigned variable for interval
