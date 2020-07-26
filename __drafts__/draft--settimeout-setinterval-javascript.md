@@ -264,7 +264,52 @@ const myInterval = setInterval(() => {
 
 ## Combining setTimeout and setInterval
 
+Both, `setTimeout` and `setInterval`, are very useful tools to schedule tasks. They can be even more useful when you combine them. For example, you can use `setInterval` to observe something in specific intervals, like changes in the DOM or answer from the server, if you can't use [async/await] or [promises].
+
+Along with that, `setTimeout` as something like a fallback. If there is no change in DOM after some time, or response from a server, you can use the `setTimeout` method to cancel the interval.
+
 ```JavaScript
+// Create interval to watch for change every .15 milliseconds
+const myInterval = setInterval(function() {
+  // If change happens
+  if (/* some condition is true */) {
+    // Cancel the interval
+    clearInterval(myInterval)
+  }
+}, 150)
+
+// Create a fallback to cancel the interval
+// if change doesn't happen after
+setTimeout(function() {
+  // Clear the interval
+  clearInterval(myInterval)
+}, 6000)
+```
+
+You can also combine these two method to schedule tasks the other way around. For example, you can create an interval with `setInterval` method and put it inside the `setTimeout` method to delay it. Then, you can also use another `setTimeout` method as a fallback to cancel the interval after some time.
+
+```JavaScript
+// Declare unassigned variable for interval
+let myInterval
+
+// Use timeout to delay first interval
+setTimeout(function () {
+  // Create interval and assign it to "myInterval" variable
+  myInterval = setInterval(function () {
+    // If change happens
+    if (something) {
+      // Cancel the interval
+      clearInterval(myInterval)
+    }
+  }, 1000)
+}, 2000)
+
+// Create a fallback to cancel the interval
+// if change doesn't happen after 9 seconds
+setTimeout(function () {
+  // Clear the interval
+  clearInterval(myInterval)
+}, 9000)
 ```
 
 ## Conclusion: setTimeout, setInterval and how to schedule tasks in JavaScript
@@ -278,6 +323,8 @@ The `setTimeout()` and `setInterval()` are two methods that help you execute you
 [normal function]: https://blog.alexdevero.com/javascript-functions-pt1/
 [arrow function]: https://blog.alexdevero.com/javascript-arrow-functions/
 [https://blog.alexdevero.com/javascript-if-else-statement/]: https://blog.alexdevero.com/javascript-if-else-statement/
+[async/await]: https://blog.alexdevero.com/javascript-async-await/
+[promises]: https://blog.alexdevero.com/javascript-promises/
 
 <!--
 ### Meta:
