@@ -5,6 +5,15 @@ The `setTimeout()` and `setInterval()` are two methods you can use to schedule t
 <!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## The setTimeout method
+### (Sometimes) immediate setTimeout
+### Canceling setTimeout
+### Intervals with nested setTimeout method
+## The setInterval method
+### Canceling setInterval
+## Combining setTimeout and setInterval
+## Conclusion: setTimeout, setInterval and how to schedule tasks in JavaScript
 -->
 
 ## A quick introduction
