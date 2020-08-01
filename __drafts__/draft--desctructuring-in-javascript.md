@@ -4,7 +4,21 @@
 Table of Contents:
 -->
 
-## h2
+## Introduction
+
+## Array destructuring
+
+## Object destructuring
+
+## Assigning to variables
+
+## Default values
+
+## Destructuring and rest operator
+
+## Skipping values in arrays
+
+## Swapping values
 
 ## Conclusion: How destructuring in JavaScript works
 
