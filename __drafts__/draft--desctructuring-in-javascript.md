@@ -414,7 +414,35 @@ console.log(lastName)
 
 ### Changing variable names
 
-## Swapping values
+JavaScript uses property names to understand what value you want to extract from an object. Fortunately, there is a way to change the variable name you want the value to be assigned to. What you have to do is to add colons (`:`) and new variable name right after the original variable name. Then, you can use that new name to access that value.
+
+```JavaScript
+// Create an object
+const myObj = {
+  name: 'John Doer',
+  education: 'College',
+  born: 1973
+}
+
+// Use destructuring to extract values of "education" and "born"
+// and assign "education" to variable "highestEducation"
+// and "born" to "dateOfBirth"
+const { education: highestEducation, born: dateOfBirth } = myObj
+
+// ^ is alternative to
+// const highestEducation = myObj.education
+// const dateOfBirth = myObj.born
+
+console.log(highestEducation)
+// Output:
+'College'
+
+console.log(dateOfBirth)
+// Output:
+1973
+```
+
+### Objects, destructuring and default values
 
 
 
