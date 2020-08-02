@@ -131,6 +131,43 @@ undefined
 
 ### Skipping values in arrays
 
+You can change the order of values being assigned by changing the order of variable names. With arrays, you can also skip values. This allows you to assign only some values from an array and skip those you don't care about. You can do this by leaving the place for variable name in a specific position empty.
+
+```JavaScript
+// Create an array
+const myArr = ['JavaScript', 'Perl', 'C', 'Java', 'Python']
+
+// Example no.1:
+// Assign only values on 0th, 2nd, and 4th index
+// Notice the empty spaces in place of 1st and 3rd index
+// [firstLang, /* 1st index - leave empty */, thirdLang, /* 3rd index - leave empty */, fifthLang]
+const [firstLang, , thirdLang, , fifthLang] = myArr
+
+console.log(firstLang)
+// Output:
+'JavaScript'
+
+console.log(thirdLang)
+// Output:
+'C'
+
+console.log(fifthLang)
+// Output:
+'Python'
+
+
+// Example no.2:
+// Assign only values on 1st and 4th index
+const [, firstItem, , fourthItem] = myArr
+
+console.log(firstItem)
+// Output:
+'Perl'
+
+console.log(fourthItem)
+// Output:
+'Java'
+```
 
 ### Destructuring and rest operator
 
