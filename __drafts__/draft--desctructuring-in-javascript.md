@@ -39,7 +39,7 @@ The way destructuring with arrays works is that values will be assigned to the v
 // Create an array
 const myArray = [1, 2, 3, 4, 5]
 
-// Use destructuring to assign first three values from "myArray"
+// Use destructuring to assign first three values from "myArray" to new variables
 // The "itemOne", "itemTwo", "itemThree" will create
 // three new variables "itemOne", "itemTwo", "itemThree"
 const [ itemOne, itemTwo, itemThree ] = myArray
@@ -109,7 +109,7 @@ Destructuring allows you to assign value that doesn't exist in the array. For ex
 // Create an array
 const myArray = ['Joe', 'Victoria']
 
-// Declare empty variables
+// Use destructuring to declare and assign new variables
 let [myVarOne, myVarTwo, myVarThree, myVarFour] = myArray
 
 console.log(myVarOne)
@@ -191,7 +191,7 @@ console.log(langTwo)
 
 console.log(remainingLangs)
 // Output:
-[ 'Java', 'Python', 'Perl', 'Ruby' ]
+['Java', 'Python', 'Perl', 'Ruby']
 ```
 
 When you try to use rest operator and there are no remaining values the result will be an empty array.
@@ -283,7 +283,7 @@ const myArray = ['JavaScript', 'Python', 'Swift'];
 
 console.log(myArray)
 // Output:
-[ 'Swift', 'JavaScript', 'Python' ]
+['Swift', 'JavaScript', 'Python']
 ```
 
 ### Destructuring nested arrays
