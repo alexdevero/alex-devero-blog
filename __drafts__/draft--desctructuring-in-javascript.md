@@ -169,8 +169,53 @@ console.log(fourthItem)
 'Java'
 ```
 
-### Destructuring and rest operator
+### Arrays, destructuring and rest operator
 
+You know how to use destructuring assignment to assign individual values and also how to skip some. Another thing you can do when you use destructuring with arrays is to use [rest operator]. You can assign individual items to some variables. Then, you can assign any remaining items to another variable.
+
+```JavaScript
+// Create an array
+const myArr = ['JavaScript', 'C', 'Java', 'Python', 'Perl', 'Ruby']
+
+// Assign th first two languages to two variables
+// then use rest operator to assign remaining languages to third variable
+const [langOne, langTwo, ...remainingLangs] = myArr
+
+console.log(langOne)
+// Output:
+'JavaScript'
+
+console.log(langTwo)
+// Output:
+'C'
+
+console.log(remainingLangs)
+// Output:
+[ 'Java', 'Python', 'Perl', 'Ruby' ]
+```
+
+When you try to use rest operator and there are no remaining values the result will be an empty array.
+
+```JavaScript
+// Create an array
+const myArr = ['JavaScript', 'Python']
+
+// Assign th first two languages to two variables
+// then use rest operator to assign remaining languages to third variable
+const [langOne, langTwo, ...remainingLangs] = myArr
+
+console.log(langOne)
+// Output:
+'JavaScript'
+
+console.log(langTwo)
+// Output:
+'Python'
+
+console.log(remainingLangs)
+// Output:
+[]
+```
 
 ## Object destructuring
 
