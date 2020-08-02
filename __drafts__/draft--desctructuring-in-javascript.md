@@ -217,6 +217,35 @@ console.log(remainingLangs)
 []
 ```
 
+One thing about using rest operator. When you want to use it, make sure to use it as the last. Any variables or empty spots for skipped values must come before it.
+
+```JavaScript
+// Don't do
+const myArray = [1, 2, 3, 4]
+
+const [...remainingArray, elOne, , elThree] = myArray
+
+// Output:
+// SyntaxError: Rest element must be last element
+
+// Do
+const myArray = [1, 2, 3, 4]
+
+const [elOne, , elThree, ...remainingArray] = myArray
+
+console.log(elOne)
+// Output:
+1
+
+console.log(elThree)
+// Output:
+3
+
+console.log(remainingArray)
+// Output:
+[4]
+```
+
 ### Swapping values
 
 Another interesting thing you can do with destructuring is swapping values of variables. Put another way, you can declare two variables and assign them some values. Then, you can use destructuring to swap those values.
