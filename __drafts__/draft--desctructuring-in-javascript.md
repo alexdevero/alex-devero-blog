@@ -511,7 +511,69 @@ console.log(country)
 'German'
 ```
 
-### Nested objects
+### Destructuring nested objects
+
+Similarly to nested arrays, you can also use destructuring with nested objects. Also like with arrays, f you want to extract data from nested objects you have to follow the structure of the original object.
+
+```JavaScript
+// Create nested object
+const myObj = {
+  name: 'Jackie',
+  address: {
+    state: 'USA',
+    city: 'NY'
+  },
+  employment: {
+    job: 'manager',
+    title: 'CTO'
+  }
+}
+
+// Use destructuring to extract "name", "state" from "address" object and "title" from "employment" object
+const { name, address: { state }, employment: { title } } = myObj
+
+console.log(name)
+// Output:
+'Jackie'
+
+console.log(state)
+// Output:
+'USA'
+
+console.log(title)
+// Output:
+'CTO'
+```
+
+You can also change variable names when you extract data from nested objects.
+
+```JavaScript
+// Create nested object
+const myObj = {
+  name: 'Jackie',
+  address: {
+    state: 'USA',
+    city: 'NY'
+  },
+  employment: {
+    job: 'manager',
+    title: 'CTO'
+  }
+}
+
+// Use destructuring to extract "state" and "title"
+// and rename variable for "state" to "place"
+// and variable for "title" to "position"
+const { address: { state: place }, employment: { title: position } } = myObj
+
+console.log(place)
+// Output:
+'USA'
+
+console.log(position)
+// Output:
+'CTO'
+```
 
 ## Conclusion: How destructuring assignment in JavaScript works
 
