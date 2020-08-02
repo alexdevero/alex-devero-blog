@@ -326,6 +326,33 @@ console.log(myLang)
 'Assembly'
 ```
 
+### Arrays, destructuring and default values
+
+When you try to extract value that doesn't exist in an array it the value you will get is `undefined`. For example, if you try to extract value of third item from an array that contains only two items. You can avoid this. You can provide default value for every variable you want to assign with destructuring.
+
+If any variable doesn't find a match in the array, item on specific index, the default value will be assigned to it. You can specify default value by adding equal sign and some value after the variable name. This way, you can specify default values for any variable you want.
+
+```JavaScript
+// Create an array
+const myArray = ['Jack', 'Joe']
+
+// Use destructuring to declare and assign new variables
+// Set default value of "myVarThree" to 'Anonymous'
+let [myVarOne, myVarTwo, myVarThree = 'Anonymous'] = myArray
+
+console.log(myVarOne)
+// Output:
+'Jack'
+
+console.log(myVarTwo)
+// Output:
+'Joe'
+
+console.log(myVarThree)
+// Output:
+'Anonymous'
+```
+
 ## Destructuring objects
 
 ## Skipping values in arrays
