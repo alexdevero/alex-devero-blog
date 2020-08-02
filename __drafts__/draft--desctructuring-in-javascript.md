@@ -610,7 +610,11 @@ console.log(position)
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[primitive data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[objects]: https://blog.alexdevero.com/javascript-objects-pt1/
+[arrays]: https://developer.mozilla.org/en-US/docs/Glossary/array
+[type of variable]: https://blog.alexdevero.com/javascript-variables-introduction/
+[rest operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
 <!--
 ### Meta:
