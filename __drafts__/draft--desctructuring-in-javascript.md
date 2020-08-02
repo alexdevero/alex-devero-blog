@@ -444,7 +444,48 @@ console.log(dateOfBirth)
 
 ### Objects, destructuring and default values
 
+Just like with arrays, you can also set default values when you use destructuring with objects. The syntax is the same.
 
+```JavaScript
+// Create an object
+const myObj = {
+  name: 'Jack',
+  country: 'New Zealand'
+}
+
+// Use destructuring to extract values of "name" and "age"
+// if "age" doesn't exist, use 0 as a fallback
+const { name, age = 0 } = myObj
+
+console.log(name)
+// Output:
+'Jack'
+
+console.log(age)
+// Output:
+30
+
+
+// Without default value:
+const myObj = {
+  name: 'Jack',
+  country: 'New Zealand'
+}
+
+const { name, age } = myObj
+
+console.log(name)
+// Output:
+'Jack'
+
+console.log(age)
+// Output:
+undefined
+```
+
+### Computed property names
+
+### Nested objects
 
 ## Conclusion: How destructuring assignment in JavaScript works
 
