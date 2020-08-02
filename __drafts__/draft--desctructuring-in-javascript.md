@@ -257,7 +257,47 @@ console.log(myArray)
 [ 'Swift', 'JavaScript', 'Python' ]
 ```
 
-## Destructuring and rest operator
+### Destructuring nested arrays
+
+Destructuring also works with nested arrays. This allows you to extract data from an array even if the array itself is not on the top-level. One thing to remember. When you want to use destructuring to get some value from nested array, you have to follow the structure of the original array.
+
+This also includes using additional square brackets to wrap the variable you want to assign. This will tell JavaScript you are interested in an item in nested array.
+
+```JavaScript
+// Create an array
+const myArray = ['JavaScript', ['Python', 'Swift']]
+
+// Use deconstruction to extract the first item
+// of the nested array
+// empty space - ignore the first item in the array
+// use additional square brackets to "enter" the nested array
+// use empty space to ignore the first nested item
+const [, [, swiftLang]] = myArray
+
+console.log(swiftLang)
+// Output:
+'Swift'
+
+// More extreme example
+const myArray = ['JavaScript', ['Python', 'Ruby', ['Swift', 'C++', ['Assembly', 'C']]]];
+
+// Use deconstruction to extract the first item
+// of the nested array nested on the fourth level
+// empty space - ignore the first item
+// first pair of brackets - enter the first nested array
+// two empty spaces - ignore the first two items
+// second pair of brackets - enter the second nested array
+// two empty spaces - ignore the first two items
+// third pair of brackets - enter the third nested array
+// access the value on the 0th index
+const [, [, , [, , [myLang]]]] = myArray
+
+console.log(myLang)
+// Output:
+'Assembly'
+```
+
+## Destructuring objects
 
 ## Skipping values in arrays
 
