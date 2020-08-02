@@ -355,7 +355,64 @@ console.log(myVarThree)
 
 ## Destructuring objects
 
-## Skipping values in arrays
+When it comes to destructuring objects there are some differences. First difference is that you have to use curly brackets instead os square. Second difference is that the order of variable you want to assign doesn't matter. The reason is that, with object, destructuring works a bit differently.
+
+When you work with objects, JavaScript doesn't care about some order. It doesn't use it. Instead, it uses object properties. This is the third difference. You don't use random variable names to assign values from an object. Instead, you use names of existing properties to get values of those properties.
+
+If you want to extract the value of property "name" you have to use variable "name". This tells JavaScript what property it should look for. So, order no longer matters, but the variable name does.
+
+```JavaScript
+// Create an array
+const myObj = {
+  name: 'Stuart',
+  age: 37,
+  sex: 'male'
+}
+
+// Use destructuring to assign values of "sex" and "name" to new variables
+// Notice that the order of variable names doesn't matter
+// What matters is that "sex" variable name matches "sex" property in myObj
+// and "name" variable name matches "name" property in myObj
+// try also to assign value from non-existing property "education"
+const { sex, name, education } = myObj
+
+// ^ is alternative to:
+// const sex = myObj.sex
+// const name = myObj.name
+
+console.log(name)
+// Output:
+'Stuart'
+
+console.log(sex)
+// Output:
+'male'
+
+console.log(education)
+// Output:
+undefined
+```
+
+You can also use destructuring to assign values from objects that have not been declared.
+
+```JavaScript
+// Use destructuring to assign values from objects that have not been declared.
+const { firstName, lastName } = {
+  firstName: 'Sam',
+  lastName: 'Mendez',
+  age: 26
+}
+
+console.log(firstName)
+// Output:
+'Sam'
+
+console.log(lastName)
+// Output:
+'Mendez'
+```
+
+### Changing variable names
 
 ## Swapping values
 
