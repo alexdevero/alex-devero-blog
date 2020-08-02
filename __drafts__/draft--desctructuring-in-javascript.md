@@ -485,6 +485,32 @@ undefined
 
 ### Computed property names
 
+When it comes to destructuring and objects, you can also define property which value you want extract using computed property name. For example, you can use value of a variable to specify property you are looking for. When you want to use computed property name you have to wrap it with square brackets.
+
+When you use computed property name you also have to specify a variable name. You do this in the same way as when you want to chang variable name. First, you use the computed property in square brackets. After that, you add colons and specify the variable name. Later, you can use the variable name to access the extracted value.
+
+```JavaScript
+// Declare variable and assign it a property name
+// This variable will be later used to extract the value
+// of an object property that matches the value
+// assigned to this variable, that is "nationality" property
+const myProp = 'nationality'
+
+// Create an object
+const myObj = {
+  name: 'Samantha',
+  nationality: 'German'
+}
+
+// Use computed property name to extract value of "nationality" property
+// Then, assign the extracted value to new variable "country"
+const { [myProp]: country } = myObj
+
+console.log(country)
+// Output:
+'German'
+```
+
 ### Nested objects
 
 ## Conclusion: How destructuring assignment in JavaScript works
