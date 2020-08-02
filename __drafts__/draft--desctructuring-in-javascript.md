@@ -217,11 +217,45 @@ console.log(remainingLangs)
 []
 ```
 
-## Object destructuring
+### Swapping values
 
-## Destructuring objects
+Another interesting thing you can do with destructuring is swapping values of variables. Put another way, you can declare two variables and assign them some values. Then, you can use destructuring to swap those values.
 
-## Default values
+Here is how to do this. On the left-hand side of the assignment, you will put the variables (their names) you want to swap. On the right-hand side, you will put the same variables (their names) in the new order you want.
+
+```JavaScript
+// Declare and assign two variables
+let a = 'I am A.'
+let b = 'I am B.'; // Note: semicolon here is necessary to avoid referenceError 'I am B.'[a, b]
+
+// se destructuring to swap values of "a" and "b"
+[a, b] = [b, a]
+
+console.log(a)
+// Output:
+'I am B.'
+
+console.log(b)
+// Output:
+'I am A.'
+```
+
+You can use destructuring also to quickly swap values in an array itself. In this case, you will replace variable names with specific indexes.
+
+```JavaScript
+// Create an array
+const myArray = ['JavaScript', 'Python', 'Swift'];
+
+// Swap items in "myArray" array
+// Put the first item (0th index) on the 2nd index
+// Put the second item (1st index) on the the 0th index
+// Put the third item (2nd index) on the the 1st index
+[myArray[0], myArray[1], myArray[2]] = [myArray[2], myArray[0], myArray[1]]
+
+console.log(myArray)
+// Output:
+[ 'Swift', 'JavaScript', 'Python' ]
+```
 
 ## Destructuring and rest operator
 
