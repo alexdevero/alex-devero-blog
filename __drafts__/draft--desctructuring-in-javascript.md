@@ -21,9 +21,11 @@ This is the general idea of how destructuring assignment works. Now, let's take 
 
 ```JavaScript
 // Destructuring assignment syntax for an array
+// The [] is the destructuring assignment
 const [ /* variable name(s) */ ] = []
 
 // Destructuring assignment syntax for an array
+// The {} is the destructuring assignment
 const { /* property name(s) */ } = {}
 ```
 
