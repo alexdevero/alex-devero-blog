@@ -23,7 +23,9 @@ Table of Contents:
 
 ## Swapping values
 
-## Conclusion: How destructuring in JavaScript works
+
+
+## Conclusion: How destructuring assignment in JavaScript works
 
 [xyz-ihs snippet="thank-you-message"]
 
