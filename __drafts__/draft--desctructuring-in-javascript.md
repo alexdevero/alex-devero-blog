@@ -362,7 +362,7 @@ When you work with objects, JavaScript doesn't care about some order. It doesn't
 If you want to extract the value of property "name" you have to use variable "name". This tells JavaScript what property it should look for. So, order no longer matters, but the variable name does.
 
 ```JavaScript
-// Create an array
+// Create an object
 const myObj = {
   name: 'Stuart',
   age: 37,
