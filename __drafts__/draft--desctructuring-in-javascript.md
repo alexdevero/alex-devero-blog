@@ -29,7 +29,7 @@ const [ /* variable name(s) */ ] = []
 const { /* property name(s) */ } = {}
 ```
 
-## Array destructuring
+## Destructuring arrays
 
 When you want to use destructuring with arrays you have to do two things. First, you have to use syntax with square brackets `[]`. Second, inside these square brackets, you specify the variable name(s) you want to use. When you specify the variables names, make sure you write them in the right order.
 
@@ -219,7 +219,7 @@ console.log(remainingLangs)
 
 ## Object destructuring
 
-## Assigning to variables
+## Destructuring objects
 
 ## Default values
 
