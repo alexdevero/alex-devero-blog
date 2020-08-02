@@ -7,7 +7,25 @@ Destructuring assignment is one of the features introduced in ES6. It is also ne
 Table of Contents:
 -->
 
-## Introduction
+## Introduction to destructuring assignment
+
+What is destructuring? Destructuring is a way to extract values from data and assign those values to one or more variables. One thing to remember about destructuring is that it works only with [arrays] and [objects]. You can't use it with [primitive data types]. Now, a bit about how it works.
+
+In general, there are two ways to use deconstructing. First, you can use it to assign a value to a variable when you declare it. Second, you can declare an empty variable and use destructuring later to assign it a value. Both methods will work. When you want to use the later, pay attention to the [type of variable] you use.
+
+The syntax of destructuring assignment is very simple. If you are declaring a variable the variable keyword comes first. So, either `let`, `const` or `var`. Next comes the destructuring assignment, followed by equal sign. The array or object with data you want to extract is on the right-hand side.
+
+Unlike other JavaScript features, destructuring assignment has two types of syntax. Which type you have to use depends on the data you are working with. If you work with an array destructuring you will use square brackets `[]`. If you work with an object, you will use curly brackets `{}`.
+
+This is the general idea of how destructuring assignment works. Now, let's take a look at each type of syntax in detail.
+
+```JavaScript
+// Destructuring assignment syntax for an array
+const [ /* variable name(s) */ ] = []
+
+// Destructuring assignment syntax for an array
+const { /* property name(s) */ } = {}
+```
 
 ## Array destructuring
 
