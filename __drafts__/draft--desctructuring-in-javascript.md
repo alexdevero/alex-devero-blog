@@ -412,6 +412,36 @@ console.log(lastName)
 'Mendez'
 ```
 
+### Destructuring and already declared variables
+
+Arrays allow you to declare empty variables first and use destructuring to assign them values later. You can do the same also with objects. However, there is catch. You have to wrap the who assignment with parentheses (`()`). Otherwise, JavaScript will think that the `{}` is a block.
+
+```JavaScript
+// Create an object
+const myObj = {
+  name: 'Fat Tony',
+  nationality: 'Italian'
+}
+
+// Declare empty variable for "name" and "nationality"
+let name, nationality
+
+// This will NOT work:
+{ name, nationality } = myObj
+// SyntaxError: Unexpected token
+
+// This will work (wrapping the whole assignment with ()):
+({ name, nationality } = myObj)
+
+console.log(name)
+// Output:
+'Fat Tony'
+
+console.log(nationality)
+// Output:
+'Italian'
+```
+
 ### Changing variable names
 
 JavaScript uses property names to understand what value you want to extract from an object. Fortunately, there is a way to change the variable name you want the value to be assigned to. What you have to do is to add colons (`:`) and new variable name right after the original variable name. Then, you can use that new name to access that value.
