@@ -31,6 +31,110 @@ const { /* property name(s) */ } = {}
 
 ## Array destructuring
 
+When you want to use destructuring with arrays you have to do two things. First, you have to use syntax with square brackets `[]`. Second, inside these square brackets, you specify the variable name(s) you want to use. When you specify the variables names, make sure you write them in the right order.
+
+The way destructuring with arrays works is that values will be assigned to the variables in the order you write them. So, first variable will be assigned item on index 0, second on index 1, third on index 3 and so on. If you want the order to be different, you have to either change the order variable names or the order of items inside the array.
+
+```JavaScript
+// Create an array
+const myArray = [1, 2, 3, 4, 5]
+
+// Use destructuring to assign first three values from "myArray"
+// The "itemOne", "itemTwo", "itemThree" will create
+// three new variables "itemOne", "itemTwo", "itemThree"
+const [ itemOne, itemTwo, itemThree ] = myArray
+
+// ^ is the same as:
+// const itemOne = myArray[0]
+// const itemTwo = myArray[1]
+// const itemThree = myArray[2]
+
+console.log(itemOne)
+// Output:
+1
+
+console.log(itemTwo)
+// Output:
+2
+
+console.log(itemThree)
+// Output:
+3
+
+
+// Using different order
+const [ itemThree, itemOne, itemTwo ] = myArray
+
+console.log(itemOne)
+// Output:
+1
+
+console.log(itemTwo)
+// Output:
+2
+
+console.log(itemThree)
+// Output:
+3
+```
+
+As I mentioned, destructuring also works when you want to declare variables and assign the later. In this case, you don't use the variable keyword again when you use destructuring to assign values.
+
+```JavaScript
+// Create an array
+const myArray = [0, 1, 2]
+
+// Declare empty variables
+let myVarOne, myVarTwo, myVarThree
+
+// Assign variables later
+[myVarOne, myVarTwo, myVarThree, myVarFour] = myArray
+
+console.log(myVarOne)
+// Output:
+2
+
+console.log(myVarTwo)
+// Output:
+3
+
+console.log(myVarThree)
+// Output:
+1
+```
+
+Destructuring allows you to assign value that doesn't exist in the array. For example, you can use it to assign 4 variables even though the array contains only two items. In that case, first two items will be assigned values from the array. The remaining two will end up being assigned `undefined`.
+
+```JavaScript
+// Create an array
+const myArray = ['Joe', 'Victoria']
+
+// Declare empty variables
+let [myVarOne, myVarTwo, myVarThree, myVarFour] = myArray
+
+console.log(myVarOne)
+// Output:
+'Joe'
+
+console.log(myVarTwo)
+// Output:
+'Victoria'
+
+console.log(myVarThree)
+// Output:
+undefined
+
+console.log(myVarFour)
+// Output:
+undefined
+```
+
+### Skipping values in arrays
+
+
+### Destructuring and rest operator
+
+
 ## Object destructuring
 
 ## Assigning to variables
