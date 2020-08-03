@@ -1,6 +1,6 @@
 # How Destructuring Assignment in JavaScript Works
 
-Destructuring assignment is one of the features introduced in ES6. It is also one of the most popular feature. In this tutorial, you will learn all you need to know about it. You will learn what destructuring is and how it works. You will also learn how to use it, when to use it and what to avoid.<!--more-->
+Destructuring assignment is one of the features introduced in ES6. It is also one of the most popular features. In this tutorial, you will learn all you need to know about it. You will learn what destructuring is and how it works. You will also learn how to use it, when to use it and what to avoid.<!--more-->
 <!--
 Table of Contents:
 ## Introduction to destructuring assignment
