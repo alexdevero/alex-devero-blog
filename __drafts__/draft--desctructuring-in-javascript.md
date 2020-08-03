@@ -3,6 +3,20 @@
 Destructuring assignment is one of the features introduced in ES6. It is also ne of the most popular feature. In this tutorial, you will learn all you need to know about it. You will learn what destructuring is and how it works. You will also learn how to use it, when to use it and what to avoid.<!--more-->
 <!--
 Table of Contents:
+## Introduction to destructuring assignment
+## Destructuring arrays
+### Skipping values in arrays
+### Arrays, destructuring and rest operator
+### Swapping values
+### Destructuring nested arrays
+### Arrays, destructuring and default values
+## Destructuring objects
+### Destructuring and already declared variables
+### Changing variable names
+### Objects, destructuring and default values
+### Computed property names
+### Destructuring nested objects
+## Conclusion: How destructuring assignment in JavaScript works
 -->
 
 ## Introduction to destructuring assignment
