@@ -619,6 +619,8 @@ console.log(position)
 
 ## Conclusion: How destructuring assignment in JavaScript works
 
+Destructuring assignment is one of the features hat can help you do more with less code. I hope this tutorial helped you understand what destructuring assignment is, how it works and how to use it. By now, you should know how to use destructuring with arrays and objects, and what are some gotchas and mistakes to avoid.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
