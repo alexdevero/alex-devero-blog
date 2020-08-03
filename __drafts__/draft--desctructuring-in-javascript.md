@@ -1,6 +1,6 @@
 # How Destructuring Assignment in JavaScript Works
 
-Destructuring assignment is one of the features introduced in ES6. It is also ne of the most popular feature. In this tutorial, you will learn all you need to know about it. You will learn what destructuring is and how it works. You will also learn how to use it, when to use it and what to avoid.<!--more-->
+Destructuring assignment is one of the features introduced in ES6. It is also one of the most popular feature. In this tutorial, you will learn all you need to know about it. You will learn what destructuring is and how it works. You will also learn how to use it, when to use it and what to avoid.<!--more-->
 <!--
 Table of Contents:
 ## Introduction to destructuring assignment
@@ -115,7 +115,7 @@ console.log(myVarThree)
 1
 ```
 
-Destructuring allows you to assign value that doesn't exist in the array. For example, you can use it to assign 4 variables even though the array contains only two items. In that case, first two items will be assigned values from the array. The remaining two will end up being assigned `undefined`.
+Destructuring allows you to assign value that doesn't exist in the array. For example, you can use it to assign four variables even though the array contains only two items. In that case, first two items will be assigned values from the array. The remaining two will end up being assigned `undefined`.
 
 ```JavaScript
 // Create an array
@@ -260,9 +260,9 @@ console.log(remainingArray)
 
 ### Swapping values
 
-Another interesting thing you can do with destructuring is swapping values of variables. Put another way, you can declare two variables and assign them some values. Then, you can use destructuring to swap those values.
+Another interesting thing you can do with destructuring is swapping values of variables. Put another way, you can declare two variables and assign them some values. Then, you can use destructuring to swap those values. Here is how to do this.
 
-Here is how to do this. On the left-hand side of the assignment, you will put the variables (their names) you want to swap. On the right-hand side, you will put the same variables (their names) in the new order you want.
+On the left-hand side of the assignment, you will put the variables (their names) you want to swap. On the right-hand side, you will put the same variables (their names) in the new order you want.
 
 ```JavaScript
 // Declare and assign two variables
@@ -367,7 +367,7 @@ console.log(myVarThree)
 
 ## Destructuring objects
 
-When it comes to destructuring objects there are some differences. First difference is that you have to use curly brackets instead os square. Second difference is that the order of variable you want to assign doesn't matter. The reason is that, with object, destructuring works a bit differently.
+When it comes to destructuring objects there are some differences. The first difference is that you have to use curly brackets instead of square brackets. The second difference is that the order of variable you want to assign doesn't matter. The reason is that, with object, destructuring works a bit differently.
 
 When you work with objects, JavaScript doesn't care about some order. It doesn't use it. Instead, it uses object properties. This is the third difference. You don't use random variable names to assign values from an object. Instead, you use names of existing properties to get values of those properties.
 
@@ -426,7 +426,7 @@ console.log(lastName)
 
 ### Destructuring and already declared variables
 
-Arrays allow you to declare empty variables first and use destructuring to assign them values later. You can do the same also with objects. However, there is catch. You have to wrap the who assignment with parentheses (`()`). Otherwise, JavaScript will think that the `{}` is a block.
+Arrays allow you to declare empty variables first and use destructuring to assign them values later. You can do the same also with objects. However, there is catch. You have to wrap the whole assignment with parentheses (`()`). Otherwise, JavaScript will think that the `{}` is a block.
 
 ```JavaScript
 // Create an object
@@ -456,7 +456,7 @@ console.log(nationality)
 
 ### Changing variable names
 
-JavaScript uses property names to understand what value you want to extract from an object. Fortunately, there is a way to change the variable name you want the value to be assigned to. What you have to do is to add colons (`:`) and new variable name right after the original variable name. Then, you can use that new name to access that value.
+JavaScript uses property names to understand what value do you want to extract from an object. Fortunately, there is a way to change the variable name you want the value to be assigned to. What you have to do is to add colons (`:`) and new variable name right after the original variable name. Then, you can use that new name to access that value.
 
 ```JavaScript
 // Create an object
@@ -529,7 +529,7 @@ undefined
 
 When it comes to destructuring and objects, you can also define property which value you want extract using computed property name. For example, you can use value of a variable to specify property you are looking for. When you want to use computed property name you have to wrap it with square brackets.
 
-When you use computed property name you also have to specify a variable name. You do this in the same way as when you want to chang variable name. First, you use the computed property in square brackets. After that, you add colons and specify the variable name. Later, you can use the variable name to access the extracted value.
+When you use computed property name you also have to specify a variable name. You do this in the same way as when you want to change variable name. First, you use the computed property in square brackets. After that, you add colons and specify the variable name. Later, you can use the variable name to access the extracted value.
 
 ```JavaScript
 // Declare variable and assign it a property name
@@ -555,7 +555,7 @@ console.log(country)
 
 ### Destructuring nested objects
 
-Similarly to nested arrays, you can also use destructuring with nested objects. Also like with arrays, f you want to extract data from nested objects you have to follow the structure of the original object.
+Similarly to nested arrays, you can also use destructuring with nested objects. Also like with arrays, if you want to extract data from nested objects you have to follow the structure of the original object.
 
 ```JavaScript
 // Create nested object
@@ -642,5 +642,5 @@ Destructuring assignment is one of the features hat can help you do more with le
 
 <!--
 ### Resources:
-- https://medium.com/javascript-in-plain-english/everything-you-need-to-know-about-destructuring-in-javascript-5e9fde6e86ff
+-
 -->
