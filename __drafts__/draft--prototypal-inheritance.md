@@ -378,7 +378,55 @@ console.log(personThree.sayHi())
 
 ## Limits of prototypal inheritance
 
-## Looping over object properties and methods
+There is one last thing you should know. Every object in JavaScript can have only one prototype. This may sound like a no-brainer, but it is worth saying. You can't let one object inherit from multiple objects. The value of `[[Prototype]]` will be always only one object reference, or `null`.
+
+If you want one object to inherit from multiple objects there is one thing you can do. You can create something like a chain. You create a base object "A" with some properties and methods. Next, you create another object "B" and let it inherit from "A". Then, you create another object "C" and let it inherit from "B".
+
+The result of this chain will be object "C" that will be able to use anything you defined in both, object "A" and "B".
+
+```JavaScript
+// Base object
+const personOne = {
+  canSee: true,
+  canHear: true
+}
+
+// Create second object
+const personTwo = {
+  canTalk: true,
+  canSing: true
+}
+
+// Create third object
+const personThree = {
+  canWalk: true,
+  canRun: true
+}
+
+// Let "personTwo" also inherit from "personOne"
+Object.setPrototypeOf(personTwo, personOne)
+
+// Let "personThree" also inherit from "personTwo"
+Object.setPrototypeOf(personThree, personTwo)
+
+// Try to access "canSee" property on "personThree"
+// The "canSee" property is inherited from "personOne"
+console.log('canSee: ', personThree.canSee)
+// Output:
+// 'canSee: ' true
+
+// Try to access "canTalk" property on "personThree"
+// The "canTalk" property is inherited from "personTwo"
+console.log('canTalk: ', personThree.canTalk)
+// Output:
+// 'canTalk: ' true
+
+// Try to access "canRun" property on "personThree"
+// The "canRun" property is "personThree" own property
+console.log('canRun: ', personThree.canRun)
+// Output:
+// 'canRun: ' true
+```
 
 ## Conclusion: Objects, __proto__ and prototypal inheritance in JavaScript explained
 
