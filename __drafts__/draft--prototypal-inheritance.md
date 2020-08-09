@@ -1,4 +1,4 @@
-# Objects, __proto__ and [Prototypal inheritance] in JavaScript Explained
+# Objects, [[Prototype]] and Prototypal inheritance in JavaScript Explained
 <!--more-->
 <!--
 Table of Contents:
