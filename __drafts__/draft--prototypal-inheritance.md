@@ -148,6 +148,41 @@ console.log(myNewObj.likesIce)
 true
 ```
 
+### The Object.getPrototypeOf()
+
+You know how to use `__proto__` and `Object.setPrototypeOf()` method to set a prototype of an object. When you want to get current prototype of an object you can use the `Object.getPrototypeOf()`. This method accept on parameter, the object whose prototype you want to get.
+
+Before you use this method there are some things you should know. First, it returns the prototype of given object. However, if you try to print it, or log it, it will not tell you the name of the prototype object. Instead, it will tell you what properties and methods given object inherited.
+
+A better way to use this method is by using it to compare two objects. If the first object has the same prototype as the second, if it inherits from it, the result of this comparison will be `true`. Otherwise, `false`. This way, you can check if one object inherits from another because objects are not [created equal].
+
+```JavaScript
+// Create base object
+const myBaseObj = {
+  canEat: true,
+  canSwim: true
+}
+
+// Create new object that will inherit from "myBaseObj"
+const myNewObj = {
+  canWalk: true
+}
+
+// Let "myNewObj" inherit from "myBaseObj"
+// by setting "myNewObj" prototype to "myBaseObj"
+Object.setPrototypeOf(myNewObj, myBaseObj)
+
+// Test if "myNewObj" and "myBaseObj" has the same prototype
+console.log(Object.getPrototypeOf(myNewObj) === myBaseObj)
+// Output:
+// true
+
+// Log inherited properties of "myNewObj"
+console.log(Object.getPrototypeOf(myNewObj))
+// Output:
+// { canEat: true, canSwim: true }
+```
+
 ## Prototype and reading/writing
 
 ## The value of "this"
