@@ -11,7 +11,7 @@ Table of Contents:
 
 ## Creating, inheriting and reusability
 
-Knowing how to create objects is useful. It can help you do more things, often in better way. However, creating objects from scratch may not always be the best thing to do. The problem is that this practice can lead to repeated code. What you can do instead is create a base object.
+Knowing how to [create objects] is useful. It can help you do more things, often in better way. However, creating objects from scratch may not always be the best thing to do. The problem is that this practice can lead to repeated code. What you can do instead is create a base object.
 
 This base object will contain universal properties and methods you may want in other objects. Later, let's say you want to create an object that will use any of these properties or methods. You don't have to write all those properties and methods from scratch. Instead, you can let that new object inherit from the base object.
 
@@ -385,7 +385,8 @@ console.log(personThree.sayHi())
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[create objects]: https://blog.alexdevero.com/javascript-objects-pt1/#creating-objects
+[created equal]: https://blog.alexdevero.com/javascript-objects-pt2/#javascript-objects-are-not-created-equal
 
 <!--
 ### Meta:
