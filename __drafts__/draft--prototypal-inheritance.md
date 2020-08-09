@@ -2,11 +2,18 @@
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
+## Creating, inheriting and reusability
+## The [[Prototype]] property
+## The [[Prototype]] property and prototypal inheritance
+## The __proto__, Object.setPrototypeOf() and Object.getPrototypeOf
+## Changing the prototype
+### The __proto__
+### The Object.setPrototypeOf()
+### The Object.getPrototypeOf()
+## Prototypal inheritance and the value of "this"
+## Prototype, reading, writing and overriding
+## Limits of prototypal inheritance
+## Conclusion: Objects, [[Prototype]] and prototypal inheritance in
 -->
 
 ## Creating, inheriting and reusability
