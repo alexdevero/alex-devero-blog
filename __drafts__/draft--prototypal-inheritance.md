@@ -106,7 +106,48 @@ console.log(myNewObj.sayHi())
 
 When you want to use some object as a prototype, use it's name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
 
-If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
+### The Object.setPrototypeOf()
+
+The `Object.setPrototypeOf()` is the second option to set or change prototype of an object. When you call it, the `Object.setPrototypeOf()` method accepts two arguments. The first argument is the object that should be inheriting. The second argument is the object you want to inherit from.
+
+```JavaScript
+// Create base object
+const myBaseObj = {
+  species: 'bird',
+  isAlive: true
+}
+
+// Create new object that will inherit from "myBaseObj"
+const myNewObj = {
+  canFly: false,
+  likesIce: true
+}
+
+// Let "myNewObj" inherit from "myBaseObj"
+// by setting "myNewObj" prototype to "myBaseObj"
+Object.setPrototypeOf(myNewObj, myBaseObj)
+
+// Access inherited "species" property on "myNewObj"
+console.log(myNewObj.species)
+// Output:
+'bird'
+
+// Access inherited "isAlive" property on "myNewObj"
+console.log(myNewObj.isAlive)
+// Output:
+true
+
+// Access inherited "canFly" property on "myNewObj"
+console.log(myNewObj.canFly)
+// Output:
+false
+
+// Access inherited "likesIce" property on "myNewObj"
+console.log(myNewObj.likesIce)
+// Output:
+true
+```
+
 ## Prototype and reading/writing
 
 ## The value of "this"
