@@ -33,7 +33,17 @@ In that case, JavaScript will do something interesting. It will take a look at t
 
 If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 
-## __proto__ setter/getter
+## The __proto__, Object.setPrototypeOf() and Object.getPrototypeOf()
+
+The `[[Prototype]]` property is hidden. However, there are ways that allow you to change its value. The one often used way to change prototype of an object is by using `__proto__`. One thing you should remember. The `[[Prototype]]` property and `__proto__` are not the same thing.
+
+The `__proto__` is only a setter and getter for `[[Prototype]]` property. It allows you to work `[[Prototype]]` property. Another ways to set `[[Prototype]]` is by using `Object.setPrototypeOf()` method. This is a more modern setter. More modern getter is `Object.getPrototypeOf()` method.
+
+It is mostly due to overall support by browsers why `__proto__` is more preferred than `Object.setPrototypeOf()`and `Object.getPrototypeOf()`. That said, using `__proto__` is deprecated, and not recommended. What you should use instead is either `Object.setPrototypeOf()` or `Object.getPrototypeOf()`.
+
+## Changing the prototype
+
+
 
 If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 ## Prototype and reading/writing
