@@ -43,7 +43,68 @@ It is mostly due to overall support by browsers why `__proto__` is more preferre
 
 ## Changing the prototype
 
+You know about the `__proto__`, `Object.setPrototypeOf()` and `Object.getPrototypeOf()`. Now, let's take a look at how you can use them to change the prototype of an object. We will take a look at how to do this with both options, the  `Object.setPrototypeOf()` as well as the `__proto__`.
 
+### The __proto__
+
+Fist, the `__proto__`. When you want to change prototype with `__proto__` you will assign a value. First, you need an object that should inherit from another object. You will access `__proto__` of this object. After that, you will choose an object you want the inheriting object to inherit from.
+
+The value of `__proto__` will be a reference to that object you want to inherit from. You will use the name of that object as the value you assign to `__proto__`. That's it. Do this and you will successfully create prototypal inheritance between two objects.
+
+```JavaScript
+// Create base object
+const myBaseObj = {
+  isAlive: true,
+  canSpeak: true,
+  sayHi() {
+    return 'Hello!'
+  }
+}
+
+// Create new object that will inherit from "myBaseObj"
+// Add a couple of its own properties
+const myNewObj = {
+  canWalk: true,
+  canRun: true
+}
+
+// Let "myNewObj" inherit from "myBaseObj"
+// by setting "myNewObj" prototype to "myBaseObj"
+myNewObj.__proto__ = myBaseObj
+
+// Now "myNewObj" basically becomes
+// const myNewObj = {
+//   isAlive: true,
+//   canSpeak: true,
+//   sayHi() {
+//     return 'Hello!'
+//   },
+//   canWalk: true,
+//   canRun: true
+// }
+
+// Access inherited "isAlive" property on "myNewObj"
+console.log('isAlive: ', myNewObj.isAlive)
+// Output:
+'isAlive: ' true
+
+// Access inherited "canSpeak" property on "myNewObj"
+console.log('canSpeak: ', myNewObj.canSpeak)
+// Output:
+'canSpeak: ' true
+
+// Access own "canWalk" property on "myNewObj"
+console.log('canWalk: ', myNewObj.canWalk)
+// Output:
+'canWalk: ' true
+
+// Call inherited "sayHi" method on "myNewObj"
+console.log(myNewObj.sayHi())
+// Output:
+'Hello!'
+```
+
+When you want to use some object as a prototype, use it's name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
 
 If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 ## Prototype and reading/writing
@@ -75,3 +136,12 @@ If the property exists, JavaScript will return its value. If the method exists, 
 - https://blog.alexdevero.com/javascript-objects-pt2/#looping-over-javascript-objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 -->
+// Access inherited "isAlive" property on "myNewObj"
+console.log('isAlive: ', myNewObj.isAlive)
+// Output:
+'isAlive: ' true
+
+// Access inherited "canSpeak" property on "myNewObj"
+console.log('canSpeak: ', myNewObj.canSpeak)
+// Output:
+'canSpeak: ' true
