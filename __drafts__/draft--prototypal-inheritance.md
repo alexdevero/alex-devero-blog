@@ -86,22 +86,55 @@ myNewObj.__proto__ = myBaseObj
 // Access inherited "isAlive" property on "myNewObj"
 console.log('isAlive: ', myNewObj.isAlive)
 // Output:
-'isAlive: ' true
+// 'isAlive: ' true
 
 // Access inherited "canSpeak" property on "myNewObj"
 console.log('canSpeak: ', myNewObj.canSpeak)
 // Output:
-'canSpeak: ' true
+// 'canSpeak: ' true
 
 // Access own "canWalk" property on "myNewObj"
 console.log('canWalk: ', myNewObj.canWalk)
 // Output:
-'canWalk: ' true
+// 'canWalk: ' true
 
 // Call inherited "sayHi" method on "myNewObj"
 console.log(myNewObj.sayHi())
 // Output:
-'Hello!'
+// 'Hello!'
+
+// Create another object that will also inherit from "myBaseObj"
+const myAnotherObj = {
+  canSleep: true
+}
+
+// Let "myAnotherObj" also inherit from "myBaseObj"
+myAnotherObj.__proto__ = myBaseObj
+
+// Now "myAnotherObj" basically becomes
+// const myAnotherObj = {
+//   isAlive: true,
+//   canSpeak: true,
+//   sayHi() {
+//     return 'Hello!'
+//   },
+//   canSleep: true
+// }
+
+// Access inherited "isAlive" property on "myAnotherObj"
+console.log('isAlive: ', myAnotherObj.isAlive)
+// Output:
+// 'isAlive: ' true
+
+// Access inherited "canSpeak" property on "myAnotherObj"
+console.log('canSpeak: ', myAnotherObj.canSpeak)
+// Output:
+// 'canSpeak: ' true
+
+// Access own "canSleep" property on "myAnotherObj"
+console.log('canSleep: ', myAnotherObj.canSleep)
+// Output:
+// 'canSleep: ' true
 ```
 
 When you want to use some object as a prototype, use it's name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
