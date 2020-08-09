@@ -135,6 +135,24 @@ console.log('canSpeak: ', myAnotherObj.canSpeak)
 console.log('canSleep: ', myAnotherObj.canSleep)
 // Output:
 // 'canSleep: ' true
+
+
+// Alternative:
+// Create base object
+const myBaseObj = {
+  isAlive: true,
+  canSpeak: true,
+  sayHi() {
+    return 'Hello!'
+  }
+}
+
+// Create new object that will inherit from "myBaseObj"
+const myNewObj = {
+  canWalk: true,
+  canRun: true,
+  __proto__: myBaseObj // set __proto__ inside an object
+}
 ```
 
 When you want to use some object as a prototype, use it's name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
