@@ -234,6 +234,55 @@ console.log(Object.getPrototypeOf(myNewObj))
 // { canEat: true, canSwim: true }
 ```
 
+## Prototypal inheritance and the value of "this"
+
+When you use `this` in an object it refers to the object itself, the object in which you used it. What happens if you use `this` in an object and you then inherit from that object? Which object will `this` refer to? The answer is, the object you are currently working with, the object before the dot (`myObj.someMethod()`).
+
+If you work with the base object, `this` will refer to that base object. If you work with an object that inherits from the base object, `this` will refer to that inheriting object. So, don't worry if your base object uses `this` in some method. It will work correctly also in case of objects inheriting from that base object.
+
+```JavaScript
+// Create base object
+const personOne = {
+  name: 'Tom',
+  sayHi() {
+    return `Hello I am ${this.name}.`
+  }
+}
+
+// Create another person that will inherit from "personOne"
+const personTwo = {}
+
+// Let "personTwo" inherit from "personOne"
+Object.setPrototypeOf(personTwo, personOne)
+
+// Change the "name" of "personTwo" to "Jack"
+personTwo.name = 'Jack'
+
+// Call the "sayHi()" method on "personTwo"
+console.log(personTwo.sayHi())
+// Output:
+// 'Hello I am Jack.'
+
+// Create third person that will also inherit from "personOne"
+const personThree = {}
+
+// Let "personThree" also inherit from "personOne"
+Object.setPrototypeOf(personThree, personOne)
+
+// Change the "name" of "personThree" to "Victoria"
+personThree.name = 'Victoria'
+
+// Call the "sayHi()" method on "personThree"
+console.log(personThree.sayHi())
+// Output:
+// 'Hello I am Victoria.'
+
+// Call the "sayHi()" method on "personOne" (the base object)
+console.log(personOne.sayHi())
+// Output:
+// 'Hello I am Tom.'
+```
+
 ## Prototype and reading/writing
 
 ## The value of "this"
