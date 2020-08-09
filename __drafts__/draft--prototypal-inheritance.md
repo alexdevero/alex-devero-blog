@@ -31,6 +31,7 @@ When the value is a name of another object it means that the object's prototype 
 
 ## __proto__ setter/getter
 
+If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 ## Prototype and reading/writing
 
 ## The value of "this"
