@@ -19,7 +19,15 @@ When you do this, that new object will be able to use any property and method th
 
 That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of reusability can help you make your code much shorter, clearer and cleaner. This is how prototypal inheritance can help you.
 
-## [[Prototype]] property
+## The [[Prototype]] property
+
+The fundamental part of prototypal inheritance is the `[[Prototype]]` property. This is a special hidden property that exists on every object in JavaScript. The value of this property is always either `null` or name of another object. When the value of `[[Prototype]]` is `null` it means that the object doesn't inherit from any other object.
+
+When the value is a name of another object it means that the object's prototype references another object. Put simply, that object inherits from another object, whose name is specified in `[[Prototype]]`. When this happens, the inheriting object can use any property and method from the object it inherits from.
+
+## Own and inherited properties and methods
+
+
 
 ## __proto__ setter/getter
 
