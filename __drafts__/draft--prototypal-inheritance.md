@@ -25,9 +25,13 @@ The fundamental part of prototypal inheritance is the `[[Prototype]]` property. 
 
 When the value is a name of another object it means that the object's prototype references another object. Put simply, that object inherits from another object, whose name is specified in `[[Prototype]]`. When this happens, the inheriting object can use any property and method from the object it inherits from.
 
-## Own and inherited properties and methods
+## The [[Prototype]] property and prototypal inheritance
 
+This is one of the things in JavaScript that can seem weird. Let's say you want to access some property in an object. If that property exists JavaScript will return it. In case of a method, it will call that method. What if the property you want to access, or method you want to call, doesn't exists on that object?
 
+In that case, JavaScript will do something interesting. It will take a look at the value of `[[Prototype]]` property. If the value is not `null`, it will find the object this property refers to. When it finds it, it will take a look if that object contains the property you want to access, or method you want to call.
+
+If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 
 ## __proto__ setter/getter
 
