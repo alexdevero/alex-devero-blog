@@ -17,7 +17,7 @@ This base object will contain universal properties and methods you may want in o
 
 When you do this, that new object will be able to use any property and method that exists in the base object. This is not everything you can do, yet. You can also add additional properties and methods only to that new object. After this, the base object will still be the same.
 
-That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of reusability can help you make your code much shorter, clearer and cleaner.
+That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of reusability can help you make your code much shorter, clearer and cleaner. This is how prototypal inheritance can help you.
 
 ## [[Prototype]] property
 
