@@ -9,7 +9,25 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
-## h2
+## Creating, inheriting and reusability
+
+Knowing how to create objects is useful. It can help you do more things, often in better way. However, creating objects from scratch may not always be the best thing to do. The problem is that this practice can lead to repeated code. What you can do instead is create a base object.
+
+This base object will contain universal properties and methods you may want in other objects. Later, let's say you want to create an object that will use any of these properties or methods. You don't have to write all those properties and methods from scratch. Instead, you can let that new object inherit from the base object.
+
+When you do this, that new object will be able to use any property and method that exists in the base object. This is not everything you can do, yet. You can also add additional properties and methods only to that new object. After this, the base object will still be the same.
+
+That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of reusability can help you make your code much shorter, clearer and cleaner.
+
+## [[Prototype]] property
+
+## __proto__ setter/getter
+
+## Prototype and reading/writing
+
+## The value of "this"
+
+## Looping over object properties and methods
 
 ## Conclusion: Objects, __proto__ and prototypal inheritance in JavaScript explained
 
