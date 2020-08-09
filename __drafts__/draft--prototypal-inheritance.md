@@ -283,9 +283,100 @@ console.log(personOne.sayHi())
 // 'Hello I am Tom.'
 ```
 
-## Prototype and reading/writing
+## Prototype, reading, writing and overriding
 
-## The value of "this"
+There is another question. What if one object inherits from another and you change that inheriting object? Any change you make to the inheriting object will change only to that inheriting object. The base object you are inheriting from will remain the same. This means two things.
+
+The first one is that this prototypal inheritance relationship is read-only. You can't change the base object by changing inheriting object. You can change the base object only by changing it directly. This will also change all objects that inherit from it
+
+```JavaScript
+// Base object
+const myObjOne = {
+  name: 'Joe',
+  age: 35
+}
+
+// New object
+const myObjTwo = {}
+
+// Let "myObjTwo" also inherit from "myObjOne"
+Object.setPrototypeOf(myObjTwo, myObjOne)
+
+// Change "name" property of "myObjTwo"
+myObjTwo.name = 'Thomas'
+
+// Add "email" property to "myObjTwo"
+myObjTwo.email = 'thomas@paine.com'
+
+// Log the "name" of "myObjTwo"
+console.log(myObjTwo.name)
+// Output:
+// 'Thomas'
+
+// Log the "email" of "myObjTwo"
+console.log(myObjTwo.email)
+// Output:
+// 'thomas@paine.com'
+
+// Try to log the "email" of "myObjOne"
+console.log(myObjOne.email)
+// Output:
+// undefined
+```
+
+The second thing is even more interesting. You can modify inheriting objects. Not only that. You can actually override any inherited properties and methods. Since the relationship is read-only, any of these changes will influence only the inheriting object, not the base.
+
+This means that you can have multiple objects inheriting from a single base object, and you can modify each of them. The base object will always remain unchanged.
+
+```JavaScript
+// Base object
+const personOne = {
+  name: 'Joe',
+  age: 35,
+  sayHi() {
+    return `Hi, my name is ${this.name}.`
+  }
+}
+
+// Create new object
+const personTwo = {}
+
+// Let "myObjTwo" also inherit from "myObjOne"
+Object.setPrototypeOf(personTwo, personOne)
+
+// Change "name" of "personTwo"
+personTwo.name = 'Kurt'
+
+// Change/override "sayHi" method of "personTwo"
+personTwo.sayHi = function() {
+  return `Hallo, ich heiße ${this.name}.`
+}
+
+// Create another object
+const personThree = {}
+
+// Let "myObjTwo" also inherit from "myObjOne"
+Object.setPrototypeOf(personThree, personOne)
+
+// Change "name" of "personThree"
+personThree.name = 'Louis'
+
+// Change/override "sayHi" method of "personThree"
+personThree.sayHi = function() {
+  return `Salut, je m'appelle ${this.name}.`
+}
+
+console.log(personOne.sayHi())
+// 'Hi, my name is Joe.'
+
+console.log(personTwo.sayHi())
+// 'Hallo, ich heiße Kurt.'
+
+console.log(personThree.sayHi())
+// "Salut, je m'appelle Louis."
+```
+
+## Limits of prototypal inheritance
 
 ## Looping over object properties and methods
 
