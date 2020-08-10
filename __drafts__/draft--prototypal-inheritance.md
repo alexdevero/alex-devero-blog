@@ -25,7 +25,7 @@ This base object will contain universal properties and methods you may want in o
 
 When you do this, that new object will be able to use any property and method that exists in the base object. This is not everything you can do, yet. You can also add additional properties and methods only to that new object. After this, the base object will still be the same.
 
-That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of reusability can help you make your code much shorter, clearer and cleaner. This is how prototypal inheritance can help you.
+That new object, however, will not only be able to use anything from the base object. It will also be able to use anything new you've just added. This degree of re-usability can help you make your code much shorter, clearer and cleaner. This is how prototypal inheritance can help you.
 
 ## The [[Prototype]] property
 
@@ -35,17 +35,17 @@ When the value is a name of another object it means that the object's prototype 
 
 ## The [[Prototype]] property and prototypal inheritance
 
-This is one of the things in JavaScript that can seem weird. Let's say you want to access some property in an object. If that property exists JavaScript will return it. In case of a method, it will call that method. What if the property you want to access, or method you want to call, doesn't exists on that object?
+This is one of the things in JavaScript that can seem weird. Let's say you want to access some property in an object. If that property exists JavaScript will return it. In case of a method, it will call that method. What if the property you want to access, or method you want to call, doesn't exist on that object?
 
 In that case, JavaScript will do something interesting. It will take a look at the value of `[[Prototype]]` property. If the value is not `null`, it will find the object this property refers to. When it finds it, it will take a look if that object contains the property you want to access, or method you want to call.
 
-If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in esence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
+If the property exists, JavaScript will return its value. If the method exists, JavaScript will call it. This, in essence, is what prototypal inheritance is about. You can access "stuff" in one object even though you are working with a different object, if that different object inherits from the first object.
 
 ## The __proto__, Object.setPrototypeOf() and Object.getPrototypeOf()
 
 The `[[Prototype]]` property is hidden. However, there are ways that allow you to change its value. The one often used way to change prototype of an object is by using `__proto__`. One thing you should remember. The `[[Prototype]]` property and `__proto__` are not the same thing.
 
-The `__proto__` is only a setter and getter for `[[Prototype]]` property. It allows you to work `[[Prototype]]` property. Another ways to set `[[Prototype]]` is by using `Object.setPrototypeOf()` method. This is a more modern setter. More modern getter is `Object.getPrototypeOf()` method.
+The `__proto__` is only a setter and getter for `[[Prototype]]` property. It allows you to work `[[Prototype]]` property. Another way to set `[[Prototype]]` is by using `Object.setPrototypeOf()` method. This is a more modern setter. More modern getter is `Object.getPrototypeOf()` method.
 
 It is mostly due to overall support by browsers why `__proto__` is more preferred than `Object.setPrototypeOf()`and `Object.getPrototypeOf()`. That said, using `__proto__` is deprecated, and not recommended. What you should use instead is either `Object.setPrototypeOf()` or `Object.getPrototypeOf()`.
 
@@ -163,7 +163,7 @@ const myNewObj = {
 }
 ```
 
-When you want to use some object as a prototype, use it's name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
+When you want to use some object as a prototype, use its name as it is, as an object. Don't try to use it, assign it in case of `__proto__`, as a string. That will not work.
 
 ### The Object.setPrototypeOf()
 
@@ -211,7 +211,7 @@ true
 
 You know how to use `__proto__` and `Object.setPrototypeOf()` method to set a prototype of an object. When you want to get current prototype of an object you can use the `Object.getPrototypeOf()`. This method accept on parameter, the object whose prototype you want to get.
 
-Before you use this method there are some things you should know. First, it returns the prototype of given object. However, if you try to print it, or log it, it will not tell you the name of the prototype object. Instead, it will tell you what properties and methods given object inherited.
+Before you use this method, there are some things you should know. First, it returns the prototype of given object. However, if you try to print it, or log it, it will not tell you the name of the prototype object. Instead, it will tell you what properties and methods given object inherited.
 
 A better way to use this method is by using it to compare two objects. If the first object has the same prototype as the second, if it inherits from it, the result of this comparison will be `true`. Otherwise, `false`. This way, you can check if one object inherits from another because objects are not [created equal].
 
@@ -295,7 +295,7 @@ console.log(personOne.sayHi())
 
 There is another question. What if one object inherits from another and you change that inheriting object? Any change you make to the inheriting object will change only to that inheriting object. The base object you are inheriting from will remain the same. This means two things.
 
-The first one is that this prototypal inheritance relationship is read-only. You can't change the base object by changing inheriting object. You can change the base object only by changing it directly. This will also change all objects that inherit from it
+The first one is that this prototypal inheritance relationship is read-only. You can't change the base object by changing inheriting object. You can change the base object only by changing it directly. This will also change all objects that inherit from it.
 
 ```JavaScript
 // Base object
@@ -458,16 +458,5 @@ Prototypal inheritance is one of the topics every developer should know. It is a
 
 <!--
 ### Resources:
-- https://javascript.info/prototype-inheritance
-- https://blog.alexdevero.com/javascript-objects-pt2/#looping-over-javascript-objects
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+-
 -->
-// Access inherited "isAlive" property on "myNewObj"
-console.log('isAlive: ', myNewObj.isAlive)
-// Output:
-'isAlive: ' true
-
-// Access inherited "canSpeak" property on "myNewObj"
-console.log('canSpeak: ', myNewObj.canSpeak)
-// Output:
-'canSpeak: ' true
