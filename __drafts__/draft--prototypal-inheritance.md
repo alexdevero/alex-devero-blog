@@ -1,5 +1,6 @@
-# Objects, [[Prototype]] and Prototypal inheritance in JavaScript Explained
-<!--more-->
+# Objects, [[Prototype]] and Prototypal Inheritance in JavaScript
+
+Prototypal inheritance is one of the topics in programming every developer should know. This tutorial will help you learn what prototypal inheritance is, how it works and how to use it. You will learn about `[[Prototype]]`, `__proto__`, how to change prototypes and much much more.<!--more-->
 <!--
 Table of Contents:
 ## Creating, inheriting and reusability
