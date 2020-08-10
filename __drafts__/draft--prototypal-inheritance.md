@@ -436,7 +436,9 @@ console.log('canRun: ', personThree.canRun)
 // 'canRun: ' true
 ```
 
-## Conclusion: Objects, __proto__ and prototypal inheritance in JavaScript explained
+## Conclusion: Objects, [[Prototype]] and prototypal inheritance in JavaScript
+
+Prototypal inheritance is one of the topics every developer should know. It is also one of the topics that can sound more complicated than they are. I hope that this tutorial made it easier for you to understand what prototypal inheritance is, how it works and how to work with it.
 
 [xyz-ihs snippet="thank-you-message"]
 
