@@ -146,6 +146,33 @@ console.log(mySet)
 // Set { 'Virgo' }
 ```
 
+## Removing all values from Sets
+
+Sometimes, you may want to remove all values from set. This can be done using `clear()` method. This method doesn't accept any arguments.
+
+```JavaScript
+// Create new set
+let mySet = new Set()
+
+// Add some values
+mySet.add('Centaurus')
+mySet.add('Sculptor')
+mySet.add('Circinus')
+
+// Log the value of "mySet"
+console.log(mySet)
+// Output:
+// Set { 'Centaurus', 'Sculptor', 'Circinus' }
+
+// Remove all values
+mySet.clear()
+
+// Log the value of "mySet" again
+console.log(mySet)
+// Output:
+// Set {}
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
