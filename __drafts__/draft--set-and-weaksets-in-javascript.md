@@ -382,6 +382,8 @@ mySet.forEach(val => {
 
 ## Conclusion: Introduction to sets in JavaScript
 
+Sets can be useful and powerful tool in a toolkit of every JavaScript developer. They can be a handy alternative to arrays and maps. I hope this tutorial made it easier for you to understand what sets in JavaScript are, how they work and, most importantly, how to use them.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
