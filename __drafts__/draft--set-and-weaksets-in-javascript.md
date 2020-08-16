@@ -262,6 +262,32 @@ console.log(mySetValues.next().value)
 // undefined
 ```
 
+If you don't want use the `next()` method to get the values, you can use [for...of loop] instead. The `for...of` loop will help you to loop over the iterator object and get all values one by one automatically.
+
+```JavaScript
+// Create new set
+const mySet = new Set()
+
+// Add some values
+mySet.add('Loki')
+mySet.add('Thor')
+mySet.add('Freyr')
+
+// Create an iterator object that contains all values
+const mySetValues = mySet.values()
+
+// Loop over the "mySetValues" iterator object
+// and log all values one by one
+for (const val of mySetValues) {
+  console.log(val)
+}
+
+// Output:
+// 'Loki'
+// 'Thor'
+// 'Freyr'
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
@@ -276,6 +302,7 @@ console.log(mySetValues.next().value)
 [primitive data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 [deconstructed]: https://blog.alexdevero.com/destructuring-assignment-javascript/#destructuring-arrays
 [iterator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+[for...of loop]: https://blog.alexdevero.com/javascript-loops/#for8230of-loop
 
 <!--
 ### Meta:
