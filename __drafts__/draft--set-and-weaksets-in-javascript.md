@@ -5,12 +5,12 @@ Sets are a new object type introduced in ES6 (ES2015). Although they are lesser 
 <!--more-->
 <!--
 Table of Contents:
-## Introduction to Sets
+## Introduction to sets
 ## Creating sets in JavaScript
-## Adding values to Sets
+## Adding values to sets
 ## Removing values from Sets
-## Removing all values from Sets
-## Checking for existing values in Sets
+## Removing all values from sets
+## Checking for existing values in sets
 ## Finding out how big a set is
 ## Sets, keys and values
 ### Looping over values with for...of loop
@@ -18,7 +18,7 @@ Table of Contents:
 ## Conclusion: Introduction to sets in JavaScript
 -->
 
-## Introduction to Sets
+## Introduction to sets
 
 Sets are a new object type that was introduced to JavaScript with ES6 (ES2015). What sets allow you to do is to create collections of values. These values can be anything, from [numbers] and [strings] to [arrays] and [objects]. This doesn't sound like something exciting. You can do the same thing with arrays.
 
@@ -35,7 +35,7 @@ When you want to create sets in JavaScript you do it always with the set constru
 const mySet = new Set()
 ```
 
-## Adding values to Sets
+## Adding values to sets
 
 When you are creating new set, there are two things you can do. First, you can create new empty Set object and add values to it later. You can add values to a set using `add()` method. This method accepts either one value or an iterable. Iterable means an array of values.
 
@@ -73,7 +73,7 @@ console.log(mySet)
 // Set { [ 'Strike', 13, false, null, [ 5, 6 ], { language: 'JS & TS' } ] }
 ```
 
-The second option is to add values right at moment you are creating a set. To do this, you have to pass an iterable with some values as a parameter to set constructor.Remember that it is necessary to pass those values as iterable, that is an array. Otherwise, nothing will be added. This applies to both, single and multiple values.
+The second option is to add values right at moment you are creating a set. To do this, you have to pass an iterable with some values as a parameter to set constructor. Remember that it is necessary to pass those values as iterable, that is an array. Otherwise, nothing will be added. This applies to both, single and multiple values.
 
 ```JavaScript
 // Create new set and add a single value
@@ -160,7 +160,7 @@ console.log(mySet)
 // Set { 'Virgo' }
 ```
 
-## Removing all values from Sets
+## Removing all values from sets
 
 Sometimes, you may want to remove all values from set. This can be done using `clear()` method. This method doesn't accept any arguments.
 
@@ -187,7 +187,7 @@ console.log(mySet)
 // Set {}
 ```
 
-## Checking for existing values in Sets
+## Checking for existing values in sets
 
 The `has()` method is probably the simplest way to test if set contains a specific value. This method accepts a single parameter, value you want to search for. If the value exists, `has()` will return `true`. Otherwise, it will return `false`.
 
