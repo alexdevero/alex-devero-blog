@@ -18,7 +18,7 @@ When you want to create sets in JavaScript you do it always with the set constru
 
 ```JavaScript
 // Create new empty set
-let mySet = new Set()
+const mySet = new Set()
 ```
 
 ## Adding values to Sets
@@ -30,7 +30,7 @@ So, you can either pass in values one by one, or you can pass in an array with v
 ```JavaScript
 // Example no.1: Adding a single value
 // Create new empty set
-let mySet = new Set()
+const mySet = new Set()
 
 // Add single values to "mySet" set
 mySet.add('Helo')
@@ -48,7 +48,7 @@ console.log(mySet)
 
 // Example no.2: Adding multiple values
 // Create new empty set
-let mySet = new Set()
+const mySet = new Set()
 
 // Add multiple values to "mySet" set vie iterable
 mySet.add(['Strike', 13, false, null, [5, 6], { language: 'JS & TS' }])
@@ -63,7 +63,7 @@ The second option is to add values right at moment you are creating a set. To do
 
 ```JavaScript
 // Create new set and add a single value
-let mySetOne = new Set(['Blackout!'])
+const mySetOne = new Set(['Blackout!'])
 
 // Log the value of "mySetOne"
 console.log(mySetOne)
@@ -72,7 +72,7 @@ console.log(mySetOne)
 
 
 // Create new set and add a single value
-let mySetThree = new Set([{ galaxy: 'Milky way' }])
+const mySetThree = new Set([{ galaxy: 'Milky way' }])
 
 // Log the value of "mySetOne"
 console.log(mySetThree)
@@ -81,7 +81,7 @@ console.log(mySetThree)
 
 
 // Create new set and add a single value
-let mySetFour = new Set([['Andromeda', 'Mayall\'s Object', 'Malin 1']])
+const mySetFour = new Set([['Andromeda', 'Mayall\'s Object', 'Malin 1']])
 
 // Log the value of "mySetOne"
 console.log(mySetFour)
@@ -90,7 +90,7 @@ console.log(mySetFour)
 
 
 // Create new set and add multiple values
-let mySetTwo = new Set(['Entropy', 'atoms', ['gravity', 'space']])
+const mySetTwo = new Set(['Entropy', 'atoms', ['gravity', 'space']])
 
 // Log the value of "mySetOne"
 console.log(mySetTwo)
@@ -110,7 +110,7 @@ If you try to pass in values in the form of an array. The `delete()` method will
 
 ```JavaScript
 // Create new set with some values
-let mySet = new Set(['Pegasus', 'Hydra', 'Virgo'])
+const mySet = new Set(['Pegasus', 'Hydra', 'Virgo'])
 
 // Log the value of "mySet"
 console.log(mySet)
@@ -152,7 +152,7 @@ Sometimes, you may want to remove all values from set. This can be done using `c
 
 ```JavaScript
 // Create new set
-let mySet = new Set()
+const mySet = new Set()
 
 // Add some values
 mySet.add('Centaurus')
