@@ -288,6 +288,62 @@ for (const val of mySetValues) {
 // 'Freyr'
 ```
 
+## Getting all entries in a set
+
+Aside to the `values()` and `keys()` methods, you can also access all values inside a set with `entries()` method. Similarly to `values()` and `keys()`, this method also creates an iterator object containing all entries. You can then iterate over this object using either `next()` method or `for...of` loop.
+
+```JavaScript
+// Create new set
+const mySet = new Set()
+
+// Add some values
+mySet.add('MSFT')
+mySet.add('AAPL')
+mySet.add('BABA')
+mySet.add('ADBE')
+mySet.add('DELL')
+
+// Create an iterator object that contains all entries (values)
+const mySetEntries = mySet.entries()
+
+// Loop over the "mySetValues" iterator object
+// and log all values one by one
+for (const entry of mySetEntries) {
+  console.log(entry)
+}
+
+// Output:
+// [ 'MSFT', 'MSFT' ]
+// [ 'AAPL', 'AAPL' ]
+// [ 'BABA', 'BABA' ]
+// [ 'ADBE', 'ADBE' ]
+// [ 'DELL', 'DELL' ]
+
+
+// Or using next() method
+// Log the first value
+console.log(mySetEntries.next().value)
+// Output:
+// [ 'MSFT', 'MSFT' ]
+
+// Log the second value
+console.log(mySetEntries.next().value)
+// Output:
+// [ 'AAPL', 'AAPL' ]
+
+// Log the third value
+console.log(mySetEntries.next().value)
+// Output:
+// [ 'BABA', 'BABA' ]
+
+// Log the fourth value
+console.log(mySetEntries.next().value)
+// Output:
+// [ 'ADBE', 'ADBE' ]
+```
+
+When you use the `entries()` method the format for each entry will be `[ key, value ]`. What may surprise you is that the `key` and `value` in this entry array will be the same. You could see this on the example above. Don't worry about this. This is how the `entries()` method was implemented in JavaScript.
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
