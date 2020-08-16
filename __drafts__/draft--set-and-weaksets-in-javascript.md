@@ -357,6 +357,26 @@ console.log(mySetEntries.next().value)
 
 When you use the `entries()` method the format for each entry will be `[ key, value ]`. What may surprise you is that the `key` and `value` in this entry array will be the same. You could see this on the example above. Don't worry about this. This is how the `entries()` method was implemented in JavaScript.
 
+## Iterating over sets with forEach()
+
+The `for...in` loop is not the only way to iterate over a set. You can also use `forEach()` method. This might be even easier and faster than using `for...in` loop.
+
+```JavaScript
+// Create new set
+const mySet = new Set(['JavaScript', 'Python', 'Ruby', 'Perl'])
+
+// Use forEach() to iterate over "mySet"
+// and log all existing values
+mySet.forEach(val => {
+  console.log(val)
+})
+// Output:
+// 'JavaScript'
+// 'Python'
+// 'Ruby'
+// 'Perl'
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
