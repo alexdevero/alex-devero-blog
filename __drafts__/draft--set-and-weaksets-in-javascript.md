@@ -12,7 +12,17 @@ The thing about sets, and where they differ from arrays, is that they can contai
 
 This is one of the reasons why JavaScript developers sometimes choose sets over arrays. When you want to create a collection of some values, and you need all values to be unique, sets are the easiest option.
 
-## Conclusion: Introduction to Sets and WeakSets in JavaScript
+## Creating sets in JavaScript
+
+When you want to create sets in JavaScript you do it always with the set constructor `set()`, preceded by the `new` keyword. This will create new Set object.
+
+```JavaScript
+// Create new empty set
+let mySet = new Set()
+```
+
+
+## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
