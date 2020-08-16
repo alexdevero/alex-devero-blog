@@ -276,6 +276,7 @@ console.log(mySetValues.next().value)
 [undefined]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#undefined
 [primitive data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 [deconstructed]: https://blog.alexdevero.com/destructuring-assignment-javascript/#destructuring-arrays
+[iterator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
 
 <!--
 ### Meta:
