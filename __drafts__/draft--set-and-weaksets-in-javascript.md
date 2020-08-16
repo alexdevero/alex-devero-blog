@@ -192,7 +192,7 @@ mySet.has('Leopold')
 // false
 ```
 
-## Checking for the size of a set
+## Finding out how big a set is
 
 When you want to know how many items are in an array, you can use its `length` property. Sets don't have exactly this property. However, they have an alternative. This alternative is `size` property. It works just like `length` property, returns the number all values that exist in a specific set.
 
