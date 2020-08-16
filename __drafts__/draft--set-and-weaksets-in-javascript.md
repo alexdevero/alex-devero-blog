@@ -1,4 +1,7 @@
-# Introduction to Sets and WeakSets in JavaScript
+# Introduction to Sets in JavaScript
+
+Sets are a new object type introduced in ES6 (ES2015). Although they are lesser known, they can be very useful and powerful. This tutorial will help you learn all you need to know about them. You will learn about what sets in JavaScript are, how they work and how to use them.
+
 <!--more-->
 <!--
 Table of Contents:
@@ -12,7 +15,7 @@ Table of Contents:
 ## Sets, keys and values
 ### Looping over values with for...of loop
 ## Getting all entries in a set
-## Conclusion: Introduction to sets and WeakSets in JavaScript
+## Conclusion: Introduction to sets in JavaScript
 -->
 
 ## Introduction to Sets
@@ -377,7 +380,7 @@ mySet.forEach(val => {
 // 'Perl'
 ```
 
-## Conclusion: Introduction to sets and WeakSets in JavaScript
+## Conclusion: Introduction to sets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -405,6 +408,5 @@ mySet.forEach(val => {
 
 <!--
 ### Resources:
-- https://alligator.io/js/sets-introduction/
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
+-
 -->
