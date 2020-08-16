@@ -262,6 +262,8 @@ console.log(mySetValues.next().value)
 // undefined
 ```
 
+### Looping over values with for...of loop
+
 If you don't want use the `next()` method to get the values, you can use [for...of loop] instead. The `for...of` loop will help you to loop over the iterator object and get all values one by one automatically.
 
 ```JavaScript
