@@ -2,6 +2,17 @@
 <!--more-->
 <!--
 Table of Contents:
+## Introduction to Sets
+## Creating sets in JavaScript
+## Adding values to Sets
+## Removing values from Sets
+## Removing all values from Sets
+## Checking for existing values in Sets
+## Finding out how big a set is
+## Sets, keys and values
+### Looping over values with for...of loop
+## Getting all entries in a set
+## Conclusion: Introduction to sets and WeakSets in JavaScript
 -->
 
 ## Introduction to Sets
