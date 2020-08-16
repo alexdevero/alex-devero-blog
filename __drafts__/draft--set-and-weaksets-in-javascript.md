@@ -236,7 +236,6 @@ const mySetValues = mySet.values()
 
 // Alternative:
 // const mySetValues = mySet.keys()
-const mySetValues = mySet.keys()
 
 // Log the value of "mySetValues"
 console.log(mySetValues)
