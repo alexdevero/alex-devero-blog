@@ -173,6 +173,25 @@ console.log(mySet)
 // Set {}
 ```
 
+## Checking for existing values in Sets
+
+The `has()` method is probably the simplest way to test if set contains a specific value. This method accepts a single parameter, value you want to search for. If the value exists, `has()` will return `true`. Otherwise, it will return `false`.
+
+```JavaScript
+// Create new set with some values
+const mySet = new Set(['Jack', 'Andrew', 'Victoria', 'Emma'])
+
+// Check if "mySet" contains "Andrew"
+mySet.has('Andrew')
+// Output:
+// true
+
+// Check if "mySet" contains "Leopold"
+mySet.has('Leopold')
+// Output:
+// false
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
