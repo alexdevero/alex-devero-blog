@@ -192,6 +192,30 @@ mySet.has('Leopold')
 // false
 ```
 
+## Checking for the size of a set
+
+When you want to know how many items are in an array, you can use its `length` property. Sets don't have exactly this property. However, they have an alternative. This alternative is `size` property. It works just like `length` property, returns the number all values that exist in a specific set.
+
+```JavaScript
+// Create new set
+const mySet = new Set()
+
+// Log the size of "mySet"
+console.log(mySet.size)
+// Output:
+// 0
+
+// Add some values
+mySet.add('Earth')
+mySet.add('Mars')
+mySet.add('Jupiter')
+
+// Log the size of "mySet" again
+console.log(mySet.size)
+// Output:
+// 3
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
