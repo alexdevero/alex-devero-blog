@@ -100,6 +100,52 @@ console.log(mySetTwo)
 
 Notice that when you add values to set when you create it that array will get [deconstructed]. This means that `new Set(['a', 'b'])` will become `Set {'a', 'b'}`. See? No array wrapping the values. However, if you add an array inside the outer most array it will remain an array, such as in `['Entropy', 'atoms', ['gravity', 'space']]`.
 
+## Removing values from Sets
+
+The easiest way to remove a value from a set is by using `delete()` method. This method works in a similar way as the `add()` method. You pass the value as an argument when you call this method. If deletion is successful, `delete()` will return `true`. If not, it will return `false`.
+
+One potential downside of this method is that it works only with one value at the time. If you try to pass in multiple values in the form of multiple arguments it will work only partially. The `delete()` method will remove only the first value, the first argument, and ignore the rest.
+
+If you try to pass in values in the form of an array. The `delete()` method will ignore all values.
+
+```JavaScript
+// Create new set with some values
+let mySet = new Set(['Pegasus', 'Hydra', 'Virgo'])
+
+// Log the value of "mySet"
+console.log(mySet)
+// Output:
+// Set { 'Pegasus', 'Hydra', 'Virgo' }
+
+// Remove some values
+mySet.delete('Pegasus')
+
+// Log the value of "mySet" again
+console.log(mySet)
+// Output:
+// Set { 'Hydra', 'Virgo' }
+
+
+// Try to remove multiple values again using array
+// Doesn't work at all
+mySet.delete(['Hydra', 'Virgo'])
+
+// Log the value of "mySet" again
+console.log(mySet)
+// Output:
+// Set { 'Hydra', 'Virgo' }
+
+
+// Try to remove multiple values using multiple parameters
+// Removes only the first value passed into delete()
+mySet.delete('Hydra', 'Virgo')
+
+// Log the value of "mySet" again
+console.log(mySet)
+// Output:
+// Set { 'Virgo' }
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
