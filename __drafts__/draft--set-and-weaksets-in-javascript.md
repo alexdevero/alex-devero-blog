@@ -216,6 +216,53 @@ console.log(mySet.size)
 // 3
 ```
 
+## Sets, keys and values
+
+If you want to find out what values a set contains, there are two methods you can use. Well, it is one method and one alias for the same method. The method is `values()` and the alias is `keys()`. Using any of these methods will create an [iterator] object. This iterator contains all values in the order in which you added them to the set.
+
+When you have this iterator you can iterate over all values one by one. If you are not familiar with iterators and generators. When you work with iterator object, you can go to the next value by calling the `next()` method. You call this method on the iterator object you created.
+
+```JavaScript
+// Create new set
+const mySet = new Set()
+
+// Add some values
+mySet.add('Loki')
+mySet.add('Thor')
+mySet.add('Freyr')
+
+// Create an iterator object that contains all values
+const mySetValues = mySet.values()
+
+// Alternative:
+// const mySetValues = mySet.keys()
+const mySetValues = mySet.keys()
+
+// Log the value of "mySetValues"
+console.log(mySetValues)
+// Output:
+// [Set Iterator] { 'Loki', 'Thor', 'Freyr' }
+
+// Log the first value
+console.log(mySetValues.next().value)
+// 'Loki'
+
+// Log the second value
+console.log(mySetValues.next().value)
+// 'Thor'
+
+// Log the third value
+console.log(mySetValues.next().value)
+// 'Freyr'
+
+// Log the fourth value
+// There are only three values in the set
+// that's why the "value" is now "undefined"
+console.log(mySetValues.next().value)
+// Output:
+// undefined
+```
+
 ## Conclusion: Introduction to sets and WeakSets in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
