@@ -1,4 +1,4 @@
-# Introduction to Sets in JavaScript
+# Introduction to Sets in JavaScript - All You Need to Know
 
 Sets are a new object type introduced in ES6 (ES2015). Although they are lesser known, they can be very useful and powerful. This tutorial will help you learn all you need to know about them. You will learn about what sets in JavaScript are, how they work and how to use them.<!--more-->
 <!--
