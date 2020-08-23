@@ -60,6 +60,27 @@ console.log(myMap)
 // }
 ```
 
+When you want to add multiple key-value pairs to a map you can do it only one at the time. One interesting thing is that maps support chaining. So, yes, you have to use `set()` method for every key-value pair you want to add. However, you can chain these methods so you don't have to use the name of the map over and over again.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values using chaining
+myMap.set('Language', 'JavaScript')
+  .set('Author', 'Brendan Eich')
+  .set('First appeared', '1995')
+
+// Log the content of "myMap"
+console.log(myMap)
+// Output:
+// Map {
+//   'Language' => 'JavaScript',
+//   'Author' => 'Brendan Eich',
+//   'First appeared' => '1995'
+// }
+```
+
 ## Removing values from maps
 
 When you want to remove values from maps the process is simple. There is a method you have use called `delete()`. This method takes one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist in the map, it will return `false`.
