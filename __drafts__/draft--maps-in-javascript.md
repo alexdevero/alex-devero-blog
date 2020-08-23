@@ -26,6 +26,17 @@ Another nice thing is that maps, like array, are iterable. You don't have to get
 
 The last difference, that is good to know, is that maps are optimized for adding and removing of key-value pairs. Objects are not. This may not matter if you don't need to manipulate with data often. If you do using maps may help you improve performance of your JavaScript code.
 
+## Creating maps in JavaScript
+
+Maps are similar to objects. One thing that is different between them, among the things we just discussed, is how you create them. When you want to create a new object, there are multiple options to do that. For example, you can use `new Object()`, `Object.create()`, object literal or object constructor.
+
+When you want to create a new map, there is only one option to do it. You can create new maps only by creating new Map object, using `new Map()`.
+
+```JavaScript
+// Creating new map
+let myMap = new Map()
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
