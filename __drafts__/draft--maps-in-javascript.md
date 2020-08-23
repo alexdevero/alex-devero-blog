@@ -16,7 +16,7 @@ Also just like with objects, you can add new keys and delete existing, and retri
 
 ## Maps vs Objects
 
-One of the most important differences is that, when it comes to maps, you can use any data type to create keys. You can use even objects or functions. Objects will allow you to use ony [strings] or a [symbols]. Another important difference is the order of keys-value pairs.
+One of the most important differences is that, when it comes to maps in JavaScript, you can use any data type to create keys. You can use even objects or functions. Objects will allow you to use ony [strings] or a [symbols]. Another important difference is the order of keys-value pairs.
 
 In maps, keys are ordered based on the order you've added them to the map. If you iterate over a map, you will get its keys in the same order in which you've created them. In case of objects, this is true since ES2015 and only for JavaScript engines that support this specification. Before ES2015, keys in objects were not ordered.
 
