@@ -482,6 +482,8 @@ console.log(myObj)
 
 ## Conclusion: Introduction to maps in JavaScript
 
+Maps are one of the lesser known, and less frequently used, object types in JavaScript. I hope this tutorial helped you learn what maps in JavaScript are, how they work and how to use them. I also hope it helped you distinguish when they can be a better choice than objects.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
