@@ -14,6 +14,18 @@ As a JavaScript developer you probably know JavaScript [objects]. Objects allow 
 
 Also just like with objects, you can add new keys and delete existing, and retrieve their values from maps. When you compare maps and objects, there are some differences you should know about. Let's take a look at those differences before moving further.
 
+## Maps vs Objects
+
+One of the most important differences is that, when it comes to maps, you can use any data type to create keys. You can use even objects or functions. Objects will allow you to use ony [strings] or a [symbols]. Another important difference is the order of keys-value pairs.
+
+In maps, keys are ordered based on the order you've added them to the map. If you iterate over a map, you will get its keys in the same order in which you've created them. In case of objects, this is true since ES2015 and only for JavaScript engines that support this specification. Before ES2015, keys in objects were not ordered.
+
+Another difference is how easy it is to get the size of a map. Like [set], every map has a `size` property that says how many key-value pairs it contains. With objects, you would have to use `keys()` or `values()` to get an array of keys or values. Then use `length` to get the length of this array to finally get the size of an object.
+
+Another nice thing is that maps, like array, are iterable. You don't have to get the keys or values first in order to iterate over them. You can do it right away. For example, you can use [forEach() method], just like with array. You can also use [for...of loop], just like with objects.
+
+The last difference, that is good to know, is that maps are optimized for adding and removing of key-value pairs. Objects are not. This may not matter if you don't need to manipulate with data often. If you do using maps may help you improve performance of your JavaScript code.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
