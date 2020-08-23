@@ -37,6 +37,76 @@ When you want to create a new map, there is only one option to do it. You can cr
 let myMap = new Map()
 ```
 
+## Adding values to maps
+
+When you want to add values, key-value pairs, to an object there are [two ways] to do that. Well, three, if you count adding values during object initialization. The first is using do notation. The second is using square brackets. The second way, square brackets, works also with maps.
+
+That said, adding values to maps using square brackets is not a good practice. The problem is that when you do this you will lose performance optimizations maps have. The right way to add values to maps is by using `set()` method. This method takes two parameters. First is for the `key` and second for the `value`.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values (key-value pairs) to "myMap"
+myMap.set('name', 'James Reacher')
+myMap.set('bio', { age: 35, height: 189, weight: 82 })
+
+// Log the content of "myMap"
+console.log(myMap)
+// Output:
+// Map {
+//   'name' => 'James Reacher',
+//   'bio' => { age: 35, height: 189, weight: 82 }
+// }
+```
+
+## Removing values from maps
+
+When you want to remove values from maps the process is simple. There is a method you have use called `delete()`. This method takes one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist in the map, it will return `false`.
+
+One thing to remember about `delete()` method is that it works only with one key at the time. You can't pass in multiple keys. If you try it the `delete()` method will remove only the first key. It will ignore the rest.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values to "myMap"
+myMap.set('name', 'Joe')
+myMap.set('age', 25)
+
+// Log the content of "myMap"
+console.log(myMap)
+// Output:
+// Map { 'name' => 'Joe', 'age' => 25 }
+
+// Remove "name" from "myMap"
+myMap.delete('name')
+
+// Log the content of "myMap" again
+console.log(myMap)
+// Output:
+// Map { 'age' => 25 }
+
+
+// This will not work
+// Create new map
+const myMap = new Map()
+
+// Add some values to "myMap"
+myMap.set('name', 'Joe')
+myMap.set('age', 25)
+
+// Try to remove "name" and "age" at the same time
+myMap.delete('name', 'age')
+
+// Log the content of "myMap" again
+// Hint: only the "name" will be removed
+// because it was the first parameter
+console.log(myMap)
+// Output:
+// Map { 'age' => 25 }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
@@ -48,6 +118,7 @@ let myMap = new Map()
 [set]: https://blog.alexdevero.com/sets-in-javascript/
 [forEach() method]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
 [for...of loop]: https://blog.alexdevero.com/javascript-loops/#for8230of-loop
+[two ways]: https://blog.alexdevero.com/javascript-objects-pt1/#adding-properties
 
 <!--
 ### Meta:
