@@ -138,6 +138,32 @@ console.log(myMap)
 // Map {}
 ```
 
+## Retrieving values from maps
+
+Adding and removing values from maps is straightforward. You can say the same about retrieving them. When you want to retrieve a specific value from a map you can use `get()` method. This methods takes one parameter, a key that is associated with the value you want to retrieve.
+
+If the key its value you want to retrieve exists, it will return the value. If it doesn't exist it will return `undefined`.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values to "myMap"
+myMap.set('front-end', 'React')
+myMap.set('back-end', 'Node.js')
+myMap.set('database', 'MongoDB')
+
+// Get the value of "back-end" key
+myMap.get('back-end')
+// Output:
+// 'Node.js'
+
+// Try to get the value of non-existent key "cms"
+myMap.get('cms')
+// Output:
+// undefined
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
