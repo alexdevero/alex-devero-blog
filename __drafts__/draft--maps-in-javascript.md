@@ -214,6 +214,31 @@ myMap.get('compiler')
 // false
 ```
 
+## Getting the size of the map
+
+In the "Maps vs Objects" we discussed that one of the benefits of maps is that it is easy to find out their size. This is true. Every Map object has its own `size` property. This property is analogous to the [length] property that exists on arrays. Using this `size` property will quickly tell you how many key-value pairs are there in a specific map.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Log the size of "myMap"
+console.log(myMap.size)
+// Output:
+// 0
+
+// Add some values to "myMap"
+myMap.set('Tony Stark', 'Iron Man')
+  .set('Steve Rogers', 'Captain America')
+  .set('Black Widow', 'Natasha Romanoff')
+  .set('Bruce Banner', 'Hulk')
+
+// Log the size of "myMap" again
+console.log(myMap.size)
+// Output:
+// 4
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
@@ -226,6 +251,7 @@ myMap.get('compiler')
 [forEach() method]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
 [for...of loop]: https://blog.alexdevero.com/javascript-loops/#for8230of-loop
 [two ways]: https://blog.alexdevero.com/javascript-objects-pt1/#adding-properties
+[length]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
 
 <!--
 ### Meta:
