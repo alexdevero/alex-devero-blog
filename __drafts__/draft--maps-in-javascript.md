@@ -3,7 +3,22 @@
 Have you ever heard about maps in JavaScript? Maps are a new object type that was introduced in ES2015. In this tutorial, you will learn all you need to know about this lesser known object type. You will learn about what maps in JavaScript are, how they work and how to use them.<!--more-->
 <!--
 Table of Contents:
-## Conclusion: [...] ...
+## Quick introduction to maps
+## Maps vs Objects
+## Creating maps in JavaScript
+### From array to map
+### From object to map
+## Adding values to maps
+## Removing values from maps
+## Removing all values from maps
+## Retrieving values from maps
+## Checking if value exists in map
+## Getting the size of the map
+## Iterating over maps
+### Map.keys(), Map.values() and Map.entries()
+### Maps, iterators and for...of loop
+### Map.forEach()
+## Conclusion: Introduction to maps in JavaScript
 -->
 
 ## Quick introduction to maps
