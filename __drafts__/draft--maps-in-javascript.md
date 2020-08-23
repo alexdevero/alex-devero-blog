@@ -192,6 +192,28 @@ myMap.get('cms')
 // undefined
 ```
 
+## Checking if value exists in map
+
+In some sense, the `get()` method can also help you check if some key exists in a map. However, there is a method dedicated for this. This method is called `has()`. Similarly to `get()`, the `has()` method also accepts one parameter, the `key` you are looking for. If the key exists `has()` returns `true`. If not, it returns `false`.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values to "myMap"
+myMap.set('language', 'English')
+
+// Check if "myMap" has "language" key
+myMap.get('language')
+// Output:
+// true
+
+// Check if "myMap" has "compiler" key
+myMap.get('compiler')
+// Output:
+// false
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
