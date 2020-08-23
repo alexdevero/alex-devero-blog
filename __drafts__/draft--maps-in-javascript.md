@@ -41,7 +41,7 @@ let myMap = new Map()
 
 When you want to add values, key-value pairs, to an object there are [two ways] to do that. Well, three, if you count adding values during object initialization. The first is using do notation. The second is using square brackets. The second way, square brackets, works also with maps.
 
-That said, adding values to maps using square brackets is not a good practice. The problem is that when you do this you will lose performance optimizations maps have. The right way to add values to maps is by using `set()` method. This method takes two parameters. First is for the `key` and second for the `value`.
+That said, adding values to maps using square brackets is not a good practice. The problem is that when you do this you will lose performance optimizations maps have. The right way to add values to maps is by using `set()` method. This method accepts two parameters. First is for the `key` and second for the `value`.
 
 ```JavaScript
 // Create new map
@@ -90,7 +90,7 @@ console.log(myMap)
 
 ## Removing values from maps
 
-When you want to remove values from maps the process is simple. There is a method you have use called `delete()`. This method takes one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist in the map, it will return `false`.
+When you want to remove values from maps the process is simple. There is a method you have use called `delete()`. This method accepts one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist, it will return `false`.
 
 One thing to remember about `delete()` method is that it works only with one key at the time. You can't pass in multiple keys. If you try it the `delete()` method will remove only the first key. It will ignore the rest.
 
@@ -137,7 +137,7 @@ console.log(myMap)
 
 ## Removing all values from maps
 
-Removing values with `delete()` method is handy when you want to remove just one or few values. If you want to remove all values in a map at once, there is a better and faster way to do it. Aside from overwriting the map, you can do this also with `clear()` method. This method doesn't take any parameters.
+Removing values with `delete()` method is handy when you want to remove just one or few values. If you want to remove all values in a map at once, there is a better and faster way to do it. Aside from overwriting the map, you can do this also with `clear()` method. This method doesn't accepts any parameters.
 
 ```JavaScript
 // Create new map
@@ -168,7 +168,7 @@ console.log(myMap)
 
 ## Retrieving values from maps
 
-Adding and removing values from maps is straightforward. You can say the same about retrieving them. When you want to retrieve a specific value from a map you can use `get()` method. This methods takes one parameter, a key that is associated with the value you want to retrieve.
+Adding and removing values from maps is straightforward. You can say the same about retrieving them. When you want to retrieve a specific value from a map you can use `get()` method. This methods accepts one parameter, a key that is associated with the value you want to retrieve.
 
 If the key its value you want to retrieve exists, it will return the value. If it doesn't exist it will return `undefined`.
 
