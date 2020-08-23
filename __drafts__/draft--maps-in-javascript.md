@@ -343,12 +343,47 @@ for (let iteratorItem of myEntriesIterator) {
   // Log each item in the iterator
   console.log(iteratorItem)
 }
-
 // Output:
 // [ 'First name', 'Joshua Doer' ]
 // [ 'Email', 'joshua@doer.io' ]
 // [ 'username', 'josh1234' ]
 ```
+
+### Map.forEach()
+
+The `forEach()` method is a bit different. It doesn't return `Iterator` object like `keys()`, `values()` and `entries()` and lets you iterate over those values manually. Instead, `forEach()` iterates over the map directly It also automatically iterates over all key-value pairs.
+
+When it iterates over the pairs it executes a callback function for each of them. This callback function accepts three parameters. All these parameters are optional. These parameters are `value`, `key` and `map`. The `value` allows you to access current `value` in each iteration.
+
+The `key` allows you to access current `key` in the iteration. The last one, the `map`, allows you to access the whole map you are iterating over.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values
+myMap.set('title', 'JavaScript: The Definitive Guide')
+myMap.set('author', 'David Flanagan')
+myMap.set('publisher', 'O\'Reilly Media')
+
+// Loop over "myMap" map directly
+myMap.forEach((value, key) => {
+  // Log key and value in the map
+  console.log(`${key}: ${value}`)
+})
+// Output:
+// 'title: JavaScript: The Definitive Guide'
+// 'author: David Flanagan'
+// "publisher: O'Reilly Media"
+```
+
+## Creating map from object
+
+- https://javascript.info/map-set#object-entries-map-from-object
+
+## Creating object from map
+
+- https://javascript.info/map-set#object-fromentries-object-from-map
 
 ## Conclusion: [...] ...
 
