@@ -260,6 +260,7 @@ myMap.set('username', 'josh1234')
 
 
 // Example no.1: Map.keys()
+// Create iterator for keys
 const myKeysIterator = myMap.keys()
 
 // Log the first key
@@ -279,6 +280,7 @@ console.log(myKeysIterator.next().value)
 
 
 // Example no.2: Map.values()
+// Create iterator for values
 const myValuesIterator = myMap.values()
 
 // Log the first value
@@ -298,6 +300,7 @@ console.log(myValuesIterator.next().value)
 
 
 // Example no.3: Map.entries()
+// Create iterator for entries
 const myEntriesIterator = myMap.entries()
 
 // Log the first entry
