@@ -47,16 +47,23 @@ That said, adding values to maps using square brackets is not a good practice. T
 // Create new map
 const myMap = new Map()
 
+// Create simple function
+function sayHi() {
+  return 'Hello!'
+}
+
 // Add some values (key-value pairs) to "myMap"
 myMap.set('name', 'James Reacher')
 myMap.set('bio', { age: 35, height: 189, weight: 82 })
+myMap.set(sayHi, 'Function as a key?')
 
 // Log the content of "myMap"
 console.log(myMap)
 // Output:
 // Map {
 //   'name' => 'James Reacher',
-//   'bio' => { age: 35, height: 189, weight: 82 }
+//   'bio' => { age: 35, height: 189, weight: 82 },
+//   [Function: sayHi] => 'Function as a key?'
 // }
 ```
 
