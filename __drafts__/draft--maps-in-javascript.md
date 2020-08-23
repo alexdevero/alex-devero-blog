@@ -239,6 +239,83 @@ console.log(myMap.size)
 // 4
 ```
 
+## Iterating over maps
+
+You know how to add values to maps and how to remove them. You also know how to retrieve values, one by one. Question is, what if you want to retrieve all values from a map? There are four options you can choose from. These options are `keys()`, `values()`, `entries()` and `forEach()` methods.
+
+### Map.keys(), Map.values() and Map.entries()
+
+The first three methods all return `Iterator` object hat contain specific data. The first method, `keys()`, returns an `Iterator` with keys, one key for each pair in the Map. The second method, `values()` `Iterator` with values, also one value for each pair in the Map. The third method `entries()` returns an iterable for all entries.
+
+These entries are returned in the form of a `[key, value]`. When you use these three method you can then iterate over the returned `Iterator` object with `next()` method and its `value` property. Every use of `next()` method, along with `value`, will return the next value in the iterator, next value, key or entry in the map.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values
+myMap.set('First name', 'Joshua Doer')
+myMap.set('Email', 'joshua@doer.io')
+myMap.set('username', 'josh1234')
+
+
+// Example no.1: Map.keys()
+const myKeysIterator = myMap.keys()
+
+// Log the first key
+console.log(myKeysIterator.next().value)
+// Output:
+// 'First name'
+
+// Log the second key
+console.log(myKeysIterator.next().value)
+// Output:
+// 'Email'
+
+// Log the third key
+console.log(myKeysIterator.next().value)
+// Output:
+// 'username'
+
+
+// Example no.2: Map.values()
+const myValuesIterator = myMap.values()
+
+// Log the first value
+console.log(myValuesIterator.next().value)
+// Output:
+// 'Joshua Doer'
+
+// Log the second value
+console.log(myValuesIterator.next().value)
+// Output:
+// 'joshua@doer.io'
+
+// Log the third value
+console.log(myValuesIterator.next().value)
+// Output:
+// 'josh1234'
+
+
+// Example no.3: Map.entries()
+const myEntriesIterator = myMap.entries()
+
+// Log the first entry
+console.log(myEntriesIterator.next().value)
+// Output:
+// [ 'First name', 'Joshua Doer' ]
+
+// Log the second entry
+console.log(myEntriesIterator.next().value)
+// Output:
+// [ 'Email', 'joshua@doer.io' ]
+
+// Log the third entry
+console.log(myEntriesIterator.next().value)
+// Output:
+// [ 'username', 'josh1234' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
