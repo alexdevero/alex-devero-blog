@@ -449,7 +449,38 @@ myMap.forEach((value, key) => {
 // "publisher: O'Reilly Media"
 ```
 
-## Conclusion: [...] ...
+## From maps to objects
+
+You know that you can create maps from objects. You can also do the opposite. You can take existing map and use it to create new object. This can be done with `fromEntries()` method. In the beginning, you used `entries()` method to create an array from entries that exist inside an object.
+
+The `fromEntries()` method does the opposite thing. It takes an array, in the form of `[key, value]`, and transforms it into an object. The `entries()` method that exists on map will help you transform any map into an array you need. You can then use that array with `fromEntries()` method to create new object.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values
+myMap.set('spanish', 'Buenos dias')
+myMap.set('french', 'Bonjour')
+myMap.set('russian', 'Доброе утро')
+
+// Transform the map into an array
+const myTransformedMap = myMap.entries()
+
+// Create new object from transformed map
+const myObj = Object.fromEntries(myTransformedMap)
+
+// Log the content of "myObj"
+console.log(myObj)
+// Output:
+// {
+//   spanish: 'Buenos dias',
+//   french: 'Bonjour',
+//   russian: 'Доброе утро'
+// }
+```
+
+## Conclusion: Introduction to maps in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
