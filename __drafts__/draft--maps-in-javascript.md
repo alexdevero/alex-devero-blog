@@ -107,6 +107,37 @@ console.log(myMap)
 // Map { 'age' => 25 }
 ```
 
+## Removing all values from maps
+
+Removing values with `delete()` method is handy when you want to remove just one or few values. If you want to remove all values in a map at once, there is a better and faster way to do it. Aside from overwriting the map, you can do this also with `clear()` method. This method doesn't take any parameters.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values to "myMap"
+myMap.set('The Lean Startup', 'Eric Ries')
+myMap.set('Measure What Matters', 'John Doerr')
+myMap.set('The Startup Owner\'s Manual', 'Steve Blank')
+
+// Log the content of "myMap"
+console.log(myMap)
+// Output:
+// Map {
+//   'The Lean Startup' => 'Eric Ries',
+//   'Measure What Matters' => 'John Doerr',
+//   "The Startup Owner's Manual" => 'Steve Blank'
+// }
+
+// Remove all values from "myMap"
+myMap.clear()
+
+// Log the content of "myMap"
+console.log(myMap)
+// Output:
+// Map {}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
