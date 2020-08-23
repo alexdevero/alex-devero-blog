@@ -319,6 +319,37 @@ console.log(myEntriesIterator.next().value)
 // [ 'username', 'josh1234' ]
 ```
 
+### Maps, iterators and for...of loop
+
+Using the `next()` and `value` will not be the best tool if you want to get all data from `Iterator` object at once. For this, a better option will be `for...of` loop. This loop allows you to iterate over an `Iterator` and get all data inside, without the need to use `next()` multiple times.
+
+```JavaScript
+// Create new map
+const myMap = new Map()
+
+// Add some values
+myMap.set('First name', 'Joshua Doer')
+myMap.set('Email', 'joshua@doer.io')
+myMap.set('username', 'josh1234')
+
+
+// Create iterator for entries
+// NOTE: this will work in the same way
+// also for keys() and values()
+const myEntriesIterator = myMap.entries()
+
+// Loop over the iterate object "myEntriesIterator"
+for (let iteratorItem of myEntriesIterator) {
+  // Log each item in the iterator
+  console.log(iteratorItem)
+}
+
+// Output:
+// [ 'First name', 'Joshua Doer' ]
+// [ 'Email', 'joshua@doer.io' ]
+// [ 'username', 'josh1234' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
