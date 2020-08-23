@@ -30,11 +30,70 @@ The last difference, that is good to know, is that maps are optimized for adding
 
 Maps are similar to objects. One thing that is different between them, among the things we just discussed, is how you create them. When you want to create a new object, there are multiple options to do that. For example, you can use `new Object()`, `Object.create()`, object literal or object constructor.
 
-When you want to create a new map, there is only one option to do it. You can create new maps only by creating new Map object, using `new Map()`.
+When you want to create a new map, there are two ways to do it. Well, theoretically. The first option to create new maps is by creating new empty Map object using `new Map()` and assigning it values later.
 
 ```JavaScript
 // Creating new map
 let myMap = new Map()
+```
+
+### From array to map
+
+The second option is also about using `new Map()` to create new Map object. However, you can also pass in an array. To make this work, this array has to be structured in a specific way. It has to contain nested array for each key-value pair. Each array (key-value pair) has to contain two items, the key and the value.
+
+```JavaScript
+// Create new map and assign it some values right away
+const myMap = new Map([
+  ['name',  'Jackie'],
+  ['gender', 'female'],
+  ['age', 23]
+])
+
+// Log the content of "myMap" map
+console.log(myMap)
+// Output:
+// Map { 'name' => 'Jackie', 'gender' => 'female', 'age' => 23 }
+```
+
+### From object to map
+
+You can use the second option also with objects. You can take existing object and get all its entries with `entries()` method. The `entries()` method returns all entries in the same format as the array you saw in the previous example. So, you can pass the result of calling `entries()` method to the `Map()` object.
+
+```JavaScript
+// Create new object
+const myObj = {
+  subject: 'Math',
+  level: '1',
+  difficulty: 'Medium'
+}
+
+// Create new map from "myObj"
+const myMap = new Map(Object.entries(myObj))
+
+// Log the content of "myMap" map
+console.log(myMap)
+// Outputs:
+// Map { 'subject' => 'Math', 'level' => '1', 'difficulty' => 'Medium' }
+
+
+// Or, a bit longer
+// Create new object
+const myObj = {
+  subject: 'Math',
+  level: '1',
+  difficulty: 'Medium'
+}
+
+// Get all entries
+const myObjEntries = Object.entries(myObj)
+
+// Create new map from "myObjEntries"
+const myMap = new Map(myObjEntries)
+
+// Log the content of "myMap" map
+console.log(myMap)
+// Outputs:
+// Map { 'subject' => 'Math', 'level' => '1', 'difficulty' => 'Medium' }
 ```
 
 ## Adding values to maps
@@ -376,14 +435,6 @@ myMap.forEach((value, key) => {
 // 'author: David Flanagan'
 // "publisher: O'Reilly Media"
 ```
-
-## Creating map from object
-
-- https://javascript.info/map-set#object-entries-map-from-object
-
-## Creating object from map
-
-- https://javascript.info/map-set#object-fromentries-object-from-map
 
 ## Conclusion: [...] ...
 
