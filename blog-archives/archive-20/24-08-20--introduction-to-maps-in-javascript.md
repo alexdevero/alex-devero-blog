@@ -1,4 +1,4 @@
-# Introduction to Maps in JavaScript
+# Introduction to Maps in JavaScript - All You Need to Know
 
 Have you ever heard about maps in JavaScript? Maps are a new object type that was introduced in ES2015. In this tutorial, you will learn all you need to know about this lesser known object type. You will learn about what maps in JavaScript are, how they work and how to use them.<!--more-->
 <!--
