@@ -29,11 +29,11 @@ Also just like with objects, you can add new keys and delete existing, and retri
 
 ## Maps vs Objects
 
-One of the most important differences is that, when it comes to maps in JavaScript, you can use any data type to create keys. You can use even objects or functions. Objects will allow you to use ony [strings] or a [symbols]. Another important difference is the order of keys-value pairs.
+One of the most important differences is that, when it comes to maps in JavaScript, you can use any data type to create keys. You can use even objects or functions. Objects will allow you to use only [strings] or a [symbols]. Another important difference is the order of keys-value pairs.
 
 In maps, keys are ordered based on the order you've added them to the map. If you iterate over a map, you will get its keys in the same order in which you've created them. In case of objects, this is true since ES2015 and only for JavaScript engines that support this specification. Before ES2015, keys in objects were not ordered.
 
-Another difference is how easy it is to get the size of a map. Like [set], every map has a `size` property that says how many key-value pairs it contains. With objects, you would have to use `keys()` or `values()` to get an array of keys or values. Then use `length` to get the length of this array to finally get the size of an object.
+Another difference is how easy it is to get the size of a map. Like [set], every map has a `size` property that says how many key-value pairs it contains. With objects, you would have to use `keys()` or `values()` to get an array of keys or values. Then, use `length` to get the length of this array to finally get the size of an object.
 
 Another nice thing is that maps, like array, are iterable. You don't have to get the keys or values first in order to iterate over them. You can do it right away. For example, you can use [forEach() method], just like with array. You can also use [for...of loop], just like with objects.
 
@@ -162,7 +162,7 @@ console.log(myMap)
 
 ## Removing values from maps
 
-When you want to remove values from maps the process is simple. There is a method you have use called `delete()`. This method accepts one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist, it will return `false`.
+When you want to remove values from maps the process is simple. There is a method you have to use called `delete()`. This method accepts one parameter, the key of the key-value pair you want to remove. If the deletion is successful, the `delete()` method will return `true`. If the key doesn't exist, it will return `false`.
 
 One thing to remember about `delete()` method is that it works only with one key at the time. You can't pass in multiple keys. If you try it the `delete()` method will remove only the first key. It will ignore the rest.
 
@@ -209,7 +209,7 @@ console.log(myMap)
 
 ## Removing all values from maps
 
-Removing values with `delete()` method is handy when you want to remove just one or few values. If you want to remove all values in a map at once, there is a better and faster way to do it. Aside from overwriting the map, you can do this also with `clear()` method. This method doesn't accepts any parameters.
+Removing values with `delete()` method is handy when you want to remove just one or few values. If you want to remove all values in a map at once, there is a better and faster way to do it. Aside from overwriting the map, you can do this also with `clear()` method. This method doesn't accept any parameters.
 
 ```JavaScript
 // Create new map
@@ -240,7 +240,7 @@ console.log(myMap)
 
 ## Retrieving values from maps
 
-Adding and removing values from maps is straightforward. You can say the same about retrieving them. When you want to retrieve a specific value from a map you can use `get()` method. This methods accepts one parameter, a key that is associated with the value you want to retrieve.
+Adding and removing values from maps is straightforward. You can say the same about retrieving them. When you want to retrieve a specific value from a map you can use `get()` method. This method accepts one parameter, a key that is associated with the value you want to retrieve.
 
 If the key its value you want to retrieve exists, it will return the value. If it doesn't exist it will return `undefined`.
 
@@ -319,7 +319,7 @@ You know how to add values to maps and how to remove them. You also know how to 
 
 The first three methods all return `Iterator` object hat contain specific data. The first method, `keys()`, returns an `Iterator` with keys, one key for each pair in the Map. The second method, `values()` `Iterator` with values, also one value for each pair in the Map. The third method `entries()` returns an iterable for all entries.
 
-These entries are returned in the form of a `[key, value]`. When you use these three method you can then iterate over the returned `Iterator` object with `next()` method and its `value` property. Every use of `next()` method, along with `value`, will return the next value in the iterator, next value, key or entry in the map.
+These entries are returned in the form of a `[key, value]`. When you use these three methods you can then iterate over the returned `Iterator` object with `next()` method and its `value` property. Every use of `next()` method, along with `value`, will return the next value in the iterator, next value, key or entry in the map.
 
 ```JavaScript
 // Create new map
@@ -508,7 +508,5 @@ Maps are one of the lesser known, and less frequently used, object types in Java
 
 <!--
 ### Resources:
-- https://www.digitalocean.com/community/tutorials/js-maps-introduction
-- https://javascript.info/map-set
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+-
 -->
