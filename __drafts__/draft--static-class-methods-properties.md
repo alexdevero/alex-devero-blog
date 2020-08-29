@@ -30,6 +30,7 @@ class MyClass {
   }
 }
 
+// Try to call static method "myStaticMethod" on "MyClass"
 MyClass.myStaticMethod()
 // Output:
 // 'Call from myStaticMethod.'
@@ -46,6 +47,7 @@ MyClass.myStaticMethod = function() {
   console.log('Call from myStaticMethod.')
 }
 
+// Try to call static method "myStaticMethod" on "MyClass"
 MyClass.myStaticMethod()
 // Output:
 // 'Call from myStaticMethod.'
