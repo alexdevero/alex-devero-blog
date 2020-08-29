@@ -9,11 +9,13 @@ Table of Contents:
 
 ## Introduction
 
-Let's start with the basics. Every static method and property has to start with the `static` keyword. This tells JavaScript that the method or property that follows after this keyword should be defined as static. Now, the more interesting question. How are static methods and properties different from normal methods and properties?
+Let's start with the basics. Every static method and property has to start with the `static` keyword. This tells JavaScript that the method or property that follows after this keyword should be defined as static. Now, the more interesting question. How are static methods and properties different from public methods and properties?
 
-The main difference between static and normal methods and properties is two-fold. First, you can call static methods, and access static properties, without having to [instantiate class] in which they are defined. Second, you can't call these methods, and access these properties, on instances of the class in which they are defined.
+The main difference between static and public methods and properties is two-fold. First, you can call static methods, and access static properties, without having to [instantiate class] in which they are defined. Second, you can't call these methods, and access these properties, on instances of the class in which they are defined.
 
 JavaScript developers usually use static methods and properties something like utility functions and utility properties. For example, you can use static method to create a method that will help you compare two instances of the class. One thing you can do with static properties is keeping count of how many instances some class has.
+
+*Note: All methods defined in a class are by default defined as public. This means that they will be accessible for all instances. Which also means that you can call them on all instances. However, you can't call them on the class in which they are defined unless you instantiate it.*
 
 ## Static methods
 
