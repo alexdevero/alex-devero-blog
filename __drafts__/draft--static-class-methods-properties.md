@@ -53,6 +53,48 @@ MyClass.myStaticMethod()
 // 'Call from myStaticMethod.'
 ```
 
+### Static methods and class instances
+
+When it comes to static methods, remember one thing. These methods can be called inly on the class in which they are defined. If you create a an instance of that class, and try to call some static method on that instance, JavaScript will return TypeError. The same will happen if you try to call public method on a class without instantiating it first.
+
+```JavaScript
+// Create class
+class MyClass {
+  // Add new static method to "MyClass"
+  static myStaticMethod() {
+    console.log('Call from myStaticMethod.')
+  }
+
+  // Create public method
+  myMethod() {
+    console.log('Call from myMethod.')
+  }
+}
+
+// Try to call static method "myStaticMethod" on "MyClass"
+MyClass.myStaticMethod()
+// Output:
+// 'Call from myStaticMethod.'
+
+// Try to call public method "myMethod" on "MyClass"
+MyClass.myMethod()
+// Output:
+// TypeError: MyClass.myMethod is not a function
+
+// Create instance of "MyClass"
+const myClassInstance = new MyClass()
+
+// Try to call static method "myStaticMethod" on "myClassInstance"
+myClassInstance.myStaticMethod()
+// Output:
+// TypeError: myClassInstance.myStaticMethod is not a function
+
+// Try to call public method "myMethod" on "myClassInstance"
+myClassInstance.myMethod()
+// Output:
+// 'Call from myMethod.'
+```
+
 ## Static properties
 
 ## Static properties and properties and class inheritance
