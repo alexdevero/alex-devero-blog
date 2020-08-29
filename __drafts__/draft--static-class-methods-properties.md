@@ -116,7 +116,8 @@ class MyClass {
 // Try to call static method "myStaticMethod" on "MyClass"
 MyClass.myStaticMethod()
 // Output:
-// 'Call from myMethod.'
+// [Function: MyClass]
+// true
 ```
 
 ## Static properties
