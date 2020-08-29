@@ -60,7 +60,7 @@ MyClass.myStaticMethod()
 
 ### Static methods and class instances
 
-When it comes to static methods, remember one thing. These methods can be called inly on the class in which they are defined. If you create a an instance of that class, and try to call some static method on that instance, JavaScript will return TypeError. The same will happen if you try to call public method on a class without instantiating it first.
+When it comes to static methods, remember one thing. These methods can be called only on the class in which they are defined. If you create a an instance of that class, and try to call some static method on that instance, JavaScript will return TypeError. The same will happen if you try to call public method on a class without instantiating it first.
 
 ```JavaScript
 // Create class
