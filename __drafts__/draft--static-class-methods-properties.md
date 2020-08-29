@@ -94,8 +94,27 @@ myClassInstance.myStaticMethod()
 // Output:
 // TypeError: myClassInstance.myStaticMethod is not a function
 
-// Try to call public method "myMethod" on "myClassInstance"
-myClassInstance.myMethod()
+// Try to call public method "myPublicMethod" on "myClassInstance"
+myClassInstance.myPublicMethod()
+// Output:
+// 'Call from myPublicMethod.'
+```
+
+### Static methods and this
+
+When you define static method inside a class value of `this` will always be the class itself. Since static methods are inaccessible from instances, you don't have to worry that `this` could change from time to time.
+
+```JavaScript
+// Create class
+class MyClass {
+  static myStaticMethod () {
+    console.log(this)
+    console.log(this === MyClass)
+  }
+}
+
+// Try to call static method "myStaticMethod" on "MyClass"
+MyClass.myStaticMethod()
 // Output:
 // 'Call from myMethod.'
 ```
