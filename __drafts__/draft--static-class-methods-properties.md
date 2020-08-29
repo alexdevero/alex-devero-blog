@@ -28,6 +28,11 @@ class MyClass {
   static myStaticMethod() {
     console.log('Call from myStaticMethod.')
   }
+
+  // Create public method
+  myPublicMethod() {
+    console.log('Call from myPublicMethod.')
+  }
 }
 
 // Try to call static method "myStaticMethod" on "MyClass"
@@ -66,8 +71,8 @@ class MyClass {
   }
 
   // Create public method
-  myMethod() {
-    console.log('Call from myMethod.')
+  myPublicMethod() {
+    console.log('Call from myPublicMethod.')
   }
 }
 
@@ -76,10 +81,10 @@ MyClass.myStaticMethod()
 // Output:
 // 'Call from myStaticMethod.'
 
-// Try to call public method "myMethod" on "MyClass"
-MyClass.myMethod()
+// Try to call public method "myPublicMethod" on "MyClass"
+MyClass.myPublicMethod()
 // Output:
-// TypeError: MyClass.myMethod is not a function
+// TypeError: MyClass.myPublicMethod is not a function
 
 // Create instance of "MyClass"
 const myClassInstance = new MyClass()
