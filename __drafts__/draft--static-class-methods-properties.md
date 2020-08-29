@@ -122,6 +122,29 @@ MyClass.myStaticMethod()
 
 ## Static properties
 
+Just as you can have static methods you can also have static properties. Static properties work in similar way as static methods. You can define them in two ways. Fist, directly within a class. In this case, you have to prepend the property with `static` keyword. You can also define the property outside the class with dot notation.
+
+```JavaScript
+// Create class
+class MyClass {
+  // Define static property
+  static myStaticProperty = 'Hello'
+}
+
+// Or, define static property outside the class
+MyClass.myStaticPropertyTwo = 'World'
+
+// Try to access static property "myStaticProperty" on "MyClass"
+console.log(MyClass.myStaticProperty)
+// Output:
+// 'Hello'
+
+// Try to access static property "myStaticPropertyTwo" on "MyClass"
+console.log(MyClass.myStaticPropertyTwo)
+// Output:
+// 'World'
+```
+
 ## Static properties and properties and class inheritance
 
 ## Conclusion: JavaScript Classes and Static Methods and Properties
