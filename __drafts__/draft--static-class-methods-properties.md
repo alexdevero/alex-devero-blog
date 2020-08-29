@@ -17,6 +17,38 @@ JavaScript developers usually use static methods and properties something like u
 
 ## Static methods
 
+As you now know, creating static methods is quick. When you want to create one, you can do it in two ways. First, you can create new class and define a new method inside it. When you do this make sure to prepend the method with the `static` keyword. This will define the method as static.
+
+```JavaScript
+// Create new class
+class MyClass {
+  // Create static method
+  static myStaticMethod() {
+    console.log('Call from myStaticMethod.')
+  }
+}
+
+MyClass.myStaticMethod()
+// Output:
+// 'Call from myStaticMethod.'
+```
+
+There is also another thing you can do. You can create new class. Then, outside the class, you can add new method to this class using dot notation. In this case, you don't have to use the `static` keyword. The method will become static automatically.
+
+```JavaScript
+// Create new class
+class MyClass {}
+
+// Add new static method to "MyClass"
+MyClass.myStaticMethod = function() {
+  console.log('Call from myStaticMethod.')
+}
+
+MyClass.myStaticMethod()
+// Output:
+// 'Call from myStaticMethod.'
+```
+
 ## Static properties
 
 ## Static properties and properties and class inheritance
