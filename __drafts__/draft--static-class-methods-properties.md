@@ -145,6 +145,127 @@ console.log(MyClass.myStaticPropertyTwo)
 // 'World'
 ```
 
+### Static properties and class instances
+
+Static properties can be accessed only inside the class in which they are defined. They are invisible to instances of that class. If you try to access static property from class instance, JavaScript will return `undefined`.
+
+```JavaScript
+// Create class
+class MyClass {
+  // Create static property
+  static myStaticProperty = 'Hello'
+}
+
+// Try to access static property "myStaticProperty" on "MyClass"
+console.log(MyClass.myStaticProperty)
+// Output:
+// 'Hello'
+
+// Create instance of "MyClass"
+const myClassInstance = new MyClass()
+
+// Try to access static property "myStaticProperty" on "myClassInstance"
+console.log(myClassInstance.myStaticProperty)
+// Output:
+// undefined
+```
+
+### Accessing static properties
+
+As we discussed, static properties are not accessible from class instances. JavaScript will also not allow to call public method on a class without instantiating it first. This means that you can't use public method to access static property neither a class, nor in its instance.
+
+This leaves us with two ways in which you can access static properties in classes. The first one via static method. This makes sense. You need a method you can call directly on a class, not its instance. Only static method meets this condition. So, one way to access static property is by using static method.
+
+```JavaScript
+// Create class
+class MyClass {
+  // Create static property
+  static myStaticPropertyOne = 'Hello'
+
+  // Create static method
+  static updateStaticProp() {
+    // Update "myStaticPropertyOne"
+    this.myStaticPropertyOne = 'Bye'
+  }
+
+  // Create public method
+  myPublicMethod() {
+    // Try to update "myStaticPropertyOne"
+    this.myStaticPropertyOne = 'Come again?'
+  }
+}
+
+// Log the value of "myStaticPropertyOne"
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 'Hello'
+
+// Call static method "updateStaticProp" to change "myStaticPropertyOne"
+MyClass.updateStaticProp()
+
+// Log the value of "myStaticPropertyOne" again
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 'Bye'
+
+// Create instance of "MyClass"
+const myClassInstance = new MyClass()
+
+// Call "myPublicMethod" on "myClassInstance" to change "myStaticPropertyOne"
+// This will NOT work
+myClassInstance.myPublicMethod()
+
+// Log the value of "myStaticPropertyOne" again
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 'Bye'
+
+// Log the value of "myStaticPropertyOne" again
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 'Bye'
+```
+
+The second option is using class [constructor method]. Constructor is a special method that is called every time you create an instance of a class. Unlike public methods, this special method can also access static properties. If you want to make some automatic updates to static properties, `constructor` might be a good choice.
+
+On thing about using `constructor` to access static properties. When you use it, you have to access the static property using the name of the class, not `this`. The reason is that `this` in constructor refers to the current instance, not the class itself. So, using `this` would be like `instance.property`, not `class.property`.
+
+```JavaScript
+// Create class
+class MyClass {
+  // Create another static property
+  static myStaticPropertyOne = 0
+
+  // Create constructor method
+  constructor() {
+    // Update "myStaticPropertyOne" when new instance
+    // of "MyClass" class is created
+    // Notice we are using the name of the class, "MyClass",
+    // not "this" to access the "myStaticPropertyOne"
+    MyClass.myStaticPropertyOne += 1
+
+    // NOTE:
+    // This will NOT work
+    // this here refers to specific instance of "MyClass"
+    // not "MyClass" class itself
+    // this.myStaticPropertyOne += 1
+  }
+}
+
+// Log the value of "myStaticPropertyOne"
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 0
+
+// Create instance of "MyClass"
+const myClassInstance = new MyClass()
+
+// Log the value of "myStaticPropertyOne"
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 1
+```
+
 ## Static properties and properties and class inheritance
 
 ## Conclusion: JavaScript Classes and Static Methods and Properties
@@ -153,6 +274,7 @@ console.log(MyClass.myStaticPropertyTwo)
 
 <!-- ### Links -->
 [instantiate class]: https://blog.alexdevero.com/javascript-classes-pt1/#inheritance-and-child-classes-or-subclasses
+[constructor method]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
 
 <!--
 ### Meta:
