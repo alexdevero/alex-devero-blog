@@ -337,7 +337,50 @@ console.log(myClassSubclassTwoInstance.myStaticProperty)
 // undefined
 ```
 
-## Conclusion: JavaScript Classes and Static Methods and Properties
+### Static properties and methods and class inheritance explained
+
+The reason this works is due to [prototypal inheritance], the [[[Prototype]] property] to be more specific. When you create new class it has its own `[[Prototype]]`. For example, when you create new class "MyClass" the prototype of this class will be "MyClass". What happens when use this class to extend other classes, to create subclasses?
+
+When you use this class to extend other classes the prototypes of those new classes will refer to the superclass prototype. In case of "MyClass" class, their prototype will refer to "MyClass". When you try to access some property or method in a subclass, JavaScript will first look for that property or method in that subclass.
+
+If it finds the property or method on the subclass it will access it. If not, it will look at what is the subclass prototype. Then, it will look at that prototype, the superclass, or parent class, you used to extend that subclass. If it finds the property or method there on the superclass it will access it there.
+
+```JavaScript
+class MyClass {
+  // Create another static property
+  static myStaticProperty = 'Hello'
+}
+
+
+// Create subclass of "MyClass"
+class MyClassSubclassOne extends MyClass {}
+
+// Check if prototype of "MyClassSubclassOne" is "MyClass"
+console.log(MyClassSubclassOne.__proto__ === MyClass)
+// Output:
+// true
+
+// Log the prototype of "MyClassSubclassOne"
+console.log(MyClassSubclassOne.__proto__)
+// Output:
+// [Function: MyClass] { myStaticProperty: 'Hello' }
+
+
+// Create another subclass of "MyClass"
+class MyClassSubclassTwo extends MyClass {}
+
+// Check if prototype of "MyClassSubclassTwo" is "MyClass"
+console.log(MyClassSubclassTwo.__proto__ === MyClass)
+// Output:
+// true
+
+// Log the prototype of "MyClassSubclassOne"
+console.log(MyClassSubclassTwo.__proto__)
+// Output:
+// [Function: MyClass] { myStaticProperty: 'Hello' }
+```
+
+## Conclusion: JavaScript classes and static methods and properties
 
 [xyz-ihs snippet="thank-you-message"]
 
