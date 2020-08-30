@@ -5,6 +5,16 @@ JavaScript classes are one of the most discussed features of ES6. Two interestin
 <!--more-->
 <!--
 Table of Contents:
+## Introduction
+## Static methods
+### Static methods and class instances
+### Static methods and this
+## Static properties
+### Static properties and class instances
+### Accessing static properties from methods
+## Static properties and methods and class inheritance
+### Static properties and methods and class inheritance explained
+## Conclusion: JavaScript classes and static methods and properties
 -->
 
 ## Introduction
