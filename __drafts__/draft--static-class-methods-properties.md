@@ -380,6 +380,71 @@ console.log(MyClassSubclassTwo.__proto__)
 // [Function: MyClass] { myStaticProperty: 'Hello' }
 ```
 
+One way to think about this by imagining that every superclass and subclass are connected by a chain. This chain is prototypal inheritance. On one end is the subclass and on the other is the superclass. When you try to access property or method on a subclass, where it doesn't exist, JavaScript will travel along the chain to any connected superclass.
+
+As it travels, it will do two things. First, it will check if the property or method you asked for exists on the connected superclass. If it doesn't exist it will do the second thing. It will look for other chains connected to other superclass. If it finds any, it will travel again. Otherwise, it will tell you the property or method doesn't exist.
+
+```JavaScript
+class MyClass {
+  // Create another static property
+  static myStaticProperty = 'Hello'
+}
+
+
+// Create subclass of "MyClass"
+// "MyClassSubclass" will now be connected to "MyClass"
+class MyClassSubclass extends MyClass {}
+
+
+// Create subclass of "MyClassSubclass"
+// "MyClassSubSubclass" will now be connected to "MyClassSubclass"
+class MyClassSubSubclass extends MyClassSubclass {}
+
+
+// Create subclass of "MyClassSubSubclass"
+// "MyClassSubSubSubclass" will now be connected to "MyClassSubSubclass"
+class MyClassSubSubSubclass extends MyClassSubSubclass {}
+
+
+// Create subclass of "MyClassSubSubSubclass"
+// "MyClassSubSubSubSubclass" will now be connected to "MyClassSubSubSubclass"
+class MyClassSubSubSubSubclass extends MyClassSubSubSubclass {}
+
+
+// The prototypal chain looks like:
+// MyClassSubSubSubclass -> MyClassSubSubclass -> MyClassSubclass -> MyClass
+
+
+// Try to access "myStaticProperty" on "MyClassSubSubSubSubclass"
+console.log(MyClassSubSubSubSubclass.myStaticProperty)
+// Output:
+// 'Hello'
+
+
+// Translated to how JavaScript travels
+// along the chain of prototypes:
+console.log(MyClassSubSubSubSubclass.__proto__.__proto__.__proto__.__proto__.myStaticProperty)
+// Output:
+// 'Hello'
+
+
+// Notes:
+// from left to right:
+// The first __proto__ is "MyClassSubSubSubclass"
+// The second __proto__ is "MyClassSubSubclass"
+// The third __proto__ is "MyClassSubclass"
+// The fourth and last __proto__ is "MyClass"
+
+// So, this:
+console.log(MyClassSubSubSubSubclass.__proto__.__proto__.__proto__.__proto__.myStaticProperty)
+
+// Will end up as, theoretically speaking:
+// Only if the "myStaticProperty" exists on "MyClass"
+// Otherwise, JavaScript can stop with any other superclass
+// or return undefined if the property doesn't exist on ony class in the chain
+console.log(MyClass.myStaticProperty)
+```
+
 ## Conclusion: JavaScript classes and static methods and properties
 
 [xyz-ihs snippet="thank-you-message"]
