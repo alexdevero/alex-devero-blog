@@ -170,7 +170,7 @@ console.log(myClassInstance.myStaticProperty)
 // undefined
 ```
 
-### Accessing static properties
+### Accessing static properties from methods
 
 As we discussed, static properties are not accessible from class instances. JavaScript will also not allow to call public method on a class without instantiating it first. This means that you can't use public method to access static property neither a class, nor in its instance.
 
@@ -258,15 +258,37 @@ console.log(MyClass.myStaticPropertyOne)
 // 0
 
 // Create instance of "MyClass"
-const myClassInstance = new MyClass()
+const myClassInstanceOne = new MyClass()
 
 // Log the value of "myStaticPropertyOne"
 console.log(MyClass.myStaticPropertyOne)
 // Output:
 // 1
+
+// Create another instance of "MyClass"
+const myClassInstanceTwo = new MyClass()
+
+// Log the value of "myStaticPropertyOne"
+console.log(MyClass.myStaticPropertyOne)
+// Output:
+// 2
 ```
 
-## Static properties and properties and class inheritance
+Aside to this, remember that you can always access static property directly. You can do this by using the name of the class and the name of the property, and dot notation.
+
+```JavaScript
+class MyClass {
+  // Create another static property
+  static myStaticProperty = 'Hello'
+}
+
+// Access the "myStaticProperty"
+console.log(MyClass.myStaticProperty)
+// Output:
+// 'Hello'
+```
+
+## Static methods and properties and class inheritance
 
 ## Conclusion: JavaScript Classes and Static Methods and Properties
 
