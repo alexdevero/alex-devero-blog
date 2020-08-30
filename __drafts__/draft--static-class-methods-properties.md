@@ -387,6 +387,9 @@ console.log(MyClassSubclassTwo.__proto__)
 <!-- ### Links -->
 [instantiate class]: https://blog.alexdevero.com/javascript-classes-pt1/#inheritance-and-child-classes-or-subclasses
 [constructor method]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+[extend]: https://blog.alexdevero.com/javascript-classes-pt1/#class-inheritance-extends
+[prototypal inheritance]: https://blog.alexdevero.com/prototype-prototypal-inheritance/
+[[[Prototype]] property]: https://blog.alexdevero.com/prototype-prototypal-inheritance/#the-prototype-property
 
 <!--
 ### Meta:
