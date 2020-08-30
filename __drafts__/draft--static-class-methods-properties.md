@@ -288,7 +288,54 @@ console.log(MyClass.myStaticProperty)
 // 'Hello'
 ```
 
-## Static methods and properties and class inheritance
+## Static properties and methods and class inheritance
+
+Static properties and methods are not visible for class instances and they can't access them. This is not true for subclasses, or child classes. Let's say you have a class with some static properties or methods. Next, let's say decide to subclass this class. You decide to use this class to [extend] other classes.
+
+If you do this, all those subclasses will also inherit all static properties and methods of the superclass, or parent class. This means that you will be able to access those static properties and methods also on those subclasses. However, static properties and methods will still be inaccessible for instance of these subclasses.
+
+```JavaScript
+class MyClass {
+  // Create another static property
+  static myStaticProperty = 'Hello'
+}
+
+
+// Create subclass of "MyClass"
+class MyClassSubclassOne extends MyClass {}
+
+// Try to access the "myStaticProperty" on "MyClassSubclassOne"
+console.log(MyClassSubclassOne.myStaticProperty)
+// Output:
+// 'Hello'
+
+
+// Create another subclass of "MyClass"
+class MyClassSubclassTwo extends MyClass {}
+
+// Try to access the "myStaticProperty" also on "MyClassSubclassTwo"
+console.log(MyClassSubclassOne.myStaticProperty)
+// Output:
+// 'Hello'
+
+
+// Create instance of "MyClassSubclassOne"
+const MyClassSubclassOneInstance = new MyClassSubclassTwo()
+
+// Try to access the "myStaticProperty" on "MyClassSubclassOneInstance"
+console.log(MyClassSubclassOneInstance.myStaticProperty)
+// Output:
+// undefined
+
+
+// Create instance of "MyClassSubclassTwo"
+const myClassSubclassTwoInstance = new MyClassSubclassTwo()
+
+// Try to access the "myStaticProperty" on "myClassSubclassTwoInstance"
+console.log(myClassSubclassTwoInstance.myStaticProperty)
+// Output:
+// undefined
+```
 
 ## Conclusion: JavaScript Classes and Static Methods and Properties
 
