@@ -133,7 +133,7 @@ MyClass.myStaticMethod()
 
 ## Static properties
 
-Just as you can have static methods you can also have static properties. Static properties work in similar way as static methods. You can define them in two ways. Fist, directly within a class. In this case, you have to prepend the property with `static` keyword. You can also define the property outside the class with dot notation.
+Just as you can have static methods you can also have static properties. Static properties work in similar way as static methods. You can define them in two ways. First, directly within a class. In this case, you have to prepend the property with `static` keyword. You can also define the property outside the class with dot notation.
 
 ```JavaScript
 // Create class
@@ -354,7 +354,7 @@ console.log(myClassSubclassTwoInstance.myStaticProperty)
 
 ### Static properties and methods and class inheritance explained
 
-The reason this works is due to [prototypal inheritance], the [[[Prototype]] property] to be more specific. When you create new class it has its own `[[Prototype]]`. For example, when you create new class "MyClass" the prototype of this class will be "MyClass". What happens when use this class to extend other classes, to create subclasses?
+The reason this works is due to [prototypal inheritance], the [[[Prototype]] property] to be more specific. When you create new class it has its own `[[Prototype]]`. For example, when you create new class "MyClass" the prototype of this class will be "MyClass". What happens when you use this class to extend other classes, to create subclasses?
 
 When you use this class to extend other classes the prototypes of those new classes will refer to the superclass prototype. In case of "MyClass" class, their prototype will refer to "MyClass". When you try to access some property or method in a subclass, JavaScript will first look for that property or method in that subclass.
 
@@ -461,6 +461,8 @@ console.log(MyClass.myStaticProperty)
 ```
 
 ## Conclusion: JavaScript classes and static methods and properties
+
+Static properties and methods can be daunting. It is easy to confuse them with public properties and methods. When this happens, it is easy to use them in way in which they will not work. I hope this tutorial help you understand what static properties and methods are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
