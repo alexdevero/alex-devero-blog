@@ -96,6 +96,7 @@ MyClass.myPublicMethod()
 // Output:
 // TypeError: MyClass.myPublicMethod is not a function
 
+
 // Create instance of "MyClass"
 const myClassInstance = new MyClass()
 
@@ -171,6 +172,7 @@ console.log(MyClass.myStaticProperty)
 // Output:
 // 'Hello'
 
+
 // Create instance of "MyClass"
 const myClassInstance = new MyClass()
 
@@ -217,6 +219,7 @@ MyClass.updateStaticProp()
 console.log(MyClass.myStaticPropertyOne)
 // Output:
 // 'Bye'
+
 
 // Create instance of "MyClass"
 const myClassInstance = new MyClass()
@@ -267,6 +270,7 @@ console.log(MyClass.myStaticPropertyOne)
 // Output:
 // 0
 
+
 // Create instance of "MyClass"
 const myClassInstanceOne = new MyClass()
 
@@ -274,6 +278,7 @@ const myClassInstanceOne = new MyClass()
 console.log(MyClass.myStaticPropertyOne)
 // Output:
 // 1
+
 
 // Create another instance of "MyClass"
 const myClassInstanceTwo = new MyClass()
