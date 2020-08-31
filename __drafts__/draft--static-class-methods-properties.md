@@ -1,4 +1,4 @@
-# JavaScript Classes and Static Methods and Properties
+# Static Methods and Properties in JavaScript Classes
 
 JavaScript classes are one of the most discussed features of ES6. Two interesting features of classes are static methods and properties. In this tutorial, you will learn what static methods and properties are and how they work. You will also learn a bit about class inheritance and how it relates to static properties and methods.
 
@@ -460,7 +460,7 @@ console.log(MyClassSubSubSubSubclass.__proto__.__proto__.__proto__.__proto__.myS
 console.log(MyClass.myStaticProperty)
 ```
 
-## Conclusion: JavaScript classes and static methods and properties
+## Conclusion: Static methods and properties in JavaScript Classes
 
 Static properties and methods can be daunting. It is easy to confuse them with public properties and methods. When this happens, it is easy to use them in way in which they will not work. I hope this tutorial help you understand what static properties and methods are, how they work and how to use them.
 
