@@ -39,10 +39,10 @@ When the fetch promise gets fulfilled, the data it received are automatically pa
 ```JavaScript
 // Use fetch() method with promise handler functions
 fetch(someUrl)
-  .then(data => {
+  .then(response => {
     // When promise gets resolved
     // log received data to console
-    console.log(data)
+    console.log(response)
   })
   .catch(error => {
     // If promise gets rejected
