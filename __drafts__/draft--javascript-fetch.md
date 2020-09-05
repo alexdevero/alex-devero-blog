@@ -49,6 +49,37 @@ fetch(someUrl)
     // log the error to console
     console.log(error)
   })
+
+
+// Real-world example
+fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  // Convert response to JSON format
+  .then(response => response.json())
+  // Log the response JSON
+  .then(jsonData => console.log(jsonData))
+  .catch(error => {
+    // If promise gets rejected
+    // log the error to console
+    console.log(error)
+  })
+
+// Output:
+// {
+//   error: false,
+//   category: 'Programming',
+//   type: 'twopart',
+//   setup: 'Programming is like sex.',
+//   delivery: 'Make one mistake and you end up supporting it for the rest of your life.',
+//   flags: {
+//     nsfw: true,
+//     religious: false,
+//     political: false,
+//     racist: false,
+//     sexist: false
+//   },
+//   id: 8,
+//   lang: 'en'
+// }
 ```
 
 As you can see on the example above, you can chain promise handler functions one after another. It is a good practice to put the `then()` function(s) as first and the `catch()` as second. If you also use `finally()`, it is a good practice to put that one as the last.
