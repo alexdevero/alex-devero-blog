@@ -53,6 +53,58 @@ fetch(someUrl)
 
 As you can see on the example above, you can chain promise handler functions one after another. It is a good practice to put the `then()` function(s) as first and the `catch()` as second. If you also use `finally()`, it is a good practice to put that one as the last.
 
+### Handling fetch with await
+
+Another option, if you don't want to use promise handler functions, is [await]. The `await` does two things. First, it pauses the execution of surrounding code until a promise that follows this keyword is fulfilled. The second thing `await` does is it replaces the `then()` function. It automatically extracts and assigns the data returned by a promise to a variable.
+
+There are two things to remember if you want to use `await`. First, use it inside [try...catch] statement. The await supplements the `then()` function. However, it doesn't supplement the `catch()`. If you want to catch any error that can arise you can catch with the `try...catch` statement.
+
+The second thing is that until [top-level await] is released, you can use `await` only in [async functions]. This is what you can do. Use `fetch()` along with `await`. Then, wrap these two with `try...catch` statement and put it all inside `async` function.
+
+```JavaScript
+// Create async function
+async function makeRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+    // Convert the response to JSON format
+    const responseJSON = await responseData.json()
+
+    // Log the converted JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makeRequest()
+// Output:
+// {
+//   error: false,
+//   category: 'Miscellaneous',
+//   type: 'twopart',
+//   setup: "Mom asked me where I'm taking her to go out to eat for mother's day.",
+//   delivery: 'I told her, "We already have food in the house".',
+//   flags: {
+//     nsfw: false,
+//     religious: false,
+//     political: false,
+//     racist: false,
+//     sexist: false
+//   },
+//   id: 89,
+//   lang: 'en'
+// }
+```
+
+### Processing the response
+
+- https://javascript.info/fetch
+
 ## Making request with fetch
 
 ## Conclusion: Getting Started With the JavaScript Fetch API
