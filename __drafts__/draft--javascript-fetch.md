@@ -279,6 +279,64 @@ makeRequest()
 
 ## Making request with fetch
 
+The default type of request the `fetch()` method makes is `GET`. If you want make a different type of request you can change it. You can chang the type of request through the optional config object you can pass as the second argument to the `fetch()` method. For example, you can set `method` to `POST` to make a `POST` request and so on.
+
+### GET request
+
+If you use the `fetch()` method as it is and provide it only with URL, it will automatically execute `GET` request.
+
+```JavaScript
+// GET request example
+async function makeRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+
+    // Parsing as JSON happens here:
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makeRequest()
+// Output:
+// {
+//   error: false,
+//   category: 'Programming',
+//   type: 'single',
+//   joke: "Knock knock.
+// Who's there?
+// Recursion.
+// Recursion who?
+// Knock knock.",
+//   flags: {
+//     nsfw: false,
+//     religious: false,
+//     political: false,
+//     racist: false,
+//     sexist: false
+//   },
+//   id: 182,
+//   lang: 'en'
+// }
+
+
+// Alternative with promise handler functions:
+fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  .then(response => response.json())
+  .then(responseJSON => console.log(responseJSON))
+  .catch(err => console.log(err))
+```
+
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
 [xyz-ihs snippet="thank-you-message"]
