@@ -530,6 +530,34 @@ fetch('/users/jack', {
   .catch(err => console.log(err))
 ```
 
+## A note about the Response object
+
+We briefly discussed the methods you can use on the Response object. The `text()`, `json()`, `formData()`, `blob()`, `arrayBuffer()`, `clone()` and `redirect()`. These methods are not everything the Response object contains. It also contains a number of properties. Chance are, you may find some of these properties useful.
+
+Some of the most useful properties are `statusText`, `status` and `ok`. The `statusText` is a a string that contains HTTP status code message. The `status` is a number that specifies the status code of the response. When you make a request and it is successful it will have `status` with value of 200.
+
+The `ok` is a boolean that specifies if `status` is in the range of codes from 200 to 299. So, if your request is successful, 200, the value of `ok` will be `true`. One thing. There is also `body` property. This property contains the data you received. When you use some method to parse the response, it works with this `body` property.
+
+```JavaScript
+// Make fetch request
+fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  .then(response => console.log(response)) // Log the Response object
+  .catch(err => console.log(err))
+
+// Output:
+// {
+//   body: (...)
+//   bodyUsed: false
+//   headers: Headers
+//   ok: true
+//   redirected: false
+//   status: 200
+//   statusText: ""
+//   type: "cors"
+//   url: "https://sv443.net/jokeapi/v2/joke/Programming"
+// }
+```
+
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
 [xyz-ihs snippet="thank-you-message"]
