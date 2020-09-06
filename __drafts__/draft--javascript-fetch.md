@@ -560,6 +560,8 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
+The JavaScript Fetch API provides easy and friendly way to make requests. I hope this tutorial help you learn about what fetch API is and how it works. I also hope that the examples we worked with helped you understand how to use this API, to make successful requests and how to work with the responses in the right way.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
