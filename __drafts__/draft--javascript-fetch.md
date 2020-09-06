@@ -134,7 +134,7 @@ makeRequest()
 
 ### Processing the response
 
-When you make a request the promise returned by `fetch()` returns a response in the form of a object. This object contains information received from the server and also various methods. We can use these methods to work with the data. These methods are `clone()`, `redirect()`, `arrayBuffer()`, `formData()`, `blob()`, `text()` and `json()`.
+When you make a request the promise returned by `fetch()` returns a response object. This object contains information received from the server and also various methods. We can use these methods to work with the data. These methods are `clone()`, `redirect()`, `arrayBuffer()`, `formData()`, `blob()`, `text()` and `json()`.
 
 The `clone()` method creates a clone of the response. The `redirect()` method creates a new response, but with a different URL. The `arrayBuffer()` returns the response as [ArrayBuffer]. The `formData()` returns the response as [FormData] object. The `blob()` returns returns the response as a Blob.
 
