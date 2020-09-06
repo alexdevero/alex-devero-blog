@@ -431,6 +431,53 @@ fetch('/users/tom', {
   .catch(err => console.log(err))
 ```
 
+### The PUT request
+
+The `PUT` type of request is most often used to update an existing data or resources. This request looks almost the same as the `POST`. The main, and sometimes only, difference is that the `method` option for `fetch()` must be set to `PUT`.
+
+```JavaScript
+// Some data to send to update existing records
+const userData = {
+  email: 'jack@obrian.co'
+}
+
+// Make Put request
+async function makePutRequest() {
+  // Use try...catch statement
+  try {
+    // Make fetch request
+    const responseData = await fetch('/users/jack', {
+      method: 'PUT', // Change the request method
+      body: JSON.stringify(userData) // Add data you want to send
+    })
+
+    // Parsing as JSON happens here:
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makePutRequest()
+
+
+// Alternative with promise handler functions:
+fetch('/users/jack', {
+  method: 'PUT', // Change the request method
+  body: JSON.stringify(userData) // Add data you want to send
+})
+  .then(response => response.json())
+  .then(responseJSON => console.log(responseJSON))
+  .catch(err => console.log(err))
+```
+
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
 [xyz-ihs snippet="thank-you-message"]
