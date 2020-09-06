@@ -397,7 +397,7 @@ fetch('/users/register', {
 
 ### The DELETE request
 
-When you want to delete some data, files, etc. you can make `DELETE` requests. Making this type of request requires a bit more syntax than `GET` but less than `POST`. What you need to do is to set the `method` option for `fetch()` to `DELETE`. Then, you need to know the correct URL and what do you want to delete.
+When you want to delete some data, files, etc. you can make `DELETE` request. Making this type of request requires a bit more syntax than `GET` but less than `POST`. What you need to do is to set the `method` option for `fetch()` to `DELETE`. Then, you need to know the correct URL and what do you want to delete.
 
 ```JavaScript
 // Make DELETE request
