@@ -392,6 +392,45 @@ fetch('/users/register', {
   .catch(err => console.log(err))
 ```
 
+### The DELETE request
+
+When you want to delete some data, files, etc. you can make `DELETE` requests. Making this type of request requires a bit more syntax than `GET` but less than `POST`. What you need to do is to set the `method` option for `fetch()` to `DELETE`. Then, you need to know the correct URL and what do you want to delete.
+
+```JavaScript
+// Make DELETE request
+async function makeDeleteRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('/users/tom', {
+      method: 'DELETE' // Change the request method
+    })
+
+    // Parsing as JSON happens here:
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makeDeleteRequest()
+
+// Alternative with promise handler functions:
+fetch('/users/tom', {
+  method: 'DELETE', // Change the request method
+})
+  .then(response => response.text())
+  .then(responseText => console.log(responseText))
+  .catch(err => console.log(err))
+```
+
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
 [xyz-ihs snippet="thank-you-message"]
