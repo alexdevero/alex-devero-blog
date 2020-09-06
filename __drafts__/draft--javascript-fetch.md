@@ -1,9 +1,7 @@
 # Getting Started With the JavaScript Fetch API
 
 In the past, there were two ways to make requests. One was with `XMLHttpRequest`. The other was with jQuery, namely the `ajax()` method. Fortunately, JavaScript now offers a third way, the Fetch API.
-In this tutorial, you will learn all you need to know to get started with JavaScript Fetch API.
-
-<!--more-->
+In this tutorial, you will learn all you need to know to get started with JavaScript Fetch API.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -260,7 +258,7 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
 ### Processing already processed response
 
-When you process the response with one method, to parse it in one format you can't process it again, and parse it to another format. If you parse the response as a text, you can't then take the response and parse it again as a JSON. After you parse the response for once it will be locked. Parsing it again will lead to TypeError.
+When you process the response with one method, to parse it in one format you can't process it again, and parse it to another format. If you parse the response as a text, you can't then take the response and parse it again as a JSON. After you parse the response once it will be locked. Parsing it again will lead to TypeError.
 
 ```JavaScript
 async function makeRequest() {
@@ -296,7 +294,7 @@ makeRequest()
 
 ## Making request with fetch
 
-The default type of request the `fetch()` method makes is `GET`. If you want make a different type of request you can change it. You can chang the type of request through the optional config object you can pass as the second argument to the `fetch()` method. For example, you can set `method` to `POST` to make a `POST` request and so on.
+The default type of request the `fetch()` method makes is `GET`. If you want to make a different type of request you can change it. You can chang the type of request through the optional config object you can pass as the second argument to the `fetch()` method. For example, you can set `method` to `POST` to make a `POST` request and so on.
 
 ### The GET request
 
@@ -423,7 +421,6 @@ async function makeDeleteRequest() {
       method: 'DELETE' // Change the request method
     })
 
-    // Parsing as JSON happens here:
     // Parse the response as a JSON
     const responseJSON = await responseData.json()
 
@@ -499,7 +496,7 @@ fetch('/users/jack', {
 
 ### The PATCH request
 
-The `PATCH` is tha last type of request you can make with fetch API we will discuss. This type of request is very similar to the `PUT`. The difference between these two is that `PUT` is used to update the old version with new version. Meaning, you update everything. With `PATCH`, you update only part of existing data, user email for example.
+The `PATCH` is the last type of request you can make with fetch API we will discuss. This type of request is very similar to the `PUT`. The difference between these two is that `PUT` is used to update the old version with new version. Meaning, you update everything. With `PATCH`, you update only part of existing data, user email for example.
 
 ```JavaScript
 // Some data to send to update
@@ -574,7 +571,7 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
-The JavaScript Fetch API provides easy and friendly way to make requests. I hope this tutorial help you learn about what fetch API is and how it works. I also hope that the examples we worked with helped you understand how to use this API, to make successful requests and how to work with the responses in the right way.
+The JavaScript Fetch API provides easy and friendly way to make requests. I hope this tutorial help you learn about what fetch API is and how it works. I also hope that the examples we worked with helped you understand how to use this API. How to make successful requests and how to work with the responses in the right way.
 
 [xyz-ihs snippet="thank-you-message"]
 
