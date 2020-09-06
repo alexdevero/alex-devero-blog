@@ -250,6 +250,14 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
 <!-- ### Links -->
 [promises]: https://blog.alexdevero.com/javascript-promises/
+[MDN]: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
+[promise handler functions]: https://blog.alexdevero.com/javascript-promises/#handling-javascript-promises-with-handler-functions
+[await]: https://blog.alexdevero.com/javascript-async-await/
+[try...catch]: https://blog.alexdevero.com/error-handling-javascript/#error-handling-and-try8230catch-statement
+[top-level await]: https://github.com/tc39/proposal-top-level-await
+[async functions]: https://blog.alexdevero.com/javascript-async-await/
+[ArrayBuffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
+[FormData]: https://developer.mozilla.org/en-US/docs/Web/API/FormData
 
 <!--
 ### Meta:
