@@ -281,7 +281,7 @@ makeRequest()
 
 The default type of request the `fetch()` method makes is `GET`. If you want make a different type of request you can change it. You can chang the type of request through the optional config object you can pass as the second argument to the `fetch()` method. For example, you can set `method` to `POST` to make a `POST` request and so on.
 
-### GET request
+### The GET request
 
 If you use the `fetch()` method as it is and provide it only with URL, it will automatically execute `GET` request.
 
@@ -293,7 +293,6 @@ async function makeGetRequest() {
     // Make GET fetch request
     const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
-    // Parsing as JSON happens here:
     // Parse the response as a JSON
     const responseJSON = await responseData.json()
 
@@ -332,6 +331,62 @@ makeGetRequest()
 
 // Alternative with promise handler functions:
 fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  .then(response => response.json())
+  .then(responseJSON => console.log(responseJSON))
+  .catch(err => console.log(err))
+```
+
+### The POST request
+
+Another popular type of request is `POST`. You can make this type of request with fetch API if you change the `method` on config object. This object is the second, optional, argument you can pass to `fetch()`. If you set the `method` to `POST` the `fetch()` method will execute a `POST` request.
+
+When you make a `POST` request you will need to send some data. You can add these data through `body` option. This option is also in the config object. In addition, you may also want to change the `Content-Type`. You can do this via `headers` option. However, for a simple `POST` just the `method` and `body` might be enough.
+
+```JavaScript
+// Some data to send
+const userData = {
+  firstName: 'Tom',
+  lastName: 'Jones',
+  email: 'tom@jones.ai'
+}
+
+// Make POST request
+async function makePostRequest() {
+  // Use try...catch statement
+  try {
+    // Make fetch request
+    const responseData = await fetch('/users/register', {
+      method: 'POST', // Change the request method
+      headers: { // Change the Content-Type
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(userData) // Add data you want to send
+    })
+
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makePostRequest()
+
+
+// Alternative with promise handler functions:
+fetch('/users/register', {
+  method: 'POST', // Change the request method
+  headers: { // Change the Content-Type
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(userData) // Add data you want to send
+})
   .then(response => response.json())
   .then(responseJSON => console.log(responseJSON))
   .catch(err => console.log(err))
