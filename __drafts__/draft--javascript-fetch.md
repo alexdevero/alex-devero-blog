@@ -6,6 +6,20 @@ In this tutorial, you will learn all you need to know to get started with JavaSc
 <!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## The basics of JavaScript Fetch API
+### Handling fetch with promise handler functions
+### Handling fetch with await
+### Processing the response
+### Processing already processed response
+## Making request with fetch
+### The GET request
+### The POST request
+### The DELETE request
+### The PUT request
+### The PATCH request
+## A note about the Response object
+## Conclusion: Getting Started With the JavaScript Fetch API
 -->
 
 ## A quick introduction
