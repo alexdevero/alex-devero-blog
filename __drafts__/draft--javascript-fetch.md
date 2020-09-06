@@ -242,6 +242,41 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
   .catch(err => console.log(err))
 ```
 
+### Processing already processed response
+
+When you process the response with one method, to parse it in one format you can't process it again, and parse it to another format. If you parse the response as a text, you can't then take the response and parse it again as a JSON. After you parse the response for once it will be locked. Parsing it again will lead to TypeError.
+
+```JavaScript
+async function makeRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+
+    // Parse the response as a text
+    const responseText = await responseData.text()
+
+    // This will not work after the first parsing
+    // Try to parse the response again as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the text
+    console.log(responseText)
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+makeRequest()
+// Output:
+// TypeError: Failed to execute 'json' on 'Response': body stream is locked
+```
+
 ## Making request with fetch
 
 ## Conclusion: Getting Started With the JavaScript Fetch API
