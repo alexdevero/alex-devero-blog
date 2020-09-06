@@ -187,6 +187,7 @@ makeRequest()
 //   lang: 'en'
 // }'
 
+
 // Alternative:
 fetch('https://sv443.net/jokeapi/v2/joke/Programming')
   .then(response => response.text())
@@ -235,6 +236,7 @@ makeRequest()
 //   lang: 'en'
 // }
 
+
 // Alternative:
 fetch('https://sv443.net/jokeapi/v2/joke/Programming')
   .then(response => response.json())
@@ -272,6 +274,7 @@ async function makeRequest() {
   }
 }
 
+// Call the makeRequest()
 makeRequest()
 // Output:
 // TypeError: Failed to execute 'json' on 'Response': body stream is locked
@@ -375,7 +378,7 @@ async function makePostRequest() {
   }
 }
 
-// Call the makeRequest()
+// Call the makePostRequest()
 makePostRequest()
 
 
@@ -401,7 +404,7 @@ When you want to delete some data, files, etc. you can make `DELETE` requests. M
 async function makeDeleteRequest() {
   // Use try...catch statement
   try {
-    // Use await and make fetch request
+    // Make fetch request
     const responseData = await fetch('/users/tom', {
       method: 'DELETE' // Change the request method
     })
@@ -421,6 +424,7 @@ async function makeDeleteRequest() {
 
 // Call the makeRequest()
 makeDeleteRequest()
+
 
 // Alternative with promise handler functions:
 fetch('/users/tom', {
