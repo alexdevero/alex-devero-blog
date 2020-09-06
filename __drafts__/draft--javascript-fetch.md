@@ -482,6 +482,53 @@ fetch('/users/jack', {
   .catch(err => console.log(err))
 ```
 
+### The PATCH request
+
+The `PATCH` is tha last type of request you can make with fetch API we will discuss. This type of request is very similar to the `PUT`. The difference between these two is that `PUT` is used to update the old version with new version. Meaning, you update everything. With `PATCH`, you update only part of existing data, user email for example.
+
+```JavaScript
+// Some data to send to update
+// only a part of existing records
+const userData = {
+  email: 'jack@obrian.co'
+}
+
+// Make PATCH request
+async function makePatchRequest() {
+  // Use try...catch statement
+  try {
+    // Make fetch request
+    const responseData = await fetch('/users/jack', {
+      method: 'PATCH', // Change the request method
+      body: JSON.stringify(userData) // Add data you want to send
+    })
+
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makePatchRequest()
+makePatchRequest()
+
+
+// Alternative with promise handler functions:
+fetch('/users/jack', {
+  method: 'PATCH', // Change the request method
+  body: JSON.stringify(userData) // Add data you want to send
+})
+  .then(response => response.json())
+  .then(responseJSON => console.log(responseJSON))
+  .catch(err => console.log(err))
+```
+
 ## Conclusion: Getting Started With the JavaScript Fetch API
 
 [xyz-ihs snippet="thank-you-message"]
