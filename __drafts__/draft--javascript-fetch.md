@@ -442,6 +442,8 @@ The `PUT` type of request is most often used to update an existing data or resou
 ```JavaScript
 // Some data to send to update existing records
 const userData = {
+  firstName: 'Jack',
+  lastName: 'O\'Brian',
   email: 'jack@obrian.co'
 }
 
@@ -455,7 +457,6 @@ async function makePutRequest() {
       body: JSON.stringify(userData) // Add data you want to send
     })
 
-    // Parsing as JSON happens here:
     // Parse the response as a JSON
     const responseJSON = await responseData.json()
 
@@ -468,7 +469,7 @@ async function makePutRequest() {
   }
 }
 
-// Call the makeRequest()
+// Call the makePutRequest()
 makePutRequest()
 
 
