@@ -152,7 +152,7 @@ So, if you are not sure what type of response you should expect, use `text()`. I
 async function makeRequest() {
   // Use try...catch statement
   try {
-    // Use await and make fetch request
+    // Make fetch request
     const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parsing as Text happens here:
@@ -199,7 +199,7 @@ fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 async function makeRequest() {
   // Use try...catch statement
   try {
-    // Use await and make fetch request
+    // Make fetch request
     const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parsing as JSON happens here:
@@ -250,7 +250,7 @@ When you process the response with one method, to parse it in one format you can
 async function makeRequest() {
   // Use try...catch statement
   try {
-    // Use await and make fetch request
+    // Make fetch request
     const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parse the response as a text
@@ -287,10 +287,10 @@ If you use the `fetch()` method as it is and provide it only with URL, it will a
 
 ```JavaScript
 // GET request example
-async function makeRequest() {
+async function makeGetRequest() {
   // Use try...catch statement
   try {
-    // Use await and make fetch request
+    // Make GET fetch request
     const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parsing as JSON happens here:
@@ -306,8 +306,8 @@ async function makeRequest() {
   }
 }
 
-// Call the makeRequest()
-makeRequest()
+// Call the makeGetRequest()
+makeGetRequest()
 // Output:
 // {
 //   error: false,
