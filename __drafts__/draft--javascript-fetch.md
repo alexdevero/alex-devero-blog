@@ -134,7 +134,113 @@ makeRequest()
 
 ### Processing the response
 
-- https://javascript.info/fetch
+When you make a request the promise returned by `fetch()` returns a response in the form of a object. This object contains information received from the server and also various methods. We can use these methods to work with the data. These methods are `clone()`, `redirect()`, `arrayBuffer()`, `formData()`, `blob()`, `text()` and `json()`.
+
+The `clone()` method creates a clone of the response. The `redirect()` method creates a new response, but with a different URL. The `arrayBuffer()` returns the response as [ArrayBuffer]. The `formData()` returns the response as [FormData] object. The `blob()` returns returns the response as a Blob.
+
+The `text()` returns the response as a string, or text. The last one, the `json()`, returns the response as a JSON. Which of these methods you should use to parse the response depends on what type of data you expect. For example, if you expect to receive data in the form of a JSON then use `json()`, if text use `text()` and so on.
+
+The nice thing about these method is that you don¨t necessarily need to know what response should you expect. These methods that parses the response, such as the `text()` and `json()` will often work even if you pick wrong method for the job. For example, let's say you use the `text()` method, but response will be a JSON.
+
+In that case, the `text()` method will be able to pick that JSON and parse it as a string. The result will be basically stringified JSON. That said, the same will not work with text response and `json()`. The `json()` expects specific syntax. If the response is a plain text, and you use `json()`, you will get syntax error.
+
+So, if you are not sure what type of response you should expect, use `text()`. In the worst case, you will get some stringified JSON and you will know that you should use `json()` instead. If you expect other format, use corresponding method: `response.formData()`, `response.blob()` or `response.arrayBuffer()`.
+
+```JavaScript
+// Example no.1:
+// Parsing response as a text
+async function makeRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+
+    // Parsing as Text happens here:
+    // Parse the response as a text
+    const responseText = await responseData.text()
+
+    // Log the text
+    console.log(responseText)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makeRequest()
+// Output:
+// '{
+//   error: false,
+//   category: 'Programming',
+//   type: 'single',
+//   joke: 'Programming is 10% science, 20% ingenuity, and 70% getting the ingenuity to work with the science.',
+//   flags: {
+//     nsfw: false,
+//     religious: false,
+//     political: false,
+//     racist: false,
+//     sexist: false
+//   },
+//   id: 37,
+//   lang: 'en'
+// }'
+
+// Alternative:
+fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  .then(response => response.text())
+  .then(responseText => console.log(responseText))
+  .catch(err => console.log(err))
+
+
+// Example no.2:
+// Parsing response as a text
+async function makeRequest() {
+  // Use try...catch statement
+  try {
+    // Use await and make fetch request
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+
+    // Parsing as JSON happens here:
+    // Parse the response as a JSON
+    const responseJSON = await responseData.json()
+
+    // Log the JSON
+    console.log(responseJSON)
+  }
+  catch (error) {
+    // Log any error
+    console.log(error)
+  }
+}
+
+// Call the makeRequest()
+makeRequest()
+// Output:
+// {
+//   error: false,
+//   category: 'Programming',
+//   type: 'twopart',
+//   setup: 'How do you generate a random string?',
+//   delivery: 'Put a Windows user in front of Vim and tell him to exit.',
+//   flags: {
+//     nsfw: false,
+//     religious: false,
+//     political: false,
+//     racist: false,
+//     sexist: false
+//   },
+//   id: 129,
+//   lang: 'en'
+// }
+
+// Alternative:
+fetch('https://sv443.net/jokeapi/v2/joke/Programming')
+  .then(response => response.json())
+  .then(responseJSON => console.log(responseJSON))
+  .catch(err => console.log(err))
+```
 
 ## Making request with fetch
 
