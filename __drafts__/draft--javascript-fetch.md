@@ -153,7 +153,7 @@ async function makeRequest() {
   // Use try...catch statement
   try {
     // Use await and make fetch request
-    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parsing as Text happens here:
     // Parse the response as a text
@@ -200,7 +200,7 @@ async function makeRequest() {
   // Use try...catch statement
   try {
     // Use await and make fetch request
-    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parsing as JSON happens here:
     // Parse the response as a JSON
@@ -251,7 +251,7 @@ async function makeRequest() {
   // Use try...catch statement
   try {
     // Use await and make fetch request
-    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Any')
+    const responseData = await fetch('https://sv443.net/jokeapi/v2/joke/Programming')
 
     // Parse the response as a text
     const responseText = await responseData.text()
