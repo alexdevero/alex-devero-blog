@@ -294,6 +294,53 @@ console.log(myObjTwo)
 // }
 ```
 
+## Spread operator and function arguments
+
+When you use spread operator to access content of an iterable, it will return only the content. It will remove the surrounding square brackets in case of an array or curly brackets in case of an object literal. This can be handy when you want to call a function that takes some arguments.
+
+Instead of passing each argument one by one, you can pass in an array with all arguments preceded by spread operator. The result will be the same as if you would pass all arguments one by one.
+
+```JavaScript
+// Create an array with something
+// that will be used as arguments
+const myArgs = ['Jack', 'Joe', 'Tony']
+
+// Create a simple function
+// that will return all arguments one by one
+function sayNames(name1, name2, name3) {
+  return `Names you passed are ${name1}, ${name2} and ${name3}.`
+}
+
+// Call sayNames() function using spread operator
+// to pass in content of "myArgs" as arguments
+sayNames(...myArgs)
+// Output:
+// 'Names you passed are Jack, Joe and Tony.'
+```
+
+You can also use spread operator with math functions that accept multiple values as arguments to pass in the values.
+
+```JavaScript
+// Create an array with numbers
+const numbers = [15, 3, -5, 84, 653, Infinity]
+
+// Get the highest number inside "numbers"
+const highestNumber = Math.max(...numbers)
+
+// Get the lowest number inside "numbers"
+const lowestNumber = Math.min(...numbers)
+
+// Log the value of "highestNumber"
+console.log(highestNumber)
+// Output:
+// Infinity
+
+// Log the value of "lowestNumber"
+console.log(lowestNumber)
+// Output:
+// -5
+```
+
 ## Rest Parameters
 
 ## Conclusion: [...] ...
