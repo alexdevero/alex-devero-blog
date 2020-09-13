@@ -318,7 +318,7 @@ sayNames(...myArgs)
 // 'Names you passed are Jack, Joe and Tony.'
 ```
 
-You can also use spread operator with math functions that accept multiple values as arguments to pass in the values.
+You can also use spread operator with math functions, that accept multiple values as arguments, to pass in those values.
 
 ```JavaScript
 // Create an array with numbers
