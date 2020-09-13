@@ -243,6 +243,55 @@ console.log(myMergedObj)
 // }
 ```
 
+## Inserting data with spread operator
+
+We discussed ho to use spread operator to access content of arrays and object literals. We also discussed how to use it to duplicate those iterables and even merge them. This not all you can do. You can also use spread operator to data. You can take content of one iterable and insert it inside another iterable.
+
+For example, let's say you have two arrays with some content. Spread operators allows you to insert the content of one anywhere inside the second. You can do this also with object literals, insert content from one anywhere inside another. Or, you can insert object literal into an array or vice versa.
+
+```JavaScript
+// Example no.1: Arrays
+// Create first array
+const myArrayOne = ['C', 'C++', 'Java']
+
+// Create second array with some content
+// plus all the content from "myArrayOne"
+const myArrayTwo = ['JavaScript', 'Python', 'PHP', ...myArrayOne, 'Assembly']
+
+// Log the content of "myArrayTwo"
+console.log(myArrayTwo)
+// Output:
+// [ 'JavaScript', 'Python', 'PHP', 'C', 'C++', 'Java', 'Assembly' ]
+
+
+// Example no.2: Object literals
+// Create first object literal
+const myObjOne = {
+  numOfPages: 706,
+  publisher: 'O\'Reilly Media'
+}
+
+// Create second object literal with some content
+// plus all the content from "myObjOne"
+const myObjTwo = {
+  title: 'JavaScript: The Definitive Guide',
+  author: 'David Flanagan',
+  ... myObjOne, // insert the content of "myObjOne"
+  language: 'English'
+}
+
+// Log the content of "myObjTwo"
+console.log(myObjTwo)
+// Output:
+// {
+//   title: 'JavaScript: The Definitive Guide',
+//   author: 'David Flanagan',
+//   numOfPages: 706,
+//   publisher: "O'Reilly Media",
+//   language: 'English'
+// }
+```
+
 ## Rest Parameters
 
 ## Conclusion: [...] ...
