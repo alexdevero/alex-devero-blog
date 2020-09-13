@@ -26,12 +26,12 @@ console.log(...myArray)
 // 'Venus' 'Ares' 'Mars'
 ```
 
-### Spread operator and objects
+### Spread operator and object literals
 
-When you want to use spread operator with objects the syntax is the same. You will use those three dots, but now followed by the name of the object whose content you want to access. The result you will get will be the content, only without the surrounding curly braces.
+When you want to use spread operator with object literals the syntax is the same. You will use those three dots, but now followed by the name of the object whose content you want to access. The result you will get will be the content, only without the surrounding curly braces.
 
 ```JavaScript
-// Create object
+// Create object literal
 const myObj = {
   firstName: 'Sam',
   lastName: 'Dodge'
@@ -135,9 +135,9 @@ console.log(myDeepCopy)
 // [ 'Spread', 'Rest', 'JavaScript' ]
 ```
 
-### Deep copies of objects with spread operator
+### Deep copies of object literals with spread operator
 
-Just like you can create deep copies of arrays you can also create deep copies of objects. The syntax is almost the same. You have to use those three dots followed by the name of the object you want to copy. You will assign this into a new variable. Just make sure to wrap this whole thing in curly brackets, not square.
+Just like you can create deep copies of arrays you can also create deep copies of object literals. The syntax is almost the same. You have to use those three dots followed by the name of the object literal you want to copy. You will then assign this into a new variable. Just make sure to wrap this whole thing in curly brackets, not square.
 
 ```JavaScript
 // Create the original array
