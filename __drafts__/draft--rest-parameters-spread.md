@@ -21,7 +21,7 @@ Table of Contents:
 
 ## Introduction to JavaScript spread operator
 
-The JavaScript spread operator is a feature that allows you to access content of an iterable object. Iterable object is an object, or data structure, that allows to access its content with [for...of] loop. The most popular example of an iterable is an array. Another example of an iterable can be objects literals or [strings].
+Spread operator is a feature that allows you to access content of an iterable object. Iterable object is an object, or data structure, that allows to access its content with [for...of] loop. The most popular example of an iterable is an array. Another example of an iterable can be objects literals or [strings].
 
 When you wanted to access all content an some iterable before spread operator you had to use some kind of a loop, such as the mentioned `for...of` loop, or method, such as [forEach()]. Another option were indexes. Spread Operator allows you to do this much faster and with much less code. About the syntax.
 
@@ -372,7 +372,9 @@ console.log(processedText)
 // [ 'S', 'u', 'n', 'n', 'y', ' ', 'd', 'a', 'y', '.' ]
 ```
 
-## Conclusion: What Javascript Spread Operator is, How It Works and How to Use It
+## Conclusion: What JavaScript spread operator is, how it works and how to use it
+
+JavaScript spread operator is very easy to use. It allows you to do a lot of things with only small amount of code. I hope this tutorial helped you understand what JavaScript spread operator is, how it works and how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -398,5 +400,5 @@ console.log(processedText)
 
 <!--
 ### Resources:
-- https://javascript.info/rest-parameters-spread
+-
 -->
