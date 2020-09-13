@@ -5,6 +5,18 @@ JavaScript spread operator is one of the more popular features that were introdu
 <!--more-->
 <!--
 Table of Contents:
+## Introduction to JavaScript spread operator
+### Spread operator and object literals
+## Duplicating iterables with spread operator
+### Deep and shallow copies
+### Deep copies with spread operator
+### Deep copies of object literals with spread operator
+## Merging with spread operator
+### Merging object literals with spread operator
+## Inserting data with spread operator
+## Spread operator and function arguments
+## Using spread operator with strings
+## Conclusion: What JavaScript spread operator is, how it works
 -->
 
 ## Introduction to JavaScript spread operator
