@@ -341,6 +341,25 @@ console.log(lowestNumber)
 // -5
 ```
 
+## Using spread operator with strings
+
+In the beginning of this tutorial we discussed that spread operator can be used with iterable objects. Well, only with them. I mentioned that one of these iterables are also strings. This may sound weird, but it is true. JavaScript allows you to use spread operator also with strings.
+
+When you use spread on a string, the result will be the same as if you would use `split()` method. In other words, spread operator will convert the string into an array. You will get that string in the form of individual characters, that is words, digits and whitespace.
+
+```JavaScript
+// Create some text
+const text = 'Sunny day.'
+
+// Use spread to convert the string into an array
+const processedText = [...text]
+
+// Log the content
+console.log(processedText)
+// Output:
+// [ 'S', 'u', 'n', 'n', 'y', ' ', 'd', 'a', 'y', '.' ]
+```
+
 ## Conclusion: What Javascript Spread Operator is, How It Works and How to Use It
 
 [xyz-ihs snippet="thank-you-message"]
