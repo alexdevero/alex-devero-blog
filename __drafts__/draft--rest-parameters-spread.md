@@ -26,6 +26,25 @@ console.log(...myArray)
 // 'Venus' 'Ares' 'Mars'
 ```
 
+### Spread operator and objects
+
+When you want to use spread operator with objects the syntax is the same. You will use those three dots, but now followed by the name of the object whose content you want to access. The result you will get will be the content, only without the surrounding curly braces.
+
+```JavaScript
+// Create object
+const myObj = {
+  firstName: 'Sam',
+  lastName: 'Dodge'
+}
+
+// Use spread operator to access content of "myObj" variable
+// Note: the {} around ...myObj are to avoid TypeError
+// console.log(...myObj) would not work
+console.log({ ...myObj })
+// Output:
+// { firstName: 'Sam', lastName: 'Dodge' }
+```
+
 ## Duplicating iterables with spread operator
 
 The spread operator allows to quickly access content of an iterable. This can be useful when you want to copy iterable objects. You may not know this, but copying objects can be tricky. When you try to copy some [primitive], like a number or a string, you will create a real copy, or clone. This is called [deep copy].
