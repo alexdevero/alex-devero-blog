@@ -1,6 +1,6 @@
 # What Javascript Spread Operator is, How It Works and How to Use It
 
-Rest Parameters and Spread Operator are two quite popular features introduced in ES6. Thi tutorial will help you understand them. You will learn what rest parameters and spread operator are and how they work. You will also learn how to use them in the right way.
+JavaScript spread operator is one of the more popular features that were introduced in ES6. This tutorial will help you understand it. You will learn what spread operator is and how it works. You will also learn how to use it to copy and merge arrays and object literals, insert data and more.
 
 <!--more-->
 <!--
