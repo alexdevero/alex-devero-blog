@@ -1,4 +1,4 @@
-# How JavaScript Spread Operator and Rest Parameters Work
+# What Javascript Spread Operator is, How It Works and How to Use It
 
 Rest Parameters and Spread Operator are two quite popular features introduced in ES6. Thi tutorial will help you understand them. You will learn what rest parameters and spread operator are and how they work. You will also learn how to use them in the right way.
 
@@ -7,9 +7,9 @@ Rest Parameters and Spread Operator are two quite popular features introduced in
 Table of Contents:
 -->
 
-## Spread Operator
+## Introduction to JavaScript spread operator
 
-The spread operator is a feature that allows you to access content of an iterable object. Iterable object is an object, or data structure, that allows to access its content with [for...of] loop. The most popular example of an iterable is an array. Another example of an iterable can be objects literals or [strings].
+The JavaScript spread operator is a feature that allows you to access content of an iterable object. Iterable object is an object, or data structure, that allows to access its content with [for...of] loop. The most popular example of an iterable is an array. Another example of an iterable can be objects literals or [strings].
 
 When you wanted to access all content an some iterable before spread operator you had to use some kind of a loop, such as the mentioned `for...of` loop, or method, such as [forEach()]. Another option were indexes. Spread Operator allows you to do this much faster and with much less code. About the syntax.
 
@@ -341,9 +341,7 @@ console.log(lowestNumber)
 // -5
 ```
 
-## Rest Parameters
-
-## Conclusion: [...] ...
+## Conclusion: What Javascript Spread Operator is, How It Works and How to Use It
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -363,8 +361,8 @@ console.log(lowestNumber)
 
 <!--
 ### Keywords:
+- JavaScript spread operator
 - spread operator
-- rest parameters
 -->
 
 <!--
