@@ -204,6 +204,45 @@ console.log(arrayMerged)
 // [ 1, 2, 3, 'four', 'five', 'six' ]
 ```
 
+### Merging object literals with spread operator
+
+Merging object literals with spread operator works just like with arrays. The only difference in syntax is that you have to use curly brackets instead of square brackets to wrap everything. The rest is the same and the result is a new object literal with merged content of the object literals you specified.
+
+```JavaScript
+// Create first object
+const myObjOne = {
+  title: 'The Color of Magic',
+  author: 'Terry Pratchett',
+}
+
+// Create second object
+const myObjTwo = {
+  publicationDate: '2009',
+  format: 'Paperback'
+}
+
+// Create third object
+const myObjThree = {
+  language: 'English',
+  genre: 'Fantasy'
+}
+
+// Use spread operator to merge "myObjOne", "myObjTwo" and "myObjThree"
+const myMergedObj = { ...myObjOne, ...myObjTwo, ...myObjThree }
+
+// Log the content of "myMergedObj"
+console.log(myMergedObj)
+// Output:
+// {
+//   title: 'The Color of Magic',
+//   author: 'Terry Pratchett',
+//   publicationDate: '2009',
+//   format: 'Paperback',
+//   language: 'English',
+//   genre: 'Fantasy'
+// }
+```
+
 ## Rest Parameters
 
 ## Conclusion: [...] ...
