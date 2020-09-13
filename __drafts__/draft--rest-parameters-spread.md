@@ -13,7 +13,7 @@ The spread operator is a feature that allows you to access content of an iterabl
 
 When you wanted to access all content an some iterable before spread operator you had to use some kind of a loop, such as the mentioned `for...of` loop, or method, such as [forEach()]. Another option were indexes. Spread Operator allows you to do this much faster and with much less code. About the syntax.
 
-The syntax of spread operator is simple and easy to remember. It consists of three dots (`...`). These three dots are followed by the iterable (`...someIterable`), which content you want to access.
+The syntax of spread operator is simple and easy to remember. It consists of three dots (`...`). These three dots are followed by the iterable (`...someIterable`), whose content you want to access.
 
 ```JavaScript
 // Create array
