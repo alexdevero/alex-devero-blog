@@ -135,6 +135,50 @@ console.log(myDeepCopy)
 // [ 'Spread', 'Rest', 'JavaScript' ]
 ```
 
+### Deep copies of objects with spread operator
+
+Just like you can create deep copies of arrays you can also create deep copies of objects. The syntax is almost the same. You have to use those three dots followed by the name of the object you want to copy. You will assign this into a new variable. Just make sure to wrap this whole thing in curly brackets, not square.
+
+```JavaScript
+// Create the original array
+const myObj = {
+  title: 'Guards! Guards!',
+  author: 'Terry Pratchett',
+}
+
+// Use spread operator to create deep copy of "myObj""
+const myDeepCopy = { ...myObj }
+
+// Log the content of "myObj"
+console.log(myObj)
+// Output:
+// { title: 'Guards! Guards!', author: 'Terry Pratchett' }
+
+// Log the content of "myDeepCopy"
+console.log(myDeepCopy)
+// Output:
+// { title: 'Guards! Guards!', author: 'Terry Pratchett' }
+
+// Add new property the original object "myObj"
+myObj.format = 'Hardcover'
+
+// Log the content of "myObj" again
+// New property is there
+console.log(myObj)
+// Output:
+// {
+//   title: 'Guards! Guards!',
+//   author: 'Terry Pratchett',
+//   format: 'Hardcover'
+// }
+
+// Log the content of "myDeepCopy" again
+// The "myDeepCopy" still contains only two properties
+console.log(myDeepCopy)
+// Output:
+// { title: 'Guards! Guards!', author: 'Terry Pratchett' }
+```
+
 ## Merging iterables with spread operator
 
 Another thing you can do with spread operator is merging two or more iterables. Previously, when you wanted to merge two or more arrays for example you would have to use some method such as `concat()`. Spread operator allows you to do this just as fast, if not faster, with easier syntax.
