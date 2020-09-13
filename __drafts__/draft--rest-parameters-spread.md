@@ -26,6 +26,98 @@ console.log(...myArray)
 // 'Venus' 'Ares' 'Mars'
 ```
 
+## Duplicating iterables with spread operator
+
+The spread operator allows to quickly access content of an iterable. This can be useful when you want to copy iterable objects. You may not know this, but copying objects can be tricky. When you try to copy some [primitive], like a number or a string, you will create a real copy, or clone. This is called [deep copy].
+
+### Deep and shallow copies
+
+This is not true for objects, including iterables. When you try to copy an object, such as array, you will not create a real copy. What will happen instead is that JavaScript will create new reference for that object. You can think about this as creating new alias or name.
+
+When you copy an object, you only create new alias for it. As a result, you have two names for that thing, that object. However, there is still only one object, not two. This also means that if you do something with the object using the second alias (reference), those changes will also have effect on the first alias.
+
+Remember, there is still only one objects, but two references (aliases) to access it. This type of copy is called [shallow copy] and this type of copying is called [copying by reference].
+
+```JavaScript
+// Create an array
+const myArray = ['Spread', 'Rest', 'JavaScript']
+
+// Create shallow copy of "myArray" variable
+const myShallowCopy = myArray
+
+// Log the content of "myArray"
+console.log(myArray)
+// Output:
+// [ 'Spread', 'Rest', 'JavaScript' ]
+
+// Log the content of "myShallowCopy"
+console.log(myShallowCopy)
+// Output:
+// [ 'Spread', 'Rest', 'JavaScript' ]
+
+// Remove the last item from the original array ("myArray")
+myArray.pop()
+
+// Log the content of "myArray" again
+// The last item is gone as it should
+console.log(myArray)
+// Output:
+// [ 'Spread', 'Rest' ]
+
+// Log the content of "myShallowCopy" again
+// The change of "myArray" will also appear in "myShallowCopy"
+// The last item is also gone
+console.log(myShallowCopy)
+// Output:
+// [ 'Spread', 'Rest' ]
+```
+
+### Deep copies with spread operator
+
+This is how copying in JavaScript works automatically. The good news is that spread operator allows you to overcome this issue with shallow copies. It allows you to quickly create deep copies of iterables. So, no more worries about changes happening in unexpected places.
+
+Creating a real, deep, copy of some iterable with spread operator is simple. First, create a variable and assign it some iterable, some array. This will be the iterable you will copy. Second, create new variable. To assign this new variable a copy of the first you will use the spread operator followed by the name of first variable, wrapped with square brackets.
+
+The spread operator will access the content and basically strip away the square brackets of the original array. So, in order to re-create the array, you will wrap the content in new pair of square brackets. That's it. You have a new deep copy of the first iterable, in this case the original array.
+
+If you decide to change the original array, or the copy, that change will have effect only for that specific array.
+
+```JavaScript
+// Create the original array
+const myArray = ['Spread', 'Rest', 'JavaScript']
+
+// Use spread operator to create deep copy of "myArray""
+const myDeepCopy = [...myArray]
+
+// Log the content of "myArray"
+console.log(myArray)
+// Output:
+// [ 'Spread', 'Rest', 'JavaScript' ]
+
+// Log the content of "myShallowCopy"
+console.log(myDeepCopy)
+// Output:
+// [ 'Spread', 'Rest', 'JavaScript' ]
+
+// Remove the last item from the original array "myArray"
+myArray.pop()
+
+// Log the content of "myArray" again
+// The last item is gone as it should
+console.log(myArray)
+// Output:
+// [ 'Spread', 'Rest' ]
+
+// Log the content of "myShallowCopy" again
+// The "myShallowCopy" is not affected by change made to "myArray"
+// The last item is still there as it should
+console.log(myDeepCopy)
+// Output:
+// [ 'Spread', 'Rest', 'JavaScript' ]
+```
+
+## Rest Parameters
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
@@ -34,6 +126,10 @@ console.log(...myArray)
 [for...of]: https://blog.alexdevero.com/javascript-loops/#for8230of-loop
 [strings]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/#strings
 [forEach()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+[primitive]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[deep copy]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/#deep-copy
+[shallow copy]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/#shallow-copy
+[copying by reference]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/#by-value-and-by-reference
 
 <!--
 ### Meta:
