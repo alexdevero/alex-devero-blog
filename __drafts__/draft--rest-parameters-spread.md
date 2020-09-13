@@ -113,7 +113,7 @@ console.log(myArray)
 // Output:
 // [ 'Spread', 'Rest', 'JavaScript' ]
 
-// Log the content of "myShallowCopy"
+// Log the content of "myDeepCopy"
 console.log(myDeepCopy)
 // Output:
 // [ 'Spread', 'Rest', 'JavaScript' ]
@@ -127,8 +127,8 @@ console.log(myArray)
 // Output:
 // [ 'Spread', 'Rest' ]
 
-// Log the content of "myShallowCopy" again
-// The "myShallowCopy" is not affected by change made to "myArray"
+// Log the content of "myDeepCopy" again
+// The "myDeepCopy" is not affected by change made to "myArray"
 // The last item is still there as it should
 console.log(myDeepCopy)
 // Output:
