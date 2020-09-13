@@ -23,7 +23,7 @@ Table of Contents:
 
 Spread operator is a feature that allows you to access content of an iterable object. Iterable object is an object, or data structure, that allows to access its content with [for...of] loop. The most popular example of an iterable is an array. Another example of an iterable can be objects literals or [strings].
 
-When you wanted to access all content an some iterable before spread operator you had to use some kind of a loop, such as the mentioned `for...of` loop, or method, such as [forEach()]. Another option were indexes. Spread Operator allows you to do this much faster and with much less code. About the syntax.
+When you wanted to access all content in some iterable, before spread operator was a thing, you had to use some kind of a loop, such as the mentioned `for...of` loop, or method, such as [forEach()]. Another option were indexes. Spread Operator allows you to do this much faster and with much less code. About the syntax.
 
 The syntax of spread operator is simple and easy to remember. It consists of three dots (`...`). These three dots are followed by the iterable (`...someIterable`), whose content you want to access.
 
@@ -195,7 +195,7 @@ console.log(myDeepCopy)
 
 ## Merging with spread operator
 
-Another thing you can do with spread operator is merging two or more iterables. Previously, when you wanted to merge two or more arrays for example you would have to use some method such as `concat()`. Spread operator allows you to do this just as fast, if not faster, with easier syntax.
+Another thing you can do with spread operator is merging two or more iterables. Previously, when you wanted to merge two or more arrays for example you would have to use some method such as `concat()`. Spread operator allows you to do this just as fast. If not faster. With easier syntax.
 
 The process is similar to copying existing array. You create new array. Next, you use the spread operator along with the names of first array you want to merge. This array will be followed by comma and another spread followed by name of the second array. Finally, you will also wrap this inside a pair square brackets.
 
@@ -259,9 +259,9 @@ console.log(myMergedObj)
 
 ## Inserting data with spread operator
 
-We discussed ho to use spread operator to access content of arrays and object literals. We also discussed how to use it to duplicate those iterables and even merge them. This not all you can do. You can also use spread operator to data. You can take content of one iterable and insert it inside another iterable.
+We discussed how to use spread operator to access content of arrays and object literals. We also discussed how to use it to duplicate those iterables and even merge them. This is not all you can do. You can also use spread operator to data. You can take content of one iterable and insert it inside another iterable.
 
-For example, let's say you have two arrays with some content. Spread operators allows you to insert the content of one anywhere inside the second. You can do this also with object literals, insert content from one anywhere inside another. Or, you can insert object literal into an array or vice versa.
+For example, let's say you have two arrays with some content. Spread operator allows you to insert the content of one anywhere inside the second. You can do this also with object literals, insert content from one anywhere inside another. Or, you can insert object literal into an array or vice versa.
 
 ```JavaScript
 // Example no.1: Arrays
