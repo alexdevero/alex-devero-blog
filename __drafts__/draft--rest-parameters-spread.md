@@ -116,6 +116,31 @@ console.log(myDeepCopy)
 // [ 'Spread', 'Rest', 'JavaScript' ]
 ```
 
+## Merging iterables with spread operator
+
+Another thing you can do with spread operator is merging two or more iterables. Previously, when you wanted to merge two or more arrays for example you would have to use some method such as `concat()`. Spread operator allows you to do this just as fast, if not faster, with easier syntax.
+
+The process is similar to copying existing array. You create new array. Next, you use the spread operator along with the names of first array you want to merge. This array will be followed by comma and another spread followed by name of the second array. Finally, you will also wrap this inside a pair square brackets.
+
+The result you will get will be all items from the arrays you wanted to merge inside a single array.
+
+```JavaScript
+// Create first array
+const arrayOne = [1, 2, 3]
+
+// Create second array
+const arrayTwo = ['four', 'five', 'six']
+
+// Merge first and second array using spread operator
+// Syntax: [...arrayOne, ...arrayTwo, ...arrayThree, etc.]
+const arrayThree = [...arrayOne, ...arrayTwo]
+
+// Log the content of "arrayThree"
+console.log(arrayThree)
+// Output:
+// [ 1, 2, 3, 'four', 'five', 'six' ]
+```
+
 ## Rest Parameters
 
 ## Conclusion: [...] ...
