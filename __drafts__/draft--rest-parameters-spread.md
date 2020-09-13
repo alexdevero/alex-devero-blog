@@ -179,6 +179,8 @@ console.log(myDeepCopy)
 // { title: 'Guards! Guards!', author: 'Terry Pratchett' }
 ```
 
+*Note: Creating deep copies with spread operator will work only for first-level items. It will not work for nested arrays ad objects. For this, you can use `const myClone = JSON.parse(JSON.stringify(objToClone))`.*
+
 ## Merging with spread operator
 
 Another thing you can do with spread operator is merging two or more iterables. Previously, when you wanted to merge two or more arrays for example you would have to use some method such as `concat()`. Spread operator allows you to do this just as fast, if not faster, with easier syntax.
