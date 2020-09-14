@@ -1,8 +1,6 @@
 # What Javascript Spread Operator is, How It Works and How to Use It
 
-JavaScript spread operator is one of the more popular features that were introduced in ES6. This tutorial will help you understand it. You will learn what spread operator is and how it works. You will also learn how to use it to copy and merge arrays and object literals, insert data and more.
-
-<!--more-->
+JavaScript spread operator is one of the more popular features that were introduced in ES6. This tutorial will help you understand it. You will learn what spread operator is and how it works. You will also learn how to use it to copy and merge arrays and object literals, insert data and more.<!--more-->
 <!--
 Table of Contents:
 ## Introduction to JavaScript spread operator
