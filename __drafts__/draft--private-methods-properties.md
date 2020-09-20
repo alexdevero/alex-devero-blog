@@ -7,14 +7,18 @@ Private class fields are one of the new features for JavaScript classes. In this
 Table of Contents:
 -->
 
-## h2
+## Introduction
+
+When you want to add some data to [JavaScript class] you can do so through class properties. These properties are by default always public. This also means that they are publicly accessible and modifiable. The same also applies to class methods. They are also public by default.
+
+This might be okay in many cases. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private class fields and private methods can be handy.
 
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[JavaScript class]: https://blog.alexdevero.com/javascript-classes-pt1/
 
 <!--
 ### Meta:
