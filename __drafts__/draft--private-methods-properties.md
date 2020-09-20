@@ -21,7 +21,7 @@ Table of Contents:
 
 When you want to add some data to [JavaScript class] you can do so through class properties. These properties are by default always public. This also means that they are publicly accessible and modifiable. The same also applies to class methods. They are also public by default.
 
-This might be okay in many cases. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private class fields and private methods can be handy.
+This might be okay in many cases. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private methods and class fields can be handy.
 
 ## Keeping it private
 
@@ -31,7 +31,7 @@ If you try to access private class field or method from elsewhere JavaScript sho
 
 ## The syntax
 
-The syntax for private class fields and methods is the same. It is also very simple, and quite controversial. When you want to declare some class field or method as private you have to prefix it with `#` (the hashtag symbol). Now, let's take a look more closely at private class fields and methods and how to work with them.
+The syntax for private  class fields and methods is the same. It is also very simple, and quite controversial. When you want to declare some class field or method as private you have to prefix it with `#` (the hashtag symbol). Now, let's take a look more closely at private methods and class fields and how to work with them.
 
 ## Private class fields
 
@@ -346,6 +346,8 @@ try {
 ```
 
 ## Conclusion: Private class fields and methods in JavaScript
+
+
 
 [xyz-ihs snippet="thank-you-message"]
 
