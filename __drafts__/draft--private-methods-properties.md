@@ -21,13 +21,13 @@ Table of Contents:
 
 When you want to add some data to [JavaScript class] you can do so through class properties. These properties are by default always public. This also means that they are publicly accessible and modifiable. The same also applies to class methods. They are also public by default.
 
-This might be okay in many cases. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private methods and class fields can be handy.
+This might often be okay. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private methods and class fields can be handy.
 
 ## Keeping it private
 
 The idea of keeping some things private is simple and straightforward. When you want to keep something private, be it a property or method, it should be accessible only from one place. This place is the class in which you defined that property or method.
 
-If you try to access private class field or method from elsewhere JavaScript should not allow it. This includes outside the class in which the class field or method is defined, or some instance of that class. However, it is possible to access private class field from a method inside the same class.
+If you try to access private class field or method from elsewhere JavaScript should not allow it. This includes outside the class in which the class field or method is defined. Also any instance of that class. However, it is possible to access private class field from a method inside the same class.
 
 ## The syntax
 
@@ -47,11 +47,11 @@ class MyClass {
 
 ## Accessing private class fields with methods
 
-When you want to access some class property you have two options. First, you can create new instance of that class and access the property on that instance. Second, you can declare that property as [static]. In that case, you don't have to instantiate the class in order to access the property.
+When you want to access some class property you have two options. First, you can create new instance of that class and access the property on that instance. Second, you can declare that property as a [static property]. In that case, you don't have to instantiate the class to access the property.
 
-In case of private class fields, remember that they are designed to be inaccessible from the outside. One way to overcome this is by creating new method and returning the private class field from that method. You can define that method either as a public or [static method].
+Private class fields are designed to be inaccessible from the outside. There is a way to overcome this. You can create new method and return the private class field from that method. You can define this method either as public method or [static].
 
-Just like with static properties, you can call static methods without instantiating the class first. If you declare the method as public, you will have to instantiate the class. After that, you will be able to call that method on your new instance and get the value of private field.
+Just like with static properties, you can call static methods without instantiating the class. If you declare the method as public, you will have to instantiate the class. After that, you will be able to call that method on your new instance and get the value of private field.
 
 ```JavaScript
 // Create new class
@@ -87,7 +87,7 @@ try {
 
 ## Updating private class fields with methods
 
-The same rules apply when you want to modify private class field. You can do that through a method. This method, when you call it from the outside, will be able to access the private class field and modify it in the way you want.
+The same rules apply when you want to modify private class field. You can do that through a method. This method will be available for you to call from the outside. It will also be able to access the private class field and modify it in the way you want.
 
 ```JavaScript
 // Create new class
@@ -169,9 +169,9 @@ try {
 
 ## Private static class fields
 
-Accessing private class field with static method is a bit more complicated. Public class fields and methods are accessible only through class instances, not through the classes themselves. As a result, creating a static method to access private class field will not work.
+Accessing private class field with static method is a bit more complicated. Public class fields and methods are accessible only through class instances. They are not accessible through the classes themselves. As a result, creating a static method to access private class field will not work.
 
-If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private class field through static method without instantiating the class.
+If you try this JavaScript will throw `TypeError`. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private class field through static method without instantiating the class.
 
 When you want to declare class field as static, you have to start with the `static` keyword. This keyword is then followed by the class field name. In case of private class field, the name is prefixed by the `#` symbol.
 
@@ -353,8 +353,8 @@ try {
 
 <!-- ### Links -->
 [JavaScript class]: https://blog.alexdevero.com/javascript-classes-pt1/
-[static]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-properties
-[static method]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-methods
+[static property]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-properties
+[static]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-methods
 [getter and setter]: https://blog.alexdevero.com/javascript-classes-pt2/#getter-and-setter-accessors
 
 <!--
