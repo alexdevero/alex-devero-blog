@@ -35,6 +35,8 @@ class MyClass {
 }
 ```
 
+## Accessing private class fields with methods
+
 When you want to access some class property you have two options. First, you can create new instance of that class and access the property on that instance. Second, you can declare that property as [static]. In that case, you don't have to instantiate the class in order to access the property.
 
 That said, remember that private properties are designed to be inaccessible from the outside. One way to overcome this is by creating new method and returning the private property from that method. You can define that method either as a public method or [static method].
@@ -42,6 +44,7 @@ That said, remember that private properties are designed to be inaccessible from
 Just like with static properties, you can call static methods without instantiating the class first. If you declare the method as public, you will have to instantiate the class. After that, you will be able to call that method on your new instance and get the value of private field.
 
 ```JavaScript
+// Create new class
 class MyClass {
   // Declare private class field
   #myPrivateField = 'I am private.'
