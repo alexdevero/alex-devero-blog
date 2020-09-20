@@ -263,7 +263,7 @@ try {
 
 Along with private class fields you can also create private methods. Private methods work by the same rules as the class fields. These methods are accessible only from the inside of the class in which they are defined. This is the only place where you can use them.
 
-When you want to call private method from the outside you can use the same approach as for accessing private class fields. You can create new public method and inside this public method you can then call the private method.
+When you want to call private method from the outside you can use the same thing as with private class fields. You can create new public method and inside this public method you can then call the private method.
 
 The syntax for private methods is the same as for private class fields. The name of the method has to always start with the `#` symbol.
 
@@ -347,7 +347,7 @@ try {
 
 ## Conclusion: Private class fields and methods in JavaScript
 
-
+Private class fields and methods can be handy when you want to keep some data private. I hope this tutorial explained what private methods and class fields are and how they work. I also hope it helped you understand how to use both in your projects.
 
 [xyz-ihs snippet="thank-you-message"]
 
