@@ -35,7 +35,7 @@ The syntax for private  class fields and methods is the same. It is also very si
 
 ## Private class fields
 
-Declaring private class field is simple. All you have to do is to prefix he name of the class field with `#`. This will tell JavaScript that you want this class field to be private. When you want to access that private class field, remember that you have to include the `#`.
+Declaring private class field is simple. All you have to do is to prefix the name of the class field with `#`. This will tell JavaScript that you want this class field to be private. When you want to access that private class field, remember that you have to include the `#`.
 
 ```JavaScript
 // Create new class
@@ -171,7 +171,7 @@ try {
 
 Accessing private class field with static method is a bit more complicated. Public class fields and methods are accessible only through class instances. They are not accessible through the classes themselves. As a result, creating a static method to access private class field will not work.
 
-If you try this JavaScript will throw `TypeError`. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private class field through static method without instantiating the class.
+If you try this JavaScript will throw `TypeError`. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the now static private class field through static method without instantiating the class.
 
 When you want to declare class field as static, you have to start with the `static` keyword. This keyword is then followed by the class field name. In case of private class field, the name is prefixed by the `#` symbol.
 
