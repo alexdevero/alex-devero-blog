@@ -183,6 +183,7 @@ try {
   // 'I am private.'
 
   // Try to access the private field directly
+  // NOTE: this will never work
   MyClass.#myPrivateField
   // Output:
   // SyntaxError: Private name #myPrivateField is not defined
