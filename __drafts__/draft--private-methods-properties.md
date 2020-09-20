@@ -294,6 +294,45 @@ try {
 }
 ```
 
+## Private static methods
+
+Just like private static class fields you can also create private static methods. The syntax is almost the same as with public methods. The only difference is that now you have to start with the `static` keyword. The rest is the same.
+
+```JavaScript
+// Alternative with static method
+class MyClass {
+  // Declare static private class field
+  static #myPrivateField = 'I am private.'
+
+  // Define static private method that returns the private field
+  static #myPrivateMethod() {
+    // Return the value of #myPrivateField
+    return this.#myPrivateField
+  }
+
+  // Define static public method that calls the private method
+  static myPublicMethod() {
+    return this.#myPrivateMethod()
+  }
+}
+
+try {
+  // Try to call myMethod() on MyClass
+  MyClass.myPublicMethod()
+  // Output:
+  // 'I am private.'
+
+  // Try to access the private field directly on MyClass
+  // NOTE: this will never work
+  MyClass.#myPrivateMethod()
+  // Output:
+  // SyntaxError: Private name #myPrivateMethod is not defined
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+```
+
 ## Conclusion: Private Class Fields and Methods in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
