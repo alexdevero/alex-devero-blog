@@ -1,6 +1,6 @@
 # Private Class Fields and Methods in JavaScript
 
-Private class fields are one of the new features for JavaScript classes. In this tutorial, you will learn all you need to know about this feature. You will learn about what private class fields are and how they work. You will also learn how to use them in JavaScript, or TypeScript, projects.<!--more-->
+JavaScript private class fields and methods are new features for JavaScript classes. In this tutorial, you will learn all you need to know about this feature. You will learn about what private methods and class fields are and how they work. You will also learn how to use them in your projects.<!--more-->
 <!--
 Table of Contents:
 ## Introduction
