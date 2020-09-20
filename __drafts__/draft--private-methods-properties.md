@@ -17,7 +17,7 @@ This might be okay in many cases. However, sometimes, you may want to keep some 
 
 The idea of keeping some things private is simple and straightforward. When you want to keep something private, be it a property or method, it should be accessible only from one place. This place is the class in which you defined that property or method.
 
-If you try to access private property or method from elsewhere JavaScript should not allow it. This includes outside the class in which the property or method at hand is defined, or some instance of that class. However, it is possible to access private property from a method inside the same class.
+If you try to access private class field or method from elsewhere JavaScript should not allow it. This includes outside the class in which the class field or method is defined, or some instance of that class. However, it is possible to access private class field from a method inside the same class.
 
 ## The syntax
 
@@ -39,7 +39,7 @@ class MyClass {
 
 When you want to access some class property you have two options. First, you can create new instance of that class and access the property on that instance. Second, you can declare that property as [static]. In that case, you don't have to instantiate the class in order to access the property.
 
-That said, remember that private properties are designed to be inaccessible from the outside. One way to overcome this is by creating new method and returning the private property from that method. You can define that method either as a public method or [static method].
+In case of private class fields, remember that they are designed to be inaccessible from the outside. One way to overcome this is by creating new method and returning the private class field from that method. You can define that method either as a public or [static method].
 
 Just like with static properties, you can call static methods without instantiating the class first. If you declare the method as public, you will have to instantiate the class. After that, you will be able to call that method on your new instance and get the value of private field.
 
@@ -77,7 +77,7 @@ try {
 
 ## Updating private class fields with methods
 
-The same rules apply when you want to modify private property. You can do that through a method. This method, when you call it from the outside, will be able to access the private property and modify it in the way you want.
+The same rules apply when you want to modify private class field. You can do that through a method. This method, when you call it from the outside, will be able to access the private class field and modify it in the way you want.
 
 ```JavaScript
 // Create new class
@@ -117,7 +117,7 @@ try {
 
 ## Setters and getters and private class fields
 
-Private class fields, or private properties, are inaccessible from the outside. For this reason, [getter and setter] accessors are useless. When you try to access, or modify, private property from the outside JavaScript will throw an error. It doesn't matter if there is a setter and/or getter or not.
+As we discussed, private class fields are inaccessible from the outside. For this reason, [getter and setter] accessors are useless. When you try to access, or modify, private class field from the outside JavaScript will throw an error. It doesn't matter if there is a setter and/or getter or not.
 
 ```JavaScript
 // Create new class
@@ -159,9 +159,9 @@ try {
 
 ## Private static class fields
 
-Accessing private class field with static method is a bit more complicated. Public properties and methods are accessible only through class instances, not through the classes themselves. As a result, creating a static method to access private property will not work.
+Accessing private class field with static method is a bit more complicated. Public class fields and methods are accessible only through class instances, not through the classes themselves. As a result, creating a static method to access private class field will not work.
 
-If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private property through static method without instantiating the class.
+If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private class field through static method without instantiating the class.
 
 When you want to declare class field as static, you have to start with the `static` keyword. This keyword is then followed by the class field name. In case of private class field, the name is prefixed by the `#` symbol.
 
@@ -197,7 +197,7 @@ try {
 
 ## Private class fields and subclasses
 
-As we discussed, private properties and methods are accessible only from the inside of the class in which they are defined. This also means that they will be inaccessible for any subclasses. This applies to both, public as well as static private properties.
+As we discussed, both private class field and method are accessible only from the inside of the class in which they are defined. This also means that they will be inaccessible for any subclasses. This applies to both, public as well as static private class field.
 
 ```JavaScript
 // Create new class
@@ -296,7 +296,9 @@ try {
 
 ## Private static methods
 
-Just like private static class fields you can also create private static methods. The syntax is almost the same as with public methods. The only difference is that now you have to start with the `static` keyword. The rest is the same.
+Just like private static class fields you can also create private static methods. The advantage of these methods is that you can call them without having to instantiate the class. When it comes to private static methods, the syntax is almost the same as for public methods.
+
+The only difference is that now you have to start with the `static` keyword. What follows is the same. There is the method name prefixed by the `#` symbol and the function body.
 
 ```JavaScript
 // Alternative with static method
@@ -333,7 +335,7 @@ try {
 }
 ```
 
-## Conclusion: Private Class Fields and Methods in JavaScript
+## Conclusion: Private class fields and methods in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
