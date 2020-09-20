@@ -72,6 +72,46 @@ try {
 }
 ```
 
+## Updating private class fields with methods
+
+The same rules apply when you want to modify private property. You can do that through a method. This method, when you call it from the outside, will be able to access the private property and modify it in the way you want.
+
+```JavaScript
+// Create new class
+class MyClass {
+  // Declare private class field
+  #myPrivateField = 'I am private.'
+
+  // Define public method to return the private field
+  returnPrivateField() {
+    // Return the value of #myPrivateField
+    return this.#myPrivateField
+  }
+
+  // Define public method to update the private field
+  updatePrivateField(val) {
+    // Update the value of #myPrivateField
+    this.#myPrivateField = val
+  }
+}
+
+// Create instance of MyClass
+const myInstance = new MyClass()
+
+try {
+  // Try to call myMethod() on myInstance
+  myInstance.updatePrivateField('Hello')
+
+  // Try to access the private field directly
+  myInstance.returnPrivateField()
+  // Output:
+  // 'Hello'
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+```
+
 ## Private static class fields
 
 The second option, creating the method to access the private class field as static is a bit more complicated. Public properties and methods are accessible only through class instances, not through classes themselves. Here is the thing. Creating static method to access private property will not work.
