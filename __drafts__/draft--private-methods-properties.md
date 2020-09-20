@@ -195,7 +195,57 @@ try {
 
 ## Private class fields and subclasses
 
+As we discussed, private properties and methods are accessible only from the inside of the class in which they are defined. This also means that they will be inaccessible for any subclasses. This applies to both, public as well as static private properties.
 
+```JavaScript
+// Create new class
+class MyClass {
+  // Declare private class field as static
+  static #myPrivateField = 'I am private.'
+
+  // Define static method that returns the private field
+  static myMethod() {
+    // Return the value of #myPrivateField
+    return this.#myPrivateField
+  }
+}
+
+// Create new subclass of MyClass
+class MySubClass extends MyClass {}
+
+try {
+  // Try to call myMethod() on MySubClass
+  MySubClass.myMethod()
+  // Output:
+  // TypeError: Private static access of wrong provenance
+
+  // Try to access the private field directly on MySubClass
+  // NOTE: this will never work
+  MySubClass.#myPrivateField
+  // Output:
+  // SyntaxError: Private name #myPrivateField is not defined
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+
+
+try {
+  // Try to call myMethod() on MyClass
+  MyClass.myMethod()
+  // Output:
+  // 'I am private.'
+
+  // Try to access the private field directly on MyClass
+  // NOTE: this will never work
+  MyClass.#myPrivateField
+  // Output:
+  // SyntaxError: Private name #myPrivateField is not defined
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+```
 
 ## Private methods
 
@@ -223,9 +273,5 @@ try {
 
 <!--
 ### Resources:
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
-- https://javascript.info/private-protected-properties-methods
-- https://www.sitepoint.com/javascript-private-class-fields/
-- https://www.valentinog.com/blog/private/
-- https://blog.alexdevero.com/static-methods-properties-javascript-classes/
+-
 -->
