@@ -83,7 +83,7 @@ The same rules apply when you want to modify private property. You can do that t
 // Create new class
 class MyClass {
   // Declare private class field
-  #myPrivateField = 'I am private.'
+  #myPrivateField
 
   // Define public method to return the private field
   returnPrivateField() {
