@@ -163,6 +163,8 @@ Accessing private class field with static method is a bit more complicated. Publ
 
 If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private property through static method without instantiating the class.
 
+When you want to declare class field as static, you have to start with the `static` keyword. This keyword is then followed by the class field name. In case of private class field, the name is prefixed by the `#` symbol.
+
 ```JavaScript
 // Alternative with static method
 class MyClass {
