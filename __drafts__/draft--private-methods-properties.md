@@ -115,6 +115,48 @@ try {
 }
 ```
 
+## Setters and getters and private class fields
+
+Private class fields, or private properties, are inaccessible from the outside. For this reason, [getter and setter] accessors are useless. When you try to access, or modify, private property from the outside JavaScript will throw an error. It doesn't matter if there is a setter and/or getter or not.
+
+```JavaScript
+// Create new class
+class MyClass {
+  // Declare private class field
+  #myPrivateField
+
+  // Define setter method for the private field
+  set myPrivateField(value) {
+    // Return the value of #myPrivateField
+    this.#myPrivateField = value
+  }
+
+  // Define getter method for the private field
+  get myPrivateField() {
+    // Return the value of #myPrivateField
+    return this.#myPrivateField
+  }
+}
+
+// Create instance of MyClass
+const myInstance = new MyClass()
+
+try {
+  // Try to change the value of  call myMethod() on myInstance
+  myInstance.#myPrivateField = 'Hi'
+  // Output:
+  // SyntaxError: Private name #myPrivateField is not defined
+
+  // Try to access the private field directly
+  myInstance.#myPrivateField
+  // Output:
+  // SyntaxError: Private name #myPrivateField is not defined
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+```
+
 ## Private static class fields
 
 The second option, creating the method to access the private class field as static is a bit more complicated. Public properties and methods are accessible only through class instances, not through classes themselves. Here is the thing. Creating static method to access private property will not work.
@@ -152,6 +194,8 @@ try {
 
 ## Private class fields and subclasses
 
+
+
 ## Private methods
 
 ## Conclusion: [...] ...
@@ -162,6 +206,7 @@ try {
 [JavaScript class]: https://blog.alexdevero.com/javascript-classes-pt1/
 [static]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-properties
 [static method]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-methods
+[getter and setter]: https://blog.alexdevero.com/javascript-classes-pt2/#getter-and-setter-accessors
 
 <!--
 ### Meta:
@@ -170,6 +215,7 @@ try {
 
 <!--
 ### Keywords:
+- private class fields
 - javascript private methods
 - private properties
 -->
