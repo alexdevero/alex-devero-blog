@@ -21,11 +21,11 @@ If you try to access private property or method from elsewhere JavaScript should
 
 ## The syntax
 
-The syntax for private class fields and methods is the same. It is also very simple, and quite controversial. When you want to declare some property or method as private you have to prefix it with `#` (the hashtag symbol). Now, let's take a look more closely at private properties and methods and how to work with them.
+The syntax for private class fields and methods is the same. It is also very simple, and quite controversial. When you want to declare some class field or method as private you have to prefix it with `#` (the hashtag symbol). Now, let's take a look more closely at private class fields and methods and how to work with them.
 
 ## Private class fields
 
-Declaring private class field is simple. All you have to do is to prefix he name of the property with `#`. This will tell JavaScript that you want this property to be private. When you want to access that private property, remember that you have to include the `#`.
+Declaring private class field is simple. All you have to do is to prefix he name of the class field with `#`. This will tell JavaScript that you want this class field to be private. When you want to access that private class field, remember that you have to include the `#`.
 
 ```JavaScript
 // Create new class
@@ -249,7 +249,50 @@ try {
 
 ## Private methods
 
-## Conclusion: [...] ...
+Along with private class fields you can also create private methods. Private methods work by the same rules as the class fields. These methods are accessible only from the inside of the class in which they are defined. This is the only place where you can use them.
+
+When you want to call private method from the outside you can use the same approach as for accessing private class fields. You can create new public method and inside this public method you can then call the private method.
+
+The syntax for private methods is the same as for private class fields. The name of the method has to always start with the `#` symbol.
+
+```JavaScript
+class MyClass {
+  // Declare private class field
+  #myPrivateField = 'I am private.'
+
+  // Define private method that returns the private field
+  #myPrivateMethod() {
+    // Return the value of #myPrivateField
+    return this.#myPrivateField
+  }
+
+  // Define public method that returns the private method
+  myPublicMethod() {
+    return this.#myPrivateMethod()
+  }
+}
+
+// Create new instance of MyClass
+const myInstance = new MyClass()
+
+try {
+  // Try to call myMethod() on myInstance
+  myInstance.myPublicMethod()
+  // Output:
+  // 'I am private.'
+
+  // Try to access the private field directly on myInstance
+  // NOTE: this will never work
+  MyClass.#myPrivateMethod()
+  // Output:
+  // SyntaxError: Private name #myPrivateMethod is not defined
+} catch(error) {
+  // Log any error
+  console.log(error)
+}
+```
+
+## Conclusion: Private Class Fields and Methods in JavaScript
 
 [xyz-ihs snippet="thank-you-message"]
 
