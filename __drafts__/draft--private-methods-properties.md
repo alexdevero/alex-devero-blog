@@ -159,9 +159,9 @@ try {
 
 ## Private static class fields
 
-The second option, creating the method to access the private class field as static is a bit more complicated. Public properties and methods are accessible only through class instances, not through classes themselves. Here is the thing. Creating static method to access private property will not work.
+Accessing private class field with static method is a bit more complicated. Public properties and methods are accessible only through class instances, not through the classes themselves. As a result, creating a static method to access private property will not work.
 
-If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. The way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private property through static method without instantiating the class.
+If you try this JavaScript will throw `TypeError` about trying to access private field on non-instance. One way to make this work is by declaring the private field as static as well. Now, you will be able to access the, now static, private property through static method without instantiating the class.
 
 ```JavaScript
 // Alternative with static method
