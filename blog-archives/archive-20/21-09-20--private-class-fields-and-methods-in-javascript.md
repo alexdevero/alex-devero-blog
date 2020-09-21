@@ -1,4 +1,4 @@
-# Private Class Fields and Methods in JavaScript
+# Private Class Fields and Methods in JavaScript Classes
 
 JavaScript private class fields and methods are new features for JavaScript classes. In this tutorial, you will learn all you need to know about this feature. You will learn about what private methods and class fields are and how they work. You will also learn how to use them in your projects.<!--more-->
 <!--
@@ -14,12 +14,12 @@ Table of Contents:
 ## Private class fields and subclasses
 ## Private methods
 ## Private static methods
-## Conclusion: Private class fields and methods in JavaScript
+## Conclusion: Private class fields and methods in JavaScript Classes
 -->
 
 ## Introduction
 
-When you want to add some data to [JavaScript class] you can do so through class properties. These properties are by default always public. This also means that they are publicly accessible and modifiable. The same also applies to class methods. They are also public by default.
+When you want to add some data to [JavaScript class] you can do so through class properties. These properties are by default always [public]. This also means that they are publicly accessible and modifiable. The same also applies to class methods. They are also public by default.
 
 This might often be okay. However, sometimes, you may want to keep some properties or methods private. You may want to make them inaccessible from the outside of the class they are defined in. This is where private methods and class fields can be handy.
 
@@ -345,13 +345,14 @@ try {
 }
 ```
 
-## Conclusion: Private class fields and methods in JavaScript
+## Conclusion: Private class fields and methods in JavaScript Classes
 
 Private class fields and methods can be handy when you want to keep some data private. I hope this tutorial explained what private methods and class fields are and how they work. I also hope it helped you understand how to use both in your projects.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[public]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
 [JavaScript class]: https://blog.alexdevero.com/javascript-classes-pt1/
 [static property]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-properties
 [static]: https://blog.alexdevero.com/static-methods-properties-javascript-classes/#static-methods
