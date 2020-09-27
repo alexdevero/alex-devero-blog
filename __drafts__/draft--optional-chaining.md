@@ -42,6 +42,13 @@ console.log(myObj.location)
 // Output:
 // undefined
 
+// Try to access non-existing property "city"
+// in non-existing object "location"
+console.log(myObj.location.city)
+// Output:
+// TypeError: Cannot read property 'city' of undefined
+```
+
 ## Solving the problem the old way
 
 Solving this problem this "old" way would mean using the logical [AND] (`&&`) operator. Let's try to solve the problem with the non-existing property `city` in a non-existing object `location` using the `&&` operator.
