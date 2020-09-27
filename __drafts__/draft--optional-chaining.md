@@ -118,7 +118,7 @@ console.log(myObj.location?.city)
 
 ## Going down the rabbit hole
 
-When you need to go deeper, the process is the same. All you have to do is to put the `?` operator right after the object property that may not exist. You can repeat this for any number of properties you want or need.
+When you need to go deeper, the process is the same. All you have to do is to put the `?` operator right after the object property that may not exist and right before the dot and property you want to access. You can repeat this for any number of properties you want or need.
 
 ```JavaScript
 // Create an object
