@@ -85,6 +85,12 @@ console.log(myObj && myObj.location && myObj.location.city && myObj.location.cit
 // undefined
 ```
 
+### How optional chaining works
+
+Thanks to optional chaining, all that code is no longer necessary. The way how optional chaining works is simple. Let's say you use it to access some property. If any part before the property you want to access is either `undefined` or `null` it will stop the evaluation and return `undefined`.
+
+Let me put it this way. With optional chaining, JavaScript will always first test any property, that precedes the one you want to access, if it exists. If it does exist JavaScript will move to the next property until it reaches the one you want to access. If it doesn't exists ti will return `undefined`.
+
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
