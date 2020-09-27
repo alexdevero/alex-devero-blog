@@ -94,6 +94,28 @@ Let me put it this way. With optional chaining, JavaScript will always first tes
 ### The syntax
 
 The syntax of optional chaining is very simple. All you have to do is use `?` operator. The way to use this operator is to put it between the object and the dot that precedes the property that may not exists. For example, `myObj.myProp1?.myProp2` will ensure the `myProp1` exists before trying to access `myProp2`.
+
+### Solving the problem with optional chaining
+
+Let's demonstrate how optional chaining works by using it to solve the problem non-existing property `city` in a non-existing object `location`. In this example, you were trying to access non-existing property `city`. This property was supposed to exist in non-existing property/object `location`.
+
+What you have to do is to ensure the `location` property/object actually exists, before you try to access any property inside it. To do this, you will put the `?` operator right after the `location` property and before the `.city`. So, `myObj.location?.city`. This will correctly return `undefined`, not `TypeError`.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Try to access non-existing property "city"
+// in non-existing object "location"
+// using optional chaining
+console.log(myObj.location?.city)
+// Output:
+// undefined
+```
+
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
