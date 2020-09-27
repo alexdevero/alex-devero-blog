@@ -42,11 +42,28 @@ console.log(myObj.location)
 // Output:
 // undefined
 
-// Try to access non-existing property "postalCode"
+## Solving the problem the old way
+
+Solving this problem this "old" way would mean using the logical [AND] (`&&`) operator. Let's try to solve the problem with the non-existing property `city` in a non-existing object `location` using the `&&` operator.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Try to access non-existing property "city"
 // in non-existing object "location"
-console.log(myObj.location.postalCode)
+// using the && operator
+console.log(myObj && myObj.location && myObj.location.city)
 // Output:
-// TypeError: Cannot read property 'postalCode' of undefined
+// undefined
+
+// Going down the rabbit hole
+console.log(myObj && myObj.location && myObj.location.city && myObj.location.city.address && myObj.location.city.address. houseNumber)
+// Output:
+// undefined
 ```
 
 ## Conclusion: Optional chaining in JavaScript and how it works
@@ -56,6 +73,7 @@ console.log(myObj.location.postalCode)
 <!-- ### Links -->
 [objects]: https://blog.alexdevero.com/javascript-objects-pt1/
 [access any property]: https://blog.alexdevero.com/javascript-objects-pt1/#accessing-properties
+[AND]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
 
 <!--
 ### Meta:
