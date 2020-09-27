@@ -194,6 +194,24 @@ let myObj = {
 // that is supposed to exist on "myObj" object
 console.log(myObj.sayHi?.())
 // Output:
+
+## Optional chaining and bracket notation
+
+You can also use the `?` operator when you want to access a property using bracket notation. In this case, the `?` operator goes right after the object name. Then comes a dot and after that come the square brackets and property name.
+
+```JavaScript
+// Declare new variable and set it to null
+const myObj = null
+
+// Try to access "name" property on null value directly
+console.log(myObj['name'])
+// Output:
+// TypeError: Cannot read property 'name' of null
+
+
+// Try to access "name" property on null value using "?"
+console.log(myObj?.['name'])
+// Output:
 // undefined
 ```
 
