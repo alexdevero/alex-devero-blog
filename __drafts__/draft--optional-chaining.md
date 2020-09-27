@@ -116,6 +116,26 @@ console.log(myObj.location?.city)
 // undefined
 ```
 
+### Going down the rabbit hole
+
+When you need to go deeper, the process is the same. All you have to do is to put the `?` operator right after the object property that may not exist. You can repeat this for any number of properties you want or need.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Try to access "houseNumber" property
+// that is supposed to be in "address"
+// that is supposed to be in "city"
+// that is supposed to be in "location"
+console.log(myObj.location?.city?.address?.houseNumber)
+// Output:
+// undefined
+```
+
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
