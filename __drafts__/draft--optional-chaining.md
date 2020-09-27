@@ -136,6 +136,67 @@ console.log(myObj.location?.city?.address?.houseNumber)
 // undefined
 ```
 
+## Optional chaining and methods
+
+Just like with properties, you can use the optional chaining operator also with methods. The process is the same as with properties. You put the `?` operator right after the object property that may not exist, and right before the dot and method you want to call.
+
+If the property doesn't exist, you will get `undefined`. If it does exists JavaScript will try to access the method. If the method exists, it will be invoked. Otherwise, you will again get `undefined`.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Jack Trout',
+  email: 'jack@trou.ai'
+}
+
+// Try to call "sayHi()" method
+// that is supposed to exist on "methods" property
+// that is supposed to exist on "myObj" object
+console.log(myObj.methods?.sayHi())
+// Output:
+// undefined
+```
+
+There is another thing you can do. You can use the optional chaining operator to check if the method itself exist before you call it. In this case, you have to put the `?` operator before the parentheses used to invoke the method. Then, you have to add another dot and only then the parentheses.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Check if "sayHi()" method exists before you call it
+// that is supposed to exist on "methods" property
+// that is supposed to exist on "myObj" object
+console.log(myObj.sayHi?.())
+// Output:
+// undefined
+
+// Or if the method is nested
+console.log(myObj.methods?.sayHi?.())
+// Output:
+// undefined
+```
+
+Using the `?` operator for calling a method if the thing you want to call is not a method will not work. For example, let's say that `sayHi` is not a method but a property. If you try to call it, with `?` operator, JavaScript will still throw `TypeError` saying that `sayHi` is not a function.
+
+So, make sure that the method you want to call is really a method. If it is something else, it will still lead to JavaScript throwing an error.
+
+```JavaScript
+// Create an object
+let myObj = {
+  sayHi: 'Hi'
+}
+
+// Check if "sayHi()" method exists before you call it
+// that is supposed to exist on "methods" property
+// that is supposed to exist on "myObj" object
+console.log(myObj.sayHi?.())
+// Output:
+// undefined
+```
+
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
