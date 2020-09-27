@@ -68,7 +68,7 @@ console.log(myObj && myObj.location && myObj.location.city)
 // undefined
 ```
 
-## Introduction to optional chaining
+## A quick introduction to optional chaining
 
 As you can see, solving the problem with the non-existing property in a non-existing object with `&&` operator is easy. The downside of this solution is that it requires more code. How much code will you have to write depends on how deep you need to get.
 
@@ -85,17 +85,17 @@ console.log(myObj && myObj.location && myObj.location.city && myObj.location.cit
 // undefined
 ```
 
-### How optional chaining works
+## How optional chaining works
 
 Thanks to optional chaining, all that code is no longer necessary. The way how optional chaining works is simple. Let's say you use it to access some property. If any part before the property you want to access is either `undefined` or `null` it will stop the evaluation and return `undefined`.
 
 Let me put it this way. With optional chaining, JavaScript will always first test any property, that precedes the one you want to access, if it exists. If it does exist JavaScript will move to the next property until it reaches the one you want to access. If it doesn't exists ti will return `undefined`.
 
-### The syntax
+## The syntax
 
 The syntax of optional chaining is very simple. All you have to do is use `?` operator. The way to use this operator is to put it between the object and the dot that precedes the property that may not exists. For example, `myObj.myProp1?.myProp2` will ensure the `myProp1` exists before trying to access `myProp2`.
 
-### Solving the problem with optional chaining
+## Solving the problem with optional chaining
 
 Let's demonstrate how optional chaining works by using it to solve the problem non-existing property `city` in a non-existing object `location`. In this example, you were trying to access non-existing property `city`. This property was supposed to exist in non-existing property/object `location`.
 
@@ -116,7 +116,7 @@ console.log(myObj.location?.city)
 // undefined
 ```
 
-### Going down the rabbit hole
+## Going down the rabbit hole
 
 When you need to go deeper, the process is the same. All you have to do is to put the `?` operator right after the object property that may not exist. You can repeat this for any number of properties you want or need.
 
