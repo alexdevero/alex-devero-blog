@@ -268,6 +268,8 @@ console.log(myUndefVar?.myProp)
 
 ## Conclusion: Optional chaining in JavaScript and how it works
 
+Optional chaining is one of those features that are easy to understand, simple to use and yet be very handy. It can save you a lot of time and headaches while writing less code. I hope this tutorial helped you understand what optional chaining is, how it works and how to use it.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
