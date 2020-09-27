@@ -67,8 +67,19 @@ console.log(myObj && myObj.location && myObj.location.city)
 // Output:
 // undefined
 
+## Introduction to optional chaining
+
+As you can see, solving the problem with the non-existing property in a non-existing object with `&&` operator is easy. The downside of this solution is that it requires more code. How much code will you have to write depends on how deep you need to get.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
 // Going down the rabbit hole
-console.log(myObj && myObj.location && myObj.location.city && myObj.location.city.address && myObj.location.city.address. houseNumber)
+console.log(myObj && myObj.location && myObj.location.city && myObj.location.city.address && myObj.location.city.address.houseNumber)
 // Output:
 // undefined
 ```
