@@ -7,14 +7,55 @@ Optional Chaining is one of the newest features in JavaScript. This feature may 
 Table of Contents:
 -->
 
-## h2
+## Defying the problem
+
+Have you ever worked with [objects]? Then, you know how easy it is to run into following problem. Let's say you have an object. This object has some properties and maybe also some methods. Next, let's say that you want to work with some of these properties or methods.
+
+Getting this done is very simple. You can [access any property] using either dot or square bracket notation. The same applies to methods. What happens is if you try to access some property, or method, that doesn't exist in that object? When you try to access property that doesn't exist you will get `undefined`.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Try to access non-existing property "location"
+console.log(myObj.location)
+// Output:
+// undefined
+```
+
+What if you try to access some property that is nested deeper? Imagine you have some object. This object contains some properties. The value of one of these properties is supposed to be also an object. This object should contain some additional properties. What if this nested object doesn't exist?
+
+What happens if you try to access some property in that non-existing nested object? You will not get `undefined`. What will you get instead is a `TypeError`. JavaScript will complain that it can't read property of an object that is not defined.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Joe Saladino',
+  email: 'joe@saladino.io'
+}
+
+// Try to access non-existing property "location"
+console.log(myObj.location)
+// Output:
+// undefined
+
+// Try to access non-existing property "postalCode"
+// in non-existing object "location"
+console.log(myObj.location.postalCode)
+// Output:
+// TypeError: Cannot read property 'postalCode' of undefined
+```
 
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[objects]: https://blog.alexdevero.com/javascript-objects-pt1/
+[access any property]: https://blog.alexdevero.com/javascript-objects-pt1/#accessing-properties
 
 <!--
 ### Meta:
