@@ -249,6 +249,23 @@ console.log(myObj.languages[3])
 // undefined
 ```
 
+## Undefined variables
+
+Optional chaining works only with existing variables. If you try to use it on some undefined (non-existing) variable JavaScript will always throw a `ReferenceError`. So, make sure the variable you want to work with exits, because the `?` operator can't help you here.
+
+```JavaScript
+// Try to access property in undefined variable
+console.log(myUndefVar.myProp)
+// Output:
+// ReferenceError: myUndefVar is not defined
+
+
+// With "?" operator:
+console.log(myUndefVar?.myProp)
+// Output:
+// ReferenceError: myUndefVar is not defined
+```
+
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
