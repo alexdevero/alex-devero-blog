@@ -66,6 +66,7 @@ let myObj = {
 console.log(myObj && myObj.location && myObj.location.city)
 // Output:
 // undefined
+```
 
 ## Introduction to optional chaining
 
