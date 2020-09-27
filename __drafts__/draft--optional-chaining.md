@@ -91,6 +91,9 @@ Thanks to optional chaining, all that code is no longer necessary. The way how o
 
 Let me put it this way. With optional chaining, JavaScript will always first test any property, that precedes the one you want to access, if it exists. If it does exist JavaScript will move to the next property until it reaches the one you want to access. If it doesn't exists ti will return `undefined`.
 
+### The syntax
+
+The syntax of optional chaining is very simple. All you have to do is use `?` operator. The way to use this operator is to put it between the object and the dot that precedes the property that may not exists. For example, `myObj.myProp1?.myProp2` will ensure the `myProp1` exists before trying to access `myProp2`.
 ## Conclusion: Optional chaining in JavaScript and how it works
 
 [xyz-ihs snippet="thank-you-message"]
