@@ -149,6 +149,13 @@ let myObj = {
   email: 'jack@trou.ai'
 }
 
+// Try to call "sayHi()" method directly
+console.log(myObj.methods.sayHi())
+// Output:
+// TypeError: Cannot read property 'sayHi' of undefined
+
+
+// Use the "?" operator:
 // Try to call "sayHi()" method
 // that is supposed to exist on "methods" property
 // that is supposed to exist on "myObj" object
@@ -162,16 +169,24 @@ There is another thing you can do. You can use the optional chaining operator to
 ```JavaScript
 // Create an object
 let myObj = {
-  name: 'Joe Saladino',
+  name: 'Victoria Wales',
   email: 'joe@saladino.io'
 }
 
+// Try to call "sayHi()" method directly
+console.log(myObj.sayHi())
+// Output:
+// TypeError: myObj.sayHi is not a function
+
+
+// Use the "?" operator:
 // Check if "sayHi()" method exists before you call it
 // that is supposed to exist on "methods" property
 // that is supposed to exist on "myObj" object
 console.log(myObj.sayHi?.())
 // Output:
 // undefined
+
 
 // Or if the method is nested
 console.log(myObj.methods?.sayHi?.())
@@ -189,11 +204,11 @@ let myObj = {
   sayHi: 'Hi'
 }
 
-// Check if "sayHi()" method exists before you call it
-// that is supposed to exist on "methods" property
-// that is supposed to exist on "myObj" object
+// Try to call property "sayHi"
 console.log(myObj.sayHi?.())
 // Output:
+// TypeError: myObj.sayHi is not a function
+```
 
 ## Optional chaining and bracket notation
 
@@ -209,7 +224,8 @@ console.log(myObj['name'])
 // TypeError: Cannot read property 'name' of null
 
 
-// Try to access "name" property on null value using "?"
+// Use the "?" operator:
+// Try to access "name" property on null value
 console.log(myObj?.['name'])
 // Output:
 // undefined
