@@ -5,6 +5,17 @@ Optional Chaining is one of the newest features in JavaScript. This feature may 
 <!--more-->
 <!--
 Table of Contents:
+## Defying the problem
+## Solving the problem the "old" way
+## A quick introduction to optional chaining
+## How optional chaining works
+## The syntax
+## Solving the problem with optional chaining
+## Going down the rabbit hole
+## Optional chaining and methods
+## Optional chaining and bracket notation
+## Undefined variables
+## Conclusion: Optional chaining in JavaScript and how it works
 -->
 
 ## Defying the problem
