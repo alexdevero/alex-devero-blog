@@ -155,7 +155,7 @@ console.log(myObj.methods.sayHi())
 // TypeError: Cannot read property 'sayHi' of undefined
 
 
-// Use the "?" operator:
+// With the "?" operator:
 // Try to call "sayHi()" method
 // that is supposed to exist on "methods" property
 // that is supposed to exist on "myObj" object
@@ -179,7 +179,7 @@ console.log(myObj.sayHi())
 // TypeError: myObj.sayHi is not a function
 
 
-// Use the "?" operator:
+// With the "?" operator:
 // Check if "sayHi()" method exists before you call it
 // that is supposed to exist on "methods" property
 // that is supposed to exist on "myObj" object
@@ -224,9 +224,27 @@ console.log(myObj['name'])
 // TypeError: Cannot read property 'name' of null
 
 
-// Use the "?" operator:
-// Try to access "name" property on null value
+// With the "?" operator:
 console.log(myObj?.['name'])
+// Output:
+// undefined
+```
+
+This approach also works if you want to access item inside an array. This assumes that the array is supposed to exist inside some object. Normally, accessing item inside an array that doesn't exist inside an object would lead to another `TypeError`. The `?` operator can help you avoid this.
+
+```JavaScript
+// Declare empty object
+let myObj = {}
+
+// Try to access item inside an array
+// that is supposed to exist inside "myObj"
+console.log(myObj.languages[3])
+// Output:
+// TypeError: Cannot read property '3' of undefined
+
+
+// With the "?" operator:
+console.log(myObj.languages[3])
 // Output:
 // undefined
 ```
