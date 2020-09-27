@@ -1,8 +1,6 @@
 # Optional Chaining in JavaScript and How It Works
 
-Optional Chaining is one of the newest features in JavaScript. This feature may seem insignificant. However, it can save you a lot of time, code and also a lot of headaches. In this tutorial, you will learn what this feature is about, how it works and how to use it to write better JavaScript code.
-
-<!--more-->
+Optional Chaining is one of the newest features in JavaScript. This feature may seem insignificant. However, it can save you a lot of time, code and also a lot of headaches. In this tutorial, you will learn what this feature is about, how it works and how to use it to write better JavaScript code.<!--more-->
 <!--
 Table of Contents:
 ## Defying the problem
@@ -60,7 +58,7 @@ console.log(myObj.location.city)
 // TypeError: Cannot read property 'city' of undefined
 ```
 
-## Solving the problem the old way
+## Solving the problem the "old" way
 
 Solving this problem this "old" way would mean using the logical [AND] (`&&`) operator. Let's try to solve the problem with the non-existing property `city` in a non-existing object `location` using the `&&` operator.
 
