@@ -102,13 +102,13 @@ Let me put it this way. With optional chaining, JavaScript will always first tes
 
 ## The syntax
 
-The syntax of optional chaining is very simple. All you have to do is use `?` operator. The way to use this operator is to put it between the object and the dot that precedes the property that may not exist. For example, `myObj.myProp1?.myProp2` will ensure the `myProp1` exists before trying to access `myProp2`.
+The syntax of optional chaining is very simple. All you have to do is use `?.` operator. The way to use this operator is to put it between the object and the dot that precedes the property that may not exist. For example, `myObj.myProp1?.myProp2` will ensure the `myProp1` exists before trying to access `myProp2`.
 
 ## Solving the problem with optional chaining
 
 Let's demonstrate how optional chaining works by using it to solve the problem non-existing property `city` in a non-existing object `location`. In this example, you were trying to access non-existing property `city`. This property was supposed to exist in non-existing property/object `location`.
 
-What you have to do is to ensure the `location` property/object actually exists, before you try to access any property inside it. To do this, you will put the `?` operator right after the `location` property and before the `.city`. So, `myObj.location?.city`. This will correctly return `undefined`, not `TypeError`.
+What you have to do is to ensure the `location` property/object actually exists, before you try to access any property inside it. To do this, you will put the `?.` operator right after the `location` property and before the `.city`. So, `myObj.location?.city`. This will correctly return `undefined`, not `TypeError`.
 
 ```JavaScript
 // Create an object
@@ -127,7 +127,7 @@ console.log(myObj.location?.city)
 
 ## Going down the rabbit hole
 
-When you need to go deeper, the process is the same. All you have to do is to put the `?` operator right after the object property that may not exist and right before the dot and property you want to access. You can repeat this for any number of properties you want or need.
+When you need to go deeper, the process is the same. All you have to do is to put the `?.` operator right after the object property that may not exist and right before the dot and property you want to access. You can repeat this for any number of properties you want or need.
 
 ```JavaScript
 // Create an object
@@ -147,7 +147,7 @@ console.log(myObj.location?.city?.address?.houseNumber)
 
 ## Optional chaining and methods
 
-Just like with properties, you can use the optional chaining operator also with methods. The process is the same as with properties. You put the `?` operator right after the object property that may not exist, and right before the dot and method you want to call.
+Just like with properties, you can use the optional chaining operator also with methods. The process is the same as with properties. You put the `?.` operator right after the object property that may not exist, and right before the dot and method you want to call.
 
 If the property doesn't exist, you will get `undefined`. If it does exist JavaScript will try to access the method. If the method exists, it will be invoked. Otherwise, you will again get `undefined`.
 
@@ -173,7 +173,7 @@ console.log(myObj.methods?.sayHi())
 // undefined
 ```
 
-There is another thing you can do. You can use the optional chaining operator to check if the method itself exist before you call it. In this case, you have to put the `?` operator before the parentheses used to invoke the method. Then, you have to add another dot and only then the parentheses.
+There is another thing you can do. You can use the optional chaining operator to check if the method itself exist before you call it. In this case, you have to put the `?.` operator before the parentheses used to invoke the method. Then, you have to add another dot and only then the parentheses.
 
 ```JavaScript
 // Create an object
@@ -203,7 +203,7 @@ console.log(myObj.methods?.sayHi?.())
 // undefined
 ```
 
-Using the `?` operator for calling a method if the thing you want to call is not a method will not work. For example, let's say that `sayHi` is not a method, but a property. If you try to call it, with `?` operator, JavaScript will still throw `TypeError` saying that `sayHi` is not a function.
+Using the `?.` operator for calling a method if the thing you want to call is not a method will not work. For example, let's say that `sayHi` is not a method, but a property. If you try to call it, with `?.` operator, JavaScript will still throw `TypeError` saying that `sayHi` is not a function.
 
 So, make sure that the method you want to call is really a method. If it is something else, it will still lead to JavaScript throwing an error.
 
@@ -221,7 +221,7 @@ console.log(myObj.sayHi?.())
 
 ## Optional chaining and bracket notation
 
-You can also use the `?` operator when you want to access a property using bracket notation. In this case, the `?` operator goes right after the object name. Next comes a dot and after that come the square brackets and property name.
+You can also use the `?.` operator when you want to access a property using bracket notation. In this case, the `?.` operator goes right after the object name. Next comes a dot and after that come the square brackets and property name.
 
 ```JavaScript
 // Declare new variable and set it to null
@@ -239,7 +239,7 @@ console.log(myObj?.['name'])
 // undefined
 ```
 
-This approach also works if you want to access item inside an array. This assumes that the array is supposed to exist inside some object. Normally, accessing item inside an array that doesn't exist inside an object would lead to another `TypeError`. The `?` operator can help you avoid this.
+This approach also works if you want to access item inside an array. This assumes that the array is supposed to exist inside some object. Normally, accessing item inside an array that doesn't exist inside an object would lead to another `TypeError`. The `?.` operator can help you avoid this.
 
 ```JavaScript
 // Declare empty object
@@ -260,7 +260,7 @@ console.log(myObj.languages[3])
 
 ## Undefined variables
 
-Optional chaining works only with existing variables. If you try to use it on some undefined (non-existing) variable JavaScript will always throw a `ReferenceError`. So, make sure the variable you want to work with exists because the `?` operator can't help you here.
+Optional chaining works only with existing variables. If you try to use it on some undefined (non-existing) variable JavaScript will always throw a `ReferenceError`. So, make sure the variable you want to work with exists because the `?.` operator can't help you here.
 
 ```JavaScript
 // Try to access property in undefined variable
