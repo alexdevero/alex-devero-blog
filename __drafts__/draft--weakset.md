@@ -37,7 +37,7 @@ const myWeakSet = new WeakSet([myObj1, myObj1])
 
 We already talked a little bit about what WeakSets allow you to do. You can add items to WeakSets and you can remove them. You can also check if some WeakSet contains specific item. There are specific methods for each of these tasks. Let's take a look at them.
 
-## Adding new items to WeakSets
+### Adding new items to WeakSets
 
 When you want to add items to WeakSets you can do two things. First, you can pass those items into the `WeakSet()` constructor when you create new WeakSet. Second, you can add items alter with the help of `add()` method. This method accepts one parameter, the object you want to store.
 
@@ -45,6 +45,7 @@ This is something you should remember. It actually accepts only one object, not 
 
 ```JavaScript
 // Adding items no.1: via constructor
+// Create some objects
 let myObj1 = { name: 'Toby' }
 
 let myObj2 = { name: 'Christine' }
@@ -54,6 +55,7 @@ const myWeakSet = new WeakSet([myObj1, myObj2])
 
 
 // Adding items no.1: with add() method
+// Create some objects
 let myObj1 = { name: 'Rafael' }
 
 let myObj2 = { name: 'Victoria' }
@@ -67,6 +69,7 @@ myWeakSet.add(myObj2)
 
 
 // This will not work:
+// Create some objects
 let myObj1 = { name: 'Jack' }
 
 let myObj2 = { name: 'Julie' }
