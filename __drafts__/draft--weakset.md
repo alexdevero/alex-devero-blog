@@ -33,7 +33,9 @@ const myWeakSet = new WeakSet()
 const myWeakSet = new WeakSet([myObj1, myObj1])
 ```
 
-## Conclusion: [...] ...
+## WeakSet methods
+
+We already talked a little bit about what WeakSets allow you to do. You can add items to WeakSets and you can remove them. You can also check if some WeakSet contains specific item. There are specific methods for each of these tasks. Let's take a look at them.
 
 [xyz-ihs snippet="thank-you-message"]
 
