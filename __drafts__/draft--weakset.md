@@ -1,4 +1,4 @@
-# What WeakSet in JavaScript Is and How It Works
+# What WeakSet in JavaScript is and How It Works
 
 WeakSet is one of the newer objects in JavaScript, a JavaScript collection. This collection can seem a bit esoteric. Many JavaScript developers don't know much about it, or at all. In this tutorial, you will learn what WeakSet in JavaScript is, how it works and also when they might be useful.<!--more-->
 <!--
