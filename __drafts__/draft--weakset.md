@@ -179,6 +179,18 @@ myWeakSet.has(myObj3)
 // false
 ```
 
+## No iteration and size property
+
+As you know, one difference between WeakSets and Sets is that WeakSets are not iterable. Another difference is that WeakSets don't have `size` property. This may not make sense. If you think about it, it actually does make sense. As we discussed, all object inside WeakSets are weakly held.
+
+If any of those objects loses all references it will be "marked" for garbage collection. When this garbage collection happens this object is released from the memory. It is gone. The thing about garbage collection is that it works whenever it wants. You can't predict when it will happens.
+
+Let's say you have an object. You add this object to a WeakSet. What if you, in another part of the code, remove that object? The answer is, it depends. It depends on whether the garbage collection had time to run or not. If it did, the object is released from memory, and it is also gone from the WeakSet.
+
+Let's imagine for a moment you could use `size` or iterate over the WeakSet. If you iterate over it before the garbage collection, you will get one result. If you iterate over after the garbage collection you will get different one. The same with `size`. You would get two different numbers.
+
+This is why it makes sense WeakSets are not iterable and there is no `size`. These two wouldn't be reliable. They would tell you one thing now and something completely different just a second later. It would be like rolling a dice.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
