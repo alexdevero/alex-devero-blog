@@ -3,6 +3,16 @@
 WeakSet is one of the newer objects in JavaScript, or a collection. This collection can seem a bit esoteric. Many JavaScript developers don't know much about it, or at all. In this tutorial, you will learn what WeakSet in JavaScript is, how it works and also when they might be useful.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## Creating new WeakSet
+## WeakSet methods
+### Adding new objects to WeakSets
+### Removing objects from WeakSets
+### Checking if object exists in a WeakSet
+## No iteration and size property
+### What about has()
+## Use case for WeakSets
+## Conclusion: What WeakSet in JavaScript is and how it works
 -->
 
 ## A quick introduction
