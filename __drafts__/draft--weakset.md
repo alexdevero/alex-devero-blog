@@ -258,12 +258,18 @@ loggedUsers.has(user3)
 // false
 ```
 
+## Conclusion: What WeakSet in JavaScript is and how it works
+
+WeakSet is one of the features you may not use that often. However, that doesn't mean it is entirely useless. It is not. There are some things it can do better than other features. I hope this tutorial helped you understand what WeakSets are, how they work and when they might be handy.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 [Sets]: https://blog.alexdevero.com/sets-in-javascript/
 [arrays]: https://developer.mozilla.org/en-US/docs/Glossary/array
 [garbage collected]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Garbage_collection
+[boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
+[Map]: https://blog.alexdevero.com/maps-in-javascript/
 
 <!--
 ### Meta:
