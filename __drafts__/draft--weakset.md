@@ -82,6 +82,62 @@ const myWeakSet = new WeakSet()
 myWeakSet.add(myObj1, myObj2)
 ```
 
+### Removing items from WeakSets
+
+Removing items from WeakSets is simple and straightforward. When you want to remove some item, there is a method you use. This method is `delete()`. This method accepts one parameter, name of the object you want to remove. Similarly to `add()`, it also works with one object at the time.
+
+So, if you want to remove multiple objects you have to use multiple `delete()` methods, one for each object. When you use this method, it will always return a [boolean]. It will return `true` if the object was successfully removed. If the object is not stored in the WeakSet it will return `false`.
+
+```JavaScript
+// Create some objects
+let myObj1 = {
+  language: 'JavaScript'
+}
+
+let myObj2 = {
+  language: 'TypeScript'
+}
+
+let myObj3 = {
+  language: 'Python'
+}
+
+// Create new WeakSet
+// and add first two objects
+const myWeakSet = new WeakSet([myObj1, myObj2])
+
+// Remove "myObj1" object
+myWeakSet.delete(myObj1)
+// true
+
+// Remove "myObj2" object
+myWeakSet.delete(myObj2)
+// true
+
+// Try to remove "myObj3" object
+myWeakSet.delete(myObj3)
+// false
+// Object "myObj3" is not stored in myWeakSet
+
+
+// This will not work:
+let myObj1 = {
+  language: 'JavaScript'
+}
+
+let myObj2 = {
+  language: 'TypeScript'
+}
+
+// Create new WeakSet
+const myWeakSet = new WeakSet([myObj1, myObj2])
+
+// Try to remove two objects at the same time
+myWeakSet.delete(myObj1, myObj2)
+// true
+// It will successfully remove "myObj1",
+// but ignore "myObj2"
+```
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
