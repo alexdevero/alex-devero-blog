@@ -138,6 +138,47 @@ myWeakSet.delete(myObj1, myObj2)
 // It will successfully remove "myObj1",
 // but ignore "myObj2"
 ```
+
+### Checking if object exists in a WeakSet
+
+WeakSets are not iterable, and there is no `size` property. This can make it hard to know if specific object does or doesn't exist in a WeakSet. Fortunately, there is a method you can use to find this out. This method is `has()`. Similarly to `delete()` and `add()` it also accepts one parameter.
+
+This parameter is the name of an object you want to check for. When you use this method it also return a boolean, just like `delete()`. It returns either `true` if an object exists in a WeakSet or `false` if it doesn't exist.
+
+```JavaScript
+// Create some objects
+let myObj1 = {
+  language: 'React'
+}
+
+let myObj2 = {
+  language: 'Vue.js'
+}
+
+let myObj3 = {
+  language: 'Angular'
+}
+
+// Create new WeakSet
+// and add first two objects
+const myWeakSet = new WeakSet([myObj1, myObj2])
+
+// Check if "myObj1" exists in "myWeakSet"
+myWeakSet.has(myObj1)
+// Output:
+// true
+
+// Check if "myObj2" exists in "myWeakSet"
+myWeakSet.has(myObj2)
+// Output:
+// true
+
+// Check if "myObj3" exists in "myWeakSet"
+myWeakSet.has(myObj3)
+// Output:
+// false
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
