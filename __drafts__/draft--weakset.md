@@ -191,6 +191,16 @@ Let's imagine for a moment you could use `size` or iterate over the WeakSet. If 
 
 This is why it makes sense WeakSets are not iterable and there is no `size`. These two wouldn't be reliable. They would tell you one thing now and something completely different just a second later. It would be like rolling a dice.
 
+### What about has()
+
+I hope you understand why iterable WeakSets and `size` property doesn't make sense. What about the `has()` method? The `has()` is different story. Think about how this method works, or how you use it. When you use it, you pass in the name of the object you want to check for.
+
+This name, the variable name, is a reference. When you pass it in, you don't pass in the object itself. Instead, you pass in that reference. Reference is the memory address of the variable. It is a pointer to the memory location where the variable is stored.
+
+Back to garbage collection. Garbage collection collects objects only when all references to those objects are gone. Otherwise, it leaves them alone. When you use the `has()` method and you pass in a reference to some object it means there is still at least one reference to that object.
+
+This means that this object was not garbage collected. It still exists. So, if you use the `has()` method you will get information that is reliable. This is why `has()` method does make sense while iteration and `size` property don't. The `has()` requires reference, existing object. The iteration and `size` property don't.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
