@@ -19,6 +19,19 @@ That object will be released from the memory. However, this doesn't mean the obj
 
 You can add items or remove any existing. You can also check if WeakSet contains specific item. However, you can't iterate over it with some loop. There is also no `size` property that would tell you how many items are in a particular WeakSet. Now, let's take a look at how you can create new WeakSets.
 
+## Creating new WeakSet
+
+Whe you want to create new WeakSets you have to use `WeakSet()` constructor. This will create new WeakSet you can then use to store values. There are two ways in which you can use the `WeakSet()` constructor. First, you can use it to create an empty WeakSet and add to it values later.
+
+Then, there is another thing you can do. You can pass an iterable with values as a parameter to the constructor at the moment you use it to create new WeakSet. When you hear the word "iterable" imagine some collection of values. In this case, the iterable is an array. So, pass in an array with objects.
+
+```JavaScript
+// Creating new WeakSets no.1: Empty
+const myWeakSet = new WeakSet()
+
+// Creating new WeakSets no.2: Passing some objects
+const myWeakSet = new WeakSet([myObj1, myObj1])
+```
 
 ## Conclusion: [...] ...
 
