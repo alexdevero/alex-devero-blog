@@ -37,9 +37,9 @@ const myWeakSet = new WeakSet([myObj1, myObj1])
 
 We already talked a little bit about what WeakSets allow you to do. You can add items to WeakSets and you can remove them. You can also check if some WeakSet contains specific item. There are specific methods for each of these tasks. Let's take a look at them.
 
-### Adding new items to WeakSets
+### Adding new objects to WeakSets
 
-When you want to add items to WeakSets you can do two things. First, you can pass those items into the `WeakSet()` constructor when you create new WeakSet. Second, you can add items alter with the help of `add()` method. This method accepts one parameter, the object you want to store.
+When you want to add objects to WeakSets you can do two things. First, you can pass those objects into the `WeakSet()` constructor when you create new WeakSet. Second, you can add objects later with the help of `add()` method. This method accepts one parameter, the object you want to store.
 
 This is something you should remember. It actually accepts only one object, not more. If you try to pass in multiple objects only the first will be added to the WeakSet. The rest will be ignored. So, if you want to add multiple objects, use multiple `add()` methods for each.
 
@@ -82,9 +82,9 @@ const myWeakSet = new WeakSet()
 myWeakSet.add(myObj1, myObj2)
 ```
 
-### Removing items from WeakSets
+### Removing objects from WeakSets
 
-Removing items from WeakSets is simple and straightforward. When you want to remove some item, there is a method you use. This method is `delete()`. This method accepts one parameter, name of the object you want to remove. Similarly to `add()`, it also works with one object at the time.
+Removing objects from WeakSets is simple and straightforward. When you want to remove some object, there is a method you use. This method is `delete()`. This method accepts one parameter, name of the object you want to remove. Similarly to `add()`, it also works with one object at the time.
 
 So, if you want to remove multiple objects you have to use multiple `delete()` methods, one for each object. When you use this method, it will always return a [boolean]. It will return `true` if the object was successfully removed. If the object is not stored in the WeakSet it will return `false`.
 
