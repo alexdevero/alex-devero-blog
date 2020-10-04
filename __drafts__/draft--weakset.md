@@ -82,7 +82,9 @@ myWeakSet.add(myObj1, myObj2)
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[Sets]: https://blog.alexdevero.com/sets-in-javascript/
+[arrays]: https://developer.mozilla.org/en-US/docs/Glossary/array
+[garbage collected]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Garbage_collection
 
 <!--
 ### Meta:
@@ -91,7 +93,8 @@ myWeakSet.add(myObj1, myObj2)
 
 <!--
 ### Keywords:
--
+- WeakSet in JavaScript
+- WeakSet
 -->
 
 <!--
