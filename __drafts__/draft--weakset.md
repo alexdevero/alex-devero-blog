@@ -1,6 +1,6 @@
 # What WeakSet in JavaScript Is and How It Works
 
-WeakSet is one of the newer objects in JavaScript, or a collection. This collection can seem a bit esoteric. Many JavaScript developers don't know much about it, or at all. In this tutorial, you will learn what WeakSet in JavaScript is, how it works and also when they might be useful.<!--more-->
+WeakSet is one of the newer objects in JavaScript, a JavaScript collection. This collection can seem a bit esoteric. Many JavaScript developers don't know much about it, or at all. In this tutorial, you will learn what WeakSet in JavaScript is, how it works and also when they might be useful.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -19,7 +19,7 @@ Table of Contents:
 
 WeakSets are very similar to [Sets]. If you are not familiar with Sets, don't worry. You don't have to have prior knowledge of Sets. Back to WeakSets and Sets. They are both collections. You can use these collections to store values. One thing that may help you understand this are [arrays].
 
-Arrays, just like WeakSets and Sets, are also collections. They also allow you to store various values, from numbers and string to booleans and objects, even Sets. This is very the similarity ens and the differences start to appear. One difference is that, unlike arrays, Sets can contain only unique values.
+Arrays, just like WeakSets and Sets, are also collections. They also allow you to store various values, from numbers and string to booleans and objects, even Sets. This is where the similarity ends and the differences start to appear. One difference is that, unlike arrays, Sets can contain only unique values.
 
 With weakSets this difference goes even further. WeakSets can only contain objects. If you try to add anything else than an object JavaScript will throw an error. These objects must be also unique. If you try to add some object twice, the second will not be added.
 
@@ -153,7 +153,7 @@ myWeakSet.delete(myObj1, myObj2)
 
 WeakSets are not iterable, and there is no `size` property. This can make it hard to know if specific object does or doesn't exist in a WeakSet. Fortunately, there is a method you can use to find this out. This method is `has()`. Similarly to `delete()` and `add()` it also accepts one parameter.
 
-This parameter is the name of an object you want to check for. When you use this method it also return a boolean, just like `delete()`. It returns either `true` if an object exists in a WeakSet or `false` if it doesn't exist.
+This parameter is the name of an object you want to check for. When you use this method it also returns a boolean, just like `delete()`. It returns either `true` if an object exists in a WeakSet or `false` if it doesn't exist.
 
 ```JavaScript
 // Create some objects
@@ -193,7 +193,7 @@ myWeakSet.has(myObj3)
 
 As you know, one difference between WeakSets and Sets is that WeakSets are not iterable. Another difference is that WeakSets don't have `size` property. This may not make sense. If you think about it, it actually does make sense. As we discussed, all object inside WeakSets are weakly held.
 
-If any of those objects loses all references it will be "marked" for garbage collection. When this garbage collection happens this object is released from the memory. It is gone. The thing about garbage collection is that it works whenever it wants. You can't predict when it will happens.
+If any of those objects loses all references it will be "marked" for garbage collection. When this garbage collection happens this object is released from the memory. It is gone. The thing about garbage collection is that it works whenever it wants. You can't predict when it will happen.
 
 Let's say you have an object. You add this object to a WeakSet. What if you, in another part of the code, remove that object? The answer is, it depends. It depends on whether the garbage collection had time to run or not. If it did, the object is released from memory, and it is also gone from the WeakSet.
 
