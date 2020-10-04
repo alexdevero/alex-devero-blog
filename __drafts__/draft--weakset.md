@@ -201,6 +201,63 @@ Back to garbage collection. Garbage collection collects objects only when all re
 
 This means that this object was not garbage collected. It still exists. So, if you use the `has()` method you will get information that is reliable. This is why `has()` method does make sense while iteration and `size` property don't. The `has()` requires reference, existing object. The iteration and `size` property don't.
 
+## Use case for WeakSets
+
+Because of how they work, WeakSets are not used very often. When you want to store some values, objects or not, an array or a [Map] will be a better choice. One scenario where WeakSets can be useful is tracking existing objects. You could store references to those objects in an array or a Map.
+
+This would prevent the garbage collection from collecting any of those object if all other references to them were gone. These objects would remain in memory and could potentially cause a memory leak. Use WeakSets to store those objects and you no longer have this problem.
+
+One simple example can be a login system. You could keep track of users (objects) that are online by adding them to a WeakSet. When any of those users leaves you remove appropriate object. Later, you can use the `has()` method to check if specific user is still online, appropriate object exists, or not.
+
+```JavaScript
+// Create three users that are logged into a system
+let user1 = { username: 'joey' }
+let user2 = { username: 'jack15' }
+let user3 = { username: 'skylar' }
+
+// Create new WeakSet
+const loggedUsers = new WeakSet()
+
+// Add "user1" to "loggedUsers"
+loggedUsers.add(user1)
+
+// Add "user2" to "loggedUsers"
+loggedUsers.add(user2)
+
+// Add "user3" to "loggedUsers"
+loggedUsers.add(user3)
+
+// Check if all users are present
+// loggedUsers.has(user1)
+// // Output:
+// // true
+
+// loggedUsers.has(user2)
+// // Output:
+// // true
+
+// loggedUsers.has(user3)
+// // Output:
+// // true
+
+// Let "user2" and "user3" log out
+user2 = null
+user3 = null
+
+// Check if all users are still logged in
+loggedUsers.has(user1)
+// Output:
+// true
+
+loggedUsers.has(user2)
+// Output:
+// false
+
+loggedUsers.has(user3)
+// Output:
+// false
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
