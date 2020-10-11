@@ -58,9 +58,9 @@ const myObj2 = { name: 'Jordan' }
 const myObj3 = {}
 
 // Add three new key-value pairs
-myWeakMap.set(myObj1, 'This is first object.')
-myWeakMap.set(myObj2, 'This is second object.')
-myWeakMap.set(myObj3, 'This is third object.')
+myWeakMap.set(myObj1, 'I am not quite sure about this guy.')
+myWeakMap.set(myObj2, 'This is a baller.')
+myWeakMap.set(myObj3, 'We fired this guy a month ago.')
 
 
 // You can also chain set() methods
