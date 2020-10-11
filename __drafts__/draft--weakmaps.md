@@ -42,6 +42,34 @@ const myWeakMap = new WeakMap()
 
 By default, WeakMap offer a set of methods that make working with them easier. These methods allow you to do (almost) all the things you may want to do. These methods are `set()`, `get()`, `delete()` and `has()`. Let's quickly take a look at each.
 
+### Adding values
+
+When you want to add new key-value pair to WeakMaps the `set()` method is what you need. This method takes two parameters, The first parameter is for the `key` inside the key-value pair. This will be some object. The second parameter is for `value`. This can be a string, number, boolean, etc.
+
+One thing you need to remember about the `set()` method. This method allows you to add only one key-value pair at the time. If you want to add multiple pairs, you have to use this method multiple times, once for each pair.
+
+```JavaScript
+// Create new WeakMap
+const myWeakMap = new WeakMap()
+
+// Create some objects
+const myObj1 = { name: 'Dexter' }
+const myObj2 = { name: 'Jordan' }
+const myObj3 = {}
+
+// Add three new key-value pairs
+myWeakMap.set(myObj1, 'This is first object.')
+myWeakMap.set(myObj2, 'This is second object.')
+myWeakMap.set(myObj3, 'This is third object.')
+
+
+// You can also chain set() methods
+myWeakMap
+  .set(myObj1, 'This is first object.')
+  .set(myObj2, 'This is second object.')
+  .set(myObj3, 'This is third object.')
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
