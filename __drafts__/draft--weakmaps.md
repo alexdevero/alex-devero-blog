@@ -42,7 +42,7 @@ const myWeakMap = new WeakMap()
 
 By default, WeakMap offer a set of methods that make working with them easier. These methods allow you to do (almost) all the things you may want to do. These methods are `set()`, `get()`, `delete()` and `has()`. Let's quickly take a look at each.
 
-### Adding values
+### Adding elements
 
 When you want to add new key-value pair to WeakMaps the `set()` method is what you need. This method takes two parameters, The first parameter is for the `key` inside the key-value pair. This will be some object. The second parameter is for `value`. This can be a string, number, boolean, etc.
 
@@ -104,9 +104,9 @@ myWeakMap.get(myObj4)
 // ReferenceError: myObj3 is not defined
 ```
 
-### Removing values
+### Removing elements
 
-The best, and probably only, way to remove values from WeakMaps is with the `delete()` method. This methods takes one parameter, a key. This is the object you used as the key to store the value associated with it. This metod will return either `true` or `false`. `true` if the pair in the WeakMap object has been removed successfully.
+The best, and probably only, way to remove elements from WeakMaps is with the `delete()` method. This methods takes one parameter, a key. This is the object you used as the key to store the value associated with it. This metod will return either `true` or `false`. `true` if the pair in the WeakMap object has been removed successfully.
 
 If the pair was not removed it will return `false`. You will also get `false` if the key doesn't exit in the WeakMap. The same will also happen if the thin you are trying to pas as a key is not an object.
 
