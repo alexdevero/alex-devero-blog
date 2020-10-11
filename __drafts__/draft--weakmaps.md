@@ -38,6 +38,10 @@ When you want to create a WeakMap, you have to use [WeakMap() constructor]. This
 const myWeakMap = new WeakMap()
 ```
 
+## WeakMap methods
+
+By default, WeakMap offer a set of methods that make working with them easier. These methods allow you to do (almost) all the things you may want to do. These methods are `set()`, `get()`, `delete()` and `has()`. Let's quickly take a look at each.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
