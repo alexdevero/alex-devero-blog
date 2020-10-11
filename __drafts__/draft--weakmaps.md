@@ -138,6 +138,35 @@ myWeakMap.delete(myObj2)
 // Output:
 // false
 ```
+
+### Checking for existing keys
+
+You know how to add values, retrieve them and remove them. The last thing you can do is to check if some key exists in a WeakMap. You can do this with the `has()` method. This method takes one parameter, some object you want to know if it is used as a `key`. If the `key` exists the `has()` method will return `true`. Otherwise, `false`.
+
+```JavaScript
+// Create new WeakMap
+const myWeakMap = new WeakMap()
+
+// Create some objects
+const myObj1 = { language: 'PHP' }
+const myObj2 = { language: 'Pearl' }
+
+// Check if "myObj1" is used as a key in "myWeakMap"
+myWeakMap.set(myObj1, 'Not that dead yet.')
+// Output:
+// true
+
+// Check if "myObj1" is used as a key in "myWeakMap"
+myWeakMap.has(myObj1)
+// Output:
+// true
+
+// Check if "myObj2" is used as a key in "myWeakMap"
+myWeakMap.has(myObj2)
+// Output:
+// false
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
