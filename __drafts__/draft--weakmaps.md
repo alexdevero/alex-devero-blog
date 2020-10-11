@@ -5,6 +5,16 @@ WeakMap is one of the most underrated and least used data structures in JavaScri
 <!--more-->
 <!--
 Table of Contents:
+## A quick introduction to WeakMap
+### Differences between Maps and WeakMaps
+## How to create WeakMaps
+## WeakMap methods
+### Adding elements
+### Retrieving values
+### Removing elements
+### Checking for existing keys
+## Potential use cases for WeakMaps
+## Conclusion: WeakMap in JavaScript - An easy introduction
 -->
 
 ## A quick introduction to WeakMap
