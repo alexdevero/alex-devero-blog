@@ -104,6 +104,40 @@ myWeakMap.get(myObj4)
 // ReferenceError: myObj3 is not defined
 ```
 
+### Removing values
+
+The best, and probably only, way to remove values from WeakMaps is with the `delete()` method. This methods takes one parameter, a key. This is the object you used as the key to store the value associated with it. This metod will return either `true` or `false`. `true` if the pair in the WeakMap object has been removed successfully.
+
+If the pair was not removed it will return `false`. You will also get `false` if the key doesn't exit in the WeakMap. The same will also happen if the thin you are trying to pas as a key is not an object.
+
+```JavaScript
+// Create new WeakMap
+const myWeakMap = new WeakMap()
+
+// Create some objects
+const myObj1 = { language: 'JavaScript' }
+const myObj2 = { language: 'Python' }
+const myObj3 = {}
+
+// Add two new key-value pairs
+myWeakMap.set(myObj1, 'Semicolons or not?')
+myWeakMap.set(myObj2, 'White space matters.')
+
+// Remove the value associated with "myObj2"
+myWeakMap.delete(myObj2)
+// Output:
+// true
+
+// Try to remove the value associated with "myObj2" again
+myWeakMap.delete(myObj2)
+// Output:
+// false
+
+// Try to use "myObj3" that is not in myWeakMap
+myWeakMap.delete(myObj2)
+// Output:
+// false
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
