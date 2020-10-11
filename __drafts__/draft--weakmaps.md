@@ -1,4 +1,4 @@
-# An Easy Introduction to WeakMap in JavaScript
+# WeakMap in JavaScript - An Easy Introduction
 
 WeakMap is one of the most underrated and least used data structures in JavaScript. There are many JavaScript developers who don't even know they exist. This tutorial will help you understand them. You will learn about what WeakMaps are, how they work and how they differ from Maps.
 
