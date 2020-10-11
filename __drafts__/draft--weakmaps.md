@@ -19,9 +19,9 @@ Table of Contents:
 
 ## A quick introduction to WeakMap
 
-Both, [Maps] and WeakMaps are new data structures, or collections, introduced in [ES6]. Another example of a collection is an [array]. Similarly to an array, both Maps and WeakMaps allow you to store data. In case of these Maps and WeakMaps you store the in the form of key-value pairs.
+Both, [Maps] and WeakMaps are new data structures, or collections, introduced in [ES6]. Another example of a collection is an [array]. Similarly to an array, both Maps and WeakMaps allow you to store data. In case of these Maps and WeakMaps you store in the form of key-value pairs.
 
-If you want to access some value stored in a Map, all you have to do is to use the correct `key`. This also works for WeakMaps. When you want you want to access some value stored in a WeakMap, you also have to use correct `key`. Both, Maps and WeakMaps allow you to add new key-value pairs and remove existing.
+If you want to access some value stored in a Map, all you have to do is to use the correct `key`. This also works for WeakMaps. When you want to access some value stored in a WeakMap, you also have to use correct `key`. Both, Maps and WeakMaps allow you to add new key-value pairs and remove existing.
 
 What if you are not sure if a Map or WeakMap contains specific key? There is a method you can use to quickly check if the key exists. So, this is where Maps and WeakMaps work in the same way. Along with these similarities, there are some important differences between these two you need to know.
 
@@ -37,7 +37,7 @@ Only when the next "cycle" of garbage collected happens, they will actually be f
 
 This also means that you have to know the key you are looking for. Since we are talking about iterability. WeakMaps also don't have any `size` property. So, you don't really know how many pairs are inside one. Lastly, there is no `clear()` method that would allow to remove all data from a WeakMap.
 
-These differences are quite important and put serious constraints on what you can do with WeakMaps. However, don't let this discourage you from learning more about them because WeakMaps can still be useful. We will talk about this soon, but first, let's take a look at how to you can create WeakMaps and what you can do with them.
+These differences are quite important and put serious constraints on what you can do with WeakMaps. However, don't let this discourage you from learning more about them because WeakMaps can still be useful. We will talk about this soon, but first, let's take a look at how you can create WeakMaps and what you can do with them.
 
 ## How to create WeakMaps
 
@@ -50,11 +50,11 @@ const myWeakMap = new WeakMap()
 
 ## WeakMap methods
 
-By default, WeakMap offer a set of methods that make working with them easier. These methods allow you to do (almost) all the things you may want to do. These methods are `set()`, `get()`, `delete()` and `has()`. Let's quickly take a look at each.
+By default, WeakMaps offer a set of methods that make working with them easier. These methods allow you to do (almost) all the things you may want to do. These methods are `set()`, `get()`, `delete()` and `has()`. Let's quickly take a look at each.
 
 ### Adding elements
 
-When you want to add new key-value pair to WeakMaps the `set()` method is what you need. This method takes two parameters, The first parameter is for the `key` inside the key-value pair. This will be some object. The second parameter is for `value`. This can be a string, number, boolean, etc.
+When you want to add new key-value pair to WeakMaps the `set()` method is what you need. This method takes two parameters. The first parameter is for the `key` inside the key-value pair. This will be some object. The second parameter is for `value`. This can be a string, number, boolean, etc.
 
 One thing you need to remember about the `set()` method. This method allows you to add only one key-value pair at the time. If you want to add multiple pairs, you have to use this method multiple times, once for each pair.
 
@@ -116,9 +116,9 @@ myWeakMap.get(myObj4)
 
 ### Removing elements
 
-The best, and probably only, way to remove elements from WeakMaps is with the `delete()` method. This methods takes one parameter, a key. This is the object you used as the key to store the value associated with it. This metod will return either `true` or `false`. `true` if the pair in the WeakMap object has been removed successfully.
+The best, and probably the only, way to remove elements from WeakMaps is with the `delete()` method. This methods takes one parameter, a key. This is the object you used as the key to store the value associated with it. This method will return either `true` or `false`. `true` if the pair in the WeakMap object has been removed successfully.
 
-If the pair was not removed it will return `false`. You will also get `false` if the key doesn't exit in the WeakMap. The same will also happen if the thin you are trying to pas as a key is not an object.
+If the pair was not removed it will return `false`. You will also get `false` if the key doesn't exit in the WeakMap. The same will also happen if the thing you are trying to pass in as a key is not actually an object.
 
 ```JavaScript
 // Create new WeakMap
