@@ -167,7 +167,17 @@ myWeakMap.has(myObj2)
 // false
 ```
 
-## Conclusion: [...] ...
+## Potential use cases for WeakMaps
+
+WeakMaps may not seem as something useful on the first sight, maybe also on the second. However, that doesn't mean they are useless. It is true that they are not the best choice when you want to store some data. Other collections such as arrays, objects, Maps or Sets will get the job done much better.
+
+Scenario in which WeakMaps will work very well is when you want to some additional values to objects. If you try to do this with Maps, you will prevent those objects from being garbage collected. This can lead to worse performance and memory leaks. This is not an issue with WeakMaps because they don't prevent garbage collection.
+
+If you add some object into a WeakMap, and you later remove all references to that object it, it will be garbage collected. There is also another potential benefit of using WeakMaps in this, and similar scenarios. WeakMaps are basically black boxes. You can't iterate over them to get the elements they hold. You also can't get their size.
+
+This means that you have to know which object to use as a key in order to get a specific value. Otherwise, you will not get it. Another thing worth mentioning is the lack of any clearing method. You can't remove all elements from WeakMap at once. You can remove them only one at the time and only if you know what key to use.
+
+From this point of view, WeakMaps can provide you with more security other collections or data structures can't. This benefit of security goes even further if you take into consideration garbage collection. Remove all references to an object and all "sensitive" data associated with that object will be gone as well, sooner or later.
 
 [xyz-ihs snippet="thank-you-message"]
 
