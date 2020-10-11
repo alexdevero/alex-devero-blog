@@ -179,6 +179,12 @@ This means that you have to know which object to use as a key in order to get a 
 
 From this point of view, WeakMaps can provide you with more security other collections or data structures can't. This benefit of security goes even further if you take into consideration garbage collection. Remove all references to an object and all "sensitive" data associated with that object will be gone as well, sooner or later.
 
+## Conclusion: WeakMap in JavaScript - An easy introduction
+
+WeakMaps are one of those lesser known features of JavaScript. It is true that they are not the best choice for storing data. However, there are jobs WeakMaps are better fit for. For example, adding some additional metadata to objects. WeakMaps can do this quite well.
+
+I hope that this tutorial helped you understand what WeakMaps are, how they work, how they differ from Maps and other collections and how to use them.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
