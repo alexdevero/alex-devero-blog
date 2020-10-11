@@ -70,6 +70,40 @@ myWeakMap
   .set(myObj3, 'This is third object.')
 ```
 
+### Retrieving values
+
+The `get()` method is what you are looking for when you want to retrieve values from WeakMaps. This method takes one parameter, the object you used as a key for the value you want to retrieve. If the key exists the `get()` method will return the value associated with it. Otherwise, it will return `undefined`.
+
+```JavaScript
+// Create new WeakMap
+const myWeakMap = new WeakMap()
+
+// Create some objects
+const myObj1 = { language: 'JavaScript' }
+const myObj2 = { language: 'Python' }
+const myObj3 = { language: 'Rust' }
+
+// Add two new key-value pairs
+myWeakMap.set(myObj1, 'Language for every platform, soon even a fridge.')
+myWeakMap.set(myObj2, 'I kind of miss those curly braces.')
+
+// Retrieve the value associated with "myObj1"
+myWeakMap.get(myObj1)
+// Output:
+// 'Language for every platform, soon even a fridge.'
+
+// Try to retrieve the value associated with "myObj3"
+// that was not added to "myWeakMap"
+myWeakMap.get(myObj3)
+// Output:
+// undefined
+
+// Try to retrieve the value associated with non-existing "myObj3"
+myWeakMap.get(myObj4)
+// Output:
+// ReferenceError: myObj3 is not defined
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
