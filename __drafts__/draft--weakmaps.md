@@ -29,6 +29,15 @@ This also means that you have to know the key you are looking for. Since we are 
 
 These differences are quite important and put serious constraints on what you can do with WeakMaps. However, don't let this discourage you from learning more about them because WeakMaps can still be useful. We will talk about this soon, but first, let's take a look at how to you can create WeakMaps and what you can do with them.
 
+## How to create WeakMaps
+
+When you want to create a WeakMap, you have to use [WeakMap() constructor]. This constructor will create new WeakMap object. When you have this object you can then do all the stuff you want. You can add new key-value pairs, check, retrieve or remove existing.
+
+```JavaScript
+// Create new WeakMap
+const myWeakMap = new WeakMap()
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
@@ -37,6 +46,7 @@ These differences are quite important and put serious constraints on what you ca
 [array]: https://developer.mozilla.org/en-US/docs/Glossary/array
 [Maps]: https://blog.alexdevero.com/maps-in-javascript/
 [garbage collection]: https://javascript.info/garbage-collection
+[WeakMap() constructor]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/WeakMap
 
 <!--
 ### Meta:
