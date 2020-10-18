@@ -97,6 +97,35 @@ let alreadyRead = null
 // for the garbage collector to be removed
 ```
 
+### Interlinked objects or circular reference
+
+Where this concept of reachability and references falls short are interlinked objects. This is also called [circular reference]. This situation happens one two objects reference each other. In that case, garbage collector can't remove any of them because each have at least one reference.
+
+```JavaScript
+// Create function that creates circular reference
+function createCircularReference(obj1, obj2) {
+  // Interlink both objects passed as arguments
+  obj1.second = obj2
+  obj2.first = obj1
+
+  // Return new object based on the interlinked object
+  return {
+    winner: obj1,
+    loser: obj2
+  }
+}
+
+// Declare new variable and assign it the result
+// of calling the createCircularReference() function
+let race = createCircularReference({ name: 'Jack' }, { name: 'Spencer' })
+// The value of "race" variable will be the third object
+// created by interlinking the two objects
+// passed to createCircularReference() function.
+// These three objects are now all reachable
+// because they reference each other
+// and the "race" is a global variable, root
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
