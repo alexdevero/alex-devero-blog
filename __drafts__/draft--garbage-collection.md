@@ -17,7 +17,7 @@ Table of Contents:
 
 ## A quick introduction
 
-Chances are that you've already heard about this thing called "Garbage collection". If not, here is short version. JavaScript is a very unique language. Unlike other languages, JavaScript is able to automatically allocate memory when it is needed. it can also release that memory when it is not needed anymore.
+Chances are that you've already heard about this thing called "Garbage collection". If not, here is short version. JavaScript is a unique language. Unlike other languages, JavaScript is able to automatically allocate memory when it is needed. It can also release that memory when it is not needed anymore.
 
 When you create new object, you don't have to use special method to allocate memory for that object. When you no longer need that object, you don't have to use another special method to release that memory. JavaScript will do this for you. It will automatically check if there is a need for memory allocation or memory release.
 
@@ -47,7 +47,7 @@ As we discussed, the third step is the most difficult step of the whole memory l
 
 The main concept garbage collection relies on is the concept of references and reachability. It distinguishes between values that are reachable and values that are not. Values that are reachable are local variables and parameters in a current function. If there are nested functions in the chain, reachable values are also parameters and variables of these nested functions.
 
-Lastly, reachable values are also all global variables, variables defined in [global scope]. All these reachable values are called "roots". However, this is not necessarily the end. If there are some other values, that are reachable from a root by a reference or chain of references, then these values also become reachable.
+Lastly, reachable values are also all global variables, variables defined in [global scope]. All these reachable values are called "roots". However, this is not necessarily the end. If there are some other values, values that are reachable from a root by a reference or chain of references, then these values also become reachable.
 
 JavaScript has a special process called garbage collector. This process runs on the background. What it does is it monitors all existing objects. When some object becomes unreachable this garbage collector will remove it. Let's take a look at simple code example.
 
@@ -109,7 +109,7 @@ let alreadyRead = null
 
 ### Interlinked objects or circular reference
 
-Where this concept of reachability and references falls short are interlinked objects. This is also called [circular reference]. This situation happens one two objects reference each other. In that case, garbage collector can't remove any of them because each have at least one reference.
+Where this concept of reachability and references falls short are interlinked objects. This is also called [circular reference]. This situation happens one two objects reference each other. In that case, garbage collector can't remove any of them because each has at least one reference.
 
 ```JavaScript
 // Create function that creates circular reference
