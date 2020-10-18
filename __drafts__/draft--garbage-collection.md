@@ -1,6 +1,6 @@
 # Garbage Collection in JavaScript Made Simple
 
-<!--more-->
+Garbage collection is nothing new under the sun. Yet, there are many JavaScript developers who don't know much about it. If you are one of them, don't worry. This tutorial will help you understand the basic of garbage collection in JavaScript. You will learn what it is and how it works.<!--more-->
 <!--
 Table of Contents:
 -->
