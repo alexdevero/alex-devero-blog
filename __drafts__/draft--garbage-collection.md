@@ -33,6 +33,38 @@ As you know, JavaScript takes care of memory management for you. It automaticall
 
 As we discussed, the third step is the most difficult step of the whole memory life cycle. How does the garbage collection know what memory should be released? There are few tricks garbage collection uses to figure this out. Let's take a look at each of these tricks.
 
+### Reachability and single reference
+
+The main concept garbage collection relies on is a concept of reachability and references. It distinguishes between values that are reachable and values that are not. Values that are reachable are local variables and parameters in a current function. If there are nested functions in the chain, reachable values are also parameters and variables of these nested functions.
+
+Lastly, reachable values are also all global variables, variables defined in global scope. All these reachable values are called "roots". However, this is not necessarily the end. If there are some other values, that are reachable from a root by a reference or chain of references, then these values also become reachable.
+
+JavaScript has a special process called garbage collector. This process runs on the background. What it does is it monitors all existing objects. When some object becomes unreachable this garbage collector will remove it. Let's take a look at simple code example.
+
+First, let's declare new global variable called "toRead" and assign it an object as a value. This value will be root because it is in the global scope and there is and the variable "toRead" works as a reference to the object it holds, the value of that variable.
+
+As long as this reference exists the object it holds, the variable value, will not be removed by garbage collector. It will stay in the memory because it is still reachable.
+
+```JavaScript
+// Create object in a global scope, a root value
+let toRead = { bookName: 'The Art of Computer Programming' }
+// JavaScript allocates memory for object { bookName: 'The Art of Computer Programming' },
+// the "toRead" becomes reference for this object
+// this existing reference prevents { bookName: 'The Art of Computer Programming' } object
+// from being removed by garbage collector
+```
+
+Let's say you no longer need that object. A simple way you can tell JavaScript it is redundant is by removing all references to it. At this moment, there is only one existing reference, the "toRead" variable. If you remove this reference garbage collector will detect the object it referred to is no longer needed and it will remove it.
+
+```JavaScript
+// Remove reference to { bookName: 'The Art of Computer Programming' } object
+let toRead = null
+// Garbage collector can now detect
+// that the { bookName: 'The Art of Computer Programming' } object
+// is no longer needed, no longer reachable, and it can remove it,
+// release it from the memory
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
