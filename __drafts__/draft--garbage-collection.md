@@ -28,6 +28,11 @@ This third step is critical. Without it, your program would continue to consume 
 ## Memory release, or garage collection
 
 As you know, JavaScript takes care of memory management for you. It automatically handles all those three steps of memory life cycle. That is all nice, but what about the garbage collection? Where that comes into play? The quick answer is, in the third step. The whole third step, releasing allocated memory, is about garbage collection.
+
+## Garbage collection and how it works
+
+As we discussed, the third step is the most difficult step of the whole memory life cycle. How does the garbage collection know what memory should be released? There are few tricks garbage collection uses to figure this out. Let's take a look at each of these tricks.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
