@@ -134,6 +134,12 @@ After that, it again visits the marked objects and marks their references. This 
 
 Those objects that are not marked are considered to be unreachable, and safe to be removed. However, this doesn't mean these objects will be removed immediately. There can be some gap before an object is selected for garbage collection and when it is actually removed.
 
+## Manual garbage collection
+
+Aside to these tools and tricks there are also other optimizations to make your code run smoother, better and faster. These optimizations include generational collection, incremental collection, and idle-time collection. What is not included, what is not even possible, is some kind of a manual garbage collection.
+
+This is the great thing on garbage collection. It happens automatically on the background. You don't have to do anything. It is also the bad thing because it works only automatically. You can neither trigger or force it nor can you top it or prevent it. Garbage collection will happen, you never know when, but it will.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
