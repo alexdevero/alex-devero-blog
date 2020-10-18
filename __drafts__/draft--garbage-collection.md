@@ -33,11 +33,11 @@ As you know, JavaScript takes care of memory management for you. It automaticall
 
 As we discussed, the third step is the most difficult step of the whole memory life cycle. How does the garbage collection know what memory should be released? There are few tricks garbage collection uses to figure this out. Let's take a look at each of these tricks.
 
-### Reachability and single reference
+### Reference and reachability
 
-The main concept garbage collection relies on is a concept of reachability and references. It distinguishes between values that are reachable and values that are not. Values that are reachable are local variables and parameters in a current function. If there are nested functions in the chain, reachable values are also parameters and variables of these nested functions.
+The main concept garbage collection relies on is the concept of references and reachability. It distinguishes between values that are reachable and values that are not. Values that are reachable are local variables and parameters in a current function. If there are nested functions in the chain, reachable values are also parameters and variables of these nested functions.
 
-Lastly, reachable values are also all global variables, variables defined in global scope. All these reachable values are called "roots". However, this is not necessarily the end. If there are some other values, that are reachable from a root by a reference or chain of references, then these values also become reachable.
+Lastly, reachable values are also all global variables, variables defined in [global scope]. All these reachable values are called "roots". However, this is not necessarily the end. If there are some other values, that are reachable from a root by a reference or chain of references, then these values also become reachable.
 
 JavaScript has a special process called garbage collector. This process runs on the background. What it does is it monitors all existing objects. When some object becomes unreachable this garbage collector will remove it. Let's take a look at simple code example.
 
