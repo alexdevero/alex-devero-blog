@@ -142,7 +142,7 @@ The last trick garbage collection uses is mark-and-sweep algorithm. This algorit
 
 After that, it again visits the marked objects and marks their references. This process of visiting and marking goes on and one until every reachable reference is visited. When this situation happens, the garbage collector knows which objects are marked and which are not.
 
-Those objects that are not marked are considered to be unreachable, and safe to be removed. However, this doesn't mean these objects will be removed immediately. There can be some gap before an object is selected for garbage collection and when it is actually removed.
+Those objects that are not marked are considered unreachable, and safe to be removed. However, this doesn't mean these objects will be removed immediately. There can be some gap before an object is selected for garbage collection and when it is actually removed.
 
 ## Manual garbage collection
 
