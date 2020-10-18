@@ -3,6 +3,16 @@
 Garbage collection is nothing new under the sun. Yet, there are many JavaScript developers who don't know much about it. If you are one of them, don't worry. This tutorial will help you understand the basic of garbage collection in JavaScript. You will learn what it is and how it works.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## Memory management and memory life cycle
+## Memory release, or garage collection
+## Garbage collection and how it works
+### Reference and reachability
+### Multiple references
+### Interlinked objects or circular reference
+### Mark-and-sweep algorithm
+## Manual garbage collection
+## Conclusion: Garbage collection in JavaScript made simple
 -->
 
 ## A quick introduction
