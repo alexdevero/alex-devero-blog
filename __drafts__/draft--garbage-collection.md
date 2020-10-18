@@ -131,7 +131,8 @@ let race = createCircularReference({ name: 'Jack' }, { name: 'Spencer' })
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[global scope]:https://blog.alexdevero.com/javascript-scope-explained/#global-scope
+[circular reference]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
 
 <!--
 ### Meta:
