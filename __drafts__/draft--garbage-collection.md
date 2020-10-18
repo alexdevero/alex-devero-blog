@@ -15,6 +15,16 @@ If there is such a need, JavaScript will do the work necessary to fulfill that n
 
 The problem is that JavaScript can help you with this memory management only to some degree. It also can't help you if you start throwing obstacles in the way. Before we get to garbage collection, let's quickly talk about memory and memory management.
 
+## Memory management and memory life cycle
+
+One thing programming languages share is something called memory life cycle. This life cycle describes the way memory is managed. It is composed of three steps. The first step is about allocating the memory you need. This happens when you declare new variables and assign the values, call a function that creates values, etc.
+
+All these new values need some space in memory. JavaScript allocates this space, and makes it available, for you. The second step is about using that allocated memory for tasks such as read and writing data. For example, when you want to read value of some variable, or object property, or when you want to change that value or property.
+
+The third and final step is about releasing that allocated memory. You want to free up the allocated memory when it is no longer needed. For example, when you no loner need that variable why keeping it forever? You want JavaScript to get rid of that variable, so it doesn't take up space in memory.
+
+This third step is critical. Without it, your program would continue to consume more and more memory until no more was available. Then, it would crash. It is also this final step that is the most difficult to do correctly. Whether is it for you as a developer in low-level language or the language itself.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
