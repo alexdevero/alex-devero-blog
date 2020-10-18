@@ -31,7 +31,7 @@ As you know, JavaScript takes care of memory management for you. It automaticall
 
 ## Garbage collection and how it works
 
-As we discussed, the third step is the most difficult step of the whole memory life cycle. How does the garbage collection know what memory should be released? There are few tricks garbage collection uses to figure this out. Let's take a look at each of these tricks.
+As we discussed, the third step is the most difficult step of the whole memory life cycle. How does the garbage collection know what memory should be released? There are few tools and tricks garbage collection uses to figure this out. Let's take a look at each of these tools and tricks.
 
 ### Reference and reachability
 
