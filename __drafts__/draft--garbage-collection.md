@@ -65,6 +65,38 @@ let toRead = null
 // release it from the memory
 ```
 
+### Multiple references
+
+Another scenario is when you have an object and there are multiple references to that object. For example, you declare new global variable and assign it an object. After that, you declare another variable and assign it the first object by referencing the first variable.
+
+As long as at least one of these references exists, this object will not be removed. The space in memory it occupies will not be released. In order for this to happen, you will have to remove both existing references, or more.
+
+```JavaScript
+// Create object in a global scope, a root value
+let toRead = { bookName: 'The Art of Computer Programming' }
+// This is the first reference to { bookName: 'The Art of Computer Programming' } object
+
+// Create another reference for { bookName: 'The Art of Computer Programming' } object
+let alreadyRead = toRead
+```
+
+The result of this will be still one object with occupying some space allocated in memory. However, there will be two existing references to this object.
+
+```JavaScript
+// Remove the first reference to { bookName: 'The Art of Computer Programming' } object
+let toRead = null
+// The { bookName: 'The Art of Computer Programming' } object
+// is still reachable through the second reference
+// and garbage collector can't remove it, release it from memory
+
+// Remove the second reference to { bookName: 'The Art of Computer Programming' } object
+let alreadyRead = null
+
+// All references to the { bookName: 'The Art of Computer Programming' } object
+// are gone and this object is now available
+// for the garbage collector to be removed
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
