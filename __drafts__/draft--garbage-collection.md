@@ -126,6 +126,14 @@ let race = createCircularReference({ name: 'Jack' }, { name: 'Spencer' })
 // and the "race" is a global variable, root
 ```
 
+### Mark-and-sweep algorithm
+
+The last trick garbage collection uses is mark-and-sweep algorithm. This algorithm is run periodically and performs a set of steps. First, it takes all existing roots and marks them. It basically saves to its memory. Next, it visits all the references reaching out from these roots. It marks these references as well.
+
+After that, it again visits the marked objects and marks their references. This process of visiting and marking goes on and one until every reachable reference is visited. When this situation happens, the garbage collector knows which objects are marked and which are not.
+
+Those objects that are not marked are considered to be unreachable, and safe to be removed. However, this doesn't mean these objects will be removed immediately. There can be some gap before an object is selected for garbage collection and when it is actually removed.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
