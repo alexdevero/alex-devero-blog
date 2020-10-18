@@ -150,13 +150,16 @@ Aside to these tools and tricks there are also other optimizations to make your 
 
 This is the great thing on garbage collection. It happens automatically on the background. You don't have to do anything. It is also the bad thing because it works only automatically. You can neither trigger or force it nor can you top it or prevent it. Garbage collection will happen, you never know when, but it will.
 
-## Conclusion: [...] ...
+## Conclusion: Garbage collection in JavaScript made simple
+
+Garbage collection one thing JavaScript developers work with every day. It is my hope that this tutorial helped you understand what Garbage collection in JavaScript is and how it works. If you want to learn more about garbage collection in JavaScript, take a look at this [article].
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 [global scope]:https://blog.alexdevero.com/javascript-scope-explained/#global-scope
 [circular reference]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
+[article]: https://jayconrod.com/posts/55/a-tour-of-v8-garbage-collection
 
 <!--
 ### Meta:
