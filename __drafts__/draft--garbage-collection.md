@@ -25,6 +25,9 @@ The third and final step is about releasing that allocated memory. You want to f
 
 This third step is critical. Without it, your program would continue to consume more and more memory until no more was available. Then, it would crash. It is also this final step that is the most difficult to do correctly. Whether is it for you as a developer in low-level language or the language itself.
 
+## Memory release, or garage collection
+
+As you know, JavaScript takes care of memory management for you. It automatically handles all those three steps of memory life cycle. That is all nice, but what about the garbage collection? Where that comes into play? The quick answer is, in the third step. The whole third step, releasing allocated memory, is about garbage collection.
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
