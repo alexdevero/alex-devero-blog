@@ -1,4 +1,4 @@
-# Garbage Collection in JavaScript Made Simple
+# What Garbage Collection in JavaScript Is and How It Works
 
 Garbage collection is nothing new under the sun. Yet, there are many JavaScript developers who don't know much about it. If you are one of them, don't worry. This tutorial will help you understand the basic of garbage collection in JavaScript. You will learn what it is and how it works.<!--more-->
 <!--
@@ -12,7 +12,7 @@ Table of Contents:
 ### Interlinked objects or circular reference
 ### Mark-and-sweep algorithm
 ## Manual garbage collection
-## Conclusion: Garbage collection in JavaScript made simple
+## Conclusion: What garbage collection in JavaScript is and how it works
 -->
 
 ## A quick introduction
@@ -150,7 +150,7 @@ Aside to these tools and tricks there are also other optimizations to make your 
 
 This is the great thing on garbage collection. It happens automatically on the background. You don't have to do anything. It is also the bad thing because it works only automatically. You can neither trigger or force it nor can you top it or prevent it. Garbage collection will happen, you never know when, but it will.
 
-## Conclusion: Garbage collection in JavaScript made simple
+## Conclusion: What garbage collection in JavaScript is and how it works
 
 Garbage collection one thing JavaScript developers work with every day. It is my hope that this tutorial helped you understand what Garbage collection in JavaScript is and how it works. If you want to learn more about garbage collection in JavaScript, take a look at this [article].
 
