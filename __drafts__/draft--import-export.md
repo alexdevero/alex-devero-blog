@@ -136,6 +136,34 @@ const favoriteFantasy = 'Discworld'
 export default favoriteFantasy
 ```
 
+### Renaming exports
+
+When you export something, and you don't want to use the variable, function or class name, you can rename it. To do that, you have to wrap the name with curly braces and add `as` keyword followed by new name, under which you want to export it. If you export multiple things, you can use this to rename all of them or just some.
+
+```JavaScript
+// Declare a variable
+let sillyJoke = 'Knock, knock.'
+
+// Export the variable and rename it
+export { sillyJoke as classicJoke }
+
+
+// Declare multiple variables
+const petOne = 'Dog'
+const petTwo = 'Cat'
+const petThree = 'Alligator'
+const petFour = 'Dragon'
+
+// Export all variables and rename some
+// Note: line breaks are just for readability
+export {
+  petOne,
+  petTwo as pet2, // rename export only for petTwo
+  petThree as pet3, // rename export only for petThree
+  petFour
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
