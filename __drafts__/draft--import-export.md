@@ -463,6 +463,11 @@ const myModule = await import('./my-module.js')
 [AMD]: https://en.wikipedia.org/wiki/Asynchronous_module_definition
 [CommonJS]: http://wiki.commonjs.org/wiki/Modules/1.1
 [UMD]: https://github.com/umdjs/umd
+[promise]: https://blog.alexdevero.com/javascript-promises/
+[then handler]: https://blog.alexdevero.com/javascript-promises/#the-then-handler-function
+[await]: https://blog.alexdevero.com/javascript-async-await/#the-await-keyword
+[async function]: https://blog.alexdevero.com/javascript-async-await/#async-functions
+[top-level await]: https://2ality.com/2019/12/top-level-await.html
 
 <!--
 ### Meta:
@@ -476,7 +481,5 @@ const myModule = await import('./my-module.js')
 
 <!--
 ### Resources:
-- https://www.taniarascia.com/javascript-modules-import-export/
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+-
 -->
