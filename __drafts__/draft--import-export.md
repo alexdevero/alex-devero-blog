@@ -64,7 +64,7 @@ export class Person {
 }
 ```
 
-The second way to export code is by declaring it first and exporting it after that. In this case you use the `export` statement followed by the "thing" you want to export.
+The second way to export code is by declaring it first and exporting it after that. In this case, you use the `export` statement followed by the "thing" you want to export.
 
 ```JavaScript
 // Declare variables
@@ -278,7 +278,7 @@ console.log(greeting())
 
 ### Default imports
 
-If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw en error. One important thing. When you import something as default, you don't use the variable keyword.
+If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw an error. One important thing. When you import something as default, you don't use the variable keyword.
 
 ```JavaScript
 // File 1: file-one.js
@@ -318,9 +318,9 @@ console.log(password)
 
 ### Importing named modules at once
 
-The second option is to import all the stuff at once. Remember that this will import everything you exported from a the file you want to import from. The syntax is similar to importing individual modules. The difference is two-fold. First, you replace the name of the module you want to import with `*` (asterisk).
+The second option is to import all the stuff at once. Remember that this will import everything you exported from the file you now want to import from. The syntax is similar to importing individual modules. The difference is two-fold. First, you replace the name of the module you want to import with `*` (asterisk).
 
-Second, you have to add `as` keyword followed by name through which you want to access those imported modules. This name can be anything you want.
+Second, you have to add `as` keyword followed by the name through which you want to access those imported modules. This name can be anything you want.
 
 ```JavaScript
 // File 1: file-one.js
@@ -418,7 +418,7 @@ import tvShow, { mainCharacter, subject, rating } from './file-one.js'
 
 Now you know about import and export statements and how to use them. However, the `import` statement is not the only way to import modules. There is also an alternative called dynamic import. The main difference between the `import` statement and dynamic import is that the `import` statement is static.
 
-This means that when you import something with `import` statement it will be imported in at the moment you run your code. If you import some large module, or a lot of them, it can make your code slower. Dynamic import works differently. Dynamic imports are not loaded at the moment you run your code.
+This means that when you import something with `import` statement it will be imported at the moment you run your code. If you import some large module, or a lot of them, it can make your code slower. Dynamic import works differently. Dynamic imports are not loaded at the moment you run your code.
 
 Well, they can, but only if you want that to happen. If not, you can delay their load. You can use dynamic imports also to load things only under certain condition. If this condition never happens that dynamic import will not be loaded. In that case, that additional module will logically have no effect on the performance of your code.
 
@@ -455,7 +455,7 @@ const myModule = await import('./my-module.js')
 
 ## Conclusion: Import and Export Statements in JavaScript and How to Use Them
 
-Import and export statements are two features that can be very handy. They can help you make your code clearer and easier to manage and maintain. What's more, they are both also very easy to learn and use. I hope that this tutorial helped you understand what import and export statements are, how they work and how to use them.
+Import and export statements are two features that can be very handy. They can help you make your code clearer and easier to manage and maintain. What's more, they are both also very easy to learn and use. I hope that this tutorial helped you learn about what import and export statements are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
