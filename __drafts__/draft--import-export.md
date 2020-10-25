@@ -235,12 +235,13 @@ console.log(greeting())
 // 'Hello'
 ```
 
-If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw en error.
+If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw en error. One important thing. When you import something as default, you don't use the variable keyword.
 
 ```JavaScript
 // File 1: file-one.js
 // Declare and export some stuff as default
-export default const surname = 'Joe'
+// Note: omit the "const", "let" or "var" keywords
+export default surname = 'Joe'
 
 
 // File 2: file-two.js
