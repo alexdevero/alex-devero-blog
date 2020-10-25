@@ -400,7 +400,45 @@ export const rating = '9.5/10'
 import tvShow, { mainCharacter, subject, rating } from './file-one.js'
 ```
 
-## Conclusion: [...] ...
+## Dynamic imports
+
+Now you know about import and export statements and how to use them. However, the `import` statement is not the only way to import modules. There is also an alternative called dynamic import. The main difference between the `import` statement and dynamic import is that the `import` statement is static.
+
+This means that when you import something with `import` statement it will be imported in at the moment you run your code. If you import some large module, or a lot of them, it can make your code slower. Dynamic import works differently. Dynamic imports are not loaded at the moment you run your code.
+
+Well, they can, but only if you want that to happen. If not, you can delay their load. You can use dynamic imports also to load things only under certain condition. If this condition never happens that dynamic import will not be loaded. In that case, that additional module will logically have no effect on the performance of your code.
+
+When you want to use dynamic import you use the `import` keyword. However, this time you call it as a function, and pass in path to the module as an argument. This function will return a [promise]. You can then consume that promise with the [then handler]. The loaded module is passed to `then` handler through parameter.
+
+As an alternative to the `then()` handler, you can also use [await] keyword, and assign the module to a variable. Then, you can do whatever you want with that module.
+
+```JavaScript
+// Example of dynamic import
+import('./my-module.js')
+  // Use then() handler to consume returned promise
+  .then((module) => {
+    // Do something with the module
+    // returned by the promise
+    // and passed through "module" parameter
+  })
+
+// Alternative with await
+(async function() {
+  // Assign the module to a variable
+  const myModule = await import('./my-module.js')
+  // Do something with that module
+}())
+```
+
+If you want to use `await` remember that you have to use [async function]. Well, unless you use [top-level await] which is another option. In that case, no need to use `async` function.
+
+```JavaScript
+// Using top-level await
+// Assign the module to a variable
+const myModule = await import('./my-module.js')
+// Do something with that module
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
