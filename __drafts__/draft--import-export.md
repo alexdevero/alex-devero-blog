@@ -455,7 +455,7 @@ const myModule = await import('./my-module.js')
 
 ## Conclusion: Import and Export Statements in JavaScript and How to Use Them
 
-
+Import and export statements are two features that can be very handy. They can help you make your code clearer and easier to manage and maintain. What's more, they are both also very easy to learn and use. I hope that this tutorial helped you understand what import and export statements are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
