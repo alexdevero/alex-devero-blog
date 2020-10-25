@@ -349,6 +349,28 @@ console.log(myStuff.add(89, 98))
 // 187
 ```
 
+### Importing individual named exports and default export
+
+One nice thing about `import` statement is that it can work with named and default exports at the same time. So, if you used both, named and default exports in the same file, you can still import those modules individually with a single `import` statement. To do this, there are two things you have to remember.
+
+First, you have to import any default export without wrapping it with curly braces. Second, you have to wrap any remaining named exports with those curly braces. If you import two or more named exports, separate those exports with commas. Keep them all still inside that one pair of curly braces.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some stuff
+export default tvShow = 'Breaking Bad'
+export const mainCharacter = 'Walter White'
+export const subject = 'Chemistry'
+export const rating = '9.5/10'
+
+
+// File 2: file-two.js
+// Import both named and default exports from file-one.js
+// Note: the default export "tvShow" has to be first
+// and outside of the curly braces
+import tvShow, { mainCharacter, subject, rating } from './file-one.js'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
