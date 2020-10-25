@@ -19,6 +19,100 @@ When you want to export some variable, function or class you have to place the `
 
 When you export some code you can still change it and update it. However, you can that only at the place where you exported it. You can't do that when you import that exported code somewhere else. When you import some exported code you can only read it and use it, but not change it.
 
+### Two ways to export
+
+When you want to export some code with `export` statement, there are two ways to do it. The first one is by exporting at the moment of declaration. In this case, you put the `export` statement on the same line right before the variable, function or class you are about to declare.
+
+```JavaScript
+// Declare and export variables
+export const MY_PASS = 'Some very important secret.'
+export let name = 'Jack'
+export var stack = 'JS'
+
+// Declare and export functions
+export function sayHi() {
+  return 'Hi.'
+}
+
+export const sayBye = function() {
+  return 'Bye.'
+}
+
+export const sayGoodBye = () => {
+  return 'Good bye.'
+}
+
+// Declare and export class
+export class Person {
+  name = this.name
+  age = this.age
+  #my_secret = this.secret
+}
+```
+
+The second way to export code is by declaring it first and exporting it after that. In this case you use the `export` statement followed by the "thing" you want to export.
+
+```JavaScript
+// Declare variables
+const MY_PASS = 'Some very important secret.'
+let name = 'Jack'
+var stack = 'JS'
+
+// Export variables
+export MY_PASS
+export name
+export stack
+
+// Declare functions
+function sayHi() {
+  return 'Hi.'
+}
+
+const sayBye = function() {
+  return 'Bye.'
+}
+
+const sayGoodBye = () => {
+  return 'Good bye.'
+}
+
+// Declare and export functions
+export sayHi
+export sayBye
+export sayGoodBye
+
+// Declare class
+class Person {
+  name = this.name
+  age = this.age
+  #my_secret = this.secret
+}
+
+// Export class
+export Person
+```
+
+When you decide to use the second way there is another thing to do. Instead of export all those things individually, you can export them at once with a single `export` statement. For example, at the end of the file. To do this, you have to wrap everything you want to export with curly braces, separated by commas.
+
+```JavaScript
+// Declare some stuff
+const MY_PASS = 'Some very important secret.'
+
+let name = 'Jack'
+
+function sayHi() {
+  return 'Hi.'
+}
+
+class Car {
+  numOfWheels = this.numOfWheels
+  typeOfFuel = this.typeOfFuel
+}
+
+// Export all the stuff at once
+export { MY_PASS, sayHi, Car }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
