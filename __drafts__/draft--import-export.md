@@ -309,6 +309,46 @@ console.log(myStuff.add(89, 98))
 // 187
 ```
 
+### Renaming imports
+
+Similarly to the `export` statement, `import` statement also allows you to rename your imports. This can be handy when you want to import some module, but you want to use it through a different name. The syntax similar to the syntax for renaming exports. The only difference is that you will replace the `export` statement with `import`.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some stuff
+export const transpiler = 'Babel'
+export const language = 'JavaScript'
+export const syntax = 'jsx'
+export const framework = 'React'
+
+
+// File 2: file-two.js
+// Import modules exported from file-one.js
+// and rename some of those imports
+// Note: line breaks are again just for readability
+import {
+  transpiler,
+  language,
+  syntax as fileExtension,  // rename export for syntax
+  framework as library  // rename export for framework
+} from './file-one.js'
+
+// Try to read the value of imported "pets" variable
+console.log(myStuff.pets)
+// Output:
+// ["Dog", "Shark", "Tiger"]
+
+// Try to read the value of imported "currentlyReading" variable
+console.log(myStuff.currentlyReading)
+// Output:
+// "Snow Crash"
+
+// Try to call the imported add() function
+console.log(myStuff.add(89, 98))
+// Output:
+// 187
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
