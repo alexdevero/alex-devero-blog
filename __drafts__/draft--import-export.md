@@ -1,5 +1,6 @@
 # Import and Export in JavaScript and How to Use It
 
+Import and export statements are two great features introduced ES6 (ES2015). These two statement allows you to export and import your code and use it whenever you need. This tutorial will show you what import and export statements are, how they work and how to use them.<!--more-->
 <!--
 Table of Contents:
 -->
