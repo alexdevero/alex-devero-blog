@@ -174,6 +174,10 @@ export {
 }
 ```
 
+## The import statement
+
+When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
