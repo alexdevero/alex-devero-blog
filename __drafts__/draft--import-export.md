@@ -117,7 +117,7 @@ export { MY_PASS, sayHi, Car }
 
 There are also two types of exports you can use. One is called named export and the other default export. When it comes to named exports, you can create as many of them as you want. There is no limit. This doesn't apply to default exports. In JavaScript, you can have only one default export per module.
 
-The first type, named export, is what you saw on the examples above. In these examples, you were using the `export` keyword along with the name of the thing you wanted to export. All these exports were named. When you want to export something as default you have to add `default` between the `export` statement and what you want to export.
+The first type, named export, is what you saw on the examples above. In these examples, you were using the `export` keyword along with the name of the thing you wanted to export. All these exports were named. When you want to export something as `default` you have to add `default` between the `export` statement and what you want to export.
 
 ```JavaScript
 // Named export
@@ -134,6 +134,16 @@ export default const LANG = 'English'
 // or
 const favoriteFantasy = 'Discworld'
 export default favoriteFantasy
+```
+
+There is another way to export something as `default`. You can wrap the name of the thing you want to export with curly braces. Next, you add `as` keyword, followed by the `default` keyword. This will also export that thing as default.
+
+```JavaScript
+// Another way to create default export
+const FAVORITE_SEASON = 'Summer'
+
+// Export FAVORITE_SEASON as default
+export { FAVORITE_SEASON as default }
 ```
 
 ### Renaming exports
