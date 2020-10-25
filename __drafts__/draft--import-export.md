@@ -113,7 +113,7 @@ class Car {
 export { MY_PASS, sayHi, Car }
 ```
 
-### Two types of export
+### Named and default export
 
 There are also two types of exports you can use. One is called named export and the other default export. When it comes to named exports, you can create as many of them as you want. There is no limit. This doesn't apply to default exports. In JavaScript, you can have only one default export per module.
 
@@ -176,7 +176,7 @@ export {
 
 ## The import statement
 
-When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose.
+When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose. We will get to that in a minute.
 
 In both cases, you have to start the line with the `import` keyword. Next, you specify the name of the exported module you want to import. This part of syntax will differ according to which of the two options you choose. After that follows `from` keyword, followed by the name of the file from which you want to import those modules.
 
@@ -186,7 +186,7 @@ import { someModule } from 'file.js'
 import someModule from 'file.js'
 ```
 
-### Importing individual modules
+### Named imports
 
 The first option is to import modules, those things you've exported, individually. If you choose this, you have to consider how you exported those modules. If you exported those modules with named exports you have to use exactly the names you used. If you used renaming, then, you have to use those new names.
 
@@ -235,6 +235,8 @@ console.log(greeting())
 // 'Hello'
 ```
 
+### Default imports
+
 If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw en error. One important thing. When you import something as default, you don't use the variable keyword.
 
 ```JavaScript
@@ -273,7 +275,7 @@ console.log(password)
 // This is some very important secret.
 ```
 
-### Importing everything at once
+### Importing named modules at once
 
 The second option is to import all the stuff at once. Remember that this will import everything you exported from a the file you want to import from. The syntax is similar to importing individual modules. The difference is two-fold. First, you replace the name of the module you want to import with `*` (asterisk).
 
