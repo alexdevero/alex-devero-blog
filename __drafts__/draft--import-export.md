@@ -178,6 +178,14 @@ export {
 
 When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose.
 
+In both cases, you have to start the line with the `import` keyword. Next, you specify the name of the exported module you want to import. This part of syntax will differ according to which of the two options you choose. After that follows `from` keyword, followed by the name of the file from which you want to import those modules.
+
+```JavaScript
+// Example of import syntax
+import { someModule } from 'file.js'
+import someModule from 'file.js'
+```
+
 ### Importing individual modules
 
 The first option is to import modules, those things you've exported, individually. If you choose this, you have to consider how you exported those modules. If you exported those modules with named exports you have to use exactly the names you used. If you used renaming, then, you have to use those new names.
