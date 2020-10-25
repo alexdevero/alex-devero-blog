@@ -208,7 +208,7 @@ export { sayHi as greeting }
 
 // File 2: file-two.js
 // Import only the "age" variable
-import { age } from 'file-one.js'
+import { age } from './file-one.js'
 
 // Try to read imported "age" variable
 console.log(age)
@@ -219,10 +219,10 @@ console.log(age)
 // Import only the "greeting" function
 // Note: you exported the sayHi as greeting
 // so you have to import it as greeting, not as sayHi
-import { age } from 'file-one.js'
+import { age } from './file-one.js'
 
 // Import both, "age" and "greeting"
-import { age, greeting } from 'file-one.js'
+import { age, greeting } from './file-one.js'
 
 // Try to read imported "age" variable
 console.log(age)
@@ -246,7 +246,7 @@ export default const surname = 'Joe'
 // File 2: file-two.js
 // Import only default export "name"
 // Note: no curly braces around the name
-import surname from 'file-one.js'
+import surname from './file-one.js'
 
 // Try to read imported "age" variable
 console.log(surname)
