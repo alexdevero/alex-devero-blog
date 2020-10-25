@@ -178,6 +178,73 @@ export {
 
 When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose.
 
+### Importing individual modules
+
+The first option is to import modules, those things you've exported, individually. If you choose this, you have to consider how you exported those modules. If you exported those modules with named exports you have to use exactly the names you used. If you used renaming, then, you have to use those new names.
+
+When importing named exports, you have to wrap those names with curly braces. This is required when you import named exports. Similarly to exporting, you can also import all exports individually with multiple `import` statements. You can also import them all with single `import` statement. In that case, you have to separate those exported modules with commas.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some stuff
+// Use named export
+export const age = 29
+
+function sayHi() {
+  return 'Hello'
+}
+
+// Use named export with renaming
+export { sayHi as greeting }
+
+
+// File 2: file-two.js
+// Import only the "age" variable
+import { age } from 'file-one.js'
+
+// Try to read imported "age" variable
+console.log(age)
+// Output:
+// 29
+
+
+// Import only the "greeting" function
+// Note: you exported the sayHi as greeting
+// so you have to import it as greeting, not as sayHi
+import { age } from 'file-one.js'
+
+// Import both, "age" and "greeting"
+import { age, greeting } from 'file-one.js'
+
+// Try to read imported "age" variable
+console.log(age)
+// Output:
+// 29
+
+// Try to call imported "greeting" function
+console.log(greeting())
+// Output:
+// 'Hello'
+```
+
+If you exported some module as `default`, you can choose whatever name to import that module you want. And, don't wrap the module name with curly braces if you want to import default export. Otherwise, JavaScript will throw en error.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some stuff as default
+export default const surname = 'Joe'
+
+
+// File 2: file-two.js
+// Import only default export "name"
+// Note: no curly braces around the name
+import surname from 'file-one.js'
+
+// Try to read imported "age" variable
+console.log(surname)
+// Output:
+// 'Joe'
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
