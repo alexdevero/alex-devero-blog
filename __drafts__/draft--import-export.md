@@ -13,6 +13,12 @@ One feature this specification brought to JavaScript was also a support for modu
 
 Each of these files is a module. These modules can contain anything, from variables and functions to classes. In order to this code available to the outside you have to simply exporting it. When you want to use some of that exported code, you simply import it where you need. Now, let's take a look at both those new statements.
 
+## The export statement
+
+When you want to export some variable, function or class you have to place the `export` keyword before it. This tells JavaScript two things. First, you want that "thing" to be available from the outside of the current file. Second, other parts of the program should be able to import that "thing" with the `import` statement.
+
+When you export some code you can still change it and update it. However, you can that only at the place where you exported it. You can't do that when you import that exported code somewhere else. When you import some exported code you can only read it and use it, but not change it.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
