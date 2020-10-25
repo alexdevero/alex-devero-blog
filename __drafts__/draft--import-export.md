@@ -272,6 +272,43 @@ console.log(password)
 // Output:
 // This is some very important secret.
 ```
+
+### Importing everything at once
+
+The second option is to import all the stuff at once. Remember that this will import everything you exported from a the file you want to import from. The syntax is similar to importing individual modules. The difference is two-fold. First, you replace the name of the module you want to import with `*` (asterisk).
+
+Second, you have to add `as` keyword followed by name through which you want to access those imported modules. This name can be anything you want.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some stuff
+export const pets = ['Dog', 'Shark', 'Tiger']
+export const currentlyReading = 'Snow Crash'
+export function add(a, b) {
+  return a + b
+}
+
+
+// File 2: file-two.js
+// Import everything exported from file-one.js
+import * as myStuff from './file-one.js'
+
+// Try to read the value of imported "pets" variable
+console.log(myStuff.pets)
+// Output:
+// ["Dog", "Shark", "Tiger"]
+
+// Try to read the value of imported "currentlyReading" variable
+console.log(myStuff.currentlyReading)
+// Output:
+// "Snow Crash"
+
+// Try to call the imported add() function
+console.log(myStuff.add(89, 98))
+// Output:
+// 187
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
