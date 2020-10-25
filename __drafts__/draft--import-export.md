@@ -3,6 +3,20 @@
 Import and export statements are two great features introduced ES6 (ES2015). These two statement allows you to export and import your code and use it whenever you need. This tutorial will show you what import and export statements are, how they work and how to use them.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## The export statement
+### Two ways to export
+### Named and default export
+### Renaming exports
+### Re-exporting exports
+## The import statement
+### Named imports
+### Default imports
+### Importing named modules at once
+### Renaming imports
+### Importing individual named exports and default export
+## Dynamic imports
+## Conclusion: Import and Export Statements in JavaScript and How to Use Them
 -->
 
 ## A quick introduction
