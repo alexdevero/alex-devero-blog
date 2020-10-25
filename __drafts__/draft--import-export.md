@@ -168,8 +168,8 @@ const petFour = 'Dragon'
 // Note: line breaks are just for readability
 export {
   petOne,
-  petTwo as pet2, // rename export only for petTwo
-  petThree as pet3, // rename export only for petThree
+  petTwo as pet2, // rename export for petTwo
+  petThree as pet3, // rename export for petThree
   petFour
 }
 ```
