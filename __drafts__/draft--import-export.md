@@ -254,6 +254,24 @@ console.log(surname)
 // Output:
 // 'Joe'
 ```
+
+When you export something as default, you don't have to use the same name to import it elsewhere. When you use default export JavaScript knows that that file contains only one export. So, it will figure out what you want to import even if you use different name to import that thing.
+
+```JavaScript
+// File 1: file-one.js
+// Declare and export some variable as default
+export default secret = 'This is some very important secret.'
+
+
+// File 2: file-two.js
+// Import the default export using a different name
+import password from './file-one.js'
+
+// Try to read imported "age" variable
+console.log(password)
+// Output:
+// This is some very important secret.
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
