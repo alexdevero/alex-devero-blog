@@ -174,6 +174,33 @@ export {
 }
 ```
 
+### Re-exporting exports
+
+The last thing you can do with `export` statement some import things and immediately export them again. During this process you can either keep their names or rename them. The syntax for re-exporting is similar to the syntax for importing. You will learn about that in a minute.
+
+In case of re-exporting, you start with the `export` statement. What follows are curly braces with name of the module you want to export. This is followed by `from` keyword and name of the file from which that module is exported. If you want to rename the exported module add `as` keyword followed by new name after the module name, inside the curly braces.
+
+```JavaScript
+// Re-export module
+export { myExpModule } from './file.js'
+
+// Re-export module and rename it
+export { myExpModule as myRenamedExpModule } from './file.js'
+```
+
+You use the same syntax also when you want to re-export default export. In that case, between the curly braces goes "default" instead of some module name. Otherwise, you can replace that with `*` and omit the curly braces.
+
+```JavaScript
+// Re-export default module
+export { default } from './file.js'
+
+// Alternative
+export * from './file.js'
+
+// Re-export default module and rename it
+export { default as defaultRenamed } from './file.js'
+```
+
 ## The import statement
 
 When you want to import some code you have to use the `import` statement. Remember that this will work only with code you exported with the `export` statement. You can't import something you didn't export. When you want to import something, there are two options from which you can choose. We will get to that in a minute.
