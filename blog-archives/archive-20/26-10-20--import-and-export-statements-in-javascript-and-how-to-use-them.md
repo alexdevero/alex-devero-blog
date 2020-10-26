@@ -377,19 +377,14 @@ import {
 } from './file-one.js'
 
 // Try to read the value of imported "pets" variable
-console.log(myStuff.pets)
+console.log(syntax)
 // Output:
-// ["Dog", "Shark", "Tiger"]
+// "jsx"
 
 // Try to read the value of imported "currentlyReading" variable
-console.log(myStuff.currentlyReading)
+console.log(library  )
 // Output:
-// "Snow Crash"
-
-// Try to call the imported add() function
-console.log(myStuff.add(89, 98))
-// Output:
-// 187
+// "React"
 ```
 
 ### Importing individual named exports and default export
@@ -453,7 +448,7 @@ const myModule = await import('./my-module.js')
 // Do something with that module
 ```
 
-## Conclusion: Import and Export Statements in JavaScript and How to Use Them
+## Conclusion: Import and export statements in JavaScript and how to use them
 
 Import and export statements are two features that can be very handy. They can help you make your code clearer and easier to manage and maintain. What's more, they are both also very easy to learn and use. I hope that this tutorial helped you learn about what import and export statements are, how they work and how to use them.
 
