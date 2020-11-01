@@ -4,6 +4,15 @@ There are topics in JavaScript you as a developer may not know and still get the
 <!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## Memory life cycle
+## The stack and memory heap
+### The stack
+### The memory heap
+## Stack, heap and references
+### Copying objects and primitives
+## The call stack
+## Conclusion: Memory Life cycle, Heap, Stack and Call Stack in
 -->
 
 ## A quick introduction
