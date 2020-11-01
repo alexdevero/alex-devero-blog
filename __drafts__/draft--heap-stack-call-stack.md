@@ -1,7 +1,6 @@
 # Memory Life cycle, Heap, Stack and Call Stack in JavaScript
 
-There are topics in JavaScript you as a developer may not know and still get the work done. However, knowing about these topics can help you write better code. Memory heap, stack and call stack are some them. In this tutorial, you will learn about these topics and a bit about how JavaScript works.
-<!--more-->
+There are topics in JavaScript you as a developer may not know and still get the work done. However, knowing about these topics can help you write better code. Memory heap, stack and call stack are some of them. In this tutorial, you will learn about these topics and a bit about how JavaScript works.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -17,7 +16,7 @@ Table of Contents:
 
 ## A quick introduction
 
-JavaScript is a very forgiving programming language. It allows you to do a lot, in many ways. It also does a lot of work for you. Memory management is one of these things. Ask yourself: how many time did you have to think about allocating memory for your variables or functions?
+JavaScript is a very forgiving programming language. It allows you to do a lot, in many ways. It also does a lot of work for you. Memory management is one of these things. Ask yourself: how many times did you have to think about allocating memory for your variables or functions?
 
 How many times did you have to think about releasing that memory when you no longer needed those variables or functions? Chances are not even once. The same applies to knowing how is heap, stack and call stack work, or what it even is. And yet, you can still work with JavaScript. You can still write code that works every day.
 
@@ -29,7 +28,7 @@ Let's start with the easiest part. What is a memory life cycle, what it is about
 
 The first step is memory allocation. When you assign a variable or create a function or object some amount of memory has to be allocated for it. The second step is memory use. When you work with data in your code, read or write, you are using memory. Reading from variables or changing values is reading from, and write to, memory.
 
-The third step is memory release. When you no longer use some function or object, that memory is can be released. Once it is released it can be used again. This is the memory life cycle in a nutshell. The nice thing on JavaScript is that it does these three steps for you.
+The third step is memory release. When you no longer use some function or object, that memory is can be released. Once it is released it can be used again. This is the memory life cycle in a nutshell. The nice thing on JavaScript is that it makes these three steps for you.
 
 JavaScript allocates memory as you need and want. It makes it easier for you to work with that allocated memory. Lastly, it also does the heaving lifting and cleans up all the mess. It uses [garbage collection] to continuously check memory and release it when it is no longer in use. The result?
 
@@ -47,7 +46,7 @@ The stack is a place that JavaScript uses to store only static data. This includ
 
 These data have one thing in common. The size of these data is fixed and JavaScript knows this size at compile time. This also means that JavaScript knows how much memory it should allocate, and allocates that amount. This type of memory allocation is called "static memory allocation". It happens right before the code is executed.
 
-There is one important thing about static data and memory. There is a limit to how large these primitive values can be. This is also true for the stack itself. That too has limits. How high are these limits depends on specific browser and engine.
+There is one important thing about static data and memory. There is a limit to how large these primitive values can be. This is also true for the stack itself. That too has limits. How high these limits are depends on specific browser and engine.
 
 ```JavaScript
 // Declare and assign some variables
@@ -129,7 +128,7 @@ const isDone = true
 
 ## Stack, heap and references
 
-When you create a variable and assign it a primitive value, it will be stored in stack. Something different happens when you try the same but with an object. If you declare a variable and assign it an object, two things will happen. First, JavaScript will allocate memory in stack for that variable.
+When you create a variable and assign it a primitive value, it will be stored in stack. Something different happens when you try the same, but with an object. If you declare a variable and assign it an object, two things will happen. First, JavaScript will allocate memory in stack for that variable.
 
 When it comes to the object itself, JavaScript will store it in the memory heap. That variable that exists in the stack will only point to this object in memory heap. That variable will be a reference to this object. You can think of references as shortcuts, or aliases, for existing things.
 
@@ -156,7 +155,7 @@ const cat = {
 
 ### Copying objects and primitives
 
-This is also why creating copies of objects is a not actually that simple in JavaScript. Trying to create a copy of an object stored in a variable by referencing it will not create real copy. It will not copy the object itself. It will copy only reference to that object. This is called [shallow copy].
+This is also why creating copies of objects is not actually that simple in JavaScript. Trying to create a copy of an object stored in a variable by referencing it will not create real copy. It will not copy the object itself. It will copy only reference to that object. This is called [shallow copy].
 
 When you then change the original object, the copy will change as well. This is because there is still only one object. However, there are two references (aliases or links) to that one object. When you use one of these references to change the object, the other reference still points to the same object, the one you just changed.
 
@@ -254,7 +253,7 @@ console.log(bookShelf)
 
 // Log the value of "newBookShelf"
 // The output will be different this time
-// because // the "newBookShelf" points
+// because the "newBookShelf" points
 // to a different object than the "bookShelf"
 console.log(newBookShelf)
 // Output:
