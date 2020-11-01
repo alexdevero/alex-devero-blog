@@ -40,6 +40,27 @@ These data have one thing in common. The size of these data is fixed and JavaScr
 
 There is one important thing about static data and memory. There is a limit to how large these primitive values can be. This is also true for the stack itself. That too has limits. How high are these limits depends on specific browser and engine.
 
+```JavaScript
+// Declare and assign some variables
+// All these variables are stored in stack
+const firstName = 'Jill'
+const lastName = 'Stuart'
+const age = 23
+const selfEmployed = true
+const dateOfMarriage = null
+
+// The stack after declaring
+// and assigning those variables:
+///         The Stack         ///
+/////////////////////////////////
+///   dateOfMarriage = null   ///
+///   selfEmployed = true     ///
+///   age = 23                ///
+///   lastName = 'Stuart'     ///
+///   firstName = 'Jill'      ///
+/////////////////////////////////
+```
+
 ### The memory heap
 
 The second place where JavaScript can store data is memory heap. This storage is more dynamic. When it comes to memory heap, JavaScript doesn't allocate fixed amount of memory. Instead, it allocates memory as needed at the moment. This type of memory allocation is called "dynamic memory allocation".
