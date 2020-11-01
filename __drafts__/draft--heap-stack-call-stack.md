@@ -118,7 +118,33 @@ const isDone = true
 // arrays are objects in JavaScript
 ```
 
-## Conclusion: [...] ...
+## Stack, heap and references
+
+When you create a variable and assign it a primitive value, it will be stored in stack. Something different happens when you try the same but with an object. If you declare a variable and assign it an object, two things will happen. First, JavaScript will allocate memory in stack for that variable.
+
+When it comes to the object itself, JavaScript will store it in the memory heap. That variable that exists in the stack will only point to this object in memory heap. That variable will be a reference to this object. You can think of references as shortcuts, or aliases, for existing things.
+
+These references are not those things themselves. They are only links to those "real" things. You can use those links to access those things they reference (they are linked to) and manipulate with them.
+
+```JavaScript
+// Declare variable and assign it an object
+// The "cat" variable will be stored in stack
+// It will hold the reference to the "cat" object
+const cat = {
+  name: 'Kitty'
+  breed: 'Abyssinian'
+}
+
+// The "cat" object itself will be stored in memory heap:
+///       Memory heap         ///
+/////////////////////////////////
+///  {                        ///
+///    name: 'Kitty',         ///
+///    breed: 'Abyssinian'    ///
+///  }                        ///
+/////////////////////////////////
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
