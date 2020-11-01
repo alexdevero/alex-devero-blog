@@ -145,6 +145,116 @@ const cat = {
 /////////////////////////////////
 ```
 
+### Copying objects and primitives
+
+This is also why creating copies of objects is a not actually that simple in JavaScript. Trying to create a copy of an object stored in a variable by referencing it will not create real copy. It will not copy the object itself. It will copy only reference to that object. This is called [shallow copy].
+
+When you then change the original object, the copy will change as well. This is because there is still only one object. However, there are two references (aliases or links) to that one object. When you use one of these references to change the object, the other reference still points to the same object, the one you just changed.
+
+```JavaScript
+// Declare a variable and assign it an object
+const bookShelf = {
+  read: 'Colour Of Magic',
+  reading: 'Night Watch',
+  toRead: 'Going Postal'
+}
+
+// Create a copy of the "bookShelf"
+const newBookShelf = bookShelf
+
+// Update the "bookShelf"
+bookShelf.reading = 'Mort'
+bookShelf.justFinished = 'Night Watch'
+
+// Log the value of "bookShelf"
+console.log(bookShelf)
+// Output:
+// {
+//   read: 'Colour Of Magic',
+//   reading: 'Mort',
+//   toRead: 'Going Postal',
+//   justFinished: 'Night Watch'
+// }
+
+// Log the value of "newBookShelf"
+// Since "newBookShelf" and "bookShelf"
+// points to the same object
+// the output will be the same
+console.log(newBookShelf)
+// Output:
+// {
+//   read: 'Colour Of Magic',
+//   reading: 'Mort',
+//   toRead: 'Going Postal',
+//   justFinished: 'Night Watch'
+// }
+```
+
+This will not happen when you try to copy primitive value. When you try to copy primitive value, and you change the original, the copy will remain unchanged. The reason: there are no references. You are creating real copies and you are working directly with those copies.
+
+```JavaScript
+// Declare a variable with some primitive value
+let book = 'Guards! Guards! (Paperback)'
+
+// Create a copy of the "book"
+const bookToRead = book
+
+// Update the value of "book"
+book = 'Guards! Guards! (Kindle Edition)'
+
+// Log the value of "book"
+// This will log the updated value
+console.log(book)
+// Output:
+// 'Guards! Guards! (Kindle Edition)'
+
+// Log the value of "bookToRead"
+// This will log the old value because the "bookToRead"
+// is a real copy of "book"
+console.log(bookToRead)
+// Output:
+// 'Guards! Guards! (Paperback)'
+```
+
+Creating a real copy, [deep copy], is a bit more complicated. One option, less effective one, is writing that object from again scratch. Another option is using [Object.assign()]. Another one is using combination of `JSON.parse()` and `JSON.stringify()`.
+
+```JavaScript
+// Declare a variable and assign it an object
+const bookShelf = {
+  read: 'Colour Of Magic',
+  reading: 'Night Watch',
+  toRead: 'Going Postal'
+}
+
+// Create a copy of the "bookShelf"
+const newBookShelf = Object.assign({}, bookShelf)
+
+// Update the "bookShelf"
+bookShelf.reading = 'Mort'
+bookShelf.justFinished = 'Night Watch'
+
+// Log the value of "bookShelf"
+console.log(bookShelf)
+// Output:
+// {
+//   read: 'Colour Of Magic',
+//   reading: 'Mort',
+//   toRead: 'Going Postal',
+//   justFinished: 'Night Watch'
+// }
+
+// Log the value of "newBookShelf"
+// The output will be different this time
+// because // the "newBookShelf" points
+// to a different object than the "bookShelf"
+console.log(newBookShelf)
+// Output:
+// {
+//   read: 'Colour Of Magic',
+//   reading: 'Night Watch',
+//   toRead: 'Going Postal'
+// }
+```
 
 [xyz-ihs snippet="thank-you-message"]
 
