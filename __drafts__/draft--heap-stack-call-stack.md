@@ -25,6 +25,12 @@ The third step is memory release. When you no longer use some function or object
 JavaScript allocates memory as you need and want. It makes it easier for you to work with that allocated memory. Lastly, it also does the heaving lifting and cleans up all the mess. It uses [garbage collection] to continuously check memory and release it when it is no longer in use. The result?
 
 As a JavaScript developer, you don't have to worry about allocating memory to your variables or functions. You also don't have to worry about selecting correct memory address before reading from it. And, you don't have to worry about releasing the memory you used somewhere in the past.
+
+## The stack and memory heap
+
+Now you know about the steps of memory life cycle. You know about memory allocation, use and release. One question you may ask is where are those variables, functions and objects actually stored? The answer is: it depends. JavaScript doesn't store all these things at the same place.
+
+What JavaScript does instead is it uses two places. These places are stack and memory heap. Which of these places will be used depends on what you are currently working with.
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
