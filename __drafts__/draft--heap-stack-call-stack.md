@@ -303,6 +303,10 @@ myFuncTwo()
 // Step 10: call stack is empty
 ```
 
+## Conclusion: Memory Life cycle, Heap, Stack and Call Stack in JavaScript
+
+Memory life cycle, heap, stack and call stack are topics that are not discussed that often. There is not much material one can use to learn more about them. I hope that this tutorial helped you understand what memory life cycle, heap, stack and call stack are and how they work.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
