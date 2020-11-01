@@ -310,7 +310,11 @@ Memory life cycle, heap, stack and call stack are topics that are not discussed 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[garbage collection]: https://blog.alexdevero.com/garbage-collection-in-javascript/#garbage-collection-and-how-it-works
+[data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[shallow copy]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/#shallow-copy
+[deep copy]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/#deep-copy
+[Object.assign()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
 <!--
 ### Meta:
