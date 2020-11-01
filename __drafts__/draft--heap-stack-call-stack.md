@@ -69,6 +69,47 @@ Which data are stored in memory heap? While the stack is a place where JavaScrip
 
 These data has always fixed allocated memory. When, on the other hand, you create objects or functions JavaScript stores them in memory heap. Allocated memory for these is not fixed. It is allocated dynamically as necessary.
 
+```JavaScript
+// Declare a variable and assign it an object
+const terryP = {
+  firstName: 'Terry',
+  lastName: 'Pratchett',
+  profession: 'author'
+}
+
+function introduceTerry() {
+  return `Hi, my name is ${terryP.firstName}.`
+}
+
+const isDone = true
+
+///                  Stack                     ///
+//////////////////////////////////////////////////
+///   isDone = true                            ///
+///   introduceTerry (reference to function)   ///
+///   terryP (reference to object)             ///
+//////////////////////////////////////////////////
+
+
+///                    Memory heap                  ///
+///////////////////////////////////////////////////////
+///  {                                              ///
+///    firstName: 'Terry',                          ///
+///    lastName: 'Pratchett',                       ///
+///    profession: 'author'                         ///
+///  }                                              ///
+///  function introduceTerry() {                    ///
+///    return `Hi, my name is ${terryP.firstName}.` ///
+/// }                                               ///
+///////////////////////////////////////////////////////
+
+// NOTE:
+// the "terryP" in stack points
+// to the "terryP" object in memory heap
+// the "introduceTerry" in stack points
+// to introduceTerry() function in memory heap
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
