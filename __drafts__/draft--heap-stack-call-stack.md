@@ -14,6 +14,17 @@ How many times did you have to think about releasing that memory when you no lon
 
 These things are not necessary for you to know. Nor are they required. However, knowing about them and how they work can help you understand how JavaScript works. This, in turn, can help you write better code and become a better JavaScript.
 
+## Memory life cycle
+
+Let's start with the easiest part. What is a memory life cycle, what it is about and how it works in JavaScript? Memory life cycle refers to how a programming language works with memory. Regardless of the language, memory life cycle is almost always the same. It is composed of three steps.
+
+The first step is memory allocation. When you assign a variable or create a function or object some amount of memory has to be allocated for it. The second step is memory use. When you work with data in your code, read or write, you are using memory. Reading from variables or changing values is reading from, and write to, memory.
+
+The third step is memory release. When you no longer use some function or object, that memory is can be released. Once it is released it can be used again. This is the memory life cycle in a nutshell. The nice thing on JavaScript is that it does these three steps for you.
+
+JavaScript allocates memory as you need and want. It makes it easier for you to work with that allocated memory. Lastly, it also does the heaving lifting and cleans up all the mess. It uses [garbage collection] to continuously check memory and release it when it is no longer in use. The result?
+
+As a JavaScript developer, you don't have to worry about allocating memory to your variables or functions. You also don't have to worry about selecting correct memory address before reading from it. And, you don't have to worry about releasing the memory you used somewhere in the past.
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
