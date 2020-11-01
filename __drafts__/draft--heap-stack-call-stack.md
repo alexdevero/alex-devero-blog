@@ -82,13 +82,16 @@ function introduceTerry() {
   return `Hi, my name is ${terryP.firstName}.`
 }
 
+const series = ['Discworld', 'Johnny Maxwell', 'Long Earth']
+
 const isDone = true
 
 ///                  Stack                     ///
 //////////////////////////////////////////////////
 ///   isDone = true                            ///
 ///   introduceTerry (reference to function)   ///
-///   terryP (reference to object)             ///
+///   terryP (reference to "terryP" object)    ///
+///   series (reference to "series" array)     ///
 //////////////////////////////////////////////////
 
 
@@ -102,6 +105,7 @@ const isDone = true
 ///  function introduceTerry() {                    ///
 ///    return `Hi, my name is ${terryP.firstName}.` ///
 /// }                                               ///
+///  ['Discworld', 'Johnny Maxwell', 'Long Earth']  ///
 ///////////////////////////////////////////////////////
 
 // NOTE:
@@ -109,6 +113,9 @@ const isDone = true
 // to the "terryP" object in memory heap
 // the "introduceTerry" in stack points
 // to introduceTerry() function in memory heap
+// the "series" in stack points
+// to the "series" array in memory heap
+// arrays are objects in JavaScript
 ```
 
 ## Conclusion: [...] ...
