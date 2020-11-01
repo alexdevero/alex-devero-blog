@@ -256,6 +256,44 @@ console.log(newBookShelf)
 // }
 ```
 
+## The call stack
+
+Chances are that you've already heard about something called "call stack". This is not the same as the stack we previously discussed in this tutorial. As you know, stack is a place JavaScript uses to store variables assigned with primitive values. Call stack is something different.
+
+Call stack is a mechanism JavaScript uses to keep track of functions. When you call a function JavaScript will add that function to the call stack. If this function calls another function, JavaScript will add that function to the call stack as well, above the first function.
+
+This process will repeat with any other function that will be called by the previous function. When one function is finished, JavaScript will remove that function from the call stack. There are two important things. The first thing is that every new function in the stack will be added to the top of the call stack.
+
+The second thing is that the call stack is executed from the top to the bottom. The last function added to the stack will be executed as first. The first function added to the stack will be executed as last. This is also called LIFO principle (Last-In-First-Out). Let's illustrate this in code on one simple example.
+
+```JavaScript
+function myFuncOne() {
+  return 'This is the end.'
+}
+
+function myFuncTwo() {
+  myFuncOne()
+
+  return 'Knock knock.'
+}
+
+// Call stack is still empty here
+
+myFuncTwo()
+
+// Call stack:
+// Step 1: myFuncTwo() is invoked
+// Step 2: myFuncTwo() added to the call stack
+// Step 3: myFuncTwo() calls myFuncOne()
+// Step 4: myFuncOne() is added to the call stack
+// Step 5: myFuncOne(), is executed
+// Step 6: myFuncOne() removed from the stack
+// Step 7: JavaScript goes back to myFuncTwo()
+// Step 8: any code left inside myFuncTwo() after myFuncOne() call is executed
+// Step 9: myFuncTwo() is removed from the stack
+// Step 10: call stack is empty
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
