@@ -42,6 +42,7 @@ There is one important thing about static data and memory. There is a limit to h
 
 ```JavaScript
 // Declare and assign some variables
+// and assign them primitive data types
 // All these variables are stored in stack
 const firstName = 'Jill'
 const lastName = 'Stuart'
@@ -51,7 +52,7 @@ const dateOfMarriage = null
 
 // The stack after declaring
 // and assigning those variables:
-///         The Stack         ///
+///           Stack           ///
 /////////////////////////////////
 ///   dateOfMarriage = null   ///
 ///   selfEmployed = true     ///
