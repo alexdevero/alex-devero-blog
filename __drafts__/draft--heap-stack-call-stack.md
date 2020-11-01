@@ -31,6 +31,15 @@ As a JavaScript developer, you don't have to worry about allocating memory to yo
 Now you know about the steps of memory life cycle. You know about memory allocation, use and release. One question you may ask is where are those variables, functions and objects actually stored? The answer is: it depends. JavaScript doesn't store all these things at the same place.
 
 What JavaScript does instead is it uses two places. These places are stack and memory heap. Which of these places will be used depends on what you are currently working with.
+
+### The stack
+
+The stack is a place that JavaScript uses to store only static data. This includes primitive [data types] values. For example, numbers, strings, booleans, `undefined` and `null`. These static data also include references. These references point to objects and functions you've created.
+
+These data have one thing in common. The size of these data is fixed and JavaScript knows this size at compile time. This also means that JavaScript knows how much memory it should allocate, and allocates that amount. This type of memory allocation is called "static memory allocation". It happens right before the code is executed.
+
+There is one important thing about static data and memory. There is a limit to how large these primitive values can be. This is also true for the stack itself. That too has limits. How high are these limits depends on specific browser and engine.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
