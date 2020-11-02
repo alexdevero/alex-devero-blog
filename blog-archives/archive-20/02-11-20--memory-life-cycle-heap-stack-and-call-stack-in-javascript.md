@@ -1,6 +1,6 @@
-# Memory Life cycle, Heap, Stack and Call Stack in JavaScript
+# Memory Life Cycle, Heap, Stack and Call Stack in JavaScript
 
-There are topics in JavaScript you as a developer may not know and still get the work done. However, knowing about these topics can help you write better code. Memory heap, stack and call stack are some of them. In this tutorial, you will learn about these topics and a bit about how JavaScript works.<!--more-->
+There are topics in JavaScript you as a developer may not know. Knowing about these topics can help you write better code. Memory life cycle, heap, stack and call stack are some of them. In this tutorial, you will learn about these topics and a bit about how JavaScript works.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
