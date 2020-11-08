@@ -1,14 +1,8 @@
-# JavaScript Property Getters and Setters (Accessor Properties)
+# Introduction to JavaScript Property Getters and Setters (Accessor Properties)
 
-Property getters and setters allow you to change the default behavior when accessing or modifying object properties. This tutorial teach you all you need to know about them. You will learn what JavaScript property getters and setters are, how they work and how to use them.
-<!--more-->
+Property getters and setters allow you to change the default behavior when accessing or modifying object properties. This tutorial teach you all you need to know about them. You will learn what JavaScript property getters and setters are, how they work and how to use them.<!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
 ## Properties and property getters and setters
@@ -161,9 +155,9 @@ console.log(user.name)
 
 ## Property getters and setters as property wrappers
 
-As you saw on previous examples, you can use property getters and setters to restrict changes to property values. For example, you can reject change of a string value if new value is not a string. Or, you can reject the change if the new string is empty. You saw this in the previous with `setName` setter method.
+As you saw on previous examples, you can use getters and setters to restrict changes to property values. For example, you can reject change of a string value if new value is not a string. Or, you can reject the change if the new string is empty. You saw this in the previous with `setName` setter method.
 
-In this example, there is an [if...else statement] that checks the new value before it lets it override the old value. This is one use case for property getters and setters. You can use these methods to dynamically check values before someone can access them and/or change them.
+In this example, there is an [if...else statement] that checks the new value before it lets it override the old value. This is one potential use case for getter and setter methods. You can use these methods to dynamically check values before someone can access them and/or change them.
 
 One problem is that you can't create getter or setter with the same name as existing property. This unfortunately doesn't work. However, you do something different. You can change the name of those original properties to maybe less user-friendly. Then, you can use user-friendly names for getter and setter methods.
 
@@ -250,7 +244,7 @@ console.log(car.model)
 
 ## Creating getters and setters on the go
 
-So far, we've looked only on creating property getters and setters at the time of creating an object. However, there is a way to add property getters and setters also to an object that already exists. You can do this with the help of [Object.defineProperty()] method. This method allows you to add new properties to objects or change existing.
+So far, we've looked only on creating property getters and setters at the time of creating an object. However, there is a way to add getter and setter methods also to an object that already exists. You can do this with the help of [Object.defineProperty()] method. This method allows you to add new properties to objects or change existing.
 
 You can use this method also to add or change accessor properties, property getters and setters. Adding getters and setters with this method is similar to adding them when you create an object. When you use the `defineProperty()` you pass in three parameters. The first argument is the object you want to update.
 
