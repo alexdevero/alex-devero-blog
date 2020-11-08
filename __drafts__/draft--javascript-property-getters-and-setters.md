@@ -159,6 +159,95 @@ console.log(user.name)
 // 'Jeremy Guire'
 ```
 
+## Property getters and setters as property wrappers
+
+As you saw on previous examples, you can use property getters and setters to restrict changes to property values. For example, you can reject change of a string value if new value is not a string. Or, you can reject the change if the new string is empty. You saw this in the previous with `setName` setter method.
+
+In this example, there is an [if...else statement] that checks the new value before it lets it override the old value. This is one use case for property getters and setters. You can use these methods to dynamically check values before someone can access them and/or change them.
+
+One problem is that you can't create getter or setter with the same name as existing property. This unfortunately doesn't work. However, you do something different. You can change the name of those original properties to maybe less user-friendly. Then, you can use user-friendly names for getter and setter methods.
+
+In programming, there is a well-known convention to start property name with an underscore (`_`) to mark it as internal. Internal means that no one should use it directly from the outside the object. You can use this convention with properties for which you want to add getters and setters.
+
+So, here is what to do. First, prefix all properties that will have getter and setter methods with underscore. Second, create property getters and setters with the same names, but now without the underscore prefix. This will give you properties with friendly names that you have more control over.
+
+```JavaScript
+const car = {
+  // Add properties, prefixed with '_'
+  _manufacturer: 'BWM',
+  _model: 'i8',
+  _year: '2020',
+
+  // Create getter method for "_manufacturer"
+  get manufacturer() {
+    return this._manufacturer
+  },
+
+  // Create setter method for "_manufacturer"
+  set manufacturer(newManufacturer) {
+    if (typeof newManufacturer === 'string' && newManufacturer.length > 0) {
+      this._manufacturer = newManufacturer
+    }
+  },
+
+  // Create getter method for "_model"
+  get model() {
+    return this._model
+  },
+
+  // Create setter method for "_model"
+  set model(newModel) {
+    if (typeof newModel === 'string' && newModel.length > 0) {
+      this._model = newModel
+    }
+  },
+
+  // Create getter method for "_year"
+  get year() {
+    return this._year
+  },
+
+  // Create setter method for "_year"
+  set year(newYear) {
+    if (typeof newYear === 'string' && newYear.length > 0) {
+      this._year = newYear
+    }
+  }
+}
+
+// Get current manufacturer
+// Execute getter methods
+console.log(car.manufacturer)
+// Output:
+// 'BWM'
+
+// Get current model
+console.log(car.model)
+// Output:
+// 'i8'
+
+// Get current year
+console.log(car.year)
+// Output:
+// '2020'
+
+// Change some values
+// Execute setter methods
+car.manufacturer = 'Tesla'
+car.model = 'Model S'
+
+// Get new manufacturer
+// Execute getter methods
+console.log(car.manufacturer)
+// Output:
+// 'Tesla'
+
+// Get new model
+console.log(car.model)
+// Output:
+// 'Model S'
+```
+
 ## Creating getters and setters on the go
 
 So far, we've looked only on creating property getters and setters at the time of creating an object. However, there is a way to add property getters and setters also to an object that already exists. You can do this with the help of [Object.defineProperty()] method. This method allows you to add new properties to objects or change existing.
