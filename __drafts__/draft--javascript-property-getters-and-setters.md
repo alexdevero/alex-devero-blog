@@ -30,7 +30,7 @@ This `get` keyword is what tells JavaScript that you don't want to create regula
 ```JavaScript
 // Syntax
 // Create an object
-let myObj = {
+const myObj = {
   // Example of a getter method
   // this getter will be executed
   // when you use myObj.myGetter
@@ -40,7 +40,7 @@ let myObj = {
   }
 }
 
-// Using getter method
+// Execute the getter method
 // NOTE: when you use getter method
 // don't use parentheses at the end
 myObj.myGetter
@@ -48,7 +48,7 @@ myObj.myGetter
 
 // Example:
 // Create an object
-let dog = {
+const dog = {
   name: 'Jack',
 
   // Create getter method
@@ -70,7 +70,7 @@ One thing to remember. Property getter should always return something, some valu
 
 ```JavaScript
 // Create an object
-let dog = {
+const dog = {
   name: 'Jack',
 
   get getName() {}
@@ -93,7 +93,7 @@ Lastly, unlike, the getter method, the setter method doesn't have to return anyt
 ```JavaScript
 // Syntax
 // Create an object
-let myObj = {
+const myObj = {
   // Example of a setter method
   // this setter will be executed
   // when you use myObj.mySetter = ...
@@ -111,7 +111,7 @@ myObj.mySetter = 'Hello'
 
 // Example:
 // Create an object
-let user = {
+const user = {
   name: 'Stuart Douglass',
   isAdmin: false,
 
