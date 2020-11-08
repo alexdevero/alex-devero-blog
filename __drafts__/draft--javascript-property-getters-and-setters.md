@@ -427,7 +427,9 @@ const person = {
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[objects]: https://blog.alexdevero.com/javascript-objects-pt1/
+[Object.defineProperty()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+[if...else statement]: https://blog.alexdevero.com/javascript-if-else-statement/
 
 <!--
 ### Meta:
