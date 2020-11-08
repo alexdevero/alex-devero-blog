@@ -423,6 +423,9 @@ const person = {
 }
 ```
 
+## Conclusion: JavaScript Property Getters and Setters (Accessor Properties)
+
+Property getters and setters can be quite useful. You can use them to change the behavior for accessing property, and to get more control over how these values can be changed. Especially if you use them as property wrappers and keep those properties internal. I hope that this tutorial helped you understand what property getters and setters are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
