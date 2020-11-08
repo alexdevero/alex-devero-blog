@@ -28,6 +28,7 @@ Property getters, or methods, are used to access properties of objects. When you
 This `get` keyword is what tells JavaScript that you don't want to create regular object method, but a getter method. The way to use this keyword is to put it as first, before the name of the getter method. What follows is the name of the getter, parentheses and function body.
 
 ```JavaScript
+// Syntax
 // Create an object
 let myObj = {
   // Example of a getter method
@@ -39,7 +40,7 @@ let myObj = {
   }
 }
 
-// Accessing getter method
+// Using getter method
 // NOTE: when you use getter method
 // don't use parentheses at the end
 myObj.myGetter
