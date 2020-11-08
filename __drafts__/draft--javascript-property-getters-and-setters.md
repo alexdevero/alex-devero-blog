@@ -60,6 +60,7 @@ let dog = {
   }
 }
 
+// Execute the getter method
 console.log(dog.getName)
 // Output:
 // "My dog's name is: Jack"
@@ -75,6 +76,7 @@ let dog = {
   get getName() {}
 }
 
+// Execute the getter method "getName"
 console.log(dog.getName)
 // Output:
 // undefined
@@ -101,7 +103,7 @@ let myObj = {
   }
 }
 
-// Using setter method
+// Execute the setter method "mySetter"
 // NOTE: when you use setter method
 // you use as if you were assigning a value
 myObj.mySetter = 'Hello'
@@ -131,22 +133,27 @@ let user = {
 }
 
 // Try to change the value of "name" to an empty string
+// This executes the setter method for "name"
 user.setName = ''
 // 'Please use name with more than 0 characters.'
 
 // Try to change the value of "name" to a number
+// This executes the setter method for "name"
 user.setName = 55
 // 'Please use only string.'
 
 // Check the value of "name" property
+// This executes the getter method for "name"
 console.log(user.name)
 // Output:
 // 'Stuart Douglass'
 
 // Try to change the value of "name" to a string
+// This executes the setter method for "name"
 user.setName = 'Jeremy Guire'
 
 // Check the value of "name" property again
+// This executes the getter method for "name"
 console.log(user.name)
 // Output:
 // 'Jeremy Guire'
@@ -216,36 +223,45 @@ Object.defineProperty(book, 'pubDate', {
 })
 
 // Get current book title
+// This executes the getter method for "title"
 console.log(book.title)
 // Output:
 // 'Six of Crows'
 
 // Get current book author
+// This executes the getter method for "author"
 console.log(book.author)
 // Output:
 // 'Leigh Bardugo'
 
 // Get current book publication date
+// This executes the getter method for "pubDate"
 console.log(book.pubDate)
 // Output:
 // 'February 6, 2018'
 
 // Change book data
+// This executes the setter method for "title"
 book.title = 'Red Rising'
+// This executes the setter method for "author"
 book.author = 'Pierce Brown'
+// This executes the setter method for "pubDate"
 book.pubDate = 'January 28, 2014'
 
 // Get new book title
+// This executes the getter method for "title" again
 console.log(book.title)
 // Output:
 // 'Red Rising'
 
 // Get new book author
+// This executes the getter method for "author" again
 console.log(book.author)
 // Output:
 // 'Pierce Brown'
 
 // Get new book publication date
+// This executes the getter method for "pubDate" again
 console.log(book.pubDate)
 // Output:
 // 'January 28, 2014'
