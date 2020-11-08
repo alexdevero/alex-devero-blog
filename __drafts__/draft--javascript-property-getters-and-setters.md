@@ -21,10 +21,63 @@ Setter, on the other hand, is that function that is executed when you set or cha
 
 All that is needed is someone trying to access and set a value of some property. If there is a getter or setter for that specific property it will be executed. Now, let's take a look at each.
 
+## Property getters
 
-### h3
+Property getters, or methods, are used to access properties of objects. When you want to get value of some property, and this property has a getter method, that method will be executed. The getter method looks like a regular object method. The difference is the `get` keyword.
 
-### h3
+This `get` keyword is what tells JavaScript that you don't want to create regular object method, but a getter method. The way to use this keyword is to put it as first, before the name of the getter method. What follows is the name of the getter, parentheses and function body.
+
+```JavaScript
+// Create an object
+let myObj = {
+  // Example of a getter method
+  // this getter will be executed
+  // when you use myObj.myGetter
+  get myGetter() {
+    // Return something
+    return ''
+  }
+}
+
+// Accessing getter method
+// NOTE: when you use getter method
+// don't use parentheses at the end
+myObj.myGetter
+
+
+// Example:
+// Create an object
+let dog = {
+  name: 'Jack',
+
+  // Create getter method
+  // this getter will be executed
+  // when you use dog.getName
+  get getName() {
+    // this here refers to the "dog" object
+    return `My dog's name is: ${this.name}`
+  }
+}
+
+console.log(dog.getName)
+// Output:
+// "My dog's name is: Jack"
+```
+
+One thing to remember. Property getter should always return something, some value. If it doesn't return anything, you will get `undefined` when you try to use the getter. So, if you do add getter method, make sure it also contains `return` statement and returns something.
+
+```JavaScript
+// Create an object
+let dog = {
+  name: 'Jack',
+
+  get getName() {}
+}
+
+console.log(dog.getName)
+// Output:
+// undefined
+```
 
 ## h2
 
