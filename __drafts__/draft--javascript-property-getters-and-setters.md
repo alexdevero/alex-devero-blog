@@ -124,9 +124,9 @@ let user = {
       this.name = newName
     } else {
       if (typeof newName !== 'string') {
-        return 'Please use only string.'
+        console.log('Please use only string.')
       } else if (newName.length === 0) {
-        return 'Please use name with more than 0 characters.'
+        console.log('Please use name with more than 0 characters.')
       }
     }
   }
