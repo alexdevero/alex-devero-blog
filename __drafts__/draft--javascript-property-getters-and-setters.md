@@ -11,7 +11,16 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
-## h2
+## Properties and property getters and setters
+
+In JavaScript, there are two types of properties. The first type is data properties. These are the properties you usually use when you work with [objects]. The second type is called "accessor properties". These are a bit different. Put simply, accessor properties are methods.
+
+These methods are executed every time you work with a property. When you access, or get, a value or when you set or change a value. What about property getters and setters? These two represent this group of properties, the accessor properties. To be more specific, getter is that function that is executed when you access some value.
+
+Setter, on the other hand, is that function that is executed when you set or change a value. Interesting thing is that these methods are executed automatically. Well, this assumes there is some existing getter or setter. You don't have to call them explicitly. You don't have to call them at all.
+
+All that is needed is someone trying to access and set a value of some property. If there is a getter or setter for that specific property it will be executed. Now, let's take a look at each.
+
 
 ### h3
 
