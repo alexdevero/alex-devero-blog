@@ -152,6 +152,105 @@ console.log(user.name)
 // 'Jeremy Guire'
 ```
 
+## Creating getters and setters on the go
+
+So far, we've looked only on creating property getters and setters at the time of creating an object. However, there is a way to add property getters and setters also to an object that already exists. You can do this with the help of [Object.defineProperty()] method. This method allows you to add new properties to objects or change existing.
+
+You can use this method also to add or change accessor properties, property getters and setters. Adding getters and setters with this method is similar to adding them when you create an object. When you use the `defineProperty()` you pass in three parameters. The first argument is the object you want to update.
+
+The second parameter is the property you want to add or change. In case of property getters and setters, it is the property for which you want to add getter and/or setter method. For new property, the last parameter is for object with descriptors, such as `enumerable`, `configurable`, `value` and so on.
+
+In case of getters and setters, you replace the object with descriptors with an object containing the getter and setter method. The syntax for both, getter and setter, is in this case almost the same as in previous examples. One difference is missing method name. You specified that as the second parameter, the property name.
+
+```JavaScript
+// Create an object
+const book = {
+  _title: 'Six of Crows',
+  _author: 'Leigh Bardugo',
+  _pubDate: 'February 6, 2018'
+}
+
+// Add getter and setter for title
+// Parameter 1: object to update
+// Parameter 2: property to add/update
+// Parameter 3: object containing getter and setter
+Object.defineProperty(book, 'title', {
+  get() {
+    return this._title
+  },
+  set(newTitle) {
+    if (typeof newTitle === 'string' && newTitle.length > 0) {
+      this._title = newTitle
+    }
+  }
+})
+
+// Add getter and setter for title
+// Parameter 1: object to update
+// Parameter 2: property to add/update
+// Parameter 3: object containing getter and setter
+Object.defineProperty(book, 'author', {
+  get() {
+    return this._author
+  },
+  set(newAuthor) {
+    if (typeof newAuthor === 'string' && newAuthor.length > 0) {
+      this._author = newAuthor
+    }
+  }
+})
+
+// Add getter and setter for title
+// Parameter 1: object to update
+// Parameter 2: property to add/update
+// Parameter 3: object containing getter and setter
+Object.defineProperty(book, 'pubDate', {
+  get() {
+    return this._pubDate
+  },
+  set(newPubDate) {
+    if (typeof newPubDate === 'string' && newPubDate.length > 0) {
+      this._pubDate = newPubDate
+    }
+  }
+})
+
+// Get current book title
+console.log(book.title)
+// Output:
+// 'Six of Crows'
+
+// Get current book author
+console.log(book.author)
+// Output:
+// 'Leigh Bardugo'
+
+// Get current book publication date
+console.log(book.pubDate)
+// Output:
+// 'February 6, 2018'
+
+// Change book data
+book.title = 'Red Rising'
+book.author = 'Pierce Brown'
+book.pubDate = 'January 28, 2014'
+
+// Get new book title
+console.log(book.title)
+// Output:
+// 'Red Rising'
+
+// Get new book author
+console.log(book.author)
+// Output:
+// 'Pierce Brown'
+
+// Get new book publication date
+console.log(book.pubDate)
+// Output:
+// 'January 28, 2014'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
