@@ -80,7 +80,77 @@ console.log(dog.getName)
 // undefined
 ```
 
-## h2
+## Property setters
+
+When you set or change value of some property JavaScript will execute existing property setter, or setter method, for that property. The syntax of setter method is almost the same as of getter. One thing that is different is the keyword. When you want to define a setter you have to use `set` keyword, instead of `get`.
+
+This keyword tells JavaScript that the method that follows is a setter method. Another thing that is different is that you will probably want to specify at least one parameter. The setter method is used to set value. Method parameter is a way to pass that value to a setter so it can be used.
+
+Lastly, unlike, the getter method, the setter method doesn't have to return anything. Setter is used to set values and no one probably expects it to return anything. So, omitting `return` statement is perfectly fine.
+
+```JavaScript
+// Syntax
+// Create an object
+let myObj = {
+  // Example of a setter method
+  // this setter will be executed
+  // when you use myObj.mySetter = ...
+  get mySetter() {
+    // Return something
+    return ''
+  }
+}
+
+// Using setter method
+// NOTE: when you use setter method
+// you use as if you were assigning a value
+myObj.mySetter = 'Hello'
+
+
+// Example:
+// Create an object
+let user = {
+  name: 'Stuart Douglass',
+  isAdmin: false,
+
+  // Create setter method
+  // this setter will be executed
+  // when you use user.setName = ...
+  set setName(newName) {
+    // Allow only string with more than 0 characters
+    if (typeof newName === 'string' && newName.length > 0) {
+      this.name = newName
+    } else {
+      if (typeof newName !== 'string') {
+        return 'Please use only string.'
+      } else if (newName.length === 0) {
+        return 'Please use name with more than 0 characters.'
+      }
+    }
+  }
+}
+
+// Try to change the value of "name" to an empty string
+user.setName = ''
+// 'Please use name with more than 0 characters.'
+
+// Try to change the value of "name" to a number
+user.setName = 55
+// 'Please use only string.'
+
+// Check the value of "name" property
+console.log(user.name)
+// Output:
+// 'Stuart Douglass'
+
+// Try to change the value of "name" to a string
+user.setName = 'Jeremy Guire'
+
+// Check the value of "name" property again
+console.log(user.name)
+// Output:
+// 'Jeremy Guire'
+```
 
 ## Conclusion: [...] ...
 
