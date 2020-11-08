@@ -1,3 +1,5 @@
+# JavaScript Property Getters and Setters (Accessor Properties)
+
 Property getters and setters allow you to change the default behavior when accessing or modifying object properties. This tutorial teach you all you need to know about them. You will learn what JavaScript property getters and setters are, how they work and how to use them.
 <!--more-->
 <!--
