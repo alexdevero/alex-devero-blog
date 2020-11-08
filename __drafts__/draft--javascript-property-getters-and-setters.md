@@ -356,7 +356,73 @@ console.log(book.pubDate)
 // 'January 28, 2014'
 ```
 
-## Conclusion: [...] ...
+## Property getters and setters the old way
+
+The `get` and `set` keywords were introduced in JavaScript in ES5. Before this, it was possible to create property getters and setters by using regular object methods. So, if you want to create getter and setter methods the old way, you can. You can use either syntax with the `function` keyword or ES2015 syntax that is without it.
+
+If you use regular methods to create property getters and setters remember one thing. You also have to use these getter and setter methods as methods. This means calling them as object methods. Also, in case of the setter method, you have to pass the new value as an argument to that setter method.
+
+```JavaScript
+// Using syntax without function keyword (ES2015 syntax)
+// Create an object
+const person = {
+  // Add some properties
+  // Let's use the '_' convention
+  // for internal properties
+  _name: 'Jack Doe',
+  _status: 'online',
+
+  // Add getter method for "name"
+  getName() {
+    return this._name
+  },
+
+  // Add setter method for "name"
+  setName(newName) {
+    if (typeof newName === 'string' && newName.length > 0) {
+      this._name = newName
+    }
+  }
+}
+
+// Use getter method to get current name
+// NOTE: getter is now a regular method
+// so you have to call it, as a method
+person.getName()
+// Output:
+// 'Jack Doe'
+
+// Use setter method to change the name
+// NOTE: setter is also a regular method
+// so you have to call it as a method
+// and pass new value as an argument
+person.setName('Stuart Mill')
+
+// Use getter method to get the new name
+person.getName()
+// Output:
+// 'Stuart Mill'
+
+
+// Using syntax with function keyword (pre-ES2015 syntax)
+const person = {
+  _name: 'Jack Doe',
+  _status: 'online',
+
+  // Getter method with function keyword
+  getName: function() {
+    return this._name
+  },
+
+  // Setter method with function keyword
+  setName: function(newName) {
+    if (typeof newName === 'string' && newName.length > 0) {
+      this._name = newName
+    }
+  }
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
