@@ -6,9 +6,9 @@ Table of Contents:
 ## Properties and property getters and setters
 ## Property getters
 ## Property setters
-## Property getters and setters as property wrappers
+## Getters and setters as property wrappers
 ## Creating getters and setters on the go
-## Property getters and setters the old way
+## Getters and setters the old way
 ## Conclusion: Introduction to JavaScript property getters and setters (accessor properties)
 -->
 
@@ -160,7 +160,7 @@ console.log(user.name)
 // 'Jeremy Guire'
 ```
 
-## Property getters and setters as property wrappers
+## Getters and setters as property wrappers
 
 As you saw on previous examples, you can use getters and setters to restrict changes to property values. For example, you can reject change of a string value if new value is not a string. Or, you can reject the change if the new string is empty. You saw this in the previous with `setName` setter method.
 
@@ -357,7 +357,7 @@ console.log(book.pubDate)
 // 'January 28, 2014'
 ```
 
-## Property getters and setters the old way
+## Getters and setters the old way
 
 The `get` and `set` keywords were introduced in JavaScript in ES5. Before this, it was possible to create property getters and setters by using regular object methods. So, if you want to create getter and setter methods the old way, you can. You can use either syntax with the `function` keyword or ES2015 syntax that is without it.
 
