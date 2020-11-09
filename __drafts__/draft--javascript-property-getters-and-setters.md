@@ -9,7 +9,7 @@ Table of Contents:
 ## Property getters and setters as property wrappers
 ## Creating getters and setters on the go
 ## Property getters and setters the old way
-## Conclusion: JavaScript Property Getters and Setters (Accessor Properties)
+## Conclusion: Introduction to JavaScript property getters and setters (accessor properties)
 -->
 
 ## Properties and property getters and setters
@@ -424,7 +424,7 @@ const person = {
 }
 ```
 
-## Conclusion: JavaScript Property Getters and Setters (Accessor Properties)
+## Conclusion: Introduction to JavaScript property getters and setters
 
 Property getters and setters can be quite useful. You can use them to change the behavior for accessing property, and to get more control over how these values can be changed. Especially if you use them as property wrappers and keep those properties internal. I hope that this tutorial helped you understand what property getters and setters are, how they work and how to use them.
 
