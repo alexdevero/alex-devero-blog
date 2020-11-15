@@ -375,7 +375,9 @@ someOtherFunction()
 // 'Reading the data.'
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Three ways to write asynchronous JavaScript code
+
+Yes, JavaScript is a single-threaded programming language. However, that doesn't mean you can't write asynchronous code. I hope this tutorial helped you understand how it can be done, and that it might not be as hard as one might think.
 
 [xyz-ihs snippet="thank-you-message"]
 
