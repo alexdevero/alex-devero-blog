@@ -56,19 +56,24 @@ someOtherFunction()
 Opposite problem is when there is a delay. In that case, your code can run in a different order than you would want it to. As a result, part of your program may want to use data that is not available yet.
 
 ```JavaScript
-// Function to process the API data
-function processAPIData() {
-  // Simulate a delay
-  setTimeout(() => {
-    // Show notification about processing data
-    console.log('Data processed.')
-  }, 2000)
-}
-
 // Function to make an API call
 function makeAPICall() {
   // Show notification about API call
   console.log('Calling some API.')
+  // Simulate a delay
+  setTimeout(() => {
+    // Get the data
+    console.log('Data received from the API.')
+
+    // Show confirmation message
+    console.log('API call finished.')
+  }, 2000)
+}
+
+// Function to process the API data
+function processAPIData() {
+  // Show notification about processing data
+  console.log('Data processed.')
 }
 
 // Function to read the API data
@@ -96,8 +101,10 @@ readTheData()
 
 // Output:
 // 'Calling some API.'
-// 'Reading the data.'
 // 'Data processed.'
+// 'Reading the data.'
+// 'Data received from the API.'
+// 'API call finished.'
 ```
 
 Solution for this is writing asynchronous JavaScript code, making that API call asynchronous. When you write asynchronous JavaScript code multiple tasks can run concurrently, at the same time. When you run some asynchronous task it is put into event queue and so it is not blocking the main thread.
