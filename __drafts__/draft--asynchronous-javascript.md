@@ -187,8 +187,8 @@ function readTheData() {
 
 // Another app function
 // This function will be invoked
-// before the processAPIData()
-// and readTheData() are finished
+// right after the makeAPICall() function
+// and before all other functions
 function someOtherFunction() {
   console.log('Some other function not related to API.')
 }
@@ -208,7 +208,81 @@ someOtherFunction()
 // 'API call finished.'
 ```
 
+## Promises
+
+The second way to write asynchronous JavaScript code are Promises. Promises are a newer feature, introduced to JavaScript with the [ES6 specification]. They provide a very easy way to deal with asynchronous JavaScript code. This one reason why many JavaScript developers, if not almost all, started using them instead of callbacks.
+
+A [Promise] is an object that represents some value. This value is not known at the time you create the Promise. It will be known somewhere in the future. Promise returns this value by being either "fulfilled" or "rejected". "Fulfilled" means that Promise is successful. "Rejected" means that Promise failed, for some reason.
+
+Promise that is either "fulfilled" or "rejected" is "settled". Until a Promise is "settled" it is pending. These are the four states a Promise can exist in: pending, "fulfilled", "rejected" and "settled". There are three [handler functions] you can use to get the value returned by a Promise.
+
+These handler functions are `then()`, `catch()` and `finally()`. The way to use these handlers is by attaching them to a Promise object. Depending on the state of a Promise, one of these handlers will be invoked. The `then()` will be invoked when Promise is "fulfilled", but you can also use it to handle "rejected" state.
+
+The `catch()` will be invoked only when Promise is "rejected". The last one, `finally()`, will be invoked when Promise is "settled". This also means that `finally()` will be invoked every time, no matter if Promise is "fulfilled" or "rejected". To learn more about Promises take a look at this [tutorial].
+
+```JavaScript
+// Create new Promise to make the API call
+const makeAPICall = new Promise((resolve, reject) => {
+  // Show notification about API call
+  console.log('Calling some API.')
+
+  setTimeout(() => {
+    // Get the data
+    console.log('Data received from the API.')
+
+    // Process received data
+    resolve('API call finished.')
+  }, 2000)
+})
+
+// Create a function that uses Promise to process the API data
+function processAPIData() {
+  // Show notification about processing data
+  console.log('Data processed.')
+}
+
+// Function that uses Promise to read the API data
+function readTheData() {
+  // Process received data
+  console.log('Reading the data.')
+}
+
+// Add some additional function
+// This function will be able to run
+// right after the makeAPICall Promise
+// and before all other functions
+function someOtherFunction() {
+  console.log('Some other function not related to API.')
+}
+
+// Make the API call
+makeAPICall
+  // And handler for fulfilled state of the Promise
+  .then(resOne => {
+    // Log the message from makeAPICall Promise
+    console.log(resOne)
+
+    // Process the data
+    processAPIData()
+
+    // Read the data
+    readTheData()
+  })
+  // And handler for rejected state of the Promise
+  .catch(error => {
+    console.log(`There has been an error during the API call: ${error}.`)
+  })
+  // Optionally, you could add finally() here
+  // .finally(() => {})
+
+// Run some other function
+someOtherFunction()
+
+// Output:
+// 'Calling some API.'
 // 'Some other function not related to API.'
+// 'Data received from the API.'
+// 'API call finished.'
 // 'Data processed.'
 // 'Reading the data.'
 ```
