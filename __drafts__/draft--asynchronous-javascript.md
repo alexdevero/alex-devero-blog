@@ -130,7 +130,7 @@ function handleBtnClick() {
 
 // Attach event listener to the btn,
 // add pass in the handler function as a callback
-// that will be executed when someone clicks the button
+// that will be invoked when someone clicks the button
 btn.addEventListener('click', handleBtnClick)
 
 // Alternative:
@@ -145,27 +145,30 @@ Callbacks are especially useful when you can't predict when some data will be av
 With callback functions you don't have to try to predict anything. What you have to do is to compose your functions in the order you need. For example, if processing the API data takes time, you can pass the function to read those data as a callback and execute it when the data are ready. Until then, it will not block anything.
 
 ```JavaScript
-// Function to process the API data
-function processAPIData() {
-  // Simulate a delay
-  setTimeout(() => {
-    // Show notification about processing data
-    console.log('Data processed.')
-
-    readTheData()
-  }, 2000)
-}
-
 // Function to make an API call
 function makeAPICall() {
   // Show notification about API call
   console.log('Calling some API.')
 
-  // Process received data
-  processAPIData()
+  // Simulate a delay
+  setTimeout(() => {
+    // Get the data
+    console.log('Data received from the API.')
 
-  // Show confirmation message
-  console.log('API call finished.')
+    // Process received data
+    processAPIData()
+
+    // Show confirmation message
+    console.log('API call finished.')
+  }, 2000)
+}
+
+// Function to process the API data
+function processAPIData() {
+  // Show notification about processing data
+  console.log('Data processed.')
+
+  readTheData()
 }
 
 // Function to read the API data
@@ -174,7 +177,7 @@ function readTheData() {
 }
 
 // Another app function
-// This function will be executed
+// This function will be invoked
 // before the processAPIData()
 // and readTheData() are finished
 function someOtherFunction() {
@@ -189,7 +192,13 @@ someOtherFunction()
 
 // Output:
 // 'Calling some API.'
+// 'Some other function not related to API.'
+// 'Data received from the API.'
+// 'Data processed.'
+// 'Reading the data.'
 // 'API call finished.'
+```
+
 // 'Some other function not related to API.'
 // 'Data processed.'
 // 'Reading the data.'
