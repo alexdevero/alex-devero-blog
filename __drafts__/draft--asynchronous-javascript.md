@@ -100,6 +100,34 @@ Solution for this is writing asynchronous JavaScript code, making that API call 
 
 If the main thread is not blocked it can execute other tasks that follows. It can work on the rest of your code. When the asynchronous task in the event queue is finished it will return its result so you can work with it. There are three ways to achieve this: callbacks, promises and async/await.
 
+## Callbacks
+
+The first and oldest way to write asynchronous JavaScript code is by using callbacks. A callback is an asynchronous function that is passed as argument to other function when you call it. When that function you called finishes its execution it "calls back" the callback function.
+
+Until this happens, the callback function is not executed. It is not doing anything. Most importantly, that callback function is not blocking the main thread so the main thread can take care of other things. One example where callbacks are still often used are [event listeners].
+
+The `addEventListener()` method accepts three parameters. The first is the type of an event you want to listen to. The second is the callback function you want to execute when specific event occurs. The third, and optional, is an object with options. When the event occurs the callback function you provided will be executed.
+
+```JavaScript
+// Find a button in the dom
+const btn = document.querySelector('#btn')
+
+// Create handler function
+function handleBtnClick() {
+  console.log('Click!')
+}
+
+// Attach event listener to the btn,
+// add pass in the handler function as a callback
+// that will be executed when someone clicks the button
+btn.addEventListener('click', handleBtnClick)
+
+// Alternative:
+// Write the callback function directly
+btn.addEventListener('click', function() {
+  console.log('Click!')
+})
+```
 
 ## Conclusion: [...] ...
 
