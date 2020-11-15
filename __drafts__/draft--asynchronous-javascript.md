@@ -235,13 +235,13 @@ const makeAPICall = new Promise((resolve, reject) => {
   }, 2000)
 })
 
-// Create a function that uses Promise to process the API data
+// Create a function to process the API data
 function processAPIData() {
   // Show notification about processing data
   console.log('Data processed.')
 }
 
-// Function that uses Promise to read the API data
+// Create a function to read the API data
 function readTheData() {
   // Process received data
   console.log('Reading the data.')
