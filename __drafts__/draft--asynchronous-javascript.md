@@ -287,6 +287,94 @@ someOtherFunction()
 // 'Reading the data.'
 ```
 
+## Async/await
+
+The last option to write asynchronous JavaScript code is by using async/await. The async/await has been introduced in ES8. The async/await is made of two parts. The first part is an `async` function. This async function is executed asynchronously by default. The value it returns is a new Promise.
+
+THis is important to remember. Since the value is returned as a Promise it means that you have to use Promise handler functions in order to work with the value. These handler functions are the `then()`, `catch()` and `finally()` you've seen in the previous section about Promises.
+
+The second part of async/await is the `await` operator. This operator is used along with a Promise. What it does is it causes the async function to pause until the Promise that follows is settled, that is fulfilled or rejected. When this happens it extracts the value from the Promise and let's the async function continue.
+
+Async functions are asynchronous. When the async function is paused by the `await` operator, the rest of code is not. That function is not blocking the main thread. So, JavaScript can continue executing the rest of your code. When the awaited Promise is settled the async function resumes execution and returns the resolved value.
+
+One important thing to remember about `await`. This operator can be used only inside async function. If you try to use it elsewhere, JavaScript will throw syntax error. If you want to learn more about how the async/await works take a look at this [detailed tutorial].
+
+```JavaScript
+// Create an async function
+async function makeAPICall() {
+  // Show notification about API call
+  console.log('Calling some API.')
+
+  // Create a Promise to make the API call
+  const dataPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Get the data
+      console.log('Data received from the API.')
+
+      // Process received data and resolve the Promise
+      resolve('API call finished.')
+    }, 2000)
+  })
+
+  // Await for the data, the Promise to be settled,
+  // return the from the async function as a new Promise
+  return dataReceived = await dataPromise
+}
+
+// Create a function to process the API data
+function processAPIData() {
+  // Show notification about processing data
+  console.log('Data processed.')
+}
+
+// Function to read the API data
+function readTheData() {
+  // Process received data
+  console.log('Reading the data.')
+}
+
+// Add some additional function
+// This function will be able to run
+// right after the makeAPICall async function
+// and before all other functions
+function someOtherFunction() {
+  console.log('Some other function not related to API.')
+}
+
+// Make the API call
+// NOTE: makeAPICall() is async function
+// and as a function it has to be invoked (by adding '()')
+makeAPICall()
+  // And handler for fulfilled state of the Promise
+  .then((resOne) => {
+    // Log the message from makeAPICall Promise
+    console.log(resOne)
+
+    // Process the data
+    processAPIData()
+
+    // Read the data
+    readTheData()
+  })
+  // And handler for rejected state of the Promise
+  .catch((error) => {
+    console.log(`There has been an error during the API call: ${error}.`)
+  })
+// Optionally, you could add finally() here
+// .finally(() => {})
+
+// Run some other function
+someOtherFunction()
+
+// Output:
+// 'Calling some API.'
+// 'Some other function not related to API.'
+// 'Data received from the API.'
+// 'API call finished.'
+// 'Data processed.'
+// 'Reading the data.'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
