@@ -1,5 +1,5 @@
 
-JavaScript is a single-threaded programming language. Only one thing can happen at a time. That said, there is a way to overcome this. You can write asynchronous JavaScript code. This tutorial will help you with it. It will give you an overview of three ways on how to write asynchronous code.<!--more-->
+JavaScript is a single-threaded programming language. Only one thing can happen at a time. That said, there is a way to overcome this. You can write asynchronous JavaScript code. This tutorial will help you with it. It will give you an overview of the three ways on how to write asynchronous code.<!--more-->
 <!--
 Table of Contents:
 -->
@@ -154,7 +154,7 @@ Callbacks are especially useful when you can't predict when some data will be av
 With callback functions you don't have to try to predict anything. What you have to do is to compose your functions in the order you need. For example, if processing the API data takes time, you can pass the function to read those data as a callback and execute it when the data are ready. Until then, it will not block anything.
 
 ```JavaScript
-// Function to make an API call
+// Create a function to make an API call
 function makeAPICall() {
   // Show notification about API call
   console.log('Calling some API.')
@@ -172,7 +172,7 @@ function makeAPICall() {
   }, 2000)
 }
 
-// Function to process the API data
+// Create a function to process the API data
 function processAPIData() {
   // Show notification about processing data
   console.log('Data processed.')
@@ -180,12 +180,12 @@ function processAPIData() {
   readTheData()
 }
 
-// Function to read the API data
+// Create a function to read the API data
 function readTheData() {
   console.log('Reading the data.')
 }
 
-// Another app function
+// Create another app function
 // This function will be invoked
 // right after the makeAPICall() function
 // and before all other functions
@@ -218,7 +218,7 @@ Promise that is either "fulfilled" or "rejected" is "settled". Until a Promise i
 
 These handler functions are `then()`, `catch()` and `finally()`. The way to use these handlers is by attaching them to a Promise object. Depending on the state of a Promise, one of these handlers will be invoked. The `then()` will be invoked when Promise is "fulfilled", but you can also use it to handle "rejected" state.
 
-The `catch()` will be invoked only when Promise is "rejected". The last one, `finally()`, will be invoked when Promise is "settled". This also means that `finally()` will be invoked every time, no matter if Promise is "fulfilled" or "rejected". To learn more about Promises take a look at this [tutorial].
+The `catch()` will be invoked only when Promise is "rejected". The last one, `finally()`, will be invoked when Promise is "settled". This also means that `finally()` will be invoked every time, no matter if Promise is "fulfilled" or "rejected". To learn more about Promises take a look at this [tutorial] dedicated to them.
 
 ```JavaScript
 // Create new Promise to make the API call
@@ -377,7 +377,7 @@ someOtherFunction()
 
 ## Conclusion: Three ways to write asynchronous JavaScript code
 
-Yes, JavaScript is a single-threaded programming language. However, that doesn't mean you can't write asynchronous code. I hope this tutorial helped you understand how it can be done, and that it might not be as hard as one might think.
+Yes, JavaScript is a single-threaded programming language. However, that doesn't mean you can't write asynchronous code. You can, and it might not be as hard and as complicated as one would think. I hope this tutorial give you a good overview on how to write asynchronous JavaScript code.
 
 [xyz-ihs snippet="thank-you-message"]
 
