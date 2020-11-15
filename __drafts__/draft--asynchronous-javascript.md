@@ -129,6 +129,61 @@ btn.addEventListener('click', function() {
 })
 ```
 
+Callbacks are especially useful when you can't predict when some data will be available. Take the example with API call, data processing and delay. It can be impossible to predict when the API is finished. It can just as impossible to predict when the data processing is finished.
+
+With callback functions you don't have to try to predict anything. What you have to do is to compose your functions in the order you need. For example, if processing the API data takes time, you can pass the function to read those data as a callback and execute it when the data are ready. Until then, it will not block anything.
+
+```JavaScript
+// Function to process the API data
+function processAPIData() {
+  // Simulate a delay
+  setTimeout(() => {
+    // Show notification about processing data
+    console.log('Data processed.')
+
+    readTheData()
+  }, 2000)
+}
+
+// Function to make an API call
+function makeAPICall() {
+  // Show notification about API call
+  console.log('Calling some API.')
+
+  // Process received data
+  processAPIData()
+
+  // Show confirmation message
+  console.log('API call finished.')
+}
+
+// Function to read the API data
+function readTheData() {
+  console.log('Reading the data.')
+}
+
+// Another app function
+// This function will be executed
+// before the processAPIData()
+// and readTheData() are finished
+function someOtherFunction() {
+  console.log('Some other function not related to API.')
+}
+
+// Make the API call
+makeAPICall()
+
+// Run some other function
+someOtherFunction()
+
+// Output:
+// 'Calling some API.'
+// 'API call finished.'
+// 'Some other function not related to API.'
+// 'Data processed.'
+// 'Reading the data.'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
