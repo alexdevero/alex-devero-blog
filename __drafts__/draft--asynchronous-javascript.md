@@ -13,7 +13,7 @@ This has some upsides. It makes it easier to write code. For example, you don't 
 
 There are also downsides. Probably the biggest is that there can be only one thing being invoked at the time. Anything that follows after it has to wait until that thing is finished. This may not be a problem, until it is. For example, let's say you have an app that needs to get data from some API.
 
-When you make a call to the API, in a synchronous way, this call will block the main thread until it is finished. During this time, the rest of your code has to wait until the call stop blocking the main thread. Until the, your app will stop responding.
+When you make a call to the API, in a synchronous way, this call will block the main thread until it is finished. During this time, the rest of your code has to wait until the call stop blocking the main thread. Until then, your app will stop responding.
 
 ```JavaScript
 // Function to make an API call
