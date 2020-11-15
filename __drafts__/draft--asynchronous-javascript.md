@@ -30,6 +30,11 @@ function processAPIData() {
   console.log('Data processed.')
 }
 
+// Function to read the API data
+function readTheData() {
+  console.log('Reading the data.')
+}
+
 // Another app function
 // This function has to wait until
 // the makeAPICall() and processAPIData() are finished
@@ -43,6 +48,9 @@ makeAPICall()
 // Process data from API
 processAPIData()
 
+// Read the data
+readTheData()
+
 // Run some other function
 someOtherFunction()
 
@@ -50,6 +58,7 @@ someOtherFunction()
 // 'Calling some API.'
 // 'Data received from the API.'
 // 'Data processed.'
+// 'Reading the data.'
 // 'Some other function not related to API.'
 ```
 
@@ -82,10 +91,6 @@ function readTheData() {
 }
 
 // Another app function
-// This function has to wait until
-// the processAPIData(), makeAPICall()
-// and readTheData() are done
-// and stop blocking the main thread
 function someOtherFunction() {
   console.log('Some other function not related to API.')
 }
@@ -99,10 +104,14 @@ processAPIData()
 // Read the data
 readTheData()
 
+// Do some other stuff
+someOtherFunction()
+
 // Output:
 // 'Calling some API.'
 // 'Data processed.'
 // 'Reading the data.'
+// 'Some other function not related to API.'
 // 'Data received from the API.'
 // 'API call finished.'
 ```
