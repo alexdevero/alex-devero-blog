@@ -109,15 +109,15 @@ readTheData()
 
 Solution for this is writing asynchronous JavaScript code, making that API call asynchronous. When you write asynchronous JavaScript code multiple tasks can run concurrently, at the same time. When you run some asynchronous task it is put into event queue and so it is not blocking the main thread.
 
-If the main thread is not blocked it can execute other tasks that follows. It can work on the rest of your code. When the asynchronous task in the event queue is finished it will return its result so you can work with it. There are three ways to achieve this: callbacks, promises and async/await.
+If the main thread is not blocked it can execute other tasks that follows. It can work on the rest of your code. When the asynchronous task in the event queue is finished it will return its result so you can work with it. There are three ways to achieve this: callbacks, Promises and async/await.
 
 ## Callbacks
 
 The first and oldest way to write asynchronous JavaScript code is by using callbacks. A callback is an asynchronous function that is passed as argument to other function when you call it. When that function you called finishes its execution it "calls back" the callback function.
 
-Until this happens, the callback function is not executed. It is not doing anything. Most importantly, that callback function is not blocking the main thread so the main thread can take care of other things. One example where callbacks are still often used are [event listeners].
+Until this happens, the callback function is not invoked. It is not doing anything. Most importantly, that callback function is not blocking the main thread so the main thread can take care of other things. One example where callbacks are still often used are [event listeners].
 
-The `addEventListener()` method accepts three parameters. The first is the type of an event you want to listen to. The second is the callback function you want to execute when specific event occurs. The third, and optional, is an object with options. When the event occurs the callback function you provided will be executed.
+The `addEventListener()` method accepts three parameters. The first is the type of an event you want to listen to. The second is the callback function you want to execute when specific event occurs. The third, and optional, is an object with options. When the event occurs the callback function you provided will be invoked.
 
 ```JavaScript
 // Find a button in the dom
