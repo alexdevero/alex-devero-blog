@@ -1,3 +1,4 @@
+# Three Ways to Write Asynchronous JavaScript Code
 
 JavaScript is a single-threaded programming language. Only one thing can happen at a time. That said, there is a way to overcome this. You can write asynchronous JavaScript code. This tutorial will help you with it. It will give you an overview of the three ways on how to write asynchronous code.<!--more-->
 <!--
