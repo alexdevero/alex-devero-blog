@@ -1,5 +1,5 @@
 
-JavaScript is a single-threaded programming language. Only one thing can happen at a time. That said, there are ways to do multiple things without blocking the main thread. You can write asynchronous JavaScript code. In this tutorial, you will learn three ways that will help you do this.<!--more-->
+JavaScript is a single-threaded programming language. Only one thing can happen at a time. That said, there is a way to overcome this. You can write asynchronous JavaScript code. This tutorial will help you with it. It will give you an overview of three ways on how to write asynchronous code.<!--more-->
 <!--
 Table of Contents:
 -->
