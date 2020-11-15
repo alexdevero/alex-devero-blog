@@ -383,7 +383,14 @@ Yes, JavaScript is a single-threaded programming language. However, that doesn't
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[event loop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+[concurrency]: https://en.wikipedia.org/wiki/Concurrency_(computer_science)
+[event listeners]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+[ES6 specification]: https://www.ecma-international.org/ecma-262/6.0/
+[Promise]: https://blog.alexdevero.com/javascript-Promises/
+[handler functions]: https://blog.alexdevero.com/javascript-Promises/#handling-javascript-Promises-with-handler-functions
+[tutorial]: https://blog.alexdevero.com/javascript-promises
+[detailed tutorial]: https://blog.alexdevero.com/javascript-async-await/
 
 <!--
 ### Meta:
@@ -392,7 +399,8 @@ Yes, JavaScript is a single-threaded programming language. However, that doesn't
 
 <!--
 ### Keywords:
--
+- asynchronous JavaScript code
+- asynchronous JavaScript
 -->
 
 <!--
