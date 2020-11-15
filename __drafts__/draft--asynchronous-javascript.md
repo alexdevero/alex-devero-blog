@@ -8,9 +8,9 @@ Table of Contents:
 
 By nature, JavaScript is a single-threaded programming language. It runs on a single thread. This thread is based on something called [event loop]. This thread responds to events when they occur. As a single-threaded language JavaScript can process only one thing at the time, one statement. During this, the thread is blocked.
 
-This has some upsides. It makes it easier to write code. For example, you don't have to worry about problems related to [concurrency]. Your code will run sequentially, in the order in which you wrote it. You also don't have to worry about multiple tasks being executed at the same time.
+This has some upsides. It makes it easier to write code. For example, you don't have to worry about problems related to [concurrency]. Your code will run sequentially, in the order in which you wrote it. You also don't have to worry about multiple tasks being invoked at the same time.
 
-There are also downsides. Probably the biggest is that there can be only one thing being executed at the time. Anything that follows after it has to wait until that thing is finished. This may not be a problem, until it is. For example, let's say you have an app that needs to get data from some API.
+There are also downsides. Probably the biggest is that there can be only one thing being invoked at the time. Anything that follows after it has to wait until that thing is finished. This may not be a problem, until it is. For example, let's say you have an app that needs to get data from some API.
 
 When you make a call to the API, in a synchronous way, this call will block the main thread until it is finished. During this time, the rest of your code has to wait until the call stop blocking the main thread. Until the, your app will stop responding.
 
