@@ -19,6 +19,9 @@ When you make a call to the API, in a synchronous way, this call will block the 
 function makeAPICall() {
   // Show notification about API call
   console.log('Calling some API.')
+
+  // Get the data
+  console.log('Data received from the API.')
 }
 
 // Function to process the API data
@@ -45,6 +48,7 @@ someOtherFunction()
 
 // Output:
 // 'Calling some API.'
+// 'Data received from the API.'
 // 'Data processed.'
 // 'Some other function not related to API.'
 ```
