@@ -47,6 +47,14 @@ function recursiveFunction() {
 recursiveFunction()
 ```
 
+## How to choose the best base case
+
+What is the best candidate for the base case? This depends on what you want to achieve with your recursive function. For exampled, let's say you want to use recursion to calculate factorial. This is the most popular example for recursion. In case of a factorial, think about what is the lowest number you can use.
+
+For factorial, the lowest number is 1. Factorial of 1 (1!) will always result to one. This makes 1 the best candidate for base case because it the smallest number, or level, you can get to. If you want to count numbers from X down to 0, 0 will be the lowest number. It will also be the best candidate for base case.
+
+If you want to do the opposite and count upwards, the base will be the highest number you want to reach. Another example could be reversing a simple string. In that situation, the base case would be that the length of the string must be more than 0. It doesn't make sense to continue reversing an empty string.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
