@@ -295,6 +295,34 @@ countdown(11)
 // 1
 ```
 
+### Recursive function for reversing string
+
+The second example of an implementation of recursion in JavaScript will be a function that reverses a string. This function will accept string as a parameter. The base case will be if the length of the string is bigger than 1. If this condition is true, the function will call itself.
+
+The string for this subsequent call will be the string from the current call without the first character. In addition, this first character will be added to end of the value returned by the next call.
+
+```JavaScript
+// Recursive function for reversing string
+function reverseString(str) {
+  // Base case
+  if (str.length >= 1) {
+    // If the length of the string is bigger than 1
+    // call the reverseString() function again,
+    // pass in pass in the string without the first character
+    // and then add the character and the end
+    return reverseString(str.substring(1)) + str.charAt(0)
+  }
+
+  // Otherwise, return the string
+  return str
+}
+
+// Call the reverseString() function
+reverseString('Hello')
+// Output:
+// 'olleH'
+```
+
 ## Conclusion: Introduction to recursion in JavaScript
 
 Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time to learn to learn about it. Recursion can be a very useful tool to solve some problems better and faster. I hope that this tutorial helped you understand recursion in JavaScript works and what it is in general.
