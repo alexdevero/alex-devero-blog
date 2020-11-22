@@ -255,7 +255,7 @@ calculateFactorial(4)
 
 ## Conclusion: Introduction to recursion in JavaScript
 
-Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time and effort to learn. It can be a very useful tool to solve problems better and faster. I hope that this tutorial helped you understand what recursion is and how recursion in JavaScript works.
+Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time to learn to learn about it. Recursion can be a very useful tool to solve some problems better and faster. I hope that this tutorial helped you understand recursion in JavaScript works and what it is in general.
 
 [xyz-ihs snippet="thank-you-message"]
 
