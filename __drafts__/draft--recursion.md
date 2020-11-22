@@ -35,15 +35,51 @@ The easiest way to create this base case is by using simple [if...else] statemen
 ```JavaScript
 // Simple recursive function
 function recursiveFunction() {
+  // Add base case
   if (/* condition */) {
     // Call the recursive function again
     recursiveFunction()
   } else {
-    // Do something instead of calling
+    // Return something instead of calling
     // the recursive function again
   }
 }
 
+// Call the recursive function
+recursiveFunction()
+```
+
+JavaScript will terminate function execution when it encounters a `return` statement. This mean that you don't really have to use `if...else` statement. You need just the `if` part. If something, return something. Otherwise, you can let JavaScript skip the `if...else` and continue.
+
+```JavaScript
+// Recursive function with shorter condition
+function recursiveFunction() {
+  // Add base case
+  if (/* condition */) {
+    // If condition evaluates to true
+    // terminate this function call
+    // by returning something
+    return /* some value */
+  }
+
+  // Otherwise, call the recursive function again
+  recursiveFunction()
+}
+
+// Call the recursive function
+recursiveFunction()
+```
+
+This is actually not the shortest version. You can make the base condition, and the whole function, even shorter. You can replace the `if...else` statement with [ternary operator]. This way, you can reduce the whole recursive function almost a one-liner. If you use an [arrow function] than literally to a one-liner.
+
+```JavaScript
+// Recursive function with ternary operator
+function recursiveFunction() {
+  // Add base case
+  return (/* condition */) ? /* some value */ : recursiveFunction()
+}
+
+// Call the recursive function
 recursiveFunction()
 ```
 
