@@ -257,6 +257,44 @@ calculateFactorial(4)
 
 Before we end this tutorial, let's take a look at few examples of recursion in JavaScript. You already know how to use recursion to calculate factorial of any given number. Let's take a quick look at another two examples of recursive functions.
 
+### Recursive function for countdown
+
+One good example to demonstrate implementation of recursion in JavaScript can be a function that counts down to 0, and prints number for each recursive call. The base case for this recursive function will be if the number passed, when decreased by one, is bigger than 0.
+
+Only if the number is is bigger than 0 the function will be called again. Otherwise, there will be nothing more to do so the function will terminate itself.
+
+```JavaScript
+// Recursive function for countdown
+function countdown(num) {
+  // Print the number passed
+  // to the current recursive call
+  console.log(num)
+
+  // Base case
+  if (num - 1 > 0) {
+    // If current number decreased by 1
+    // is higher than 0 call countdown() again
+    // with number decreased by 1
+    return countdown(num - 1)
+  }
+}
+
+// Call the countdown() function
+countdown(11)
+// Output:
+// 11
+// 10
+// 9
+// 8
+// 7
+// 6
+// 5
+// 4
+// 3
+// 2
+// 1
+```
+
 ## Conclusion: Introduction to recursion in JavaScript
 
 Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time to learn to learn about it. Recursion can be a very useful tool to solve some problems better and faster. I hope that this tutorial helped you understand recursion in JavaScript works and what it is in general.
