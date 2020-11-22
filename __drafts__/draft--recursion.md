@@ -102,7 +102,7 @@ If you want to do the opposite and count upwards, the base will be the highest n
 
 ## How it actually works: A quick introduction to call stack
 
-You know what recursion is and how it looks like so you can recognize it when you see it. You also know what is a base case. Now, let's take a look at how it actually works. Especially, how it works in JavaScript, since this will be the programming language you are most familiar with.
+You know what recursion is and what it looks like so you can recognize it when you see it. You also know what is a base case. Now, let's take a look at how it actually works. Especially, how it works in JavaScript, since this will be the programming language you are the most familiar with.
 
 To understand how recursion works, you need to know at least a little about about [call stack]. Call stack is mechanism that is built in JavaScript. JavaScript uses it to keep track of all function calls. Let's say you call a function. When you do this, JavaScript will add that function to the call stack.
 
@@ -112,7 +112,7 @@ If that second function also calls a function, JavaScript will also add it at th
 
 JavaScript will add that function call on top of it, on top of the whole call stack. The second thing is that JavaScript executes calls in the call stack from the top to the bottom. This means that the first function call that was added to the call stack will be executed as last.
 
-Conversely, the the last function call that was added to the call stack will be executed as first. This is called [LIFO principle] (Last-In-First-Out). The third thing is that when JavaScript encounters function call it will stop executing the current call, execute that new call, and anything inside the newly called function.
+Conversely, the last function call that was added to the call stack will be executed as first. This is called [LIFO principle] (Last-In-First-Out). The third thing is that when JavaScript encounters function call it will stop executing the current call, execute that new call, and anything inside the newly called function.
 
 Only when that newly called function is executed JavaScript will return to the previous call and finish executing that one. This will repeat for each function in the call stack.
 
@@ -270,7 +270,7 @@ Before we end this tutorial, let's take a look at few examples of recursion in J
 
 One good example to demonstrate implementation of recursion in JavaScript can be a function that counts down to 0, and prints number for each recursive call. The base case for this recursive function will be if the number passed, when decreased by one, is bigger than 0.
 
-Only if the number is is bigger than 0 the function will be called again. Otherwise, there will be nothing more to do so the function will terminate itself.
+Only if the number is bigger than 0 the function will be called again. Otherwise, there will be nothing more to do so the function will terminate itself.
 
 ```JavaScript
 // Recursive function for countdown
