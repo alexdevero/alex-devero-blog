@@ -55,6 +55,63 @@ For factorial, the lowest number is 1. Factorial of 1 (1!) will always result to
 
 If you want to do the opposite and count upwards, the base will be the highest number you want to reach. Another example could be reversing a simple string. In that situation, the base case would be that the length of the string must be more than 0. It doesn't make sense to continue reversing an empty string.
 
+## How it actually works
+
+You know what recursion is and how it looks like so you can recognize it when you see it. You also know what is a base case. Now, let's take a look at how it actually works. Especially, how it works in JavaScript, since this will be the programming language you are most familiar with.
+
+To understand how recursion works, you need to know at least a little about about [call stack]. Call stack is mechanism that is built in JavaScript. JavaScript uses it to keep track of all function calls. Let's say you call a function. When you do this, JavaScript will add that function to the call stack.
+
+When that function call is finished, JavaScript will automatically remove that function call from the call stack and goes to another one below, if there is any. However, if the function you called calls another function, something different happens. When that second function is called, JavaScript will add it to the call stack as well.
+
+If that second function also calls a function, JavaScript will also add it at the top of the call stack. This repeats as long as there are function calls in the current chain of function. There are three important things you need to know. The first thing is that JavaScript will put that second call above the first.
+
+JavaScript will add that function call on top of it, on top of the whole call stack. The second thing is that JavaScript executes calls in the call stack from the top to the bottom. This means that the first function call that was added to the call stack will be executed as last.
+
+Conversely, the the last function call that was added to the call stack will be executed as first. This is called [LIFO principle] (Last-In-First-Out). The third thing is that when JavaScript encounters function call it will stop executing the current call, execute that new call, and anything inside the newly called function.
+
+Only when that newly called function is executed JavaScript will return to the previous call and finish executing that one. This will repeat for each function in the call stack.
+
+```JavaScript
+function funcFour() {
+  // some code to execute
+}
+
+function funcThree() {
+  funcFour()
+  // Execution of funcThree() is paused on the line above
+  // until funcFour() is finished
+}
+
+function funcTwo() {
+  funcThree()
+  // Execution of funcTwo() is paused on the line above
+  // until funcThree() is finished
+}
+
+function funcOne() {
+  funcTwo()
+  // Execution of funcOne() is paused on the line above
+  // until funcTwo() is finished
+}
+
+// Call the funcOne()
+funcOne()
+
+// Call stack at this moment:
+// funcFour() - executed as first (top of the stack)
+// funcThree() - waiting for funcFour() to finish
+// funcTwo() - waiting for funcThree() to finish
+// funcOne() - waiting for funcTwo() to finish
+
+// README:
+// funcFour() is at the top of the stack
+// and its function call will be finished as first
+// after that execution will return to funcThree()
+// when funcThree() is finished execution will return to funcTwo()
+// when funcTwo() is finished execution will return to funcOne()
+// when funcOne() is finished the call stack will be empty
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
