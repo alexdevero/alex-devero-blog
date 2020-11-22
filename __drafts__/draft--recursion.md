@@ -253,6 +253,10 @@ calculateFactorial(4)
 //  - returns 4 * 6 (6 is value returned from calculateFactorial(4))
 ```
 
+## Another two examples of recursion in JavaScript
+
+Before we end this tutorial, let's take a look at few examples of recursion in JavaScript. You already know how to use recursion to calculate factorial of any given number. Let's take a quick look at another two examples of recursive functions.
+
 ## Conclusion: Introduction to recursion in JavaScript
 
 Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time to learn to learn about it. Recursion can be a very useful tool to solve some problems better and faster. I hope that this tutorial helped you understand recursion in JavaScript works and what it is in general.
