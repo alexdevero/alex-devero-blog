@@ -153,7 +153,11 @@ funcOne()
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[if...else]: https://blog.alexdevero.com/javascript-if-else-statement/
+[call stack]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-call-stack
+[LIFO principle]: https://www.i-programmer.info/babbages-bag/263-stacks.html
+[ternary operator]: https://blog.alexdevero.com/javascript-if-else-statement/#ternary-operator
+[arrow function]: https://blog.alexdevero.com/javascript-arrow-functions/
 
 <!--
 ### Meta:
