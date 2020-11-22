@@ -253,7 +253,9 @@ calculateFactorial(4)
 //  - returns 4 * 6 (6 is value returned from calculateFactorial(4))
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Introduction to recursion in JavaScript
+
+Recursion is an advanced topic that can be very hard to fully grasp. However, it is worth the time and effort to learn. It can be a very useful tool to solve problems better and faster. I hope that this tutorial helped you understand what recursion is and how recursion in JavaScript works.
 
 [xyz-ihs snippet="thank-you-message"]
 
