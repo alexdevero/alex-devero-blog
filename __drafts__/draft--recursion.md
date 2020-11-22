@@ -91,7 +91,7 @@ For factorial, the lowest number is 1. Factorial of 1 (1!) will always result to
 
 If you want to do the opposite and count upwards, the base will be the highest number you want to reach. Another example could be reversing a simple string. In that situation, the base case would be that the length of the string must be more than 0. It doesn't make sense to continue reversing an empty string.
 
-## How it actually works
+## How it actually works: A quick introduction to call stack
 
 You know what recursion is and how it looks like so you can recognize it when you see it. You also know what is a base case. Now, let's take a look at how it actually works. Especially, how it works in JavaScript, since this will be the programming language you are most familiar with.
 
@@ -148,7 +148,7 @@ funcOne()
 // when funcOne() is finished the call stack will be empty
 ```
 
-### Call stack and recursive function analysis
+### Recursive factorial function, call stack and analysis
 
 Now, let's use this information about call stack to understand how recursion in JavaScript works. To illustrate this better let's take a recursive function to calculate a factorial. This function will accept a single parameter, a number for which it will calculate a factorial.
 
