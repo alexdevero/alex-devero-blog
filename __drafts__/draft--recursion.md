@@ -148,6 +148,111 @@ funcOne()
 // when funcOne() is finished the call stack will be empty
 ```
 
+### Call stack and recursive function analysis
+
+Now, let's use this information about call stack to understand how recursion in JavaScript works. To illustrate this better let's take a recursive function to calculate a factorial. This function will accept a single parameter, a number for which it will calculate a factorial.
+
+The base case for this function will be that the number you passed as argument must be equal to 1. When this situation happens, the function will return that number. It will return 1. Otherwise, it will return the number multiplied by the result of calling itself with the number decreased by 1 passed as an argument.
+
+```JavaScript
+// Recursive function to calculate factorial
+function calculateFactorial(num) {
+  // Base case
+  if (num === 1) {
+    // The value of "num" here will be 1
+    return num
+  }
+
+  return num * calculateFactorial(num - 1)
+}
+
+// Shorter version with ternary operator
+function calculateFactorial(num) {
+  // Base case
+  return (num === 1) ? num : num * calculateFactorial(num - 1)
+}
+
+// Test the calculateFactorial()
+calculateFactorial(4)
+// Output:
+// 24
+
+// Test the calculateFactorial() again
+calculateFactorial(9)
+// Output:
+// 362880
+
+// Test the calculateFactorial() one more time
+calculateFactorial(1)
+// Output:
+// 1
+```
+
+Let's analyze the execution of the `calculateFactorial()` function. To keep this short, let's use 4 as the number for which we want to calculate the factorial. When you call the function with number 4 as an argument JavaScript will add it to the call stack. Since 4 is not equal to 1 `calculateFactorial()` will be called again.
+
+At this moment, `calculateFactorial()` will be called not with number 4, but number 3 passed as an argument. Subsequent calls are always with number decreased by 1. JavaScript will add that second call to the call stack as well. It will add it on the top of the previous call of `calculateFactorial()` with number 4.
+
+The number is still not equal to 1. So another call of `calculateFactorial()` function will be executed. The number passed in as an argument will now be 2. JavaScript will add this call at the top of the call stack and call `calculateFactorial()` function again. The number will be now 1.
+
+This number meets the base case so the `calculateFactorial()` function will now return the number and it will not call itself again. The chain of calls is now over and we are at the top of the call stack.
+
+```JavaScript
+// Recursive function to calculate factorial
+function calculateFactorial(num) {
+  // Base case
+  return (num === 1) ? return num : num * calculateFactorial(num - 1)
+}
+
+// Test the calculateFactorial()
+calculateFactorial(4)
+
+// Call stack after calling calculateFactorial(4):
+// calculateFactorial(1) - top of the stack, first out
+// calculateFactorial(2)
+// calculateFactorial(3)
+// calculateFactorial(4) - bottom of the stack, last out
+```
+
+What happens next? When we are at the top of the stack and there are no more calls, JavaScript will start moving to the bottom of the stack. During this, JavaScript will also start returning values of all function calls in the stack. With each returned value one function call will be removed from the stack.
+
+The most interesting part are the values returned from all those calls. Do you remember the `num * calculateFactorial(num - 1)` line in the code for the `calculateFactorial()` function? Those values returned by calls in the stack will basically replace the `calculateFactorial(num - 1)` part.
+
+The line will now look something like `num * "num" (returned by the previous call)`. For each call in the stack, the `num` will be multiplied by the result of the previous call. The `calculateFactorial(1)` is the last call at the top of the stack and its return value will be returned as first.
+
+There is no previous call and the function says that this number should be returned. This is the `(num === 1) ? return num :` part. So, the first returned value is 1. The next call is in the call stack is `calculateFactorial(2)`. This is not the last call so the `(num === 1) ? return num :` line doesn't apply here.
+
+Instead, we have to apply the `num * calculateFactorial(num - 1)`. The first `num` is the number passed as parameter to the current call: 2. The `calculateFactorial(num - 1)` is the number returned by the last call: 1. So, `num * calculateFactorial(num - 1)` will result in `2 * 1`.
+
+The next call in the call stack is `calculateFactorial(3)`. Just like in the previous case, we have to apply the `num * calculateFactorial(num - 1)`. The first `num` is again the number passed to the current call: 3. The `calculateFactorial(num - 1)` is the number returned by the last call: 2.
+
+The result of last call was `2 * 1`. That's why `calculateFactorial(num - 1)` now translates to 2. So, `num * calculateFactorial(num - 1)` will translate to `3 * 2`. The `calculateFactorial(4)` call was the last call, at the bottom of the stack. The `num` passed to the current call is 4.
+
+The result of `calculateFactorial(num - 1)` returned by the previous call, `calculateFactorial(3)`, was 6 (result of `3 * 2`). So, now, `num * calculateFactorial(num - 1)` translates to `4 * 6`. This makes the value returned by the current and last call 24. This is also the final result of your factorial calculation.
+
+```JavaScript
+// Recursive function to calculate factorial
+function calculateFactorial(num) {
+  // Base case
+  return (num === 1) ? return num : num * calculateFactorial(num - 1)
+}
+
+// Test the calculateFactorial()
+calculateFactorial(4)
+
+// Call stack after calling calculateFactorial(4):
+// calculateFactorial(1)
+//  - returns 1
+
+// calculateFactorial(2)
+// - returns 2 * 1 (1 is value returned from calculateFactorial(1))
+
+// calculateFactorial(3)
+//  - returns 3 * 2 (2 is value returned from calculateFactorial(2))
+
+// calculateFactorial(4)
+//  - returns 4 * 6 (6 is value returned from calculateFactorial(4))
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
