@@ -1,4 +1,4 @@
-# Blog post title [...]
+# Introduction to Recursion in JavaScript - How It Works and How to Use It
 
 <!--more-->
 <!--
