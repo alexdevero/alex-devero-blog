@@ -3,6 +3,15 @@
 Recursion is one of those programming topics that can sound intimidating. This is especially true if you are new to programming. In this tutorial, you will learn all you need to know about it. You will learn what recursion is, how recursion in JavaScript works and also how to implement it.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction
+## Base case
+## How to choose the best base case
+## How it actually works: A quick introduction to call stack
+### Recursive factorial function, call stack and analysis
+## Another two examples of recursion in JavaScript
+### Recursive function for countdown
+### Recursive function for reversing string
+## Conclusion: Introduction to recursion in JavaScript
 -->
 
 ## A quick introduction
