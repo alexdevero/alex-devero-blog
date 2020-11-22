@@ -26,6 +26,26 @@ Let's say you have a function. This function calls itself. What happens when you
 
 For example, this will happen if you try to run the function in the example above. When you run that function, you will get an error `Uncaught RangeError: Maximum call stack size exceeded`. You can avoid this problem, creating an infinite loop, by adding a base case to the recursive function.
 
+## Base case
+
+A base case is a fancy name for a specific condition. It is also called "base condition". This condition will force the function to do one of two things. If the condition evaluates to `false`, the recursive function will call itself again. If the condition evaluates to `true`, the recursive function will return a value.
+
+The easiest way to create this base case is by using simple [if...else] statement. Inside one block, either `if` or `else` depending on the condition, you will return some value. Inside the other block, you will call the recursive function again. This will allow you to terminate the function at the right time.
+
+```JavaScript
+// Simple recursive function
+function recursiveFunction() {
+  if (/* condition */) {
+    // Call the recursive function again
+    recursiveFunction()
+  } else {
+    // Do something instead of calling
+    // the recursive function again
+  }
+}
+
+recursiveFunction()
+```
 
 ## Conclusion: [...] ...
 
