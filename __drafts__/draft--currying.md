@@ -218,6 +218,34 @@ myFunc(56)(23)(13)(89)
 const myFunc = (arg1) => (arg2) => (arg3) => (arg4) => arg1 + arg2 + arg3 + arg4
 ```
 
+### Multiple arguments per call
+
+So far, you've worked with examples that always used only one argument per call. This doesn't mean you have to always use only one argument. If you want to use more, you can. In that case, all you need to do is to decide which of your functions will accept those additional arguments.
+
+When you decide, you have to add necessary new parameters to that function and you are ready to go. After this, when you call your curried function, you will be able to pass multiple arguments into specific function calls, pair of parentheses. If you do this, remember to use correct amount of parameters for each call.
+
+```JavaScript
+// Example of multiple arguments per call
+// This function will accept one parameter
+function myFunc(arg1) {
+  // This function will also accept one parameter
+  return function(arg2) {
+    // This function will accept three parameters
+    return function(arg3, arg4, arg5) {
+      // This function will accept one parameter
+      return function(arg6) {
+        return arg1 * arg2 * arg3 * arg4 * arg5 * arg6
+      }
+    }
+  }
+}
+
+// Call myFunc
+myFunc(1)(3)(5, 7, 9)(11)
+// Output:
+// 10395
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
