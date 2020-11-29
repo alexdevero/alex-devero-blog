@@ -41,10 +41,19 @@ function sumNumbers(num1, num2) {
   }
 }
 
-const sum = sumNumbers(5, 15)
+const sum = sumNumbers(11, 91)
 sum()
 // Output:
-// 20
+// 102
+
+
+// Or, as a one-liner
+const sumNumbers = (num1, num2) => () => num1 + num2
+
+const sum = sumNumbers(52, 25)
+sum()
+// Output:
+// 77
 ```
 
 ## h2
