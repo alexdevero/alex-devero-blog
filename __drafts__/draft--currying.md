@@ -280,6 +280,10 @@ There is one thing you need to know about currying. The order of arguments matte
 
 Depending on your curried function, this may change the result you will get. If you pass arguments of wrong [data types] you can also break your code. So, double-check you pass correct argument(s) to correct call. Also, double-check you are using correct number of arguments. That, too, can cause a lot of troubles.
 
+## Conclusion: What is Currying In JavaScript and How to Use It
+
+Currying is one of those cases where the name can be more confusing than the actual thing. I hope that this tutorial helped you understand what currying is and how it works. I also hope that the examples you've worked with in this article showed you how to use currying in JavaScript.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
