@@ -1,6 +1,6 @@
 # What is Currying In JavaScript and How to Use It
 
-Currying is a very popular concept in functional programming, but it might sound confusing. This tutorial will help you understand what currying is and how it works. You will also learn how to use currying in JavaScript to help you make your code more readable and simpler.
+Currying is a very popular concept in [functional programming], but it might sound confusing. This tutorial will help you understand what currying is and how it works. You will also learn how to use currying in JavaScript to help you make your code more readable and simpler.
 
 <!--more-->
 <!--
@@ -31,7 +31,7 @@ function sumNumbers(num1, num2) {
 }
 
 const sum = sumNumbers(11, 91)
-sum()
+sumNumbers()
 // Output:
 // 102
 
@@ -41,7 +41,7 @@ sum()
 const sumNumbers = (num1, num2) => () => num1 + num2
 
 const sum = sumNumbers(52, 25)
-sum()
+sumNumbers()
 // Output:
 // 77
 
@@ -62,17 +62,17 @@ sumNumbers(5, 15)()
 // 20
 ```
 
-Note: Just calling the `sum()` function with some numbers passed as arguments would not give you the result you are looking for. That function call would return the function that is returned from `sum()`. In order to get the result, the sum, you need to call the returned function as well.
+Note: Just calling the `sumNumbers()` function with some numbers passed as arguments would not give you the result you are looking for. That function call would return the function that is returned from `sumNumbers()`. In order to get the result, the sum, you need to call the returned function as well.
 
 One way to do this is by calling the function and assigning the returned value to variable. This returned value will be the returned function. Now, you can call that variable, that returned function and get the result, the sum of numbers you passed. You can see this on the example number 1 and 2.
 
-An alternative is to invoke, or call, both function. To do this, you add additional parentheses (`()`) after the first call. This is when you call the `sum()` function and assign it to a variable. This will call the `sum()` function, return the return function, and then call it as well. You can see this approach on the example number 3.
+An alternative is to invoke, or call, both function. To do this, you add additional parentheses (`()`) after the first call. This is when you call the `sumNumbers()` function and assign it to a variable. This will call the `sumNumbers()` function, return the return function, and then call it as well. You can see this approach on the example number 3.
 
 ## Currying made simple
 
 Functions are first-class citizens. A function can return another function. You can pass arguments between those functions. Now, let's talk about currying. What is currying? Currying is a process of taking a function with multiple arguments and transforming it into a sequence of functions, each function taking a single argument.
 
-The result is that instead of having `myFunc(arg1, arg2, arg3)` you have `myFunc(arg1)(arg2)(arg3)`. In case of the `sum()` function, instead of `sum(num1, num2)`, the syntax would now look like this: `sum(num1)(num2)`. If you use more arguments, you add more parentheses. Have you noticed something interesting on this syntax?
+The result is that instead of having `myFunc(arg1, arg2, arg3)` you have `myFunc(arg1)(arg2)(arg3)`. In case of the `sumNumbers()` function, instead of `sum(num1, num2)`, the syntax would now look like this: `sum(num1)(num2)`. If you use more arguments, you add more parentheses. Have you noticed something interesting on this syntax?
 
 ```JavaScript
 // Simple example of calling syntax
@@ -84,13 +84,13 @@ function myCurriedFunc(arg1) { /* ... */ }
 myCurriedFunc(arg1)(arg2)(arg3)(arg4)(arg5)
 ```
 
-You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how currying looks like when you invoke a curried function. Now, let's take a look under the hood.
+You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how currying in JavaScript looks like when you invoke a curried function. Now, let's take a look under the hood.
 
 ### Under the hood, part 1
 
-Let's keep it simple, just enough. Imagine you have a function. This function returns a function. When you want to call both functions you add additional pair of parentheses after the first when you call the outer most function. This second pair of parentheses is for the second function, the function you return.
+Let's keep it simple, just enough. Imagine you have a function. This function returns another function. When you want to call both functions you add additional pair of parentheses after the first when you call the outermost function. This second pair of parentheses is for the second function, the function you return.
 
-Simple way to think about this in a way that the second pair is another function call. In this case, it is calling the returned function. Here is the interesting thing. If the returned function also returns a function, all you just repeat the process. You add third pair of parentheses.
+One simple way to think about this in a way that the second pair is another function call. In this case, it is calling the returned function. Here is the interesting thing. If the returned function also returns a function, all you just repeat the process. You add third pair of parentheses.
 
 What if you return function event more times? All you have to do is to repeat the same process again and again. You add parentheses as many times as there are returned functions. One parentheses is for each returned function. This is the first part, how the additional parentheses work.
 
