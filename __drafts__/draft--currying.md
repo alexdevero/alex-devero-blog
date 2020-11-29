@@ -64,7 +64,7 @@ sumNumbers(5, 15)()
 
 Note: Just calling the `sumNumbers()` function with some numbers passed as arguments would not give you the result you are looking for. That function call would return the function that is returned from `sumNumbers()`. In order to get the result, the sum, you need to call the returned function as well.
 
-One way to do this is by calling the function and assigning the returned value to variable. This returned value will be the returned function. Now, you can call that variable, that returned function and get the result, the sum of numbers you passed. You can see this on the example number 1 and 2.
+One way to do this is by calling the function and assigning the returned value to a variable. This returned value will be the returned function. Now, you can call that variable, that returned function and get the result, the sum of numbers you passed. You can see this on the example number 1 and 2.
 
 An alternative is to invoke, or call, both function. To do this, you add additional parentheses (`()`) after the first call. This is when you call the `sumNumbers()` function and assign it to a variable. This will call the `sumNumbers()` function, return the return function, and then call it as well. You can see this approach on the example number 3.
 
@@ -154,9 +154,9 @@ myFunc()()()()
 
 Depending on your knowledge of programming and JavaScript, there might still be some confusion how those additional parentheses work. What may help you is imagining those parentheses in a different form. Instead of seeing them all on a single line, imagine them being on separate lines, one parentheses per line.
 
-Next, imagine there is a new variable created for each function call. First function call is assigned to a new variable. Then, the same variable is called. This function call returns a new value. This value is the returned function. This function is assigned to a new variable.
+Next, imagine there is a new variable created for each function call. The first function call is assigned to a new variable. Then, the same variable is called. This function call returns a new value. This value is the returned function. This function is assigned to a new variable.
 
-This process of calling and assigning repeats as many times as there are returned functions. When the last function is called the final value is returned. This is, less or more, the same thing that happens when you use those parentheses lined up in a row. Notable difference is that this detailed version requires much more code.
+This process of calling and assigning repeats as many times as there are returned functions. When the last function is called the final value is returned. This is, less or more, the same thing that happens when you use those parentheses lined up in a row. I hope that this explanation helps.
 
 ```JavaScript
 // Curried function
@@ -280,6 +280,7 @@ sumNumbers(52)(77)
 // 102
 ```
 
+## Multiple arguments per call
 
 So far, you've worked with examples that always used only one argument per call. This doesn't mean you have to always use only one argument. If you want to use more, you can. In that case, all you need to do is to decide which of your functions will accept those additional arguments.
 
