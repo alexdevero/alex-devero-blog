@@ -246,6 +246,11 @@ myFunc(1)(3)(5, 7, 9)(11)
 // 10395
 ```
 
+## Order of arguments matters
+
+There is one thing you need to know about currying. The order of arguments matters. This may sound like a no-brainer, but it is still good to mention it. If you change the order of arguments you pass into individual function calls you also change which value will each function receive.
+
+Depending on your curried function, this may change the result you will get. If you pass arguments of wrong [data types] you can also break your code. So, double-check you pass correct argument(s) to correct call. Also, double-check you are using correct number of arguments. That, too, can cause a lot of troubles.
 
 [xyz-ihs snippet="thank-you-message"]
 
