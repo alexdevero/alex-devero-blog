@@ -12,11 +12,40 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
-## h2
+## A quick word about functions
 
-### h3
+Before we get to currying in JavaScript there is something important about functions you should know. In JavaScript, functions are treated as [first-class citizens]. This allows you to do some interesting things with them. You can assign functions to variables and you can also pass them as arguments.
 
-### h3
+Another thing you can also do is to return them. You can return functions from other functions. Not only you can return functions. You can also pass arguments into those returned functions. This all may sound trivial, but it is very important. It is thanks to this currying is possible.
+
+```JavaScript
+// Create a function that returns a function
+function sumNumbers(num1, num2) {
+  // Pass the second argument
+  // to the returned function
+  return function() {
+    // Return the sum of all arguments
+    return num1 + num2
+  }
+}
+
+sumNumbers(5, 15)()
+// Output:
+// 20
+
+
+// Alternatively
+function sumNumbers(num1, num2) {
+  return function() {
+    return num1 + num2
+  }
+}
+
+const sum = sumNumbers(5, 15)
+sum()
+// Output:
+// 20
+```
 
 ## h2
 
