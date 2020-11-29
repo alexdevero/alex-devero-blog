@@ -218,7 +218,35 @@ myFunc(56)(23)(13)(89)
 const myFunc = (arg1) => (arg2) => (arg3) => (arg4) => arg1 + arg2 + arg3 + arg4
 ```
 
-### Multiple arguments per call
+Do you remember the `sumNumbers()` function from the beginning of this article? Let's rewrite it to a curried function. Since this function is very closed to a curried version this rewrite will be quick. The only thing you have to do is to distribute the parameters between the calls.
+
+You have to take the `num2` parameter from the outer function and use it as a parameter for the returned function. That's it. Now, you have a curried version of the `sumNumbers()` function.
+
+```JavaScript
+// Before
+function sumNumbers(num1, num2) {
+  return function() {
+    return num1 + num2
+  }
+}
+
+sumNumbers(52, 77)()
+// Output:
+// 129
+
+
+// After
+function sumNumbers(num1) {
+  return function(num2) {
+    return num1 + num2
+  }
+}
+
+sumNumbers(52)(77)
+// Output:
+// 102
+```
+
 
 So far, you've worked with examples that always used only one argument per call. This doesn't mean you have to always use only one argument. If you want to use more, you can. In that case, all you need to do is to decide which of your functions will accept those additional arguments.
 
