@@ -287,6 +287,7 @@ Currying is one of those cases where the name can be more confusing than the act
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
+[functional programming]: https://en.wikipedia.org/wiki/Functional_programming
 [first-class citizens]: https://blog.alexdevero.com/higher-order-functions-javascript/#javascript-and-first-class-functions
 [data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 
