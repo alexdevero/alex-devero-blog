@@ -152,6 +152,72 @@ myFunc()()()()
 // 'Hello'
 ```
 
+### Under the hood, part 2
+
+The second part is about how to transform those arguments. Until now, you passed all arguments to a single function call, the first. This might be okay for now, but it can quickly become messy. Distributing those arguments to the function calls can help you make your code cleaner and easier to read, theoretically.
+
+The best part is that this transformation is very easy. There are only two changes you have to make. First, you have to stop defining all parameters in the first, outermost, function. Second, what you have to do instead, is to define those parameters for every returned function. Each of these function will take one of these parameters.
+
+This small and quick change will allow you to pass all required arguments individually to each function call, one argument for each pair of parentheses. That's it. This is all the mystery there is about currying in JavaScript and in general.
+
+```JavaScript
+// Example with two arguments
+function myFunc(arg1) {
+  return function(arg2) {
+    return arg1 + arg2
+  }
+}
+
+// Calling the function
+myFunc(15)(59)
+// Output:
+// 74
+
+
+// One-line alternative
+const myFunc = (arg1) => (arg2) => arg1 + arg2
+
+
+// Example with three arguments
+function myFunc(arg1) {
+  return function(arg2) {
+    return function(arg3) {
+      return arg1 * arg2 * arg3
+    }
+  }
+}
+
+// Calling the function
+myFunc(3)(5)(7)
+// Output:
+// 105
+
+
+// One-line alternative
+const myFunc = (arg1) => (arg2) => (arg3) => arg1 * arg2 * arg3
+
+
+// Example with four arguments
+function myFunc(arg1) {
+  return function(arg2) {
+    return function(arg3) {
+      return function(arg4) {
+        return arg1 + arg2 + arg3 + arg4
+      }
+    }
+  }
+}
+
+// Calling the function
+myFunc(56)(23)(13)(89)
+// Output:
+// 181
+
+
+// One-line alternative
+const myFunc = (arg1) => (arg2) => (arg3) => (arg4) => arg1 + arg2 + arg3 + arg4
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
