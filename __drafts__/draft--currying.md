@@ -68,8 +68,23 @@ One way to do this is by calling the function and assigning the returned value t
 
 An alternative is to invoke, or call, both function. To do this, you add additional parentheses (`()`) after the first call. This is when you call the `sum()` function and assign it to a variable. This will call the `sum()` function, return the return function, and then call it as well. You can see this approach on the example number 3.
 
+## Currying made simple
 
-An alternative is to invoke, or call, both function. To do this, you add additional parentheses (`()`) after the first call. This is when you call the `sum()` function and assign it to a variable. This will call the `sum()` function, return the return function, and then call it as well. You can see this approach on the example number 1.
+Functions are first-class citizens. A function can return another function. You can pass arguments between those functions. Now, let's talk about currying. What is currying? Currying is a process of taking a function with multiple arguments and transforming it into a sequence of functions, each function taking a single argument.
+
+The result is that instead of having `myFunc(arg1, arg2, arg3)` you have `myFunc(arg1)(arg2)(arg3)`. In case of the `sum()` function, instead of `sum(num1, num2)`, the syntax would now look like this: `sum(num1)(num2)`. If you use more arguments, you add more parentheses. Have you noticed something interesting on this syntax?
+
+```JavaScript
+// Simple example of calling syntax
+// Create curried function
+function myCurriedFunc(arg1) { /* ... */ }
+
+// Call curried function
+// One pair of parentheses for each returned function
+myCurriedFunc(arg1)(arg2)(arg3)(arg4)(arg5)
+```
+
+You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how it currying looks like when you invoke a curried function. Now, let's take a look under the hood.
 
 
 ## Conclusion: [...] ...
