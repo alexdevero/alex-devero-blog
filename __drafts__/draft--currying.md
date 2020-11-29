@@ -86,9 +86,72 @@ myCurriedFunc(arg1)(arg2)(arg3)(arg4)(arg5)
 
 You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how currying looks like when you invoke a curried function. Now, let's take a look under the hood.
 
+### Under the hood, part 1
+
+Let's keep it simple, just enough. Imagine you have a function. This function returns a function. When you want to call both functions you add additional pair of parentheses after the first when you call the outer most function. This second pair of parentheses is for the second function, the function you return.
+
+Simple way to think about this in a way that the second pair is another function call. In this case, it is calling the returned function. Here is the interesting thing. If the returned function also returns a function, all you just repeat the process. You add third pair of parentheses.
+
+What if you return function event more times? All you have to do is to repeat the same process again and again. You add parentheses as many times as there are returned functions. One parentheses is for each returned function. This is the first part, how the additional parentheses work.
+
+```JavaScript
+// Example of calling a function
+// that returns one function
+function myFunc() {
+  return function() {
+    return 'Hello'
+  }
+}
+
+// Calling the function
+// One pair of parentheses
+// for the outer function
+// and one for each returned function
+myFunc()()
+// Output:
+// 'Hello'
 
 
-## Conclusion: [...] ...
+// Example of calling a function
+// that returns two functions
+function myFunc() {
+  return function() {
+    return function() {
+      return 'Hello'
+    }
+  }
+}
+
+// Calling the function
+// One pair of parentheses
+// for the outer function
+// and one for each returned function
+myFunc()()()
+// Output:
+// 'Hello'
+
+
+// Example of calling a function
+// that returns four functions
+function myFunc() {
+  return function() {
+    return function() {
+      return function() {
+        return 'Hello'
+      }
+    }
+  }
+}
+
+// Calling the function
+// One pair of parentheses
+// for the outer function
+// and one for each returned function
+myFunc()()()()
+// Output:
+// 'Hello'
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
