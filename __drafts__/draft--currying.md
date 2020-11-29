@@ -84,7 +84,8 @@ function myCurriedFunc(arg1) { /* ... */ }
 myCurriedFunc(arg1)(arg2)(arg3)(arg4)(arg5)
 ```
 
-You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how it currying looks like when you invoke a curried function. Now, let's take a look under the hood.
+You are also adding second pair parentheses after the function call, or more pairs. This looks very similar to what you saw on the example number 3, where you invoked the returned function immediately. So, this is how currying looks like when you invoke a curried function. Now, let's take a look under the hood.
+
 
 
 ## Conclusion: [...] ...
