@@ -189,9 +189,9 @@ console.log(finalValue)
 
 The second part is about how to transform those arguments. Until now, you passed all arguments to a single function call, the first. This might be okay for now, but it can quickly become messy. Distributing those arguments to the function calls can help you make your code cleaner and easier to read, theoretically.
 
-The best part is that this transformation is very easy. There are only two changes you have to make. First, you have to stop defining all parameters in the first, outermost, function. Second, what you have to do instead, is to define those parameters for every returned function. Each of these function will take one of these parameters.
+One good thing is that this transformation is very easy. There are only two changes you have to make. First, you have to stop defining all parameters in the first, outermost, function. Second, what you have to do instead, is to define those parameters for every returned function. Each of these function will take one of these parameters.
 
-This small and quick change will allow you to pass all required arguments individually to each function call, one argument for each pair of parentheses. That's it. This is all the mystery there is about currying in JavaScript and in general.
+Then, the last returned function will do something with all those arguments and return something. This small change will allow you to pass all required arguments individually to each function call, one argument for each pair of parentheses. That's it. This is all the mystery there is about currying in JavaScript and in general.
 
 ```JavaScript
 // Example with two arguments
