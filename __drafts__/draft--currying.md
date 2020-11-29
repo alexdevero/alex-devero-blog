@@ -152,6 +152,39 @@ myFunc()()()()
 // 'Hello'
 ```
 
+Depending on your knowledge of programming and JavaScript, there might still be some confusion how those additional parentheses work. What may help you is imagining those parentheses in a different form. Instead of seeing them all on a single line, imagine them being on separate lines, one parentheses per line.
+
+Next, imagine there is a new variable created for each function call. First function call is assigned to a new variable. Then, the same variable is called. This function call returns a new value. This value is the returned function. This function is assigned to a new variable.
+
+This process of calling and assigning repeats as many times as there are returned functions. When the last function is called the final value is returned. This is, less or more, the same thing that happens when you use those parentheses lined up in a row. Notable difference is that this detailed version requires much more code.
+
+```JavaScript
+// Curried function
+function myFunc(arg1) {
+  return function(arg2) {// First returned function
+    return function(arg3) {// Second returned function
+      return function(arg4) {// Third returned function
+        return `${arg1}, ${arg2}, ${arg3}, ${arg4}`
+      }
+    }
+  }
+}
+
+myFunc('arg1')('arg2')('arg3')('arg4')
+// Output:
+// 'arg1, arg2, arg3, arg4'
+
+// Is similar to:
+const firstReturnedFunc = myFunc('arg1')
+const secondReturnedFunc = firstReturnedFunc('arg2')
+const thirdReturnedFunc = secondReturnedFunc('arg3')
+const finalValue = thirdReturnedFunc('arg4')
+
+console.log(finalValue)
+// Output:
+// 'arg1, arg2, arg3, arg4'
+```
+
 ### Under the hood, part 2
 
 The second part is about how to transform those arguments. Until now, you passed all arguments to a single function call, the first. This might be okay for now, but it can quickly become messy. Distributing those arguments to the function calls can help you make your code cleaner and easier to read, theoretically.
