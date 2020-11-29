@@ -1,4 +1,6 @@
-# Blog post title [...]
+
+Currying is a very popular concept in functional programming, but it might sound confusing. This tutorial will help you understand what currying is and how it works. You will also learn how to use currying in JavaScript to help you make your code more readable and simpler.
+
 <!--more-->
 <!--
 Table of Contents:
