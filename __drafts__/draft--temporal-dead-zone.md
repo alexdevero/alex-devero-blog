@@ -283,7 +283,13 @@ Temporal dead zone in JavaScript (TDZ) may sound complicated. It is not. It can 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[ECMAScript 6]: https://www.ecma-international.org/ecma-262/6.0/
+[let]: https://blog.alexdevero.com/javascript-variables-introduction/#let
+[const]: https://blog.alexdevero.com/javascript-variables-introduction/#const
+[differences]: https://blog.alexdevero.com/javascript-variables-introduction/
+[loop]: https://blog.alexdevero.com/javascript-loops/#for-loop
+[required]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const#Description
+[hoisting]:
 
 <!--
 ### Meta:
