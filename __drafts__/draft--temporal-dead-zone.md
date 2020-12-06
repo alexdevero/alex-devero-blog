@@ -161,6 +161,41 @@ const myVariableConst = 'second'
 // SyntaxError: Identifier 'myVariableConst' has already been declared
 ```
 
+### Variable declaration and global object
+
+There is one more difference in the terms of variable declaration between `var` and `let` and `const`. When you declare variable with `var` it will get automatically bind to the Global object, `Window` in case of browser. This automatic binding doesn't happen if you declare variables with `let` and `const`.
+
+```JavaScript
+// Declare variable with const
+var myVariableVar = 'Global citizen'
+let myVariableLet = 'mathematics'
+const myVariableConst = 'change'
+
+console.log(myVariableVar)
+// Output:
+// 'Global citizen'
+
+console.log(myVariableLet)
+// Output:
+// 'mathematics'
+
+console.log(myVariableConst)
+// Output:
+// 'change'
+
+
+console.log(window.myVariableVar)
+// 'Global citizen'
+
+console.log(window.myVariableLet)
+// Output:
+// undefined
+
+console.log(window.myVariableConst)
+// Output:
+// undefined
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
