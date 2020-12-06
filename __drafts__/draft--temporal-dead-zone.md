@@ -128,6 +128,39 @@ myVariableLet = 33
 let myVariableLetTwo = 'Let\'s do it all at once.'
 ```
 
+### Declaration and initialization differences between var, let and const
+
+What you need to know is that for this process is a bit different for some types of variables. The first step is the same. What differs is the second step. When you declare a variable with `var` without initializing it will be initialized anyway. Variables you declare with `var` will have the default value of `undefined`.
+
+The `undefined` is also what you get if you try to access the value of declared, but not initialized `var` variable. Variables you declare with `let` and `const` work differently. They don't have any default value and you can't access them before you initialize them, before you assign them some value.
+
+Well, this is more true for `let` rather than `const`. The `const` has to be declared and initialized. Some value is [required]. One interesting thing about `var` is that you can re-declare it as many times as you want. If you re-declare it in the same scope, the newer will overwrite the older.
+
+This doesn't work with `let` and it also doesn't work with `const`. When you try to re-declare `let` or `const`, in the same scope, JavaScript will throw `SyntaxError` saying that some identifier has already been declared.
+
+```JavaScript
+// Declare variable with var
+// This will work flawlessly
+var myVariableVar = 'first'
+var myVariableVar = 'second'
+
+console.log(myVariableVar)
+// Output:
+// 'second'
+
+
+// Declare variable with let
+let myVariableLet = 'first'
+let myVariableLet = 'second'
+// SyntaxError: Identifier 'myVariableLet' has already been declared
+
+
+// Declare variable with const
+const myVariableConst = 'first'
+const myVariableConst = 'second'
+// SyntaxError: Identifier 'myVariableConst' has already been declared
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
