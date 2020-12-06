@@ -198,6 +198,47 @@ console.log(window.myVariableConst)
 // undefined
 ```
 
+## Entering the temporal dead zone in JavaScript
+
+You understand variables, scope and variable declaration and initialization. Now, let's finally talk about what the temporal dead zone in JavaScript is. In short, temporal dead zone describes a zone where variables are un-reachable. There are variables in the current scope. However, these variables were not declared yet.
+
+If you try to access those variables inside the temporal dead zone JavaScript will throw a `ReferenceError` saying that some variable is not defined. One thing to remember. Temporal dead zone exists only for `let` and `const` variables. These two variables exist in the temporal dead zone from the start until you initialize them.
+
+This is also where the temporal dead zone is. Its beginning is at the beginning of the current scope at which the variable(s) is declared. The end of it is where the variable is actually declared, where you assign that variable some value. The space between these two points is the temporal dead zone.
+
+```JavaScript
+// Beginning of the global scope
+// and also the beginning
+// of the temporal dead zone for global variables
+// The temporal dead zone for "myVariableLet" and "myVariableConst"
+// The temporal dead zone for "myVariableLet" and "myVariableConst"
+// The end of temporal dead zone for "myVariableLet" and "myVariableConst"
+let myVariableLet = 33
+const myVariableConst = true
+
+
+// Example of accessing variable in the temporal dead zone
+// Beginning of the temporal dead zone for "status" variable
+// This is the temporal dead zone for "status" variable
+// This is the temporal dead zone for "status" variable
+
+// Try to access the "status" variable
+// INSIDE the temporal dead zone
+console.log(status)
+// Output:
+// Uncaught ReferenceError: status is not defined
+
+// This is the temporal dead zone for "status" variable
+// The end of temporal dead zone for "status" variable
+let status = 'Jack'
+
+// Try to access the "status" variable
+// OUTSIDE the temporal dead zone
+// Output:
+console.log(status)
+// 'Jack'
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
