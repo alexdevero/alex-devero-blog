@@ -239,6 +239,27 @@ console.log(status)
 // 'Jack'
 ```
 
+### Temporal dead zone and var
+
+As usually, there is always some exception. This applies to temporal dead zone as well. The exception is the `var`. For `var`, there is no such a thing as a temporal dead zone. As you know, `var` has a default value of `undefined`. If you don't initialize it when you declare it, it will be initialized for you, with the default value.
+
+```JavaScript
+// Try to access the "myVar" variable
+// This will actually work
+console.log(myVar)
+// Output:
+// undefined
+
+// There is no the temporal dead zone for var
+
+var myVar = 'Bug'
+
+// Try to access the "myVar" variable again
+console.log(myVar)
+// Output:
+// 'Bug'
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
