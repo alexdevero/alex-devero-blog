@@ -5,6 +5,8 @@ Temporal dead zone in JavaScript (TDZ) is one of the topics every JavaScript dev
 Table of Contents:
 -->
 
+*Note to the reader: if you already understand variables, scope and variable declaration and initialization, you can skip the beginning and scroll to the last section.*
+
 ## Three types of variables
 
 In the beginning, there was only one type of variables in JavaScript. When you wanted to declare a new variable you had to use the `var` keyword. This changed when [ECMAScript 6] (ES6) specification was released. One change that was introduced by this specification were two new types of variables.
