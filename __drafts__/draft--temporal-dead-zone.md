@@ -260,6 +260,21 @@ console.log(myVar)
 // 'Bug'
 ```
 
+## The cause of temporal dead zone
+
+You know what the temporal dead zone in JavaScript is. Let's also quickly talk about why it exists. Whenever you run your JavaScript code it goes through two phases. The first phase is called compilation, or creation. During this phase, your code is being compiled into byte code.
+
+The second phase is called execution. During this phase, your code is being executed. It is also during this second phase, the execution, when your variables are assigned their values. Back to the phase one, compilation. During this first phase another interesting thing happens.
+
+During this phase, JavaScript engine goes through your code, "collects" variables and allocates memory for them, also for functions declarations. It is at this moment, variables you declared with `var` are assigned the default value of `undefined`. Memory will also be allocated for `let` and `const` variables, but no values will be assigned.
+
+This process of collecting declarations is called [hoisting]. This is also why the temporal dead zone exists, at least for `let` and `const`. In case of `let` and `const`, there is a moment when these variables are declared, but not initialized. Remember, declaration happens in the first phase, while initialization in the second.
+
+This means that, during the first phase, `let` and `const` exist in the temporal dead zone. This is because they are not initialized with any value. On the other hand, the `var` is always initialized with the value of `undefined` by default. That's why it is never in the temporal dead zone.
+
+When JavaScript engine enters the second phase, compilation or creation, it also initializes `let` and `const` variables. This is the moment when these variables can leave the temporal dead zone. Note that when exactly this happens depends on when you initialize those variables in you code.
+
+So, remember, all variables get hoisted. However, when `var` variables are hoisted they are also initialized with the value of `undefined`. When the `let` and `const` are hoisted they are not initialized with any value. That is the reason the temporal dead zone exists and why it exists only for `let` and `const` and not `var`.
 
 ## Conclusion: Temporal dead zone in JavaScript explained
 
