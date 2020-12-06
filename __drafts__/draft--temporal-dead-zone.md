@@ -69,6 +69,45 @@ console.log(myVariableVar)
 // 'Alexander'
 ```
 
+### Scope and let (and const)
+
+The above will not happen if you declare those variables with `let`. The `let` variable knows and respects block scope. By using the `if...else` statement you create new block scope. This scope limits the visibility and accessibility of the new `let` variable. JavaScript basically "sees" these two `let` as two different variables.
+
+```JavaScript
+// Declare variable with let
+let myVariableLet = 'Lex'
+
+// Create block scope with if...else statement
+if (true) {
+  // Declare new variable with let,
+  // but use the same name as for the first let
+  let myVariableLet = 'Alexander'
+}
+
+// Log the value of myVariableLet
+console.log(myVariableLet)
+// Output:
+// 'Lex'
+```
+
+The `const` variable works in the same way as let. It also respects block scope. So, block-scoped `const` will not collide with global `const`, or the other way around.
+
+```JavaScript
+// Declare variable with const
+const myVariableConst = 'Lex'
+
+// Create block scope with if...else statement
+if (true) {
+  // Declare new variable with const,
+  // but use the same name as for the first const
+  const myVariableConst = 'Alexander'
+}
+
+// Log the value of myVariableConst
+console.log(myVariableConst)
+// Output:
+// 'Lex'
+```
 
 [xyz-ihs snippet="thank-you-message"]
 
