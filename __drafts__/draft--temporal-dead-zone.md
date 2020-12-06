@@ -3,6 +3,17 @@
 Temporal dead zone in JavaScript (TDZ) is one of the topics every JavaScript developer should know. This tutorial will teach you all you need to know about it. You will learn what temporal dead zone in JavaScript is and how it works. You will also learn about scope and variable declaration and initialization.<!--more-->
 <!--
 Table of Contents:
+## Three types of variables
+## Three types of scopes
+### Scope and var
+### Scope and let (and const)
+## Variable declaration and initialization
+### Declaration and initialization differences between var, let and const
+### Variable declaration and global object
+## Entering the temporal dead zone in JavaScript
+### Temporal dead zone and var
+## The cause of temporal dead zone
+## Conclusion: Temporal dead zone in JavaScript explained
 -->
 
 *Note to the reader: if you already understand variables, scope and variable declaration and initialization, you can skip the beginning and scroll to the last section.*
