@@ -1,5 +1,6 @@
 # Temporal Dead Zone in JavaScript Explained (TDZ)
-<!--more-->
+
+Temporal dead zone in JavaScript (TDZ) is one of the topics every JavaScript developer should know. This tutorial will teach you all you need to know about it. You will learn what temporal dead zone in JavaScript is and how it works. You will also learn what to avoid to ensure your code works as you want.<!--more-->
 <!--
 Table of Contents:
 -->
