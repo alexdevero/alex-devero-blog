@@ -234,8 +234,8 @@ let status = 'Jack'
 
 // Try to access the "status" variable
 // OUTSIDE the temporal dead zone
-// Output:
 console.log(status)
+// Output:
 // 'Jack'
 ```
 
