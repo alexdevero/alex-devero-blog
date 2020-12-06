@@ -46,6 +46,29 @@ if (true) {
 }
 ```
 
+### Scope and var
+
+Important thing about `var` variable is that it cares only about the first two: global and local scope. It doesn't care about the third: block scope. Let's say you declared a variable using `var` in the global scope. Then, you created a block scope with `if...else` statement. Inside it you declared another `var` variable.
+
+This new variable has the same name as the global `var`. Since `var` doesn't care about block scope the `var` inside the `if...else` will overwrite the global `var`.
+
+```JavaScript
+// Declare variable with var
+var myVariableVar = 'Lex'
+
+// Create block scope with if...else statement
+if (true) {
+  // Declare new variable with var,
+  // but use the same name as for the first var
+  var myVariableVar = 'Alexander'
+}
+
+// Log the value of myVariableVar
+console.log(myVariableVar)
+// Output:
+// 'Alexander'
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
