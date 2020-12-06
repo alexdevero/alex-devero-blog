@@ -109,6 +109,25 @@ console.log(myVariableConst)
 // 'Lex'
 ```
 
+## Variable declaration and initialization
+
+When you create a new variable, there are two steps that happen. The first step is about declare the variable. This means that JavaScript creates an identifier for the name of the variable you just created and reserves memory for it. The second step is about initializing the variable.
+
+Variable initialization means assigning a value to the variable. This might happen right away during declaration if you create a variable and assign it a value. Or, it will happen later, when you assign that variable some value. It might also never happen of you don't assign that variable any value.
+
+```JavaScript
+// Declare variable
+var myVariableVar
+let myVariableLet
+
+// Initialize variable
+myVariableVar = 'Dex'
+myVariableLet = 33
+
+// Declare and initialize variable
+let myVariableLetTwo = 'Let\'s do it all at once.'
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
