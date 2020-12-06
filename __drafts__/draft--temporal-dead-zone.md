@@ -28,7 +28,7 @@ const myVariableConst = ['DC']
 
 The first important difference is how these variables work with scope. In JavaScript, there are two, well, three, types of scope, global, local or function and block. Global scope is a scope outside any function or code block. Local or function scope is a scope inside functions. When you create a function you also create a local scope.
 
-Variables declared in a global scope are visible and accessible everywhere. Variables declared in a local are accessible and visible only inside that scope, not outside it. The third scope, block, is create by using a pair of curly brackets. For example, when you use [if...else statement], some [loop] and so on, you are also creating block scope.
+Variables declared in a global scope are visible and accessible everywhere. Variables declared in a local are accessible and visible only inside that scope, not outside it. The third scope, block, is created by using a pair of curly brackets. For example, when you use [if...else statement], some [loop] and so on, you are also creating block scope.
 
 ```JavaScript
 // Variable in a global scope
@@ -113,7 +113,7 @@ console.log(myVariableConst)
 
 ## Variable declaration and initialization
 
-When you create a new variable, there are two steps that happen. The first step is about declare the variable. This means that JavaScript creates an identifier for the name of the variable you just created and reserves memory for it. The second step is about initializing the variable.
+When you create a new variable, there are two steps that happen. The first step is about declaring the variable. This means that JavaScript creates an identifier for the name of the variable you just created and reserves memory for it. The second step is about initializing the variable.
 
 Variable initialization means assigning a value to the variable. This might happen right away during declaration if you create a variable and assign it a value. Or, it will happen later, when you assign that variable some value. It might also never happen of you don't assign that variable any value.
 
@@ -266,7 +266,7 @@ You know what the temporal dead zone in JavaScript is. Let's also quickly talk a
 
 The second phase is called execution. During this phase, your code is being executed. It is also during this second phase, the execution, when your variables are assigned their values. Back to the phase one, compilation. During this first phase another interesting thing happens.
 
-During this phase, JavaScript engine goes through your code, "collects" variables and allocates memory for them, also for functions declarations. It is at this moment, variables you declared with `var` are assigned the default value of `undefined`. Memory will also be allocated for `let` and `const` variables, but no values will be assigned.
+During this phase, JavaScript engine goes through your code, "collects" variables and allocates memory for them, also for function declarations. It is at this moment, variables you declared with `var` are assigned the default value of `undefined`. Memory will also be allocated for `let` and `const` variables, but no values will be assigned.
 
 This process of collecting declarations is called [hoisting]. This is also why the temporal dead zone exists, at least for `let` and `const`. In case of `let` and `const`, there is a moment when these variables are declared, but not initialized. Remember, declaration happens in the first phase, while initialization in the second.
 
