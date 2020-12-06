@@ -260,6 +260,11 @@ console.log(myVar)
 // 'Bug'
 ```
 
+
+## Conclusion: Temporal dead zone in JavaScript explained
+
+Temporal dead zone in JavaScript (TDZ) may sound complicated. It is not. It can be relatively easy, especially if you understand how variables, scope and variable declaration and initialization work. I hope that this tutorial explained all these topics and helped you understand what temporal dead zone in JavaScript is and how it works.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
