@@ -22,7 +22,7 @@ Table of Contents:
 
 In the beginning, there was only one type of variables in JavaScript. When you wanted to declare a new variable you had to use the `var` keyword. This changed when [ECMAScript 6] (ES6) specification was released. One change that was introduced by this specification were two new types of variables.
 
-These new two types of variables were [let] and [const]. There are [differences] between them, the `var`, `let` and `const`. Some of these differences are more important and some less. Among these differences are two that are important to understand how temporal dead zone in JavaScript works and also how it works with each type.
+These new two types of variables were [let] and [const]. There are [differences] between them, the `var`, `let` and `const`. Some of these differences are more important and some less. Among these differences are two that are important to understand how temporal dead zone in JavaScript works. Also how it works with each type.
 
 ```JavaScript
 // Declare variable with var keyword
@@ -39,7 +39,7 @@ const myVariableConst = ['DC']
 
 The first important difference is how these variables work with scope. In JavaScript, there are two, well, three, types of scope, global, local or function and block. Global scope is a scope outside any function or code block. Local or function scope is a scope inside functions. When you create a function you also create a local scope.
 
-Variables declared in a global scope are visible and accessible everywhere. Variables declared in a local are accessible and visible only inside that scope, not outside it. The third scope, block, is created by using a pair of curly brackets. For example, when you use [if...else statement], some [loop] and so on, you are also creating block scope.
+Variables declared in a global scope are visible and accessible everywhere. Variables you declare in a local scope are accessible and visible only inside that scope, not outside it. The third scope, block, is created by using a pair of curly brackets. For example, when you use [if...else statement], some [loop] and so on, you are also creating block scope.
 
 ```JavaScript
 // Variable in a global scope
@@ -84,7 +84,7 @@ console.log(myVariableVar)
 
 ### Scope and let (and const)
 
-The above will not happen if you declare those variables with `let`. The `let` variable knows and respects block scope. By using the `if...else` statement you create new block scope. This scope limits the visibility and accessibility of the new `let` variable. JavaScript basically "sees" these two `let` as two different variables.
+The above will not happen if you declare those variables with `let`. The `let` variable knows and respects block scope. By using the `if...else` statement you create new block scope. This scope limits the visibility and accessibility of the new `let` variable. JavaScript "sees" these two `let` as two different variables.
 
 ```JavaScript
 // Declare variable with let
@@ -145,11 +145,11 @@ let myVariableLetTwo = 'Let\'s do it all at once.'
 
 What you need to know is that for this process is a bit different for some types of variables. The first step is the same. What differs is the second step. When you declare a variable with `var` without initializing it will be initialized anyway. Variables you declare with `var` will have the default value of `undefined`.
 
-The `undefined` is also what you get if you try to access the value of declared, but not initialized `var` variable. Variables you declare with `let` and `const` work differently. They don't have any default value and you can't access them before you initialize them, before you assign them some value.
+The `undefined` is also what you get if you try to access the value of declared, but not initialized `var` variable. Variables you declare with `let` and `const` work differently. They don't have any default value. You also can't access them before you initialize them, before you assign them some value.
 
-Well, this is more true for `let` rather than `const`. The `const` has to be declared and initialized. Some value is [required]. One interesting thing about `var` is that you can re-declare it as many times as you want. If you re-declare it in the same scope, the newer will overwrite the older.
+Well, this is more true for `let` rather than `const`. When you use `const` you have to declare it and initialize it. Some value is [required]. One interesting thing about `var` is that you can re-declare it as many times as you want. If you re-declare it in the same scope, the newer will overwrite the older.
 
-This doesn't work with `let` and it also doesn't work with `const`. When you try to re-declare `let` or `const`, in the same scope, JavaScript will throw `SyntaxError` saying that some identifier has already been declared.
+This doesn't work with `let` and it also doesn't work with `const`. Try to re-declare `let` or `const`, in the same scope, and JavaScript will throw `SyntaxError`. It will say that some identifier has already been declared.
 
 ```JavaScript
 // Declare variable with var
@@ -176,7 +176,7 @@ const myVariableConst = 'second'
 
 ### Variable declaration and global object
 
-There is one more difference in the terms of variable declaration between `var` and `let` and `const`. When you declare variable with `var` it will get automatically bind to the Global object, `Window` in case of browser. This automatic binding doesn't happen if you declare variables with `let` and `const`.
+There is one more difference in the terms of variable declaration between `var` and `let` and `const`. When you declare variable with `var` it will be bind to the Global object, `Window` in case of browser. This automatic binding doesn't happen if you declare variables with `let` and `const`.
 
 ```JavaScript
 // Declare variable with const
@@ -213,9 +213,9 @@ console.log(window.myVariableConst)
 
 You understand variables, scope and variable declaration and initialization. Now, let's finally talk about what the temporal dead zone in JavaScript is. In short, temporal dead zone describes a zone where variables are un-reachable. There are variables in the current scope. However, these variables were not declared yet.
 
-If you try to access those variables inside the temporal dead zone JavaScript will throw a `ReferenceError` saying that some variable is not defined. One thing to remember. Temporal dead zone exists only for `let` and `const` variables. These two variables exist in the temporal dead zone from the start until you initialize them.
+Try to access those variables inside the temporal dead zone and JavaScript will throw a `ReferenceError`. This error will say that some variable is not defined. One thing to remember. Temporal dead zone exists only for `let` and `const` variables. These two variables exist in the temporal dead zone from the start until you initialize them.
 
-This is also where the temporal dead zone is. Its beginning is at the beginning of the current scope at which the variable(s) is declared. The end of it is where the variable is actually declared, where you assign that variable some value. The space between these two points is the temporal dead zone.
+This is also where the temporal dead zone is. Its beginning is at the beginning of the current scope at which you declared the variable(s). The end of it is where the variable is actually declared, where you assign that variable some value. The space between these two points is the temporal dead zone.
 
 ```JavaScript
 // Beginning of the global scope
@@ -252,7 +252,7 @@ console.log(status)
 
 ### Temporal dead zone and var
 
-As usually, there is always some exception. This applies to temporal dead zone as well. The exception is the `var`. For `var`, there is no such a thing as a temporal dead zone. As you know, `var` has a default value of `undefined`. If you don't initialize it when you declare it, it will be initialized for you, with the default value.
+As usually, there is always some exception. This applies to temporal dead zone as well. The exception is the `var`. For `var`, there is no such a thing as a temporal dead zone. As you know, `var` has a default value of `undefined`. If you don't initialize it when you declare it, JavaScript will initialize it for you, as undefined.
 
 ```JavaScript
 // Try to access the "myVar" variable
@@ -277,19 +277,19 @@ You know what the temporal dead zone in JavaScript is. Let's also quickly talk a
 
 The second phase is called execution. During this phase, your code is being executed. It is also during this second phase, the execution, when your variables are assigned their values. Back to the phase one, compilation. During this first phase another interesting thing happens.
 
-During this phase, JavaScript engine goes through your code, "collects" variables and allocates memory for them, also for function declarations. It is at this moment, variables you declared with `var` are assigned the default value of `undefined`. Memory will also be allocated for `let` and `const` variables, but no values will be assigned.
+During this phase, JavaScript engine goes through your code. It "collects" variables and allocates memory for them, and also for function declarations. It is at this moment, variables you declared with `var` are assigned the default value of `undefined`. Memory will also be allocated for `let` and `const` variables, but no values will be assigned.
 
 This process of collecting declarations is called [hoisting]. This is also why the temporal dead zone exists, at least for `let` and `const`. In case of `let` and `const`, there is a moment when these variables are declared, but not initialized. Remember, declaration happens in the first phase, while initialization in the second.
 
 This means that, during the first phase, `let` and `const` exist in the temporal dead zone. This is because they are not initialized with any value. On the other hand, the `var` is always initialized with the value of `undefined` by default. That's why it is never in the temporal dead zone.
 
-When JavaScript engine enters the second phase, compilation or creation, it also initializes `let` and `const` variables. This is the moment when these variables can leave the temporal dead zone. Note that when exactly this happens depends on when you initialize those variables in you code.
+When JavaScript engine enters the second phase it also initializes `let` and `const` variables. This is called  compilation or creation. This is the moment when these variables can leave the temporal dead zone. Note that when this happens depends on when you initialize those variables in you code.
 
 So, remember, all variables get hoisted. However, when `var` variables are hoisted they are also initialized with the value of `undefined`. When the `let` and `const` are hoisted they are not initialized with any value. That is the reason the temporal dead zone exists and why it exists only for `let` and `const` and not `var`.
 
 ## Conclusion: Temporal dead zone in JavaScript explained
 
-Temporal dead zone in JavaScript (TDZ) may sound complicated. It is not. It can be relatively easy, especially if you understand how variables, scope and variable declaration and initialization work. I hope that this tutorial explained all these topics and helped you understand what temporal dead zone in JavaScript is and how it works.
+Temporal dead zone in JavaScript (TDZ) may sound complicated. It is not. It can be relatively easy. Especially if you understand how variables, scope and variable declaration and initialization work. I hope that this tutorial explained all these topics and helped you understand what temporal dead zone in JavaScript is and how it works.
 
 [xyz-ihs snippet="thank-you-message"]
 
