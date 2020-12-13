@@ -144,6 +144,12 @@ function foo() {
   }
 }
 
+// Invoke foo() and bar() functions.
+foo()()
+// Output:
+// undefined
+// false
+```
 
 ## Arrow functions
 
