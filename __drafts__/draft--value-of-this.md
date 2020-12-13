@@ -151,7 +151,37 @@ foo()()
 // false
 ```
 
-## Function constructors
+### Immediately Invoked Function Expression (IIFE)
+
+The `this` keyword works in IIFEs just like in a regular function. In a sloppy mode, `this` will refer to the global object `window`. If you switch to a strict the value of `this` will become `undefined`.
+
+```JavaScript
+// IIFE example no.1: sloppy mode
+// Declare IIFE.
+(function() {
+  console.log(this)
+  console.log(this === window)
+})()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// IIFE example no.1: strict mode
+// Switch to strict mode.
+'use strict';
+
+// Declare IIFE.
+(function() {
+  console.log(this)
+  console.log(this === window)
+})()
+// Output:
+// undefined
+// false
+```
+
+### Function constructors
 
 When you want to create new functions with similar behavior you can use [function constructor]. This allows you to create a blueprint you can then use for your functions. If you use function constructor remember one thing. The `this` keyword inside a constructor will refer to the instance of that constructor, not the constructor itself. This applies to both, sloppy and strict mode.
 
