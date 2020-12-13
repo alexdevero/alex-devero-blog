@@ -20,7 +20,7 @@ JavaScript offers you an option to switch from sloppy mode to strict mode. You c
 When you are in a global scope, the `this` keyword will refer to the global object `window`. This is the case at least if you are in the browser. If you are in a Node.js environment, the `this` will refer to global object called `global`. In a global scope, it doesn't matter if you are in a sloppy mode or a strict mode.
 
 ```JavaScript
-// Global context example - sloppy mode
+// Global context example no.1: sloppy mode
 console.log(this)
 // Output:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
@@ -44,7 +44,8 @@ console.log(this)
 // }
 
 
-// Global context example - strict mode
+// Global context example no.2: strict mode
+// Switch to strict mode
 'use strict'
 
 console.log(this)
