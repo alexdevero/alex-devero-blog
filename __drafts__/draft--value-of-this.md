@@ -70,6 +70,44 @@ console.log(this)
 //   }
 // }
 ```
+
+## Functions and this
+
+When it comes to [functions], the mode at which you are makes a difference for the `this` keyword. When you are in sloppy mode, this will refer to the global object `window`. Global object `global` in Node.js. This is true even for functions declared inside another functions, in a local scope.
+
+```JavaScript
+// Function example no.1: function in a global scope
+// Declare a function
+function foo() {
+  // Log the value of this
+  console.log(this)
+  console.log(this === window)
+}
+
+// Invoke foo() function
+foo()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Function example no.2: function in a local scope
+// Declare a function
+function foo() {
+  return function bar() {
+    // Log the value of this
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
+// Invoke foo() and bar() functions
+foo()()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
