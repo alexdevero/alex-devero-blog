@@ -151,6 +151,45 @@ foo()()
 // false
 ```
 
+## Objects and methods
+
+When you use `this` keyword in an object method, the result can vary. What matters is if the method is a regular function or an arrow function. You will learn about `this` and arrow functions later. For now, let's focus on regular functions.
+
+When you use `this` in an object method, it will refer to the object itself. This is for both, sloppy as well as strict mode.
+
+```JavaScript
+// Object example no.1: sloppy mode
+const myObj = {
+  name: 'Jack',
+  age: 30,
+  readObj() {
+    console.log(this)
+  }
+}
+
+// Invoke the readObj() method on myObj.
+myObj.readObj()
+// Output:
+// { name: 'Jack', age: 30, readObj: ƒ readObj() }
+
+
+// Object example no.2: strict mode
+// Switch to strict mode.
+'use strict'
+
+const myObj = {
+  name: 'Jack',
+  age: 30,
+  readObj() {
+    console.log(this)
+  }
+}
+
+// Invoke the readObj() method on myObj.
+myObj.readObj()
+// Output:
+// { name: 'Jack', age: 30, readObj: ƒ readObj() }
+```
 
 ## Classes
 
