@@ -1,4 +1,4 @@
-# Quick Guide To this In JavaScript: What this Is And When
+# Quick Guide To this Keyword In JavaScript: What this Is And When
 <!--more-->
 <!--
 Table of Contents:
