@@ -1,4 +1,4 @@
-# Quick Guide To this Keyword In JavaScript: What this Is And When
+# A Quick Guide To this Keyword In JavaScript: What this Is And When
 
 Many JavaScript developers try to avoid using the `this` keyword. One reason is because what `this` refers to changes. This guide will help you with it. You will learn what `this` keyword refers to in specific contexts. This will make it easier for you to work with it and help you predict what to expect when you use it.<!--more-->
 <!--
@@ -730,7 +730,9 @@ window.addEventListener('click', () => {
 // true
 ```
 
-## Conclusion: [...] ...
+## Conclusion: A quick guide to this keyword in JavaScript
+
+The `this` keyword can be sometimes confusing and unpredictable. It is no wonder some JavaScript developers don't like to use it, and even discourage it. It is my hope that this tutorial helped you understand what `this` keyword refers to in specific contexts.
 
 [xyz-ihs snippet="thank-you-message"]
 
