@@ -25,7 +25,7 @@ console.log(this)
 // Output:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
 
-// In Node.js
+// In Node.js:
 console.log(this)
 // Output:
 // <ref *1> Object [global] {
@@ -45,14 +45,14 @@ console.log(this)
 
 
 // Global context example no.2: strict mode
-// Switch to strict mode
+// Switch to strict mode.
 'use strict'
 
 console.log(this)
 // Output:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
 
-// In Node.js
+// In Node.js:
 console.log(this)
 // Output:
 // <ref *1> Object [global] {
@@ -77,14 +77,14 @@ When it comes to [functions], the mode at which you are makes a difference for t
 
 ```JavaScript
 // Function example no.1: function in a global scope
-// Declare a function
+// Declare a function.
 function foo() {
   // Log the value of this
   console.log(this)
   console.log(this === window)
 }
 
-// Invoke foo() function
+// Invoke foo() function.
 foo()
 // Output:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
@@ -92,7 +92,7 @@ foo()
 
 
 // Function example no.2: function in a local scope
-// Declare a function
+// Declare a function.
 function foo() {
   return function bar() {
     // Log the value of this
@@ -101,7 +101,7 @@ function foo() {
   }
 }
 
-// Invoke foo() and bar() functions
+// Invoke foo() and bar() functions.
 foo()()
 // Output:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
@@ -114,17 +114,17 @@ This will change if you switch your JavaScript code to strict mode. In a strict 
 
 ```JavaScript
 // Strict mode example no.1: function in a global scope
-// Switch to strict mode
+// Switch to strict mode.
 'use strict'
 
-// Declare a function
+// Declare a function.
 function foo() {
   // Log the value of this
   console.log(this)
   console.log(this === window)
 }
 
-// Invoke foo() function
+// Invoke foo() function.
 foo()
 // Output:
 // undefined
@@ -132,10 +132,10 @@ foo()
 
 
 // Strict mode example no.2: function in a local scope
-// Switch to strict mode
+// Switch to strict mode.
 'use strict'
 
-// Declare a function
+// Declare a function.
 function foo() {
   return function bar() {
     // Log the value of this
