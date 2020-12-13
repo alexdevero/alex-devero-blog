@@ -152,6 +152,205 @@ foo()()
 ```
 
 
+## Classes
+
+[JavaScript classes] are a newer addition to JavaScript. They are definitely one of those more discussed features. Some developers like to use them and some not. If you like using them, or want to start using them, you will like what follows. When it comes to classes, the `this` keyword is very consistent and predictable.
+
+It doesn't matter if you are in a sloppy mode or a strict mode. If you use `this` in a class it will refer to the class itself.
+
+```JavaScript
+// Classes example no.1: with instantiation in sloppy mode (regular function, no binding)
+// Declare a class with public property and method.
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHi() {
+    console.log(this)
+  }
+}
+
+// Instantiate the Person class.
+const joshua = new Person('Joshua')
+
+// Invoke sayHi() on "joshua" instance.
+joshua.sayHi()
+// Output:
+// Person {name: "Joshua"}
+
+
+// Classes example no.2: with instantiation in sloppy mode (arrow function)
+// Declare a class with public property and method.
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHi = () => {
+    console.log(this)
+  }
+}
+
+// Instantiate the Person class.
+const joshua = new Person('Joshua')
+
+// Invoke sayHi() on "joshua" instance.
+joshua.sayHi()
+// Output:
+// Person {name: "Joshua", sayHi: ƒ}
+
+
+// Classes example no.3: with instantiation in strict mode (regular function, no binding)
+// Switch to strict mode.
+'use strict'
+
+// Declare a class with public property and method.
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHi() {
+    console.log(this)
+  }
+}
+
+// Instantiate the Person class.
+const joshua = new Person('Joshua')
+
+// Invoke sayHi() on "joshua" instance.
+joshua.sayHi()
+// Output:
+// Person {name: "Joshua"}
+
+
+// Classes example no.4: with instantiation in strict mode (arrow function)
+// Switch to strict mode.
+'use strict'
+
+// Declare a class with public property and method.
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHi = () => {
+    console.log(this)
+  }
+}
+
+// Instantiate the Person class.
+const joshua = new Person('Joshua')
+
+// Invoke sayHi() on "joshua" instance.
+joshua.sayHi()
+// Output:
+// Person {
+//   sayHi: ƒ (),
+//   name: 'Joshua',
+//   __proto__: Person { constructor: ƒ Person() }
+// }
+
+
+// Classes example no.5: without instantiation in sloppy mode (regular function, no binding)
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi() {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+// Invoke sayHi() method.
+Person.sayHi()
+// Output:
+// class Person {
+//   static name = 'Luke'
+//   static sayHi() {
+//     console.log(this)
+//     console.log(this === Person)
+//   }
+// }
+// true
+
+
+// Classes example no.6: without instantiation in sloppy mode (arrow function)
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi = () => {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+// Invoke sayHi() method.
+Person.sayHi()
+// Output:
+// class Person {
+//   static name = 'Luke'
+//   static sayHi = () => {
+//     console.log(this)
+//     console.log(this === Person)
+//   }
+// }
+// true
+
+
+// Classes example no.7: without instantiation in strict mode (regular function, no binding)
+// Switch to strict mode.
+'use strict'
+
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi() {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+// Invoke sayHi() method.
+Person.sayHi()
+// Output:
+// class Person {
+//   static name = 'Luke'
+//   static sayHi() {
+//     console.log(this)
+//     console.log(this === Person)
+//   }
+// }
+// true
+
+
+// Classes example no.8: without instantiation in strict mode (arrow function)
+// Switch to strict mode.
+'use strict'
+
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi = () => {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+// Invoke sayHi() method.
+Person.sayHi()
+// Output:
+// class Person {
+//   static name = 'Luke'
+//   static sayHi = () => {
+//     console.log(this)
+//     console.log(this === Person)
+//   }
+// }
+// true
+```
+
 ## Event listeners
 
 When you use the `this` keyword with event listeners, it will refer to the HTML element to which you attach the event lister. If you attach event listener to a button, `this` will refer to that button element. That button will become value of `this`. If you attach event listener to global `window` object, `this` will refer to the global `window` object.
