@@ -151,6 +151,57 @@ foo()()
 // false
 ```
 
+
+## Event listeners
+
+When you use the `this` keyword with event listeners, it will refer to the HTML element to which you attach the event lister. If you attach event listener to a button, `this` will refer to that button element. That button will become value of `this`. If you attach event listener to global `window` object, `this` will refer to the global `window` object.
+
+```JavaScript
+// Event listener example no.1: sloppy mode
+// Find button in the DOM.
+const btn = document.querySelector('.btn')
+
+// Attach event listener to the button.
+btn.addEventListener('click', function() {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// <button>Click me</button>
+// false
+
+
+// Arrow function example no.2: strict mode
+// Switch to strict mode.
+'use strict'
+
+// Find button in the DOM.
+const btn = document.querySelector('.btn')
+
+// Attach event listener to the button.
+btn.addEventListener('click', function() {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// <button>Click me</button>
+// false
+
+
+// Arrow function example no.3: event listener on window
+// Attach event listener to the button.
+window.addEventListener('click', function() {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+```
+
 ## Arrow functions
 
 With [arrow functions], `this` keyword works differently than with regular functions. Arrow functions don't have their own `this`. When you use `this` in an arrow function it will inherit its value from its context. Context here is the context at which you defined that arrow function.
