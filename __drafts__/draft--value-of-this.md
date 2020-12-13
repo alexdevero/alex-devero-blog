@@ -226,6 +226,81 @@ foo()()
 // false
 ```
 
+### Objects, classes, this and arrow functions
+
+If you declared your arrow function in an object, `this` will refer to global object `window`. In case of a class, it will refer to the class itself.
+
+```JavaScript
+// Arrow function example no.5: object in sloppy mode
+// Declare an object.
+const obj = {
+  name: 'Luke',
+  sayHi: () => {
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
+obj.sayHi()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.6: object in strict mode
+// Switch to strict mode.
+'use strict'
+
+// Declare a function
+const obj = {
+  name: 'Luke',
+  sayHi: () => {
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
+obj.sayHi()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.7: class in sloppy mode
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi = () => {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+Person.sayHi()
+// Output:
+// Luke()
+// true
+
+
+// Arrow function example no.8: class in strict mode
+// Switch to strict mode.
+'use strict'
+
+// Declare a class with static property and method.
+class Person {
+  static name = 'Luke'
+  static sayHi = () => {
+    console.log(this)
+    console.log(this === Person)
+  }
+}
+
+Person.sayHi()
+// Output:
+// Luke()
+// true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
