@@ -593,6 +593,18 @@ btn.addEventListener('click', () => {
 // Output on click on the button:
 // Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
 // true
+
+
+// Arrow function example no.11: event listener on window
+// Attach event listener to the button.
+window.addEventListener('click', () => {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
 ```
 
 ## Conclusion: [...] ...
