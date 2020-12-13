@@ -301,6 +301,44 @@ Person.sayHi()
 // true
 ```
 
+### Event listeners, this and arrow functions
+
+If you use arrow function as a callback for event listener, `this` will refer to global object `window`. This will happen in both, sloppy and also strict mode.
+
+```JavaScript
+// Arrow function example no.9: event listener in sloppy mode
+// Find button in the DOM.
+const btn = document.querySelector('.btn')
+
+// Attach event listener to the button.
+btn.addEventListener('click', () => {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.10: event listener in strict mode
+// Switch to strict mode.
+'use strict'
+
+// Find button in the DOM.
+const btn = document.querySelector('.btn')
+
+// Attach event listener to the button.
+btn.addEventListener('click', () => {
+  console.log(this)
+  console.log(this === window)
+})
+
+// Output on click on the button:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
