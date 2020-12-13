@@ -15,6 +15,60 @@ In JavaScript, there are two modes or variants of JavaScript you can work with. 
 
 JavaScript offers you an option to switch from sloppy mode to strict mode. You can do this by using `'use strict'` statement at the beginning of your code. Any code that follows after this statement will automatically follow the rules and restrictions of strict mode. This also includes the `this` keyword.
 
+## Global scope and this
+
+When you are in a global scope, the `this` keyword will refer to the global object `window`. This is the case at least if you are in the browser. If you are in a Node.js environment, the `this` will refer to global object called `global`. In a global scope, it doesn't matter if you are in a sloppy mode or a strict mode.
+
+```JavaScript
+// Global context example - sloppy mode
+console.log(this)
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+
+// In Node.js
+console.log(this)
+// Output:
+// <ref *1> Object [global] {
+//   global: [Circular *1],
+//   clearInterval: [Function: clearInterval],
+//   clearTimeout: [Function: clearTimeout],
+//   setInterval: [Function: setInterval],
+//   setTimeout: [Function: setTimeout] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   queueMicrotask: [Function: queueMicrotask],
+//   clearImmediate: [Function: clearImmediate],
+//   setImmediate: [Function: setImmediate] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   }
+// }
+
+
+// Global context example - strict mode
+'use strict'
+
+console.log(this)
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+
+// In Node.js
+console.log(this)
+// Output:
+// <ref *1> Object [global] {
+//   global: [Circular *1],
+//   clearInterval: [Function: clearInterval],
+//   clearTimeout: [Function: clearTimeout],
+//   setInterval: [Function: setInterval],
+//   setTimeout: [Function: setTimeout] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   queueMicrotask: [Function: queueMicrotask],
+//   clearImmediate: [Function: clearImmediate],
+//   setImmediate: [Function: setImmediate] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   }
+// }
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
