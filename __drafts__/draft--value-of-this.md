@@ -15,7 +15,7 @@ In JavaScript, there are two modes or variants of JavaScript you can work with. 
 
 JavaScript offers you an option to switch from sloppy mode to strict mode. You can do this by using `'use strict'` statement at the beginning of your code. Any code that follows after this statement will automatically follow the rules and restrictions of strict mode. This also includes the `this` keyword.
 
-## Global scope and this
+## Global scope
 
 When you are in a global scope, the `this` keyword will refer to the global object `window`. This is the case at least if you are in the browser. If you are in a Node.js environment, the `this` will refer to global object called `global`. In a global scope, it doesn't matter if you are in a sloppy mode or a strict mode.
 
@@ -71,7 +71,7 @@ console.log(this)
 // }
 ```
 
-## Functions and this
+## Functions
 
 When it comes to [functions], the mode at which you are makes a difference for the `this` keyword. When you are in sloppy mode, this will refer to the global object `window`. Global object `global` in Node.js. This is true even for functions declared inside another functions, in a local scope.
 
@@ -741,6 +741,7 @@ window.addEventListener('click', () => {
 [function]: https://blog.alexdevero.com/javascript-functions-pt3/
 [arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
 [JavaScript classes]: https://blog.alexdevero.com/javascript-classes-pt1/
+[function constructor]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function
 
 <!--
 ### Meta:
@@ -749,7 +750,8 @@ window.addEventListener('click', () => {
 
 <!--
 ### Keywords:
--
+- this keyword in JavaScript
+- this keyword
 -->
 
 <!--
