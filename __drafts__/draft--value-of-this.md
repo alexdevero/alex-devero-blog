@@ -151,6 +151,90 @@ foo()()
 // false
 ```
 
+## Function constructors
+
+When you want to create new functions with similar behavior you can use [function constructor]. This allows you to create a blueprint you can then use for your functions. If you use function constructor remember one thing. The `this` keyword inside a constructor will refer to the instance of that constructor, not the constructor itself. This applies to both, sloppy and strict mode.
+
+```JavaScript
+// Function constructors example no.1: sloppy mode
+// Create function constructor Person.
+function Person(name, age) {
+  this.name = name
+  this.age = age
+
+  this.readPerson = function() {
+    console.log(this)
+  }
+}
+
+// Create joe instance.
+const joe = new Person('Joe', 31)
+
+// Create natalie instance.
+const natalie = new Person('Natalie', 28)
+
+// Invoke readPerson() method on joe instance.
+joe.readPerson()
+// Output:
+// Person {
+//   name: 'Joe',
+//   age: 31,
+//   readPerson: ƒ (),
+//   __proto__: Person { constructor: ƒ Person() }
+// }
+
+// Invoke readPerson() method on natalie instance.
+natalie.readPerson()
+// Output:
+// Person {
+//   name: 'Natalie',
+//   age: 28,
+//   readPerson: ƒ (),
+//   __proto__: Person { constructor: ƒ Person() }
+// }
+
+
+// Function constructors example no.2: strict mode
+// Switch to strict mode.
+'use strict'
+
+// Create function constructor Person.
+function Person(name, age) {
+  this.name = name
+  this.age = age
+
+  this.readPerson = function() {
+    console.log(this)
+  }
+}
+
+// Create joe instance.
+const joe = new Person('Joe', 31)
+
+// Create natalie instance.
+const natalie = new Person('Natalie', 28)
+
+// Invoke readPerson() method on joe instance.
+joe.readPerson()
+// Output:
+// Person {
+//   name: 'Joe',
+//   age: 31,
+//   readPerson: ƒ (),
+//   __proto__: Person { constructor: ƒ Person() }
+// }
+
+// Invoke readPerson() method on natalie instance.
+natalie.readPerson()
+// Output:
+// Person {
+//   name: 'Natalie',
+//   age: 28,
+//   readPerson: ƒ (),
+//   __proto__: Person { constructor: ƒ Person() }
+// }
+```
+
 ## Objects and methods
 
 When you use `this` keyword in an object method, the result can vary. What matters is if the method is a regular function or an arrow function. You will learn about `this` and arrow functions later. For now, let's focus on regular functions.
