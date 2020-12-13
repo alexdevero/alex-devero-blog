@@ -108,6 +108,48 @@ foo()()
 // true
 ```
 
+### Strict mode
+
+This will change if you switch your JavaScript code to strict mode. In a strict mode, the default value of `this` in a function is set to `undefined`.
+
+```JavaScript
+// Strict mode example no.1: function in a global scope
+// Switch to strict mode
+'use strict'
+
+// Declare a function
+function foo() {
+  // Log the value of this
+  console.log(this)
+  console.log(this === window)
+}
+
+// Invoke foo() function
+foo()
+// Output:
+// undefined
+// false
+
+
+// Strict mode example no.2: function in a local scope
+// Switch to strict mode
+'use strict'
+
+// Declare a function
+function foo() {
+  return function bar() {
+    // Log the value of this
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
+// Invoke foo() and bar() functions
+foo()()
+// Output:
+// undefined
+// false
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
