@@ -144,6 +144,11 @@ function foo() {
   }
 }
 
+
+## Arrow functions
+
+With [arrow functions], `this` keyword works differently than with regular functions. Arrow functions don't have their own `this`. When you use `this` in an arrow function it will inherit its value from its context. Context here is the context at which you defined that arrow function.
+
 // Invoke foo() and bar() functions
 foo()()
 // Output:
