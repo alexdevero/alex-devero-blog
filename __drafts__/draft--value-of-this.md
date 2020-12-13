@@ -651,7 +651,12 @@ window.addEventListener('click', () => {
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[strict mode]: https://developer.mozilla.org/en-US/docs/Glossary/strict_mode
+[sloppy mode]: https://developer.mozilla.org/en-US/docs/Glossary/Sloppy_mode
+[forbidden]: http://speakingjs.com/es5/ch07.html#strict_mode
+[function]: https://blog.alexdevero.com/javascript-functions-pt3/
+[arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
+[JavaScript classes]: https://blog.alexdevero.com/javascript-classes-pt1/
 
 <!--
 ### Meta:
