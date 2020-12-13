@@ -149,12 +149,83 @@ function foo() {
 
 With [arrow functions], `this` keyword works differently than with regular functions. Arrow functions don't have their own `this`. When you use `this` in an arrow function it will inherit its value from its context. Context here is the context at which you defined that arrow function.
 
+### Global and local scope, this and arrow functions
+
+If your arrow function is in a global scope, `this` will refer to the global object `window`. This is true for sloppy and strict mode. It is also true if the arrow function is inside a regular function, in a sloppy mode. If you are in a strict mode, and arrow function is inside a regular function, the value of `this` will be `undefined`.
+
+```JavaScript
+// Arrow function example no.1: global function in a sloppy mode
+// Declare an arrow function.
+const foo = () => {
+  // Log the value of this.
+  console.log(this)
+  console.log(this === window)
+}
+
+// Invoke foo() and bar() functions.
+foo()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.2: global function in a strict mode
+// Switch to strict mode.
+'use strict'
+
+// Declare a function.
+const foo = () => {
+  // Log the value of this.
+  console.log(this)
+  console.log(this === window)
+}
+
+// Invoke foo() and bar() functions.
+foo()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.3: local function in a sloppy mode
+// Declare a regular function.
+function foo() {
+  // Return an arrow function.
+  return () => {
+    // Log the value of this.
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
+// Invoke foo() and bar() functions.
+foo()()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow function example no.4: local function in a strict mode
+// Switch to strict mode.
+'use strict'
+
+// Declare a regular function.
+function foo() {
+  // Return an arrow function.
+  return () => {
+    // Log the value of this.
+    console.log(this)
+    console.log(this === window)
+  }
+}
+
 // Invoke foo() and bar() functions
 foo()()
 // Output:
 // undefined
 // false
 ```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
