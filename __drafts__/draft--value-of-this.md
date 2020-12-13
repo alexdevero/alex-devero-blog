@@ -73,7 +73,7 @@ console.log(this)
 
 ## Functions
 
-When it comes to [functions], the mode at which you are makes a difference for the `this` keyword. When you are in sloppy mode, this will refer to the global object `window`. Global object `global` in Node.js. This is true even for functions declared inside another functions, in a local scope.
+When it comes to [functions], the mode at which you are makes a difference for the `this` keyword. When you are in sloppy mode, `this` will refer to the global object `window`. Global object `global` in Node.js. This is true even for functions declared inside another functions, in a local scope.
 
 ```JavaScript
 // Function example no.1: function in a global scope
@@ -167,7 +167,7 @@ The `this` keyword works in IIFEs just like in a regular function. In a sloppy m
 // true
 
 
-// IIFE example no.1: strict mode
+// IIFE example no.2: strict mode
 // Switch to strict mode.
 'use strict';
 
@@ -633,6 +633,36 @@ foo()()
 // Output:
 // undefined
 // false
+```
+
+### Arrow IIFEs
+
+When you use arrow function to create Immediately Invoked Function Expression (IIFE) `this` will refer to global `window` object. This applies to both, sloppy as well as strict mode.
+
+```JavaScript
+// Arrow IIFE example no.1: sloppy mode
+// Declare arrow IIFE.
+(() => {
+  console.log(this)
+  console.log(this === window)
+})()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
+
+
+// Arrow IIFE example no.2: strict mode
+// Switch to strict mode.
+'use strict';
+
+// Declare arrow IIFE.
+(() => {
+  console.log(this)
+  console.log(this === window)
+})()
+// Output:
+// Window {0: Window, 1: Window, window: Window, self: Window, document: document, name: "", location: Location, …}
+// true
 ```
 
 ### Objects, classes, this and arrow functions
