@@ -3,6 +3,14 @@
 The JavaScript event loop is one of the most important things to understand. It helps you understand how things work under the hood. In this tutorial, you will learn what JavaScript event loop is and how it works. You will also learn about a bit about call stack, web APIs and message queue.<!--more-->
 <!--
 Table of Contents:
+## Building blocks of JavaScript
+## Message queue
+### A simple example of how message queue works
+## Call stack, message queue and priorities
+## Message queue processing and zero delays
+## The JavaScript event loop
+## A note about promises and async functions
+## Conclusion: The JavaScript event loop explained
 -->
 
 ## Building blocks of JavaScript
