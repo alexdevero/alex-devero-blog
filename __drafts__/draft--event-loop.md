@@ -94,6 +94,12 @@ This principle is called "run-to-completion". This has another implication calle
 
 As you know, message queue can process only one message at the time. Each message has to be completed before the queue can process another one. So, if you use `setTimeout` with delay set to 0 its callback will be executed immediately only if it is the first message in the message queue. Otherwise, it will have to wait.
 
+## The JavaScript event loop
+
+This is how JavaScript handles async operations. This is how operations are passed between call stack, web APIs and message queue. Even though JavaScript itself is single-threaded it can do this because the web APIs run on separate threads. What has the JavaScript event loop to do with this?
+
+It is the JavaScript event loop what takes care of this cycle. It is the job of the JavaScript event loop to continuously check the call stack if it is empty or not. If it is empty, it will take the first message from the message queue and push it to the call stack. Otherwise, it will let the call stack process call inside it.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
