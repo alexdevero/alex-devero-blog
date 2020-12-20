@@ -5,7 +5,7 @@ Table of Contents:
 
 ## Building blocks of JavaScript
 
-In JavaScript, there are few fundamental building blocks. These blocks are [memory heap], [stack], [call stack], [web APIs], message queue and event loop. The memory heap is a place where JavaScript stores objects and functions. The stack is for storing static data, such as primitive data types values.
+In JavaScript, there are few fundamental building blocks. These blocks are [memory heap], [stack], [call stack], [web APIs] (browser APIs), message queue and event loop. The memory heap is a place where JavaScript stores objects and functions. The stack is for storing static data, such as primitive data types values.
 
 The call stack is a mechanism JavaScript uses to keep track of functions that needs to be executed. Web APIs are APIs built into your web browser. These APIs allow you to use features you could not otherwise. Some example are fetch API, geolocation API, WebGL API, Web Workers API and so on.
 
