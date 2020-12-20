@@ -105,7 +105,13 @@ It is the JavaScript event loop what takes care of this cycle. It is the job of 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[stack]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-stack
+[memory heap]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-memory-heap
+[call stack]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-call-stack
+[web APIs]: https://developer.mozilla.org/en-US/docs/Web/API
+[async functions]: https://blog.alexdevero.com/javascript-async-await/#async-functions
+[run-to-completion]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Run-to-completion
+[zero delays]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Zero_delays
 
 <!--
 ### Meta:
