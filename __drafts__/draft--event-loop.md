@@ -100,7 +100,9 @@ This is how JavaScript handles async operations. This is how operations are pass
 
 It is the JavaScript event loop what takes care of this cycle. It is the job of the JavaScript event loop to continuously check the call stack if it is empty or not. If it is empty, it will take the first message from the message queue and push it to the call stack. Otherwise, it will let the call stack process call inside it.
 
-## Conclusion: [...] ...
+## Conclusion: The JavaScript event loop explained
+
+Understanding how the JavaScript event loop helps you understand how JavaScript works under the hood. To understand this you also need to understand topics such as call stack, web APIs and message queue. I hope that this tutorial helped you understand all these topics and, most importantly, the JavaScript event loop.
 
 [xyz-ihs snippet="thank-you-message"]
 
