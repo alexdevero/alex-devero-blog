@@ -93,11 +93,11 @@ setTimeout(function cb() {
 
 In JavaScript, both call stack and message queue have different priorities. The priority of call stack is higher than the priority of message queue. As a result, the message queue has to wait until the call stack is empty before it can push anything from the queue to the call stack.
 
-Only when the call stack is empty the message queue can push in the first message, or callback. When this situation happens? The call stack will get empty when all function calls inside it, and call stacks of these calls, are executed. When this is happens, the call stack will be empty and available for message queue.
+Only when the call stack is empty the message queue can push in the first message, or callback. When does this situation happen? The call stack will get empty when all function calls inside it, and call stacks of these calls, are executed. When this is happens, the call stack will be empty and available for message queue.
 
 ## Message queue processing and zero delays
 
-Message queue can process only one message at the time. What's more, if message queue contains multiple messages each message has to be processed before any other message can. Processing of every message depends on the completion of the previous message. If one messages takes more time to process other messages has to wait.
+Message queue can process only one message at the time. What's more, if message queue contains multiple messages each message has to be processed before any other message can. Processing of every message depends on the completion of the previous message. If one message takes more time to process other messages has to wait.
 
 This principle is called [run-to-completion]. This has another implication called [zero delays]. Let's say you use `setTimeout` method and set the delay to 0. The idea is that the callback passed into this timeout should be executed immediately. The reality is that this might not happen.
 
@@ -121,7 +121,7 @@ Let's say you have a promise and also a `setTimeout`. The promise resolves immed
 
 The first function that will be executed will be the regular we put as the last one. As next will be executed any callback for the promise. The callback for the `setTimeout` will be executed as the last. It doesn't matter that the `setTimeout` method is placed above the promise in the code.
 
-What does matter is that the job queue has higher priority than message queue. As a result, when there is a race between promise and `setTimeout` it is the promise who will be the winner.
+What does matter is that the job queue has a higher priority than message queue. As a result, when there is a race between promise and `setTimeout` it is the promise who will be the winner.
 
 ```JavaScript
 // Create a function
