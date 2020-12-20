@@ -10,7 +10,7 @@ In JavaScript, there are few fundamental building blocks. These blocks are [memo
 
 The call stack is a mechanism JavaScript uses to keep track of functions that needs to be executed. Web APIs are APIs built into your web browser. These APIs allow you to use features you could not otherwise. Some example are fetch API, geolocation API, WebGL API, Web Workers API and so on.
 
-These APIs are not part of the JavaScript language itself. They are interfaces built on top of the core JavaScript language. This is also why they are available in all JavaScript environments. Another thing web APIs also handle are [async functions] and also `setTimeout` methods. Now, about the message queue and event loop.
+These APIs are not part of the JavaScript language itself. They are interfaces built on top of the core JavaScript language. This is also why they are not available in all JavaScript environments. Another thing web APIs also handle are async methods such as the `setTimeout` and also event. Now, about message queue and event loop.
 
 ## Message queue
 
@@ -98,6 +98,9 @@ As you know, message queue can process only one message at the time. Each messag
 
 This is how JavaScript handles async operations. This is how operations are passed between call stack, web APIs and message queue. Even though JavaScript itself is single-threaded it can do this because the web APIs run on separate threads. What has the JavaScript event loop to do with this?
 
+It is the JavaScript event loop what takes care of this cycle. It is the job of the JavaScript event loop to continuously check the call stack if it is empty or not. If it is empty, it will take the first message from the message queue and push it to the call stack.
+
+If the call stack is not empty, event loop will not let any message from the queue in. Instead, it will let the call stack process call inside it. Each of these cycles, or iterations, of the event loop is called "tick".
 
 ## A note about promises and async functions
 
@@ -154,6 +157,7 @@ Understanding how the JavaScript event loop helps you understand how JavaScript 
 [async functions]: https://blog.alexdevero.com/javascript-async-await/#async-functions
 [run-to-completion]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Run-to-completion
 [zero delays]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Zero_delays
+[promises]: https://blog.alexdevero.com/javascript-promises/
 
 <!--
 ### Meta:
@@ -162,7 +166,8 @@ Understanding how the JavaScript event loop helps you understand how JavaScript 
 
 <!--
 ### Keywords:
--
+- JavaScript Event Loop
+- Event Loop
 -->
 
 <!--
