@@ -98,7 +98,47 @@ As you know, message queue can process only one message at the time. Each messag
 
 This is how JavaScript handles async operations. This is how operations are passed between call stack, web APIs and message queue. Even though JavaScript itself is single-threaded it can do this because the web APIs run on separate threads. What has the JavaScript event loop to do with this?
 
-It is the JavaScript event loop what takes care of this cycle. It is the job of the JavaScript event loop to continuously check the call stack if it is empty or not. If it is empty, it will take the first message from the message queue and push it to the call stack. Otherwise, it will let the call stack process call inside it.
+
+## A note about promises and async functions
+
+Async methods such as `setTimeout` and events are handled by web APIs and message queue. This doesn't apply to [async functions] and [promises]. Async functions and promises are handled by a different queue. This queue is called the job queue. Another name for this queue is microtask queue.
+
+So, when you use promise, or async function, and `setTimeout` they will be handled differently. First, promises and async functions will be handled by the job queue. The `setTimeout` will be handled by the message queue. Second, job queue has a higher priority than message queue. This has one important implication.
+
+Let's say you have a promise and also a `setTimeout`. The promise resolves immediately and that `setTimeout` has delay set to 0. So, it should also execute +/- immediately. To make this more interesting, let's also add another regular function. This function will be at the end. What will be the result of this?
+
+The first function that will be executed will be the regular we put as the last one. As next will be executed any callback for the promise. The callback for the `setTimeout` will be executed as the last. It doesn't matter that the `setTimeout` method is placed above the promise in the code.
+
+What does matter is that the job queue has higher priority than message queue. As a result, when there is a race between promise and `setTimeout` it is the promise who will be the winner.
+
+```JavaScript
+// Create a function
+function myFuncOne() {
+  console.log('myFuncOne in setTimeout.')
+}
+
+// Create another function
+function myFuncTwo() {
+  console.log('myFuncTwo after the promise.')
+}
+
+// Delay the myFuncOne() by 0 seconds
+setTimeout(myFuncOne, 0)
+
+// Create a promise and resolve it immediately
+new Promise((resolve, reject) => {
+  resolve('Message from a promise')
+})
+  .then(res => console.log(res))
+
+// Call the myFuncTwo()
+myFuncTwo()
+
+// Output:
+// 'myFuncTwo after the promise.'
+// 'Message from a promise'
+// 'myFuncOne in setTimeout.'
+```
 
 ## Conclusion: The JavaScript event loop explained
 
