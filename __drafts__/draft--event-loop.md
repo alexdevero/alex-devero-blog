@@ -79,6 +79,11 @@ setTimeout(function cb() {
 //            //
 ```
 
+## Call stack, message queue and priorities
+
+In JavaScript, both call stack and message queue have different priorities. The priority of call stack is higher than the priority of message queue. As a result, the message queue has to wait until the call stack is empty before it can push anything from the queue to the call stack.
+
+Only when the call stack is empty the message queue can push in the first message, or callback. When this situation happens? The call stack will get empty when all function calls inside it, and call stacks of these calls, are executed. When this is happens, the call stack will be empty and available for message queue.
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
