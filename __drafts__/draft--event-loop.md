@@ -21,6 +21,64 @@ These messages are stored in message queue until the call stack is empty. When t
 
 There is one important thing about message queue. The call stack follows the LIFO principle. This means that first function pushed to the call stack will be processed as the last one. Message queue doesn't follow this principle. In case of message queue, it is the first message, or callback, that will be processed as the first.
 
+### A simple example of how message queue works
+
+Let's demonstrate this on the `setTimeout` method. When you use the `setTimeout` method JavaScript will send it to the call stack that will execute it. Executing it will create new timer. This timer will be send to appropriate web API. This API will then start the countdown.
+
+When the countdown reaches zero, API will send the callback for the `setTimeout` method to the message queue. The callback will wait in the message queue until the call stack is empty. When the call stack is empty, JavaScript will take the callback in the message queue and push it to the call stack, which will then execute it.
+
+```JavaScript
+// Use setTimeout method to delay
+// execution of some function
+setTimeout(function cb() {
+  console.log('Hello.')
+}, 500)
+
+// Step 1:
+// Add to call stack: setTimeout(function cb() { console.log('Hello.') }, 500)
+
+// Call stack                                         //
+// setTimeout(function cb() { console.log('Hello.') } //
+//                                                    //
+
+// Step 2:
+// Send cb() to web API
+// and remove setTimeout from call stack
+// and create timer: 500
+
+// Call stack //
+//            //
+//            //
+
+// web API     //
+// timer, cb() //
+//             //
+
+// Step 3:
+// When timer is up, send cb() to message queue
+// and remove it from web API
+
+// web API     //
+//             //
+//             //
+
+// message queue //
+// cb()          //
+//               //
+
+// Step 4:
+// When call stack is empty, send cb() to call stack
+// and remove it from message queue
+
+// message queue //
+//               //
+//               //
+
+// Call stack //
+// cb()       //
+//            //
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
