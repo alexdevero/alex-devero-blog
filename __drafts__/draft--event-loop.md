@@ -90,7 +90,7 @@ Only when the call stack is empty the message queue can push in the first messag
 
 Message queue can process only one message at the time. What's more, if message queue contains multiple messages each message has to be processed before any other message can. Processing of every message depends on the completion of the previous message. If one messages takes more time to process other messages has to wait.
 
-This principle is called "run-to-completion". This has another implication called zero delays. Let's say you use `setTimeout` method and set the delay to 0. The idea is that the callback passed into this timeout should be executed immediately. The reality is that this might not happen.
+This principle is called [run-to-completion]. This has another implication called [zero delays]. Let's say you use `setTimeout` method and set the delay to 0. The idea is that the callback passed into this timeout should be executed immediately. The reality is that this might not happen.
 
 As you know, message queue can process only one message at the time. Each message has to be completed before the queue can process another one. So, if you use `setTimeout` with delay set to 0 its callback will be executed immediately only if it is the first message in the message queue. Otherwise, it will have to wait.
 
