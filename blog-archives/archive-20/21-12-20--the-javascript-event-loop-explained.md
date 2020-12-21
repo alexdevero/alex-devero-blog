@@ -29,7 +29,7 @@ When any of these async functions gets executed, or events happen, JavaScript wi
 
 These messages are stored in message queue until the call stack is empty. When the call stack gets empty the first message in the queue, callback, will be pushed to the call stack. Call stack will execute that callback, and the code it contains.
 
-There is one important thing about message queue. The call stack follows the LIFO principle. This means that first function pushed to the call stack will be processed as the last one. Message queue doesn't follow this principle. In case of message queue, it is the first message, or callback, that will be processed as the first.
+There is one important thing about message queue. The call stack follows the LIFO principle. This means that last function pushed to the call stack will be processed as the first one. Message queue doesn't follow this principle. In case of message queue, it is the first message, or callback, that will be processed as the first.
 
 ### A simple example of how message queue works
 
