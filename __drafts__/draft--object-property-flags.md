@@ -127,6 +127,28 @@ console.log(myObj)
 // { name: 'Peter' }
 ```
 
+Note: When you set the `configurable` flag to `false` you will prevent changes of property flags and deletion of the property itself. However, you will not prevent changing the value of that property. To do this you have to use the `writable` flag.
+
+```JavaScript
+// Create an object.
+let myObj = {
+  name: 'Joe',
+}
+
+// Set "name" property to non-configurable.
+Object.defineProperty(myObj, 'name', {
+  configurable: false
+})
+
+// Try to change the value of property "age".
+myObj.name = 'Timothy'
+
+// Log the value of myObj.
+console.log(myObj)
+// Output:
+// { name: 'Timothy' }
+```
+
 ## The Object.defineProperty() method
 
 On the examples above, you could see that we worked with `Object.defineProperty()` method. This method allows you do two things. First, it allows you to change any flag of an existing property. You can also use it to change or all flags. This is how we used this method in previous examples.
