@@ -197,6 +197,86 @@ console.log(myObj)
 // { name: 'Baron' }
 ```
 
+## The Object.defineProperties() method
+
+The `Object.defineProperty()` method is handy when you want to create one or few properties. However, it can be annoying to use it define or configure multiple properties. In that case, you may want to try an alternative, the `Object.defineProperties()` method. When you want to use this method you need two things.
+
+The first thing is the object you are working with. This will be the first argument you pass into that method. The second thing, and second argument, is an object. This object will contain one key-value pair for every property you want to create. The `key` in every pair will be the name of the property.
+
+The value in every pair will be another object. This object will be the property descriptor object. Here, you can configure all three Object property flags and value for each property you want to create. Remember that every flag you skip will be set to `false` by default.
+
+```JavaScript
+// Create an empty object.
+const myObj = {}
+
+// Add multiple properties.
+Object.defineProperties(myObj, {
+  firstName: {
+    value: 'Jack',
+    enumerable: true,
+    // 'writable' will be false, by default
+    // 'configurable' will be false by default
+  },
+  lastName: {
+    value: 'Stone',
+    enumerable: true,
+    // 'writable' will be false by default
+    // 'configurable' will be false by default
+  },
+  email: {
+    value: 'jack@stone.com',
+    enumerable: true,
+    // 'writable' will be false by default
+    // 'configurable' will be false by default
+  },
+  password: {
+    value: 'Some hard-to-guess secret phrase.'
+    // 'enumerable' will be true by default
+    // 'writable' will be false by default
+    // 'configurable' will be false by default
+  }
+})
+
+// Log all descriptors "myObj"
+console.log(Object.getOwnPropertyDescriptors(myObj))
+// Output:
+// {
+//   firstName: {
+//     value: 'Jack',
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   lastName: {
+//     value: 'Stone',
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   email: {
+//     value: 'jack@stone.com',
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   password: {
+//     value: 'Some hard-to-guess secret phrase.',
+//     writable: false,
+//     enumerable: false,
+//     configurable: false
+//   }
+// }
+
+// Log the myObj
+console.log(myObj)
+// Output:
+// {
+//   firstName: 'Jack',
+//   lastName: 'Stone',
+//   email: 'jack@stone.com'
+// }
+```
+
 ## Property descriptor
 
 So far, we talked about descriptors a couple of times. However, we didn't talk about what it is. Or, did we? Actually, you just saw it on the previous example with the `Object.defineProperty()` method. Property descriptor is the "formal" name of the third parameter of this method, and the third argument you pass into it.
