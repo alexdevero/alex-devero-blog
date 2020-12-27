@@ -217,6 +217,58 @@ Object.defineProperty(myObj, 'age', {
 })
 ```
 
+## Properties, flags and default values
+
+Creating object properties directly and with the `Object.defineProperty()` method may look the same. However, there is one important difference, a difference worth remembering. When you create properties directly default values for all three flags will be set to `true`.
+
+This is not the case with the `Object.defineProperty()` method. This method sets default values for all three flags to `false`. This is also why you set the `enumerable` flag of `name` property to `true`. Otherwise, you would never see it in console. So, keep this in mind when you decide about how will you create an object property.
+
+```JavaScript
+// Example no.1: creating property directly
+const myObj = {
+  subject: 'Programming'
+}
+
+// Log all Object property flags of "subject" property.
+console.log(Object.getOwnPropertyDescriptor(myObj, 'subject'))
+// Output:
+// {
+//   value: 'Programming',
+//   writable: true,
+//   enumerable: true,
+//   configurable: true
+// }
+
+// Log the value of myObj.
+console.log(myObj)
+// Output:
+// { subject: 'Programming' }
+
+
+// Example no.2: creating property with Object.defineProperty()
+const myObj = {}
+
+Object.defineProperty(myObj, 'subject', {
+  // Define only value and let flags keep default values.
+  value: 'Programming'
+})
+
+// Log all Object property flags of "subject" property.
+console.log(Object.getOwnPropertyDescriptor(myObj, 'subject'))
+// Output:
+// {
+//   value: 'Programming',
+//   writable: false,
+//   enumerable: false,
+//   configurable: false
+// }
+
+// Log the value of myObj.
+// NOTE: "subject" property is non-enumerable - it will not show up.
+console.log(myObj)
+// Output:
+// {}
+```
 
 ## Conclusion: [...] ...
 
