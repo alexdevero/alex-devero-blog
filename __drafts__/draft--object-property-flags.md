@@ -463,7 +463,11 @@ Objects can be very useful when you need to store data. When you utilize Object 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[JavaScript object]: https://blog.alexdevero.com/javascript-objects-pt1/
+[boolean]: https://blog.alexdevero.com/javascript-basics-data-types-pt2/#boolean-logical-type
+[for...in]: https://blog.alexdevero.com/javascript-loops/#for8230in-loop
+[Reflect.ownKeys()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys
+[Object.keys()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
 <!--
 ### Meta:
