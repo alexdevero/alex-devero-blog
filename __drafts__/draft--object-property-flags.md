@@ -23,33 +23,34 @@ These flags are `writable`, `enumerable` and `configurable`. All these flags hav
 The `writable` flag tells if a specific object property can be changed. It this flag is `true` anyone can change that property. If it is `false` the property will become read-only and nobody can change it.
 
 ```JavaScript
+// Create new object.
 let myObj = {
   name: 'Jack',
   age: 31
 }
 
-// Set "name" property to non-writable
+// Set "name" property to non-writable.
 Object.defineProperty(myObj, 'name', {
   writable: false
 })
 
-// Set "age" property to writable
+// Set "age" property to writable.
 Object.defineProperty(myObj, 'age', {
   writable: true
 })
 
-// Try to change the value of "name" property
+// Try to change the value of "name" property.
 myObj.name = 'Tony'
 
-// Try to change the value of "age" property
+// Try to change the value of "age" property.
 myObj.age = '44'
 
-// Log the value of "name" property
+// Log the value of "name" property.
 console.log(myObj.name)
 // Output:
 // 'Jack'
 
-// Log the value of "age" property
+// Log the value of "age" property.
 console.log(myObj.age)
 // Output:
 // '44'
@@ -64,30 +65,30 @@ When you set this flag to `false` for a specific property that property will no 
 The `enumerable` flag has one exception. Even if you set it to `false` the [Reflect.ownKeys()] method will still be able to reveal it.
 
 ```JavaScript
-// Create an object
+// Create an object.
 let myObj = {
   name: 'Victra',
   age: 28
 }
 
-// Set "name" property to non-enumerable
+// Set "name" property to non-enumerable.
 Object.defineProperty(myObj, 'name', {
   enumerable: false
 })
 
-// Set "age" property to enumerable
+// Set "age" property to enumerable.
 Object.defineProperty(myObj, 'age', {
   enumerable: true
 })
 
 // Try to get all properties from myObj
-// using Object.keys() method
+// using Object.keys() method.
 console.log(Object.keys(myObj))
 // Output:
 // [ 'age' ]
 
 // Try to get all properties from myObj
-// using Reflect.ownKeys() method
+// using Reflect.ownKeys() method.
 console.log(Reflect.ownKeys(myObj))
 // Output:
 // [ 'name', 'age' ]
@@ -98,29 +99,29 @@ console.log(Reflect.ownKeys(myObj))
 The last flag, `configurable` specifies if you can delete concrete property or not. It also says if you can change any of its attributes, any of its property flags. Setting this flag to `false` will make a property prevent anyone from deleting and modifying it. Setting it to `true` will allow both.
 
 ```JavaScript
-// Create an object
+// Create an object.
 let myObj = {
   name: 'Peter',
   age: 44
 }
 
-// Set "name" property to non-configurable
+// Set "name" property to non-configurable.
 Object.defineProperty(myObj, 'name', {
   configurable: false
 })
 
-// Set "age" property to configurable
+// Set "age" property to configurable.
 Object.defineProperty(myObj, 'age', {
   configurable: true
 })
 
-// Try to remove property "name" from myObj
+// Try to remove property "name" from myObj.
 delete myObj.name
 
-// Try to remove property "age" from myObj
+// Try to remove property "age" from myObj.
 delete myObj.age
 
-// Log the myObj
+// Log the value of myObj.
 console.log(myObj)
 // Output:
 // { name: 'Peter' }
@@ -140,7 +141,7 @@ You pass this object as the third argument. This object contains the flags you w
 
 ```JavaScript
 // Example no.1: creating property
-// Create empty object
+// Create empty object.
 let myObj = {}
 
 // Create property "name" on myObj
@@ -152,24 +153,24 @@ Object.defineProperty(myObj, 'name', {
   enumerable: true, // Make sure property is visible.
 })
 
-// Log the value of myObj
+// Log the value of myObj.
 console.log(myObj)
 // Output:
 // { name: 'Jackie' }
 
-// Add additional property with value of undefined
+// Add additional property with value of undefined.
 Object.defineProperty(myObj, 'age', {
   enumerable: true, // Make sure property is visible.
 })
 
-// Log the value of myObj
+// Log the value of myObj.
 console.log(myObj)
 // Output:
 // { name: 'Jackie', age: undefined }
 
 
 // Example no.1: configuring property
-// Create empty object
+// Create empty object.
 let myObj = {
   name: 'Baron'
 }
@@ -180,15 +181,17 @@ let myObj = {
 // Third argument is the object with flags and property value.
 Object.defineProperty(myObj, 'name', {
   enumerable: true, // Make sure property is visible.
-  writable: false // Make sure the property is read-only
+  writable: false // Make sure the property is read-only.
 })
 
+// Log the value of myObj.
 console.log(myObj)
 // Output:
 // { name: 'Baron' }
 
 myObj.name = 'Alexander'
 
+// Log the value of myObj.
 console.log(myObj)
 // Output:
 // { name: 'Baron' }
@@ -205,7 +208,7 @@ In other words, property descriptor is that object with Object property flags an
 // Create empty object
 let myObj = {}
 
-// Create property "age" on myObj
+// Create property "age" on myObj.
 Object.defineProperty(myObj, 'age', {
   /* Property descriptor (object) */
   enumerable: true,
