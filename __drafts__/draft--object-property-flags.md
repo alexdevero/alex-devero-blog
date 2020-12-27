@@ -194,6 +194,26 @@ console.log(myObj)
 // { name: 'Baron' }
 ```
 
+## Property descriptor
+
+So far, we talked about descriptors a couple of times. However, we didn't talk about what it is. Or, did we? Actually, you just saw it on the previous example with the `Object.defineProperty()` method. Property descriptor is the "formal" name of the third parameter of this method, and the third argument you pass into it.
+
+In other words, property descriptor is that object with Object property flags and value. In some way, you can think of the descriptor as the sum of all flags of a property.
+
+```JavaScript
+// Example no.1: configuring property
+// Create empty object
+let myObj = {}
+
+// Create property "age" on myObj
+Object.defineProperty(myObj, 'age', {
+  /* Property descriptor (object) */
+  enumerable: true,
+  writeable: true,
+  value: 19
+})
+```
+
 
 ## Conclusion: [...] ...
 
