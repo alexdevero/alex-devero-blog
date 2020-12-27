@@ -270,6 +270,44 @@ console.log(myObj)
 // {}
 ```
 
+## The Object.getOwnPropertyDescriptor() method
+
+There might be times when you will not know for sure about how some Object property flags are set. At these times the `Object.getOwnPropertyDescriptor()` method can be very useful. This method Takes two parameters. The first one is an object you are working with. The second is the property you are interested in.
+
+Based on this information, this method will return the property descriptor for the property you specified. It will show you all three flags and their values. It will also show the `value` attribute and its value.
+
+```JavaScript
+// Create an object with one property.
+const myObj = {
+  subject: 'Mathematics'
+}
+
+// Add second property.
+Object.defineProperty(myObj, 'grade', {
+  // Define only value and let flags keep default values
+  value: 'B+'
+})
+
+// Log the property descriptor of "subject" property.
+console.log(Object.getOwnPropertyDescriptor(myObj, 'subject'))
+// Output:
+// {
+//   value: 'Mathematics',
+//   writable: true,
+//   enumerable: true,
+//   configurable: true
+// }
+
+// Log the property descriptor of "grade" property.
+console.log(Object.getOwnPropertyDescriptor(myObj, 'grade'))
+// Output:
+// {
+//   value: 'B+',
+//   writable: false,
+//   enumerable: false,
+//   configurable: false
+// }
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
