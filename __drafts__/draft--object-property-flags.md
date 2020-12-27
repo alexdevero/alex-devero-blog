@@ -141,7 +141,7 @@ You pass this object as the third argument. This object contains the flags you w
 
 ```JavaScript
 // Example no.1: creating property
-// Create empty object.
+// Create an empty object.
 let myObj = {}
 
 // Create property "name" on myObj
@@ -170,7 +170,7 @@ console.log(myObj)
 
 
 // Example no.1: configuring property
-// Create empty object.
+// Create an empty object.
 let myObj = {
   name: 'Baron'
 }
@@ -285,7 +285,7 @@ In other words, property descriptor is that object with Object property flags an
 
 ```JavaScript
 // Example no.1: configuring property
-// Create empty object
+// Create an empty object
 let myObj = {}
 
 // Create property "age" on myObj.
