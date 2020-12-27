@@ -15,19 +15,20 @@ Table of Contents:
 ## The Object.getOwnPropertyDescriptor() method
 ### Getting descriptors of all properties
 descriptors
+## Conclusion: An overview of JavaScript Object property flags and descriptors
 -->
 
 ## Object property flags
 
 [JavaScript object] allow you to store data. These data are stored as properties and values in key-value pairs. This is the usual stuff you are likely to do quite often. What you may not know is that this is not everything you can do. Those object properties offer additional options.
 
-These additional options are very powerful and can change the way you work with properties. These additional options you can use to configure properties are called Object property flags and descriptors. Object property flags are attributes that each property in an object has.
+These options can be very powerful. They can change the way you work with object properties. These options, you can use to configure object properties, are called Object property flags and descriptors. Object property flags are attributes that each property in an object has.
 
 These flags are `writable`, `enumerable` and `configurable`. All these flags have [boolean] value. They can be either true or false. Nothing else. Let's take a look at each of them.
 
 ### Writable
 
-The `writable` flag tells if a specific object property can be changed. It this flag is `true` anyone can change that property. If it is `false` the property will become read-only and nobody can change it.
+The `writable` flag tells if you can change a specific object property. If this flag is set to `true` anyone can change that property and its value. If it is `false` the property will become read-only and nobody can change it.
 
 ```JavaScript
 // Create new object.
@@ -103,7 +104,7 @@ console.log(Reflect.ownKeys(myObj))
 
 ### Configurable
 
-The last flag, `configurable` specifies if you can delete concrete property or not. It also says if you can change any of its attributes, any of its property flags. Setting this flag to `false` will make a property prevent anyone from deleting and modifying it. Setting it to `true` will allow both.
+The last flag, `configurable` specifies if you can delete concrete property or not. It also says if you can change any of its attributes, any of its property flags. Setting this flag to `false` will prevent anyone from deleting and modifying the property. Setting it to `true` will allow both.
 
 ```JavaScript
 // Create an object.
@@ -134,7 +135,7 @@ console.log(myObj)
 // { name: 'Peter' }
 ```
 
-Note: When you set the `configurable` flag to `false` you will prevent changes of property flags and deletion of the property itself. However, you will not prevent changing the value of that property. To do this you have to use the `writable` flag.
+Note: When you set the `configurable` flag to `false` you will prevent changes of property flags. YOu will also prevent deletion of the property itself. However, you will not prevent changing the value of that property. To do this you have to use the `writable` flag.
 
 ```JavaScript
 // Create an object.
@@ -232,7 +233,7 @@ The `Object.defineProperty()` method is handy when you want to create one or few
 
 The first thing is the object you are working with. This will be the first argument you pass into that method. The second thing, and second argument, is an object. This object will contain one key-value pair for every property you want to create. The `key` in every pair will be the name of the property.
 
-The value in every pair will be another object. This object will be the property descriptor object. Here, you can configure all three Object property flags and value for each property you want to create. Remember that every flag you skip will be set to `false` by default.
+The value in every pair will be another object. This object will be the property descriptor object. Here, you can configure all three Object property flags, and also value for each property you want to create. Remember that every flag you skip will be set to `false` by default.
 
 ```JavaScript
 // Create an empty object.
@@ -308,7 +309,7 @@ console.log(myObj)
 
 ## Property descriptor
 
-So far, we talked about descriptors a couple of times. However, we didn't talk about what it is. Or, did we? Actually, you just saw it on the previous example with the `Object.defineProperty()` method. Property descriptor is the "formal" name of the third parameter of this method, and the third argument you pass into it.
+So far, we talked about descriptors a couple of times. However, we didn't talk about what it is. Or, did we? Actually, you saw it on the previous example with the `Object.defineProperty()` method. Property descriptor is the "formal" name of the third parameter of this method, and the third argument you pass into it.
 
 In other words, property descriptor is that object with Object property flags and value. In some way, you can think of the descriptor as the sum of all flags of a property.
 
@@ -420,9 +421,9 @@ console.log(Object.getOwnPropertyDescriptor(myObj, 'grade'))
 
 ### Getting descriptors of all properties
 
-Alternatively, you can also ask for property descriptors of all properties. You can do this with the `Object.getOwnPropertyDescriptors()` method. This method, unlike the `Object.getOwnPropertyDescriptor()`, takes one parameter, the object you are working with.
+Alternatively, you can also ask for property descriptors of all properties. You can do this with the `Object.getOwnPropertyDescriptors()` method. This method, takes one parameter, the object you are working with. When you use it, it will return an object.
 
-When you use it, it will an object. This object will contain all property descriptors of all properties that exists on the object you specified. If the object doesn't have any properties, the value returned by the `Object.getOwnPropertyDescriptors()` method be an empty object.
+This object will contain all property descriptors of all properties that exists on the object you specified. If the object doesn't have any properties, the value returned by the `Object.getOwnPropertyDescriptors()` method be an empty object.
 
 ```JavaScript
 // Create an object with one property.
@@ -455,7 +456,9 @@ console.log(Object.getOwnPropertyDescriptors(myObj))
 // }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: An overview of JavaScript Object property flags and descriptors
+
+Objects can be very useful when you need to store data. When you utilize Object property flags and descriptors they can help you do even more. I hope that this tutorial helped you understand what Object property flags and descriptors are and how they work. And, most importantly, how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
