@@ -55,6 +55,43 @@ console.log(myObj.age)
 // '44'
 ```
 
+### Enumerable
+
+The second property flag is `enumerable`. When you want to know what are all properties that exist in an object you can iterate over it. For example, you can use [for...in] loop to get each property, one by one. Or, you can use [Object.keys()] to get all properties. The `enumerable` flag helps you to prevent this from happening.
+
+When you set this flag to `false` for a specific property that property will no longer iterable. It will no longer be listed if you iterate over an object with loop. Setting this flag to `true` will do the opposite. The property will show up when you iterate over the object in a loop.
+
+The `enumerable` flag has one exception. Even if you set it to `false` the [Reflect.ownKeys()] method will still be able to reveal it.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Victra',
+  age: 28
+}
+
+// Set "name" property to non-enumerable
+Object.defineProperty(myObj, 'name', {
+  enumerable: false
+})
+
+// Set "age" property to enumerable
+Object.defineProperty(myObj, 'age', {
+  enumerable: true
+})
+
+// Try to get all properties from myObj
+// using Object.keys() method
+console.log(Object.keys(myObj))
+// Output:
+// [ 'age' ]
+
+// Try to get all properties from myObj
+// using Reflect.ownKeys() method
+console.log(Reflect.ownKeys(myObj))
+// Output:
+// [ 'name', 'age' ]
+```
 
 ### h3
 
