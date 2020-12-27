@@ -126,7 +126,74 @@ console.log(myObj)
 // { name: 'Peter' }
 ```
 
-## h2
+## The Object.defineProperty() method
+
+On the examples above, you could see that we worked with `Object.defineProperty()` method. This method allows you do two things. First, it allows you to change any flag of an existing property. You can also use it to change or all flags. This is how we used this method in previous examples.
+
+The second thing it allows is to do is to create a new property. During that, you also can also set any of the three flags we discussed. If you don't want to change any of the flags, you don't have to. You can use this method to create the property and let all flags keep their default values.
+
+When you want to use this method you have to do three things. First, you need to create some object. This object can be empty if you want to use the `Object.defineProperty()` method to create property. If you want to use it to configure existing property that property has to already exist on that object.
+
+When you have this object you pass it as the first argument to the `Object.defineProperty()` method. The second thing you need is the name of a property. This is the property you want to either create or configure. You pass this name as the second argument. The last thing is an object.
+
+You pass this object as the third argument. This object contains the flags you want to configure. If you want to create new property, you may also want to add fourth option `value`. This specifies the value that new property should have. If you omit this, JavaScript will assign the new property with value of `undefined`.
+
+```JavaScript
+// Example no.1: creating property
+// Create empty object
+let myObj = {}
+
+// Create property "name" on myObj
+// First argument is object you want to work with.
+// Second argument is the name of the property you want to create.
+// Third argument is the object with flags and property value.
+Object.defineProperty(myObj, 'name', {
+  value: 'Jackie', // Value for new property.
+  enumerable: true, // Make sure property is visible.
+})
+
+// Log the value of myObj
+console.log(myObj)
+// Output:
+// { name: 'Jackie' }
+
+// Add additional property with value of undefined
+Object.defineProperty(myObj, 'age', {
+  enumerable: true, // Make sure property is visible.
+})
+
+// Log the value of myObj
+console.log(myObj)
+// Output:
+// { name: 'Jackie', age: undefined }
+
+
+// Example no.1: configuring property
+// Create empty object
+let myObj = {
+  name: 'Baron'
+}
+
+// Create property "name" on "myObj"
+// First argument is object you want to work with.
+// Second argument is the name of the property you want to create.
+// Third argument is the object with flags and property value.
+Object.defineProperty(myObj, 'name', {
+  enumerable: true, // Make sure property is visible.
+  writable: false // Make sure the property is read-only
+})
+
+console.log(myObj)
+// Output:
+// { name: 'Baron' }
+
+myObj.name = 'Alexander'
+
+console.log(myObj)
+// Output:
+// { name: 'Baron' }
+```
+
 
 ## Conclusion: [...] ...
 
