@@ -60,7 +60,7 @@ console.log(myObj.age)
 
 The second property flag is `enumerable`. When you want to know what are all properties that exist in an object you can iterate over it. For example, you can use [for...in] loop to get each property, one by one. Or, you can use [Object.keys()] to get all properties. The `enumerable` flag helps you to prevent this from happening.
 
-When you set this flag to `false` for a specific property that property will no longer iterable. It will no longer be listed if you iterate over an object with loop. Setting this flag to `true` will do the opposite. The property will show up when you iterate over the object in a loop.
+When you set this flag to `false` for a specific property that property will no longer iterable. It will no longer be listed if you iterate over an object with loop. It will also be invisible for `console.log()`. Setting this flag to `true` will do the opposite. The property will show up when you iterate over the object in a loop.
 
 The `enumerable` flag has one exception. Even if you set it to `false` the [Reflect.ownKeys()] method will still be able to reveal it.
 
