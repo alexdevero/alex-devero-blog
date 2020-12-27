@@ -93,9 +93,38 @@ console.log(Reflect.ownKeys(myObj))
 // [ 'name', 'age' ]
 ```
 
-### h3
+### Configurable
 
-### h3
+The last flag, `configurable` specifies if you can delete concrete property or not. It also says if you can change any of its attributes, any of its property flags. Setting this flag to `false` will make a property prevent anyone from deleting and modifying it. Setting it to `true` will allow both.
+
+```JavaScript
+// Create an object
+let myObj = {
+  name: 'Peter',
+  age: 44
+}
+
+// Set "name" property to non-configurable
+Object.defineProperty(myObj, 'name', {
+  configurable: false
+})
+
+// Set "age" property to configurable
+Object.defineProperty(myObj, 'age', {
+  configurable: true
+})
+
+// Try to remove property "name" from myObj
+delete myObj.name
+
+// Try to remove property "age" from myObj
+delete myObj.age
+
+// Log the myObj
+console.log(myObj)
+// Output:
+// { name: 'Peter' }
+```
 
 ## h2
 
