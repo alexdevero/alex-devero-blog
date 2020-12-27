@@ -308,6 +308,44 @@ console.log(Object.getOwnPropertyDescriptor(myObj, 'grade'))
 //   configurable: false
 // }
 ```
+
+### Getting descriptors of all properties
+
+Alternatively, you can also ask for property descriptors of all properties. You can do this with the `Object.getOwnPropertyDescriptors()` method. This method, unlike the `Object.getOwnPropertyDescriptor()`, takes one parameter, the object you are working with.
+
+When you use it, it will an object. This object will contain all property descriptors of all properties that exists on the object you specified. If the object doesn't have any properties, the value returned by the `Object.getOwnPropertyDescriptors()` method be an empty object.
+
+```JavaScript
+// Create an object with one property.
+const myObj = {
+  subject: 'Mathematics'
+}
+
+// Add second property.
+Object.defineProperty(myObj, 'grade', {
+  // Define only value and let flags keep default values
+  value: 'B+'
+})
+
+// Log all Object property flags of all properties
+console.log(Object.getOwnPropertyDescriptors(myObj))
+// Output:
+// {
+//   subject: {
+//     value: 'Mathematics',
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   },
+//   grade: {
+//     value: 'B+',
+//     writable: false,
+//     enumerable: false,
+//     configurable: false
+//   }
+// }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
