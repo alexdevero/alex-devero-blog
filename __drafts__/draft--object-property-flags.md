@@ -66,7 +66,7 @@ console.log(myObj.age)
 
 ### Enumerable
 
-The second property flag is `enumerable`. When you want to know what are all properties that exist in an object you can iterate over it. For example, you can use [for...in] loop to get each property, one by one. Or, you can use [Object.keys()] to get all properties. The `enumerable` flag helps you to prevent this from happening.
+The second property flag is `enumerable`. When you want to know what are all properties that exist in an object you can iterate over it. For example, you can use [for...in] loop to get each property, one by one. Or, you can use [Object.keys()] to get all properties. The `enumerable` flag helps you prevent this from happening.
 
 When you set this flag to `false` for a specific property that property will no longer iterable. It will no longer be listed if you iterate over an object with loop. It will also be invisible for `console.log()`. Setting this flag to `true` will do the opposite. The property will show up when you iterate over the object in a loop.
 
@@ -135,7 +135,7 @@ console.log(myObj)
 // { name: 'Peter' }
 ```
 
-Note: When you set the `configurable` flag to `false` you will prevent changes of property flags. YOu will also prevent deletion of the property itself. However, you will not prevent changing the value of that property. To do this you have to use the `writable` flag.
+Note: When you set the `configurable` flag to `false` you will prevent changes of property flags. You will also prevent deletion of the property itself. However, you will not prevent changing the value of that property. To do this, you have to use the `writable` flag.
 
 ```JavaScript
 // Create an object.
@@ -229,7 +229,7 @@ console.log(myObj)
 
 ## The Object.defineProperties() method
 
-The `Object.defineProperty()` method is handy when you want to create one or few properties. However, it can be annoying to use it define or configure multiple properties. In that case, you may want to try an alternative, the `Object.defineProperties()` method. When you want to use this method you need two things.
+The `Object.defineProperty()` method is handy when you want to create one or few properties. However, it can be annoying to use it to define or configure multiple properties. In that case, you may want to try an alternative, the `Object.defineProperties()` method. When you want to use this method you need two things.
 
 The first thing is the object you are working with. This will be the first argument you pass into that method. The second thing, and second argument, is an object. This object will contain one key-value pair for every property you want to create. The `key` in every pair will be the name of the property.
 
@@ -311,7 +311,7 @@ console.log(myObj)
 
 So far, we talked about descriptors a couple of times. However, we didn't talk about what it is. Or, did we? Actually, you saw it on the previous example with the `Object.defineProperty()` method. Property descriptor is the "formal" name of the third parameter of this method, and the third argument you pass into it.
 
-In other words, property descriptor is that object with Object property flags and value. In some way, you can think of the descriptor as the sum of all flags of a property.
+Property descriptor is that object with Object property flags and value. In some way, you can think of the descriptor as the sum of all flags of a property.
 
 ```JavaScript
 // Example no.1: configuring property
@@ -458,7 +458,7 @@ console.log(Object.getOwnPropertyDescriptors(myObj))
 
 ## Conclusion: An overview of JavaScript Object property flags and descriptors
 
-Objects can be very useful when you need to store data. When you utilize Object property flags and descriptors they can help you do even more. I hope that this tutorial helped you understand what Object property flags and descriptors are and how they work. And, most importantly, how to use them.
+Objects can be very useful when you need to store data. When you use Object property flags and descriptors they can help you do even more. I hope that this tutorial helped you understand what Object property flags and descriptors are and how they work. And, most importantly, how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
