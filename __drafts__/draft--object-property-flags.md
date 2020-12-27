@@ -18,6 +18,43 @@ These additional options are very powerful and can change the way you work with 
 
 These flags are `writable`, `enumerable` and `configurable`. All these flags have [boolean] value. They can be either true or false. Nothing else. Let's take a look at each of them.
 
+### Writable
+
+The `writable` flag tells if a specific object property can be changed. It this flag is `true` anyone can change that property. If it is `false` the property will become read-only and nobody can change it.
+
+```JavaScript
+let myObj = {
+  name: 'Jack',
+  age: 31
+}
+
+// Set "name" property to non-writable
+Object.defineProperty(myObj, 'name', {
+  writable: false
+})
+
+// Set "age" property to writable
+Object.defineProperty(myObj, 'age', {
+  writable: true
+})
+
+// Try to change the value of "name" property
+myObj.name = 'Tony'
+
+// Try to change the value of "age" property
+myObj.age = '44'
+
+// Log the value of "name" property
+console.log(myObj.name)
+// Output:
+// 'Jack'
+
+// Log the value of "age" property
+console.log(myObj.age)
+// Output:
+// '44'
+```
+
 
 ### h3
 
