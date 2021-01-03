@@ -10,7 +10,7 @@ Table of Contents:
 -->
 
 
-## Object.keys() and accessing all keys
+## Access object keys with Object.keys() method
 
 When you want to access only object keys, the `Object.keys()` method will be the best tool. This method was introduced to JavaScript in ES6. The way this method works is simple. It takes an object you are interested in as argument. The value it returns are keys that exist inside that object.
 
@@ -58,7 +58,7 @@ console.log(Object.keys(emptyObj))
 // []
 ```
 
-## Object.values() and accessing all values
+## Access object values with Object.values() method
 
 An alternative of the previous method that will give you all values is `Object.values()` method. The way to use this method is the same as for the previous. You take some object and pass its name as the argument. The value you get will be also an array. This time, the array will contain all values inside the object you specified.
 
