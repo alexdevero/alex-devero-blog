@@ -113,44 +113,43 @@ To get all these pairs, or entries, you can again use the `forEach()` method or 
 ```JavaScript
 // Example no.1: object with keys
 // Create an object
-const cat = {
-  name: 'Tom',
+const dog = {
+  name: 'Spike',
   color: 'gray',
-  age: 3,
+  age: 5,
   gender: 'male',
 }
 
 // Get all entries
-const objEntries = Object.entries(cat)
+const objEntries = Object.entries(dog)
 
 // Log all entries
 console.log(objEntries)
 // Output:
 // [
-//   [ 'name', 'Tom' ],
+//   [ 'name', 'Spike' ],
 //   [ 'color', 'gray' ],
-//   [ 'age', 3 ],
+//   [ 'age', 5 ],
 //   [ 'gender', 'male' ]
 // ]
 
 // Log all entries individually
 objEntries.forEach(entry => console.log(entry))
 // Output:
-// [ 'name', 'Tom' ]
+// [ 'name', 'Spike' ]
 // [ 'color', 'gray' ]
-// [ 'age', 3 ]
-// [ 'gender', 'male' ]
+// [ 'age', 5 ]
 // [ 'gender', 'male' ]
 
 // Log specific entry
-console.log(objEntries[3])
+console.log(objEntries[2])
 // Output:
-// [ 'gender', 'male' ]
+// [ 'age', 5 ]
 
 // Log only key from a specific entry
-console.log(objEntries[3][1])
+console.log(objEntries[2][1])
 // Output:
-// 'male'
+// 5
 
 
 // Example no.2: empty object
