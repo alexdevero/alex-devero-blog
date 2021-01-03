@@ -9,6 +9,9 @@ Table of Contents:
 ## Conclusion: [...] ...
 -->
 
+## A quick introduction
+
+There are three things can access and retrieve from an object: keys, values and entries. Keys are the property names inside an object. Values are property values associated with property names. Entries are the (key-value) pairs of property names and their values. Let's take a look at how you can access and retrieve each.
 
 ## Access object keys with Object.keys() method
 
