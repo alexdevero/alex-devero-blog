@@ -58,7 +58,49 @@ console.log(Object.keys(emptyObj))
 // []
 ```
 
-### h3
+## Object.values() and accessing all values
+
+An alternative of the previous method that will give you all values is `Object.values()` method. The way to use this method is the same as for the previous. You take some object and pass its name as the argument. The value you get will be also an array. This time, the array will contain all values inside the object you specified.
+
+```JavaScript
+// Example no.1: object with values
+// Create an object
+const cat = {
+  name: 'Tom',
+  color: 'gray',
+  age: 3,
+  gender: 'male',
+}
+
+// Get all values
+const objValues = Object.values(cat)
+
+// Log all values
+console.log(objValues)
+// Output:
+// [ 'name', 'color', 'age', 'gender' ]
+
+// Log all values individually
+objValues.forEach(value => console.log(value))
+// Output:
+// 'Tom'
+// 'gray'
+// 3
+// 'male'
+
+// Log specific value
+console.log(objValues[3])
+// Output:
+// 'male'
+
+
+// Example no.2: empty object
+const emptyObj = {}
+
+console.log(Object.values(emptyObj))
+// Output:
+// []
+```
 
 ### h3
 
