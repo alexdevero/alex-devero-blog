@@ -65,15 +65,15 @@ An alternative of the previous method that will give you all values is `Object.v
 ```JavaScript
 // Example no.1: object with values
 // Create an object
-const cat = {
-  name: 'Tom',
-  color: 'gray',
-  age: 3,
+const mouse = {
+  name: 'Jerry',
+  color: 'brown',
+  age: 2,
   gender: 'male',
 }
 
 // Get all values
-const objValues = Object.values(cat)
+const objValues = Object.values(mouse)
 
 // Log all values
 console.log(objValues)
@@ -83,15 +83,15 @@ console.log(objValues)
 // Log all values individually
 objValues.forEach(value => console.log(value))
 // Output:
-// 'Tom'
-// 'gray'
-// 3
+// 'Jerry'
+// 'brown'
+// 2
 // 'male'
 
 // Log specific value
-console.log(objValues[3])
+console.log(objValues[0])
 // Output:
-// 'male'
+// 'Jerry'
 
 
 // Example no.2: empty object
