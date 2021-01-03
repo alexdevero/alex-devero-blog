@@ -1,5 +1,6 @@
-Object are very good for storing data as key-value pairs. Having those keys and values stored is one thing. Another is to know how to retrieve them so you can work with them. In this article, you will learn four different ways to do this, to access object keys, values and entries JavaScript.
-<!--more-->
+# How to Access Object Keys, Values and Entries in JavaScript
+
+Object are very good for storing data as key-value pairs. Having those keys and values stored is one thing. Another is to know how to retrieve them so you can work with them. In this article, you will learn four different ways to do this, to access object keys, values and entries JavaScript.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -415,19 +416,19 @@ for (const key in cuckoo) {
   console.log(`
     key: ${key}
     value: ${cuckoo[key]}
-    entry: ${key}: ${cuckoo[key]}
+    entry: { ${key}: ${cuckoo[key]} }
   `)
 }
 // Output:
 // '
 //   key: name
 //   value: Cuckoo
-//   entry: name: Cuckoo
+//   entry: { name: Cuckoo }
 // '
 // '
 //   key: color
 //   value: yellow
-//   entry: color: yellow
+//   entry: { color: yellow }
 // '
 // '
 //   key: age
@@ -437,7 +438,7 @@ for (const key in cuckoo) {
 // '
 //   key: gender
 //   value: male
-//   entry: gender: male
+//   entry: { gender: male }
 // '
 ```
 
