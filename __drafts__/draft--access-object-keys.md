@@ -385,7 +385,7 @@ for (const entry of myObjEntries) {
 
 The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be actually more useful in some cases because than any of the three methods.
 
-The reason is that `for...in` loop can be more flexible. When you use it it allows you to work with both, keys and also values. Those three methods each work with only one type of data. Well, the `Object.entries()` method also works with both. However, it is not really friendly way. Who wants to deal with nested arrays?
+The reason is that `for...in` loop can be more flexible. When you use it it allows you to work with both, keys and also values. Those three methods each work with only one type of data. The `Object.entries()` method also works with both. However, it is not very friendly, although the `for...of` or `forEach()` makes it better.
 
 Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. THe second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign specific object key to this variable on each iteration.
 
