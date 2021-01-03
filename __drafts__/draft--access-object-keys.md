@@ -441,7 +441,10 @@ for (const key in cuckoo) {
 
 <!-- ### Links -->
 [array]: https://developer.mozilla.org/en-US/docs/Glossary/array
-[for...in]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+[forEach()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+[destructuring assignment]: https://blog.alexdevero.com/destructuring-assignment-javascript/#destructuring-arrays
+[for...of]: https://blog.alexdevero.com/javascript-loops/#for8230of-loop
+[for...in]: https://blog.alexdevero.com/javascript-loops/#for8230in-loop
 
 <!--
 ### Meta:
