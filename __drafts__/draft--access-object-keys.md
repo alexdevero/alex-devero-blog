@@ -219,7 +219,8 @@ for (const key in cuckoo) {
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[array]: https://developer.mozilla.org/en-US/docs/Glossary/array
+[for...in]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
 <!--
 ### Meta:
