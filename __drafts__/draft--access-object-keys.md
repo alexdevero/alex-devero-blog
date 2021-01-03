@@ -248,6 +248,125 @@ myObjEntries.forEach(([key, value]) => {
 // '
 ```
 
+### Combining Object.entries() with for...of loop
+
+Another option is to combining the `Object.entries()` with [for...of] loop. The `for...of` loop gives you basically the same options as the `forEach()`. Only the syntax is different. Similarly to `forEach()` method, you can also use destructuring assignment to access keys and values directly.
+
+In this case, you can use destructuring also in two ways. The first is inside the loop on the variable that contains current entry. Or, you can use it directly on the loop variable and destruct that. Without destructuring, you can use combination of the loop variable and array index.
+
+```JavaScript
+// Example of Object.entries() and for...of loop
+// Create an object
+const woman = {
+  name: 'Joan',
+  color: 'white',
+  age: 30,
+  gender: 'female',
+}
+
+// Get all entries
+const myObjEntries = Object.entries(woman)
+
+// Use for...of loop to iterate over woman object
+for (const entry of myObjEntries) {
+  // Use destructuring assignment
+  // to get direct access to keys and values
+  const [key, value] = entry
+
+  // Log each key, value and entry
+  console.log(`
+    key: ${key}
+    value: ${value}
+    entry: { ${key}: ${value} }
+  `)
+}
+// Output:
+// '
+//   key: name
+//   value: Joan
+//   entry: { name: Joan }
+// '
+// '
+//   key: color
+//   value: white
+//   entry: { color: white }
+// '
+// '
+//   key: age
+//   value: 30
+//   entry: { age: 30 }
+// '
+// '
+//   key: gender
+//   value: female
+//   entry: { gender: female }
+// '
+
+
+// Example no.2: destructuring assignment with loop variable
+for (const [key, value] of myObjEntries) {
+  // Log each key, value and entry
+  console.log(`
+    key: ${key}
+    value: ${value}
+    entry: { ${key}: ${value} }
+  `)
+}
+// Output:
+// '
+//   key: name
+//   value: Joan
+//   entry: { name: Joan }
+// '
+// '
+//   key: color
+//   value: white
+//   entry: { color: white }
+// '
+// '
+//   key: age
+//   value: 30
+//   entry: { age: 30 }
+// '
+// '
+//   key: gender
+//   value: female
+//   entry: { gender: female }
+// '
+
+
+// Example no.3: without destructuring:
+for (const entry of myObjEntries) {
+  // Log each key, value and entry
+  console.log(`
+    key: ${entry[0]}
+    value: ${entry[1]}
+    entry: { ${entry[0]}: ${entry[1]} }
+  `)
+}
+// Output:
+// '
+//   key: name
+//   value: Joan
+//   entry: { name: Joan }
+// '
+// '
+//   key: color
+//   value: white
+//   entry: { color: white }
+// '
+// '
+//   key: age
+//   value: 30
+//   entry: { age: 30 }
+// '
+// '
+//   key: gender
+//   value: female
+//   entry: { gender: female }
+// '
+```
+
 ## Alternative: for...in loop
 
 The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be actually more useful in some cases because than any of the three methods.
