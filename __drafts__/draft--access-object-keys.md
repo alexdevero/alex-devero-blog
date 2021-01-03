@@ -442,7 +442,9 @@ for (const key in cuckoo) {
 // '
 ```
 
-## Conclusion: [...] ...
+## Conclusion: How to access object keys, values and entries in JavaScript
+
+Working with object keys, values and entries becomes easier when you know what tool will help you do the job. I hope that this tutorial helped you understand what method, or loop, you should use and when to get the result you want.
 
 [xyz-ihs snippet="thank-you-message"]
 
