@@ -2,11 +2,14 @@ Object are very good for storing data as key-value pairs. Having those keys and 
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
+## A quick introduction
+## Access object keys with Object.keys() method
+## Access object values with Object.values() method
+## Get all entries with Object.entries() method
+### Combining Object.entries() with forEach() method
+### Combining Object.entries() with for...of loop
+## Alternative: for...in loop
+## Conclusion: How to access object keys, values and entries in JavaScript
 -->
 
 ## A quick introduction
