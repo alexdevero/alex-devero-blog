@@ -1,6 +1,6 @@
 # How to Access Object Keys, Values and Entries in JavaScript
 
-Object are very good for storing data as key-value pairs. Having those keys and values stored is one thing. Another is to know how to retrieve them so you can work with them. In this article, you will learn four different ways to do this, to access object keys, values and entries JavaScript.<!--more-->
+Object are useful for storing data in the form of key-value pairs. Having those keys and values stored is one thing. Another is to know how to retrieve them so you can work with them. In this article, you will learn four different ways to do this, to access object keys, values and entries JavaScript.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -113,7 +113,7 @@ console.log(Object.values(emptyObj))
 
 When you want to retrieve both, keys and values, the best fit will be `Object.entries()` method. This method, works like her two predecessors. It takes an object as an argument and returns an array. What will be difference in this case is the value you will get. It will be also an array.
 
-However, this array will contain both, keys and values. These keys and values will be grouped together inside additional arrays. There will be one nested array for each group, or pai, of keys and values. The order of data inside these nested arrays will be always the same. The key will come as first and the value as second.
+However, this array will contain both, keys and values. These keys and values will be grouped together inside additional nested arrays. There will be one nested array for each group, or pai, of keys and values. The order of data inside these nested arrays will be always the same. The key will come as first and the value as second.
 
 To get all these pairs, or entries, you can again use the `forEach()` method or `for` loop. To get one specific pair, or entry, you can use a specific index. If you want to get a concrete data from specific pair? Add one additional index, `0` for key or `1` for value.
 
@@ -273,7 +273,7 @@ myObjEntries.forEach((entry) => {
 
 Another option is to combining the `Object.entries()` with [for...of] loop. The `for...of` loop gives you basically the same options as the `forEach()`. Only the syntax is different. Similarly to `forEach()` method, you can also use destructuring assignment to access keys and values directly.
 
-In this case, you can use destructuring also in two ways. The first is inside the loop on the variable that contains current entry. Or, you can use it directly on the loop variable and destruct that. Without destructuring, you again use a combination of the loop variable and array index.
+In this case, you can use destructuring also in two ways. The first is inside the loop on the variable that contains current entry. Or, you can use it directly on the loop variable and destruct that. Without destructuring, you can use a combination of the loop variable and array index.
 
 ```JavaScript
 // Example of Object.entries() and for...of loop
@@ -390,13 +390,13 @@ for (const entry of myObjEntries) {
 
 ## Alternative: for...in loop
 
-The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be actually more useful in some cases because than any of the three methods.
+The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be more useful in some cases than any of the three methods.
 
 The reason is that `for...in` loop can be more flexible. When you use it it allows you to work with both, keys and also values. Those three methods each work with only one type of data. The `Object.entries()` method also works with both. However, it is not very friendly, although the `for...of` or `forEach()` makes it better.
 
-Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. THe second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign specific object key to this variable on each iteration.
+Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. THe second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign current object key to this variable on each iteration.
 
-With this quick setup, and the variable, you can quickly access object keys. If you need to access object values you can just combine the object (name of the object variable) and the variable. If you need both, you can use the variable and also combine it with the object (name of the object variable).
+With this quick setup, and the variable, you can quickly access object keys. If you need to access object values you can combine the object (name of the object variable) and the variable. If you need both, you can use the variable and also combine it with the object (name of the object variable).
 
 ```JavaScript
 // Example of for...in loop
@@ -444,7 +444,7 @@ for (const key in cuckoo) {
 
 ## Conclusion: How to access object keys, values and entries in JavaScript
 
-Working with object keys, values and entries becomes easier when you know what tool will help you do the job. I hope that this tutorial helped you understand what method, or loop, you should use and when to get the result you want.
+Working with object keys, values and entries becomes easier when you know what tool will help you do the job. I hope that this tutorial helped you understand what method you should use and when to get the result you want.
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -462,7 +462,8 @@ Working with object keys, values and entries becomes easier when you know what t
 
 <!--
 ### Keywords:
--
+- Access Object Keys
+- Object Keys
 -->
 
 <!--
