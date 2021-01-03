@@ -36,6 +36,15 @@ console.log(objKeys)
 // Output:
 // [ 'name', 'color', 'age', 'gender' ]
 
+// Log all keys individually
+objKeys.forEach(key => console.log(key))
+// Output:
+// 'name'
+// 'color'
+// 'age'
+// 'gender'
+
+// Log specific key
 console.log(objKeys[3])
 // Output:
 // 'gender'
