@@ -266,7 +266,7 @@ myObjEntries.forEach((entry) => {
 
 Another option is to combining the `Object.entries()` with [for...of] loop. The `for...of` loop gives you basically the same options as the `forEach()`. Only the syntax is different. Similarly to `forEach()` method, you can also use destructuring assignment to access keys and values directly.
 
-In this case, you can use destructuring also in two ways. The first is inside the loop on the variable that contains current entry. Or, you can use it directly on the loop variable and destruct that. Without destructuring, you can use combination of the loop variable and array index.
+In this case, you can use destructuring also in two ways. The first is inside the loop on the variable that contains current entry. Or, you can use it directly on the loop variable and destruct that. Without destructuring, you again use a combination of the loop variable and array index.
 
 ```JavaScript
 // Example of Object.entries() and for...of loop
@@ -349,7 +349,7 @@ for (const [key, value] of myObjEntries) {
 // '
 
 
-// Example no.3: without destructuring:
+// Example no.3: without destructuring
 for (const entry of myObjEntries) {
   // Log each key, value and entry
   console.log(`
