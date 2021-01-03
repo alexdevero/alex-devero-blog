@@ -168,8 +168,10 @@ This function can take up to three parameters: current value, index of the curre
 
 This will allow you to directly access object keys or values. You can use the destructuring assignment inside the function of the forEach() method. Or, you can use it when you specify the parameter for current value. In both cases, you will be able to work with keys and values directly.
 
+If you don't want to use destructuring assignment you don't have to. Instead, you can use a combination of the `forEach()` method parameter and array index. This will allow you to access the key (index `0`) and value (index `1`) in each entry as well.
+
 ```JavaScript
-// Example of for...in loop
+// Example of Object.entries() and forEach() method
 // Create an object
 const man = {
   name: 'George',
@@ -181,6 +183,7 @@ const man = {
 // Get all entries
 const myObjEntries = Object.entries(man)
 
+// Use forEach() method to iterate over man object entries
 myObjEntries.forEach((entry) => {
   // Use destructuring assignment
   // to get direct access to keys and values
@@ -216,7 +219,7 @@ myObjEntries.forEach((entry) => {
 // '
 
 
-// Alternative: destructuring assignment with parameter
+// Example no.2: destructuring assignment with parameter
 myObjEntries.forEach(([key, value]) => {
   // Log each key, value and entry
   console.log(`
@@ -246,6 +249,17 @@ myObjEntries.forEach(([key, value]) => {
 //   value: male
 //   entry: { gender: male }
 // '
+
+
+// Example no.3: without destructuring
+myObjEntries.forEach((entry) => {
+  // Log each key, value and entry
+  console.log(`
+    key: ${entry[0]}
+    value: ${entry[1]}
+    entry: { ${entry[0]}: ${entry[1]} }
+  `)
+})
 ```
 
 ### Combining Object.entries() with for...of loop
