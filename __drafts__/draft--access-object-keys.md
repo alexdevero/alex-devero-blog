@@ -160,7 +160,59 @@ console.log(Object.entries(emptyObj))
 // []
 ```
 
-## h2
+## Alternative: for...in loop
+
+The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be actually more useful in some cases because than any of the three methods.
+
+The reason is that `for...in` loop can be more flexible. When you use it it allows you to work with both, keys and also values. Those three methods each work with only one type of data. Well, the `Object.entries()` method also works with both. However, it is not really friendly way. Who wants to deal with nested arrays?
+
+Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. THe second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign specific object key to this variable on each iteration.
+
+With this quick setup, and the variable, you can quickly access object keys. If you need to access object values you can just combine the object (name of the object variable) and the variable. If you need both, you can use the variable and also combine it with the object (name of the object variable).
+
+```JavaScript
+// Example of for...in loop
+// Create an object
+const cuckoo = {
+  name: 'Cuckoo',
+  color: 'yellow',
+  age: 1,
+  gender: 'male',
+}
+
+// Iterate over cuckoo object
+for (const key in cuckoo) {
+  // Log each key
+  // then each value
+  // and lastly each entry
+  console.log(`
+    key: ${key}
+    value: ${cuckoo[key]}
+    entry: ${key}: ${cuckoo[key]}
+  `)
+}
+// Output:
+// '
+//   key: name
+//   value: Cuckoo
+//   entry: name: Cuckoo
+// '
+// '
+//   key: color
+//   value: yellow
+//   entry: color: yellow
+// '
+// '
+//   key: age
+//   value: 1
+//   entry: age: 1
+// '
+// '
+//   key: gender
+//   value: male
+//   entry: gender: male
+// '
+```
 
 ## Conclusion: [...] ...
 
