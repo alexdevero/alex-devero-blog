@@ -160,6 +160,94 @@ console.log(Object.entries(emptyObj))
 // []
 ```
 
+### Combining Object.entries() with forEach() method
+
+Working with those nested arrays you get from `Object.entries()` can be painful. There is a way to make it more comfortable. What you can do is to combine the `Object.entries()` method either with `forEach()` method. The `forEach()` method allows you to specify function to execute for each item in an array.
+
+This function can take up to three parameters: current value, index of the current value and the source array. If you use the current parameter as it is, you will get current entry, key-value pair, during each iteration. Another thing you can do is to use [destructuring assignment].
+
+This will allow you to directly access object keys or values. You can use the destructuring assignment inside the function of the forEach() method. Or, you can use it when you specify the parameter for current value. In both cases, you will be able to work with keys and values directly.
+
+```JavaScript
+// Example of for...in loop
+// Create an object
+const man = {
+  name: 'George',
+  color: 'white',
+  age: 40,
+  gender: 'male',
+}
+
+// Get all entries
+const myObjEntries = Object.entries(man)
+
+myObjEntries.forEach((entry) => {
+  // Use destructuring assignment
+  // to get direct access to keys and values
+  const [key, value] = entry
+
+  // Log each key, value and entry
+  console.log(`
+    key: ${key}
+    value: ${value}
+    entry: { ${key}: ${value} }
+  `)
+})
+// Output:
+// '
+//   key: name
+//   value: George
+//   entry: { name: George }
+// '
+// '
+//   key: color
+//   value: white
+//   entry: { color: white }
+// '
+// '
+//   key: age
+//   value: 40
+//   entry: { age: 40 }
+// '
+// '
+//   key: gender
+//   value: male
+//   entry: { gender: male }
+// '
+
+
+// Alternative: destructuring assignment with parameter
+myObjEntries.forEach(([key, value]) => {
+  // Log each key, value and entry
+  console.log(`
+    key: ${key}
+    value: ${value}
+    entry: { ${key}: ${value} }
+  `)
+})
+// Output:
+// '
+//   key: name
+//   value: George
+//   entry: { name: George }
+// '
+// '
+//   key: color
+//   value: white
+//   entry: { color: white }
+// '
+// '
+//   key: age
+//   value: 40
+//   entry: { age: 40 }
+// '
+// '
+//   key: gender
+//   value: male
+//   entry: { gender: male }
+// '
+```
+
 ## Alternative: for...in loop
 
 The methods we just discussed are one way to access object keys or values, or entries. However, there is also another alternative. You can also access object keys and values, or entries, by using [for...in] loop. This alternative might be actually more useful in some cases because than any of the three methods.
