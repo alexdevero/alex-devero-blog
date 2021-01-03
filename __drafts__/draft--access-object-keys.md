@@ -102,7 +102,64 @@ console.log(Object.values(emptyObj))
 // []
 ```
 
-### h3
+## Get all entries with Object.entries() method
+
+When you want to retrieve both, keys and values, the best fit will be `Object.entries()` method. This method, works like her two predecessors. It takes an object as an argument and returns an array. What will be difference in this case is the value you will get. It will be also an array.
+
+However, this array will contain both, keys and values. These keys and values will be grouped together inside additional arrays. There will be one nested array for each group, or pai, of keys and values. The order of data inside these nested arrays will be always the same. The key will come as first and the value as second.
+
+To get all these pairs, or entries, you can again use the `forEach()` method or `for` loop. To get one specific pair, or entry, you can use a specific index. If you want to get a concrete data from specific pair? Add one additional index, `0` for key or `1` for value.
+
+```JavaScript
+// Example no.1: object with keys
+// Create an object
+const cat = {
+  name: 'Tom',
+  color: 'gray',
+  age: 3,
+  gender: 'male',
+}
+
+// Get all entries
+const objEntries = Object.entries(cat)
+
+// Log all entries
+console.log(objEntries)
+// Output:
+// [
+//   [ 'name', 'Tom' ],
+//   [ 'color', 'gray' ],
+//   [ 'age', 3 ],
+//   [ 'gender', 'male' ]
+// ]
+
+// Log all entries individually
+objEntries.forEach(entry => console.log(entry))
+// Output:
+// [ 'name', 'Tom' ]
+// [ 'color', 'gray' ]
+// [ 'age', 3 ]
+// [ 'gender', 'male' ]
+// [ 'gender', 'male' ]
+
+// Log specific entry
+console.log(objEntries[3])
+// Output:
+// [ 'gender', 'male' ]
+
+// Log only key from a specific entry
+console.log(objEntries[3][1])
+// Output:
+// 'male'
+
+
+// Example no.2: empty object
+const emptyObj = {}
+
+console.log(Object.entries(emptyObj))
+// Output:
+// []
+```
 
 ## h2
 
