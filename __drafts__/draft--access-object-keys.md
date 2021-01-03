@@ -1,4 +1,4 @@
-# Blog post title [...]
+Object are very good for storing data as key-value pairs. Having those keys and values stored is one thing. Another is to know how to retrieve them so you can work with them. In this article, you will learn four different ways to do this, to access object keys, values and entries JavaScript.
 <!--more-->
 <!--
 Table of Contents:
