@@ -12,7 +12,7 @@ Table of Contents:
 
 ## Access object keys with Object.keys() method
 
-When you want to access only object keys, the `Object.keys()` method will be the best tool. This method was introduced to JavaScript in ES6. The way this method works is simple. It takes an object you are interested in as argument. The value it returns are keys that exist inside that object.
+When you want to access object keys, the `Object.keys()` method will be the best tool. This method was introduced to JavaScript in ES6. The way this method works is simple. It takes an object you are interested in as argument. The value it returns are keys that exist inside that object.
 
 The value you get, the keys, are in the form of an [array]. You can then use a `forEach()` method or `for` loop to iterate over these values and retrieve them individually. You can also use index. This might be another option if you know the order in which the keys are defined in the object.
 
