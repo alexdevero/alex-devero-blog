@@ -113,7 +113,7 @@ console.log(Object.values(emptyObj))
 
 When you want to retrieve both, keys and values, the best fit will be `Object.entries()` method. This method, works like her two predecessors. It takes an object as an argument and returns an array. What will be difference in this case is the value you will get. It will be also an array.
 
-However, this array will contain both, keys and values. These keys and values will be grouped together inside additional nested arrays. There will be one nested array for each group, or pai, of keys and values. The order of data inside these nested arrays will be always the same. The key will come as first and the value as second.
+However, this array will contain both, keys and values. These keys and values will be grouped together inside additional nested arrays. There will be one nested array for each group, or pair, of keys and values. The order of data inside these nested arrays will be always the same. The key will come as first and the value as second.
 
 To get all these pairs, or entries, you can again use the `forEach()` method or `for` loop. To get one specific pair, or entry, you can use a specific index. If you want to get a concrete data from specific pair? Add one additional index, `0` for key or `1` for value.
 
@@ -394,7 +394,7 @@ The methods we just discussed are one way to access object keys or values, or en
 
 The reason is that `for...in` loop can be more flexible. When you use it it allows you to work with both, keys and also values. Those three methods each work with only one type of data. The `Object.entries()` method also works with both. However, it is not very friendly, although the `for...of` or `forEach()` makes it better.
 
-Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. THe second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign current object key to this variable on each iteration.
+Now, let's consider the `for...in` loop as an alternative. The first thing you need is some object, object you want to iterate over. The second thing you need is to specify one variable name. This is for the `for...in` loop. When executed, the loop will assign current object key to this variable on each iteration.
 
 With this quick setup, and the variable, you can quickly access object keys. If you need to access object values you can combine the object (name of the object variable) and the variable. If you need both, you can use the variable and also combine it with the object (name of the object variable).
 
