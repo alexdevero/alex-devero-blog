@@ -3,7 +3,7 @@
 Objects are one of the fundamental data types in JavaScript. As a JavaScript developer, you will find yourself working with them frequently. One thing that will be useful is knowing how to create them. In this tutorial you will learn how to create objects in JavaScript in six ways.<!--more-->
 <!--
 Table of Contents:
-## Introduction
+## Quick introduction
 ## No.1: Object literal
 ## No.2: The "new" keyword
 ## No.3: Object.create() method
@@ -14,8 +14,11 @@ Table of Contents:
 ## Conclusion: Six ways to create objects in JavaScript
 -->
 
+## Quick introduction
 
-## Object literal
+In JavaScript, there are often multiple ways to do the same thing. This includes creating new objects. So far, there are at least six ways to to this. This tutorial will show you each of these ways. First, you will learn how to create new objects with object literals and the `new` keyword.
+
+Next, you will learn how to create objects with native `Object.create()` and `Object.assign()` methods. After that, you will learn how to do this also with function constructors and ES6 classes. Without further ado, let's begin.
 
 ## No.1: Object literal
 
