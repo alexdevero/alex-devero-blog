@@ -158,6 +158,32 @@ console.log(female.isAlive)
 // true
 ```
 
+### A note on __proto__, prototypes and inheritance
+
+Note: The `species` and `isAlive` properties were inherit from the original `human` object. If you log the content `female` object these two properties will not appear inside it directly. They will be inside `__proto__` object. This object refers to the original object `human`.
+
+You can imagine replacing the `__proto__` with `human`. Or, replace it with any other object you used as the prototype. When you work with these two properties JavaScript will look at that prototype object to get the actual value. So, basically, for JavaScript `female.isAlive` will become `human.isAlive`.
+
+This is why these properties are not listed directly inside the new object and why you can still access them. It is also why, if you change the property value in `human` you will get the new value also in `female`. For example, if you set `human.isAlive` to `false`, `female.isAlive` will now be also `false`.
+
+The reason is that in both cases you are working with the same property. You are working with `human.isAlive`. In one situation, you just replace the `human` with `female` as an "alias". You can learn more about prototypes and prototypal inheritance in JavaScript in this [tutorial].
+
+```JavaScript
+// Log the value of "isAlive" property
+// This property is inherited from "human" object
+console.log(female.isAlive)
+// Output:
+// true
+
+// Change the "isAlive" property in "human" object
+human.isAlive = false
+
+// Log the value of "isAlive" property again
+console.log(female.isAlive)
+// Output:
+// false
+```
+
 
 ### h3
 
