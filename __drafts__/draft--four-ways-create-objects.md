@@ -93,8 +93,71 @@ console.log(myObj)
 // }
 ```
 
+## No.3: Object.create() method
 
-### h3
+When you want to create new object based on existing `Object.create()` method will be very useful. This method accepts two parameters. The first parameter is for the original object you want to duplicate. This will be the `prototype`. The second parameter is for object with properties and values you want to add to the new object.
+
+When you use this way and add new properties, remember one thing. You specify the values of new properties via `value` in [property descriptor], not directly. You can also specify other flags such as `writable`, `enumerable` and `configurable`. You can do this for every property you want to add.
+
+Similarly to the `Object()` constructor, this method will also return new object as a result. So, assign it to a variable when you use it so you can work with afterwards.
+
+```JavaScript
+// Create new object (using object literal).
+const human = {
+  species: 'human',
+  isAlive: true
+}
+
+// Create new object "female" with Object.create()
+// and use "human" as the prototype
+// and add two new properties - "gender" and "pregnant".
+const female = Object.create(human, {
+  // Add "gender" property.
+  gender: {
+    value: 'female', // Value of "gender" property.
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  // Add "pregnant" property.
+  pregnant: {
+    value: false, // Value of "pregnant" property.
+    writable: true,
+    enumerable: true,
+    configurable: true
+  }
+})
+
+// Log the "female" object.
+console.log(female)
+// Output:
+// {
+//   gender: 'female',
+//   pregnant: false,
+//   __proto__: {
+//     species: 'human',
+//     isAlive: true
+//   }
+// }
+
+// Log the value of "gender" property.
+console.log(female.gender)
+// Output:
+// 'female'
+
+// Log the value of "species" property
+// This property is inherited from "human" object
+console.log(female.species)
+// Output:
+// 'human'
+
+// Log the value of "isAlive" property
+// This property is inherited from "human" object
+console.log(female.isAlive)
+// Output:
+// true
+```
+
 
 ### h3
 
