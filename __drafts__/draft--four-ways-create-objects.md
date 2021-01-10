@@ -16,7 +16,7 @@ Table of Contents:
 
 ## Quick introduction
 
-In JavaScript, there are often multiple ways to do the same thing. This includes creating new objects. So far, there are at least six ways to to this. This tutorial will show you each of these ways. First, you will learn how to create new objects with object literals and the `new` keyword.
+In JavaScript, there are often multiple ways to do the same thing. This includes creating new objects. So far, there are at least six ways to this. This tutorial will show you each of these ways. First, you will learn how to create new objects with object literals and the `new` keyword.
 
 Next, you will learn how to create objects with native `Object.create()` and `Object.assign()` methods. After that, you will learn how to do this also with function constructors and ES6 classes. Without further ado, let's begin.
 
@@ -24,7 +24,7 @@ Next, you will learn how to create objects with native `Object.create()` and `Ob
 
 Using object literals is the first way to create objects in JavaScript. It is probably also the easiest to learn, remember and use. This is probably also why it is the most popular way to create objects in JavaScript. Creating an object this way is simple. You wrap the key-value pairs with curly brackets (`{}`).
 
-Those key-value pairs are pairs of `keys` and `values` you want the object to have. Another name for object `key` that is used very often is "property". Keys, or properties, are on the left side of the pair and values on the right. Between these two are colons (`key: value`).
+These key-value pairs are pairs of `keys` and `values` you want the object to have. Another name for object `key` that is used very often is "property". Keys, or properties, are on the left side of the pair and values on the right. Between these two are colons (`key: value`).
 
 When you wrap this pair with curly brackets you have an object. If you want to create an empty object you use only the curly brackets. After that, you can assign that new object to some [variable]. Or, you can use it right away as you want.
 
@@ -265,13 +265,13 @@ console.log(coderJack)
 
 The fifth way to create objects in JavaScript is by using [function constructors]. These function constructors look like regular [functions]. However, there are some differences. The first one is that when you use regular function you call it, or invoke it. This is not the case with function constructors.
 
-When you want to use function constructor to create an object you use it similarly to `Object()` constructor. You use it with the `new` keyword. Second difference is that you usually use regular functions to do something, some action, when you invoke them. Function constructors are used to create objects.
+When you want to use function constructor to create an object you use it similarly to `Object()` constructor. You use it with the `new` keyword. The second difference is that you usually use regular functions to do something, some action, when you invoke them. Function constructors are used to create objects.
 
 Third difference is that function constructors use the [this] keyword, a lot. Regular functions? Well, that depends on your preference and mode. Still, you are less likely to use `this` in a regular function. In constructor, you will use it often. The last difference is that names of function constructors start with capital letter.
 
 Let's take a look at how to create, and use, a function constructor. First comes the `function` keyword. Next is the function constructor name, starting with capital letter. Following this are parameters for the function constructor. These parameters define properties you want every object you create with the constructor to have.
 
-Inside the function body you assign those parameters as new properties of the function constructor. This is where you use the `this` keyword. This will help you reference the function constructor when you create it. It will also help you reference each instance, new object, you create with the constructor.
+Inside the function body you assign those parameters as new properties of the function constructor. This is where you use the `this` keyword. This will allow you to reference the function constructor when you create it. It will also allow you to reference each instance, new object, you create with the constructor.
 
 When you want to use this function constructor you use it like the `Object()` constructor. In this case, you also pass some arguments according to the parameters your function constructor takes. If you want to add some method, you can. Just make sure to use the `this` keyword before the name of the method.
 
@@ -401,7 +401,7 @@ console.log(userJill.sayHi())
 
 ## Conclusion: Six ways to create objects in JavaScript
 
-These are the six way in which you can create objects in JavaScript. In a recap, these six ways were: object literals, the `new` keyword, `Object.create()`, `Object.assign()`, function constructors and ES6 classes. I hope you enjoyed this tutorial and learned something new, something that will help you become a better JavaScript developer.
+These are the six ways in which you can create objects in JavaScript. In a recap, these six ways were: object literals, the `new` keyword, `Object.create()`, `Object.assign()`, function constructors and ES6 classes. I hope you enjoyed this tutorial and learned something new, something that will help you become a better JavaScript developer.
 
 [xyz-ihs snippet="thank-you-message"]
 
