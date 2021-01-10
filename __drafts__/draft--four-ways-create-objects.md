@@ -390,7 +390,9 @@ console.log(userJill.sayHi())
 // 'Hi, my name is Jill.'
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Six ways to create objects in JavaScript
+
+These are the six way in which you can create objects in JavaScript. In a recap, these six ways were: object literals, the `new` keyword, `Object.create()`, `Object.assign()`, function constructors and ES6 classes. I hope you enjoyed this tutorial and learned something new, something that will help you become a better JavaScript developer.
 
 [xyz-ihs snippet="thank-you-message"]
 
