@@ -3,11 +3,15 @@
 Objects are one of the fundamental data types in JavaScript. As a JavaScript developer, you will find yourself working with them frequently. One thing that will be useful is knowing how to create them. In this tutorial you will learn how to create objects in JavaScript in six ways.<!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
+## Introduction
+## No.1: Object literal
+## No.2: The "new" keyword
+## No.3: Object.create() method
+### A note on __proto__, prototypes and inheritance
+## No.4: Object.assign() method
+## No.5: Function constructor
+## No.6: ES6 classes
+## Conclusion: Six ways to create objects in JavaScript
 -->
 
 
