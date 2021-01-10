@@ -1,5 +1,6 @@
-# Blog post title [...]
-<!--more-->
+# Six Ways to Create Objects in JavaScript
+
+Objects are one of the fundamental data types in JavaScript. As a JavaScript developer, you will find yourself working with them frequently. One thing that will be useful is knowing how to create them. In this tutorial you will learn how to create objects in JavaScript in six ways.<!--more-->
 <!--
 Table of Contents:
 ## h2
@@ -222,7 +223,7 @@ const experience = {
 // Second argument are source objects.
 const coderAnonymous = Object.assign({}, lang, job, experience)
 
-// Log the "coderAnonymous" object
+// Log the "coderAnonymous" object.
 console.log(coderAnonymous)
 // Output:
 // {
@@ -242,7 +243,7 @@ const coderJack = Object.assign({
   name: 'Jack'
 }, lang, job, experience) // Specify source objects.
 
-// Log the "coderJack" object
+// Log the "coderJack" object.
 console.log(coderJack)
 // Output:
 // {
@@ -277,7 +278,8 @@ function User(name, username, email) {
   this.name = name
   this.username = username
   this.email = email
-  // Add object method
+
+  // Add object method.
   this.sayHi = function() {
     return `Hi, my name is ${this.name}.`
   }
