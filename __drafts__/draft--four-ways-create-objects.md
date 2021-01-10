@@ -399,7 +399,19 @@ These are the six way in which you can create objects in JavaScript. In a recap,
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[variable]: https://blog.alexdevero.com/javascript-variables-introduction/
+[property flag]: https://blog.alexdevero.com/javascript-object-property-flags/#properties-flags-and-default-values
+[tutorial]: https://blog.alexdevero.com/prototype-prototypal-inheritance/
+[functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[this]: https://blog.alexdevero.com/this-in-javascript-works/
+[function constructors]: https://blog.alexdevero.com/javascript-functions-pt2/#function-constructor
+[Object() constructor]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+[JavaScript classes]: https://blog.alexdevero.com/javascript-classes-pt1/
+[constructor]: https://blog.alexdevero.com/javascript-classes-pt1/#constructor
+[instance]: https://blog.alexdevero.com/javascript-classes-pt1/#class-inheritance-extends
+[part one]: https://blog.alexdevero.com/javascript-classes-pt1
+[part two]: https://blog.alexdevero.com/javascript-classes-pt2
+[class fields]: https://blog.alexdevero.com/javascript-classes-pt2/#public-fields-and-methods
 
 <!--
 ### Meta:
@@ -408,7 +420,8 @@ These are the six way in which you can create objects in JavaScript. In a recap,
 
 <!--
 ### Keywords:
--
+- Create Objects in JavaScript
+- Objects in JavaScript
 -->
 
 <!--
