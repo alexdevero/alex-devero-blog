@@ -244,8 +244,77 @@ console.log(coderJack)
 // }
 ```
 
+## No.5: Constructor function
 
-### h3
+The fifth way to create objects in JavaScript is by using constructor functions. These constructor functions look like regular [functions]. However, there are some differences. The first one is that when you use regular function you call it, or invoke it. This is not the case with constructor functions.
+
+When you want to use constructor function to create an object you use it similarly to `Object()` constructor. You use it with the `new` keyword. Second difference is that you usually use regular functions to do something, some action, when you invoke them. Constructor functions are used to create objects.
+
+Third difference is that constructor functions use the [this] keyword, a lot. Regular functions? Well, that depends on your preference and mode. Still, you are less likely to use `this` in a regular function. In constructor, you will use it often. The last difference is that names of constructor functions start with capital letter.
+
+Let's take a look at how to create, and use, a constructor function. First comes the `function` keyword. Next is the constructor function name, starting with capital letter. Following this are parameters for the function constructor. These parameters define properties you want every object you create with the constructor to have.
+
+Inside the function body you assign those parameters as new properties of the function constructor. This is where you use the `this` keyword. This will help you reference the function constructor when you create it. It will also help you reference each instance, new object, you create with the constructor.
+
+When you want to use this function constructor you use it like the `Object()` constructor. In this case, you also pass some arguments according to the parameters your function constructor takes. If you want to add some method, you can. Just make sure to use the `this` keyword before the name of the method.
+
+```JavaScript
+// Create function constructor called "User".
+function User(name, username, email) {
+  // Assign parameters as new properties of the function constructor.
+  // This allows you to use <objName>.property: userJoe.name
+  // and get the value of "name" property of "userJoe" object
+  // and not any other instance of User, i.e. other object.
+  this.name = name
+  this.username = username
+  this.email = email
+  // Add object method
+  this.sayHi = function() {
+    return `Hi, my name is ${this.name}.`
+  }
+}
+
+// Use "User" function constructor to create new objects.
+const userJoe = new User('Joe', 'joe123', 'joe@hello.com')
+const userCathy = new User('Catherine', 'cathy', 'Catherine@hello.com')
+
+// Log names of new users.
+console.log(userJoe.name)
+// Output:
+// 'Joe'
+
+console.log(userCathy.name)
+// Output:
+// 'Catherine'
+
+// Log usernames of new users.
+console.log(userJoe.username)
+// Output:
+// 'joe123'
+
+console.log(userCathy.username)
+// Output:
+// 'cathy'
+
+// Log emails of new users.
+console.log(userJoe.email)
+// Output:
+// 'joe@hello.com'
+
+console.log(userCathy.email)
+// Output:
+// 'Catherine@hello.com'
+
+// Call the sayHi method for all new users.
+console.log(userJoe.sayHi())
+// Output:
+// 'Hi, my name is Joe.'
+
+console.log(userCathy.sayHi())
+// Output:
+// 'Hi, my name is Catherine.'
+```
+
 
 ## h2
 
