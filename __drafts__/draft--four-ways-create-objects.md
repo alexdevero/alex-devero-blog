@@ -25,7 +25,10 @@ When you wrap this pair with curly brackets you have an object. If you want to c
 const myObj = {
   name: 'Tom Jones',// One key-value pair.
   role: 'admin',
-  isWorking: false
+  isWorking: false,
+  sayHi: function() {
+    return `Hi, my name is ${this.name}.`
+  }
 }
 
 // Log the object to console.
@@ -34,7 +37,7 @@ console.log(myObj)
 // {
 //   name: 'Tom Jones',
 //   role: 'admin',
-//   isWorking: false
+//   sayHi: ƒ sayHi()
 // }
 
 
@@ -66,6 +69,11 @@ myObj.username = 'Skylar'
 myObj.gender = 'female'
 myObj.title = 'Fullstack dev'
 
+// Add a method.
+myObj.sayHi = function() {
+  return `Hi, I am ${this.username}.`
+}
+
 // Log the object to console.
 console.log(myObj)
 // Output:
@@ -73,6 +81,7 @@ console.log(myObj)
 //   username: 'Skylar',
 //   gender: 'female',
 //   title: 'Fullstack dev'
+//   sayHi: ƒ ()
 // }
 
 
