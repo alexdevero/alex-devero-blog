@@ -145,14 +145,14 @@ console.log(female.gender)
 // Output:
 // 'female'
 
-// Log the value of "species" property
-// This property is inherited from "human" object
+// Log the value of "species" property.
+// This property is inherited from "human" object.
 console.log(female.species)
 // Output:
 // 'human'
 
-// Log the value of "isAlive" property
-// This property is inherited from "human" object
+// Log the value of "isAlive" property.
+// This property is inherited from "human" object.
 console.log(female.isAlive)
 // Output:
 // true
@@ -169,16 +169,16 @@ This is why these properties are not listed directly inside the new object and w
 The reason is that in both cases you are working with the same property. You are working with `human.isAlive`. In one situation, you just replace the `human` with `female` as an "alias". You can learn more about prototypes and prototypal inheritance in JavaScript in this [tutorial].
 
 ```JavaScript
-// Log the value of "isAlive" property
-// This property is inherited from "human" object
+// Log the value of "isAlive" property.
+// This property is inherited from "human" object.
 console.log(female.isAlive)
 // Output:
 // true
 
-// Change the "isAlive" property in "human" object
+// Change the "isAlive" property in "human" object.
 human.isAlive = false
 
-// Log the value of "isAlive" property again
+// Log the value of "isAlive" property again.
 console.log(female.isAlive)
 // Output:
 // false
