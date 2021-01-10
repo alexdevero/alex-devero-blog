@@ -324,8 +324,71 @@ console.log(userCathy.sayHi())
 // 'Hi, my name is Catherine.'
 ```
 
+## No.6: ES6 classes
 
-## h2
+This last way to create new object is also the newest. [JavaScript classes] were introduced in ES6 specification. Classes may look like something new. They are not. When you look at them closely, you will see they are actually very similar to function constructors we just talked about. Under the hood, they also work in a similar way.
+
+When you want to create new class, you start with the `class` keyword. Next, you specify the name of the class. After this follows curly brackets and the class body. Here, you can define class properties and class methods the class should have. These properties are defined in a similar way as in function constructors.
+
+You define them all with the `this` keyword in the beginning. However, you don't define them directly in the body, but inside [constructor] method. This is a special method that is invoked every time you create an [instance] of the class. Creating an instance is basically creating new object based on a class.
+
+This is also where you define parameters for the class. These parameters will be used for passing values to properties when you create new instances (copies) of that class. When you want to create new instance of the class, new object based on it, you use the class name with the `new` keyword.
+
+This is the same process you saw in the previous section where we talked about function constructors. If your class accepts any parameters, you can now pass appropriate values as arguments. You defined those parameters in the `constructor` method where you also assigned them as class properties.
+
+Let's use the `User` function constructor and write it as a class. This will help you see how similar classes and function constructors are. If you want to learn more about JavaScript classes, take a look at this tutorial I wrote, [part one] and [part two].
+
+```JavaScript
+// Create a new class "User".
+class User {
+  // Create constructor method
+  // and define parameters for "name", "username" and "email".
+  constructor(name, username, email) {
+    this.name = name
+    this.username = username
+    this.email = email
+
+    // Also, add one class method.
+    this.sayHi = function() {
+      return `Hi, my name is ${this.name}.`
+    }
+  }
+}
+
+// Use "User" class to create new instance, new object.
+const userJill = new User('Jill', 'jill987', 'jill@hello.com')
+
+// Log the content of userJill instance/object
+console.log(userJill)
+// Output:
+// User {
+//   name: 'Jill',
+//   username: 'jill987',
+//   email: 'jill@hello.com',
+//   sayHi: ƒ (),
+//   __proto__: User { constructor: ƒ User() }
+// }
+
+// Log the value of "name" property of "userJill".
+console.log(userJill.name)
+// Output:
+// 'Jill'
+
+// Log the value of "username" property of "userJill".
+console.log(userJill.username)
+// Output:
+// 'jill987'
+
+// Log the value of "email" property of "userJill".
+console.log(userJill.email)
+// Output:
+// 'jill@hello.com'
+
+// Call the sayHi method.
+console.log(userJill.sayHi())
+// Output:
+// 'Hi, my name is Jill.'
+```
 
 ## Conclusion: [...] ...
 
