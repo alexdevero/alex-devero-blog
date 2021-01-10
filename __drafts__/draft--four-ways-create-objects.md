@@ -253,15 +253,15 @@ console.log(coderJack)
 // }
 ```
 
-## No.5: Constructor function
+## No.5: Function constructor
 
-The fifth way to create objects in JavaScript is by using constructor functions. These constructor functions look like regular [functions]. However, there are some differences. The first one is that when you use regular function you call it, or invoke it. This is not the case with constructor functions.
+The fifth way to create objects in JavaScript is by using [function constructors]. These function constructors look like regular [functions]. However, there are some differences. The first one is that when you use regular function you call it, or invoke it. This is not the case with function constructors.
 
-When you want to use constructor function to create an object you use it similarly to `Object()` constructor. You use it with the `new` keyword. Second difference is that you usually use regular functions to do something, some action, when you invoke them. Constructor functions are used to create objects.
+When you want to use function constructor to create an object you use it similarly to `Object()` constructor. You use it with the `new` keyword. Second difference is that you usually use regular functions to do something, some action, when you invoke them. Function constructors are used to create objects.
 
-Third difference is that constructor functions use the [this] keyword, a lot. Regular functions? Well, that depends on your preference and mode. Still, you are less likely to use `this` in a regular function. In constructor, you will use it often. The last difference is that names of constructor functions start with capital letter.
+Third difference is that function constructors use the [this] keyword, a lot. Regular functions? Well, that depends on your preference and mode. Still, you are less likely to use `this` in a regular function. In constructor, you will use it often. The last difference is that names of function constructors start with capital letter.
 
-Let's take a look at how to create, and use, a constructor function. First comes the `function` keyword. Next is the constructor function name, starting with capital letter. Following this are parameters for the function constructor. These parameters define properties you want every object you create with the constructor to have.
+Let's take a look at how to create, and use, a function constructor. First comes the `function` keyword. Next is the function constructor name, starting with capital letter. Following this are parameters for the function constructor. These parameters define properties you want every object you create with the constructor to have.
 
 Inside the function body you assign those parameters as new properties of the function constructor. This is where you use the `this` keyword. This will help you reference the function constructor when you create it. It will also help you reference each instance, new object, you create with the constructor.
 
