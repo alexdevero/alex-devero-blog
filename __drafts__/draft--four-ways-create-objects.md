@@ -46,6 +46,51 @@ console.log(myEmptyObj)
 // Output:
 // {}
 ```
+
+## No.2: The "new" keyword
+
+The second way you can create an object is by using `new` keyword with `Object()` constructor. When you use this constructor it returns a value, new object. You can assign this object to a variable so you can continue working with it. If you want to add new properties there are two things you can do.
+
+The first one is to create an empty object and assign it to a variable. Then, you can add properties to that object with dot-notation or using square brackets. This allows you to define only one property at the time. So, if you want to create multiple properties you will have to do this a couple of times.
+
+The second option is to pass an object to the Object constructor as an argument. This will also create an object with properties and values you want. However, if you want to pass an object, using the Object constructor is redundant. It is also probably not a good practice and definitely not recommended.
+
+What you can do instead in this case, is use the object literal way. We discussed this in the previous section above.
+
+```JavaScript
+// Creating object with object constructor.
+const myObj = new Object()
+
+// Add properties.
+myObj.username = 'Skylar'
+myObj.gender = 'female'
+myObj.title = 'Fullstack dev'
+
+// Log the object to console.
+console.log(myObj)
+// Output:
+// {
+//   username: 'Skylar',
+//   gender: 'female',
+//   title: 'Fullstack dev'
+// }
+
+
+// Passing an object - not a good idea
+const myObj = new Object({
+  username: 'Skylar',
+  gender: 'female',
+  title: 'Fullstack dev'
+})
+
+// Log the object to console.
+console.log(myObj)
+// Output:
+// {
+//   username: 'Skylar',
+//   gender: 'female',
+//   title: 'Fullstack dev'
+// }
 ```
 
 
