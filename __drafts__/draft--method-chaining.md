@@ -88,6 +88,45 @@ myPromise
 // 'Sorry, no data.'
 ```
 
+## How method chaining works
+
+You know how method chaining looks like. The more important question is, how it works. The answer is very simple. It works because of `this`. Yes, we are talking about the notorious [this] keyword. When it comes to `this` there is [a lot] one can learn. To keep this tutorial short, let's not get too deep and keep it simple instead.
+
+Let's say you have an object. If you use `this` inside that object it will refer to that object. If you then create an instance, or copy, of that object, `this` will refer to that instance or copy. When you work with some string or array method you are working with an object.
+
+```JavaScript
+const myObj = {
+  name: 'Stuart',
+  age: 65,
+  sayHi() {
+    // This here refers to myObj
+    return `Hi my name is ${this.name}.`
+  },
+  logMe() {
+    console.log(this)
+  }
+}
+
+myObj.sayHi()
+// Output:
+// 'Hi my name is Stuart.'
+
+myObj.logMe()
+// Output:
+// {
+//   name: 'Stuart',
+//   age: 65,
+//   sayHi: ƒ,
+//   logMe: ƒ
+// }
+```
+
+In case of a string you are working with a primitive [data type]. However, the method you are using, such as `toLowerCase()`, exists on the prototype of a `String` object. Having a new method on some object is not enough to make chaining work. There is one critical ingredient, the `this`.
+
+For chaining to work, a method must return the object it works with. It has to return the `this`. Think about this as a baton. There are some runners on the field in different positions. However, they can't all run at once. Only one can run at the time. When currently running runner completes his part, he has to pass the baton to the next runner.
+
+Only when this happens, when the next runner receives the baton, can he run his part. In our case, each method is a runner. The baton is returned `this`, the object the method is working with. If there is not baton, no `this` returned, next runner can't run and chaining will not work.
+
 
 [xyz-ihs snippet="thank-you-message"]
 
