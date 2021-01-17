@@ -5,7 +5,7 @@ Method chaining is popular method that can help you write more concise and reada
 Table of Contents:
 -->
 
-## A quick introduction to method chaining
+## A quick introduction to method chaining in JavaScript
 
 Have you ever worked with some library such as jQuery? Then, you've probably seen something like this. There are two or more methods used in cascade, one after another, and on the same line. Nowadays, it is also very common to see this practice in plain JavaScript. You could see this with arrays, strings and promises.
 
@@ -88,7 +88,7 @@ myPromise
 // 'Sorry, no data.'
 ```
 
-## How method chaining works
+## How method chaining in JavaScript works
 
 You know how method chaining looks like. The more important question is, how it works. The answer is very simple. It works because of `this`. Yes, we are talking about the notorious [this] keyword. When it comes to `this` there is [a lot] one can learn. To keep this tutorial short, let's not get too deep and keep it simple instead.
 
@@ -127,7 +127,7 @@ For chaining to work, a method must return the object it works with. It has to r
 
 Only when this happens, when the next runner receives the baton, can he run his part. In our case, each method is a runner. The baton is returned `this`, the object the method is working with. If there is not baton, no `this` returned, next runner can't run and chaining will not work.
 
-## How to implement method chaining
+## How to implement method chaining in JavaScript
 
 That was about the theory. Now, to practice. So, in order to make chaining work you need three things. First, you need some object. Second, that object needs some methods you can later call. Third, these methods has to return the object itself. They have to return the `this` if you want to make them chainable.
 
