@@ -426,6 +426,10 @@ newPerson.drink()
 
 So, if you insist on using arrow functions, and want to copy objects? It will be better to create those copies with `Object()` constructor and `new` keyword. Otherwise, spare yourself the hustle and just use [regular functions].
 
+## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
+
+Method chaining is one simple method that can be quite useful. It can help you write code that is shorter and more readable. I hope that this tutorial helped you understand what method chaining in JavaScript is and how it works. Now, it is up to you to use what you've learned about method chaining in your code.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
