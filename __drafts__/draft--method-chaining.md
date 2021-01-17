@@ -127,6 +127,104 @@ For chaining to work, a method must return the object it works with. It has to r
 
 Only when this happens, when the next runner receives the baton, can he run his part. In our case, each method is a runner. The baton is returned `this`, the object the method is working with. If there is not baton, no `this` returned, next runner can't run and chaining will not work.
 
+## How to implement method chaining
+
+That was about the theory. Now, to practice. So, in order to make chaining work you need three things. First, you need some object. Second, that object needs some methods you can later call. Third, these methods has to return the object itself. They have to return the `this` if you want to make them chainable.
+
+Let's create a simple object as a metaphor for a person. This person will have few properties: `name`, `age` and `state`. The `state` will specify in what state the person currently is. To change this state, there will be few methods: `walk()`, `sleep()`, `eat()`, `drink()`, `work()` and `exercise()`.
+
+Since we want all these method to be chainable they all have to return `this` in the very end. There will be also one utility method. This method will log the current state to console. When you use one of the methods to change person's state, it will also call this method will so you can see the new state in console.
+
+```JavaScript
+// Create person object.
+const person = {
+  name: 'Jack Doer',
+  age: 41,
+  state: null,
+  logState() {
+    console.log(this.state)
+  },
+  drink() {
+    // Change person's state.
+    this.state = 'Drinking.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  },
+  eat() {
+    // Change person's state.
+    this.state = 'Eating.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  },
+  exercise() {
+    // Change person's state.
+    this.state = 'Exercising.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  },
+  sleep() {
+    // Change person's state.
+    this.state = 'Sleeping.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  },
+  walk() {
+    // Change person's state.
+    this.state = 'Walking.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  },
+  work() {
+    // Change person's state.
+    this.state = 'Working.'
+
+    // Log current person's state.
+    this.logState()
+
+    // Return this to make the method chainable.
+    return this
+  }
+}
+
+// Let's have some fun.
+person
+  .drink() // Output: 'Drinking.'
+  .exercise() // Output: 'Exercising.'
+  .eat() // Output: 'Eating.'
+  .work() // Output: 'Working.'
+  .walk() // Output: 'Walking.'
+  .sleep() // Output: 'Sleeping.'
+
+// Alternative on a single line:
+person.drink().exercise().eat().work().walk().sleep()
+// Output:
+// 'Drinking.'
+// 'Exercising.'
+// 'Eating.'
+// 'Working.'
+// 'Walking.'
+// 'Sleeping.'
+```
 
 [xyz-ihs snippet="thank-you-message"]
 
