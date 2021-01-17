@@ -426,6 +426,58 @@ newPerson.drink()
 
 So, if you insist on using arrow functions, and want to copy objects? It will be better to create those copies with `Object()` constructor and `new` keyword. Otherwise, spare yourself the hustle and just use [regular functions].
 
+## Method chaining and classes
+
+Are a fan of [JavaScript classes]? Then, I have a good news for you. You can use method chaining in JavaScript also if you prefer to work with classes. The process is the same as with object, only the syntax is a bit different. The important thing is that every method that should be chainable must return `this`.
+
+```JavaScript
+// Create Person class.
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+    this.state = null
+  }
+
+  logState() {
+    console.log(this.state)
+  }
+
+  drink() {
+    this.state = 'Drinking.'
+
+    this.logState()
+
+    return this
+  }
+
+  eat() {
+    this.state = 'Eating.'
+
+    this.logState()
+
+    return this
+  }
+
+  sleep() {
+    this.state = 'Sleeping.'
+
+    this.logState()
+
+    return this
+  }
+}
+
+// Create instance of Person class.
+const joe = new Person('Joe', 55)
+
+// Use method chaining.
+joe
+  .drink() // Output: 'Drinking.'
+  .eat() // Output: 'Eating.'
+  .sleep() // Output: 'Sleeping.'
+```
+
 ## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
 
 Method chaining is one simple method that can be quite useful. It can help you write code that is shorter and more readable. I hope that this tutorial helped you understand what method chaining in JavaScript is and how it works. Now, it is up to you to use what you've learned about method chaining in your code.
