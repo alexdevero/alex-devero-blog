@@ -226,6 +226,200 @@ person.drink().exercise().eat().work().walk().sleep()
 // 'Sleeping.'
 ```
 
+## Methods, chaining, this and arrow functions
+
+The necessity to work with `this` also means one thing. You can't create chainable methods with [arrow functions]. The reason is that, in arrow functions, `this` is not bound to the instance of object. `this` will refer to the global object `window`. If you try to return `this` it will return `window`, not the object itself.
+
+Another issue would be accessing and changing object properties from the inside of the arrow function. Since `this` would be global object `window` you could not use it to reference the object and then its property. You would be trying to reference `window` and its property.
+
+There is a way to bypass this, if you insist on using arrow functions. Instead of using `this` to reference the object you would have to reference the object by its name directly. You would have to replace all occurrences of `this` inside arrow functions with the object name.
+
+```JavaScript
+// Create person object.
+const person = {
+  name: 'Jack Doer',
+  age: 41,
+  state: null,
+  logState() {
+    console.log(this.state)
+  },
+  drink: () => {
+    person.state = 'Drinking.'
+
+    person.logState()
+
+    return person
+  },
+  eat: () => {
+    person.state = 'Eating.'
+
+    person.logState()
+
+    return person
+  },
+  exercise: () => {
+    person.state = 'Exercising.'
+
+    person.logState()
+
+    return person
+  },
+  sleep: () => {
+    person.state = 'Sleeping.'
+
+    person.logState()
+
+    return person
+  },
+  walk: () => {
+    person.state = 'Walking.'
+
+    person.logState()
+
+    return person
+  },
+  work: () => {
+    person.state = 'Working.'
+
+    person.logState()
+
+    return person
+  }
+}
+
+// Let's have some fun.
+person
+  .drink() // Output: 'Drinking.'
+  .exercise() // Output: 'Exercising.'
+  .eat() // Output: 'Eating.'
+  .work() // Output: 'Working.'
+  .walk() // Output: 'Walking.'
+  .sleep() // Output: 'Sleeping.'
+```
+
+One potential downside of this is that you would also loose all flexibility. If you copy the object, all arrow functions will still be hardwired to the original object. This will happen if you create the copy with both, [Object.assign()] and [Object.create()].
+
+```JavaScript
+// Create original person object.
+const person = {
+  name: 'Jack Doer',
+  age: 41,
+  state: null,
+  logState() {
+    // Log the whole object.
+    console.log(this)
+  },
+  drink: () => {
+    person.state = 'Drinking.'
+
+    person.logState()
+
+    return person
+  },
+  eat: () => {
+    person.state = 'Eating.'
+
+    person.logState()
+
+    return person
+  }
+}
+
+// Let person eat.
+person.eat()
+// Output:
+// {
+//   name: 'Jack Doer',
+//   age: 41,
+//   state: 'Eating.',
+//   logState: ƒ,
+//   drink: ƒ,
+//   eat: ƒ
+// }
+
+// Create new object based on person object.
+const newPerson = new Object(person)
+
+// Change the "name" and "age" properties.
+newPerson.name = 'Jackie Holmes'
+newPerson.age = 33
+
+// Let newPerson drink.
+// This will print Jack Doer not Jackie Holmes.
+newPerson.drink()
+// Output:
+// {
+//   name: 'Jack Doer',
+//   age: 41,
+//   state: 'Drinking.',
+//   logState: ƒ,
+//   drink: ƒ,
+//   eat: ƒ
+// }
+```
+
+However, the problem above will not happen if you use [Object()] constructor. If you use the `Object()` constructor, with `new` keyword, you will create that new object as an independent copy. When you use some method on that copy it will have effect only on that copy, not the original.
+
+```JavaScript
+// Create original person object.
+const person = {
+  name: 'Jack Doer',
+  age: 41,
+  state: null,
+  logState() {
+    // Log the whole object.
+    console.log(this)
+  },
+  drink: () => {
+    person.state = 'Drinking.'
+
+    person.logState()
+
+    return person
+  },
+  eat: () => {
+    person.state = 'Eating.'
+
+    person.logState()
+
+    return person
+  }
+}
+
+// Let person eat.
+person.eat()
+// Output:
+// {
+//   name: 'Jack Doer',
+//   age: 41,
+//   state: 'Eating.',
+//   logState: ƒ,
+//   drink: ƒ,
+//   eat: ƒ
+// }
+
+// Create new object based on person object.
+const newPerson = new Object(person)
+
+// Change the "name" and "age" properties.
+newPerson.name = 'Jackie Holmes'
+newPerson.age = 33
+
+// Let newPerson drink.
+newPerson.drink()
+// Output:
+// {
+//   name: 'Jackie Holmes',
+//   age: 33,
+//   state: 'Drinking.',
+//   logState: ƒ,
+//   drink: ƒ,
+//   eat: ƒ
+// }
+```
+
+So, if you insist on using arrow functions, and want to copy objects? It will be better to create those copies with `Object()` constructor and `new` keyword. Otherwise, spare yourself the hustle and just use [regular functions].
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
