@@ -9,7 +9,7 @@ Table of Contents:
 ## How to implement method chaining in JavaScript
 ## Methods, chaining, this and arrow functions
 ## Method chaining and classes
-## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
+## Conclusion: What method chaining in JavaScript is, how it works and how to use it
 -->
 
 ## A quick introduction to method chaining in JavaScript
@@ -136,7 +136,7 @@ Only when this happens, when the next runner receives the baton, can he run his 
 
 ## How to implement method chaining in JavaScript
 
-That was about the theory. Now, to practice. So, in order to make chaining work you need three things. First, you need some object. Second, that object needs some methods you can later call. Third, these methods has to return the object itself. They have to return the `this` if you want to make them chainable.
+That was about the theory. Now, to practice. So, in order to make chaining work you need three things. First, you need some object. Second, that object needs some methods you can later call. Third, these methods have to return the object itself. They have to return the `this` if you want to make them chainable.
 
 Let's create a simple object as a metaphor for a person. This person will have few properties: `name`, `age` and `state`. The `state` will specify in what state the person currently is. To change this state, there will be few methods: `walk()`, `sleep()`, `eat()`, `drink()`, `work()` and `exercise()`.
 
@@ -304,7 +304,7 @@ person
   .sleep() // Output: 'Sleeping.'
 ```
 
-One potential downside of this is that you would also loose all flexibility. If you copy the object, all arrow functions will still be hardwired to the original object. This will happen if you create the copy with both, [Object.assign()] and [Object.create()].
+One potential downside of this is that you would also loose all flexibility. If you copy the object, all arrow functions will still be hard-wired to the original object. This will happen if you create the copy with both, [Object.assign()] and [Object.create()].
 
 ```JavaScript
 // Create original person object.
@@ -429,7 +429,7 @@ So, if you insist on using arrow functions, and want to copy objects? It will be
 
 ## Method chaining and classes
 
-Are a fan of [JavaScript classes]? Then, I have a good news for you. You can use method chaining in JavaScript also if you prefer to work with classes. The process is the same as with object, only the syntax is a bit different. The important thing is that every method that should be chainable must return `this`.
+Are a fan of [JavaScript classes]? Then, I have some good news for you. You can use method chaining in JavaScript also if you prefer to work with classes. The process is the same as with object, only the syntax is a bit different. The important thing is that every method that should be chainable must return `this`.
 
 ```JavaScript
 // Create Person class.
@@ -479,7 +479,7 @@ joe
   .sleep() // Output: 'Sleeping.'
 ```
 
-## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
+## Conclusion: What method chaining in JavaScript is, how it works and how to use it
 
 Method chaining is one simple method that can be quite useful. It can help you write code that is shorter and more readable. I hope that this tutorial helped you understand what method chaining in JavaScript is and how it works. Now, it is up to you to use what you've learned about method chaining in your code.
 
