@@ -5,7 +5,12 @@ Method chaining is popular method that can help you write more concise and reada
 Table of Contents:
 -->
 
-## h2
+## A quick introduction to method chaining
+
+Have you ever worked with some library such as jQuery? Then, you've probably seen something like this. There are two or more methods used in cascade, one after another, and on the same line. Nowadays, it is also very common to see this practice in plain JavaScript. You could see this with arrays, strings and promises.
+
+In all these cases, the process is the same. First, you reference the thing you want to work with. Second, you use as many methods as you need. However, instead of using these methods separately, you use them one after another. You basically chain them together. Let's take a look at some examples to demonstrate this.
+
 
 ## Conclusion: [...] ...
 
