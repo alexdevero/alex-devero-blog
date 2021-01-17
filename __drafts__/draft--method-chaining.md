@@ -8,6 +8,7 @@ Table of Contents:
 ## How method chaining in JavaScript works
 ## How to implement method chaining in JavaScript
 ## Methods, chaining, this and arrow functions
+## Method chaining and classes
 ## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
 -->
 
@@ -497,6 +498,7 @@ Method chaining is one simple method that can be quite useful. It can help you w
 [Object.create()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 [Object()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
 [regular functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[JavaScript classes]: https://blog.alexdevero.com/javascript-classes-pt1/
 
 <!--
 ### Meta:
