@@ -423,7 +423,18 @@ So, if you insist on using arrow functions, and want to copy objects? It will be
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[[create a promise]: https://blog.alexdevero.com/javascript-promises/#creating-a-promise
+[handler functions]: https://blog.alexdevero.com/javascript-promises/#handling-javascript-promises-with-handler-functions
+[async function]: https://blog.alexdevero.com/javascript-async-await/#async-functions
+[await]: https://blog.alexdevero.com/javascript-async-await/#the-await-keyword
+[this]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+[a lot]: https://blog.alexdevero.com/this-in-javascript-works/
+[data type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
+[Object.assign()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+[Object.create()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+[Object()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+[regular functions]: https://blog.alexdevero.com/javascript-functions-pt1/
 
 <!--
 ### Meta:
