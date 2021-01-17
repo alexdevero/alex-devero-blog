@@ -1,8 +1,14 @@
-# What Method Chaining in JavaScript, How it Works and How to Use It
+# What Method Chaining in JavaScript Is, How It Works and How to Use It
 
 Method chaining is popular method that can help you write more concise and readable code. In this tutorial, you will learn what method chaining in JavaScript is and how it works. You will also learn how to use method chaining to improve the quality and readability of your code.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction to method chaining in JavaScript
+### Examples of method chaining
+## How method chaining in JavaScript works
+## How to implement method chaining in JavaScript
+## Methods, chaining, this and arrow functions
+## Conclusion: What Method Chaining in JavaScript, How it Works and How to Use It
 -->
 
 ## A quick introduction to method chaining in JavaScript
