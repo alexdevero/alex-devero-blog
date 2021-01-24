@@ -62,6 +62,53 @@ console.log(myObj.creators[0])
 // 'Stan Lee'
 ```
 
+## Bracket notation
+
+The second way you can use to access object properties is bracket notation. The main characteristic of method this method are square brackets. The syntax is similar to the dot notation. However, there are some important differences. You again start with the name of the object you are working with.
+
+As second comes the name of the property. Here, you have to wrap the name of the property with quotes and square brackets. It doesn't matter if you use single or double quotes. What matters is that you use them to wrap the name of the property. Then, you wrap this with square brackets and put it after the object. And, no dot in-between.
+
+Bracket notation also allows you to access deeper properties. This works similarly to dot notation. All properties are chained together, from the most shallow to the deepest. In case of brackets, there are no dots between properties. Furthermore, you must wrap all properties with quotes and square brackets.
+
+Accessing items inside arrays assigned to properties works similarly. First, specify the property name and wrap it with quotes and square brackets. Then, add additional pair of square bracket with the index of the item you want to access.
+
+```JavaScript
+// Create object with object literal:
+const myObj = {
+  name: 'Bruce Thomas Wayne',
+  alias: 'Batman',
+  affiliation: ['Batman Family', 'Justice League', 'Outsiders', 'Guild of Detection'],
+  status: {
+    alignment: 'good',
+    occupation: 'businessman'
+  }
+}
+
+
+// Accessing object properties with bracket notation:
+// First: name of the object.
+// Second: name of the property to access.
+// Note: property name must be wrapped with quotes
+// and then with square brackets.
+console.log(myObj['name'])
+// Output:
+// 'Bruce Thomas Wayne'
+
+
+// Accessing deeper object properties:
+// Access the "alignment" property that exists
+// in nested object assigned to "status" property
+console.log(myObj['status']['alignment'])
+// Output:
+// 'good'
+
+
+// Accessing array items in objects:
+// Access the second item inside the array
+// assigned to "affiliation" property.
+console.log(myObj['affiliation'][1])
+// Output:
+// 'Justice League'
 ```
 
 ## Conclusion: [...] ...
