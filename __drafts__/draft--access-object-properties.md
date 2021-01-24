@@ -11,6 +11,36 @@ In JavaScript there are multiple ways you can use to access one of those propert
 
 All these ways assume you know the name of the property you want to access. If you don't know it, nothing is lost. You can [loops] to iterate over object to get all properties, including the one you want. You will get to this as well. But first, let's take a look at those three ways you can use to access object properties.
 
+## Dot notation
+
+Dot notation, or dot property accessor, is probably the most popular way to access object properties in JavaScript. This method is very easy to learn and just as easy to use. The syntax is as follows. First, you specify some object. Second, you specify the name of the property. Between the object and property name goes a dot (`.`).
+
+You can use the same process also to access deeper properties. In this case, you chain multiple properties together. You chain them in the way they are nested. So, the most shallow property will come as first, right after the object name. The deepest property will come as the last one: `obj.shallowProp.deeperProp.DeepestProp`.
+
+```JavaScript
+// Create an object using object literal:
+const myObj = {
+  name: 'Anthony Edward Stark',
+  alias: 'Iron Man',
+  gender: 'male',
+  education: 'MIT',
+  affiliation: {
+    current: 'Avengers'
+  }
+}
+
+// Accessing object properties with dot notation:
+// First: name of the object.
+// Second: name of the property to access.
+// Third: dot character between the object and property.
+myObj.name // => 'Anthony Edward Stark'
+myObj.alias // => 'Iron Man'
+
+// Accessing deeper object properties:
+// Access the "current" property that exists
+// in nested object assigned to "affiliation" property
+myObj.affiliation.current // => 'Avengers'
+```
 
 ## Conclusion: [...] ...
 
