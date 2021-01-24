@@ -446,7 +446,9 @@ These are three ways to access object properties in JavaScript: dot and bracket 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[variables]: https://blog.alexdevero.com/javascript-variables-introduction/
+[objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[loops]: https://blog.alexdevero.com/javascript-loops/
 
 <!--
 ### Meta:
