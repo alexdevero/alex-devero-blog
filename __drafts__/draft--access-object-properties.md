@@ -17,6 +17,8 @@ Dot notation, or dot property accessor, is probably the most popular way to acce
 
 You can use the same process also to access deeper properties. In this case, you chain multiple properties together. You chain them in the way they are nested. So, the most shallow property will come as first, right after the object name. The deepest property will come as the last one: `obj.shallowProp.deeperProp.DeepestProp`.
 
+Let's say you want to access property whose value is an array. You want to access specific item in that array. In this case, you can do what you would normally do if the array was a variable. You use the dot notation to access the property you want. After that, you use square brackets and index to get the item in the array you want.
+
 ```JavaScript
 // Create an object using object literal:
 const myObj = {
@@ -26,20 +28,40 @@ const myObj = {
   education: 'MIT',
   affiliation: {
     current: 'Avengers'
-  }
+  },
+  creators: ['Stan Lee', 'Larry Lieber', 'Don Heck', 'Jack Kirby']
 }
+
 
 // Accessing object properties with dot notation:
 // First: name of the object.
 // Second: name of the property to access.
 // Third: dot character between the object and property.
-myObj.name // => 'Anthony Edward Stark'
-myObj.alias // => 'Iron Man'
+console.log(myObj.name)
+// Output:
+// 'Anthony Edward Stark'
+
+console.log(myObj.alias)
+// Output:
+// 'Iron Man'
+
 
 // Accessing deeper object properties:
 // Access the "current" property that exists
 // in nested object assigned to "affiliation" property
-myObj.affiliation.current // => 'Avengers'
+console.log(myObj.affiliation.current)
+// Output:
+// 'Avengers'
+
+
+// Accessing array items in objects:
+// Access the first item inside the array
+// assigned to "creators" property.
+console.log(myObj.creators[0])
+// Output:
+// 'Stan Lee'
+```
+
 ```
 
 ## Conclusion: [...] ...
