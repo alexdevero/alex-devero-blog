@@ -242,6 +242,44 @@ console.log(status)
 // { alignment: 'good' }
 ```
 
+### Custom variable names and aliases
+
+Assigning values to variables with object destructuring is very easy. What if you want to use different variable name than is the name of the property? You can. Object destructuring allows you to specify an alias for the variable. You can use this alias to reference the variable using different name than the property.
+
+When you want to create an alias, you specify it inside the curly brackets on the left side of the assignment. You add colons (`:`) followed by the new alias right after the property name. From now on, you can use this alias when you want to reference that variable.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'Bruce Banner',
+  alias: 'Hulk',
+  affiliation: ['S.H.I.E.L.D.'],
+  status: {
+    alignment: 'good'
+  }
+}
+
+
+// Extract the value of "name" property
+// and assign it to variable called "realName" (new alias).
+const { name: realName } = myObj
+
+// Use new alias "realName" to get the value
+console.log(realName)
+// Output:
+// 'Bruce Banner'
+
+
+// Extract the value of "alias" property
+// and assign it to variable called "heroName" (new alias).
+const { alias: heroName } = myObj
+
+// Use new alias "heroName" to get the value
+console.log(heroName)
+// Output:
+// 'Hulk'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
