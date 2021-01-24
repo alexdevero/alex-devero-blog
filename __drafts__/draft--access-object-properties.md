@@ -1,6 +1,18 @@
 Objects are one area every JavaScript developer must know very well. Accessing object properties belongs to this area as well. In this tutorial, you will learn how to access object properties in three ways. You will learn how to use dot notation, bracket notation and destructuring.<!--more-->
 <!--
 Table of Contents:
+## Introduction to how to access object properties
+## Dot notation
+### Dot notation and valid property names
+## Bracket notation
+### Bracket notation and computed object properties
+## Object destructuring
+### Destructuring multiple properties
+### Custom variable names and aliases
+### Custom variable names (aliases) for multiple properties
+### Object destructuring, aliases and default values
+### Object destructuring and computed properties
+## Conclusion: How to access object properties in JavaScript in three ways
 -->
 
 ## Introduction to how to access object properties
