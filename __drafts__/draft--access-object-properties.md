@@ -155,6 +155,34 @@ console.log(myObj['affiliation'][1])
 // 'Justice League'
 ```
 
+### Bracket notation and computed object properties
+
+One interesting thing bracket notation allows is to use computed property names. These property names might not be known at the beginning, but later, or at runtime. One example can be a property name stored inside a variable. You can reference this variable to access property that matches the variable value.
+
+This variable might be undefined at the beginning and assigned later. That doesn't matter if you use it at the right time. Using computed object properties with bracket notation is similar to what you would normally do. The difference is that, now, you omit the quotes. You put the variable name between the brackets without them.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'James Howlett',
+  alias: 'Wolverine',
+  status: {
+    alignment: 'good'
+  }
+}
+
+// Assign a property you want to access to a variable:
+const myProp = 'alias'
+
+// Use the variable to access specific property ("alias"):
+// Referencing "myProp" will return value "alias",
+// which will be used to access the same property ("alias").
+// I.e.: myObj[myProp] => myObj['alias']
+console.log(myObj[myProp])
+// Output:
+// 'Wolverine'
+```
+
 ## Object destructuring
 
 Object destructuring is the last way to access object properties. It is also the newest. Dot and bracket notation have been around for a long time. Destructuring was added to JavaScript quite recently as part of the ES6 specification. Nonetheless, it quickly became very popular among JavaScript developers due to simplicity and usability.
