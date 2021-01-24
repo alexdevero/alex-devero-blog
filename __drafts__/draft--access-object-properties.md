@@ -62,6 +62,47 @@ console.log(myObj.creators[0])
 // 'Stan Lee'
 ```
 
+### Dot notation and valid property names
+
+In JavaScript, there are rules saying what is and what is not a valid identifier. A valid identifier can contain Unicode letters, `$`, `_`, and digits 0-9. However, it can't start with a digit. Following these rules is necessary especially when you want to declare new variables.
+
+These rules are also important for when you want to access object properties. This is especially true for dot notation. Dot notation works only with valid identifiers. It will not work if the property at hand violates these rules. For example, if it starts with number, or contains only number. Or, if it contains `-`.
+
+If you want to access some property that violates these rules, don't use dot notation. Instead, use bracket notation. This way, you will still be able to work with that property as usually. You will learn about bracket notation in the next section.
+
+```JavaScript
+// Create an object:
+myObj = {
+  1: 'First property',
+  'first-name': 'Bruce',
+}
+
+// Try to use dot notation
+// to access properties on "myObj".
+console.log(myObj.1)
+// Output:
+// SyntaxError: Unexpected token
+
+console.log(myObj.first-name)
+// Output:
+// NaN
+
+
+// Try to use bracket notation
+// to access properties on "myObj".
+console.log(myObj['1'])
+// Output:
+// 'First property'
+
+console.log(myObj[1])
+// Output:
+// 'First property'
+
+console.log(myObj['first-name'])
+// Output:
+// 'Bruce'
+```
+
 ## Bracket notation
 
 The second way you can use to access object properties is bracket notation. The main characteristic of method this method are square brackets. The syntax is similar to the dot notation. However, there are some important differences. You again start with the name of the object you are working with.
