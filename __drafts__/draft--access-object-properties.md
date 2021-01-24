@@ -1,3 +1,5 @@
+# How to Access Object Properties in JavaScript in Three Ways
+
 Objects are one area every JavaScript developer must know very well. Accessing object properties belongs to this area as well. In this tutorial, you will learn how to access object properties in three ways. You will learn how to use dot notation, bracket notation and destructuring.<!--more-->
 <!--
 Table of Contents:
@@ -21,7 +23,7 @@ Objects are one of the data types in JavaScript. They allow you to store data in
 
 In JavaScript there are multiple ways you can use to access one of those properties. These are dot notation, bracket notation and destructuring. Dot notation is sometimes also called dot property accessor. Another name for bracket notation is square brackets property access. There is one important thing to mention.
 
-All these ways assume you know the name of the property you want to access. If you don't know it, nothing is lost. You can [loops] to iterate over object to get all properties, including the one you want. You will get to this as well. But first, let's take a look at those three ways you can use to access object properties.
+All these ways assume you know the name of the property you want to access. If you don't know it, nothing is lost. You can [loops] to iterate over the object to get all properties, including the one you want. But now, let's take a look at those three ways you can use to access object properties.
 
 ## Dot notation
 
@@ -83,7 +85,7 @@ In JavaScript, there are rules saying what is and what is not a valid identifier
 
 These rules are also important for when you want to access object properties. This is especially true for dot notation. Dot notation works only with valid identifiers. It will not work if the property at hand violates these rules. For example, if it starts with number, or contains only number. Or, if it contains `-`.
 
-If you want to access some property that violates these rules, don't use dot notation. Instead, use bracket notation. This way, you will still be able to work with that property as usually. You will learn about bracket notation in the next section.
+If you want to access some property that violates these rules, don't use dot notation. Instead, use bracket notation. This way, you will still be able to work with that property as usual. You will learn about bracket notation in the next section.
 
 ```JavaScript
 // Create an object:
@@ -122,7 +124,7 @@ console.log(myObj['first-name'])
 
 The second way you can use to access object properties is bracket notation. The main characteristic of method this method are square brackets. The syntax is similar to the dot notation. However, there are some important differences. You again start with the name of the object you are working with.
 
-As second comes the name of the property. Here, you have to wrap the name of the property with quotes and square brackets. It doesn't matter if you use single or double quotes. What matters is that you use them to wrap the name of the property. Then, you wrap this with square brackets and put it after the object. And, no dot in-between.
+As second comes the name of the property. Here, you have to wrap the name of the property with quotes and square brackets. It doesn't matter if you use single or double quotes. What matters is that you use them to wrap the name of the property. Then, you wrap this with square brackets and put it after the object. No dot between them.
 
 Bracket notation also allows you to access deeper properties. This works similarly to dot notation. All properties are chained together, from the most shallow to the deepest. In case of brackets, there are no dots between properties. Furthermore, you must wrap all properties with quotes and square brackets.
 
@@ -362,7 +364,7 @@ console.log(connection)
 
 Object destructuring might be cool, but what if the property you want to access doesn't exist? One thing you can do with object destructuring is to provide some default value. If the property doesn't exist, the variable will be assigned this default value. Otherwise, it will be assigned the existing value.
 
-When you want to specify default value for any property, you do it also inside the curly brackets. You specify the default value after the property name. You also have to separate those two with equal sign (`=`). If there is an alias, then, the default values comes after the alias, as last.
+When you want to specify default value for any property, you do it also inside the curly brackets. You specify the default value after the property name. You also have to separate those two with equal sign (`=`). If there is an alias, then, the default value comes after the alias, as last.
 
 ```JavaScript
 // Create an object:
@@ -408,7 +410,7 @@ console.log(connections)
 
 ### Object destructuring and computed properties
 
-Similarly to bracket notation, object destructuring also allows to use computed properties names. The way to use it is following. Wrap the variable name, that contains the property name, with square brackets and put it inside the curly brackets. One thing to remember is that you have to specify an alias. Otherwise you will get SyntaxError.
+Similarly to bracket notation, object destructuring also allows to use computed property names. The way to use it is following. Wrap the variable name, that contains the property name, with square brackets and put it inside the curly brackets. One thing to remember is that you have to specify an alias. Otherwise, you will get SyntaxError.
 
 ```JavaScript
 // Create an object:
