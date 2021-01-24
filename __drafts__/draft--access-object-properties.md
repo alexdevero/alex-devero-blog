@@ -394,6 +394,51 @@ console.log(connections)
 // 'No connections'
 ```
 
+### Object destructuring and computed properties
+
+Similarly to bracket notation, object destructuring also allows to use computed properties names. The way to use it is following. Wrap the variable name, that contains the property name, with square brackets and put it inside the curly brackets. One thing to remember is that you have to specify an alias. Otherwise you will get SyntaxError.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'Max Eisenhardt',
+  alias: 'Magneto',
+  status: {
+    alignment: 'bad'
+  },
+  creators: ['Stan Lee', 'Jack Kirby']
+}
+
+// Assign a property you want to access to a variable:
+const myProp = 'name'
+
+// Use the variable to access specific property ("name")
+// and also create alias for it:
+// Referencing "myProp" will now return value "name",
+// which will be used to access the "name" property.
+const { [myProp]: name } = myObj
+
+// Log the value of new variable "name":
+console.log(name)
+// Output:
+// 'Wolverine'
+
+
+// Use computed property name with default value:
+const myProp = 'powers'
+
+// Use the variable to access specific property ("powers")
+// and create alias "abilities" for it.
+// If the property doesn't exist, use 'Unknown'
+// as the default value for the new variable.
+const { [myProp]: abilities = 'Unknown' } = myObj
+
+// Log the value of new variable "abilities":
+console.log(abilities)
+// Output:
+// 'Unknown'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
