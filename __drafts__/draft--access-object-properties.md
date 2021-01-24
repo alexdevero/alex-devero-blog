@@ -152,6 +152,58 @@ console.log(myObj['affiliation'][1])
 // 'Justice League'
 ```
 
+## Object destructuring
+
+Object destructuring is the last way to access object properties. It is also the newest. Dot and bracket notation have been around for a long time. Destructuring was added to JavaScript quite recently as part of the ES6 specification. Nonetheless, it quickly became very popular among JavaScript developers due to simplicity and usability.
+
+You use it when you declare new variable. On the left side of the assignment, you specify the name of the property and wrap it with curly brackets. On the right side, you reference the object you want to work with. This will assign the variable with the value of the property you specified.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'Unknown',
+  alias: 'The Joker',
+  affiliation: ['Black Glove', 'Injustice Gang', 'Injustice League', 'Joker League of Anarchy', 'Justice League of Arkham'],
+  status: {
+    alignment: 'bad',
+    occupation: 'criminal'
+  }
+}
+
+
+// Extract the value of "alias" property:
+const { alias } = myObj
+
+// Log the value of new "alias" variable:
+console.log(alias)
+// Output:
+// 'The Joker'
+
+
+// Extract the value of "affiliation" property:
+const { affiliation } = myObj
+
+// Log the value of new "affiliation" variable:
+console.log(affiliation)
+// Output:
+// [
+//   'Black Glove',
+//   'Injustice Gang',
+//   'Injustice League',
+//   'Joker League of Anarchy',
+//   'Justice League of Arkham'
+// ]
+
+
+// Extract the value of "status" property:
+const { status } = myObj
+
+// Log the value of new "status" variable:
+console.log(status)
+// Output:
+// { alignment: 'bad', occupation: 'criminal' }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
