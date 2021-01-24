@@ -280,6 +280,41 @@ console.log(heroName)
 // 'Hulk'
 ```
 
+### Custom variable names (aliases) for multiple properties
+
+Just like you can change the variable name for one property you can change it for multiple. The process is the same. You have to add additional colons and new alias inside the curly brackets. Do this for each property for which you want to change the variable name.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'Oliver Jonas Queen',
+  alias: 'Green Arrow',
+  affiliation: ['Justice League', 'Justice Society International'],
+  status: {
+    alignment: 'good'
+  }
+}
+
+// Change multiple variable names:
+// Change variable for "name" to "realName".
+// Change variable for "alias" to "heroName".
+// Change variable for "affiliation" to "connection".
+const { name: realName, alias: heroName, affiliation: connection } = myObj
+
+// Log all values using new variable names:
+console.log(realName)
+// Output:
+// 'Oliver Jonas Queen'
+
+console.log(heroName)
+// Output:
+// 'Green Arrow'
+
+console.log(connection)
+// Output:
+// [ 'Justice League', 'Justice Society International' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
