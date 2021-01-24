@@ -318,6 +318,54 @@ console.log(connection)
 // [ 'Justice League', 'Justice Society International' ]
 ```
 
+### Object destructuring, aliases and default values
+
+Object destructuring might be cool, but what if the property you want to access doesn't exist? One thing you can do with object destructuring is to provide some default value. If the property doesn't exist, the variable will be assigned this default value. Otherwise, it will be assigned the existing value.
+
+When you want to specify default value for any property, you do it also inside the curly brackets. You specify the default value after the property name. You also have to separate those two with equal sign (`=`). If there is an alias, then, the default values comes after the alias, as last.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  name: 'Richard John Grayson',
+  alias: 'Nightwing',
+  status: {
+    alignment: 'good'
+  }
+}
+
+// Deconstruct the "name" property
+// and add default value in case it doesn't exist.
+const { name = 'Anonymous' } = myObj
+
+// Log the value of name
+console.log(name)
+// Output:
+// 'Richard John Grayson'
+
+
+// Deconstruct the "gender" property
+// and add default value in case it doesn't exist.
+const { gender = 'Unknown' } = myObj
+
+// Log the value of "name":
+console.log(gender)
+// Output:
+// 'Unknown'
+
+
+// Deconstruct the "name" property
+// and "affiliation" property,
+// change it to "connections" and add default value
+// in case "affiliation" property doesn't exist.
+const { name, affiliation: connections = 'No connections' } = myObj
+
+// Log the value of new variable "connections":
+console.log(connections)
+// Output:
+// 'No connections'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
