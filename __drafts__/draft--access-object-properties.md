@@ -29,7 +29,10 @@ const myObj = {
   affiliation: {
     current: 'Avengers'
   },
-  creators: ['Stan Lee', 'Larry Lieber', 'Don Heck', 'Jack Kirby']
+  creators: ['Stan Lee', 'Larry Lieber', 'Don Heck', 'Jack Kirby'],
+  status: {
+    alignment: 'good'
+  }
 }
 
 
@@ -114,7 +117,7 @@ Bracket notation also allows you to access deeper properties. This works similar
 Accessing items inside arrays assigned to properties works similarly. First, specify the property name and wrap it with quotes and square brackets. Then, add additional pair of square bracket with the index of the item you want to access.
 
 ```JavaScript
-// Create object with object literal:
+// Create an object:
 const myObj = {
   name: 'Bruce Thomas Wayne',
   alias: 'Batman',
