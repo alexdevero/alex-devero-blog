@@ -439,7 +439,9 @@ console.log(abilities)
 // 'Unknown'
 ```
 
-## Conclusion: [...] ...
+## Conclusion: How to access object properties in JavaScript in three ways
+
+These are three ways to access object properties in JavaScript: dot and bracket notation and object destructuring. I hope this tutorial helped you understand how all they all work and how to use them. Now, find the one you feel the most comfortable with and start using it. Remember, there are no good or bad ways to access properties.
 
 [xyz-ihs snippet="thank-you-message"]
 
