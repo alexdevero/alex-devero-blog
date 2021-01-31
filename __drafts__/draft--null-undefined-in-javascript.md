@@ -121,6 +121,27 @@ console.log(typeof undefined)
 // 'undefined'
 ```
 
+### undefined and default parameters values
+
+[Default parameter values] are one handy feature that was introduced in ES6. This feature allows you to declare parameters with default values. You can use this feature with variables and with functions. By default, default parameters are used when the value is undefined. In case of functions, when the parameter is undefined, i.e. missing.
+
+```JavaScript
+// Create function with default parameter value:
+function myFunc(name = 'Unknown') {
+  return name
+}
+
+// Call myFunc without any argument (parameter being undefined):
+myFunc()
+// Output:
+// Unknown
+
+// Call myFunc with argument (parameter being defined):
+myFunc('Jack')
+// Output:
+// 'Jack'
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
