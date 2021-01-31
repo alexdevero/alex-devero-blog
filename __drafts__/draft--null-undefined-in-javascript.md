@@ -113,9 +113,14 @@ myFunc()
 // undefined
 ```
 
-One interesting thing is that `undefined` is not valid in JSON, `null` is. If you try to get the type of a variable that is undefined JavaScript will return "undefined". This is another interesting thing. In JavaScript, the the data type of undefined is a special value with its own type "Undefined".
+One interesting thing is that `undefined` is not valid in JSON, `null` is. There is another interesting thing. If you try to get the type of a variable that is undefined JavaScript will return "undefined". In JavaScript, the the data type of undefined is a special value with its own type "Undefined".
 
 ```JavaScript
+// Trying to use undefined in JSON
+console.log(JSON.stringify({ name: undefined, age: null }))
+// Output:
+// '{"age":null}'
+
 // Getting the data type of undefined:
 console.log(typeof undefined)
 // Output:
