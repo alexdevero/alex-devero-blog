@@ -188,6 +188,44 @@ console.log(four)
 // "Four doesn't exist"
 ```
 
+## The null
+
+`null` in JavaScript can be hard to encounter. Unlike `undefined` it is not assigned automatically when some conditions happen. Due to tis, it has to be assigned by someone. This can happen quite often because many JavaScript developers like to use as a temporary value. It signals empty or non-existent value.
+
+```JavaScript
+// Variable automatically assigned undefined:
+let name
+
+// Log the value of "name":
+console.log(name)
+// Output:
+// undefined
+
+
+// Variable explicitly assigned null:
+let position = null
+
+// Log the value of "position":
+console.log(position)
+// Output:
+// null
+```
+
+Do you remember that `undefined` has its own type "Undefined"? There is one interesting thing on `null` in JavaScript as well. It is actually an object. This object has a valid value, but no properties and it is non-mutable. You can easily test this by yourself with the [typeof] operator.
+
+If you use the `typeof` operator with `null`, you will not get something like "null" for example. Instead, you will get "object". This has been in JavaScript since the very beginning. It is regarded as a mistake in the original implementation of JavaScript.
+
+```JavaScript
+// Test type of null:
+console.log(typeof null)
+// Output:
+// 'object'
+
+console.log(typeof null === 'object')
+// Output:
+// true
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
