@@ -368,6 +368,9 @@ console.log(typeof myVar === 'object' && !myVar)
 // true
 ```
 
+## Conclusion: undefined and null in JavaScript explained
+
+The `undefined` and `null` are two data types that can be sometimes confusing for beginners. This is especially thanks to some quirks and things one may not expect. I hope that this tutorial helped you understand how `undefined` and `null` in JavaScript work and also how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
