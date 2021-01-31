@@ -336,7 +336,38 @@ objTwo = null
 // { isAlive: true } can be garbage collected.
 ```
 
-## Conclusion: undefined and null in JavaScript Explained
+## Simple checks for undefined and null in JavaScript
+
+Checking for undefined and null in JavaScript can be easy and simple. You can use strict equality check and correct data type to check for. You can also use the `typeof` operator. However, you have to remember the thing about `null` being "object", not "null".
+
+```JavaScript
+// Check if value is null:
+const myVar = null
+
+console.log(myVar === null)
+// Output:
+// true
+
+
+// Check if value is undefined:
+let myVar
+
+console.log(myVar === undefined)
+// Output:
+// true
+```
+
+Another option you can use to check for `null` is to use `typeof` operator and check if the value is falsy. `null` will be falsy, empty object will be `truthy`.
+
+```JavaScript
+// Check if value is null:
+const myVar = null
+
+console.log(typeof myVar === 'object' && !myVar)
+// Output:
+// true
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
