@@ -271,6 +271,13 @@ myObj = null
 [data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
 [falsy]: https://developer.mozilla.org/en-us/docs/Glossary/Falsy
 [if...else]: https://blog.alexdevero.com/javascript-if-else-statement/
+[type coercion]: https://blog.alexdevero.com/type-coercion-in-javascript/
+[loose equality]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
+[strict equality]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
+[Default parameter values]: https://blog.alexdevero.com/es6-es7-es8-modern-javascript-pt2/#default-parameters-and-values
+[Destructuring assignment]: https://developer.mozilla.org/en-us/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[typeof]: https://developer.mozilla.org/en-us/docs/Web/JavaScript/Reference/Operators/typeof
+[garbage collection]: https://blog.alexdevero.com/garbage-collection-in-javascript/
 
 <!--
 ### Meta:
