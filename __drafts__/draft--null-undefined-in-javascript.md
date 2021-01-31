@@ -142,6 +142,46 @@ myFunc('Jack')
 // 'Jack'
 ```
 
+### undefined and destructuring assignment
+
+[Destructuring assignment] is another feature introduced in ES6 that quickly became very popular. This feature allows you to extract values from arrays, and properties from objects, and assign them to variables. All this with a single line of code. One useful feature of destructuring is that it supports default values.
+
+Imagine you have an array. What you want is to extract some items from this array and assign them to few variables. The problem is that you don't know if there is enough values for each variable. What you can do is to use default values. If some variable doesn't find a match in the array, it will use the default value.
+
+This is because the value received from the array will be `undefined`. This will tell JavaScript that there is nothing to assign and that it should use the default value.
+
+```JavaScript
+// Create an array:
+const myArray = ['1 is one', '2 is two', '3 is three']
+
+// Use destructuring assignment
+// to assign values from myArray:
+const [one, two, three, four = 'Four doesn\'t exist'] = myArray
+
+// Get the value of one:
+console.log(one)
+// Output:
+// '1 is one'
+
+// Get the value of two:
+console.log(two)
+// Output:
+// '2 is two'
+
+// Get the value of three:
+console.log(three)
+// Output:
+// '3 is three'
+
+// Get the value of four:
+// four will be undefined because the array
+// contains only three items.
+// This will trigger default value 'Four doesn\'t exist'.
+console.log(four)
+// Output:
+// "Four doesn't exist"
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
