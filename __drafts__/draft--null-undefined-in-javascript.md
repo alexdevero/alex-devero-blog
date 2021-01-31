@@ -15,7 +15,7 @@ When you test for loose equality there is [type coercion] happening on the backg
 
 These two data types are not the same. If you want to avoid many problems, avoid testing for loose equality. Instead of loose equality, test for strict equality. When you test for [strict equality] JavaScript doesn't perform type coercion. Strict check will compare not only the value but also the data type.
 
-`undefined` and `null` in JavaScript are different data types. This means that strict equality test will tell you, correctly, that these two are not the same. Let's take a look at each data type separately.
+`undefined` and `null` in JavaScript are different data types. This means that strict equality test will tell you, correctly, that these two are not the same.
 
 ```JavaScript
 // Testing for loose equality:
@@ -26,6 +26,62 @@ console.log(null == undefined)
 
 // Testing for strict equality:
 console.log(null === undefined)
+// Output:
+// false
+
+
+// Other examples of loose equality:
+console.log(null == 0)
+// Output:
+// false
+
+console.log(null == 0n)
+// Output:
+// false
+
+console.log(null == null)
+// Output:
+// true
+
+console.log(null == false)
+// Output:
+// false
+
+console.log(null == NaN)
+// Output:
+// false
+
+console.log(null == '')
+// Output:
+// false
+
+
+// Other examples of strict equality:
+console.log(null === 0)
+// Output:
+// false
+
+console.log(null === 0n)
+// Output:
+// false
+
+console.log(null === null)
+// Output:
+// true
+
+console.log(null === undefined)
+// Output:
+// false
+
+console.log(null === false)
+// Output:
+// false
+
+console.log(null === NaN)
+// Output:
+// false
+
+console.log(null === '')
 // Output:
 // false
 ```
