@@ -312,11 +312,28 @@ One way to do this is by assigning a variable, that stores the object, `null`. I
 
 ```JavaScript
 // Create an object:
-let myObj = {}
+let myObj = { name: 'Stuart' }
 
 // Assign the variable myObj to null
-// to make {} available for garbage collection:
+// to make { name: 'Stuart' } available for garbage collection:
 myObj = null
+
+// { name: 'Stuart' } can be garbage collected.
+
+
+// Multiple references:
+// First reference to { isAlive: true }:
+let objOne = { isAlive: true }
+
+// Second reference to { isAlive: true }:
+let objTwo = objOne
+
+// Remove all references to { isAlive: true }
+// so the object can be garbage collected:
+objOne = null
+objTwo = null
+
+// { isAlive: true } can be garbage collected.
 ```
 
 ## Conclusion: undefined and null in JavaScript Explained
