@@ -226,6 +226,24 @@ console.log(typeof null === 'object')
 // true
 ```
 
+### null and default parameter values
+
+As you know, default parameter values allow you to declare default value in case necessary value is `undefined`. Interestingly, this doesn't work with `null`. Let's say you create a function and use default parameter value. A bit later, you call that function with and pass in `null`.
+
+What will happen in this case is not what you might expect. You will not get the default value you specified. What you will get instead is the `null`. Remember this if you like to use default parameters, or want to use them. Otherwise, you may get into some troubles.
+
+```JavaScript
+// Create function with default parameter value:
+function myFunc(name = 'Unknown') {
+  return name
+}
+
+// Call myFunc with null as an argument:
+myFunc(null)
+// Output:
+// null
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
