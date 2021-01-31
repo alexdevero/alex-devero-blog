@@ -244,6 +244,25 @@ myFunc(null)
 // null
 ```
 
+### null and garbage collection
+
+In JavaScript, there is something called [garbage collection]. This is a process for freeing up memory allocated for your code, your objects. What this process does is it looks for unused existing objects in memory and removes them. JavaScript determines if object is in use or not if it is referenced.
+
+When some object is no longer referenced JavaScript will assume it is no longer needed and remove it. This will free the memory allocated for that object. This process happens automatically and periodically on the background. This is one advantage of high-level languages such as JavaScript.
+
+You don't have to allocate memory every time you create an object. Just as well you don't have to free that memory when you no longer need some object. JavaScript does this memory management for you. What about `null`? While JavaScript manages memory automatically you can tell it that some object can be garbage collected.
+
+One way to do this is by assigning a variable, that stores the object, `null`. If there are no other references to that object JavaScript will remove it. This will not happen immediately. It will happen during the next cycle of garbage collection.
+
+```JavaScript
+// Create an object:
+let myObj = {}
+
+// Assign the variable myObj to null
+// to make {} available for garbage collection:
+myObj = null
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
