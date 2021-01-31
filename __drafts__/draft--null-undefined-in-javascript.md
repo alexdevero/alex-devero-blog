@@ -29,6 +29,98 @@ console.log(null === undefined)
 // false
 ```
 
+## The undefined
+
+When you declare a variable but don't assign it a value, it will become `undefined`. This is one of the things that JavaScript does automatically. However, you can also assign variable `undefined` by yourself if you want. Although, this is not a common practice among JavaScript developers.
+
+```JavaScript
+// Declare variable without assigning it a value:
+let car
+
+// Log the value of "car":
+console.log(car)
+// Output:
+// undefined
+
+
+// Declare variable as undefined:
+let house = undefined
+
+// Log the value of "house":
+console.log(house)
+// Output:
+// undefined
+```
+
+There are other scenarios when you will get `undefined`. Two examples of these scenarios are non-existing array elements, non-existing object properties. When you try to work with non-existing object property JavaScript will return undefined. The same with array element that doesn't exist.
+
+```JavaScript
+// Non-existing object properties and array elements:
+const book = {
+  title: 'Zero to One',
+  author: ['Peter Thiel', 'Blake Masters'],
+  publicationDate: 'September 18, 2014'
+}
+
+// Try to access non-existing property:
+console.log(book.genre)
+// Output:
+// undefined
+
+
+// Try to access non-existing array element:
+console.log(book.author[2])
+// Output:
+// undefined
+
+
+// Or:
+const myObj = {}
+const arr = []
+
+// Log the value of myObj.prop:
+console.log(myObj.prop)
+// Output:
+// undefined
+
+// Log the value of first element:
+console.log(arr[0])
+// Output:
+// undefined
+```
+
+Another scenario when you get an `undefined` is if you have a function that doesn't explicitly return anything. Then, it will implicitly return `undefined`. The same will happen if a function has a `return` statement, but without anything that follows it. It will also implicitly return `undefined`.
+
+```JavaScript
+// Create a function that doesn't return:
+function myFunc() {}
+
+// Call myFunc():
+myFunc()
+// Output:
+// undefined
+
+
+// Create a function that returns nothing:
+function myFunc() {
+  return
+}
+
+// Call myFunc():
+myFunc()
+// Output:
+// undefined
+```
+
+One interesting thing is that `undefined` is not valid in JSON, `null` is. If you try to get the type of a variable that is undefined JavaScript will return "undefined". This is another interesting thing. In JavaScript, the the data type of undefined is a special value with its own type "Undefined".
+
+```JavaScript
+// Getting the data type of undefined:
+console.log(typeof undefined)
+// Output:
+// 'undefined'
+```
+
 ## Conclusion: undefined and null in JavaScript Explained
 
 [xyz-ihs snippet="thank-you-message"]
