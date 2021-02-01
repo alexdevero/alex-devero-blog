@@ -3,6 +3,15 @@
 `undefined` and `null` are two data types in JavaScript that can sometimes be confusing. This tutorial will help you learn about them. It will explain what `undefined` and `null` in JavaScript are. You will also learn what are some differences between these two and how to work with them.<!--more-->
 <!--
 Table of Contents:
+## The basics
+## The undefined
+### undefined and default parameters values
+### undefined and destructuring assignment
+## The null
+### null and default parameter values
+### null and garbage collection
+## Simple checks for undefined and null in JavaScript
+## Conclusion: undefined and null in JavaScript explained
 -->
 
 ## The basics
