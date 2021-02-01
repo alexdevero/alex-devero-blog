@@ -11,7 +11,7 @@ Both, `undefined` and `null`, are primitive [data types] that exist in JavaScrip
 
 This means that when you use `undefined` in a boolean context it will be considered `false`. Boolean context is a context which evaluates to boolean value, either `true` or `false`. One example of boolean context is condition in [if...else] statement. This is also why you should avoid testing for loose equality.
 
-When you test for loose equality there is [type coercion] happening on the background. Both, `undefined` and `null`, are falsy and this is what they will be considered as. The result of test for [loose equality] will result in match. The result of this test will be `true`. However, this is not really correct.
+When you test for loose equality there is [type coercion] happening on the background. Both, `undefined` and `null`, are falsy and this is what they will be considered. The result of test for [loose equality] will result in match. The result of this test will be `true`. However, this is not really correct.
 
 These two data types are not the same. If you want to avoid many problems, avoid testing for loose equality. Instead of loose equality, test for strict equality. When you test for [strict equality] JavaScript doesn't perform type coercion. Strict check will compare not only the value but also the data type.
 
@@ -88,7 +88,7 @@ console.log(null === '')
 
 ## The undefined
 
-When you declare a variable but don't assign it a value, it will become `undefined`. This is one of the things that JavaScript does automatically. However, you can also assign variable `undefined` by yourself if you want. Although, this is not a common practice among JavaScript developers.
+When you declare a variable, but don't assign it a value, it will become `undefined`. This is one of the things that JavaScript does automatically. However, you can also assign variable `undefined` by yourself if you want. Although, this is not a common practice among JavaScript developers.
 
 ```JavaScript
 // Declare variable without assigning it a value:
@@ -169,7 +169,7 @@ myFunc()
 // undefined
 ```
 
-One interesting thing is that `undefined` is not valid in JSON, `null` is. There is another interesting thing. If you try to get the type of a variable that is undefined JavaScript will return "undefined". In JavaScript, the the data type of undefined is a special value with its own type "Undefined".
+One interesting thing is that `undefined` is not valid in JSON, `null` is. There is another interesting thing. If you try to get the type of a variable that is undefined JavaScript will return "undefined". In JavaScript, the data type of undefined is a special value with its own type "Undefined".
 
 ```JavaScript
 // Trying to use undefined in JSON
@@ -246,7 +246,7 @@ console.log(four)
 
 ## The null
 
-`null` in JavaScript can be hard to encounter. Unlike `undefined` it is not assigned automatically when some conditions happen. Due to tis, it has to be assigned by someone. This can happen quite often because many JavaScript developers like to use as a temporary value. It signals empty or non-existent value.
+`null` in JavaScript can be hard to encounter. Unlike `undefined` it is not assigned automatically when some conditions happen. Due to this, it has to be assigned by someone. This can happen quite often because many JavaScript developers like to use as a temporary value. It signals empty or non-existent value.
 
 ```JavaScript
 // Variable automatically assigned undefined:
@@ -302,11 +302,11 @@ myFunc(null)
 
 ### null and garbage collection
 
-In JavaScript, there is something called [garbage collection]. This is a process for freeing up memory allocated for your code, your objects. What this process does is it looks for unused existing objects in memory and removes them. JavaScript determines if object is in use or not if it is referenced.
+In JavaScript, there is something called [garbage collection]. This is a process for freeing up memory allocated for your code, your objects. What this process does is it looks for unused existing objects in memory and removes them. JavaScript determines if an object is in use or not if it is referenced.
 
-When some object is no longer referenced JavaScript will assume it is no longer needed and remove it. This will free the memory allocated for that object. This process happens automatically and periodically on the background. This is one advantage of high-level languages such as JavaScript.
+When some object is no longer referenced, JavaScript will assume it is no longer needed and will remove it. This will free the memory allocated for that object. This process happens automatically and periodically on the background. This is one advantage of high-level languages such as JavaScript.
 
-You don't have to allocate memory every time you create an object. Just as well you don't have to free that memory when you no longer need some object. JavaScript does this memory management for you. What about `null`? While JavaScript manages memory automatically you can tell it that some object can be garbage collected.
+You don't have to allocate memory every time you create an object. Just as well you don't have to free that memory when you no longer need some object. JavaScript does this memory management for you. What about `null`? While JavaScript manages memory automatically you can tell JavaScript that some object can be garbage collected.
 
 One way to do this is by assigning a variable, that stores the object, `null`. If there are no other references to that object JavaScript will remove it. This will not happen immediately. It will happen during the next cycle of garbage collection.
 
