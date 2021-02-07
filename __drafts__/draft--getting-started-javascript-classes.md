@@ -160,6 +160,43 @@ joe.sayHi()
 // 'Hello, my name is Joe.'
 ```
 
+### Public class fields and methods
+
+Class properties and public class field are very similar. The main difference is that you define class properties in the `constructor` method. With class fields, you don't need the `constructor`, because they are defined outside it. This is also means that if you don't need the `constructor` for something else, you can omit it.
+
+However, if you want to define class parameters or do some stuff during class instantiation, you will still have to use `constructor`. Another important difference is that public fields don't use the `this` keyword. When you define new public field, you start with the name of the field (property), not the `this` and dot.
+
+One thing about public class fields and access. Fields you define as public will be always accessible from the inside as well as the outside of the class, and its instances. This means that you will be able to access and modify them as you want. The same applies to public methods. They will be all accessible and modifiable.
+
+Last thing. Any class field and method you define are public by default. You can change this by defining the field or method either as static or private. This means using corresponding keyword. Otherwise, JavaScript will automatically assume that the field or method should be public and make them that way.
+
+```JavaScript
+// Create new class:
+class Car {
+  // Define class fields for "numOfWheels" and "fuel":
+  numOfWheels = 4
+  fuelType = 'electric'
+
+  // Define public method:
+  startEngine() {
+    return 'Engine is running.'
+  }
+}
+
+// Create instance of Car class:
+const tesla = new Car()
+
+// Log the value of public class field "fuelType":
+console.log(tesla.fuelType)
+// Output:
+// 'electric'
+
+// Call the "startEngine" method:
+console.log(tesla.startEngine())
+// Output:
+// 'Engine is running.'
+```
+
 
 ## Classes and instances
 
