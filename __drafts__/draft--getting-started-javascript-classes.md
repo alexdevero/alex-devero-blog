@@ -63,6 +63,29 @@ class MyClass {
 }
 ```
 
+## this and classes
+
+When you work with JavaScript classes it is very likely you will see the [this keyword] a lot. Basically all you need to know is this. When you use `this` inside a class it will refer to the class itself. When you create new instance of that class, it will refer to that very instance.
+
+One thing that can help you is using your imagination. When you see `this` inside a class you can imagine replacing that `this` with the name of the class you are currently working with. This is, theoretically speaking, what's happening.
+
+```JavaScript
+// Create new class:
+class MyClass {
+  // Create constructor and define one parameter:
+  constructor(name) {
+    // This:
+    this.name = name
+    // Can be translated here to:
+    // MyClass.name = name
+
+    // When you create an instance of MyClass
+    // it can be translated here to:
+    // InstanceOfMyClass.name = name
+  }
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
