@@ -368,7 +368,13 @@ If you found JavaScript classes interesting, and want to learn more, take a look
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[create objects]: https://blog.alexdevero.com/create-objects-in-javascript/
+[prototypes]: https://blog.alexdevero.com/prototype-prototypal-inheritance/
+[Babel]: https://babeljs.io/
+[functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[this keyword]: https://blog.alexdevero.com/this-in-javascript-works/
+[part 1]: https://blog.alexdevero.com/javascript-classes-pt1/
+[part 2]: https://blog.alexdevero.com/javascript-classes-pt2/
 
 <!--
 ### Meta:
