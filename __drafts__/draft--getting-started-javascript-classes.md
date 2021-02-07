@@ -112,6 +112,54 @@ Other ways to create class properties are class fields. The names class fields a
 
 At this moment, there are three types of class fields: public, static and private. We will talk about each in the next section. First, let's quickly talk about class methods.
 
+### Class methods
+
+When you want to create class method, you define it right inside the class body. Defining a class method is as simple as defining a function. There is one difference. When you create a class method you omit the `function` keyword and start with the method name. And, no need for the `this` keyword when you define the method.
+
+However, you will need `this` if you want to reference some property or method of the class you are working with. When you want to call some class method you create new instance of the class. Then, you call the method on that instance, using dot notation.
+
+```JavaScript
+// Create new class with method:
+class MyClass {
+  // Create class method:
+  myMethod() {
+    return 'Hello!'
+  }
+}
+
+// Create instance of "MyClass":
+const myClassInstance = new MyClass()
+
+// Call "myMethod" on "myClassInstance" instance:
+joe.myMethod()
+// Output:
+// 'Hello!'
+
+
+// Create new class with method using this:
+class MyClass {
+  // Create constructor and define one parameter:
+  constructor(name) {
+    // Create class property called "name"
+    // and assign it a value of "name" parameter
+    this.name = name
+  }
+
+  // Create class method:
+  sayHi() {
+    return `Hello, my name is ${this.name}.`
+  }
+}
+
+// Create instance of "MyClass":
+const joe = new MyClass('Joe')
+
+// Call "sayHi" on "joe" instance:
+joe.sayHi()
+// Output:
+// 'Hello, my name is Joe.'
+```
+
 
 ## Classes and instances
 
