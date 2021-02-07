@@ -24,7 +24,45 @@ class MyClass {
 }
 ```
 
-## Conclusion: [...] ...
+## Classes, constructor and parameters
+
+When you declare new class there are no parentheses where you could specify parameters. This doesn't mean that classes don't support parameters. They do. They just work with them in a different way. When you want to specify parameters for your class you have to use method called `constructor`.
+
+This `constructor` is a very unique method. You can create it only inside a class and only once. If you don't create this method yourself, JavaScript will automatically use default that is built inside every class. The main job of this method is to execute tasks you have specified when you create a new instance of a class.
+
+Instance is basically a new object based on a specific class, and it inherits all properties and methods defined in that class. Every time you create new instance of a class it will also automatically invoke the `constructor` method. This is useful when you want to do something when you create new class instance.
+
+For example, assigning properties with initial values. Another thing `constructor` allows is specifying parameters. The `constructor` method is a normal method. As such, it can also accept parameters. If you specify some parameter for the `constructor` method these parameters will become parameters of the class itself.
+
+When you create new instance of the class, you can pass in some values as arguments, based on the parameters of the `constructor`. Otherwise, you can omit any parameters and use just the `constructor` to do some initial tasks. If you define your own `constructor`, and replace the default, do at the top of the class.
+
+```JavaScript
+// Create new class "MyClass" with constructor,
+// but without any parameters.
+class MyClass {
+  // Create constructor method without any parameters
+  constructor() {
+    // Code that will be executed
+    // when a new class instance is created.
+  }
+}
+
+
+// Create new class "MyClass"
+// that accepts two parameters: name and age.
+class MyClass {
+  // Create constructor method
+  // and specify "name" and "age" parameters.
+  constructor(name, age) {
+    // Create properties "name" and "age" on the class
+    // and assign them values passed as arguments
+    // for "name" and "age" parameters.
+    this.name = name
+    this.age = age
+  }
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
