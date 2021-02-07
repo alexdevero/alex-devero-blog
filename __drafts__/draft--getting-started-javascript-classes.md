@@ -87,6 +87,70 @@ class MyClass {
 ```
 
 
+## Classes and instances
+
+We already briefly talked about creating instances of classes. As I mentioned, instances are like new objects you create based on existing classes. The reason for creating new instances is that they automatically inherit properties and methods you defined in the class they are based on.
+
+This means that you don't have to write the same code over and over again if you want to use it in multiple objects. What you can do is create one class and put the code you want to re-use there. When you need an object that can do all that stuff you can use that class to create new instance.
+
+This instance will inherit properties and methods you defined in that "parent" class. It will be able to work with these properties and methods. In order to create new instance of class, you declare new variable. On the right side, you use the `new` keyword followed by the name of the class you want to instantiate and parentheses.
+
+If the class accepts any parameters, you pass them inside the parentheses that follow after the name of the class. Otherwise, you leave the parentheses empty. This way, you can create as many instances of a specific class as you want.
+
+Remember that all properties and their values you "hard-code" in the `constructor` of a specific class will be inherited by all instances of that class. Any properties you assign values passed as arguments will be dynamic. They will depend on arguments you use during instantiation.
+
+```JavaScript
+// Class without parameters:
+class MyClass {
+  // Create constructor:
+  constructor() {
+    // Create class property "isAlive" and assign it true.
+    this.isAlive = true
+  }
+}
+
+// Create instance of "MyClass" class:
+const myClassInstance = new MyClass('Jessica')
+
+// log the value of "isAlive" property
+// on "myClassInstance" instance:
+console.log(myClassInstance.isAlive)
+// Output:
+// true
+
+
+// Class with one parameter:
+class MyClassTwo {
+  // Create constructor and define one parameter:
+  constructor(name) {
+    // Create class property called "name"
+    // and assign it a value of "name" parameter
+    // and another boolean property "isAlive".
+    this.name = name
+    this.isAlive = true
+  }
+}
+
+// Create instance of "MyClassTwo" class
+// and pass in argument for "name" parameter:
+const myClassInstanceTwo = new MyClassTwo('Jacob')
+
+// log the value of "name" property
+// on "myClassInstanceTwo" instance:
+console.log(myClassInstanceTwo.name)
+// Output:
+// 'Jacob'
+
+// Create another instance of "MyClassTwo" class
+const myClassInstanceThree = new MyClassTwo('Tobias')
+
+// log the value of "name" property
+// on "myClassInstanceTwo" instance:
+console.log(myClassInstanceThree.name)
+// Output:
+// 'Tobias'
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
