@@ -197,6 +197,45 @@ console.log(tesla.startEngine())
 // 'Engine is running.'
 ```
 
+### Static class fields and methods
+
+The second type of class fields and methods are static. When you want to define a static class field or method you add the keyword `static` before the field or method name. The main difference between static class fields and public class fields is that you can't access static class fields on instances of the class.
+
+You can access static class fields only on the class itself. The same applies to static methods. You can't call them on instances of the class. You can call them only on the class itself. Static fields and methods are often used for utility purposes. For example, doing cleanups, updates or having an evidence of existing class instances.
+
+When you work with static class fields remember that methods that can work with them are only static methods. You can't access static class fields with neither public nor private methods, only static.
+
+```JavaScript
+class Car {
+  // Declare static property to keep track
+  // of how many instances of Car has been created.
+  static numOfCopies = 0
+
+  constructor() {
+    // When new instance of Car is created
+    // update the number of Car instances:
+    Car.numOfCopies++
+  }
+
+  // Create static method to access
+  // static field "numOfCopies".
+  static getNumOfCopies() {
+    // Return the value of "numOfCopies" field:
+    return Car.numOfCopies
+  }
+}
+
+// Log number of instances of MyClass
+console.log(Car.getNumOfCopies())
+// Outputs: 0
+
+// Create instance of Car:
+const porsche = new Car()
+
+// Log number of instances of Car again:
+console.log(Car.getNumOfCopies())
+// Outputs: 1
+```
 
 ## Classes and instances
 
