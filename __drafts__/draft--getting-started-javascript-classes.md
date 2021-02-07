@@ -227,14 +227,18 @@ class Car {
 
 // Log number of instances of MyClass
 console.log(Car.getNumOfCopies())
-// Outputs: 0
+// Output:
+// 0
 
 // Create instance of Car:
 const porsche = new Car()
 
 // Log number of instances of Car again:
 console.log(Car.getNumOfCopies())
-// Outputs: 1
+// Output:
+// 1
+```
+
 ```
 
 ## Classes and instances
