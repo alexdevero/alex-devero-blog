@@ -86,6 +86,32 @@ class MyClass {
 }
 ```
 
+## Class properties and methods
+
+Every class can have infinite number of properties, just like any object. In the beginning, there was only one way to define these properties. You could define properties only inside the `constructor` method. Note that it doesn't matter if the `constructor` method accepts any parameter.
+
+Even if the `constructor` method doesn't accept any, defining class properties was still possible only inside it. This changed only to some degree. The `constructor` method is still the only place to define parameters for the class and assign their values to some class properties.
+
+```JavaScript
+// Create new class:
+class MyClass {
+  // Create constructor and define one parameter:
+  constructor(name) {
+    // Create class property called "name"
+    // and assign it a value of "name" parameter
+    this.name = name
+
+    // Create additional class properties:
+    this isHuman = true
+    this.isAlive = true
+  }
+}
+```
+
+Other ways to create class properties are class fields. The names class fields and class properties are almost the same. Difference is that properties are defined inside `constructor` method while class fields are defined outside it, inside the class body.
+
+At this moment, there are three types of class fields: public, static and private. We will talk about each in the next section. First, let's quickly talk about class methods.
+
 
 ## Classes and instances
 
