@@ -239,6 +239,49 @@ console.log(Car.getNumOfCopies())
 // 1
 ```
 
+### Private class fields and methods
+
+Private class fields and methods are the last type of fields and methods you can use. Private class fields and methods are basically the opposite of public fields and methods. When you define some field or method as private you can work with it only inside the class. From the outside, they will be invisible.
+
+This can be useful when you want to keep some data private. When you want some data to be inaccessible from the outside and also from any class instance. The syntax for private fields and methods is simple. In order to define private field or method start the name with `#` (hashtag symbol).
+
+When you want to access private field, or call private method, you also have to use the hashtag symbol. One interesting thing is that public method can access private fields and methods. So, if you want, you can create private field or method. Then you can create a public method to access the private field or call the private method. Both things will work.
+
+```JavaScript
+class App {
+  // Declare private field "version":
+  #version = '1.0'
+
+  // Create private method "getVersion":
+  #getVersion() {
+    return this.#version
+  }
+
+  // Create public method "getVersionPublic" to access
+  // private field "version":
+  getVersionPublic() {
+    // Return the value of "numOfCopies" field:
+    return this.#version
+  }
+
+  // Create another public method "callGetVersion"
+  // that calls the private method "getVersion":
+  callGetVersion() {
+    return this.#getVersion()
+  }
+}
+
+// Create instance of Car:
+const myApp = new App()
+
+// Log number of instances of Car again:
+console.log(myApp.getVersionPublic())
+// Output:
+// '1.0'
+
+console.log(myApp.callGetVersion())
+// Output:
+// '1.0'
 ```
 
 ## Classes and instances
