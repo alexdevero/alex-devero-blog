@@ -359,6 +359,12 @@ console.log(myClassInstanceThree.name)
 // 'Tobias'
 ```
 
+## Conclusion: How to get started with JavaScript classes
+
+JavaScript classes are interesting feature that offers a new way of creating objects and working with prototypes and prototypal inheritance. I hope that this short and quick guide helped you understand at least the basics so you can get started with JavaScript classes.
+
+If you found JavaScript classes interesting, and want to learn more, take a look at JavaScript Classes – A Friendly Introduction [part 1] and [part 2]. These two tutorials will give you more in-depth information about JavaScript classes and tell you about what we may have skipped in this short guide.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
