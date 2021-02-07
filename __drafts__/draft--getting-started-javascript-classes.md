@@ -1,5 +1,6 @@
-# Getting Started with JavaScript Classes: A Quick Guide
-<!--more-->
+# How to Get Started with JavaScript Classes: A Quick Guide
+
+JavaScript classes are popular feature of JavaScript. This tutorial  will help you learn what you need to know in order to get started with JavaScript classes. You will learn about class constructor, properties and methods. You will also learn what public, static and private class fields are.<!--more-->
 <!--
 Table of Contents:
 -->
