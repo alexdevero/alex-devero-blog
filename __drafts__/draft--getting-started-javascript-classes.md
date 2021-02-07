@@ -286,7 +286,7 @@ console.log(myApp.callGetVersion())
 
 ## Classes and instances
 
-We already briefly talked about creating instances of classes. As I mentioned, instances are like new objects you create based on existing classes. The reason for creating new instances is that they automatically inherit properties and methods you defined in the class they are based on.
+We already talked about instances of classes a couple of times. It is time to talk about them more. As I mentioned, instances are like new objects you create based on existing classes. The reason for creating new instances is that they automatically inherit properties and methods you defined in the class they are based on.
 
 This means that you don't have to write the same code over and over again if you want to use it in multiple objects. What you can do is create one class and put the code you want to re-use there. When you need an object that can do all that stuff you can use that class to create new instance.
 
