@@ -1,6 +1,6 @@
-# How to Get Started with JavaScript Classes: A Quick Guide
+# A Quick Guide to Get Started with JavaScript Classes
 
-JavaScript classes are popular feature of JavaScript. This tutorial  will help you learn what you need to know in order to get started with JavaScript classes. You will learn about class constructor, properties and methods. You will also learn what public, static and private class fields are.<!--more-->
+JavaScript classes are popular feature of JavaScript. This tutorial  will help you learn what you should know so you can get started with JavaScript classes. You will learn about class constructor, properties and methods. You will also learn what public, static and private class fields are.<!--more-->
 <!--
 Table of Contents:
 ## A quick introduction
@@ -39,7 +39,7 @@ class MyClass {
 
 When you declare new class there are no parentheses where you could specify parameters. This doesn't mean that classes don't support parameters. They do. They just work with them in a different way. When you want to specify parameters for your class you have to use method called `constructor`.
 
-This `constructor` is a very unique method. You can create it only inside a class and only once. If you don't create this method yourself, JavaScript will automatically use default that is built inside every class. The main job of this method is to execute tasks you have specified when you create a new instance of a class.
+This `constructor` is a unique method. You can create it only inside a class and only once. If you don't create this method yourself, JavaScript will automatically use default that is built inside every class. The main job of this method is to execute tasks you have specified when you create a new instance of a class.
 
 Instance is basically a new object based on a specific class, and it inherits all properties and methods defined in that class. Every time you create new instance of a class it will also automatically invoke the `constructor` method. This is useful when you want to do something when you create new class instance.
 
@@ -256,7 +256,7 @@ Private class fields and methods are the last type of fields and methods you can
 
 This can be useful when you want to keep some data private. When you want some data to be inaccessible from the outside and also from any class instance. The syntax for private fields and methods is simple. In order to define private field or method start the name with `#` (hashtag symbol).
 
-When you want to access private field, or call private method, you also have to use the hashtag symbol. One interesting thing is that public method can access private fields and methods. So, if you want, you can create private field or method. Then you can create a public method to access the private field or call the private method. Both things will work.
+When you want to access private field, or call private method, you also have to use the hashtag symbol. One interesting thing is that public method can access private fields and methods. So, if you want, you can create private field or method. Then, you can create a public method to access the private field or call the private method. Both things will work.
 
 ```JavaScript
 class App {
@@ -359,7 +359,7 @@ console.log(myClassInstanceThree.name)
 // 'Tobias'
 ```
 
-## Conclusion: How to get started with JavaScript classes
+## Conclusion: A quick guide to get started with JavaScript classes
 
 JavaScript classes are interesting feature that offers a new way of creating objects and working with prototypes and prototypal inheritance. I hope that this short and quick guide helped you understand at least the basics so you can get started with JavaScript classes.
 
@@ -383,7 +383,7 @@ If you found JavaScript classes interesting, and want to learn more, take a look
 
 <!--
 ### Keywords:
-- getting started with JavaScript Classes
+- get started with JavaScript Classes
 - JavaScript Classes
 -->
 
