@@ -108,9 +108,9 @@ class MyClass {
 }
 ```
 
-Other ways to create class properties are class fields. The names class fields and class properties are almost the same. Difference is that properties are defined inside `constructor` method while class fields are defined outside it, inside the class body.
+Other ways to create class properties are class fields. The names class fields and class properties are almost the same. Difference is that properties are defined inside `constructor` method while class fields are defined outside it, inside the class body. Other than that, class properties and class fields are basically interchangeable.
 
-At this moment, there are three types of class fields: public, static and private. We will talk about each in the next section. First, let's quickly talk about class methods.
+At this moment, there are three types of class fields: public, static and private. We will talk about each in the next section. But first, let's quickly talk about class methods.
 
 ### Class methods
 
