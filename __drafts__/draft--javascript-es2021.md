@@ -62,6 +62,35 @@ console.log(num)
 // 3685134689
 ```
 
+## Logical assignment operators
+
+JavaScript allows to use logical operators generally in boolean contexts. For example, in [if...else statements] and [ternary operators] to test for truthfulness. This will change with ES2021 and logical assignment operators. These operators allow you to combine logical operators with assignment expression (`=`).
+
+There are some [assignment operators] you can use that have been around for a while. For example, addition assignment (`+=`), subtraction assignment (`-=`), multiplication assignment (`*=`), and so on. Thanks to ES2021, you will be also able to use logical operators (`&&`, `||` and `??` ([nullish coalescing])) as well.
+
+```JavaScript
+// Logical AND (&&)
+x = x && d
+
+// Is equivalent to:
+x &&= y
+
+
+// Logical OR (||):
+x = x || y
+
+// Is equivalent to:
+x ||= y
+
+
+// Nullish coalescing (??):
+x = x ?? y
+
+// Is equivalent to:
+x ??= y
+```
+
+Let's take a look at the example above. First, the `x &&= y`. This will return `y` if both `y` and `x` are truthy, or `x` otherwise. Second, the `x ||= y`. This will return `x` if `x` is a truthy value or it will return `y` if `x` is falsy. The last one, the `x ??= y`. This will return `y` if `x` is `null` or `undefined` otherwise it will return `x`.
 
 ## Conclusion: [...] ...
 
