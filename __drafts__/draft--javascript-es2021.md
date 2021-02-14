@@ -37,6 +37,31 @@ console.log(str)
 // 'There are those who like dogs, there those who like watching dogs and there are those have dogs.'
 ```
 
+## Numeric separators
+
+This is another very small JavaScript ES2021 feature that can make your day at least a bit better. Especially if you work with big numbers. Numeric separators provide you with an easy and simple way to make big numbers more readable and easier to work with. The syntax is just as easy. It is a underscore (`_`).
+
+```JavaScript
+// Number without numeric separators:
+const num = 3685134689
+
+
+// Number with numeric separators:
+const num = 3_685_134_689
+```
+
+Remember that numeric separators are just visual aid. If you use them they will have no effect on the numeric values themselves. For example, if you try to log a number with numeric separators you will get the "raw" and "unedited" version.
+
+```JavaScript
+// Use numeric separators with a number:
+const num = 3_685_134_689
+
+// Log the value of "num":
+console.log(num)
+// Output:
+// 3685134689
+```
+
 
 ## Conclusion: [...] ...
 
