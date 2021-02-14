@@ -212,6 +212,97 @@ Let's take a look at the example above. First, the `x &&= y`. This will assign `
 
 The same will happen if both `x` and `y` are falsy. The last one, the `x ??= y`. This will assign `y` to `x` only if `x` is either `null` or `undefined`. If `x` is neither `null` nor `undefined` the assignment will not happen. The same if the `y` is either `null` or `undefined`.
 
+## Promise.any()
+
+When it comes to [JavaScript promises], last year or two were quite livid. The ES6 introduced `Promise.race()` and `Promise.all()` methods. After that, the ES2020 delivered `Promise.allSettled()`. ES2021 brings another method that can make working with promises even easier, the `Promise.any()` method.
+
+The `Promise.any()` method takes multiple promises and returns a promise if any of the promises is fulfilled. The first promise that is fulfilled is the promise returned by the `Promise.any()`. If all promises you provided are rejected `Promise.any()` will return `AggregateError`. This contains the reasons of rejection.
+
+```JavaScript
+// Example 1: All resolve:
+// Create promises:
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('promise1 is resolved.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('promise2 is resolved.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('promise3 is resolved.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+;(async function() {
+  // Await the result of Promise.any():
+  const result = await Promise.any([promise1, promise2, promise3])
+
+  // Log the value returned by Promise.any():
+  console.log(result)
+  // Output:
+  // 'promise1 is resolved.', 'promise2 is resolved.' or 'promise3 is resolved.'
+})()
+
+
+// Example 2: Some resolve:
+// Create promises:
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('promise1 is resolved.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject('promise2 was rejected.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+;(async function() {
+  // Await the result of Promise.any():
+  const result = await Promise.any([promise1, promise2])
+
+  // Log the value returned by Promise.any():
+  console.log(result)
+  // Output:
+  // 'promise1 is resolved.'
+})()
+
+
+// Example 3: None resolves:
+// Create promises:
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject('promise1 was rejected.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject('promise2 was rejected.')
+  }, Math.floor(Math.random() * 1000))
+})
+
+;(async function() {
+  // Use try...catch to catch the AggregateError:
+  try {
+    // Await the result of Promise.any():
+    const result = await Promise.any([promise1, promise2])
+  }
+
+  catch (err) {
+    console.log(err.errors)
+    // Output:
+    // [ 'promise1 was rejected.', 'promise2 was rejected.' ]
+  }
+})()
+```
 
 ## Conclusion: [...] ...
 
