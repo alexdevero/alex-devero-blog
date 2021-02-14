@@ -69,28 +69,149 @@ JavaScript allows to use logical operators generally in boolean contexts. For ex
 There are some [assignment operators] you can use that have been around for a while. For example, addition assignment (`+=`), subtraction assignment (`-=`), multiplication assignment (`*=`), and so on. Thanks to ES2021, you will be also able to use logical operators (`&&`, `||` and `??` ([nullish coalescing])) as well.
 
 ```JavaScript
-// Logical AND (&&)
-x = x && d
-
-// Is equivalent to:
+//
+// AND AND equals (&&=)
 x &&= y
 
-
-// Logical OR (||):
-x = x || y
-
 // Is equivalent to:
+x = x && d
+
+// Or:
+if (x) {
+  x = y
+}
+
+// Example 1:
+let x = 3 // Truthy value.
+let y = 0 // Falsy value.
+x &&= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 0
+
+// Example 2:
+let x = 0 // Falsy value.
+let y = 9 // Truthy value.
+x &&= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 0
+
+// Example 3:
+let x = 3 // Truthy value.
+let y = 15 // Truthy value.
+x &&= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 15
+
+
+//
+// OR OR equals (||=):
 x ||= y
 
+// Is equivalent to:
+x = x || y
 
+// Or:
+if (!x) {
+  x = y
+}
+
+// Example 1:
+let x = 3 // Truthy value.
+let y = 0 // Falsy value.
+x ||= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 3
+
+// Example 2:
+let x = 0 // Falsy value.
+let y = 9 // Truthy value.
+x ||= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 9
+
+// Example 3:
+let x = 3 // Truthy value.
+let y = 15 // Truthy value.
+x ||= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 3
+
+
+//
 // Nullish coalescing (??):
-x = x ?? y
+x ??= y
 
 // Is equivalent to:
+x = x ?? y
+
+// Or:
+if (x == null || x == undefined) {
+    x = y
+}
+
+// Example 1:
+let x = null // Null value.
+let y = 'Hello' // Non-null value.
 x ??= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 'Hello'
+
+// Example 2:
+let x = 'Jay' // Non-null value.
+let y = 'Hello' // Non-null value.
+x ??= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 'Jay'
+
+// Example 3:
+let x = 'Jay' // Non-null value.
+let y = null // Null value.
+x ??= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 'Jay'
+
+// Example 4:
+let x = undefined // Non-null value.
+let y = 'Jock' // Null value.
+x ??= y
+
+// Log the value of "x":
+console.log(x)
+// Output:
+// 'Jock'
 ```
 
-Let's take a look at the example above. First, the `x &&= y`. This will return `y` if both `y` and `x` are truthy, or `x` otherwise. Second, the `x ||= y`. This will return `x` if `x` is a truthy value or it will return `y` if `x` is falsy. The last one, the `x ??= y`. This will return `y` if `x` is `null` or `undefined` otherwise it will return `x`.
+Let's take a look at the example above. First, the `x &&= y`. This will assign `y` to `x` only if `x` is truthy. Otherwise, it will assign `y`. Second, the `x ||= y`. This will assign `y` to `x` only when `x` is a falsy value. If the `x` is truthy and `y` is falsy, the assignment will not happen.
+
+The same will happen if both `x` and `y` are falsy. The last one, the `x ??= y`. This will assign `y` to `x` only if `x` is either `null` or `undefined`. If `x` is neither `null` nor `undefined` the assignment will not happen. The same if the `y` is either `null` or `undefined`.
+
 
 ## Conclusion: [...] ...
 
