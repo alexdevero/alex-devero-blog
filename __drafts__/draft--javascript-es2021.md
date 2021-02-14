@@ -2,6 +2,14 @@
 <!--more-->
 <!--
 Table of Contents:
+## A quick note about the features
+## String.prototype.replaceAll()
+## Numeric separators
+## Logical assignment operators
+## Promise.any()
+## WeakRef
+### Finalizers and FinalizationRegistry
+## Conclusion: Upcoming interesting JavaScript ES2021 (ES12) features to learn
 -->
 
 
