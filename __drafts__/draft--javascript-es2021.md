@@ -304,6 +304,60 @@ const promise2 = new Promise((resolve, reject) => {
 })()
 ```
 
+## WeakRef
+
+The last notable feature of ES2021 is a `WeakRefs`. In JavaScript, when you create a reference to an object, it prevents it from being collected by [garage collection]. This means that JavaScript can't remove the object and free its memory. This allows the object to live, as long as there is the reference to it, potentially forever.
+
+ES2021 brings new class `WeakRefs`. This will allow developers create weak references to objects. With this, developers will be able to, for example, keep track of existing objects without preventing them from being garbage-collected. This can be useful for caches and objects mapping.
+
+When you want to create new `WeakRef`, you have to use it with the `new` keyword. As an argument, you pass into the parentheses some object. When you want to read the reference, the referenced object, you can do so by calling `deref()` on the weak reference. Let's take a look at one very simple example.
+
+```JavaScript
+const myWeakRef = new WeakRef({
+  name: 'Cache',
+  size: 'unlimited'
+})
+
+// Log the value of "myWeakRef":
+console.log(myWeakRef.deref())
+// Output:
+// { name: 'Cache', size: 'unlimited' }
+
+// Log the value of "name" property:
+console.log(myWeakRef.deref().name)
+// Output:
+// 'Cache'
+
+// Log the value of "size" property:
+console.log(myWeakRef.deref().size)
+// Output:
+// 'unlimited'
+```
+
+### Finalizers and FinalizationRegistry
+
+Closely connected to `WeakRef`, there is another feature of ES2021 called finalizers, or `FinalizationRegistry`. This feature allows you to register callback functions that will be invoked when an object is garbage collected.
+
+```JavaScript
+// Create new FinalizationRegistry:
+const reg = new FinalizationRegistry((val) => {
+  // Print the value of "val" when invoked:
+  console.log(val)
+})
+
+;(() => {
+  // Create new object:
+  const obj = {}
+
+  // Register finalizer for the "obj" obj:
+  // 1st argument: object to register finalizer for.
+  // 2nd argument: value for callback function defined above.
+  reg.register(obj, 'obj has been garbage-collected.')
+})()
+// Output when "obj" is garbage-collected:
+// 'obj has been garbage-collected.'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
