@@ -358,7 +358,7 @@ const reg = new FinalizationRegistry((val) => {
 // 'obj has been garbage-collected.'
 ```
 
-## Conclusion: [...] ...
+One important thing about `WeakRef` and finalizers. The proposal for this feature itself advises not to use them. One reason is that they can be unpredictable. Another one is that they don't really help garbage collection do its job. They can actually make it job harder. You can read more about the reasons in the [proposal].
 
 [xyz-ihs snippet="thank-you-message"]
 
