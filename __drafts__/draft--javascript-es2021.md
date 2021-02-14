@@ -25,7 +25,7 @@ Let's start with smaller JavaScript ES2021 feature, but still nice addition to t
 
 This doesn't mean the `replace()` method is useless if you want to replace all occurrences of a pattern. It can get this job done as well. However, you have to use a [regular expression]. If this is okay with you then no problem. For many developers, regular expressions are not their preferred choice. Far from it.
 
-If you are one these developers, you are going to like the new `replaceAll()` method. This method works in a similar same way as the `replace()` method. The difference is that `replaceAll()` allows you to replace all occurrence of a pattern without having to use regular expression.
+If you are one these developers, you are going to like the new `replaceAll()` method. This method works in a similar same way as the `replace()` method. The difference is that `replaceAll()` allows you to replace all occurrences of a pattern without having to use regular expression.
 
 The `replaceAll()` method also accepts regular expressions. So, if regex is your thing you can use it as well. You can also use a function as the replacement. If you do, this function will be executed for each match in the string. You can read this proposal in the [official repository].
 
@@ -53,7 +53,7 @@ console.log(str)
 
 ## Numeric separators
 
-This is another very small JavaScript ES2021 feature that can make your day at least a bit better. Especially if you work with big numbers. Numeric separators provide you with an easy and simple way to make big numbers more readable and easier to work with. The syntax is just as easy. It is a underscore (`_`).
+This is another very small JavaScript ES2021 feature that can make your day at least a bit better. Especially if you work with big numbers. Numeric separators provide you with an easy and simple way to make big numbers more readable and easier to work with. The syntax is just as easy. It is an underscore (`_`).
 
 ```JavaScript
 // Number without numeric separators:
