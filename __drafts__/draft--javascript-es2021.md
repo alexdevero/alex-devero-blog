@@ -7,7 +7,7 @@ Table of Contents:
 
 ## String.prototype.replaceAll()
 
-Let's start with smaller feature of ES2021, but still nice addition to JavaScript, `replaceAll()` method. At this moment, when you want to replace multiple occurrences of a pattern in a [string] you can you [replace() method]. The problem? If you use a string, this will allow you to replace only the first occurrence of the pattern.
+Let's start with smaller JavaScript ES2021 feature, but still nice addition to the language, `replaceAll()` method. At this moment, when you want to replace multiple occurrences of a pattern in a [string] you can you [replace() method]. The problem? If you use a string, this will allow you to replace only the first occurrence of the pattern.
 
 This doesn't mean the `replace()` method is useless if you want to replace all occurrences of a pattern. It can get this job done as well. However, you have to use a [regular expression]. If this is okay with you then no problem. For many developers, regular expressions are not their preferred choice. Far from it.
 
