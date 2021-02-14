@@ -360,6 +360,10 @@ const reg = new FinalizationRegistry((val) => {
 
 One important thing about `WeakRef` and finalizers. The proposal for this feature itself advises not to use them. One reason is that they can be unpredictable. Another one is that they don't really help garbage collection do its job. They can actually make it job harder. You can read more about the reasons in the [proposal].
 
+## Conclusion: Upcoming interesting JavaScript ES2021 (ES12) features to learn
+
+The ES2021 (ES12) can seem small in comparison to previous version of JavaScript (ECMAScript), such as ES6 and ES2020. However, there are some interesting features that deserve attention. I hope this tutorial helped you learn about four features that are can be useful and make your work easier.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
