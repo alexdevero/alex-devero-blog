@@ -1,6 +1,6 @@
 # Upcoming Interesting JavaScript ES2021 (ES12) Features to Look for
 
-The ES2021 (ES12) will be released in the middle of 2021. In this tutorial, you will learn about the four most interesting features from this specification: `String.prototype.replaceAll()`, numeric separators, logical assignment operators, `Promise.any()`, `WeakRef` and Finalizers.<!--more-->
+The ES2021 (ES12) will be released in the middle of 2021. In this tutorial, you will learn about the five most interesting features from this specification: `String.prototype.replaceAll()`, numeric separators, logical assignment operators, `Promise.any()`, `WeakRef` and Finalizers.<!--more-->
 <!--
 Table of Contents:
 ## A quick note about the features
@@ -15,7 +15,7 @@ Table of Contents:
 
 ## A quick note about the features
 
-All four features you will read about in this article are currently at stage 4. What this means is that they are finished and ready to be implemented by JavaScript engines. This also means that you don't have to worry you will be wasting your time learning something that will never see the daylight. You will not.
+All five features you will read about in this article are currently at stage 4. What this means is that they are finished and ready to be implemented by JavaScript engines. This also means that you don't have to worry you will be wasting your time learning something that will never see the daylight. You will not.
 
 All these features will be shipped, soon. If you are interested, you can learn more about other proposals in official [Ecma TC39 GitHub repository]. This repository keeps track of all proposal and also of stages each proposal is currently at. Now, let's take a look at what interesting features the ES2021 specification will bring.
 
@@ -376,7 +376,7 @@ One important thing about `WeakRef` and finalizers. The proposal for this featur
 
 ## Conclusion: Upcoming interesting JavaScript ES2021 (ES12) features to look for
 
-The ES2021 (ES12) can seem small in comparison to previous specifications of JavaScript, such as ES6 and ES2020. However, there are some interesting features that deserve attention. I hope this tutorial helped you learn about four features that are can be useful and make your work easier.
+The ES2021 (ES12) can seem small in comparison to previous specifications of JavaScript, such as ES6 and ES2020. However, there are some interesting features that deserve attention. I hope this tutorial helped you learn about these five features that are can be useful and make your work easier.
 
 [xyz-ihs snippet="thank-you-message"]
 
