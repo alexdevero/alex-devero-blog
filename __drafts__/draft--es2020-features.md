@@ -300,6 +300,96 @@ console.log(myObj.prop5?.prop6?.prop7)
 // undefined
 ```
 
+## Nullish coalescing operator
+
+This feature, nullish coalescing operator, is also among the ES2020 features that caught a lot of attention. You know that with optional chaining you can access nested properties without having to worry if they exist. If not, you will get undefined. Nullish coalescing operator is often used with along with optional chaining.
+
+What nullish coalescing operator does is it helps you check for "nullish" values and act accordingly. What is the point of "nullish" values? In JavaScript, there are two types of values, falsy and truthy. Falsy values are empty strings, 0, `undefined`, `null`, `false`, `NaN`, and so on.
+
+The problem is that this makes it harder to check if something is only either `null` or `undefined`. Both `null` and `undefined` are falsy and they will be converted to `false` in boolean context. The same will happen if you use empty string or 0. They will also end up `false` in boolean context.
+
+You can avoid this by checking for `undefined` and `null` specifically. However, this will require more code. Another option is the nullish coalescing operator. If the expression on the left side of the nullish coalescing operator evaluates to `undefined` or `null`, it will return the right side. Otherwise, the left.
+
+One more thing. The syntax. The syntax of nullish coalescing operator is quite simple. It is composed of two question marks `??`. If you want to learn a lot more about nullish coalescing operator take a look at [this tutorial].
+
+```JavaScript
+// Create an object:
+const friend = {
+  firstName: 'Joe',
+  lastName: undefined, // Falsy value.
+  age: 0, // falsy value.
+  jobTitle: '', // Falsy value.
+  hobbies: null // Falsy value.
+}
+
+// Example 1: Without nullish coalescing operator
+// Note: defaults will be returned for every falsy value.
+
+// Log the value of firstName (value is 'Joe' - truthy)
+console.log(friend.firstName || 'First name is unknown.')
+// Output:
+// 'Joe'
+
+// Log the value of lastName (value is undefined - falsy)
+console.log(friend.lastName || 'Last name is unknown.')
+// Output:
+// 'Last name is unknown.'
+
+// Log the value of age (value is 0 - falsy)
+console.log(friend.age || 'Age is unknown.')
+// Output:
+// 'Age is unknown.'
+
+// Log the value of jobTitle (value is '' - falsy)
+console.log(friend.jobTitle || 'Job title is unknown.')
+// Output:
+// 'Job title is unknown.'
+
+// Log the value of hobbies (value is null - falsy)
+console.log(friend.hobbies || 'Hobbies are unknown.')
+// Output:
+// 'Hobbies are unknown.'
+
+// Log the value of non-existing property pets (falsy)
+console.log(friend.pets || 'Pets are unknown.')
+// Output:
+// 'Pets are unknown.'
+
+
+// Example 2: With nullish coalescing operator
+// Note: defaults will be returned only for null and undefined.
+
+// Log the value of firstName (value is 'Joe' - truthy)
+console.log(friend.firstName ?? 'First name is unknown.')
+// Output:
+// 'Joe'
+
+// Log the value of lastName (value is undefined - falsy)
+console.log(friend.lastName ?? 'Last name is unknown.')
+// Output:
+// 'Last name is unknown.'
+
+// Log the value of age (value is 0 - falsy)
+console.log(friend.age ?? 'Age is unknown.')
+// Output:
+// 0
+
+// Log the value of jobTitle (value is '' - falsy)
+console.log(friend.jobTitle ?? 'Job title is unknown.')
+// Output:
+// ''
+
+// Log the value of hobbies (value is null - falsy)
+console.log(friend.hobbies ?? 'Hobbies are unknown.')
+// Output:
+// 'Hobbies are unknown.'
+
+// Log the value of non-existing property pets (falsy)
+console.log(friend.pets ?? 'Pets are unknown.')
+// Output:
+// 'Pets are unknown.'
+```
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
