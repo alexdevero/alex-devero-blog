@@ -1,8 +1,6 @@
 # 7 JavaScript ES2020 Features You Should Try
 
-The ES2020 specification brought many interesting features. In this tutorial, you will learn about seven ES2020 features that attracted the most attention: BigInt, matchAll(), globalThis, dynamic import, Promise.allSettled(), optional chaining and nullish coalescing operator.
-
-<!--more-->
+The ES2020 specification brought many interesting features. In this tutorial, you will learn about seven ES2020 features that attracted the most attention: BigInt, matchAll(), globalThis, dynamic import, Promise.allSettled(), optional chaining and nullish coalescing operator.<!--more-->
 <!--
 Table of Contents:
 ## BigInt
@@ -17,7 +15,7 @@ Table of Contents:
 
 ## BigInt
 
-The first of ES2020 features, new data type called `BigInt`, can seem like like a minor. It might be for many JavaScript developers. However, it will be big for developers who have to deal with large numbers. In JavaScript, there is a [limit] for the size of a number you can work with. This limit is 2^53 – 1.
+The first of ES2020 features, new data type called `BigInt`, can seem like a minor. It might be for many JavaScript developers. However, it will be big for developers who have to deal with large numbers. In JavaScript, there is a [limit] for the size of a number you can work with. This limit is 2^53 – 1.
 
 Before the `BigInt` type, you could not go above this limit because the `Number` data type just can't handle these big numbers. With `BigInt` you can create, store and work with these large numbers. This includes even numbers that exceed the safe integer limit. There are two ways to create a `BigInt`.
 
@@ -89,7 +87,7 @@ console.log(myMaxSafeInt === myBigInt)
 
 ## String.prototype.matchAll()
 
-The `matchAll()` is another smaller item on the list of ES2020 features. However, it can be handy. What this methods does is it helps you find all matches of a [regexp] pattern in a string. This methods returns an iterator. When you have this iterator, there are at least two things you can do.
+The `matchAll()` is another smaller item on the list of ES2020 features. However, it can be handy. What this method does is it helps you find all matches of a [regexp] pattern in a string. This method returns an iterator. When you have this iterator, there are at least two things you can do.
 
 First, you can use a `for...of` loop to iterate over the iterator and get individual matches. The second option is to convert the iterator to an array. Individual matches and corresponding data will become one individual items in the array.
 
@@ -165,7 +163,7 @@ for (const match of matches) {
 
 ## globalThis
 
-JavaScript developers working with difference environments have to remember that there are different global objects. For example, there is the `window` object in the browser. However, in Node.js, there is `global` object. In case of web workers, there is the `self`. One of the ES2020 features that aims to make this easier is `globalThis`.
+JavaScript developers working with different environments have to remember that there are different global objects. For example, there is the `window` object in the browser. However, in Node.js, there is `global` object. In case of web workers, there is the `self`. One of the ES2020 features that aims to make this easier is `globalThis`.
 
 The `globalThis` is basically a way to standardize the global object. You will no longer have to detect the global object on your own and then modify your code. Instead, you will be able to use `globalThis`. This will always refer to the global object for the environment you are working with at the moment.
 
@@ -184,7 +182,7 @@ console.log(globalThis === window)
 
 ## Dynamic import
 
-One thing You has to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
+One thing you have to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
 
 One of the ES2020 features, quite popular, are dynamic imports. What dynamic imports do is simple. They allow you to import modules when you need them. For example, let's say you know you need to use some module only under certain condition. Then, you can use [if...else statement] to test for this condition.
 
@@ -193,7 +191,7 @@ If the condition is met you can tell JavaScript to import the module so you can 
 When you want to import some module using dynamic import you use the
 `import` keyword as you normally would. However, in case of dynamic imports, you use it as a function and call it. The module you want to import is what you pass into the function as an argument. This import function returns a [promise].
 
-When the promise is settled you can use the [then()] handler function to do something with the imported module. Another option is to use the [await] keyword and assign the returned value, the module, to variable. You can then use that variable to work with the imported module.
+When the promise is settled you can use the [then()] handler function to do something with the imported module. Another option is to use the [await] keyword and assign the returned value, the module, to a variable. You can then use that variable to work with the imported module.
 
 ```JavaScript
 // Dynamic import with promises:
