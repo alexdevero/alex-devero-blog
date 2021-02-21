@@ -253,9 +253,9 @@ Promise.allSettled([prom1, prom2, prom3])
 
 As a JavaScript developer you probably often work with objects and their properties and values. One good practice is to check if specific property exists before you try to access it. This okay if the structure of the object is shallow. It can quickly become a pain if it is deeper.
 
-When you have to check for properties on multiple levels you quickly end up with long conditionals that can't fit the whole line. You may no longer need this with one of the ES2020 features called optional chaining. Optional chaining allows you to access deeply nested object properties without having to worry if the property exists.
+When you have to check for properties on multiple levels you quickly end up with long conditionals that can't fit the whole line. You may no longer need this with one of the ES2020 features called optional chaining. This feature caught a lot of attention. This is not a surprise because it can help be very helpful.
 
-If the property exists, you will get its value. If it doesn't exist, you will get `undefined`, instead of an error. What's also good about optional chaining is that it also works on function calls and arrays.
+Optional chaining allows you to access deeply nested object properties without having to worry if the property exists. If the property exists, you will get its value. If it doesn't exist, you will get `undefined`, instead of an error. What's also good about optional chaining is that it also works on function calls and arrays.
 
 ```JavaScript
 // Create an object:
