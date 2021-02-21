@@ -150,7 +150,24 @@ for (const match of matches) {
 // ]
 ```
 
+## globalThis
 
+JavaScript developers working with difference environments have to remember that there are different global objects. For example, there is the `window` object in the browser. However, in Node.js, there is `global` object. In case of web workers, there is the `self`. One of the ES2020 features that aims to make this easier is `globalThis`.
+
+The `globalThis` is basically a way to standardize the global object. You will no longer have to detect the global object on your own and then modify your code. Instead, you will be able to use `globalThis`. This will always refer to the global object for the environment you are working with at the moment.
+
+```JavaScript
+// In Node.js:
+console.log(globalThis === global)
+// Output:
+// true
+
+
+// In browser:
+console.log(globalThis === window)
+// Output:
+// true
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
