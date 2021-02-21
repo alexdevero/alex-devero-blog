@@ -184,7 +184,7 @@ console.log(globalThis === window)
 
 ## Dynamic import
 
-One thing every JavaScript developer has to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
+One thing You has to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
 
 One of the ES2020 features, quite popular, are dynamic imports. What dynamic imports do is simple. They allow you to import modules when you need them. For example, let's say you know you need to use some module only under certain condition. Then, you can use [if...else statement] to test for this condition.
 
@@ -401,10 +401,20 @@ console.log(friend.pets ?? 'Pets are unknown.')
 // 'Pets are unknown.'
 ```
 
+## Conclusion: 7 JavaScript ES2020 features you should try
+
+The ES2020 specification brought many features. Some of them are more interesting and some less. Those seven ES2020 features you've learned about today are among those features that deserve attention. I hope this tutorial helped you understand how these features work and how to use them.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[limit]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+[regexp]: https://blog.alexdevero.com/regular-expressions-javascript/
+[if...else statement]: https://blog.alexdevero.com/javascript-if-else-statement/
+[promise]: https://blog.alexdevero.com/javascript-promises/
+[then()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+[await]: https://blog.alexdevero.com/javascript-async-await/
+[this tutorial]: https://blog.alexdevero.com/nullish-coalescing-operator/
 
 <!--
 ### Meta:
