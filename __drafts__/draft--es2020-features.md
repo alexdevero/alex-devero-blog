@@ -214,6 +214,40 @@ if (someCondition) {
 })()
 ```
 
+## Promise.allSettled()
+
+Sometimes, you have a bunch of promises and don't care if some resolve and some reject. What you want to know is if and when all those promises are settled. This is exactly when you might want to use the new `allSettled()` method. This method accepts a number of promises in the form of an array.
+
+It is only when all promises in the array are settled this method resolves. It doesn't matter if some, or all, promises are resolved or rejected. The only thing that matters is that they are all settled. When they are, the `allSettled()` method will return a new promise.
+
+This value of this promise will be an array with statuses for each promise. It will also contain value for every fulfilled promise and reason for every rejected.
+
+```JavaScript
+// Create few promises:
+const prom1 = new Promise((resolve, reject) => {
+  resolve('Promise 1 has been resolved.')
+})
+
+const prom2 = new Promise((resolve, reject) => {
+  reject('Promise 2 has been rejected.')
+})
+
+const prom3 = new Promise((resolve, reject) => {
+  resolve('Promise 3 has been resolved.')
+})
+
+// Use allSettled() to wait until
+// all promises are settled:
+Promise.allSettled([prom1, prom2, prom3])
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+// Output:
+// [
+//   { status: 'fulfilled', value: 'Promise 1 has been resolved.' },
+//   { status: 'rejected', reason: 'Promise 2 has been rejected.' },
+//   { status: 'fulfilled', value: 'Promise 3 has been resolved.' }
+// ]
+```
 
 [xyz-ihs snippet="thank-you-message"]
 
