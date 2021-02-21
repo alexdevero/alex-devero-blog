@@ -1,4 +1,7 @@
-# X JavaScript ES2020 Features You Should Know
+# 7 JavaScript ES2020 Features You Should Try
+
+The ES2020 specification brought many interesting features. In this tutorial, you will learn about seven ES2020 features that attracted the most attention: BigInt, matchAll(), globalThis, dynamic import, Promise.allSettled(), optional chaining and nullish coalescing operator.
+
 <!--more-->
 <!--
 Table of Contents:
