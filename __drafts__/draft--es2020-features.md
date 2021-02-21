@@ -5,6 +5,14 @@ The ES2020 specification brought many interesting features. In this tutorial, yo
 <!--more-->
 <!--
 Table of Contents:
+## BigInt
+## String.prototype.matchAll()
+## globalThis
+## Dynamic import
+## Promise.allSettled()
+## Optional chaining
+## Nullish coalescing operator
+## Conclusion: 7 JavaScript ES2020 features you should try
 -->
 
 ## BigInt
