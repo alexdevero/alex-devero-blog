@@ -6,7 +6,7 @@ Table of Contents:
 
 ## BigInt
 
-This ES2020 feature, new data type called `BigInt`, can seem like like a minor. It might be for many JavaScript developers. However, it will be big for developers who have to deal with large numbers. In JavaScript, there is a [limit] for the size of a number you can work with. This limit is 2^53 – 1.
+The first of ES2020 features, new data type called `BigInt`, can seem like like a minor. It might be for many JavaScript developers. However, it will be big for developers who have to deal with large numbers. In JavaScript, there is a [limit] for the size of a number you can work with. This limit is 2^53 – 1.
 
 Before the `BigInt` type, you could not go above this limit because the `Number` data type just can't handle these big numbers. With `BigInt` you can create, store and work with these large numbers. This includes even numbers that exceed the safe integer limit. There are two ways to create a `BigInt`.
 
@@ -78,7 +78,9 @@ console.log(myMaxSafeInt === myBigInt)
 
 ## String.prototype.matchAll()
 
-The `matchAll()` is a handy method that helps you find all matches of a [regexp] pattern in a string. This methods returns an iterator. So, you will have to use a `for...of` loop to get individual matches. Another option is to convert the iterator to an array where data for each match will become one item.
+The `matchAll()` is another smaller item on the list of ES2020 features. However, it can be handy. What this methods does is it helps you find all matches of a [regexp] pattern in a string. This methods returns an iterator. When you have this iterator, there are at least two things you can do.
+
+First, you can use a `for...of` loop to iterate over the iterator and get individual matches. The second option is to convert the iterator to an array. Individual matches and corresponding data will become one individual items in the array.
 
 ```JavaScript
 // Create some string:
