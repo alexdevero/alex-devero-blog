@@ -170,7 +170,50 @@ console.log(globalThis === window)
 // Output:
 // true
 ```
-## Conclusion: [...] ...
+
+## Dynamic Import
+
+One thing every JavaScript developer has to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
+
+One of the ES2020 features, quite popular, are dynamic imports. What dynamic imports do is simple. They allow you to import modules when you need them. For example, let's say you know you need to use some module only under certain condition. Then, you can use [if...else statement] to test for this condition.
+
+If the condition is met you can tell JavaScript to import the module so you can use it. This means putting a dynamic import inside the statement. The module will be loaded only when condition is met. Otherwise, if the condition is not met, no module is loaded and nothing is imported. Less code, smaller memory usage, etc.
+
+When you want to import some module using dynamic import you use the
+`import` keyword as you normally would. However, in case of dynamic imports, you use it as a function and call it. The module you want to import is what you pass into the function as an argument. This import function returns a [promise].
+
+When the promise is settled you can use the [then()] handler function to do something with the imported module. Another option is to use the [await] keyword and assign the returned value, the module, to variable. You can then use that variable to work with the imported module.
+
+```JavaScript
+// Dynamic import with promises:
+// If some condition is true:
+if (someCondition) {
+  // Import the module as a promise
+  // and use then() to process the returned value:
+  import('./myModule.js')
+    .then((module) => {
+      // Do something with the module
+      module.someMethod()
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+
+// Dynamic import with async/await:
+(async() => {
+  // If some condition is true:
+  if (someCondition) {
+    // Import the module and assign it to a variable:
+    const myModule = await import('./myModule.js')
+
+    // Do something with the module
+    myModule.someMethod()
+  }
+})()
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
