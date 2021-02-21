@@ -76,6 +76,80 @@ console.log(myMaxSafeInt === myBigInt)
 // 9007199254741009n
 ```
 
+## String.prototype.matchAll()
+
+The `matchAll()` is a handy method that helps you find all matches of a [regexp] pattern in a string. This methods returns an iterator. So, you will have to use a `for...of` loop to get individual matches. Another option is to convert the iterator to an array where data for each match will become one item.
+
+```JavaScript
+// Create some string:
+const myStr = 'Why is the answer 42, what was the question that led to 42?'
+
+// Create some regex patter:
+const regexp = /\d/g
+
+// Find all matches:
+const matches = myStr.matchAll(regexp)
+
+// Get all matches using Array.from():
+Array.from(matches, (matchEl) => console.log(matchEl))
+// Output:
+// [
+//   '4',
+//   index: 18,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '2',
+//   index: 19,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '4',
+//   index: 56,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '2',
+//   index: 57,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+
+
+// Get all matches using for...of loop:
+for (const match of matches) {
+  console.log(match)
+}
+// Output:
+// [
+//   '4',
+//   index: 18,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '2',
+//   index: 19,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '4',
+//   index: 56,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+// [
+//   '2',
+//   index: 57,
+//   input: 'Why is the answer 42, what was the question that led to 42?',
+//   groups: undefined
+// ]
+```
+
 
 ## Conclusion: [...] ...
 
