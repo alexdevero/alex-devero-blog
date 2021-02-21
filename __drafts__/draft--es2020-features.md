@@ -171,7 +171,7 @@ console.log(globalThis === window)
 // true
 ```
 
-## Dynamic Import
+## Dynamic import
 
 One thing every JavaScript developer has to deal with are various imports and growing amount of scripts. Until now, when you wanted to import any module you had to do it no matter the conditions. Sometimes, you had to import a module that was not actually used, based on the dynamic conditions of your application.
 
@@ -247,6 +247,57 @@ Promise.allSettled([prom1, prom2, prom3])
 //   { status: 'rejected', reason: 'Promise 2 has been rejected.' },
 //   { status: 'fulfilled', value: 'Promise 3 has been resolved.' }
 // ]
+```
+
+## Optional chaining
+
+As a JavaScript developer you probably often work with objects and their properties and values. One good practice is to check if specific property exists before you try to access it. This okay if the structure of the object is shallow. It can quickly become a pain if it is deeper.
+
+When you have to check for properties on multiple levels you quickly end up with long conditionals that can't fit the whole line. You may no longer need this with one of the ES2020 features called optional chaining. Optional chaining allows you to access deeply nested object properties without having to worry if the property exists.
+
+If the property exists, you will get its value. If it doesn't exist, you will get `undefined`, instead of an error. What's also good about optional chaining is that it also works on function calls and arrays.
+
+```JavaScript
+// Create an object:
+const myObj = {
+  prop1: 'Some prop.',
+  prop2: {
+    prop3: 'Yet another prop.',
+    prop4: {
+      prop5: 'How deep can this get?',
+      myFunc: function() {
+        return 'Some deeply nested function.'
+      }
+    }
+  }
+}
+
+
+// Log the value of prop5 no.1: without optional chaining
+// Note: use conditionals to check if properties in the chain exist.
+console.log(myObj.prop2 && myObj.prop2.prop4 && myObj.prop2.prop4.prop5)
+// Output:
+// 'How deep can this get?'
+
+
+// Log the value of prop3 no.2: with optional chaining:
+// Note: no need to use conditionals.
+console.log(myObj.prop2?.prop4?.prop5)
+// Output:
+// 'How deep can this get?'
+
+
+// Log non-existent value no.1: without optional chaining
+console.log(myObj.prop5 && myObj.prop5.prop6 && myObj.prop5.prop6.prop7)
+// Output:
+// undefined
+
+
+// Log non-existent value no.2: with optional chaining
+// Note: no need to use conditionals.
+console.log(myObj.prop5?.prop6?.prop7)
+// Output:
+// undefined
 ```
 
 [xyz-ihs snippet="thank-you-message"]
