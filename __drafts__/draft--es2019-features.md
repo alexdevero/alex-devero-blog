@@ -191,6 +191,27 @@ console.log(myObj)
 // }
 ```
 
+## Optional catch binding
+
+Previously, when you wanted to use `try...catch` you also had to use binding. You had to pass in the exception as a parameter, even if you didn't use it. One change that ES2019 brings is that it makes this optional. If you don't want to use the exception, you can use the catch block without a parameter.
+
+```JavaScript
+// Before ES2019:
+try {
+  // Do something.
+} catch (e) {
+  // Ignore the required e parameter
+  // if you don't want to use it, but keep it.
+}
+
+// After ES2019:
+try {
+  // Do something.
+} catch {
+  // No need to add any parameter
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
