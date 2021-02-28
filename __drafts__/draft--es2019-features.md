@@ -218,7 +218,39 @@ In the past, when you used `JSON.stringify()` on something that contained specif
 
 Part of the ES2019 features was also a fix for the `JSON.stringify()` method. From now on, you will be able to stringify those problematic code points. You will be also able to transform them back into their original representations.
 
-## Conclusion: [...] ...
+## Symbol.prototype.description
+
+Symbols are new data type introduced to in ES2015 (ES6). They are often used to identify object properties. One of the ES2019 features is also a `description` property. This property is a read-only, so you can't change its value. What it does is it returns the description of given Symbol.
+
+Two things to keep in mind. First, description is not required when you create a symbol, but optional. So, it can happen that when you try to access the `description` you might not get anything other than `undefined`. This, `undefined`, is what you will get if you try to access description of a Symbol without a description.
+
+The second things is that `description` is a description of a Symbol. It is not its identifier. This means that you can't use existing description, the value of `description` property, to access existing Symbol. You can use it just to make it easier to identify Symbol you are working with.
+
+Quick note. When you create new Symbol, you can add description by passing some string as an argument to the `Symbol()` object. If you leave this empty, description will be `undefined`.
+
+```JavaScript
+// Create new Symbol and add description:
+// Note: description is the "My first symbol."
+const mySymbol = Symbol('My first symbol.')
+
+// Log the value of "description" property:
+console.log(mySymbol.description)
+// Output:
+// 'My first symbol.'
+
+
+// Try to read non-existing description:
+console.log(Symbol().description)
+// Output:
+// undefined
+
+
+// Try to read description defined as empty string:
+console.log(Symbol('').description)
+// Output:
+// ''
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
