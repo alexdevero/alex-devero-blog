@@ -2,6 +2,16 @@
 <!--more-->
 <!--
 Table of Contents:
+## String.prototype.trimStart() and String.prototype.trimEnd()
+## Function.prototype.toString()
+## Array.prototype.flat() and Array.prototype.flatMap()
+### Array.prototype.flatMap()
+## Object.fromEntries()
+## Optional catch binding
+## Well-formed JSON.stringify()
+## Symbol.prototype.description
+### Symbol.prototype.toString() alternative
+## Conclusion: 8 useful JavaScript ES2019 you should know
 -->
 
 ## String.prototype.trimStart() and String.prototype.trimEnd()
