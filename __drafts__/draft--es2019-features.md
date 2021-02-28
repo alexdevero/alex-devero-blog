@@ -17,7 +17,7 @@ Table of Contents:
 
 ## String.prototype.trimStart() and String.prototype.trimEnd()
 
-If you've ever worked with strings there is chance you had to deal with unwanted white space. From now on, there will be two ES2020 features that will help you with this issue. These features are .`trimStart()` and `trimEnd()` string methods. These methods do what their names imply.
+If you've ever worked with [strings] there is chance you had to deal with unwanted white space. From now on, there will be two ES2020 features that will help you with this issue. These features are .`trimStart()` and `trimEnd()` string methods. These methods do what their names imply.
 
 They both help you trim, or remove, white space from given string. The first one, the `trimStart()` will remove all white space from the start of the string. The second, the `trimEnd()` will remove all white space from the end of the string. If you need to remove white spaces on both sides?
 
@@ -290,6 +290,9 @@ console.log(Symbol('').toString())
 // 'Symbol()'
 ```
 
+## Conclusion: 8 useful JavaScript ES2019 features you should know
+
+Big or small, the ES2019 specification brought some useful features that can make one's life, and work, easier. In this tutorial you've learned about eight ES2019 features you may want to learn about and try. I hope you've enjoyed this tutorial and learned something new.
 
 [xyz-ihs snippet="thank-you-message"]
 
