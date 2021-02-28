@@ -115,6 +115,39 @@ console.log(myInfiniteFlatArray)
 // [ 'JavaScript', 'C', 'C++', 'Assembly', 'Bytecode' ]
 ```
 
+### Array.prototype.flatMap()
+
+Aside to the `flat()` method there is also `flatMap()` method. You can think about this method as an advanced version of `flat()`. The difference is that `flatMap()` method combines `flat()` with [map()] method. Thanks to this, when you flatten an array, you can call a callback function.
+
+This allows you to work with individual elements inside the original array during the process of flattening. This can be handy when you want to make an array flat but also modify the content. Or, if you want to use map to modify content of an array, but you want the result to be a flat array.
+
+```JavaScript
+// Create an array:
+const myArray = ['One word', 'Two words', 'Three words']
+
+// Split all string in the array to words using map():
+// Note: this will create multidimensional array.
+const myMappedWordArray = myArray.map(str => str.split(' '))
+
+// Log the value of "myMappedWordArray":
+console.log(myMappedWordArray)
+// Output:
+// [ [ 'One', 'word' ], [ 'Two', 'words' ], [ 'Three', 'words' ] ]
+
+
+// Example with flatMap():
+const myArray = ['One word', 'Two words', 'Three words']
+
+// Split all string in the array to words using map():
+// Note: this will create multidimensional array.
+const myFlatWordArray = myArray.flatMap(str => str.split(' '))
+
+// Log the value of "myFlatWordArray":
+console.log(myFlatWordArray)
+// Output:
+// [ 'One', 'word', 'Two', 'words', 'Three', 'words' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
