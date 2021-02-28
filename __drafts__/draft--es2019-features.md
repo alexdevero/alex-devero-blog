@@ -64,6 +64,17 @@ The `toString()` method for functions has been around for a while. What this met
 In the past, `toString()` method removed comments and white space. So, the printed version of the function may not look like the original code. This will no longer happen with the release of ES2019. From now on, the value of returned by `toString()` method will match the original, including comments and special characters.
 
 ```JavaScript
+// Before ES2019:
+function myFunc/* is this really a good name? */() {
+  /* Now, what to do? */
+}
+
+myFunc.toString()
+// Output:
+// "function myFunc() {}"
+
+
+// After ES2019:
 function myFunc/* is this really a good name? */() {
   /* Now, what to do? */
 }
