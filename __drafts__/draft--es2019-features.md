@@ -1,5 +1,6 @@
-# 7 Useful JavaScript ES2020 Features to Learn About
-<!--more-->
+# 8 Useful JavaScript ES2019 Features You Should Know
+
+The ES2019 specification may have been a smaller addition to JavaScript, but it still brought some interesting features. This tutorial will show you eight ES2019 features that can make your life easier. These features include `trimStart()`, `trimEnd()`, `flat()`, `flatMap()`, `Object.fromEntries()` and more.<!--more-->
 <!--
 Table of Contents:
 ## String.prototype.trimStart() and String.prototype.trimEnd()
