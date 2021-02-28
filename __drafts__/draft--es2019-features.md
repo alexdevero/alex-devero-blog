@@ -86,6 +86,35 @@ myFunc.toString()
 // }"
 ```
 
+## Array.prototype.flat() and Array.prototype.flatMap()
+
+Arrays are one of the fundamental parts in JavaScript. That said, they can sometimes cause a lot of headaches. This is especially true if you have to deal with multidimensional arrays. Even a seemingly simple task as turning multidimensional array to a one-dimensional can be difficult.
+
+Good news is that there are now two ES2019 features that will make this easier. The first one is `flat()` method. When you use this method on a multidimensional array it will transform it into a one-dimensional. By default, `flat()` will flatten the array only by one level.
+
+If you need more, you can specify the number of levels and pass it as an argument when you call this method. If you are not sure how many levels do you need, you can also use `Infinity`.
+
+```JavaScript
+// Create an array:
+const myArray = ['JavaScript', ['C', 'C++', ['Assembly', ['Bytecode']]]]
+
+// Flatten the array by one level:
+let myFlatArray = myArray.flat(1)
+
+// Log the array:
+console.log(myFlatArray)
+// Output:
+// [ 'JavaScript', 'C', 'C++', [ 'Assembly', [ 'Bytecode' ] ] ]
+
+// Flatten the array by infinite number of levels:
+let myInfiniteFlatArray = myArray.flat(Infinity)
+
+// Log the array again:
+console.log(myInfiniteFlatArray)
+// Output:
+// [ 'JavaScript', 'C', 'C++', 'Assembly', 'Bytecode' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
