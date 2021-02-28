@@ -212,6 +212,12 @@ try {
 }
 ```
 
+## Well-formed JSON.stringify()
+
+In the past, when you used `JSON.stringify()` on something that contained specific characters, you would get ill-formed Unicode string. Code points from U+D800 to U+DFFF would become malformed ("�"). What's worse, there was no way to transform those malformed code points back.
+
+Part of the ES2019 features was also a fix for the `JSON.stringify()` method. From now on, you will be able to stringify those problematic code points. You will be also able to transform them back into their original representations.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
