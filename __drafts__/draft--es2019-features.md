@@ -251,6 +251,34 @@ console.log(Symbol('').description)
 // ''
 ```
 
+### Symbol.prototype.toString() alternative
+
+The `toString()` method offers another way to read the description of a Symbol. The downside of this method is that it also includes the "Symbol()" in the string it returns. Another difference is that the `toString()` method will never return an `undefined` of description doesn't exist.
+
+If you have a Symbol without description and use the `toString()` method you will still get the "Symbol()" part. You will also get this if the description is an empty string. This makes it basically impossible to distinguish between non-existing description and empty string used as description. Another reason to use `description`.
+
+```JavaScript
+// Create new Symbol with description:
+const mySymbol = Symbol('REAMDE.')
+
+// Log the value of "description" property:
+console.log(mySymbol.toString())
+// Output:
+// 'Symbol(REAMDE.)'
+
+
+// Try to read non-existing description:
+console.log(Symbol().toString())
+// Output:
+// 'Symbol()'
+
+
+// Try to read description defined as empty string:
+console.log(Symbol('').toString())
+// Output:
+// 'Symbol()'
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
