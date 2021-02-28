@@ -148,6 +148,49 @@ console.log(myFlatWordArray)
 // [ 'One', 'word', 'Two', 'words', 'Three', 'words' ]
 ```
 
+## Object.fromEntries()
+
+When you need to convert some object to an array you can do it with a single method, [entries()]. However, until now, there wasn't a method that would just as easily reverted this. This will no longer be an issue thanks to one of the ES2019 features. This feature is `fromEntries()` method.
+
+What this method does is simple. It takes an iterable, such as an array or a [Map], of key-value pairs. Then, it transforms it into an object.
+
+```JavaScript
+// Convert an array to object:
+// Create an array:
+const myArray = [['name', 'Joe'], ['age', 33], ['favoriteLanguage', 'JavaScript']]
+
+// Transform the array to an object:
+const myObj = Object.fromEntries(myArray)
+
+// Log the new object:
+console.log(myObj)
+// Output:
+// {
+//   name: 'Joe',
+//   age: 33,
+//   favoriteLanguage: 'JavaScript'
+// }
+
+
+// Convert a Map to object:
+// Create a map:
+const myMap = new Map(
+  [['name', 'Spike'], ['species', 'dog'], ['age', 3]]
+)
+
+// Transform the Map to an object:
+const myObj = Object.fromEntries(myMap)
+
+// Log the new object:
+console.log(myObj)
+// Output:
+// {
+//   name: 'Spike',
+//   species: 'dog',
+//   age: 3
+// }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
