@@ -297,7 +297,11 @@ Big or small, the ES2019 specification brought some useful features that can mak
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[strings]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/#strings
+[trim()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+[map()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[entries()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+[Map]: https://blog.alexdevero.com/maps-in-javascript/
 
 <!--
 ### Meta:
