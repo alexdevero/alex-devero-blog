@@ -1,4 +1,4 @@
-# 8 Useful JavaScript ES2019 Features You Should Know
+# 8 Useful JavaScript ES2019 Features to Know About
 
 The ES2019 specification may have been a smaller addition to JavaScript, but it still brought some interesting features. This tutorial will show you eight ES2019 features that can make your life easier. These features include `trimStart()`, `trimEnd()`, `flat()`, `flatMap()`, `Object.fromEntries()` and more.<!--more-->
 <!--
@@ -12,7 +12,7 @@ Table of Contents:
 ## Well-formed JSON.stringify()
 ## Symbol.prototype.description
 ### Symbol.prototype.toString() alternative
-## Conclusion: 8 useful JavaScript ES2019 you should know
+## Conclusion: 8 useful JavaScript ES2019 features to know about
 -->
 
 ## String.prototype.trimStart() and String.prototype.trimEnd()
@@ -70,7 +70,7 @@ This gives you two options. The first option is using both these ES2019 features
 
 ## Function.prototype.toString()
 
-The `toString()` method for functions has been around for a while. What this method does is it allow you to print the code of a function as you wrote it, or someone else. What is different in ES2019 is how this method handles comments and special characters such as white space.
+The `toString()` method for functions has been around for a while. What this method does is it allows you to print the code of a function as you wrote it, or someone else. What is different in ES2019 is how this method handles comments and special characters such as white space.
 
 In the past, `toString()` method removed comments and white space. So, the printed version of the function may not look like the original code. This will no longer happen with the release of ES2019. From now on, the value of returned by `toString()` method will match the original, including comments and special characters.
 
@@ -290,7 +290,7 @@ console.log(Symbol('').toString())
 // 'Symbol()'
 ```
 
-## Conclusion: 8 useful JavaScript ES2019 features you should know
+## Conclusion: 8 useful JavaScript ES2019 features to know about
 
 Big or small, the ES2019 specification brought some useful features that can make one's life, and work, easier. In this tutorial you've learned about eight ES2019 features you may want to learn about and try. I hope you've enjoyed this tutorial and learned something new.
 
