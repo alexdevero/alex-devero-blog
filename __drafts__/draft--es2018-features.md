@@ -1,5 +1,6 @@
-# Blog post title [...]
-<!--more-->
+# 4 JavaScript ES2018 Features You Should Know
+
+The ES2018 specification introduced four new features. These features are asynchronous iteration, rest/spread properties, Promise.prototype.finally() and regular expression improvements. This tutorial will help you learn how these ES2018 features work and how to use them.<!--more-->
 <!--
 Table of Contents:
 -->
