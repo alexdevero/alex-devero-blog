@@ -3,6 +3,17 @@
 The ES2018 specification introduced four new features. These features are asynchronous iteration, rest/spread properties, Promise.prototype.finally() and regular expression improvements. This tutorial will help you learn how these ES2018 features work and how to use them.<!--more-->
 <!--
 Table of Contents:
+## Asynchronous iteration
+## Rest/Spread properties
+### The rest operator for objects
+### The spread operator for objects
+## Promise.prototype.finally()
+## Regular expression improvements
+### s(dotAll)
+### Lookbehind assertions
+### Named capture groups
+### Unicode property escapes
+## Conclusion: 4 JavaScript ES2018 features you should know
 -->
 
 ## Asynchronous iteration
@@ -28,7 +39,7 @@ async function processResponses(someIterable) {
 
 With asynchronous iteration `for...of` loops also work with asynchronous code. This means that if you want to iterate over iterable and do some asynchronous operation you can. The `for...of` loop will now be asynchronous and let you await for asynchronous operations to complete.
 
-What you have to remember is where to use the `await` keyword. You don't put it inside the loop. Instead, you put it at the beginning of the `for...of` loop, after the `for` keyword. Now, when you use the `next()` method to get the next value of the async iterator, you will get a Promise. If you want to know more, you can find the proposal on [GitHub].
+What you have to remember is where to use the `await` keyword. You don't put it inside the loop. Instead, you put it at the beginning of the `for...of` loop, after the `for` keyword. Now, when you use the `next()` method to get the next value of the async iterator, you will get a [Promise]. If you want to know more, you can find the proposal on [GitHub].
 
 ```JavaScript
 // Create an async function:
@@ -221,7 +232,7 @@ fetch()
   .finally(() => console.log('Operation done.'))
 ```
 
-## Regular Expression improvements
+## Regular expression improvements
 
 The list of ES2018 features also includes a couple of improvements for regular expression. These improvements include s(dotAll) flag, lookbehind assertion, named capture groups and unicode property escapes.
 
@@ -338,7 +349,11 @@ These were the four features introduced in ES2018. Let's do a quick recap. Today
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[await]: https://blog.alexdevero.com/javascript-async-await/#the-await-keyword
+[for...of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+[Promise]: https://blog.alexdevero.com/javascript-promises/
+[GitHub]: https://github.com/tc39/proposal-async-iteration
+[lookahead assertion]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#lookahead_assertion
 
 <!--
 ### Meta:
