@@ -44,6 +44,62 @@ async function processResponses(someIterable) {
 
 The rest and spread are not really new features. Both introduced in ES6. They quickly rose in popularity and usage. It is safe to say that JavaScript developers loved them. The only problem was that they worked only with arrays and parameters. ES2018 introduced these two features also for objects. Let's quickly discuss both.
 
+### The rest operator for objects
+
+The first one, rest operator, allows you to extract all remaining object properties properties of an object onto a new object. Note that these properties must be enumerable. If you already used destructuring for some properties, the rest operator will extract only properties that remained.
+
+```JavaScript
+// Rest example:
+// Create an object:
+const daysObj = {
+  one: 'Monday',
+  two: 'Tuesday',
+  three: 'Wednesday',
+  four: 'Thursday',
+  five: 'Friday'
+}
+
+// Use destructuring to assign
+// first two properties to variables.
+// Then, use rest to assign rest of properties
+// to the third variable.
+const { one, two, ...restOfDays } = daysObj
+// The rest will extract only "three", "four"
+// and "five" because we already extracted
+// the "one" and "two" vie destructuring.
+
+// Log the value of "one":
+console.log(one)
+// Output:
+// 'Monday'
+
+// Log the value of "two":
+console.log(two)
+// Output:
+// 'Tuesday'
+
+// Log the value of "restOfDays":
+console.log(restOfDays)
+// Output:
+// { three: 'Wednesday', four: 'Thursday', five: 'Friday' }
+```
+
+If you want to use rest operator for objects, remember two things. First, you can use it only once. Exception is if you use it with nested objects. Second, you must use it at the last one. This is why, in the example above, you saw it after destructuring the first two properties, not before.
+
+```JavaScript
+// This will not work - rest operator as first:
+const { ...all, one, two } = { one: 1, two: 2, three: 3 }
+
+// This will work - rest operator as last:
+const { one, two, ...all } = { one: 1, two: 2, three: 3 }
+
+
+// This will not work - multiple rest operators on the same level:
+const { one, ...some, ...end } = { /* some properties */ }
+
+// This will work - multiple rest operators on multiple levels:
+const { one, {...secondLevel }, ...firstLevel } = { /* some properties */ }
+```
 
 ## Conclusion: [...] ...
 
