@@ -101,6 +101,103 @@ const { one, ...some, ...end } = { /* some properties */ }
 const { one, {...secondLevel }, ...firstLevel } = { /* some properties */ }
 ```
 
+### The spread operator for objects
+
+What spread operator does is it allows you to create new objects by inserting all properties of another object. Spread operator also allows you to insert properties from multiple objects. You can also combine this operator with adding new properties.
+
+```JavaScript
+// Spread example:
+// Create an object:
+const myOriginalObj = { name: 'Joe Doe', age: 33 }
+
+// Use spread operator to create new object:
+const myNewObj = { ...myOriginalObj }
+
+// Log the value of "myNewObj":
+console.log(myNewObj)
+// Output:
+// { name: 'Joe Doe', age: 33 }
+
+
+// Spread operator plus adding properties:
+const myOriginalObj = { name: 'Caesar' }
+
+// Use spread operator to create new object
+// and add new property "genre":
+const myNewObj = { ...myOriginalObj, genre: 'Strategy' }
+
+// Log the value of "myNewObj":
+console.log(myNewObj)
+// Output:
+// {
+//   name: 'Caesar',
+//   genre: 'Strategy'
+// }
+
+
+// Spread operator and combining two objects:
+const myObjOne = { title: 'Eloquent JavaScript' }
+const myObjTwo = { author: 'Marijn Haverbeke' }
+
+// Use spread operator to create new object
+// by combining "myObjOne" and "myObjTwo":
+const myNewObj = { ...myObjOne, ...myObjTwo }
+
+// Log the value of "myNewObj":
+console.log(myNewObj)
+// Output:
+// {
+//   title: 'Eloquent JavaScript',
+//   author: 'Marijn Haverbeke'
+// }
+```
+
+One thing about insert properties from multiple objects and adding new properties. In these two scenarios remember that the order matters. Let me explain. Let's say you want use spread operator to create a new object from two existing objects. The first existing object contains property `title` with some value.
+
+The second existing object also contains property `title`, but with different value. Which one `title` wins? The one that comes last. If you use spread operator with the first object and then the second, the second `title` will be the winner. If you use spread operator with the second object as first, the first `title` will be the winner.
+
+```JavaScript
+// Spread operator and combining two objects:
+const myObjOne = {
+  title: 'Eloquent JavaScript',
+  author: 'Marijn Haverbeke',
+}
+
+const myObjTwo = {
+  title: 'You Don\'t Know JS Yet',
+  language: 'English'
+}
+
+// Use spread operator to create new object
+// by combining "myObjOne" and "myObjTwo":
+// NOTE: "title" from "myObjTwo" will overwrite "title"
+// from "myObjOne" because "myObjTwo" comes as last.
+const myNewObj = { ...myObjOne, ...myObjTwo }
+
+// Log the value of "myNewObj":
+console.log(myNewObj)
+// Output:
+// {
+//   title: "You Don't Know JS Yet",
+//   author: 'Marijn Haverbeke',
+//   language: 'English'
+// }
+
+
+// NOTE: Now, "title" from "myObjOne" will overwrite "title"
+// from "myObjTwo" because "myObjOne" comes as last.
+const myNewObj = { ...myObjTwo, ...myObjOne }
+
+// Log the value of "myNewObj":
+console.log(myNewObj)
+// Output:
+// {
+//   title: 'Eloquent JavaScript',
+//   language: 'English',
+//   author: 'Marijn Haverbeke'
+// }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
