@@ -198,6 +198,26 @@ console.log(myNewObj)
 // }
 ```
 
+## Promise.prototype.finally()
+
+From the beginning, there were two callback functions for promises. One was `then()`, executed when promise is fulfilled. The second was `catch()`, executed either when promise is rejected or when the `then()` throws an exception. One of the ES2018 features is third callback function for promises called `finally()`.
+
+The `finally()` callback will be executed every time the promise is settled. It doesn't matter if the promise is fulfilled or rejected. The general use for this callback is to do something that should always happen. For example, closing modal dialog, closing database connection or some cleanup.
+
+```JavaScript
+// finally() example:
+// Fetch some API endpoint:
+fetch()
+  // Convert response to JSON:
+  .then(response => response.json())
+  // Log the JSON:
+  .then(data => console.log(data))
+  // Log error:
+  .catch(error => console.log(error))
+  // Do something at the end:
+  .finally(() => console.log('Operation done.'))
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
