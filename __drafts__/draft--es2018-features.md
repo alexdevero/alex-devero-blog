@@ -220,6 +220,116 @@ fetch()
   .finally(() => console.log('Operation done.'))
 ```
 
+## Regular Expression improvements
+
+The list of ES2018 features also includes a couple of improvements for regular expression. These improvements include s(dotAll) flag, lookbehind assertion, named capture groups and unicode property escapes.
+
+### s(dotAll)
+
+First, the s(dotAll). Unlike dot (`.`), the s(dotAll) allows to match new line characters and also emojis.
+
+```JavaScript
+// s(dotAll) example:
+/hello.world/.test('hello\nworld')
+// Output:
+// false
+
+/hello.world/s.test('hello\nworld')
+// Output:
+// true
+```
+
+### Lookbehind assertions
+
+Before ES2018, JavaScript supported only [lookahead assertion]. Lookahead assertion to match a pattern based on a text that follows it. With ES2018, JavaScript now also supports lookbehind assertion. This assertion allows you to match a pattern based on a text that precedes it. The syntax of lookbehind assertion is `?<=`.
+
+```JavaScript
+// Lookbehind assertion example:
+/(?<=green) apple/.test('One red apple is on the table.')
+// Output:
+// false
+
+/(?<=green) apple/.test('One green apple is on the table.')
+// Output:
+// true
+```
+
+There is also a negative lookbehind assertion. This assertion matches a pattern only if the substring is not preceded by the assertion. The syntax of negative lookbehind assertion is `?<!`.
+
+```JavaScript
+// Lookbehind assertion example:
+/(?<!green) apple/.test('One red apple is on the table.')
+// Output:
+// true
+
+/(?<!green) apple/.test('One green apple is on the table.')
+// Output:
+// false
+```
+
+### Named capture groups
+
+Another nice feature introduced to regular expression by ES2018 is the ability to assign capturing group to a custom name. The syntax for named capture groups is `?<some_name>`, at the beginning of a capture group.
+
+```JavaScript
+const date_pattern = /(?<day>\d{2})\/(?<month>\d{2})\/(?<year>\d{4})/
+const result = date_pattern.exec('11/12/2021')
+
+// Log the matches array:
+console.log(result)
+// Output:
+// [
+//   '11/12/2021',
+//   '11',
+//   '12',
+//   '2021',
+//   index: 0,
+//   input: '11/12/2021',
+//   groups: [Object: null prototype] { day: '11', month: '12', year: '2021' }
+// ]
+
+// Log the group for day:
+console.log(result.groups.day)
+// Output:
+// '11'
+
+// Log the group for month:
+console.log(result.groups.month)
+// Output:
+// '12'
+
+// Log the group for year:
+console.log(result.groups.year)
+// Output:
+// '2021'
+```
+
+### Unicode property escapes
+
+Unicode property escapes is the last improvement for regular expressions when it comes to ES2018 features. Every unicode character has a number of properties. For example, White_Space, Uppercase, Lowercase, Alphabetic, ASCII, Emoji, etc. From now, you can access these properties inside regular expressions.
+
+In order to use this, you need two things. First, you have to use the `/u` flag. This flag tells JavaScript that your string is a series of Unicode code points. The second thing is using `\p{}`. The property you want to check goes between the curly brackets. The negation is `\P{}`.
+
+```JavaScript
+// Create a string in Russian (Cyrillic script):
+const myStrCyr = 'Доброе утро'
+
+// Create a string in English (Latin script):
+const myStrLat = 'Good morning'
+
+// Test the "myStrCyr" if it contains Cyrillic script:
+/\p{Script=Cyrillic}/u.test(myStrCyr) // true
+
+// Test the "myStrLat" if it contains Cyrillic script:
+/\p{Script=Cyrillic}/u.test(myStrLat) // false
+
+// Test the "myStrCyr" if it contains Latin script:
+/\p{Script=Latin}/u.test(myStrCyr) // false
+
+// Test the "myStrLat" if it contains Latin script:
+/\p{Script=Latin}/u.test(myStrLat) // true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
