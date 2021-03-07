@@ -331,7 +331,9 @@ const myStrLat = 'Good morning'
 /\p{Script=Latin}/u.test(myStrLat) // true
 ```
 
-## Conclusion: [...] ...
+## Conclusion: 4 JavaScript ES2018 features you should know
+
+These were the four features introduced in ES2018. Let's do a quick recap. Today you've learned about asynchronous iteration, rest/spread properties, Promise.prototype.finally() and also some useful regular expression improvements. I hope that you enjoyed this tutorial and learned something new.
 
 [xyz-ihs snippet="thank-you-message"]
 
