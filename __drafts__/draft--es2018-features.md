@@ -42,7 +42,9 @@ async function processResponses(someIterable) {
 
 ## Rest/Spread properties
 
-The rest and spread are not really new features. Both introduced in ES6. They quickly rose in popularity and usage. It is safe to say that JavaScript developers loved them. The only problem was that they worked only with arrays and parameters. ES2018 introduced these two features also for objects. Let's quickly discuss both.
+The rest and spread are not really new features. Both were introduced in ES6 as new operators. They quickly rose in popularity and usage. It is safe to say that JavaScript developers loved them. The only problem was that they worked only with arrays and parameters. ES2018 introduced these two features also for objects.
+
+The syntax of both, rest and spread operator is very simple. It is composed of three dots (`...`). These dots are then followed by the object on which you want to use the rest or spread operator. Now, let's quickly discuss how both work.
 
 ### The rest operator for objects
 
