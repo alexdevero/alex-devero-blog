@@ -40,6 +40,10 @@ async function processResponses(someIterable) {
 }
 ```
 
+## Rest/Spread properties
+
+The rest and spread are not really new features. Both introduced in ES6. They quickly rose in popularity and usage. It is safe to say that JavaScript developers loved them. The only problem was that they worked only with arrays and parameters. ES2018 introduced these two features also for objects. Let's quickly discuss both.
+
 
 ## Conclusion: [...] ...
 
