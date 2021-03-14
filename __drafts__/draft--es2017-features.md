@@ -80,7 +80,7 @@ console.log(Object.values(joshuaObj))
 // Create an array:
 const languagesArr = ['C', 'C++', 'Rust', 'Python', 'JavaScript']
 
-// Get all values from "joshuaObj":
+// Get all values from "languagesArr":
 console.log(Object.values(languagesArr))
 // Output:
 // [ 'C', 'C++', 'Rust', 'Python', 'JavaScript' ]
