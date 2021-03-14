@@ -120,6 +120,108 @@ console.log(Object.entries(hobbiesArr))
 // ]
 ```
 
+## Object.getOwnPropertyDescriptors()
+
+In JavaScript, objects have a number of properties. All these properties have their [descriptors]. These descriptors are attributes of these properties. These attributes include "value": value associated with the property and "writable": says if property can be read/written to, or if it is read-only.
+
+Third attribute is "configurable": says if you can modify the descriptor and delete the property. Fourth is "enumerable": says if the property will shows up when you enumerate (loop over) the object. Last two are "get" and "set": getter and setter function for the property.
+
+One of the ES2017 features is the `Object.getOwnPropertyDescriptors()` method. This method is here to help you work with these descriptors. It does so in two ways. First, it helps you get all own properties of an object along with all existing descriptors for these properties.
+
+Second, it also helps you copy these descriptors. This will be very useful when you want to clone objects. When you try to copy an object, for example with [Object.assign()], you will encounter one problem. It will not copy properties with non-default attributes correctly. It will also leave out getter setter functions.
+
+You can avoid this issue by using the `Object.getOwnPropertyDescriptors()` method, along with `Object.create()` and [Object.getPrototypeOf()]. This combination will allow you to create a [shallow copy] of an object that also contains  descriptors with non-default values.
+
+```JavaScript
+// Create an object:
+const pet1 = {}
+
+// Add property 'species' that is read-only
+// and has custom getter function:
+Object.defineProperty(pet1, 'species', {
+  configurable: false,
+  enumerable: true,
+  writeable: false,
+  get: function() {
+    return 'It\'s a bird!'
+  }
+})
+
+// Log the "pet1" object:
+console.log(pet1)
+// Output:
+// { species: 'bird' }
+
+// Log the value of "species" property:
+// Note: this will invoke getter for this property.
+console.log(pet1.species)
+// Output:
+// "It's a bird!"
+
+// Get all properties and their descriptors:
+Object.getOwnPropertyDescriptors(pet1)
+// Output:
+// {
+//   species: {
+//     get: ƒ get(),
+//     set: undefined,
+//     enumerable: true,
+//     configurable: false
+//   }
+// }
+
+
+// Try to clone the "pet1" object:
+const pet2 = Object.assign({}, pet1)
+
+// Log the value of "species" property of "pet2":
+// Note: this will show an actual value.
+// It will not trigger getter function
+// because there is no getter function in "pet2".
+console.log(pet2.species)
+// Output:
+// "It's a bird!"
+
+// Get all properties of "pet2" and their descriptors:
+Object.getOwnPropertyDescriptors(pet2)
+// Output:
+// {
+//   species: {
+//     value: "It's a bird!", // This is not supposed to be here.
+//     writable: true, // This is supposed to be false.
+//     enumerable: true,
+//     configurable: true // This is supposed to be false.
+//     // There is supposed to be custom getter function.
+//   }
+// }
+
+
+// Try to clone the "pet1" object again
+// using getOwnPropertyDescriptors(), create()
+// and the prototype of "pet1":
+const pet3 = Object.create(
+  Object.getPrototypeOf(pet1),
+  Object.getOwnPropertyDescriptors(pet1)
+)
+
+// Log the value of "species" property:
+// Note: this will actually invoke getter for this property.
+console.log(pet3.species)
+// "It's a bird!"
+
+// Get all properties and their descriptors:
+Object.getOwnPropertyDescriptors(pet1)
+// Output:
+// {
+//   species: {
+//     get: ƒ get(), // Here is the custom getter.
+//     set: undefined,
+//     enumerable: true,
+//     configurable: false // This is false as it should be.
+//     // There is no "value", which is correct.
+//   }
+// }
+```
 
 ## Conclusion: [...] ...
 
