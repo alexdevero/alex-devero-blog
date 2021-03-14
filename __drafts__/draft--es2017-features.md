@@ -1,6 +1,6 @@
 # 7 JavaScript ES2017 Features to Learn
 
-The JavaScript ES2017 specification (ES8) has been around for a while. Many of the features introduced in this spec are very useful. Most of them are also well supported and safe to use. In this tutorial, you will learn about what are the ES2017 features, how they work, and how to use them.<!--more-->
+The JavaScript ES2017 specification (ES8) has been around for a while. Many of the features introduced in this spec are very useful. Most of them are also well supported and safe to use. In this tutorial, you will learn a bit about what are the ES2017 features, how they work, and how to use them.<!--more-->
 <!--
 Table of Contents:
 ## String padding with padStart() and padEnd()
@@ -355,7 +355,7 @@ console.log('This will also appear before the promise.')
 
 ## Trailing commas
 
-This is a small feature that can make working with git, or another source control, easier. The purpose of this feature is simple. It allows you to end the list of parameter of a function with a trailing coma. This may sound weird, but consider this. Imagine you have a function that accepts multiple parameters.
+This is a small feature that can make working with git, or another source control, easier. The purpose of this feature is simple. It allows you to end the list of parameter of a function with a trailing comma. This may sound weird, but consider this. Imagine you have a function that accepts multiple parameters.
 
 To make the code more readable, each parameter is on a separate line. You commit this code, add it to your source control. Then, someone else comes and adds new parameter. What happens? Source control will annotate the line with new parameter. However, it will also annotate the line above.
 
@@ -405,7 +405,7 @@ One reason for this is that the speed of synchronization depends on the system o
 
 ## Conclusion: 7 JavaScript ES2017 Features to Learn
 
-These were the seven features introduced in ES2017 (ES8). I hope that you enjoyed this tutorial and that it helped you understand these ES2017 features. By now, you have at least some idea about how these features work and how to use them.
+These were the seven features that were introduced in ES2017 (ES8). I hope that you've enjoyed this tutorial. I also hope that this tutorial helped you learned at least a bit about how these ES2017 features work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
