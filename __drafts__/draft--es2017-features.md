@@ -388,6 +388,13 @@ function myFunc(
   parFour, // First and only change: new parameter.
 ) {}
 ```
+
+## Shared Memory and atomics
+
+The first, shared memory, uses [SharedArrayBuffer] to create a memory you can then share between agents, web workers, and threads. The second, atomics, goes hand in hand with shared memory. There is one problem with `SharedArrayBuffer`. It can be unpredictable. You don't really know when the data will be synchronized between agents.
+
+One reason for this is that the speed of synchronization depends on the system on which it is running. It depends on the resources that are available. Atomics provide you with static functions that help you make [atomic operations] more predictable. If you want to learn more about shared memory and atomics, take a look at [this tutorial].
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
