@@ -59,6 +59,33 @@ This second parameter, the character to add, is optional. If you specify it, bot
 // 'Bye        '
 ```
 
+## Object.values()
+
+Another nice and useful addition to JavaScript language is `Object.values()` method. This method returns values from all object's own properties. It returns these values in the form of an array. This method accepts one parameter. This parameter is the object whose values you want to get.
+
+One interesting thing is that this method also works with arrays. This means that you can pass an array as an argument, instead of an object. As a result, you will get a new array of values, the items from the original array.
+
+```JavaScript
+// Object.values() with objects:
+// Create an object:
+const joshuaObj = { name: 'Joshua', hobbies: 'programming' }
+
+// Get all values from "joshuaObj":
+console.log(Object.values(joshuaObj))
+// Output:
+// [ 'Joshua', 'programming' ]
+
+
+// Object.values() with arrays:
+// Create an array:
+const languagesArr = ['C', 'C++', 'Rust', 'Python', 'JavaScript']
+
+// Get all values from "joshuaObj":
+console.log(Object.values(languagesArr))
+// Output:
+// [ 'C', 'C++', 'Rust', 'Python', 'JavaScript' ]
+```
+
 
 ## Conclusion: [...] ...
 
