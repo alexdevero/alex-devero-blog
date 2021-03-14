@@ -223,6 +223,99 @@ Object.getOwnPropertyDescriptors(pet1)
 // }
 ```
 
+## Async functions
+
+Async functions are one of the most popular ES2017 features. This is not a surprise since they make writing asynchronous JavaScript even easier than [promises]. That said, async functions are really not that far from promises. One interesting fact. Async functions are actually built on top of promises.
+
+When you use async functions, under the hood, JavaScript is still using promises. With that in mind, what's the point of using async functions and not promises? The main reason for using async functions is simpler and easier to read syntax. Promises made it easier to escape from the callback hell.
+
+However, async functions took it one step further. I already wrote an extensive tutorial on both, [async functions] as well as [asynchronous JavaScript]. So, to learn more about async functions and asynchronous JavaScript, take a look at these two tutorials. They cover all you need to know.
+
+Now, the big picture. Async functions are actually about two features. The first one is the `async` keyword. When you put this keyword at the beginning of a function declaration you create an async function. The second feature is the [await] operator. This operator can be used only inside an async function.
+
+This operator pauses the execution of the async function in which it is placed. The execution is paused until a promise that follows this operator is resolved, until it is either fulfilled or rejected. When the promise is resolved, `await` extracts the value returned by the promise and allows to work with it, or assign it to a variable.
+
+```JavaScript
+// Syntax of async function:
+async function myAsyncFunc() {
+  // Syntax of await:
+  // Assign the value returned by promise to a variable:
+  const val = await somePromise()
+
+  // Log the value returned by the promise:
+  console.log(val)
+}
+
+
+// Example of promise and its handler methods and async function:
+// Promise example:
+// Use fetch to get data from API:
+fetch('https://currencyapi.net/api/v1/rates?key=7zq3xkh2qeZcnvFhfyDyFlvqx4EmQ7R3N1qq')
+  // Convert the response to JSON:
+  .then(res => res.json())
+  // Log the JSON to console:
+  .then(data => console.log(data))
+  // Log any errors:
+  .catch(err => console.log(err))
+// Output:
+// {
+//   valid: true,
+//   updated: 1615723207,
+//   base: 'USD',
+//   rates: {
+//     AED: 3.67338,
+//     AFN: 77.705,
+//     ALL: 103.255,
+//     // ...
+//   }
+// }
+
+// Async function example:
+async function getCurrencies() {
+  // Use fetch to get data from API
+  // and assign it to a variable:
+  const data = await fetch('https://currencyapi.net/api/v1/rates?key=7zq3xkh2qeZcnvFhfyDyFlvqx4EmQ7R3N1qq')
+  // Convert the response to JSON
+  // and assign it to a variable:
+  const json = await data.json()
+
+  // Log the JSON to console:
+  console.log(json)
+}
+
+// Call the getCurrencies() function:
+getCurrencies()
+// Output:
+// {
+//   valid: true,
+//   updated: 1615723207,
+//   base: 'USD',
+//   rates: {
+//     AED: 3.67338,
+//     AFN: 77.705,
+//     ALL: 103.255,
+//     // ...
+//   }
+// }
+
+
+// Async with try...catch:
+async function getCurrencies() {
+  try {
+    const data = await fetch('https://currencyapi.net/api/v1/rates?key=7zq3xkh2qeZcnvFhfyDyFlvqx4EmQ7R3N1qq')
+    const json = await data.json()
+
+    console.log(json)
+  }
+  catch(err) {
+    // Log any errors:
+    console.log(err)
+  }
+}
+
+getCurrencies()
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
