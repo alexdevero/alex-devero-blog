@@ -3,6 +3,14 @@
 The JavaScript ES2017 specification (ES8) has been around for a while. Many of the features introduced in this spec are very useful. Most of them are also well supported and safe to use. In this tutorial, you will learn about what are the ES2017 features, how they work, and how to use them.<!--more-->
 <!--
 Table of Contents:
+## String padding with padStart() and padEnd()
+## Object.values()
+## Object.entries()
+## Object.getOwnPropertyDescriptors()
+## Async functions
+## Trailing commas
+## Shared Memory and atomics
+## Conclusion: 7 JavaScript ES2017 Features to Learn
 -->
 
 ## String padding with padStart() and padEnd()
@@ -402,7 +410,18 @@ These were the seven features introduced in ES2017 (ES8). I hope that you enjoye
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[multidimensional arrays]: https://teamtreehouse.com/library/what-is-a-multidimensional-array
+[descriptors]: https://blog.alexdevero.com/javascript-object-property-flags/
+[Object.assign()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+[Object.getPrototypeOf()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
+[shallow copy]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/
+[promises]: https://blog.alexdevero.com/javascript-promises/
+[async functions]: https://blog.alexdevero.com/javascript-async-await/
+[asynchronous JavaScript]: https://blog.alexdevero.com/asynchronous-javascript-code/
+[await]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+[SharedArrayBuffer]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
+[atomic operations]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics#atomic_operations
+[this tutorial]: https://github.com/tc39/ecmascript_sharedmem/blob/master/TUTORIAL.md
 
 <!--
 ### Meta:
