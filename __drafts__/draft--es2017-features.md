@@ -345,6 +345,49 @@ console.log('This will also appear before the promise.')
 // 'Job done!'
 ```
 
+## Trailing commas
+
+This is a small feature that can make working with git, or another source control, easier. The purpose of this feature is simple. It allows you to end the list of parameter of a function with a trailing coma. This may sound weird, but consider this. Imagine you have a function that accepts multiple parameters.
+
+To make the code more readable, each parameter is on a separate line. You commit this code, add it to your source control. Then, someone else comes and adds new parameter. What happens? Source control will annotate the line with new parameter. However, it will also annotate the line above.
+
+The reason is simple. In order to add new parameter, it is necessary to add a new comma after the last existing parameter. Source control will notice this change and annotate two lines that changed, one with old parameter and one with new. The purpose of trailing comma allows is to avoid this.
+
+You add the trailing comma after the last parameter. Then, when someone else adds new parameter, it is not necessary to add new comma after the last parameter. The result? Source control annotates only one line that changed.
+
+```JavaScript
+// Before adding new parameter:
+function myFunc(
+  parOne,
+  parTwo,
+  parThree
+) {}
+
+// Before adding new parameter:
+function myFunc(
+  parOne,
+  parTwo,
+  parThree, // First change: new ",".
+  parFour // Second change: new parameter.
+) {}
+
+
+// With trailing comma:
+// Before adding new parameter:
+function myFunc(
+  parOne,
+  parTwo,
+  parThree, // Trailing comma is now valid here.
+) {}
+
+// Before adding new parameter:
+function myFunc(
+  parOne,
+  parTwo,
+  parThree,
+  parFour, // First and only change: new parameter.
+) {}
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
