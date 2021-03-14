@@ -1,7 +1,6 @@
 # 7 JavaScript ES2017 Features to Learn
 
-
-<!--more-->
+The JavaScript ES2017 specification (ES8) has been around for a while. Many of the features introduced in this spec are very useful. Most of them are also well supported and safe to use. In this tutorial, you will learn about what are the ES2017 features, how they work, and how to use them.<!--more-->
 <!--
 Table of Contents:
 -->
