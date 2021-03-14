@@ -395,7 +395,9 @@ The first, shared memory, uses [SharedArrayBuffer] to create a memory you can th
 
 One reason for this is that the speed of synchronization depends on the system on which it is running. It depends on the resources that are available. Atomics provide you with static functions that help you make [atomic operations] more predictable. If you want to learn more about shared memory and atomics, take a look at [this tutorial].
 
-## Conclusion: [...] ...
+## Conclusion: 7 JavaScript ES2017 Features to Learn
+
+These were the seven features introduced in ES2017 (ES8). I hope that you enjoyed this tutorial and that it helped you understand these ES2017 features. By now, you have at least some idea about how these features work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
