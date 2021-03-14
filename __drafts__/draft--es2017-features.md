@@ -314,6 +314,35 @@ async function getCurrencies() {
 }
 
 getCurrencies()
+
+
+// Promise with async function:
+// Create function that returns a promise:
+function myPromiseFunc() {
+  // Return a promise:
+  return new Promise((resolve) => {
+    // Resolve the promise after 2.5s:
+    setTimeout(() => {
+      resolve('Job done!')
+    }, 2500)
+  })
+}
+
+// Create async functions:
+async function myAsyncFunction() {
+  // Call the "myPromiseFunc()" function
+  // and log returned value to console:
+  console.log(await myPromiseFunc())
+}
+
+// Call the "myAsyncFunction()" function:
+myAsyncFunction()
+console.log('This will actually appear before the promise.')
+console.log('This will also appear before the promise.')
+// Output:
+// 'This will actually appear before the promise.'
+// 'This will also appear before the promise.'
+// 'Job done!'
 ```
 
 ## Conclusion: [...] ...
