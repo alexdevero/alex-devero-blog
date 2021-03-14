@@ -86,6 +86,40 @@ console.log(Object.values(languagesArr))
 // [ 'C', 'C++', 'Rust', 'Python', 'JavaScript' ]
 ```
 
+## Object.entries()
+
+Another addition for objects is the `entries()` method. The previous method `Object.entries()` returned only values of own properties. This method returns both, values of own properties as well as those own properties. You will get this data, these properties and values, in the form of nested [multidimensional arrays].
+
+You will get one array for each own property. Each of these arrays will contain two items. The first one is the property. The second one is the value. The way to use this method is the same as for the `Object.entries()` method. You pass the object, whose entries you want to get, as an argument.
+
+Similarly to the `Object.values()` method the `Object.entries()` also works with arrays. If you pass in an array, you will also get a multidimensional array. There will be one nested array for every item in the array. Each of these arrays will contain two items, the index of the item and the item itself.
+
+```JavaScript
+// Object.entries() with objects:
+// Create an object:
+const jackObj = { name: 'Jack', age: 44 }
+
+// Get all entries from "jackObj":
+console.log(Object.entries(jackObj))
+// Output:
+// [ [ 'name', 'Jack' ], [ 'age', 44 ] ]
+
+
+// Object.entries() with arrays:
+// Create an array:
+const hobbiesArr = ['Reading', 'Writing', 'Sport', 'Programming']
+
+// Get all entries from "hobbiesArr":
+console.log(Object.entries(hobbiesArr))
+// Output:
+// [
+//   [ '0', 'Reading' ],
+//   [ '1', 'Writing' ],
+//   [ '2', 'Sport' ],
+//   [ '3', 'Programming' ]
+// ]
+```
+
 
 ## Conclusion: [...] ...
 
