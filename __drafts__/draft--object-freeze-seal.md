@@ -168,6 +168,87 @@ console.log(myObjFrozen)
 // }
 ```
 
+## Object.preventExtensions() method
+
+To seal and freeze an object are not the only options to restrict manipulations with objects. There is additional method you can use, the `Object.preventExtensions()`. What this method does is it prevents anyone from adding new properties to an object. That said, you can still add properties to the object prototype.
+
+The `Object.preventExtensions()` also doesn't prevent you from deleting existing properties. The way to use this method is the same as for the previous two. You pass the object you want to prevent from being extended and pass it as an argument to this method. New inextensible object will be returned.
+
+Similarly to previous two methods, you don't have to assign this returned object to a variable. The `Object.preventExtensions()` method will modify the original object you passed as argument. If you do assign it, you will end up with two inextensible objects instead of one.
+
+```JavaScript
+// Create new object:
+const myObj = {
+  language: 'English',
+  ethnicity: 'Anglo-Saxons'
+}
+
+// Prevent "myObj" from being extended:
+Object.preventExtensions(myObj)
+
+// Check if object is extensible:
+console.log(Object.isExtensible(myObj))
+// Output:
+// false
+
+// Try to change the value of existing properties:
+myObj.language = 'Italian'
+myObj.ethnicity = 'Italians'
+
+// Try to add new property:
+myObj.languageFamily = 'Indo-European'
+
+// Try to remove property:
+delete myObj.ethnicity
+
+// Log the "myObj" object:
+console.log(myObj)
+// Output:
+// {
+//  language: 'Italian' // <= "ethnicity" has been deleted,
+//                      // but no property has been added
+// }
+
+
+// Assigning frozen object to new variable (not necessary):
+const myObj = {
+  language: 'JavaScript',
+  type: 'high-level'
+}
+
+// Prevent "myObj" from being extended
+// and assign it to new variable:
+const myObjInextensible = Object.preventExtensions(myObj)
+
+// Check if object is extensible:
+console.log(Object.isExtensible(myObj))
+// Output:
+// false
+
+// Check if object is extensible:
+console.log(Object.isExtensible(myObjInextensible))
+// Output:
+// false
+
+// Try to add new property:
+myObj.author = 'Brendan Eich'
+myObjInextensible.author = 'Brendan Eich'
+
+// Try to remove property:
+delete myObj.type
+delete myObjInextensible.type
+
+// Log the "myObj" object:
+console.log(myObj)
+// Output:
+// { language: 'JavaScript' }
+
+// Log the "myObj" object:
+console.log(myObjInextensible)
+// Output:
+// { language: 'JavaScript' }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
