@@ -2,6 +2,13 @@
 <!--more-->
 <!--
 Table of Contents:
+## Object.seal() method
+## Object.freeze() method
+## Object.preventExtensions() method
+## Deeply frozen objects
+## Unfreeze?
+## Frozen objects and strict mode
+## Conclusion: How to freeze an object in JavaScript: Object.freeze(), Object.seal() and Object.preventExtensions()
 -->
 
 ## Object.seal() method
