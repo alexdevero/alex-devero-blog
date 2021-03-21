@@ -275,6 +275,74 @@ console.log(myObjInextensible)
 // { language: 'JavaScript' }
 ```
 
+## Deeply frozen objects
+
+The `Object.freeze()` method allows you to freeze an object. The `Object.seal()`, and also `Object.preventExtensions()`, allows to freeze an object partially. That said, there is a catch. All these methods perform only a "shallow" freeze. These methods will freeze only the object itself.
+
+This will not be enough if you have an object whose properties are also objects. In this case, these "inner" or "nested" object will not be frozen. Neither of the methods we discussed today will have any effect on these inner object. This, also applies to properties that are arrays.
+
+One way to solve this is by using a [recursion]. You can create a function. This function will take an object and return object frozen with the `Object.freeze()` method. Inside this function, you will iterate over all values of the object and check if aby value is an object. If so, you will call the function on that value.
+
+```JavaScript
+// Create object for testing:
+const myObj = {
+  name: 'Joe',
+  age: 29,
+  profession: {
+    title: 'Programmer',
+    experience: 'senior'
+  }
+}
+
+// Create function for deep freezing:
+const deepFreeze = obj => {
+  // Iterate over all values of provided object:
+  Object.values(obj).forEach(value => {
+    // Check if each value is an object:
+    if (typeof value === 'object' && !Object.isFrozen(value)) {
+      // If it is and if it is not frozen
+      // call deepFreeze function on it:
+      deepFreeze(value)
+    }
+  })
+
+  // Return provided object as frozen:
+  return Object.freeze(obj)
+}
+
+// Deep freeze the object:
+deepFreeze(myObj)
+
+// Check if the object itself is extensible:
+console.log(Object.isExtensible(myObj))
+// Output:
+// false
+
+// Check if the "inner" object is extensible:
+console.log(Object.isExtensible(myObj.profession))
+// Output:
+// false
+
+// Try to change properties of the object:
+myObj.name = 'Jack'
+
+// Try to change properties of the "inner" object:
+myObj.profession.title = 'DevOps architect'
+myObj.profession.experience = 'junior'
+
+// Log the "myObj" object:
+console.log(myObj)
+// Output:
+// {
+//   name: 'Joe',
+//   age: 29,
+//   profession: { // This "inner" object is remained unchanged.
+//     title: 'Programmer',
+//     experience: 'senior'
+//   }
+// }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
