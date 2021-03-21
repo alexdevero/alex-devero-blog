@@ -40,6 +40,10 @@ myObj.name = 'Jack Pain'
 myObj.occupation = 'Secret agent'
 myObj.undercover = true
 
+// NOTE: This will also not work.
+// Try to remove "age" property:
+delete myObj.age
+
 // Log the "myObj" object:
 console.log(myObj)
 // Output:
@@ -71,6 +75,10 @@ myObjSealed.age = 45
 myObj.height = '90 kg'
 myObjSealed.height = '90 kg'
 
+// Try to remove "age" property:
+delete myObj.age
+delete myObjSealed.age
+
 // Log the "myObj" object:
 console.log(myObj)
 // Output:
@@ -80,7 +88,7 @@ console.log(myObj)
 // }
 
 // Log the "myObjSealed" object:
-console.log(myObj)
+console.log(myObjSealed)
 // Output:
 // {
 //   name: 'Joe Doe',
@@ -120,6 +128,10 @@ myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScr
 myObj.language = 'English'
 myObj.format = 'Paperback'
 
+// NOTE: This will also not work.
+// Try to remove "author" property:
+delete myObj.author
+
 // Log the "myObj" object:
 console.log(myObj)
 // Output:
@@ -150,6 +162,10 @@ myObjFrozen.title = 'Functional Programming in JavaScript: How to improve your J
 // Try to add new properties to both objects:
 myObj.format = 'Paperback'
 myObjFrozen.format = 'Paperback'
+
+// Try to remove "author" property:
+delete myObj.author
+delete myObjFrozen.author
 
 // Log the "myObj" object:
 console.log(myObj)
@@ -198,7 +214,7 @@ myObj.ethnicity = 'Italians'
 // Try to add new property:
 myObj.languageFamily = 'Indo-European'
 
-// Try to remove property:
+// Try to remove "ethnicity" property:
 delete myObj.ethnicity
 
 // Log the "myObj" object:
