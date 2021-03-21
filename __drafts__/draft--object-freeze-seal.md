@@ -1,4 +1,4 @@
-# Blog post title [...]
+# How to Freeze an Object in JavaScript with Object.freeze() & Object.seal()
 <!--more-->
 <!--
 Table of Contents:
