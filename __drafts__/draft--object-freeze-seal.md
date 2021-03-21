@@ -31,6 +31,11 @@ console.log(Object.isExtensible(myObj))
 // Output:
 // false
 
+// Check if object is frozen:
+console.log(Object.isFrozen(myObj))
+// Output:
+// false
+
 // NOTE: This will work.
 // Try to change the value of "name" property:
 myObj.name = 'Jack Pain'
@@ -64,6 +69,11 @@ const myObjSealed = Object.seal(myObj)
 
 // Check if object is extensible:
 console.log(Object.isExtensible(myObjSealed))
+// Output:
+// false
+
+// Check if object is frozen:
+console.log(Object.isFrozen(myObjSealed))
 // Output:
 // false
 
@@ -114,10 +124,10 @@ const myObj = {
 // Freeze the "myObj" object:
 Object.freeze(myObj)
 
-// Check if object is extensible:
-console.log(Object.isExtensible(myObj))
+// Check if object is frozen:
+console.log(Object.isFrozen(myObj))
 // Output:
-// false
+// true
 
 // NOTE: This will not work.
 // Try to change the value of "title" property:
@@ -150,10 +160,10 @@ const myObj = {
 // Freeze the "myObj" object and assign it to new variable:
 const myObjFrozen = Object.freeze(myObj)
 
-// Check if object is extensible:
-console.log(Object.isExtensible(myObjFrozen))
+// Check if object is frozen:
+console.log(Object.isFrozen(myObjFrozen))
 // Output:
-// false
+// true
 
 // Try to change the value of "age" in both objects:
 myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
