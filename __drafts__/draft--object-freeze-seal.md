@@ -1,4 +1,4 @@
-# How to Freeze an Object in JavaScript: Object.freeze(), Object.seal() and Object.preventExtensions()
+# How to Freeze an Object in JavaScript: Object.freeze(), Object.seal() & Object.preventExtensions()
 
 In JavaScript, it is possible to freeze an object, to make it immutable, and prevent it from being changed. This tutorial will show you how to do it. You will learn how to freeze an object in JavaScript with Object.freeze(), seal it with Object.seal(), prevent extending it and more.<!--more-->
 <!--
@@ -9,12 +9,12 @@ Table of Contents:
 ## Deeply frozen objects
 ## Unfreeze?
 ## Frozen objects and strict mode
-## Conclusion: How to freeze an object in JavaScript: Object.freeze(), Object.seal() and Object.preventExtensions()
+## Conclusion: How to freeze an object in JavaScript: Object.freeze(), Object.seal() & Object.preventExtensions()
 -->
 
 ## Object.seal() method
 
-When you want to freeze an object in JavaScript there are two options you can choose from. The first option is less restrictive than the second. This option is about using the `Object.seal()` method. This methods help you prevent anyone from adding, removing  or re-configuring existing properties of an object.
+When you want to freeze an object in JavaScript there are two options you can choose from. The first option is less restrictive than the second. This option is about using the `Object.seal()` method. This method helps you prevent anyone from adding, removing  or re-configuring existing properties of an object.
 
 JavaScript does this by marking all existing properties in an object as non-configurable, by changing the [property flags]. This also means that when you seal an object, you can no longer change these flags. This is what "re-configuring existing properties" means, modifying property flags.
 
@@ -289,7 +289,7 @@ The `Object.freeze()` method allows you to freeze an object. The `Object.seal()`
 
 This will not be enough if you have an object whose properties are also objects. In this case, these "inner" or "nested" object will not be frozen. Neither of the methods we discussed today will have any effect on these inner object. This, also applies to properties that are arrays.
 
-One way to solve this is by using a [recursion]. You can create a function. This function will take an object and return object frozen with the `Object.freeze()` method. Inside this function, you will iterate over all values of the object and check if aby value is an object. If so, you will call the function on that value.
+One way to solve this is by using a [recursion]. You can create a function. This function will take an object and return object frozen with the `Object.freeze()` method. Inside this function, you will iterate over all values of the object and check if any value is an object. If so, you will call the function on that value.
 
 ```JavaScript
 // Create object for testing:
@@ -393,7 +393,7 @@ delete myObj.author
 // TypeError: Cannot delete property 'author' of #<Object>
 ```
 
-## Conclusion: How to freeze an object in JavaScript: Object.freeze(), Object.seal() and Object.preventExtensions()
+## Conclusion: How to freeze an object in JavaScript: Object.freeze(), Object.seal() & Object.preventExtensions()
 
 Freezing objects in JavaScript, either completely or partially, is easy. It is also easy to prevent objects only from being extended by adding new properties. With a bit code, you can also ensure frozen objects are deeply frozen. I hope that this tutorial helped you understand how to do all these things.
 
@@ -413,7 +413,8 @@ Freezing objects in JavaScript, either completely or partially, is easy. It is a
 
 <!--
 ### Keywords:
--
+- Freeze an Object in JavaScript
+- Freeze an Object
 -->
 
 <!--
