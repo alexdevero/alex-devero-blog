@@ -343,6 +343,10 @@ console.log(myObj)
 // }
 ```
 
+## Unfreeze?
+
+Now the bad news. When you freeze an object in JavaScript, with the `Object.freeze()` method, you can't unfreeze it. Freezing an object is the ultimate solution. There is no way to reverse this. Once some object has been frozen it can't be unfrozen, or modified in any way. This may look too much, but it is the best way to ensure objects will stay as you left them.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
