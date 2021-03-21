@@ -347,6 +347,44 @@ console.log(myObj)
 
 Now the bad news. When you freeze an object in JavaScript, with the `Object.freeze()` method, you can't unfreeze it. Freezing an object is the ultimate solution. There is no way to reverse this. Once some object has been frozen it can't be unfrozen, or modified in any way. This may look too much, but it is the best way to ensure objects will stay as you left them.
 
+## Frozen objects and strict mode
+
+In JavaScript, there are two variants of JavaScript you can work with. One is [sloppy mode]. The other is [strict mode]. Sloppy mode is the normal mode of JavaScript. It is the one you work with by default. One difference between these two is that sloppy mode let you do some things without throwing an exception, showing an error.
+
+One example of this is manipulating with frozen object. When you try to do something with frozen object that is forbidden in sloppy mode nothing will happen. The change you want to make will not happen and no error will appear. It will fail silently. This will not happen if you switch to strict mode.
+
+When you try to manipulate with properties of a frozen object JavaScript will throw an exception. This exception will be some `TypeError`, which specifically will depend on what you are trying to do. If you want JavaScript to throw these exceptions, switch to strict mode by adding the `'use strict'` statement.
+
+```JavaScript
+// Use strict mode:
+'use strict';
+
+// Create an object:
+const myObj = {
+  title: 'Functional Programming in JavaScript',
+  author: 'Luis Atencio'
+}
+
+// Freeze the "myObj" object:
+Object.freeze(myObj)
+
+// Try to change the value of "title" property:
+myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
+// Output:
+// TypeError: Cannot assign to read only property 'title' of object '#<Object>'
+
+// Try to add new properties:
+myObj.language = 'English'
+myObj.format = 'Paperback'
+// Output:
+// TypeError: Cannot add property language, object is not extensible
+
+// Try to remove "author" property:
+delete myObj.author
+// Output:
+// TypeError: Cannot delete property 'author' of #<Object>
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
