@@ -78,6 +78,75 @@ console.log(myObj)
 // }
 ```
 
+## Object.freeze() method
+
+The `Object.freeze()` is the second option, the more restrictive. While sealing an object allows you to change existing properties, their values, `Object.freeze()` forbids this. When you freeze an object with `Object.freeze()` it will become ultimately locked. You will not be able to add new properties or remove or modify existing.
+
+In addition to this, the `Object.freeze()` method also prevents anyone from changing the [object prototype]. The syntax, and way to use this method, is similar to the `Object.seal()`. The only difference is the replacement of `seal()` method with `freeze()`, and also the outcome.
+
+Another thing `Object.freeze()` shares with `Object.seal()` is that you also don't have to assign the returned frozen object to a variable. When you use the `Object.freeze()` method it will freeze the original object. If you also assign the returned object to a variable you will just end up with two frozen objects.
+
+```JavaScript
+// Create new object:
+const myObj = {
+  title: 'Functional Programming in JavaScript',
+  author: 'Luis Atencio'
+}
+
+// Freeze the "myObj" object:
+Object.freeze(myObj)
+
+// NOTE: This will not work.
+// Try to change the value of "title" property:
+myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
+
+// NOTE: This will not work.
+// Try to add new properties:
+myObj.language = 'English'
+myObj.format = 'Paperback'
+
+// Log the "myObj" object:
+console.log(myObj)
+// Output:
+// {
+//   title: 'Functional Programming in JavaScript',
+//   author: 'Luis Atencio'
+// }
+
+
+// Assigning frozen object to new variable (not necessary):
+const myObj = {
+  title: 'Functional Programming in JavaScript',
+  author: 'Luis Atencio'
+}
+
+// Freeze the "myObj" object and assign it to new variable:
+const myObjFrozen = Object.freeze(myObj)
+
+// Try to change the value of "age" in both objects:
+myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
+myObjFrozen.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
+
+// Try to add new properties to both objects:
+myObj.format = 'Paperback'
+myObjFrozen.format = 'Paperback'
+
+// Log the "myObj" object:
+console.log(myObj)
+// Output:
+// {
+//   title: 'Functional Programming in JavaScript',
+//   author: 'Luis Atencio'
+// }
+
+// Log the "myObjFrozen" object:
+console.log(myObjFrozen)
+// Output:
+// {
+//   title: 'Functional Programming in JavaScript',
+//   author: 'Luis Atencio'
+// }
+```
 
 ## Conclusion: [...] ...
 
