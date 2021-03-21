@@ -1,5 +1,5 @@
-# How to Freeze an Object in JavaScript with Object.freeze() & Object.seal()
-<!--more-->
+
+In JavaScript, it is possible to freeze an object, to make it immutable, and prevent it from being changed. This tutorial will show you how to do it. You will learn how to freeze an object in JavaScript with Object.freeze(), seal it with Object.seal(), prevent extending it and more.<!--more-->
 <!--
 Table of Contents:
 ## Object.seal() method
