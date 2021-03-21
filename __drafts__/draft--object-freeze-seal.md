@@ -26,6 +26,11 @@ const myObj = {
 // Seal the "myObj" object:
 Object.seal(myObj)
 
+// Check if object is extensible:
+console.log(Object.isExtensible(myObj))
+// Output:
+// false
+
 // NOTE: This will work.
 // Try to change the value of "name" property:
 myObj.name = 'Jack Pain'
@@ -44,7 +49,7 @@ console.log(myObj)
 // }
 
 
-// Assigning sealed object to new variable:
+// Assigning sealed object to new variable (not necessary):
 const myObj = {
   name: 'Joe Doe',
   age: 37
@@ -52,6 +57,11 @@ const myObj = {
 
 // Seal the "myObj" object and assign it to new variable:
 const myObjSealed = Object.seal(myObj)
+
+// Check if object is extensible:
+console.log(Object.isExtensible(myObjSealed))
+// Output:
+// false
 
 // Try to change the value of "age" in both objects:
 myObj.age = 45
@@ -96,6 +106,11 @@ const myObj = {
 // Freeze the "myObj" object:
 Object.freeze(myObj)
 
+// Check if object is extensible:
+console.log(Object.isExtensible(myObj))
+// Output:
+// false
+
 // NOTE: This will not work.
 // Try to change the value of "title" property:
 myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
@@ -122,6 +137,11 @@ const myObj = {
 
 // Freeze the "myObj" object and assign it to new variable:
 const myObjFrozen = Object.freeze(myObj)
+
+// Check if object is extensible:
+console.log(Object.isExtensible(myObjFrozen))
+// Output:
+// false
 
 // Try to change the value of "age" in both objects:
 myObj.title = 'Functional Programming in JavaScript: How to improve your JavaScript programs using functional techniques'
