@@ -1,7 +1,19 @@
-# Blog post title [...]
+# Primitive Values, Objects and References in JavaScript Made Simple
+
+Primitive data types, values, objects and references are among the most misunderstood topics in JavaScript. They can cause a lot of headaches. In this tutorial, you will learn about primitive data types, values, objects, references, the differences between them and how they work.
+
 <!--more-->
 <!--
 Table of Contents:
+## A short introduction
+## Primitive data types and primitive values
+## Objects and references
+## Quick summary of primitive data types, objects, values and references
+## Primitive values, references and comparison
+### Comparing primitive values
+### Comparing objects and references
+## Functions and passing by value and by reference
+## Conclusion: Primitive values, objects and references in JavaScript made simple
 -->
 
 ## A short introduction
@@ -34,7 +46,7 @@ function myFunction(num1, num2) {
 }
 ```
 
-## Primitive data types
+## Primitive data types and primitive values
 
 Let's start with the first category, primitive data types. Values that contain these primitive data types are called static data. As static data, JavaScript stores them on the [stack]. One important thing about these primitive values is that their size is fixed. JavaScript knows how much memory these data types need.
 
@@ -299,7 +311,7 @@ console.log(personName)
 // 'Andrei' // <= The name is the same.
 ```
 
-If you try to do this with an object the result will be different. When you pass an object it is passed by reference. In this case, JavaScript is not copying the object so the function can use it. It only gives you the reference to the original object. If you try to modify the object you will actually change the original object.
+If you try to do this with an object the result will be different. When you pass an object it is passed "by reference". In this case, JavaScript is not copying the object so the function can use it. It only gives you the reference to the original object. If you try to modify the object you will actually change the original object.
 
 ```JavaScript
 // Create a variable and assign it an object:
@@ -320,14 +332,21 @@ console.log(person)
 // { name: 'Viktor' } // <= The name is different.
 ```
 
-## Conclusion: Values and references in Javascript made simple
+## Conclusion: Primitive values, objects and references in JavaScript made simple
 
 Primitive data types, values, objects and references are topics that can be difficult to understand. This is especially true for beginners and junior JavaScript developers. I hope that this tutorial help you understand how they work, the differences between them and how they work.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[six primitive types]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values
+[ES6]: https://blog.alexdevero.com/es6-es7-es8-modern-javascript-pt3/#sets
+[ES2020]: https://blog.alexdevero.com/javascript-es2020-features/#bigint
+[stack]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-stack
+[memory heap]: https://blog.alexdevero.com/memory-life-cycle-heap-stack-javascript/#the-memory-heap
+[shallow copies]: https://blog.alexdevero.com/shallow-deep-copy-in-javascript/
+[equal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
+[strict equal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
 
 <!--
 ### Meta:
