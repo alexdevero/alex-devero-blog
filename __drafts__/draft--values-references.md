@@ -183,7 +183,7 @@ When you assign and then copy an object, you are copying by reference. You are c
 
 ## Primitive values, references and comparison
 
-Knowing the difference between value and reference is important when you want to do comparison.
+Knowing the difference between value and reference is important when you want to compare things. Let's take a look at how comparison works with both, primitive values and objects.
 
 ### Comparing primitive values
 
@@ -272,6 +272,52 @@ const y = [1, 2, 3, 4]
 console.log(x === y)
 // Output:
 // false
+```
+
+## Functions and passing by value and by reference
+
+Knowing the difference between value and reference is also useful when you work with functions. When you pass some primitive value stored in a variable to a function as an argument, you are passing it "by value". You are basically copying that value itself to a function. The consequence of this is the same as when you copy "by value".
+
+If you try to change the value passed into the function it will have no effect on the variable itself. The value of that variable will remain the same. Change you created by the function will have no effect on it. Well, unless you access the variable itself and change it directly, but that is a different scenario.
+
+```JavaScript
+// Create a variable and assign it a primitive value:
+let personName = 'Andrei'
+
+// Create a function that will attempt to modify
+// the value it receives as an argument:
+function changeNameFunc(name) {
+  name = 'Viktor'
+}
+
+// Call the "changeNameFunc" function:
+changeNameFunc(personName)
+
+// Log the value of "name" variable:
+console.log(personName)
+// Output:
+// 'Andrei' // <= The name is the same.
+```
+
+If you try to do this with an object the result will be different. When you pass an object it is passed by reference. In this case, JavaScript is not copying the object so the function can use it. It only gives you the reference to the original object. If you try to modify the object you will actually change the original object.
+
+```JavaScript
+// Create a variable and assign it an object:
+let person = { name: 'Andrei' }
+
+// Create a function that will attempt to modify
+// the value it receives as an argument:
+function changeNameFunc(person) {
+  person.name = 'Viktor'
+}
+
+// Call the "changeNameFunc" function:
+changeNameFunc(person)
+
+// Log the value of "name" variable:
+console.log(person)
+// Output:
+// { name: 'Viktor' } // <= The name is different.
 ```
 
 ## Conclusion: [...] ...
