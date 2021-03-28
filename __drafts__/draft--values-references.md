@@ -181,6 +181,99 @@ Now you know what is the difference between primitive values and references. Whe
 
 When you assign and then copy an object, you are copying by reference. You are creating new references for each copy. As a result, there are multiple references (variables). However, there is still only one object. If you change one of these variables, you change the original object. This will affect all references (variables).
 
+## Primitive values, references and comparison
+
+Knowing the difference between value and reference is important when you want to do comparison.
+
+### Comparing primitive values
+
+Comparing two primitive values is usually simple. The only catch is knowing the difference between [equal] and [strict equal] and which one to use (it will usually be strict equal). Comparing primitive values with strict equal will check for value and type. If both are the same, you will get `true`. If not, you will get `false`.
+
+```JavaScript
+// One primitive value:
+// Create one variable and assign it primitive value:
+const str1 = 'JavaScript'
+
+// Create another variable and assign it "str1":
+const str2 = str1
+
+// Compare "str1" and "str2":
+console.log(str1 === str2)
+// Output:
+// true
+
+
+// Two identical primitive values:
+// Create two variables and assign them
+// the same primitive values:
+const num1 = 15
+const num2 = 15
+
+// Compare "num1" and "num2":
+console.log(num1 === num2)
+// Output:
+// true
+```
+
+### Comparing objects and references
+
+References work differently. If you compare two different objects, and the content is the same, the comparison will still result in `false`. Comparison will result in `true` only if you compare references to the same object.
+
+```JavaScript
+// One object:
+// Create a variable and assign it an object:
+const a = { name: 'Jack' }
+
+// Assign "a" to another variable:
+const b = a
+
+// Compare "a" and "b":
+console.log(a === b)
+// Output:
+// true
+
+// Two identical objects:
+// Create a variable and assign it an object:
+const a = { name: 'George' }
+
+// Create another variable and assign it the same object:
+const b = { name: 'George' }
+
+// Compare "a" and "b":
+console.log(a === b)
+// Output:
+// false
+```
+
+Remember that arrays, and functions as well, are technically objects. This means that if you compare variables with identical arrays the result will be always `false`. Those variables will be the same only if they both reference the same array.
+
+```JavaScript
+// One array:
+// Create a variable and assign it an array:
+const x = [1, 2, 3, 4]
+
+// Create another variable and assign it "x":
+const y = x
+
+// Compare "x" and "y":
+console.log(x === y)
+// Output:
+// true
+
+
+// Two identical arrays:
+// Create a variable and assign it an array:
+const x = [1, 2, 3, 4]
+
+// Create another variable and assign it the same array:
+const y = [1, 2, 3, 4]
+
+// Compare "x" and "y":
+console.log(x === y)
+// Output:
+// false
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
