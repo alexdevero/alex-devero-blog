@@ -57,6 +57,7 @@ let x = 'Hello'
 let y = x
 
 // Change the value of "x":
+// NOTE: this will not change "y".
 x = 'Bye'
 
 // Log the value of "x":
@@ -66,6 +67,26 @@ console.log(x)
 
 // Log the value of "x":
 console.log(y)
+// Output:
+// 'Hello'
+
+// Assign "y" to another variable:
+let z = y
+
+// Assign "z" to another variable:
+let w = z
+
+// Change the value of "y":
+// NOTE: this will not change "z" and "w".
+y = 'Eloquent'
+
+// Log the value of "x":
+console.log(z)
+// Output:
+// 'Hello'
+
+// Log the value of "x":
+console.log(w)
 // Output:
 // 'Hello'
 ```
