@@ -91,6 +91,89 @@ console.log(w)
 // 'Hello'
 ```
 
+## Objects and references
+
+Objects are a different story. When you assign variable an object JavaScript will handle it differently. The value, the object, will not be added to the stack. Instead, it will be added to [memory heap]. There is another very important difference. That variable will not contain the value, the object, but a reference to that object.
+
+Think about this reference as a link, or chain. It is a link that connects specific variable with specific object. This has one major consequence. If you manipulate with that variable, you work with the reference and, through this reference, with the object itself. What if you copy that object by assigning that variable to another variable?
+
+You may think that this will create another object, copy of the first, just like in case of primitive value. This is not what will happen. What will actually happen is that JavaScript will create new reference. JavaScript will only create new reference, or link, to the original object.
+
+There will be still only one object in the memory heap, the original. This is called copying "by reference" and it happens every time you copy an object. Copying this way, by reference, results in creating [shallow copies] of objects. This type of copying also has one serious consequence.
+
+If you manipulate with any of these variables you also manipulate with the same object. So, if you change the object by changing one variable you change the other variable as well. They are both different variables, but they both reference, or link to, the same object.
+
+```JavaScript
+// Create a variable and assign it
+// a simple object:
+let a = { name: 'Stan' }
+
+// Assign "a" to another variable:
+let b = a
+
+// Change the value of "a"
+// by adding new property "age" to the object:
+a.age = 44
+
+// Log the value of "a":
+// console.log(a)
+// Output:
+// { name: 'Stan', age: 44 }
+
+// Log the value of "b":
+// console.log(b)
+// Output:
+// { name: 'Stan', age: 44 }
+
+// Assign "b" to another variable:
+let c = b
+
+// Assign "c" to another variable:
+let d = c
+
+// Change the value of "d"
+// by adding another property
+// "favoriteAnimal" to the object:
+d.favoriteAnimal = 'elephant'
+
+// Log the value of "a":
+console.log(a)
+// Output:
+// {
+//   name: 'Stan',
+//   age: 44,
+//   favoriteAnimal: 'elephant'
+// }
+
+// Log the value of "b":
+console.log(b)
+// Output:
+// {
+//   name: 'Stan',
+//   age: 44,
+//   favoriteAnimal: 'elephant'
+// }
+
+// Log the value of "c":
+console.log(c)
+// Output:
+// {
+//   name: 'Stan',
+//   age: 44,
+//   favoriteAnimal: 'elephant'
+// }
+
+// Log the value of "d":
+console.log(c)
+// Output:
+// {
+//   name: 'Stan',
+//   age: 44,
+//   favoriteAnimal: 'elephant'
+// }
+```
+
+*Note: One way to understand how copying by reference works is by thinking about keys and houses. When you copy you key, you are not also creating a new house. There is still only one house, but there are now two keys that can unlock that house. Variables are those keys, object is that house.*
 
 ## Conclusion: [...] ...
 
