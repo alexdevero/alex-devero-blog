@@ -18,7 +18,7 @@ Table of Contents:
 
 ## A short introduction
 
-In JavaScript, there are the two categories of data types you can work with. First category are primitive data types. At this moment, there exist [seven primitive types]. These primitive data types are number, string, boolean, `null`, `undefined`, BigInt and Symbol. The BigInt and Symbol are newer data types.
+In JavaScript, there are the two categories of data types you can work with. The first category are primitive data types. At this moment, there exist [seven primitive types]. These primitive data types are number, string, boolean, `null`, `undefined`, BigInt and Symbol. The BigInt and Symbol are newer data types.
 
 Symbol was introduced in [ES6] specification. The BigInt was introduced later, in [ES2020] specification. When something is not one of these primitive data types it is technically an object. This applies to actual objects as well as arrays and even functions. From the view of JavaScript, these are all objects.
 
@@ -58,7 +58,7 @@ So, if you change the value of one variable it will not change the second. The s
 
 At this moment, the stack will now contain two values, one for each variable. It doesn't matter that both values are the same. Nor does it matter that you created the second variable from the first. For JavaScript, these are two separate entities. These two variables have no relationship with each other.
 
-This is also why you can safely work with each of these variables as you want. Why you can change one variable without changing the other.
+This is also why you can safely work with each of these variables as you want. It is why you can change one variable without changing the other.
 
 ```JavaScript
 // Create a variable and assign it
@@ -189,7 +189,7 @@ console.log(c)
 
 ## Quick summary of primitive data types, objects, values and references
 
-Now you know what is the difference between primitive values and references. When you assign primitive data types and then copy them you are copying by values. Each of these copies (variables) is a separate entity that has no relationship to another. You can change one without changing any other.
+Now you know the difference between primitive values and references. When you assign primitive data types and then copy them you are copying by values. Each of these copies (variables) is a separate entity that has no relationship to another. You can change one without changing any other.
 
 When you assign and then copy an object, you are copying by reference. You are creating new references for each copy. As a result, there are multiple references (variables). However, there is still only one object. If you change one of these variables, you change the original object. This will affect all references (variables).
 
