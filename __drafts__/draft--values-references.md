@@ -175,6 +175,12 @@ console.log(c)
 
 *Note: One way to understand how copying by reference works is by thinking about keys and houses. When you copy you key, you are not also creating a new house. There is still only one house, but there are now two keys that can unlock that house. Variables are those keys, object is that house.*
 
+## Quick summary of primitive data types, objects, values and references
+
+Now you know what is the difference between primitive values and references. When you assign primitive data types and then copy them you are copying by values. Each of these copies (variables) is a separate entity that has no relationship to another. You can change one without changing any other.
+
+When you assign and then copy an object, you are copying by reference. You are creating new references for each copy. As a result, there are multiple references (variables). However, there is still only one object. If you change one of these variables, you change the original object. This will affect all references (variables).
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
