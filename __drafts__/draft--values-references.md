@@ -12,6 +12,27 @@ Symbol was introduced in [ES6] specification. The BigInt was introduced later, i
 
 This distinction between primitive data types and objects is important because JavaScript handles each differently.
 
+```JavaScript
+// Primitive data types:
+const numberVal = 5
+const strVal = 'Hello!'
+const boolVal = true
+const nullVal = null
+const undefinedVal = undefined
+const bigIntVal = 9007123254550972n
+const symbolVal = Symbol('label')
+
+// Objects:
+const myObjLiteral = {
+  name: 'Toby'
+}
+
+const myArray = [9, 'book', true, null]
+
+function myFunction(num1, num2) {
+  return num1 / num2
+}
+```
 
 ## Primitive data types
 
