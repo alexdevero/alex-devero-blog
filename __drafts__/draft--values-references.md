@@ -320,7 +320,9 @@ console.log(person)
 // { name: 'Viktor' } // <= The name is different.
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Values and references in Javascript made simple
+
+Primitive data types, values, objects and references are topics that can be difficult to understand. This is especially true for beginners and junior JavaScript developers. I hope that this tutorial help you understand how they work, the differences between them and how they work.
 
 [xyz-ihs snippet="thank-you-message"]
 
