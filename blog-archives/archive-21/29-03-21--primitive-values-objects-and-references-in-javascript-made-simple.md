@@ -1,8 +1,6 @@
 # Primitive Values, Objects and References in JavaScript Made Simple
 
-Primitive data types, values, objects and references are among the most misunderstood topics in JavaScript. They can cause a lot of headaches. In this tutorial, you will learn about primitive data types, values, objects, references, the differences between them and how they work.
-
-<!--more-->
+Primitive data types, values, objects and references are among the most misunderstood topics in JavaScript. They can cause a lot of headaches. In this tutorial, you will learn about primitive data types, values, objects, references, the differences between them and how they work.<!--more-->
 <!--
 Table of Contents:
 ## A short introduction
