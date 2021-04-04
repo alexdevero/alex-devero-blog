@@ -66,9 +66,9 @@ Defining properties, and methods, in constructor functions is simple. That said,
 
 So, on the left side, start with the `this` keyword and then specify the name of the property. Add dot (`.`) between these two. On the right side, define the value for the property and you are done. If you want to define a method the process is almost the same. You also have to use the `this` keyword, followed by the name of the method.
 
-The only difference is on the right side. Here you have to use the `function` keyword. This will tell JavaScript that you want to define a function. You can also use an [arrow function] instead of a regular function. When you define a constructor method, you can access any property that already exists inside the constructor.
+The only difference is on the right side. Here, you have to use the `function` keyword. This will tell JavaScript that you want to define a function. You can also use an [arrow function] instead of a regular function. When you define a constructor method, you can access any property that already exists inside the constructor.
 
-In order to access the property, to reference it correctly, you have to use the `this` keyword. THe `this` in this case is a reference for the constructor function itself. So, `this` is basically like `constructorFunctionItself`.
+In order to access the property, to reference it correctly, you have to use the `this` keyword. The `this` in this case is a reference for the constructor function itself. So, `this` is basically like `constructorFunctionItself`.
 
 ```JavaScript
 // Create constructor function:
