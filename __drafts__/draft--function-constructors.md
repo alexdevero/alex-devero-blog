@@ -275,6 +275,41 @@ console.log(personTwo.age)
 // 29
 ```
 
+## A word about constructor functions and this
+
+The `this` keyword is very important when you work with constructor functions. You use it when you want to define new properties and methods. You also use `this` keyword when you want to access some property and call some method. However, it doesn't matter how often you have to use `this` keyword.
+
+Understanding what `this` is, what it refers to, at the time can still be sometimes a difficult question to answer. Here is the simple answer. The value of `this` can be one of two things. First, when you are in a function constructor, the value will be the constructor.
+
+Second, when you create new object with the constructor the value of `this` will become the new object. This will apply to every instance, every new object you create. The value of `this` will always be that specific object.
+
+```JavaScript
+// Create constructor function:
+function Person(name, age) {
+  // "this" here refers to the constructor function.
+  // this.name => Person.name
+  this.name = name
+  this.age = age
+}
+
+const objJoe = new Person('Joe', 19)
+
+// For "objJoe" object the value of "this"
+// will be the "objJoe" object itself.
+// So, "this.name" in constructor will become "objJoe.name".
+console.log(objJoe.name)
+// Output:
+// 'Joe'
+
+const objTim = new Person('Tim', 23)
+
+// For "objTim" object the value of "this"
+// will be the "objTim" object itself.
+// So, "this.name" in constructor will become "objTim.name".
+console.log(objJoe.name)
+// Output:
+// 'Tim'
+```
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
