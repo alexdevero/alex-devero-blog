@@ -51,6 +51,58 @@ const personOne = new Person()
 const personTwo = new Person()
 ```
 
+## Defining properties, methods
+
+Defining properties, and methods, in constructor functions is simple. That said, there is one thing you have to remember. When you want to define property or method you have to use the `this` keyword. Don't use `let`, `const` or `var` to do this. You are not trying to define a variable, but a property.
+
+So, on the left side, start with the `this` keyword and then specify the name of the property. Add dot (`.`) between these two. On the right side, define the value for the property and you are done. If you want to define a method the process is almost the same. You also have to use the `this` keyword, followed by the name of the method.
+
+The only difference is on the right side. Here you have to use the `function` keyword. This will tell JavaScript that you want to define a function. You can also use an [arrow function] instead of a regular function. When you define a constructor method, you can access any property that already exists inside the constructor.
+
+In order to access the property, to reference it correctly, you have to use the `this` keyword. THe `this` in this case is a reference for the constructor function itself. So, `this` is basically like `constructorFunctionItself`.
+
+```JavaScript
+// Create constructor function:
+function Person() {
+  // Define properties "name" and "age":
+  this.name = 'Anonymous'
+  this.age = 35
+
+  // Define method "getName" that returns a short message:
+  this.getName = () => {
+    // "this" here refers to the "Person" constructor.
+    // "this.name" is like "Person.name".
+    return `Hello, my name is ${this.name}.`
+  }
+}
+
+// Create object with Person constructor:
+const personOne = new Person()
+
+// Log the value of "name":
+console.log(personOne.name)
+// Output:
+// 'Anonymous'
+
+// Log the "getName" message:
+console.log(personOne.getName())
+// Output:
+// 'Hello, my name is Anonymous.'
+
+// Create another object with Person constructor:
+const personTwo = new Person()
+
+// Log the value of "name":
+console.log(personTwo.name)
+// Output:
+// 'Anonymous'
+
+// Log the "getName" message:
+console.log(personTwo.getName())
+// Output:
+// 'Hello, my name is Anonymous.'
+```
+
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
