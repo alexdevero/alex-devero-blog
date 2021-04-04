@@ -163,6 +163,7 @@ After this, only the object at hand will have that new property or method. Other
 function Person() {
   // Define properties "name" and "age":
   this.name = 'Anonymous'
+  this.age = 35
 }
 
 // Create object with Person constructor:
@@ -318,7 +319,10 @@ Constructor functions can be a useful when you want to create multiple objects w
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[object literals]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#creating_objects
+[JavaScript classes]: https://blog.alexdevero.com/get-started-with-javascript-classes/
+[arrow function]: https://blog.alexdevero.com/javascript-arrow-functions/
+[prototype]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
 
 <!--
 ### Meta:
