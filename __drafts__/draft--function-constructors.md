@@ -228,7 +228,52 @@ console.log(personTwo.getHeight())
 // 'I am 1.7m tall.'
 ```
 
-As you can see on the example above, there is one thing to remember. When you add property or method to a constructor via prototype, you also add it to all objects already created with that constructor.
+## Constructor functions and parameters
+
+The option to create blueprint for objects is nice. So far, you've seen examples of constructors where all data were static and couldn't be changed. This doesn't mean that this is the only way. In the beginning, when we talked about the syntax, I briefly mentioned parameters.
+
+This is how you can make constructor functions more dynamic. Just like you can define parameters for regular functions you can define them also for constructors. In case of constructors, you specify arguments when you create objects with the `new` keyword. You pass these arguments in the parentheses that follow the construct name.
+
+When you define some parameters for a constructor, you can then use it anywhere inside the constructor. Take the `Person` constructor you've been working throughout this tutorial. It usually contained two properties: `name` and `age`. Having these two properties the same for all objects doesn't make sense.
+
+Instead of having both properties defined with static values, you can add two parameters for the constructor. One parameter for each property. Then, inside the constructor, you can use these parameters to assign those properties with provided values. This will allow you to create objects with different values for `name` and `age` properties.
+
+```JavaScript
+// Create constructor function
+// that accepts two parameters, "name" and "age":
+function Person(name, age) {
+  // Define properties and assign them
+  // with values provided for "name" and "age":
+  this.name = name
+  this.age = age
+}
+
+// Create object with Person constructor:
+const personOne = new Person('Stan', 33)
+
+// Create another object with Person constructor:
+const personTwo = new Person('July', 29)
+
+// Log the value of "name" on "personOne" object:
+console.log(personOne.name)
+// Output:
+// 'Stan'
+
+// Log the value of "age" on "personOne" object:
+console.log(personOne.age)
+// Output:
+// 33
+
+// Log the value of "name" on "personTwo" object:
+console.log(personTwo.name)
+// Output:
+// 'July'
+
+// Log the value of "age" on "personTwo" object:
+console.log(personTwo.age)
+// Output:
+// 29
+```
 
 
 ## Conclusion: Getting started with JavaScript constructor functions
