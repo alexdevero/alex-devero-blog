@@ -5,7 +5,16 @@ JavaScript offers multiple ways to create objects. These ways include object lit
 Table of Contents:
 -->
 
-## h2
+## Objects, blueprints, constructors
+
+In JavaScript, there are multiple ways you can use to create objects. The easiest tools you can use are [object literals], `new Object()` or `Object.create()`. However, what if you want something more different? What if you create an object you can than use as a blueprint, or a recipe, for creating other, similar, objects?
+
+Imagine you want to create a couple of objects all having the same properties, maybe also methods. You can definitely do this object literal. However, it will require copying a lot of code. Or, it will require unnecessary cloning of objects, which can be sometimes quite unpredictable.
+
+Another option is to create something called "constructor". This constructor can have a number of various properties and methods and you can use it to create new objects. Each object you create with this constructor will also have all properties and methods defined in the constructor. This can save you a lot of time and code.
+
+One way to create this constructor is by using [JavaScript classes] introduced in ES6. Another option is to use something called "constructor functions". Let's take a look at what this constructor function are, how they work, and how to use them to create objects.
+
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
