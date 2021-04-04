@@ -149,6 +149,9 @@ console.log(personTwo.getName())
 // Output:
 // 'Hello, my name is Anonymous.'
 ```
+
+*Note about `prototype`: As you can see on the example above, there is one thing to remember. When you add property or method to a constructor via prototype, you also add it to all objects already created with that constructor.*
+
 ### Defining properties and methods for constructor objects
 
 Sometimes you may want to add a property or method, but only to one object, not all. In this case, `prototype` is not an option since that would add the property or method everywhere. What you can do instead is to add the property or method directly to specific object. For example, using the dot notation.
