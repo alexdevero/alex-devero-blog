@@ -103,6 +103,48 @@ console.log(personTwo.getName())
 // 'Hello, my name is Anonymous.'
 ```
 
+### Defining properties and methods outside the constructor
+
+Defining properties and methods only inside the constructor function when you define it is one option. Another option is defining them outside it, after the constructor is created. In this case, you will use a property called [prototype]. This is a special property every function in JavaScript has.
+
+This `prototype` property is an object that contains all properties and methods defined on a constructor function. It also contains `constructor` property. This property points to the constructor you are working with in the moment. Using this property allows you to add properties and methods to constructor, change or remove them.
+
+```JavaScript
+// Create constructor function:
+function Person() {
+  // Define properties "name" and "age":
+  this.name = 'Anonymous'
+  this.age = 35
+
+  // Define method "getName" that returns a short message:
+  this.getName = () => {
+    return `Hello, my name is ${this.name}.`
+  }
+}
+
+// Create object with Person constructor:
+const personOne = new Person()
+
+// Create another object with Person constructor:
+const personTwo = new Person()
+
+// Add properties to Person constructor using prototype:
+Person.prototype.gender = 'female'
+Person.prototype.height = 1.7
+
+// Log the value of "gender" on "personOne" object:
+console.log(personOne.gender)
+// Output:
+// 'female'
+
+// Log the value of "height" on "personTwo" object:
+console.log(personTwo.height)
+// Output:
+// 1.7
+```
+
+As you can see on the example above, there is one thing to remember. When you add property or method to a constructor via prototype, you also add it to all objects already created with that constructor.
+
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
