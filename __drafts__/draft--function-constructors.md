@@ -34,6 +34,23 @@ function MyConstructorFunc(param) {
 }
 ```
 
+## Creating objects with constructor function
+
+Creating constructor functions is one thing. Using them to create new objects is another. Luckily, there is only one way to do this. When you want to create new object using constructor function you use the `new` keyword. This keyword is followed by the constructor name and set of parentheses.
+
+If your constructor accepts any parameters, pass any necessary arguments inside the parentheses. Otherwise, leave them empty. You will usually do this along with assigning new object to a variable. Remember that you can use constructor functions to create as many objects as you want.
+
+```JavaScript
+// Create constructor function:
+function Person() {}
+
+// Create object with Person constructor:
+const personOne = new Person()
+
+// Create another object with Person constructor:
+const personTwo = new Person()
+```
+
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
