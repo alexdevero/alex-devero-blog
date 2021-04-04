@@ -3,6 +3,15 @@
 JavaScript offers multiple ways to create objects. These ways include object literals, `Object()`, classes and constructor functions. This tutorial will show you the third option. You will learn about what constructor function are, how they work, and how to use them to create objects.<!--more-->
 <!--
 Table of Contents:
+## Objects, blueprints, constructors
+## The basics of constructor functions
+## Creating objects with constructor function
+## Defining properties, methods
+### Defining properties and methods outside the constructor
+### Defining properties and methods for constructor objects
+## Constructor functions and parameters
+## A word about constructor functions and this
+## Conclusion: Getting started with JavaScript constructor functions
 -->
 
 ## Objects, blueprints, constructors
