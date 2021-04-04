@@ -120,6 +120,18 @@ function Person() {
   this.getName = () => {
     return `Hello, my name is ${this.name}.`
   }
+
+### Defining properties and methods for constructor objects
+
+Sometimes you may want to add a property or method, but only to one object, not all. In this case, `prototype` is not an option since that would add the property or method everywhere. What you can do instead is to add the property or method directly to specific object. For example, using the dot notation.
+
+After this, only the object at hand will have that new property or method. Other objects created with the same constructor will not. This is the way you would use to add a property or method to a regular object. Every object created with a constructor is an object. So, this works here as well.
+
+```JavaScript
+// Create constructor function:
+function Person() {
+  // Define properties "name" and "age":
+  this.name = 'Anonymous'
 }
 
 // Create object with Person constructor:
@@ -128,19 +140,61 @@ const personOne = new Person()
 // Create another object with Person constructor:
 const personTwo = new Person()
 
-// Add properties to Person constructor using prototype:
-Person.prototype.gender = 'female'
-Person.prototype.height = 1.7
+// Add property "gender" only to "personOne" object:
+personOne.gender = 'female'
+
+// Add property "height" only to "personTwo" object:
+personTwo.height = 1.7
 
 // Log the value of "gender" on "personOne" object:
 console.log(personOne.gender)
 // Output:
 // 'female'
 
+// Log the value of "height" on "personOne" object:
+console.log(personOne.height)
+// Output:
+// undefined // <= this is correct, height exists only on personTwo
+
+// Log the value of "gender" on "personTwo" object:
+console.log(personTwo.gender)
+// Output:
+// undefined // <= this is correct, gender exists only on personOne
+
 // Log the value of "height" on "personTwo" object:
 console.log(personTwo.height)
 // Output:
 // 1.7
+
+// Add "getGender()" method only to "personOne" object:
+personOne.getGender = function() {
+  return `I am a ${this.gender}.`
+}
+
+// Add "getHeight()" method only to "personTwo" object:
+personTwo.getHeight = function() {
+  return `I am ${this.height}m tall.`
+}
+
+// Call the "getGender()" method on "personOne" object:
+console.log(personOne.getGender())
+// Output:
+// 'I am a female.'
+
+// Call the "getHeight()" method on "personOne" object:
+console.log(personOne.getHeight())
+// Output:
+// TypeError: personOne.getHeight is not a function
+
+// Call the "getGender()" method on "personTwo" object:
+console.log(personTwo.getGender())
+// Output:
+// TypeError: personTwo.getGender is not a function
+
+// Call the "getHeight()" method on "personTwo" object:
+console.log(personTwo.getHeight())
+// Output:
+// 'I am 1.7m tall.'
 ```
 
 As you can see on the example above, there is one thing to remember. When you add property or method to a constructor via prototype, you also add it to all objects already created with that constructor.
