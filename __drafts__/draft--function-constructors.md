@@ -313,6 +313,8 @@ console.log(objJoe.name)
 
 ## Conclusion: Getting started with JavaScript constructor functions
 
+Constructor functions can be a useful when you want to create multiple objects with the same shape, but less code. They can also make your code easier to change and maintain. I hope that this tutorial helped you understand what constructor function are, how they work, and how to use them to create objects.
+
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
