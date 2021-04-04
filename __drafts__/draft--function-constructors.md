@@ -69,7 +69,7 @@ function Person() {
   this.age = 35
 
   // Define method "getName" that returns a short message:
-  this.getName = () => {
+  this.getName = function() {
     // "this" here refers to the "Person" constructor.
     // "this.name" is like "Person.name".
     return `Hello, my name is ${this.name}.`
@@ -115,12 +115,40 @@ function Person() {
   // Define properties "name" and "age":
   this.name = 'Anonymous'
   this.age = 35
+}
 
-  // Define method "getName" that returns a short message:
-  this.getName = () => {
-    return `Hello, my name is ${this.name}.`
-  }
+// Create object with Person constructor:
+const personOne = new Person()
 
+// Create another object with Person constructor:
+const personTwo = new Person()
+
+// Add properties to Person constructor using prototype:
+Person.prototype.gender = 'female'
+Person.prototype.height = 1.7
+
+// Log the value of "gender" on "personOne" object:
+console.log(personOne.gender)
+// Output:
+// 'female'
+
+// Log the value of "height" on "personTwo" object:
+console.log(personTwo.height)
+// Output:
+// 1.7
+
+// Add method "getName" to Person constructor using prototype:
+Person.prototype.getName = function() {
+  // "this" here will correctly refer to the Person constructor.
+  // So, "this.name" will again basically become "Person.name".
+  return `Hello, my name is ${this.name}.`
+}
+
+// Log the message:
+console.log(personTwo.getName())
+// Output:
+// 'Hello, my name is Anonymous.'
+```
 ### Defining properties and methods for constructor objects
 
 Sometimes you may want to add a property or method, but only to one object, not all. In this case, `prototype` is not an option since that would add the property or method everywhere. What you can do instead is to add the property or method directly to specific object. For example, using the dot notation.
