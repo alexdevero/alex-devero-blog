@@ -39,9 +39,9 @@ readAge()
 // 37
 ```
 
-### Local scope
+### Local and function scope
 
-Every function you declare creates its own local scope. Variables you declare inside this scope are local variables. These variables are visible and accessible only inside the scope, the function, at which you declared them. Trying to access them from the outside of the function, the local scope, will return an error.
+Every function you declare creates its own local scope called a function scope. Variables you declare here are local variables. These variables are visible and accessible only inside the scope, the function, at which you declared them. Trying to access them from the outside of the function, the local scope, will return an error.
 
 Local variables exist only in their local scopes. They don't exist outside it. For this reason you can't access, reference or modify any local variable from the global scope. You can do so only inside the scope at which you declared them.
 
