@@ -122,7 +122,7 @@ function myFuncOne() {
 
 ## Lexical scope
 
-Previously you've learned that you can create "nested" local scopes with functions. You've also learned that these inner functions have access to the variables you declared outside them, in the outer scopes. This type of scope, the ability to access outer resources, is called a "lexical scope" or "static scope".
+Previously you've learned that you can create "nested" local scopes with functions. You've also learned that these inner functions have access to the variables you declared outside them, in the outer scopes. This type of scope, the ability to access outer resources, is called a "lexical" scope or "static" scope.
 
 One thing about lexical scope to remember is what we've already discussed. It works only in top to bottom direction. It doesn't work the other way around.
 
@@ -162,9 +162,11 @@ Aside to global and local scope there is also something one could call a "block"
 
 These two variables, `let` and `const`, work with this scope. The `var` variable doesn't. The result of this difference can be quite significant. Just as local scope is defined by functions, block scope is defined by a block of code (`{}`). This includes [if...else], [switch] statement, [loops] and code blocks in general.
 
-If you declare `let` or `const` variable inside a code block, it will behave as if it is in a local scope. It will be visible and accessible only inside that code block. Remember that this doesn't apply to `var` variables. This type of variable works only with global and scope. It doesn't work with block scope.
+If you declare `let` or `const` variable inside a code block, it will behave as if it is in a local scope. It will be visible and accessible only inside that code block. This is why these two variables are called "block-scoped" variables. Remember that this doesn't apply to `var` variables.
 
-If you declare `var` variable inside a code block it will be visible and accessible from the outside. If there is another variable with the same name in the outside scope, the newer variable will overwrite the older. This will not happen if you use `let` or `const` instead. This can be a good reason to stop using `var`.
+This type of variable works only with global and scope. It doesn't work with block scope. If you declare `var` variable inside a code block it will be visible and accessible from the outside. If there is another variable with the same name in the outside scope, the newer variable will overwrite the older.
+
+This will not happen if you use either `let` or `const` variable. This can be a good reason to stop using `var`.
 
 ```JavaScript
 // Global variables:
