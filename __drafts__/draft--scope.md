@@ -18,7 +18,7 @@ Table of Contents:
 
 ## Variable scope
 
-Every time you declare a variable or a function its visibility and accessibility is limited. There is one thing that determines this. It called a [scope], or "variable scope". This scope says where you can access specific variable and function and where you can't. In JavaScript, there are two types of scope, global and local scope.
+Every time you declare a variable or a function its visibility and accessibility is limited. There is one thing that determines this. It is called a [scope], or "variable scope". This scope says where you can access specific variable and function and where you can't. In JavaScript, there are two types of scope, global and local scope.
 
 ### Global scope
 
@@ -55,7 +55,7 @@ readAge()
 
 Every function you declare creates its own local scope called a function scope. Variables you declare here are local variables. These variables are visible and accessible only inside the scope, the function, at which you declared them. Trying to access them from the outside of the function, the local scope, will return an error.
 
-Local variables exist only in their local scopes. They don't exist outside it. For this reason you can't access, reference or modify any local variable from the global scope. You can do so only inside the scope at which you declared them.
+Local variables exist only in their local scopes. They don't exist outside it. For this reason, you can't access, reference or modify any local variable from the global scope. You can do so only inside the scope at which you declared them.
 
 ```JavaScript
 // Declare a function to create a local scope:
@@ -255,7 +255,7 @@ The last advantage of keeping things local is when comes time for refactoring. R
 
 ## Some disadvantages of using local and block scope
 
-There is only one disadvantage of local data I can think of right now. It can make sharing data more difficult. This at least used to be an issue in the past. Now? It is no longer such an problem when you can use `import` and `export` statement. However, sharing global variables is still a bit easier.
+There is only one disadvantage of local data I can think of right now. It can make sharing data more difficult. This at least used to be an issue in the past. Now? It is no longer such a problem when you can use `import` and `export` statement. However, sharing global variables is still a bit easier.
 
 That said, one can resolve this by making some data, such as "general" constants, global. If some data are ought to be shared often, with many places, should these data be kept as local at the first place? That is, I guess, up to every developer to decide.
 
