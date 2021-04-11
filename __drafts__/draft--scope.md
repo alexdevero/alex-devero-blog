@@ -5,6 +5,17 @@ Variable scope and lexical environment are two things every JavaScript developer
 <!--more-->
 <!--
 Table of Contents:
+## Variable scope
+### Global scope
+### Local and function scope
+### Nested local scopes
+## Lexical scope
+## Code block and block scope
+## Some advantages of using global scope
+## Some disadvantages of using global scope
+## Some advantages of using local and block scope
+## Some disadvantages of using local and block scope
+## Conclusion: Variable scope, lexical scope and code blocks in JavaScript
 -->
 
 ## Variable scope
