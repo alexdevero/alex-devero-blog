@@ -1,4 +1,7 @@
-# Variable scope and Lexical Environment in JavaScript
+# Variable Scope, Lexical Scope and Environment in JavaScript
+
+Variable scope and lexical environment are two things every JavaScript developer works with every day. In this tutorial, you will learn about both. First, you will learn about variable scope and how it works with different types of variables. After that, you will learn about lexical environment, what it is and how it works.
+
 <!--more-->
 <!--
 Table of Contents:
@@ -6,7 +9,7 @@ Table of Contents:
 
 ## Variable scope
 
-Every time you declare a variable or a function its visibility and accessibility is limited. There is one thing that determines this. It called a "scope", or "variable scope". This scope says where you can access specific variable and function and where you can't. In JavaScript, there are two types of scope, global and local scope.
+Every time you declare a variable or a function its visibility and accessibility is limited. There is one thing that determines this. It called a [scope], or "variable scope". This scope says where you can access specific variable and function and where you can't. In JavaScript, there are two types of scope, global and local scope.
 
 ### Global scope
 
@@ -68,7 +71,7 @@ console.log(name)
 // undefined
 ```
 
-This also means that you can define multiple variables with the same name. These variables will not override each other as long as each is defined in a different local scope. Or, if one is declared in a global scope and the other in a local scope.
+This also means that you can define multiple variables with the same name. These variables will not overwrite each other as long as each is defined in a different local scope. Or, if one is declared in a global scope and the other in a local scope.
 
 ```JavaScript
 // Create global variable:
