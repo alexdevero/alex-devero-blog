@@ -153,6 +153,66 @@ function myFuncOne() {
 }
 ```
 
+## Code block and block scope
+
+Aside to global and local scope there is also something one could call a "block" scope. This is not an "official" type of scope, but it does exist. Block scope was introduced to JavaScript as a part of the ES6 specification. It was introduced along with two new types of variables `let` and `const`.
+
+These two variables, `let` and `const`, work with this scope. The `var` variable doesn't. The result of this difference can be quite significant. Just as local scope is defined by functions, block scope is defined by a block of code (`{}`). This includes [if...else], [switch] statement, [loops] and code blocks in general.
+
+If you declare `let` or `const` variable inside a code block, it will behave as if it is in a local scope. It will be visible and accessible only inside that code block. Remember that this doesn't apply to `var` variables. This type of variable works only with global and scope. It doesn't work with block scope.
+
+If you declare `var` variable inside a code block it will be visible and accessible from the outside. If there is another variable with the same name in the outside scope, the newer variable will overwrite the older. This will not happen if you use `let` or `const` instead. This can be a good reason to stop using `var`.
+
+```JavaScript
+// Global variables:
+let numOfPages = 336
+const read = true
+var rating = 4
+
+// Create block scope
+if (true) {
+  let numOfPages = 253
+  const read = false
+  var rating = 2
+
+  // Log the value of "numOfPages" variable:
+  console.log(numOfPages)
+  // Output:
+  // 253
+
+  // Log the value of "read" variable:
+  console.log(read)
+  // Output:
+  // false
+
+  // Log the value of "rating" variable:
+  console.log(rating)
+  // Output:
+  // 2
+}
+
+// Log the value of "numOfPages" variable:
+console.log(numOfPages)
+// Output:
+// 336
+
+// Log the value of "read" variable:
+console.log(read)
+// Output:
+// true
+
+// Log the value of "rating" variable:
+console.log(rating)
+// Output:
+// 2
+
+// NOTE: global "rating" was overwritten
+// by "rating" declared inside the if...else statement.
+// Other variables remained unchanged because
+// they were restricted to the block scope
+// of the if...else statement.
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
