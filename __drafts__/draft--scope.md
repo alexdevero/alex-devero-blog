@@ -117,6 +117,12 @@ function myFuncOne() {
 }
 ```
 
+## Lexical scope
+
+Previously you've learned that you can create "nested" local scopes with functions. You've also learned that these inner functions have access to the variables you declared outside them, in the outer scopes. This type of scope, the ability to access outer resources, is called a "lexical scope" or "static scope".
+
+One thing about lexical scope to remember is what we've already discussed. It works only in top to bottom direction. It doesn't work the other way around.
+
 ```JavaScript
 // Declare global variable:
 let bookSeries = 'Discworld'
