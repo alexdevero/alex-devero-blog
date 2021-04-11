@@ -1,8 +1,6 @@
-# Variable Scope, Lexical Scope and Environment in JavaScript
+# Variable Scope, Lexical Scope and Code Blocks in JavaScript
 
-Variable scope and lexical environment are two things every JavaScript developer works with every day. In this tutorial, you will learn about both. First, you will learn about variable scope and how it works with different types of variables. After that, you will learn about lexical environment, what it is and how it works.
-
-<!--more-->
+Variable scope, lexical scope and code blocks are things every JavaScript developer works with every day. In this tutorial, you will learn about them all. You will learn about variable scope and how it works with different types of variables. After that, you will learn about lexical scope and code blocks.<!--more-->
 <!--
 Table of Contents:
 ## Variable scope
