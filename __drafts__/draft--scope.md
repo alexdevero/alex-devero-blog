@@ -104,6 +104,20 @@ You can also create nested local scopes, local scope inside another local scope.
 This is the same as with global variables being visible in local scopes, but local variable not being visible in the global scope. If you try to access inner local variable from the outer local scope you will get `undefined`.
 
 ```JavaScript
+// Create a function:
+function myFuncOne() {
+  // New local scope.
+  let author = 'Terry Pratchett'
+
+  // Create local function:
+  function myFuncTwo() {
+    // New local scope.
+    let book = 'Guards! Guards!'
+  }
+}
+```
+
+```JavaScript
 // Declare global variable:
 let bookSeries = 'Discworld'
 
