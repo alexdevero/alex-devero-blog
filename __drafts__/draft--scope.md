@@ -97,6 +97,41 @@ console.log(car)
 // 'Tesla'
 ```
 
+### Nested local scopes
+
+You can also create nested local scopes, local scope inside another local scope. You can do this by declaring a function inside another function. Each of these nested functions will create its own local scope. In this case, remember that variables declared in the outer scope will be visible in the inner scope, not the other way around.
+
+This is the same as with global variables being visible in local scopes, but local variable not being visible in the global scope. If you try to access inner local variable from the outer local scope you will get `undefined`.
+
+```JavaScript
+// Declare global variable:
+let bookSeries = 'Discworld'
+
+// "author", "book" and "character" are not visible here.
+
+function myFuncOne() {
+  // New local scope.
+  // "bookSeries" is visible here
+  // because it is in the outer scope.
+  // "book" and "character" are not visible here.
+  let author = 'Terry Pratchett'
+
+  function myFuncTwo() {
+    // New local scope.
+    // "bookSeries" and "author" are visible here
+    // because they are in the outer scope.
+    // "character" is not visible here.
+    let book = 'Guards! Guards!'
+
+    function myFuncThree() {
+      // New local scope.
+      // "bookSeries", "author" and "book" are visible here
+      // because they are in the outer scope.
+      let character = 'Captain Sam Vimes'
+    }
+  }
+}
+```
 
 ## Conclusion: [...] ...
 
