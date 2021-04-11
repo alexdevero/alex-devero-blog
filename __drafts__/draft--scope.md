@@ -250,6 +250,9 @@ There is only one disadvantage of local data I can think of right now. It can ma
 
 That said, one can resolve this by making some data, such as "general" constants, global. If some data are ought to be shared often, with many places, should these data be kept as local at the first place? That is, I guess, up to every developer to decide.
 
+## Conclusion: Variable scope, lexical scope and code blocks in JavaScript
+
+The idea of variable scope, lexical scope and code blocks can seem tricky, especially at the beginning. However, these concepts are really not that difficult to understand. I hope that this tutorial helped you understand each of these concepts, what are they about, how they work and what to watch for.
 
 [xyz-ihs snippet="thank-you-message"]
 
