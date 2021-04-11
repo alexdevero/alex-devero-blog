@@ -257,7 +257,10 @@ The idea of variable scope, lexical scope and code blocks can seem tricky, espec
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[scope]: https://developer.mozilla.org/en-US/docs/Glossary/Scope
+[if...else]: https://blog.alexdevero.com/javascript-if-else-statement/
+[switch]: https://blog.alexdevero.com/javascript-switch-statement/
+[loops]: https://blog.alexdevero.com/javascript-loops/
 
 <!--
 ### Meta:
