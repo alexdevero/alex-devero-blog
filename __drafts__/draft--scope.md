@@ -218,7 +218,38 @@ console.log(rating)
 // of the if...else statement.
 ```
 
-## Conclusion: [...] ...
+## Some advantages of using global scope
+
+Accessibility is one reason to using global scope for variables and functions. This can be useful for creating global constants, variables you want to keep unchanged and use on multiple places. The same applies not only to constants but also to variables that store data you want to access from multiple places.
+
+It can be useful to have this kind of data declared as global. On the same note, global scope can be also useful for "general" and "utility" functions. These are the functions you want to use often and from multiple places. Making them accessible everywhere by default can be useful.
+
+## Some disadvantages of using global scope
+
+The main disadvantages of using global scope is security. When something is accessible everywhere anyone can see it. Also, unless you restrict, anyone can also modify it. This might okay for some public data, but not for data that should stay private. Even in case of public data can this be debatable.
+
+Think about it. If some part of your code doesn't use specific piece of data, does it really need to know about it? Does it really need to this data even exists? Using global scope for variables also creates opportunities for collisions. You forget you used some variable name earlier and use it again.
+
+As a result, you accidentally overwrite the old variable or function with the new one. Another type of issues that can happen is when one part of program changes global variable used in another part of program that doesn't expect this change to happen. This can lead to unpredictable results, especially in complex programs.
+
+Excessive use of global scope can negatively impact performance of your code. Variables you declare as global will likely remain in the memory as long as the program execution is running. Lastly, global variables can make code refactoring a living hell. If you change variable used on many places, your code can break on many places.
+
+## Some advantages of using local and block scope
+
+Local variables are more secure. Local scope automatically restricts the accessibility and visibility of each variable, or function. Code in the outer scope can't see it, access it or modify it. This also creates fewer opportunities for name collisions. This is especially true for `let` and `const` variables.
+
+You can safely have as many variables with the same name as you want. None of them will be overwritten as long as each is in a different scope. There is also a smaller chance of variable unexpectedly changing by other part of code. Local scope ensures that only local code can interact with local variables.
+
+Another advantage of local variables is in terms of memory management and performance. Local variables exist only as long as the scope in which they are defined exits. Once the scope is gone, some function execution is terminated, data inside it is deleted and memory space it occupied is released.
+
+The last advantage of keeping things local is when comes time for refactoring. Refactoring will be much easier to do when your code is focused in a smaller scope and/or on fewer places.
+
+## Some disadvantages of using local and block scope
+
+There is only one disadvantage of local data I can think of right now. It can make sharing data more difficult. This at least used to be an issue in the past. Now? It is no longer such an problem when you can use `import` and `export` statement. However, sharing global variables is still a bit easier.
+
+That said, one can resolve this by making some data, such as "general" constants, global. If some data are ought to be shared often, with many places, should these data be kept as local at the first place? That is, I guess, up to every developer to decide.
+
 
 [xyz-ihs snippet="thank-you-message"]
 
