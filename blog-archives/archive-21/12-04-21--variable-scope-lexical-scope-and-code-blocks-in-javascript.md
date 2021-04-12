@@ -261,7 +261,7 @@ That said, one can resolve this by making some data, such as "general" constants
 
 ## Conclusion: Variable scope, lexical scope and code blocks in JavaScript
 
-The idea of variable scope, lexical scope and code blocks can seem tricky, especially at the beginning. However, these concepts are really not that difficult to understand. I hope that this tutorial helped you understand each of these concepts, what are they about, how they work and what to watch for.
+The concept of variable scope, lexical scope and code blocks can seem tricky, especially at the beginning. However, these concepts are really not that difficult to understand. I hope that this tutorial helped you understand each of these concepts, what are they about, how they work and what to watch for.
 
 [xyz-ihs snippet="thank-you-message"]
 
