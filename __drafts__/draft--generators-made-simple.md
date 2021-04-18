@@ -449,7 +449,9 @@ console.log(myGeneratorObj.next('4x'))
 // { value: 5, done: true }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: JavaScript Generator Functions Made Simple
+
+Generator functions may not be used as often, but they can be useful. For example, when you want to generate some data on demand. Or, when you want to have more control over iteration over some data. I hope that this tutorial helped you understand what generator functions are and how to work with them.
 
 [xyz-ihs snippet="thank-you-message"]
 
