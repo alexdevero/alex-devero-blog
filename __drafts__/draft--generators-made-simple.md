@@ -244,6 +244,61 @@ console.log(myGeneratorOneObj.next())
 // { value: undefined, done: true }
 ```
 
+## Yield* and execution delegation
+
+The `yield` keyword can do more than just return a value. It also allows you to delegate the execution of generator to another generator. You can use it to start a second generator from the first. This second generator will run until it is finished. Then, the execution will resume to the first generator.
+
+This allows you to connect multiple generators together. Then, you can run them in a series you can control, each as long as necessary. When you want to use the `yield` to do this, just remember to add the asterisk symbol (`*`) right after the `yield` keyword (`yield*`). Then add a call to the generator you want to execute.
+
+```JavaScript
+// Create first generator function:
+function* myGeneratorOne() {
+  yield 1
+  yield* myGeneratorTow() // Delegate to myGeneratorTow() generator.
+  yield 3
+}
+
+// Create second generator function:
+function* myGeneratorTow() {
+  yield 'a'
+  yield 'b'
+  yield 'c'
+}
+
+// Assign the first generator object to variable:
+const myGeneratorObj = myGeneratorOne()
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 1, done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'b', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'c', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 3, done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: undefined, done: true }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
