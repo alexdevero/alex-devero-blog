@@ -29,6 +29,27 @@ function* myGenerator() {
 }
 ```
 
+## The generator object
+
+One thing that may surprise you is that generators don't rune the code inside them when you call them. Calling a generator function doesn't execute the code inside it. Instead, the generator function will return a special object called "generator object". This object allows you to work with the generator.
+
+It allows you to tell the generator to return new value when you need it, by referencing this object. Because of this, when you call a generator function you should assign the returned generator object to some variable. Otherwise, it will be lost.
+
+```JavaScript
+// Create generator function:
+function* myGenerator() {
+  // Function body with code to execute.
+}
+
+// Assign the generator object to variable:
+const myGeneratorObj = myGenerator()
+
+// Log the generator object:
+console.log(myGeneratorObj)
+// Output:
+// Iterator [Generator] {}
+```
+
 
 ## Conclusion: [...] ...
 
