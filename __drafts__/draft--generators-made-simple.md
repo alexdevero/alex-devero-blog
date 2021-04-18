@@ -100,6 +100,7 @@ console.log(myGeneratorObj.next())
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 5, done: true }
+// The generator is finished.
 
 // Try to return one more time:
 console.log(myGeneratorObj.next())
@@ -254,12 +255,12 @@ This allows you to connect multiple generators together. Then, you can run them 
 // Create first generator function:
 function* myGeneratorOne() {
   yield 1
-  yield* myGeneratorTow() // Delegate to myGeneratorTow() generator.
+  yield* myGeneratorTwo() // Delegate to myGeneratorTwo() generator.
   yield 3
 }
 
 // Create second generator function:
-function* myGeneratorTow() {
+function* myGeneratorTwo() {
   yield 'a'
   yield 'b'
   yield 'c'
@@ -268,32 +269,32 @@ function* myGeneratorTow() {
 // Assign the first generator object to variable:
 const myGeneratorObj = myGeneratorOne()
 
-// Return the third value (the return):
+// Return the first value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 1, done: false }
 
-// Return the third value (the return):
+// Return the second value (myGeneratorTwo):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 'a', done: false }
 
-// Return the third value (the return):
+// Return the third value (myGeneratorTwo):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 'b', done: false }
 
-// Return the third value (the return):
+// Return the fourth value (myGeneratorTwo):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 'c', done: false }
 
-// Return the third value (the return):
+// Return the fifth value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 3, done: false }
 
-// Return the third value (the return):
+// Return the sixth value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: undefined, done: true }
@@ -309,12 +310,12 @@ When you use `return` statement in a generator it will finish the generator. It 
 // Create first generator function:
 function* myGeneratorOne() {
   yield 1
-  yield* myGeneratorTow() // Delegate to myGeneratorTow() generator.
+  yield* myGeneratorTwo() // Delegate to myGeneratorTwo() generator.
   yield 3
 }
 
 // Create second generator function:
-function* myGeneratorTow() {
+function* myGeneratorTwo() {
   yield 'a'
   yield 'b'
   return 'c' // This returned value will not show up.
@@ -323,30 +324,31 @@ function* myGeneratorTow() {
 // Assign the first generator object to variable:
 const myGeneratorObj = myGeneratorOne()
 
-// Return the third value (the return):
+// Return the first value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 1, done: false }
 
-// Return the third value (the return):
+// Return the second value (myGeneratorTwo):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 'a', done: false }
 
-// Return the third value (the return):
+// Return the third value (myGeneratorTwo):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 'b', done: false }
 
-// Return the third value (the return):
+// Return the fourth value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: 3, done: false }
 
-// Return the third value (the return):
+// Return the fifth value (myGeneratorOne):
 console.log(myGeneratorObj.next())
 // Output:
 // { value: undefined, done: true }
+```
 
 ## Yield, next() and passing arguments
 
