@@ -245,6 +245,56 @@ console.log(myGeneratorOneObj.next())
 // { value: undefined, done: true }
 ```
 
+### Example of generator function with a loop
+
+This ability to return a value on demand can be useful for example when you want to generate a series of numbers with loop. Normally, the loop would return all numbers right away. This will not happen if you use generator functions. Generators will allow you to return all numbers one by one.
+
+There are only few things you need to create this number generator. First, is a generator function. Inside this generator will be a loop. Inside this loop will be the `yield` keyword returning current number in the series. This will create a loop that will pause after every iteration, waiting for the next call of `next()`.
+
+```JavaScript
+
+// Example of generator with for loop:
+function* myGenerator() {
+  for (let i = 0; i < 5; i++) {
+    yield i
+  }
+}
+
+// Assign the generator object to variable:
+const myGeneratorObj = myGenerator()
+
+// Return the first number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 0, done: false }
+
+// Return the second number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 1, done: false }
+
+// Return the third number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 2, done: false }
+
+// Return the fourth number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 3, done: false }
+
+// Return the fifth number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 4, done: false }
+
+// Try to return another number:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: undefined, done: true }
+// The generator is finished.
+```
+
 ## Yield* and execution delegation
 
 The `yield` keyword can do more than just return a value. It also allows you to delegate the execution of generator to another generator. You can use it to start a second generator from the first. This second generator will run until it is finished. Then, the execution will resume to the first generator.
