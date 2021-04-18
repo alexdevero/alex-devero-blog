@@ -299,6 +299,61 @@ console.log(myGeneratorObj.next())
 // { value: undefined, done: true }
 ```
 
+### Yield* and return statement
+
+When you use delegation careful with `return` statements. This applies especially to generators somewhere in the series. Don't worry. The `return` statement will not finish, or terminate, the whole chain. It will only finish the generator at which it is. However, it will not return any value.
+
+When you use `return` statement in a generator it will finish the generator. It will also return a value that follows it. This doesn't applies to delegated execution and chain of generators. In this case, `return` will only finish the current generator and resume execution to the previous one. It will not return a value.
+
+```JavaScript
+// Create first generator function:
+function* myGeneratorOne() {
+  yield 1
+  yield* myGeneratorTow() // Delegate to myGeneratorTow() generator.
+  yield 3
+}
+
+// Create second generator function:
+function* myGeneratorTow() {
+  yield 'a'
+  yield 'b'
+  return 'c' // This returned value will not show up.
+}
+
+// Assign the first generator object to variable:
+const myGeneratorObj = myGeneratorOne()
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 1, done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'b', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 3, done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: undefined, done: true }
+
+// Return the third value (the return):
+console.log(myGeneratorObj.next())
+// Output:
+// { value: undefined, done: true }
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
