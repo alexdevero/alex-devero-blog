@@ -3,6 +3,17 @@
 Generator functions are one of those things you may not see as often. However, they can be handy in some situations. This tutorial will help you understand them. You will learn about what generator functions are. You will also learn about `yield` and `next()` and also how to delegate execution.<!--more-->
 <!--
 Table of Contents:
+## From regular functions to generator functions
+## The syntax
+## The generator object
+## The yield and next()
+### Yield, next, value and done
+### Yield and return
+### Example of generator function with a loop
+## Yield* and execution delegation
+### Yield* and return statement
+## Yield, next() and passing arguments
+## Conclusion: JavaScript Generator Functions Made Simple
 -->
 
 ## From regular functions to generator functions
@@ -457,7 +468,11 @@ Generator functions may not be used as often, but they can be useful. For exampl
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[arrow functions]: https://blog.alexdevero.com/javascript-arrow-functions/
+[GeneratorFunction constructor]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction
+[declaration]: https://blog.alexdevero.com/javascript-functions-pt1/#function-declaration-and-function-expression
+[yield]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield
 
 <!--
 ### Meta:
@@ -466,7 +481,7 @@ Generator functions may not be used as often, but they can be useful. For exampl
 
 <!--
 ### Keywords:
--
+- generator functions
 -->
 
 <!--
