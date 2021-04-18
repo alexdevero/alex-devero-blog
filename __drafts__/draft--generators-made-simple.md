@@ -145,6 +145,104 @@ console.log(myGeneratorObj.next())
 // and the generator is finished.
 ```
 
+### Yield and return
+
+Just because generators use `yield` to return values doesn't mean there is no place for `return` statement. There still is. In the context of generator functions, a `return` statement, is another thing that specifies if is the generator finished. Generator will be finished under two conditions.
+
+First, there are no more `yield` keywords. Second, the execution encounters a `return` statement. These two will change the value of `done` in the returned object from `false` to `true`. Returning a value with return works like `yield`. Any value after the `return` will be the value of `value` property in the returned object.
+
+Three things to remember. First, `return` will finish the generator whether there are other `yield` or not. Let's say you declare four `yields` in a generator, but put `return` after the second. The result will that the generator will return three values. Two values for the first two `yield` and one for the `return`.
+
+The last two `yield` after the return statement will never be executed because the `return` will finish the generator prematurely. Second thing to remember is that you don't necessarily have to use the `return` statement. The generator will finish when it encounters the last `yield`.
+
+The third to remember. If you don't use `return`, the value of `done` after the last `yield` will be still set to `false`. It will change only if you try to return a value one more time. With `return`, `done` will be set to `true` right with the last call of `next()` method.
+
+```JavaScript
+// Generator function without return:
+// NOTE: last yield will not change "done" to "true".
+// It will change only after another call of "next()".
+function* myGeneratorOne() {
+  // Use yield to return values:
+  yield 'a'
+  yield 'b'
+}
+
+// Assign the generator object to variable:
+const myGeneratorOneObj = myGeneratorOne()
+
+// Return the first value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the second value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'b', done: false }
+
+// Try to return value again:
+console.log(myGeneratorOneObj.next())
+// { value: undefined, done: true }
+// The generator is finished.
+
+
+// Generator function ending with return:
+// NOTE: the return will change "done" to "true" right away.
+function* myGeneratorOne() {
+  // Use yield to return values:
+  yield 'a'
+  return 'b'
+}
+
+// Assign the generator object to variable:
+const myGeneratorOneObj = myGeneratorOne()
+
+// Return the first value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the second value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'b', done: true }
+// The generator is finished.
+
+
+// Generator function with return in the middle:
+function* myGeneratorOne() {
+  // Use yield to return values:
+  yield 'a'
+  yield 'b'
+  return 'End'
+  yield 'c'
+  yield 'd'
+}
+
+// Assign the generator object to variable:
+const myGeneratorOneObj = myGeneratorOne()
+
+// Return the first value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the second value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'b', done: false }
+
+// Return the third value (the return):
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: 'End', done: true }
+// The generator is finished.
+
+// Try to return the fourth value:
+console.log(myGeneratorOneObj.next())
+// Output:
+// { value: undefined, done: true }
+```
 
 ## Conclusion: [...] ...
 
