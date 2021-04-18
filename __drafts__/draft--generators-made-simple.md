@@ -348,10 +348,53 @@ console.log(myGeneratorObj.next())
 // Output:
 // { value: undefined, done: true }
 
-// Return the third value (the return):
+## Yield, next() and passing arguments
+
+There is one interesting thing about the `next()` method. It allows you to pass arguments to generator functions. When you pass an something as an argument to the `next()`, that value will become the value of `yield` in the generator. That said, if you want to pass some argument, do it for the second call of `next()`, not the first.
+
+The reason for this is simple. The first call of `next()` method starts the execution of the generator. The generator is then paused when it reaches the first `yield`. There is no `yield` between the start of the generator execution and the first `yield`. So, any argument you pass will be lost.
+
+```JavaScript
+// Create generator function:
+function* myGenerator() {
+  console.log(yield + 1)
+  console.log(yield + 2)
+  console.log(yield + 3)
+  console.log(yield + 4)
+  return 5
+}
+
+// Assign the first generator object to variable:
+const myGeneratorObj = myGenerator()
+
+// Return the first value (no argument passing):
 console.log(myGeneratorObj.next())
 // Output:
-// { value: undefined, done: true }
+// { value: 1, done: false }
+// '1x' // <= value from console.log(yield + ...)
+
+// Return the second value:
+console.log(myGeneratorObj.next('1x'))
+// Output:
+// { value: 2, done: false }
+// '2x' // <= value from console.log(yield + ...)
+
+// Return the third value:
+console.log(myGeneratorObj.next('2x'))
+// Output:
+// { value: 3, done: false }
+// '3x' // <= value from console.log(yield + ...)
+
+// Return the fourth value:
+console.log(myGeneratorObj.next('3x'))
+// Output:
+// { value: 4, done: false }
+// '4x' // <= value from console.log(yield + ...)
+
+// Return the fifth value:
+console.log(myGeneratorObj.next('4x'))
+// Output:
+// { value: 5, done: true }
 ```
 
 ## Conclusion: [...] ...
