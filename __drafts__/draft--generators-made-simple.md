@@ -1,5 +1,6 @@
-# Blog post title [...]
-<!--more-->
+# JavaScript Generator Functions Made Simple
+
+Generator functions are one of those things you may not see as often. However, they can be handy in some situations. This tutorial will help you understand them. You will learn about what generator functions are. You will also learn about `yield` and `next()` and also how to delegate execution.<!--more-->
 <!--
 Table of Contents:
 -->
