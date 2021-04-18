@@ -107,6 +107,44 @@ console.log(myGeneratorObj.next())
 // { value: undefined, done: true }
 ```
 
+### Yield, next, value and done
+
+When you call the `next()` method JavaScript will always return an object. This object will contain two properties with some values. One property will be `value`. This is the actual value returned by the generator. It is the value that follows after the `yield` keyword in your code.
+
+If there is no value to return, the value of this property will be `undefined`. The second property is `done`. This property says if the generator function is finished or not. "Finished" means that there are no more `yield` keywords in the generator functions and no more values to return.
+
+The value of `done` will always be a boolean, either `true` or `false`. It will be `false` until the generator reaches the last `yield`. When it does, it will return the last value, after the last `yield`, along with `done` set to `true`. After this, calling `next()` again will be useless.
+
+```JavaScript
+// Create generator function:
+function* myGenerator() {
+  // Use yield to return values:
+  yield 'a'
+  yield 'b'
+  return 'omega'
+}
+
+// Assign the generator object to variable:
+const myGeneratorObj = myGenerator()
+
+// Return the first value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'a', done: false }
+
+// Return the second value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'b', done: false }
+
+// Return the third value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 'omega', done: true }
+// This is the last value returned
+// and the generator is finished.
+```
+
 
 ## Conclusion: [...] ...
 
