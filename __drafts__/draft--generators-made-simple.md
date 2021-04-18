@@ -50,6 +50,63 @@ console.log(myGeneratorObj)
 // Iterator [Generator] {}
 ```
 
+## The yield and next()
+
+When it comes to generator functions, there are two important things. The first is [yield] keyword, along with some expression. The second is `next()` method. The `yield` keyword is like a breakpoint. You can use it only in a generator function. It does two things. First, it returns a value from the generator.
+
+The second thing it does is it pauses execution of the generator. This happens right after the generator returns the value. You can thing about the `yield` as a `return` statement. The difference is that while the `return` returns and terminates a function, `yield` returns and only pauses a generator.
+
+As you know, calling a generator function returns a generator object. The `next()` is the main method of this generator object. This method allows you to run the generator, execute the code inside, and return some value. The value it returns is specified by the `yield` keyword. It is preceded by it.
+
+So, to sum it up. The `yield` allows you to return a value from the generator, when you execute it, and then pause the generator. The `next()` method allows you to execute the generator, return the value that follows after the `yield`. Remember that `next()` will return only the value after the first `yield`.
+
+If you use five `yield` keywords in a generator, you will have to call the `next()` method five times. One call for one `yield`. With every yield the execution of a generator will be paused, waiting for another call of `next()` method.
+
+```JavaScript
+// Create generator function:
+function* myGenerator() {
+  // Use yield to return values:
+  yield 1
+  yield 2
+  yield 3
+  yield 4
+  return 5
+}
+
+// Assign the generator object to variable:
+const myGeneratorObj = myGenerator()
+
+// Return the first value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 1, done: false }
+
+// Return the second value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 2, done: false }
+
+// Return the third value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 3, done: false }
+
+// Return the fourth value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 4, done: false }
+
+// Return the fifth value:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: 5, done: true }
+
+// Try to return one more time:
+console.log(myGeneratorObj.next())
+// Output:
+// { value: undefined, done: true }
+```
+
 
 ## Conclusion: [...] ...
 
