@@ -84,6 +84,31 @@ function App() {
 }
 ```
 
+### Lazy initialization
+
+There might be situations where you will need to perform some expensive operation and use the result as a state value. That said, you may need to perform this operation only once, on the initial render. You can do this with the useState hook. As you know, when you declare new state, you can provide it with some initial value.
+
+There another option. You can also pass in a function as an argument to useState hook. The useState hook will execute this function, but only on the initial render, to get the initial state. If you component re-renders, the function will not be executed again.
+
+```jsx
+// Some expensive operation:
+function generateNumber() {
+  return Math.floor(Math.random() * 1024)
+}
+
+// Create function component:
+function App() {
+  // Declare new state with lazy initialization:
+  const [state, setState] = useState(() => generateNumber())
+
+  return (
+    <div>
+      {/* ... */}
+    </div>
+  )
+}
+```
+
 ## Reading the state
 
 When you want to read the state, access its value, you use the variable the hook returned. Remember to use the state variable. Don't try to use the update function to do this. On the same token, don't try to update the state by modifying the variable. Instead, use the update function for that specific state.
