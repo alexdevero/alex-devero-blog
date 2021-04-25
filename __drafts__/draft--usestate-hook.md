@@ -110,6 +110,44 @@ function App() {
 }
 ```
 
+## Some limitations
+
+Hooks are great. Nonetheless, there are two important things to remember. The first one is that you can't use hooks in class components. Hooks work only with function components. If you try to use hook in a class component React will complain. This makes sense. Hooks bring functionality available to classes to function components.
+
+Why bring this functionality back to classes if it is already there? To make your life, and development, easier use hooks only in function component. The second thing is that hooks can be declared only in the root of your function component. You can't declare them inside another functions that are inside your components.
+
+That said, the variables you declared for hooks are not restricted in scope. You can use them anywhere in the component. This also includes any inner functions of your function components. You can read about this, and other, "rules of hooks" in official React [documentation].
+
+```jsx
+// This will work:
+function App() {
+  // Hook is declared in the root of function component.
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      {/* ... */}
+    </div>
+  )
+}
+
+
+// This will not work:
+function App() {
+  function onButtonClick = () => {
+    // Hook must be declared in the root of function component.
+    // It must be declared outside this function.
+    // Then, the "count" and "setCount" can be used here.
+    const [count, setCount] = useState(0)
+  }
+
+  return (
+    <div>
+      {/* ... */}
+    </div>
+  )
+}
+```
 
 ## Conclusion: [...] ...
 
