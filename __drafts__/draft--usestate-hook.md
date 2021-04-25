@@ -110,6 +110,61 @@ function App() {
 }
 ```
 
+## Updating state with update function
+
+The simplest way to update existing state is by using update function returned for that state. This is important to remember. If you have multiple states, update specific state only with function associated with that state. Don't try to use different functions for updating different states.
+
+```jsx
+// Create function component:
+function App() {
+  // Declare state for name:
+  const [name, setName] = useState('')
+
+  return (
+    <div>
+      {/* Read from the "name" state. */}
+      <p>Hello, my name is: {name}</p>
+
+      {/*
+        * Set "name" state is input value
+        * and update the state on input change.
+      */}
+      <input
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
+    </div>
+  )
+}
+
+
+// Alternative:
+function App() {
+  // Declare state for name:
+  const [name, setName] = useState('')
+
+  // Create input handler that will update the state:
+  const onInputChange = (event) {
+    setName(event.target.value)
+  }
+
+  return (
+    <div>
+      {/* Read from the "name" state. */}
+      <p>Hello, my name is: {name}</p>
+
+      {/*
+        * Set attach the input handler that updates "name" state:
+      */}
+      <input
+        value={name}
+        onChange={onInputChange}
+      />
+    </div>
+  )
+}
+```
+
 ## Some limitations
 
 Hooks are great. Nonetheless, there are two important things to remember. The first one is that you can't use hooks in class components. Hooks work only with function components. If you try to use hook in a class component React will complain. This makes sense. Hooks bring functionality available to classes to function components.
