@@ -165,6 +165,66 @@ function App() {
 }
 ```
 
+## Updating state with previous state
+
+This can be handy. The update function accepts a callback function as an argument. The update function also passes the previous state an argument to this callback. This allows you to work with the latest state when you want to update it. So, if you need to know previous state, pass a callback function instead of a value.
+
+Then, inside this callback function you can use the previous state to do whatever you want. This previous state will be passed into the callback by the update function. You just have to specify it as an argument.
+
+```jsx
+// Create function component:
+function App() {
+  // Declare state for clicks:
+  const [clicks, setClicks] = useState(0)
+
+  // Create button handler that will update the state:
+  const onButtonClick = () {
+    // Use callback function and previous state
+    // to update the state.
+    // Make sure to specify the argument
+    // for the previous state ("prevState" for example).
+    setName(prevState => prevState + 1)
+  }
+
+  return (
+    <div>
+      {/* Read from the "name" state. */}
+      <p>You clicked: {clicks}</p>
+
+      {/*
+        * Attach the button handler that updates "clicks" state:
+      */}
+      <button
+        type="button"
+        onChange={onButtonClick}
+      >Click</button>
+    </div>
+  )
+}
+
+
+// Alternative:
+function App() {
+  // Declare state for clicks:
+  const [clicks, setClicks] = useState(0)
+
+  return (
+    <div>
+      {/* Read from the "name" state. */}
+      <p>You clicked: {clicks}</p>
+
+      {/*
+        * Attach the button handler that updates "clicks" state:
+      */}
+      <button
+        type="button"
+        onChange={() => setName(prevState => prevState + 1)}
+      >Click</button>
+    </div>
+  )
+}
+```
+
 ## Some limitations
 
 Hooks are great. Nonetheless, there are two important things to remember. The first one is that you can't use hooks in class components. Hooks work only with function components. If you try to use hook in a class component React will complain. This makes sense. Hooks bring functionality available to classes to function components.
