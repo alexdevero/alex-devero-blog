@@ -51,6 +51,39 @@ function App() {
 
 You can use any name for the state and the update function you want. The only rule to remember is that it must be [valid variable name]. It is a good practice to start the name for the update function with "set". This is not a rule, and you don't have to follow it. However, it is a preferred naming convention and you will see it very often.
 
+## Creating state with initial value
+
+The useState hook allows you set an initial value for every state you create. You can set this initial value by passing it as an argument to the useState hook when you declared it. This initial value can be any valid [data type] in JavaScript. You can also leave the argument empty and create state without any initial value.
+
+```jsx
+// Create function component:
+function App() {
+  // Declare new state without initial value:
+  const [count, setCount] = useState()
+
+  // Declare new state with string as initial value:
+  const [count, setCount] = useState('Hello!')
+
+  // Declare new state with number as initial value:
+  const [count, setCount] = useState(0)
+
+  // Declare new state with array as initial value:
+  const [count, setCount] = useState([0, 1, 2, 3])
+
+  // Declare new state with object as initial value:
+  const [count, setCount] = useState({
+    name: 'Joe Doe',
+    email: 'joe@doe.com'
+  })
+
+  return (
+    <div>
+      {/* ... */}
+    </div>
+  )
+}
+```
+
 
 ## Conclusion: [...] ...
 
