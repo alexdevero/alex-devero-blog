@@ -62,16 +62,16 @@ function App() {
   const [count, setCount] = useState()
 
   // Declare new state with string as initial value:
-  const [count, setCount] = useState('Hello!')
+  const [word, setWord] = useState('Hello!')
 
   // Declare new state with number as initial value:
-  const [count, setCount] = useState(0)
+  const [num, setNum] = useState(0)
 
   // Declare new state with array as initial value:
-  const [count, setCount] = useState([0, 1, 2, 3])
+  const [series, setSeries] = useState([0, 1, 2, 3])
 
   // Declare new state with object as initial value:
-  const [count, setCount] = useState({
+  const [person, setPerson] = useState({
     name: 'Joe Doe',
     email: 'joe@doe.com'
   })
@@ -154,7 +154,7 @@ function App() {
       <p>Hello, my name is: {name}</p>
 
       {/*
-        * Set attach the input handler that updates "name" state:
+        * Attach the input handler that updates "name" state:
       */}
       <input
         value={name}
