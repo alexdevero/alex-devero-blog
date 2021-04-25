@@ -5,7 +5,10 @@ The React useState hook is one of the most popular hooks in React. This hook mak
 Table of Contents:
 -->
 
-## h2
+## A brief introduction to React hooks
+
+React hooks are feature introduced in React 16.8. Under the hood, hooks are functions. These functions allow you to work with component state and lifecycle. Both these things were previously possible only with classes. The introduction of hooks changed this, and made functional components much more powerful.
+
 
 ## Conclusion: [...] ...
 
