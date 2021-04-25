@@ -225,6 +225,82 @@ function App() {
 }
 ```
 
+### Previous state and handling objects and arrays
+
+Working with previous state in update function can be especially useful in two cases. The first one is if your state is an array. Second one is if your state is an object. In both cases, setting new state will overwrite the whole state. In other words, if you try to change one object property, it will rewrite the whole object.
+
+Similar thing will happen with arrays. Trying to add new item to an array will result in rewriting the whole array. Sure, you can use the variable for current state. However, this doesn't guarantee that state will be the latest. It can happen that state variable will be old due to how state works.
+
+Previous state passed into the callback helps you avoid this because it will always know the latest state. With state in the form of an object, you can update individual properties and their values with the help of previous state and [spread]. Spread will also help you insert new items to an array without rewriting.
+
+```jsx
+// Updating state with an array:
+// Create function component:
+function App() {
+  // Declare state for clicks:
+  const [names, setNames] = useState(['Andrew', 'Jill'])
+
+  // Create handler that will update the "names" state:
+  const addNameToState = (name) {
+    // New name will be passed as an argument.
+    // We will insert the name, along with current content
+    // of "names" state array, and set it as a new state.
+    setNames(prevState => [name, ...prevState])
+
+    // Hypothetical result:
+    // ['some new name will be here', 'Andrew', 'Jill']
+  }
+
+  return (
+    <div>{/* ... */}</div>
+  )
+}
+
+
+// Updating state with an object:
+// Create function component:
+function App() {
+  // Declare state for clicks:
+  const [person, setPerson] = useState({
+    name: 'Joshua Pink',
+    email: 'joshua@pink.com',
+    age: 37,
+  })
+
+  // Create handler that will update the "person" state:
+  const addNameToState = (prop, value) {
+    // The property to update, and new value,
+    // will be passed as an argument.
+    // We will insert the name, after the current content
+    // of "person" state object.
+    // To ensure only new key-value pair will be updated,
+    // use spread with previous state first.
+    // This will add all existing properties
+    // and the new one on top.
+    setNames(prevState => {
+      ...prevState, // Spread the previous state.
+      [prop]: value // Update only the relevant property.
+    })
+
+    // Hypothetical result:
+    // setNames(prevState => {
+    //   ...prevState,
+    //   age: 42
+    // })
+
+    // {
+    //   name: 'Joshua Pink',
+    //   email: 'joshua@pink.com',
+    //   age: 42,
+    // }
+  }
+
+  return (
+    <div>{/* ... */}</div>
+  )
+}
+```
+
 ## Some limitations
 
 Hooks are great. Nonetheless, there are two important things to remember. The first one is that you can't use hooks in class components. Hooks work only with function components. If you try to use hook in a class component React will complain. This makes sense. Hooks bring functionality available to classes to function components.
