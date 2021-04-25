@@ -9,6 +9,10 @@ Table of Contents:
 
 React hooks are feature introduced in React 16.8. Under the hood, hooks are functions. These functions allow you to work with component state and lifecycle. Both these things were previously possible only with classes. The introduction of hooks changed this, and made functional components much more powerful.
 
+## A quick introduction to React useState hook
+
+One of these hooks that come with React is also the useState hook. This hook focuses on one specific thing. It allows you to add state to your function components. This means that you no longer have to work with class components. You also no longer have to convert function components to classes just so you can use state.
+
 
 ## Conclusion: [...] ...
 
