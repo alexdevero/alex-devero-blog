@@ -49,7 +49,7 @@ function App() {
 }
 ```
 
-You can use any name for the state and the update function you want. The only rule to remember is that it must be [valid variable name]. It is a good practice to start the name for the update function with "set". This is not a rule, and you don't have to follow it. However, it is a preferred naming convention and you will see it very often.
+You can use any name for the state and the update function you want. In other words, the "count" and "setCount" can be anything you want. The only rule to remember is that it must be [valid variable name]. It is a good practice to start the name for the update function with "set". This is a preferred naming convention and you will see it very often.
 
 ## Creating state with initial value
 
@@ -365,12 +365,18 @@ function App() {
 }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: React useState Hook in Action
+
+The React useState hook can be very useful for managing state of component and even the whole application. It makes state management simple with only a small amount of code. I hope that this tutorial helped you understand what the useState hook is about and how to use it in your React projects.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[documentation]: https://reactjs.org/docs/hooks-rules.html
+[array destructuring]: https://blog.alexdevero.com/destructuring-assignment-javascript/#destructuring-arrays
+[data type]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[valid variable name]: https://blog.alexdevero.com/javascript-variables-introduction/#naming-variables
+[spread]: https://blog.alexdevero.com/javascript-spread-operator/
 
 <!--
 ### Meta:
