@@ -84,6 +84,32 @@ function App() {
 }
 ```
 
+## Reading the state
+
+When you want to read the state, access its value, you use the variable the hook returned. Remember to use the state variable. Don't try to use the update function to do this. On the same token, don't try to update the state by modifying the variable. Instead, use the update function for that specific state.
+
+```jsx
+// Create function component:
+function App() {
+  // Declare states for name and age:
+  const [name, setName] = useState({
+    firstName: 'Jack',
+    lastName: 'Doer'
+  })
+  const [age, setAge] = useState(33)
+
+  return (
+    <div>
+      {/* Read from the "name" state. */}
+      <p>Hello, my name is: {name.firstName} {name.lastName}</p>
+
+      {/* Read from the "age" state. */}
+      <p>My age is: {age}</p>
+    </div>
+  )
+}
+```
+
 
 ## Conclusion: [...] ...
 
