@@ -223,6 +223,9 @@ export default function App() {
 }
 ```
 
+## Conclusion: React useEffect Hook Made Simple
+
+The React useEffect hook provides a friendly way to work with side-effects in your React components. It also makes it easier to manage these side-effects and keep them synchronized with the component itself. I hope that this tutorial helped you understand what useEffect hook is, how it works and how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
