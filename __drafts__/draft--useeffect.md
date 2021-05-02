@@ -24,6 +24,30 @@ Another example can be using timer functions like `setTimeout()` and `setTimeout
 
 The useEffect hook allows you to extract side-effects into a function that is proved and managed by React itself. All you have to do is to say what is the side-effect you want and when it should be executed. React will take care of the rest. This function provided and managed by React is the useEffect hook.
 
+## The syntax
+
+The useEffect hook accepts two arguments. The first argument is a callback function. This callback function contains the code you want to execute. This is the side-effect you want to make. The useEffect hook executes this callback function after the component is rendered. The second argument is for array of dependencies.
+
+This argument is optional. Whether you use it or not will depend on when you want the useEffect hook to execute the callback function. Above, I mentioned that there is an option to specify when the useEffect hook should run. This array of dependencies is this option. By working with it you change how the useEffect hook behaves.
+
+```JavaScript
+// Syntax of useEffect hook:
+useEffect(callback, [dependencies]);
+
+
+// Simple example:
+// Import useEffect hook from React.
+import { useEffect } from 'react'
+
+function App() {
+  // Use useEffect hook:
+  useEffect(() => {
+    // Execute some code.
+  }, [])
+  // ...
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
