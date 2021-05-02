@@ -3,6 +3,17 @@
 The React useEffect Hook helps you manage side-effects in functional React components. It also makes this task much easier than it used to be. In this tutorial you will learn about what useEffect hook is and how it works. You will also learn how to use it in your React applications.<!--more-->
 <!--
 Table of Contents:
+## Introduction to React useEffect hook
+### A word on side-effects
+## The syntax
+## Dependencies
+### No.1: Run after every render
+### No.2: Run after initial render
+### No.3: Run when specific value changes
+## Simple useEffect and fetch example
+## Cleaning up side-effects
+## One is not necessarily better
+## Conclusion: React useEffect Hook Made Simple
 -->
 
 ## Introduction to React useEffect hook
