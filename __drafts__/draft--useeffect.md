@@ -48,6 +48,10 @@ function App() {
 }
 ```
 
+## Dependencies
+
+The dependencies array is an optional argument. Nonetheless, it is a very powerful feature. By providing different values, or omitting it, you can fundamentally change when the useEffect hook will run. Dependencies give you three options for when the useEffect hook should run.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
