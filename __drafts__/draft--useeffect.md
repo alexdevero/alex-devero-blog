@@ -84,6 +84,29 @@ function App() {
 }
 ```
 
+### No.3: Run when specific value changes
+
+The third and last option is to watch specific value and run the useEffect hook when this value changes. This value can be almost anything. It can be all component props or just one specific prop. It can be some variable. It can also be a state created with [useState hook].
+
+When you know what value you want to watch, you pass that value into the dependencies array. What if you want to watch more than one value? No problem. You can pass as many values to the dependencies array as you want. Then, when just one of these values changes, the useEffect hook will run.
+
+```JavaScript
+// Import useEffect and useState hooks from React.
+import { useEffect, useState } from 'react'
+
+function App(props) {
+  // Create states:
+  const [name, setName] = useState('')
+  const [age, setAge] = useState(0)
+
+  // Use useEffect hook:
+  useEffect(() => {
+    // Run something only when props.isLoading prop,
+    // name state or age state changes.
+  }, [props.isLoading, name, age]) // <= Pass props.isLoading, name, age as dependencies argument.
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
