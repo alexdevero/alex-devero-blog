@@ -1,6 +1,9 @@
-# React useEffect Hook Demystified: What You Need to Know
+# React useEffect Hook Made Simple
 
 The React useEffect Hook helps you manage side-effects in functional React components. It also makes this task much easier than it used to be. In this tutorial you will learn about what useEffect hook is and how it works. You will also learn how to use it in your React applications.<!--more-->
+<!--
+Table of Contents:
+-->
 
 ## Introduction to React useEffect hook
 
@@ -103,7 +106,7 @@ function App(props) {
   // Use useEffect hook:
   useEffect(() => {
     // Run something only when props.isLoading prop,
-    // name state or age state changes.
+    // name state or age state change.
   }, [props.isLoading, name, age]) // <= Pass props.isLoading, name, age as dependencies argument.
 }
 ```
@@ -270,6 +273,9 @@ The React useEffect hook provides a friendly way to work with side-effects in yo
 
 <!-- ### Links -->
 [side-effects]: https://dzone.com/articles/side-effects-1
+[useState hook]: https://blog.alexdevero.com/react-usestate-hook-in-action/
+[async function]: https://blog.alexdevero.com/javascript-async-await/
+[race conditions]: https://medium.com/@slavik57/async-race-conditions-in-javascript-526f6ed80665
 
 <!--
 ### Meta:
