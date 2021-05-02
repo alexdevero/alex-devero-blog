@@ -16,6 +16,14 @@ Another difference is that, by default, useEffect hook runs after every render. 
 
 Another useful feature of useEffect hook is that it can also clean up after itself. This cleanup happens automatically before the hook is executed again. One example when cleanup can be handy is removing attached event listeners when you "change" page in your React application.
 
+### A word on side-effects
+
+The name useEffect is based on the idea of [side-effects]. Put simply, side-effects are changes made by a function to anything other than inputs provided to that function. This usually means changes made to the outside world. Some examples of side-effects can be fetch requests and direct manipulation with DOM.
+
+Another example can be using timer functions like `setTimeout()` and `setTimeout()`. One problem can be synchronizing the rendering of a component with side-effect you want to make. These two things happen independently and component rendering is outside of your control. This is one thing the React useEffect hook is trying solve.
+
+The useEffect hook allows you to extract side-effects into a function that is proved and managed by React itself. All you have to do is to say what is the side-effect you want and when it should be executed. React will take care of the rest. This function provided and managed by React is the useEffect hook.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
