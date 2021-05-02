@@ -172,7 +172,57 @@ export default function App() {
 
 *What you can do is to use the async function inside the useEffect hook and call it. This is why we created another function, now async, inside the useEffect hook callback function and used it to make the fetch request. So, remember that the useEffect callback itself must be always synchronous ... but the content doesn't.*
 
-## Conclusion: [...] ...
+## Cleaning up side-effects
+
+One interesting feature of the useEffect hook is automatic cleanup. This cleanup allows you to execute code right before the next useEffect run or before the component unmounts. Some scenarios where this can be useful are removing attached event listeners, clearing timers and closing external subscriptions and connections.
+
+This cleanup is specified by a function and this function must be returned from the useEffect hook. This function can be a regular function, arrow function, and/or unnamed function. The only thing that is important is that it must be returned from the hook. Inside this function is a code you want to execute during the cleanup.
+
+```jsx
+// Syntax:
+function App(props) {
+  // Use useEffect hook:
+  useEffect(() => {
+    // Do something on every render
+
+    // Specify returned cleanup function:
+    return function() {
+      // Do something during cleanup procedure.
+      // Clean up will happen before next run
+      // of this hook and before component unmounts.
+    }
+  }) // <= Run on every render.
+}
+
+
+// Example with event listener:
+// Import useEffect hook from React:
+import { useEffect } from 'react'
+
+export default function App() {
+  // Use useEffect hook:
+  useEffect(() => {
+    // Create function to invoke when window resizes:
+    function handleResize() {
+      // Log message when window is resized:
+      console.log('Resize! New width is: ', window.innerWidth)
+    }
+
+    // Attach event listener for "resize" event to window:
+    window.addEventListener('resize', handleResize)
+
+    // Add cleanup function:
+    return function() {
+      // Remove event listener from window
+      // when component unmounts:
+      window.removeEventListener(handleResize)
+    }
+  }, []) // <= Run only on initial render
+
+  // ...
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
