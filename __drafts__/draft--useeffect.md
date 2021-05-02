@@ -224,6 +224,44 @@ export default function App() {
 }
 ```
 
+## One is not necessarily better
+
+If you are coming from class components you might be used to having just one lifecycle method and one state. This approach is not necessary when it comes to React hooks and functional component. There is no rule saying that you have to use every hook only once. In fact, the opposite might be better.
+
+It is often better to use the same hook multiple times. Having multiple smaller states can help you make application state easier to work with. The same applies to useEffect hook. If you need to create multiple side-effects, don't be afraid of using multiple useEffect hooks.
+
+Using multiple useEffect to manage multiple side-effect can make your code more manageable, easier to read and work with.
+
+```jsx
+// Import useEffect and useState hooks from React:
+import { useEffect, useState } from 'react'
+
+function App(props) {
+  // Create few states:
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [age, setAge] = useState(0)
+  const [email, setEmail] = useState(0)
+
+  // Use few useEffect hooks to manage multiple side-effects:
+  useEffect(() => {
+    // Run something only on initial render.
+  }, []) // <= Pass [] as dependencies argument.
+
+  useEffect(() => {
+    // Run something only when firstName and lastName change.
+  }, [firstName, lastName]) // <= Pass firstName and lastName as dependencies argument.
+
+  useEffect(() => {
+    // Run something only when age changes.
+  }, [age]) // <= Pass age as dependencies argument.
+
+  useEffect(() => {
+    // Run something only when email changes.
+  }, [email]) // <= Pass email as dependencies argument.
+}
+```
+
 ## Conclusion: React useEffect Hook Made Simple
 
 The React useEffect hook provides a friendly way to work with side-effects in your React components. It also makes it easier to manage these side-effects and keep them synchronized with the component itself. I hope that this tutorial helped you understand what useEffect hook is, how it works and how to use it.
