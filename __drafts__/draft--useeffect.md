@@ -52,6 +52,22 @@ function App() {
 
 The dependencies array is an optional argument. Nonetheless, it is a very powerful feature. By providing different values, or omitting it, you can fundamentally change when the useEffect hook will run. Dependencies give you three options for when the useEffect hook should run.
 
+### No.1: Run after every render
+
+THe first option is to run the useEffect hook after every render of your component. For this, omit the dependencies array and provide only the callback function. From now, every time React renders your component, it will also run the useEffect hook and execute the code inside it.
+
+```JavaScript
+// Import useEffect hook from React.
+import { useEffect } from 'react'
+
+function App() {
+  // Use useEffect hook:
+  useEffect(() => {
+    // Run something after every render.
+  }) // <= Omit the dependencies argument.
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
