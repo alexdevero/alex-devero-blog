@@ -6,7 +6,7 @@ Table of Contents:
 ## Introduction to React useEffect hook
 ### A word on side-effects
 ## The syntax
-## Dependencies
+## Dependencies and when useEffect runs
 ### No.1: Run after every render
 ### No.2: Run after initial render
 ### No.3: Run when specific value changes
@@ -63,7 +63,7 @@ function App() {
 }
 ```
 
-## Dependencies
+## Dependencies and when useEffect runs
 
 The dependencies array is an optional argument. Nonetheless, it is a very powerful feature. By providing different values, or omitting it, you can fundamentally change when the useEffect hook will run. Dependencies give you three options for when the useEffect hook should run.
 
