@@ -20,7 +20,7 @@ Table of Contents:
 
 If you are familiar with React class components you know there are lifecycle methods available to use. You can use these methods to execute code at a specific moment you need. You can execute your code only when on component's initial render. You can also execute it on very re-render of the component, or if only some data change.
 
-These lifecycle methods, along with other features of class components, don't work with functions. These methods doesn't exist in their scope or environment. React hooks made it possible to bring many of these features from classes to functional components so you can use them here as well.
+These lifecycle methods, along with other features of class components, don't work with functions. These methods don't exist in their scope or environment. React hooks made it possible to bring many of these features from classes to functional components so you can use them here as well.
 
 The React useEffect hook is a hook that brings the functionality of lifecycle methods to functional components. To make this easier, you can think about the useEffect hook as `componentDidMount`, `componentDidUpdate` and `componentWillUnmount` lifecycle methods in one package.
 
@@ -36,7 +36,7 @@ The name useEffect is based on the idea of [side-effects]. Put simply, side-effe
 
 Another example can be using timer functions like `setTimeout()` and `setTimeout()`. One problem can be synchronizing the rendering of a component with side-effect you want to make. These two things happen independently and component rendering is outside of your control. This is one thing the React useEffect hook is trying solve.
 
-The useEffect hook allows you to extract side-effects into a function that is proved and managed by React itself. All you have to do is to say what is the side-effect you want and when it should be executed. React will take care of the rest. This function provided and managed by React is the useEffect hook.
+The useEffect hook allows you to extract side-effects into a function that is provided and managed by React itself. All you have to do is to say what is the side-effect you want and when it should be executed. React will take care of the rest. This function provided and managed by React is the useEffect hook.
 
 ## The syntax
 
@@ -126,7 +126,7 @@ function App(props) {
 
 In the beginning, when we talked about side effects, I mentioned fetch requests. Fetching data is one thing that is done frequently. It is also one example where useEffect hook can be very handy. Let's create a simple component that will use the React useEffect hook to perform a simple fetching.
 
-We will use an [async function] to fetch Reddit posts from specific reddit. Then, we will extract some information from received data and store them in its state. When all this is done and the data are ready, we will render al posts with authors in a simple list. Below is one example of how to do this.
+We will use an [async function] to fetch Reddit posts from specific reddit. Then, we will extract some information from received data and store them in its state. When all this is done and the data are ready, we will render all posts with authors in a simple list. Below is one example of how to do this.
 
 In this example, we will fetch the posts only on initial render. In a real app, you could add some value to dependencies array that you want to watch. For example, you could provide a way to change reddit from which to fetch posts. Then, you could watch for this and run the useEffect to fetch new posts, with modified URL to fetch.
 
@@ -183,7 +183,7 @@ export default function App() {
 
 *Note 1: You don't have to put the whole fetching function to useEffect hook. You can just as well put it outside it, and then only call it from the useEffect hook.*
 
-*Note 2: You can't use promises and async with useEffect hook directly (`(async () => ...)`). This is not supported and React will warn you if you try it. The reason is that useEffect callbacks are synchronous to prevent [race conditions]. If you want to make an async call inside an useEffect hook you still can.*
+*Note 2: You can't use promises and async with useEffect hook directly (`(async () => ...)`). This is not supported and React will warn you if you try it. The reason is that useEffect callbacks are synchronous to prevent [race conditions]. If you want to make an async call inside the useEffect hook you still can.*
 
 *What you can do is to use the async function inside the useEffect hook and call it. This is why we created another function, now async, inside the useEffect hook callback function and used it to make the fetch request. So, remember that the useEffect callback itself must be always synchronous ... but the content doesn't.*
 
