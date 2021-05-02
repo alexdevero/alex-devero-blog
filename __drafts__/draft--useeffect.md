@@ -68,6 +68,22 @@ function App() {
 }
 ```
 
+### No.2: Run after initial render
+
+Another option is to run the useEffect hook only once, after the initial render. This is the very first render of the component. From now, if React re-renders the component, the useEffect hook will not run again.
+
+```JavaScript
+// Import useEffect hook from React.
+import { useEffect } from 'react'
+
+function App() {
+  // Use useEffect hook:
+  useEffect(() => {
+    // Run something only after initial render.
+  }, []) // <= Pass [] as dependencies argument.
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
