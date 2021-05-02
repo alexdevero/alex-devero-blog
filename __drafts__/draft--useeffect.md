@@ -36,7 +36,7 @@ useEffect(callback, [dependencies]);
 
 
 // Simple example:
-// Import useEffect hook from React.
+// Import useEffect hook from React:
 import { useEffect } from 'react'
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
   useEffect(() => {
     // Execute some code.
   }, [])
+
   // ...
 }
 ```
@@ -57,7 +58,7 @@ The dependencies array is an optional argument. Nonetheless, it is a very powerf
 THe first option is to run the useEffect hook after every render of your component. For this, omit the dependencies array and provide only the callback function. From now, every time React renders your component, it will also run the useEffect hook and execute the code inside it.
 
 ```JavaScript
-// Import useEffect hook from React.
+// Import useEffect hook from React:
 import { useEffect } from 'react'
 
 function App() {
@@ -73,7 +74,7 @@ function App() {
 Another option is to run the useEffect hook only once, after the initial render. This is the very first render of the component. From now, if React re-renders the component, the useEffect hook will not run again.
 
 ```JavaScript
-// Import useEffect hook from React.
+// Import useEffect hook from React:
 import { useEffect } from 'react'
 
 function App() {
@@ -91,7 +92,7 @@ The third and last option is to watch specific value and run the useEffect hook 
 When you know what value you want to watch, you pass that value into the dependencies array. What if you want to watch more than one value? No problem. You can pass as many values to the dependencies array as you want. Then, when just one of these values changes, the useEffect hook will run.
 
 ```JavaScript
-// Import useEffect and useState hooks from React.
+// Import useEffect and useState hooks from React:
 import { useEffect, useState } from 'react'
 
 function App(props) {
@@ -116,7 +117,7 @@ We will use an [async function] to fetch Reddit posts from specific reddit. Then
 In this example, we will fetch the posts only on initial render. In a real app, you could add some value to dependencies array that you want to watch. For example, you could provide a way to change reddit from which to fetch posts. Then, you could watch for this and run the useEffect to fetch new posts, with modified URL to fetch.
 
 ```jsx
-// Import useEffect and useState hooks from React.
+// Import useEffect and useState hooks from React:
 import { useEffect, useState } from 'react'
 
 export default function App() {
