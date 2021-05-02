@@ -107,6 +107,71 @@ function App(props) {
 }
 ```
 
+## Simple useEffect and fetch example
+
+In the beginning, when we talked about side effects, I mentioned fetch requests. Fetching data is one thing that is done frequently. It is also one example where useEffect hook can be very handy. Let's create a simple component that will use the React useEffect hook to perform a simple fetching.
+
+We will use an [async function] to fetch Reddit posts from specific reddit. Then, we will extract some information from received data and store them in its state. When all this is done and the data are ready, we will render al posts with authors in a simple list. Below is one example of how to do this.
+
+In this example, we will fetch the posts only on initial render. In a real app, you could add some value to dependencies array that you want to watch. For example, you could provide a way to change reddit from which to fetch posts. Then, you could watch for this and run the useEffect to fetch new posts, with modified URL to fetch.
+
+```jsx
+// Import useEffect and useState hooks from React.
+import { useEffect, useState } from 'react'
+
+export default function App() {
+  // Create state for Reddit feed:
+  const [feed, setFeed] = useState([])
+
+  // Use useEffect hook:
+  useEffect(() => {
+    // Create async function to fetch Reactjs posts from Reddit:
+    async function fetchRedditFeed() {
+      // Make a request to fetch Reactjs posts from Reddit:
+      const redditResponse = await fetch('https://www.reddit.com/r/reactjs.json')
+
+      // Check if data are available (response code is 200-299):
+      if (redditResponse.ok) {
+        // Translate received response (promise) to JSON:
+        const redditJSON = await redditResponse.json()
+
+        // Extract title, author and post id:
+        const posts = redditJSON.data.children.map(post => {
+          return {
+            title: post.data.title,
+            author: post.data.author,
+            id: post.data.id
+          }
+        })
+
+        // Save posts to feed state:
+        setFeed(posts)
+      }
+    }
+
+    // Invoke the fetchRedditFeed function:
+    fetchRedditFeed()
+  }, []) // <= Run only on initial render.
+
+  // Render a list of posts
+  return (
+    <div className="App">
+      <ul>
+        {feed.map(feedItem => {
+          return <li key={feedItem.id}>{feedItem.title} by {feedItem.author}</li>
+        })}
+      </ul>
+    </div>
+  )
+}
+```
+
+*Note 1: You don't have to put the whole fetching function to useEffect hook. You can just as well put it outside it, and then only call it from the useEffect hook.*
+
+*Note 2: You can't use promises and async with useEffect hook directly (`(async () => ...)`). This is not supported and React will warn you if you try it. The reason is that useEffect callbacks are synchronous to prevent [race conditions]. If you want to make an async call inside an useEffect hook you still can.*
+
+*What you can do is to use the async function inside the useEffect hook and call it. This is why we created another function, now async, inside the useEffect hook callback function and used it to make the fetch request. So, remember that the useEffect callback itself must be always synchronous ... but the content doesn't.*
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
