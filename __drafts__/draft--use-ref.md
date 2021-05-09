@@ -245,7 +245,10 @@ const App = () => {
 }
 ```
 
-## Conclusion: [...] ...
+
+## Conclusion: Reacts useRef Hook
+
+The React useRef hook can be handy. It allows you to store data between renders and update this data without causing a re-renders. You can also use it to store references to DOM nodes and React components so you can work with them directly. I hope that this tutorial helped you understand what the useRef hook is and how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
