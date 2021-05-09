@@ -88,6 +88,59 @@ const App = () => {
 }
 ```
 
+### useRef hook and storing values
+
+Just as useRef can store references to nodes and elements it can also store values. This can be handy when you want to store values without triggering re-render. You can't do this with useState hook. Every update of a state value will cause re-render. That said, this is a feature, not a bug.
+
+You want to keep your component in sync with state. This is one thing useState was created to do. Using useRef hook allows you to bypass this by directly manipulating with the value of `current` property. This property is not read-only. You can change its value manually. This allows you to use useRef to store anything you want.
+
+When you want to use useRef to store values and update them remember that these updates are side effects. As such, you should do these updates in the "layout" or "commit" phase. This is a phase when React applies any changes. To make updates to ref vales during this phase you can use `useLayoutEffect` or `useEffect` hooks.
+
+Aside to these two, another option for these updates are handler functions. You can create function to handle specific actions. Then, you can update ref values inside these functions. Whatever option you choose, avoid updating ref in the root of your React components.
+
+```jsx
+// Import useEffect and useRef hooks from React:
+import { useEffect, useRef } from 'react'
+
+// Create function component:
+const App = () => {
+  // Initialize the useRef hook with 1 as initial value:
+  const renderCount = useRef(1)
+
+  // Don't do this - update values in root:
+  renderCount.current += 1
+
+  useEffect(() => {
+    // Use useEffect to update "current" value
+    // on every render of the component:
+    renderCount.current += 1
+  }, [])
+
+  // Using handler function:
+  const onIncrementRenderCount = () => {
+    // Update "current" value manually:
+    renderCount.current += 1
+  }
+
+  // NOTE: this log will not show up if you update
+  // the value by clicking on the "Increment count" button.
+  // useRef doesn't cause re-renders.
+  console.log('Rendered!')
+
+  return (
+    <div className="app">
+      <div className="app-wrapper">
+        {/* Show the number of renders: */}
+        <p>Number of renders: {renderCount.current}</p>
+
+        {/* Add button to ref's current value: */}
+        <button onClick={onIncrementRenderCount}>Increment count</button>
+      </div>
+    </div>
+  )
+}
+```
+
 
 ### h3
 
