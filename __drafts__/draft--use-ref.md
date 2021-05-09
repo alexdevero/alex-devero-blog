@@ -1,10 +1,16 @@
 # Reacts useRef Hook: What It Is and How to Use It
 
-React useRef hook can be helpful when you need to create mutable variables in your components without causing these components to re-render. For example, store references to elements or some other values. In this tutorial, you will learn about what React useRef hook is, how it works and how to use it.
-
-<!--more-->
+React useRef hook can be helpful when you need to create mutable variables in your components without causing these components to re-render. For example, store references to elements or some other values. In this tutorial, you will learn about what React useRef hook is, how it works and how to use it.<!--more-->
 <!--
 Table of Contents:
+## React useRef hook briefly
+## Using the useRef hook
+### Storing references to nodes and elements
+### useRef hook and storing values
+### Storing previous state values with React useRef hook
+## Updating values, re-renders and updating UI
+## A word of caution
+## Conclusion: Reacts useRef Hook
 -->
 
 ## React useRef hook briefly
