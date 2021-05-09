@@ -169,6 +169,10 @@ const App = () => {
     // Update the value of name state,
     // and trigger re-render:
     setName(inputRef.current.value);
+
+    // This will also trigger the useEffect which
+    // will update the ref's value with the previous
+    // value of "name" state.
   }
 
   return (
@@ -189,12 +193,57 @@ const App = () => {
 }
 ```
 
+## Updating values, re-renders and updating UI
 
-### h3
+One thing to keep in mind. In the example with updating values manually, click on the button will update the value. However, change of the value will not cause re-render. So, you will still see the same value until something causes the component to re-render and the UI to update itself with the latest value.
 
-### h3
+You can test that the ref value is really updated by triggering re-render manually. For example, you can add new state. When you update the state with new value it will also trigger re-render. The re-render will update the UI. After this update the UI will also show the latest value of ref.
 
-## h2
+```jsx
+// Import useEffect, useRef and useState hooks from React:
+import { useEffect, useRef, useState } from 'react'
+
+// Create function component:
+const App = () => {
+  // Initialize the useRef hook:
+  const renderCount = useRef(1)
+
+  // Add state to trigger re-render:
+  const [count, setCount] = useState(1)
+
+  useEffect(() => {
+    // Use useEffect to update "current" value
+    // on every render of the component:
+    renderCount.current += 1
+  }, []);
+
+  const onIncrementRenderCount = () => {
+    // Update "current" value manually:
+    renderCount.current += 1
+  };
+
+  const onIncrementCount = () => {
+    // Update state value:
+    setCount((prevCount) => (prevCount += 1))
+    // Note: this will trigger re-render.
+  }
+
+  return (
+    <div className="app">
+      <div className="app-wrapper">
+        {/* Show the number of renders: */}
+        <p>Number of renders: {renderCount.current}</p>
+
+        {/* Add button to ref's current value: */}
+        <button onClick={onIncrementRenderCount}>Increment count</button>
+
+        {/* Add button to increase state value (trigger re-render): */}
+        <button onClick={onIncrementCount}>Increment state</button>
+      </div>
+    </div>
+  )
+}
+```
 
 ## Conclusion: [...] ...
 
