@@ -141,6 +141,54 @@ const App = () => {
 }
 ```
 
+### Storing previous state values with React useRef hook
+
+One interesting use case for useRef hook is storing previous state values. useRef persists values between renders. With the help of `useEffect` hook, you can store value of state in a ref before the value changes. This will make the old value available in the next render, through the ref.
+
+```jsx
+// Import useEffect, useRef and useState hooks from React:
+import { useEffect, useRef, useState } from 'react'
+
+// Create function component:
+const App = () => {
+  // Add state for name:
+  const [name, setName] = useState('')
+
+  // Use useRef hook to store reference to input:
+  const inputRef = useRef('')
+
+  // Use useRef hook to store previous name:
+  const oldNameRef = useRef('')
+
+  useEffect(() => {
+    // On re-render, store the old name in ref:
+    oldNameRef.current = name
+  }, [name])
+
+  const onSaveNameButtonClick = () => {
+    // Update the value of name state,
+    // and trigger re-render:
+    setName(inputRef.current.value);
+  }
+
+  return (
+    <div className="app">
+      <div className="app-wrapper">
+        <input defaultValue={name} ref={inputRef} />
+
+        <p>New name: {name}</p>
+        <p>Previous name: {oldNameRef.current}</p>
+
+        <div>
+          {/* Add button to save name: */}
+          <button onClick={onSaveNameButtonClick}>Save name</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+```
+
 
 ### h3
 
