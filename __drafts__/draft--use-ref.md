@@ -48,6 +48,46 @@ const App = () => {
 }
 ```
 
+### Storing references to nodes and elements
+
+The next steps depend on what you want to do. You use the hook to store references to DOM node or React element. To do this, you find the node or element and add `ref` attribute. The value for this attribute will be the initialized useRef hook. You will pass the variable name to this attribute.
+
+When you do this, the value of `current` property returned by the ref object will be the element. From now, you will be able to access the element by using this `current` property on the ref.
+
+```jsx
+// Import useRef hook from React:
+import { useRef } from 'react'
+
+// Create function component:
+const App = () => {
+  // Initialize the useRef hook:
+  const inputRef = useRef(null)
+
+  // Create button click handler:
+  const onButtonClick = () => {
+    // Log the value of input:
+    console.log(inputRef.current.value)
+  }
+
+  return (
+    <div className="app">
+      <div className="app-wrapper">
+        <p>What's your name?</p>
+
+        {/*
+          Add ref "attribute" to the input
+          and pass in the created ref as a value:
+        */}
+        <input ref={inputRef} />
+
+        {/* Create button */}
+        <button onClick={onButtonClick}>Load text</button>
+      </div>
+    </div>
+  )
+}
+```
+
 
 ### h3
 
