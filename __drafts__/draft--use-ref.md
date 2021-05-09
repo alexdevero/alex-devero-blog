@@ -245,6 +245,11 @@ const App = () => {
 }
 ```
 
+## A word of caution
+
+The useRef hook makes it very easy to work with DOM nodes and React components. This can make it tempting to use it every time you want to communicate with your components or between them. This is generally not a good idea. It is usually better to create these communication bridges by using props and passing data through them.
+
+This is one of the things the system of props was designed for. It is also probably the most reliable way to establish this communication between components. So, use useRef when you really need to, when you need to work with components and props are not capable of doing the job.
 
 ## Conclusion: Reacts useRef Hook
 
