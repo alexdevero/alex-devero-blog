@@ -144,7 +144,7 @@ const App = () => {
 
 ### Storing previous state values with React useRef hook
 
-One interesting use case for useRef hook is storing previous state values. useRef persists values between renders. With the help of `useEffect` hook, you can store value of state in a ref before the value changes. This will make the old value available in the next render, through the ref.
+One interesting use case for useRef hook is storing previous state values. The useRef hook persists values between renders. With the help of `useEffect` hook, you can store value of state in a ref before the value changes. This will make the old value available in the next render, through the ref.
 
 ```jsx
 // Import useEffect, useRef and useState hooks from React:
