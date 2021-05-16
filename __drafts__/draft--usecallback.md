@@ -99,7 +99,7 @@ export default function App() {
 }
 ```
 
-A simple way to fix this is adding the "name" state as a dependency. Now, React will watch this value and re-create the function whenever the name changes. This will ensure that when use changes the name the function will always have the latest information and log correct value.
+A simple way to fix this is adding the "name" state as a dependency. Now, React will watch this value and re-create the function whenever the name changes. This will ensure that when the user changes the name the function will always have the latest information and log correct value.
 
 ```jsx
 // Note: this will not work as you may expect:
@@ -196,7 +196,7 @@ export default function App() {
 
 The last option is to re-create the function when only specific value or values change. If some of the values change React will re-create the function to ensure it has the latest data. Otherwise, it will return the memoized version of the function. For this, specify the values you want to watch in the dependency array as a parameter.
 
-From now, when any of these watched values changes React will automatically re-create the function. Otherwise, it will return the memoized version. Remember that only one value you specified as a dependency has to change for React to re-create the function, not all of them.
+From now, when any of these watched values change React will automatically re-create the function. Otherwise, it will return the memoized version. Remember that only one value you specified as a dependency has to change for React to re-create the function, not all of them.
 
 ```jsx
 // Import useCallback hook from React:
