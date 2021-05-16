@@ -120,13 +120,72 @@ export default function App() {
 }
 ```
 
-## Working with dependencies
+## Working with dependencies and when to re-create memoized function
 
 The array of dependency, the second parameter, tells React when memoized function should be re-created. There are basically three options.
 
-### h3
+### After every render
 
-## h2
+First, React can re-create the function after every render of your component. This pretty much defeats the whole purpose of useCallback hook, but it is still something you can do. For this, all you have to do is to omit the dependencies array. Use useCallback hook only with the function you want to memoize.
+
+```jsx
+// Import useCallback hook from React:
+import { useCallback } from 'react'
+
+export default function App() {
+  // Use useCallback to memoize function:
+  const memoizedFunc = useCallback(() => someFunction())
+  // Omit the dependency parameter (array).
+
+  return (
+    <div className="App">
+      {/* Your component */}
+    </div>
+  )
+}
+```
+
+If you really want to do this, you can simply skip using the useCallback hook. This option will lead to same result as declaring a function without the useCallback hook. The function will be re-created on every re-render and never memoized.
+
+```jsx
+// Import useCallback hook from React:
+import { useCallback } from 'react'
+
+export default function App() {
+  // Normal function:
+  const someFunction = () => (/* Do something */)
+
+  return (
+    <div className="App">
+      {/* Your component */}
+    </div>
+  )
+}
+```
+
+### Only after initial render
+
+The second option is to create the function only after the initial render. When a subsequent re-render happens, React will return the memoized version of the function. This can be useful in two cases. First, when the function should always return the same result and probably doesn't work with external input.
+
+The second case is when the function works with external input(s), but that input doesn't change. If the input doesn't change or the function doesn't depend on any external input, you may think about memoizing it. To do this, pass an empty array as the dependency parameter.
+
+```jsx
+// Import useCallback hook from React:
+import { useCallback } from 'react'
+
+export default function App() {
+  // Use useCallback to memoize function:
+  const memoizedFunc = useCallback(() => someFunction(), [])
+  // Pass an empty array as dependency parameter.
+
+  return (
+    <div className="App">
+      {/* Your component */}
+    </div>
+  )
+}
+```
+
 
 ## Conclusion: [...] ...
 
