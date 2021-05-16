@@ -219,8 +219,14 @@ export default function App() {
 }
 ```
 
+## A word of caution
 
-## Conclusion: [...] ...
+Just because there is some tool doesn't mean you have to use it. The same also applies to React useCallback hook. The purpose of this hook is to improve performance of heavy components. It is not intended to be a default "wrapper" for every single function you declare in your component.
+
+So, don't assume that you have to use useCallback every time you declare a function. You don't. Use this hook in heavy components that use multiple functions and these functions don't have to be re-created on every render. Even then, consider the potential gain and loses.
+
+Will memoization help you measurably improve performance? Or, will it only introduce more complexity to your code, while any performance gains will be barely noticeable? For small and light components useCallback might not make a difference.
+
 
 [xyz-ihs snippet="thank-you-message"]
 
