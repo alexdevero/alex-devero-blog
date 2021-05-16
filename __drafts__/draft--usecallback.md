@@ -55,8 +55,71 @@ This function will depend on the name of the current user. If you memoize it the
 
 When you specify the name as dependency, React will automatically re-create the function when the name changes. When new user arrives, and the name changes, the function will be re-created. It will update its input, use the latest value of name, and greet the user using a correct name.
 
+### A simple example
 
-### h3
+Let's demonstrate the power of dependencies and memoization on a simple example. Imagine you have a simple component that contains input and button. The input allows the user to specify her name. This name will be stored in local state created with [useState hook]. Click on the button logs the name to the console.
+
+The handler function for the button will be memoized with useCallback hook. On the first try, you forget to include the name as a dependency for the hook. What you do instead is specify the dependency array as an empty array. This tells React that it should create the function only on the initial render.
+
+When something happens that causes a subsequent re-render of the component, it should return the memoized version of the function. Remember that changing state causes React to re-render. This helps keep everything in sync. What happens when the user write her name in the input and clicks the button?
+
+The user will be probably surprised. The console will show the initial value of the "name" state. The reason is that when the function was created, the value of name was the initial value. When the name changed React didn't re-create the function and the function didn't know the name has changed.
+
+```jsx
+// Note: this will not work as you may expect:
+import { useCallback, useState } from 'react'
+
+export default function App() {
+  // Create state for name:
+  const [name, setName] = useState('')
+
+  // Create and memoize function for logging name:
+  const handleShowName = useCallback(() => {
+    console.log(name)
+  }, []) // <= Notice the empty array with dependencies.
+
+  // Each click on the button will log
+  // the initial value of "name" state, i.e. the ''.
+
+  return (
+    <div className="App">
+      {/* Change "name" state when input changes: */}
+      <input value={name} onChange={(event) => setName(event.target.value)} />
+
+      {/* Attach handleShowName function */}
+      <button onClick={handleShowName}>Show name</button>
+    </div>
+  )
+}
+```
+
+A simple way to fix this is adding the "name" state as a dependency. Now, React will watch this value and re-create the function whenever the name changes. This will ensure that when use changes the name the function will always have the latest information and log correct value.
+
+```jsx
+// Note: this will not work as you may expect:
+import { useCallback, useState } from 'react'
+
+export default function App() {
+  // Create state for name
+  const [name, setName] = useState('')
+
+  // Create and memoize function for logging name:
+  const handleShowName = useCallback(() => {
+    console.log(name)
+  }, [name]) // <= Add "name" state as dependency.
+
+  return (
+    <div className="App">
+      {/* Change name state when input changes: */}
+      <input value={name} onChange={(event) => setName(event.target.value)} />
+
+      {/* Attach handleShowName function */}
+      <button onClick={handleShowName}>Show name</button>
+    </div>
+  )
+}
+```
+
 
 ### h3
 
