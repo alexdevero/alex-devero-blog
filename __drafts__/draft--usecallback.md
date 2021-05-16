@@ -120,6 +120,9 @@ export default function App() {
 }
 ```
 
+## Working with dependencies
+
+The array of dependency, the second parameter, tells React when memoized function should be re-created. There are basically three options.
 
 ### h3
 
