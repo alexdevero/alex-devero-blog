@@ -45,6 +45,16 @@ export default function App() {
 }
 ```
 
+## The power of dependencies
+
+The array of dependencies is important. It helps React understand when to return the memoized function and when to re-create it. Why re-create it? Wasn't the purpose of memoization preventing this from happening? Well, yes and no. Yes, you want to prevent the function from being re-created.
+
+However, if the function depends on some input, you want to re-create that function when the input changes. Otherwise, you would execute the function with old input that is no longer relevant. For example, let's say you have a function that greets the user using their name.
+
+This function will depend on the name of the current user. If you memoize it the first time you create it, it will remember the first name. When the name changes, it will not register it. It will greet every subsequent user using the first name. Solution for this is adding the name as a dependency.
+
+When you specify the name as dependency, React will automatically re-create the function when the name changes. When new user arrives, and the name changes, the function will be re-created. It will update its input, use the latest value of name, and greet the user using a correct name.
+
 
 ### h3
 
