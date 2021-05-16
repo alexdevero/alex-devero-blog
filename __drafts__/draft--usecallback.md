@@ -227,6 +227,9 @@ So, don't assume that you have to use useCallback every time you declare a funct
 
 Will memoization help you measurably improve performance? Or, will it only introduce more complexity to your code, while any performance gains will be barely noticeable? For small and light components useCallback might not make a difference.
 
+## Conclusion: A quick guide to React useCallback hook
+
+The React useCallback hook can be useful for improving performance of your apps, by storing your functions for later use, instead of re-creating them on every re-render. This can improve re-rendering behavior and performance of heavy components. I hope this tutorial helped you understand how useCallback hook works and how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
