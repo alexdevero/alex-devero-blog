@@ -186,6 +186,39 @@ export default function App() {
 }
 ```
 
+### When specific value(s) change
+
+The last option is to re-create the function when only specific value or values change. If some of the values change React will re-create the function to ensure it has the latest data. Otherwise, it will return the memoized version of the function. For this, specify the values you want to watch in the dependency array as a parameter.
+
+From now, when any of these watched values changes React will automatically re-create the function. Otherwise, it will return the memoized version. Remember that only one value you specified as a dependency has to change for React to re-create the function, not all of them.
+
+```jsx
+// Import useCallback hook from React:
+import { useCallback, useState } from 'react'
+
+export default function App() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [isValid, setIsValid] = useState(false)
+
+  // Create and memoize form handler
+  const handleFormSubmit = useCallback(
+    () => {
+      // Submit form.
+    },
+    [name, email, isValid], // <= Watch "name", "email" and "isValid".
+  )
+
+  return (
+    <form className="App">
+      {/* Your form component */}
+
+      <button onClick={handleFormSubmit}></button>
+    </form>
+  )
+}
+```
+
 
 ## Conclusion: [...] ...
 
