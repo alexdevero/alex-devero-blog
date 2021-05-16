@@ -1,13 +1,18 @@
 # A Quick Guide to React useCallback Hook
 
-The React useCallback hook can help you improve performance of your React apps. It is weird that useCallback hook is one of the hooks that are not discussed as often as they should be. In this tutorial, you will learn about what React useCallback is, how it works and how to use it.<!--more-->
+The React useCallback hook can help you improve performance of your React apps. It is weird that useCallback hook is one of the hooks that are not discussed as often. In this tutorial, you will learn about what React useCallback is, how it works and how to use it. You will also learn a bit about memoization.<!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
+## Introduction to React useCallback hook
+## The syntax of useCallback hook
+## The power of dependencies
+### A simple example
+## Working with dependencies and when to re-create memoized function
+### After every render
+### Only after initial render
+### When specific value(s) change
+## A word of caution
+## Conclusion: A quick guide to React useCallback hook
 -->
 
 ## Introduction to React useCallback hook
@@ -67,6 +72,7 @@ The user will be probably surprised. The console will show the initial value of 
 
 ```jsx
 // Note: this will not work as you may expect:
+// Import useCallback and useState hooks from React.
 import { useCallback, useState } from 'react'
 
 export default function App() {
@@ -234,7 +240,9 @@ The React useCallback hook can be useful for improving performance of your apps,
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[memoize]: https://en.wikipedia.org/wiki/Memoization
+[useEffect hook]: https://blog.alexdevero.com/react-useeffect-hook/
+[useState hook]: https://blog.alexdevero.com/react-usestate-hook-in-action/
 
 <!--
 ### Meta:
