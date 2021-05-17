@@ -69,7 +69,7 @@ The dependencies array is an optional argument. Nonetheless, it is a very powerf
 
 ### No.1: Run after every render
 
-THe first option is to run the useEffect hook after every render of your component. For this, omit the dependencies array and provide only the callback function. From now, every time React renders your component, it will also run the useEffect hook and execute the code inside it.
+The first option is to run the useEffect hook after every render of your component. For this, omit the dependencies array and provide only the callback function. From now, every time React renders your component, it will also run the useEffect hook and execute the code inside it.
 
 ```JavaScript
 // Import useEffect hook from React:
