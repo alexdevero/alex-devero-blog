@@ -1,4 +1,5 @@
-# Blog post title [...]
+# An Introduction to React useReducer Hook
+
 The React useReducer hook is a very good alternative to useState when you need to manage complex states with multiple values. In this tutorial, you will learn about this React hook. You will learn about how useReducer hook works. You will also learn how to use it to manage state.
 <!--more-->
 <!--
@@ -7,7 +8,7 @@ Table of Contents:
 
 ## A quick introduction to React useReducer hook
 
-The useReducer hook is quite similar to [useState hook]. Like the useState hook, it also allows you to manage state of your React applications. The advantage of useReducer is that it makes it easier to work with complex states. By complex state I mean state with multiple sub-values, an object with key-value pairs.
+The React useReducer hook is quite similar to [useState hook]. Like the useState hook, it also allows you to manage state of your React applications. The advantage of useReducer is that it makes it easier to work with complex states. By complex state I mean state with multiple sub-values, an object with key-value pairs.
 
 The useReducer hook makes this easier by using more structural approach. That said, this doesn't mean that you should useReducer hook only to deal with such states. You can useReducer just as well with simple states that contain single primitive value. The way useReducer hook works is simple.
 
@@ -27,7 +28,7 @@ When the function has an effect on outside world it is not pure. Changing variab
 
 ## The syntax of useReducer hook
 
-The useReducer hook accepts three parameters. First two parameters are required. These two are the `reducer` and `state`. The `reducer` is the reducer function we discussed above. The `state` is any initial state value. This is the same initial state you know from working with `useState` hook.
+The React useReducer hook accepts three parameters. First two parameters are required. These two are the `reducer` and `state`. The `reducer` is the reducer function we discussed above. The `state` is any initial state value. This is the same initial state you know from working with `useState` hook.
 
 Aside to these two, the useReducer hooks also accepts third, optional parameter. This parameter is `initializer`. This `initializer` allows you to initialize the state lazily with a function. The result returned by this function becomes the initial state value.
 
@@ -255,12 +256,16 @@ export default function App() {
 }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: An Introduction to React useReducer hook
+
+The React useReducer hook is a good alternative to useState hook. Where useReducer can be very useful is when you have to deal with complex states. In these situations, useReducer might be a better choice than useState. I hope that this tutorial helped you understand how the React useReducer hook works and how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+[useState hook]: https://blog.alexdevero.com/react-usestate-hook-in-action/
+[switch statement]: https://blog.alexdevero.com/javascript-switch-statement/
+[spread]: https://blog.alexdevero.com/javascript-spread-operator/
 
 <!--
 ### Meta:
