@@ -128,6 +128,132 @@ dispatch({
 })
 ```
 
+## Putting it all together
+
+You have the initial state and reducer function. Now, you can use them with the useReducer hook and let the hook handle state management for you. The process is simple. Call the useReducer hook and pass in the reducer function and initial state, in this order. This will return the `state` and `dispatch` function.
+
+When you want to update specific state value you use the `dispatch` function. You call this function passing an object as an argument. This is the `action`. This object will contain two keys, `type` and `payload` (or any names you chose). The `type` must match one of the `switch` cases in your reducer function.
+
+The value of payload is the value you want to update the state with. It is the new value you want to store in the state. The `state` value returned by the useReducer hook will always give you the latest values of the state. This is just like when you use useState hook. In this case, the `state` is still the same. The state updater function is the `dispatch`.
+
+```jsx
+// Import useReducer hook from React:
+import { useReducer } from 'react'
+
+// Create initial state:
+const initialState = {
+  name: '',
+  email: '',
+  role: '',
+  isActive: false,
+}
+
+// Create reducer function:
+const reducer = (state, action) => {
+  // Create switch to handle all actions:
+  switch (action.type) {
+    case 'SET_NAME':
+      // Handle 'SET_NAME' action:
+      return {
+        ...state, // Copy the old state.
+        name: action.payload // Update relevant value.
+      }
+    case 'SET_EMAIL':
+      // Handle 'SET_EMAIL' action:
+      return {
+        ...state, // Copy the old state.
+        email: action.payload // Update relevant value.
+      }
+    case 'SET_ROLE':
+      // Handle 'SET_ROLE' action:
+      return {
+        ...state, // Copy the old state.
+        role: action.payload // Update relevant value.
+      }
+    case 'SET_IS_ACTIVE':
+      // Handle 'SET_IS_ACTIVE' action:
+      return {
+        ...state, // Copy the old state.
+        isActive: action.payload // Update relevant value.
+      }
+    default:
+      // Throw an error when none of cases matches the action.
+      throw new Error('Unexpected action')
+  }
+}
+
+// Create simple component:
+export default function App() {
+  // Call useReducer hook, passing in
+  // previously created reducer function
+  // and initial state:
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  return (
+    <div className="App">
+      {/*
+        Create input for "name" and use dispatch
+        to update "name" state value on input change.
+      */}
+      <input
+        type="text"
+        name="name"
+        value={state.name}
+        onChange={(event) => dispatch({
+          type: 'SET_NAME', // Dispatch 'SET_NAME' action.
+          payload: event.target.value // Set input value as payload.
+        })}
+      />
+
+      {/*
+        Create input for "email" and use dispatch
+        to update "email" state value on input change.
+      */}
+      <input
+        type="email"
+        name="email"
+        value={state.email}
+        onChange={(event) => dispatch({
+          type: 'SET_EMAIL', // Dispatch 'SET_EMAIL' action.
+          payload: event.target.value // Set input value as payload.
+        })}
+      />
+
+      {/*
+        Create select for selecting "role" and use dispatch
+        to update "role" state value on select change.
+      */}
+      <select
+        onChange={(event) => dispatch({
+          type: 'SET_ROLE', // Dispatch 'SET_ROLE' action.
+          payload: event.target.value // Set input value as payload.
+        })}
+      >
+        <option value="" selected></option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+        <option value="guest">Guest</option>
+      </select>
+
+      {/*
+        Create checkbox for isActive and use dispatch
+        to update "isActive" state value on checkbox change.
+      */}
+      <label>
+        <input
+          type="checkbox"
+          checked={state.isActive}
+          onChange={(event, checked) => dispatch({
+            type: 'SET_IS_ACTIVE', // Dispatch 'SET_IS_ACTIVE' action.
+            payload: checked // Set checkbox checked value as payload.
+          })}
+        />
+        Is active?
+      </label>
+    </div>
+  )
+}
+```
 
 ## Conclusion: [...] ...
 
