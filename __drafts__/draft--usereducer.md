@@ -25,6 +25,21 @@ The function doesn't do anything with the code outside it. It works solely with 
 
 When the function has an effect on outside world it is not pure. Changing variables outside it is such an effect. It would also not be pure if it logged the result or some message. These logs are also side-effects and thus break the second rule.
 
+## The syntax of useReducer hook
+
+The useReducer hook accepts three parameters. First two parameters are required. These two are the `reducer` and `state`. The `reducer` is the reducer function we discussed above. The `state` is any initial state value. This is the same initial state you know from working with `useState` hook.
+
+Aside to these two, the useReducer hooks also accepts third, optional parameter. This parameter is `initializer`. This `initializer` allows you to initialize the state lazily with a function. The result returned by this function becomes the initial state value.
+
+This can be useful when you want to create initial state but it involves some expensive operation, to generate the initial data. Just remember that React will invoke the initializer function only after the initial render, not after subsequent re-renders. That said, you will probably not need it as often.
+
+The useReducer hook will return two things, or values. First is the current state. The second is a dispatch function. This function allows you to update the state you passed to the useReducer hook.
+
+```jsx
+// useReducer hook syntax:
+const [state, dispatch] = useReducer(reducer, initialState, init)
+```
+
 
 ## Conclusion: [...] ...
 
