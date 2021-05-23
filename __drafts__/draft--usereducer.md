@@ -102,6 +102,32 @@ const reducer = (state, action) => {
 }
 ```
 
+## Action, type and payload
+
+In the reducer function example you could see `action.type` and `action.payload`. This is because when you update the state with dispatch function returned by the useReducer hook you pass in an object. This object contains two keys, `type` and `payload`. The `type` tell reducer function what action you want to make.
+
+Reducer function then uses this information, the `type`, to use one of the `switch` cases, or if blocks. The `payload` is where you put the new value for the state. These two names are not mandatory. They are just a common practice among React developers. You can use any names you want. Just make sure to use correct names in your reducer.
+
+```JavaScript
+// Dispatched object example to set name:
+dispatch({
+  type: 'SET_NAME',
+  payload: 'Victor'
+})
+
+// Dispatched object example to set role:
+dispatch({
+  type: 'SET_ROLE',
+  payload: 'Admin'
+})
+
+// Dispatched object example to set isActive:
+dispatch({
+  type: 'SET_IS_ACTIVE',
+  payload: true
+})
+```
+
 
 ## Conclusion: [...] ...
 
