@@ -54,6 +54,54 @@ const initialState = {
 }
 ```
 
+## Reducer function
+
+The second thing is the reducer function. The reducer function accepts two parameters: the state and action. It takes these two and updates the state, based on the action dispatched. It is very common to create the structure of reducer function, and handle each action, with [switch statement].
+
+The main reason is that switch is usually more readable than `if...else` statement. Especially when you work with multiple actions. That said, if you prefer `if...else` statement go ahead and use that. About the structure. The reducer has to have a `case`, or if block, for each action you want to use to update the state.
+
+Each of these actions should do two things. First, it should copy the current state. Reducer is a pure function. It is not supposed to change the existing state. What it does instead is it creates copies of it and works with them. It is common to create copies of old state by spread the old, using [spread].
+
+The second thing reducer will do for each case, or block, is updating specific state value with the new value. Put together, it will basically copy the old state and overwrite only the values that should be updated. After that, it will return the new state. Aside to this there should be also a `default` case or else block.
+
+This case or block can do two things. First, it can return the original state unchanged. Second, it can throw an error about non-existing action. Similarly to initial state, you define the reducer as a function somewhere in your code. Don't pass it to the reducer as a whole.
+
+```JavaScript
+// Create reducer function:
+const reducer = (state, action) => {
+  // Create switch to handle all actions:
+  switch (action.type) {
+    case 'SET_NAME':
+      // Handle 'SET_NAME' action:
+      return {
+        ...state, // Copy the old state.
+        name: action.payload // Update relevant value.
+      }
+    case 'SET_EMAIL':
+      // Handle 'SET_EMAIL' action:
+      return {
+        ...state, // Copy the old state.
+        email: action.payload // Update relevant value.
+      }
+    case 'SET_ROLE':
+      // Handle 'SET_ROLE' action:
+      return {
+        ...state, // Copy the old state.
+        role: action.payload // Update relevant value.
+      }
+    case 'SET_IS_ACTIVE':
+      // Handle 'SET_IS_ACTIVE' action:
+      return {
+        ...state, // Copy the old state.
+        isActive: action.payload // Update relevant value.
+      }
+    default:
+      // Throw an error when none of cases matches the action.
+      throw new Error('Unexpected action')
+  }
+}
+```
+
 
 ## Conclusion: [...] ...
 
