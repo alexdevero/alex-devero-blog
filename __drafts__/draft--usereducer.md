@@ -15,6 +15,16 @@ It uses two pieces of data, state and reducer function. The reducer is a pure fu
 
 Reducer function takes these inputs, applies the action you specified, and returns a new state value. This new state value is an updated version of the state you provided it with. Something to remember. Reducer should not change the old one directly. About the syntax.
 
+### A note on pure functions
+
+About "pure" functions. A function is pure when it follows two rules. First, the function always returns the same output if you pass in the same arguments. Second, the function does not produce any side-effects. This means that the function has no effect on its surroundings.
+
+Put simply, the function doesn't work with the outside world. It works only with inputs you passed into it. A simple example of pure function can be a function that takes two numbers as parameters and returns their sum. If you pass in the same numbers, you will get the same result. This confirms the first rule.
+
+The function doesn't do anything with the code outside it. It works solely with those two numbers it gets as input. This confirms the second rule. We can say that the function is pure. Now, let's say that the function stores the result in an outside variable. In this case, the function is not pure because it breaks the second rule.
+
+When the function has an effect on outside world it is not pure. Changing variables outside it is such an effect. It would also not be pure if it logged the result or some message. These logs are also side-effects and thus break the second rule.
+
 
 ## Conclusion: [...] ...
 
