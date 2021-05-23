@@ -1,9 +1,16 @@
 # An Introduction to React useReducer Hook
 
-The React useReducer hook is a very good alternative to useState when you need to manage complex states with multiple values. In this tutorial, you will learn about this React hook. You will learn about how useReducer hook works. You will also learn how to use it to manage state.
-<!--more-->
+The React useReducer hook is a very good alternative to useState when you need to manage complex states with multiple values. In this tutorial, you will learn about this React hook. You will learn about how useReducer hook works. You will also learn how to use it to manage state.<!--more-->
 <!--
 Table of Contents:
+## A quick introduction to React useReducer hook
+### A note on pure functions
+## The syntax of useReducer hook
+## Initial state
+## Reducer function
+## Action, type and payload
+## Putting it all together
+## Conclusion: An Introduction to React useReducer hook
 -->
 
 ## A quick introduction to React useReducer hook
@@ -28,11 +35,11 @@ When the function has an effect on outside world it is not pure. Changing variab
 
 ## The syntax of useReducer hook
 
-The React useReducer hook accepts three parameters. First two parameters are required. These two are the `reducer` and `state`. The `reducer` is the reducer function we discussed above. The `state` is any initial state value. This is the same initial state you know from working with `useState` hook.
+The React useReducer hook accepts three parameters. The first two parameters are required. These two are the `reducer` and `state`. The `reducer` is the reducer function we discussed above. The `state` is any initial state value. This is the same initial state you know from working with `useState` hook.
 
 Aside to these two, the useReducer hooks also accepts third, optional parameter. This parameter is `initializer`. This `initializer` allows you to initialize the state lazily with a function. The result returned by this function becomes the initial state value.
 
-This can be useful when you want to create initial state but it involves some expensive operation, to generate the initial data. Just remember that React will invoke the initializer function only after the initial render, not after subsequent re-renders. That said, you will probably not need it as often.
+This can be useful when you want to create initial state, but it involves some expensive operation, to generate the initial data. Just remember that React will invoke the initializer function only after the initial render, not after subsequent re-renders. That said, you will probably not need it as often.
 
 The useReducer hook will return two things, or values. First is the current state. The second is a dispatch function. This function allows you to update the state you passed to the useReducer hook.
 
@@ -43,7 +50,7 @@ const [state, dispatch] = useReducer(reducer, initialState, init)
 
 ## Initial state
 
-Before you can start using the useReducer hook you need two things, initial state and reducer function. Let's start with the initial state. Initial state can be anything from primitive data type to object. Whatever fits you current situation. What you have to do is to create this state somewhere, and assign it to a variable.
+Before you can start using the useReducer hook you need two things, initial state and reducer function. Let's start with the initial state. Initial state can be anything from primitive data type to object. Whatever fits your current situation. What you have to do is to create this state somewhere, and assign it to a variable.
 
 ```JavaScript
 // A simple initial state object:
@@ -61,7 +68,7 @@ The second thing is the reducer function. The reducer function accepts two param
 
 The main reason is that switch is usually more readable than `if...else` statement. Especially when you work with multiple actions. That said, if you prefer `if...else` statement go ahead and use that. About the structure. The reducer has to have a `case`, or if block, for each action you want to use to update the state.
 
-Each of these actions should do two things. First, it should copy the current state. Reducer is a pure function. It is not supposed to change the existing state. What it does instead is it creates copies of it and works with them. It is common to create copies of old state by spread the old, using [spread].
+Each of these actions should do two things. First, it should copy the current state. Reducer is a pure function. It is not supposed to change the existing state. What it does instead is it creates copies of it and works with them. It is common to create copies of old state by spreading the old, using [spread].
 
 The second thing reducer will do for each case, or block, is updating specific state value with the new value. Put together, it will basically copy the old state and overwrite only the values that should be updated. After that, it will return the new state. Aside to this there should be also a `default` case or else block.
 
