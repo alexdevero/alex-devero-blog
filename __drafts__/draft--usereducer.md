@@ -40,6 +40,20 @@ The useReducer hook will return two things, or values. First is the current stat
 const [state, dispatch] = useReducer(reducer, initialState, init)
 ```
 
+## Initial state
+
+Before you can start using the useReducer hook you need two things, initial state and reducer function. Let's start with the initial state. Initial state can be anything from primitive data type to object. Whatever fits you current situation. What you have to do is to create this state somewhere, and assign it to a variable.
+
+```JavaScript
+// A simple initial state object:
+const initialState = {
+  name: '',
+  email: '',
+  role: '',
+  isActive: false,
+}
+```
+
 
 ## Conclusion: [...] ...
 
