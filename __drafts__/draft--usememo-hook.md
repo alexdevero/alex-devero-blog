@@ -164,6 +164,16 @@ In the last example, we removed the dependency array argument from the useMemo h
 
 This change will tell useEffect to execute the `console.log`. As a result, a new value of `memoizedVal` will show up in the console. To reiterate, don't do this. It doesn't make sense to use useMemo and then never let it memoize anything.
 
+## Use useMemo hook with caution
+
+Performance is important and it is easy to go over the edge when trying to optimizer everything. It is just as easy to over-use the React useMemo hook. Think before you decide to use useMemo hook. Remember that the hook itself introduces some overhead. The hook brings in new complex logic you have to take into account.
+
+It can also create new performance issues, issue you didn't have before. When you memoize something, you store it in the memory. This gives more space for the CPU. However, there are still resources that are consumed. The only thing that changed is the type of resource it consumes.
+
+So, use useMemo only for really expensive computations. Make sure you use that memory for things that can make a difference. Use profiling tools to identify those expensive computations, computations that use a lot of resources. Try to optimize these with useMemo and see if the profile changes for the better.
+
+One additional warning. Don't rely on useMemo too much. As is mentioned in the [React docs], useMemo doesn't guarantee you to execute the function only when dependencies change. React may also choose to remove memoized values and recalculate them so it can free up memory. So, make sure your code works without useMemo as well.
+
 
 [xyz-ihs snippet="thank-you-message"]
 
