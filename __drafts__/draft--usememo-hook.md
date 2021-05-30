@@ -1,6 +1,17 @@
 # The React useMemo Hook Made Simple
 
 Performance is important, especially in large-scale application. The React useMemo hook is one tool you can use to improve the performance of your React apps. This tutorial will help you understand what useMemo hook is and how it works. It will also show you how to use it.<!--more-->
+<!--
+Table of Contents:
+## Introduction to React useMemo hook
+## The syntax
+## When to run
+### No.1: Only after initial render
+### No.2: Only when dependency changes
+### No.3: After every re-render
+## Use useMemo hook with caution
+## Conclusion: The React useMemo hook made simple
+-->
 
 ## Introduction to React useMemo hook
 
