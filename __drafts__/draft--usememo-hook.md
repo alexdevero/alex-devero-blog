@@ -49,7 +49,7 @@ When the useMemo hook runs, and executes the function you passed, is determined 
 
 The first option is to run the hook only after the initial render and never again. Then, when something causes the component to re-render, useMemo will not execute the function again. Instead, it will return the memoized output of the function. It will do this for every subsequent re-render.
 
-If this is what you want, you have to specify the dependency array as empty. This means that there are no values the useMemo hook should watch. It should always returned the memoized output.
+If this is what you want, you have to specify the dependency array as empty. This means that there are no values the useMemo hook should watch. It should always return the memoized output.
 
 ```jsx
 // Import useMemo hook from React:
@@ -171,7 +171,7 @@ export default function App() {
 }
 ```
 
-In the last example, we removed the dependency array argument from the useMemo hook. The useMemo hook now watches basically everything that happens. When something happen, that will cause re-render, useMemo will also execute the fibonacci function. This will, in turn, change the `memoizedVal`.
+In the last example, we removed the dependency array argument from the useMemo hook. The useMemo hook now watches basically everything that happens. When something happens, that will cause re-render, useMemo will also execute the fibonacci function. This will, in turn, change the `memoizedVal`.
 
 This change will tell useEffect to execute the `console.log`. As a result, a new value of `memoizedVal` will show up in the console. To reiterate, don't do this. It doesn't make sense to use useMemo and then never let it memoize anything.
 
@@ -185,11 +185,11 @@ So, use useMemo only for really expensive computations. Make sure you use that m
 
 Additional warning. Don't rely on useMemo too much. As is mentioned in the [React docs], useMemo doesn't guarantee you to execute the function only when dependencies change. React may also choose to remove memoized values and recalculate them so it can free up memory. So, make sure your code works without useMemo as well.
 
-One more thing. Don't use functions you passed to useMemo hook to create side effects. Side effects should be made inside the useEffect hook. Also, don't use useMemo to update state values. This is also a side effect, but it is important to mention it. Use useMemo only for what it is intended, to memoize output values.
+One more thing. Don't use functions you passed to useMemo hook to create side-effects. Side-effects should be made inside the useEffect hook. Also, don't use useMemo to update state values. This is also a side-effect, but it is important to mention it. Use useMemo only for what it is intended, to memoize output values.
 
 ## Conclusion: The React useMemo hook made simple
 
-The React useMemo hook can be useful when you look for ways to improve performance of your React applications. It can help you optimize expensive computations. by memoizing output of these computations and re-run them only when necessary. I hope that this tutorial helped you understand what the useMemo hook is, how it works and also how to use it.
+The React useMemo hook can be useful when you look for ways to improve performance of your React applications. It can help you optimize expensive computations by memoizing output of these computations and re-run them only when necessary. I hope that this tutorial helped you understand what the useMemo hook is, how it works and also how to use it.
 
 [xyz-ihs snippet="thank-you-message"]
 
