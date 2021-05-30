@@ -12,6 +12,24 @@ When these conditions are not met, the useMemo will not execute the function. In
 
 When you think about it, the useMemo hook is a bit like the [useCallback hook]. Both use memoization. The difference is that while useCallback hook memoizes whole function, the useMemo memoizes only the output of a function.
 
+## The syntax
+
+The React useMemo hook accepts two parameters. These parameters are: some function whose output you want to memoize and array of dependencies. The useMemo hook will execute the function you passed as an argument after the initial render by default.
+
+```jsx
+// Import useMemo hook from React:
+import { useMemo } from 'react'
+
+export default function App() {
+  // useMemo syntax example:
+  const memoizedVal = useMemo(() => {/* Some function */}, [/* Dependencies */])
+
+  return (
+    <div className="App"></div>
+  )
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
