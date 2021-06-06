@@ -1,29 +1,42 @@
-# Blog post title [...]
+# How Truthy and Falsy Values in JavaScript Work
 
-<!--more-->
+Truthy and falsy values are two important concepts for JavaScript developers to understand. In this tutorial, you will learn about what truthy and falsy values in JavaScript are and how they work. You will also learn how to convert values to Boolean with `Boolean()` constructor and NOT NOT operator, and why to avoid `new Boolean`.<!--more-->
+
 <!--
 Table of Contents:
+## Booleans, true, false and beyond
+## Truthy and falsy values
+### Falsy values
+### Truthy values
+## A note about Boolean context
+## Converting values to Boolean
+### The Boolean constructor
+### The NOT NOT, or double bang, operator
+### Which one to use
+### Avoid new Boolean
+## Filtering arrays of strings with Boolean
+## Conclusion: How truthy and falsy values in JavaScript work
 -->
 
 ## Booleans, true, false and beyond
 
-As you probably already know boolean, `true` and `false`, is one of the primitive data types that exist in JavaScript. Then, there are other primitive values such as strings, numbers, BigInt, null, undefined and symbols. Aside to these, there are objects. Objects also include arrays. However, there is more than that.
+As you probably already know Boolean, `true` and `false`, is one of the primitive data types that exist in JavaScript. Then, there are other primitive values such as strings, numbers, BigInt, null, undefined and symbols. Aside to these, there are objects. Objects also include arrays. However, there is more than that.
 
-All these primitive data types also have boolean representation. What this means is that JavaScript can take each of these data types, their values, and evaluate them as boolean. JavaScript can "convert" their vales to boolean, either `true` or `false`. Which boolean will it be depends on the data type you are working with.
+All these primitive data types also have Boolean representation. What this means is that JavaScript can take each of these data types, their values, and evaluate them as Boolean. JavaScript can "convert" their vales to Boolean, either `true` or `false`. Which Boolean will it be depends on the data type you are working with.
 
 Boolean has only two possible values, `true` and `false`. This also creates a limit for how JavaScript can "convert" values. When JavaScript "converts" values to be either or false it uses specific set of rules. These rules are implemented at the core of the language and are very unlikely to change. Let's take a look at them.
 
 ## Truthy and falsy values
 
-There are currently seven primitive data types in JavaScript. These are numbers, strings, boolean, BigInt, null, undefined and symbols. Values of some data types are always truthy and of others always falsy, regardless of the actual value. This is not necessarily true for other values.
+There are currently seven primitive data types in JavaScript. These are numbers, strings, Boolean, BigInt, null, undefined and symbols. Values of some data types are always truthy and of others always falsy, regardless of the actual value. This is not necessarily true for other values.
 
 There are also data types whose values can be truthy in one scenario and falsy in another. What makes the difference, and determines the truthy / falsy status, is the actual value.
 
 ### Falsy values
 
-Falsy values are values that evaluate to `false` when JavaScript "converts" them to their boolean alternatives. First, let's take a look at values that are falsy in all situations. In other words, it doesn't matter what their actual value is. These values are `null`, `undefined` and `NaN`. These three will be always falsy.
+Falsy values are values that evaluate to `false` when JavaScript "converts" them to their Boolean alternatives. First, let's take a look at values that are falsy in all situations. In other words, it doesn't matter what their actual value is. These values are `null`, `undefined` and `NaN`. These three will be always falsy.
 
-Aside to these two, other falsy values are boolean `false`, number `0`, BigInt `0n`, empty single-quote string (`''`), empty string with backticks (` `` `) and empty double-quote string (`""`). These values will be falsy as long as they don't change.
+Aside to these two, other falsy values are Boolean `false`, number `0`, BigInt `0n`, empty single-quote string (`''`), empty string with backticks (` `` `) and empty double-quote string (`""`). These values will be falsy as long as they don't change.
 
 ```JavaScript
 // Falsy values
@@ -40,9 +53,9 @@ NaN
 
 ### Truthy values
 
-On the other side are truthy values. These values will be evaluated as `true` when JavaScript "converts" them to boolean. First, there are five values that will be always truthy, no matter the situation. These are arrays (empty, non-empty), objects (empty, non-empty), `new Date()` and `Infinity`, both positive and negative.
+On the other side are truthy values. These values will be evaluated as `true` when JavaScript "converts" them to Boolean. First, there are five values that will be always truthy, no matter the situation. These are arrays (empty, non-empty), objects (empty, non-empty), `new Date()` and `Infinity`, both positive and negative.
 
-Values that will be truthy are also boolean `true`, positive and negative numbers (integers and floats) and non-zero BigInt. Truthy will also be non-empty strings created with single quotes, double quotes and backticks. Truthy value will also be `0` as a string (`"0"`). This is because it is no longer 0 but non-empty string.
+Values that will be truthy are also Boolean `true`, positive and negative numbers (integers and floats) and non-zero BigInt. Truthy will also be non-empty strings created with single quotes, double quotes and backticks. Truthy value will also be `0` as a string (`"0"`). This is because it is no longer 0 but non-empty string.
 
 ```JavaScript
 // Truthy values
@@ -63,11 +76,11 @@ Infinity // Number infinity positive
 "non-empty double-quote string"
 ```
 
-## A note on Boolean context
+## A note about Boolean context
 
 As you now know, JavaScript can convert values to Boolean. This happens automatically, but only in a specific situation. This situation is called a Boolean context. Boolean context basically means that JavaScript needs to know the "Boolean" value of a value in order to get the work done.
 
-A simple example of this situation is when you use [if...else] statement. When you use some value in `if...else` statement, and only that value, JavaScript has to convert that value to boolean. It has no other option because the condition of `if...else` has to be a boolean. Well, unless that value is already a boolean.
+A simple example of this situation is when you use [if...else] statement. When you use some value in `if...else` statement, and only that value, JavaScript has to convert that value to Boolean. It has no other option because the condition of `if...else` has to be a Boolean. Well, unless that value is already a Boolean.
 
 ```JavaScript
 // If...else statement
@@ -238,7 +251,7 @@ Both NOT NOT and `Boolean()` constructor will get the job done and give you the 
 
 ### Avoid new Boolean
 
-One last thing you should now. There is the `Boolean` constructor and there is also the `new Boolean` object. The `new Boolean` is an object type for the Boolean. It is an instance of Boolean object. You should avoid use it, as well as other object types such as `new Number`, `new String` and so on.
+One thing you should now. There is the `Boolean` constructor and there is also the `new Boolean` object. The `new Boolean` is an object type for the Boolean. It is an instance of Boolean object. You should avoid use it, as well as other object types such as `new Number`, `new String` and so on.
 
 The reason is that while primitives (primitive data types) are cheap objects are expensive. Primitives are immutable and can share references. They also don't have to hold any state for each instance. This is not true for objects. Objects have their own unique memory address and can hold their own unique internal state.
 
@@ -252,7 +265,7 @@ Another thing you can do is use the `Boolean` constructor. You can use the `filt
 
 When you pass in the `Boolean()` constructor the filter method will take each item in the array and convert it into Boolean. As you now know, non-empty strings are truthy. So, every with non-0 length string will return `true`. Empty strings are falsy. So, every empty string will return `false`.
 
-The `filter()` method discards all items for which the callback function returned `false`. This means that it will discard all empty strings because they are falsy.
+The `filter()` method discards all items for which the callback function returned `false`. This means, in this case, that it will discard all empty strings in the array. These strings will be evaluated as falsy and will not pass the test of the callback function.
 
 ```JavaScript
 // Create an array with empty and non-empty strings:
@@ -267,13 +280,17 @@ console.log(arrClean)
 // [ 'Java', 'coffee', 'team', 'tea' ]
 ```
 
-## Conclusion: [...] ...
+## Conclusion: How truthy and falsy values in JavaScript work
+
+Truthy and falsy values can be a bit confusing. The same can be said about converting values to boolean. Yet, these concepts are important and every JavaScript developer should understand them. I hope that this tutorial helped you learn what truthy and falsy values in JavaScript are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 
-[]:
+[if...else]: https://blog.alexdevero.com/javascript-if-else-statement/
+[boolean()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[filter()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 <!--
 ### Meta:
