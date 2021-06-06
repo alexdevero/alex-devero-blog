@@ -142,6 +142,48 @@ if ([]) {
 
 JavaScript converts values to Boolean automatically in a Boolean context. That said, you can also convert values to Boolean by yourself, when you want. There are at least two ways to do this.
 
+### The Boolean constructor
+
+The first way to do this is by using the [Boolean()] constructor. This is an object constructor that creates new Boolean object. This object is a wrapper for a Boolean value. This is not important. What is important is that the `Boolean()` constructor accepts a value as a parameter. It takes that value and returns it as a Boolean.
+
+```JavaScript
+Boolean(55)
+// Output:
+// true
+
+Boolean(8n)
+// Output:
+// true
+
+Boolean(-Infinity)
+// Output:
+// true
+
+Boolean('')
+// Output:
+// false
+
+Boolean('Hello!')
+// Output:
+// true
+
+Boolean(['James', 'Joyce'])
+// Output:
+// true
+
+Boolean({ name: 'James' })
+// Output:
+// true
+
+Boolean(undefined)
+// Output:
+// false
+
+Boolean(null)
+// Output:
+// false
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
