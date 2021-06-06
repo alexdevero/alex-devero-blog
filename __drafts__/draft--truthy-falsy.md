@@ -138,6 +138,10 @@ if ([]) {
 // 'truthy'
 ```
 
+## Converting values to Boolean
+
+JavaScript converts values to Boolean automatically in a Boolean context. That said, you can also convert values to Boolean by yourself, when you want. There are at least two ways to do this.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
