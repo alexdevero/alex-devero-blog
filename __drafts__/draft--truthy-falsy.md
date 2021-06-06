@@ -232,6 +232,10 @@ console.log(!![])
 // true
 ```
 
+### Which one to use
+
+Both NOT NOT and `Boolean()` constructor will get the job done and give you the same result. Any performance differences will be probably negligible. So, this basically means that there is no right or wrong choice. You should use what you prefer and what is more readable for you. If you like `Boolean()` use it. If `!!` use that.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
