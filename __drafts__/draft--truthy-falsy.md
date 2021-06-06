@@ -19,6 +19,25 @@ There are currently seven primitive data types in JavaScript. These are numbers,
 
 There are also data types whose values can be truthy in one scenario and falsy in another. What makes the difference, and determines the truthy / falsy status, is the actual value.
 
+### Falsy values
+
+Falsy values are values that evaluate to `false` when JavaScript "converts" them to their boolean alternatives. First, let's take a look at values that are falsy in all situations. In other words, it doesn't matter what their actual value is. These values are `null`, `undefined` and `NaN`. These three will be always falsy.
+
+Aside to these two, other falsy values are boolean `false`, number `0`, BigInt `0n`, empty single-quote string (`''`), empty string with backticks (` `` `) and empty double-quote string (`""`). These values will be falsy as long as they don't change.
+
+```JavaScript
+// Falsy values
+false
+null
+undefined
+NaN
+0
+0n // BigInt 0
+"" // empty single-quote string
+'' // empty string with backticks
+`` // empty double-quote string
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
