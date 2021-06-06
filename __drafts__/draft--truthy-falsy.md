@@ -244,6 +244,29 @@ The reason is that while primitives (primitive data types) are cheap objects are
 
 All this means that JavaScript needs more resources to create and work with objects than with primitives. When you use object type, such as `new Boolean` you not creating a simple primitive, `true` or `false`. You are creating whole new `Boolean()` object. Save some memory and use the `Boolean` constructor, or NOT NOT (`!!`).
 
+## Filtering arrays of strings with Boolean
+
+The `Boolean` constructor can also help you remove empty strings from an array. Let's say you have an array with strings and you want to remove all empty strings. One thing you can do is to use the [filter()] method and check for length of each string. If the length is 0 you can discard that string.
+
+Another thing you can do is use the `Boolean` constructor. You can use the `filter()` method and pass in the Boolean constructor as the callback function. The result will be an array with only non-empty strings. The reason this works is simple. The callback function for `filter()` method always returns Boolean.
+
+When you pass in the `Boolean()` constructor the filter method will take each item in the array and convert it into Boolean. As you now know, non-empty strings are truthy. So, every with non-0 length string will return `true`. Empty strings are falsy. So, every empty string will return `false`.
+
+The `filter()` method discards all items for which the callback function returned `false`. This means that it will discard all empty strings because they are falsy.
+
+```JavaScript
+// Create an array with empty and non-empty strings:
+const arr = [ 'Java', 'coffee', '', 'team', '', '', 'tea' ]
+
+// Use Boolean constructor to create clean copy:
+let arrClean = arr.filter(Boolean)
+
+// Log the clean array:
+console.log(arrClean)
+// Output:
+// [ 'Java', 'coffee', 'team', 'tea' ]
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
