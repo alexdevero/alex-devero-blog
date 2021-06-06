@@ -236,6 +236,14 @@ console.log(!![])
 
 Both NOT NOT and `Boolean()` constructor will get the job done and give you the same result. Any performance differences will be probably negligible. So, this basically means that there is no right or wrong choice. You should use what you prefer and what is more readable for you. If you like `Boolean()` use it. If `!!` use that.
 
+### Avoid new Boolean
+
+One last thing you should now. There is the `Boolean` constructor and there is also the `new Boolean` object. The `new Boolean` is an object type for the Boolean. It is an instance of Boolean object. You should avoid use it, as well as other object types such as `new Number`, `new String` and so on.
+
+The reason is that while primitives (primitive data types) are cheap objects are expensive. Primitives are immutable and can share references. They also don't have to hold any state for each instance. This is not true for objects. Objects have their own unique memory address and can hold their own unique internal state.
+
+All this means that JavaScript needs more resources to create and work with objects than with primitives. When you use object type, such as `new Boolean` you not creating a simple primitive, `true` or `false`. You are creating whole new `Boolean()` object. Save some memory and use the `Boolean` constructor, or NOT NOT (`!!`).
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
