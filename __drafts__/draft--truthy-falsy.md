@@ -38,6 +38,31 @@ NaN
 `` // empty double-quote string
 ```
 
+### Truthy values
+
+On the other side are truthy values. These values will be evaluated as `true` when JavaScript "converts" them to boolean. First, there are five values that will be always truthy, no matter the situation. These are arrays (empty, non-empty), objects (empty, non-empty), `new Date()` and `Infinity`, both positive and negative.
+
+Values that will be truthy are also boolean `true`, positive and negative numbers (integers and floats) and non-zero BigInt. Truthy will also be non-empty strings created with single quotes, double quotes and backticks. Truthy value will also be `0` as a string (`"0"`). This is because it is no longer 0 but non-empty string.
+
+```JavaScript
+// Truthy values
+true
+[] // Array, empty and non-empty
+{} // Object, empty and non-empty
+new Date()
+42
+-42
+3.14
+-3.14
+12n // Non-zero BigInt
+Infinity // Number infinity positive
+-Infinity // Number infinity negative
+"0" // 0 as a string
+'non-empty single-quote string'
+`non-empty string with backticks`
+"non-empty double-quote string"
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
