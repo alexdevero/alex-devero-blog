@@ -184,6 +184,54 @@ Boolean(null)
 // false
 ```
 
+### The NOT NOT, or double bang, operator
+
+Your second option to convert values to Boolean is by using the "NOT NOT" operator. This operator is also called a "double bang" operator. You may already know the logical NOT operator (`!`), also called "bang". This operator, if you place it in front of a Boolean value, will reverse it to the opposite.
+
+For example, `!true` will give you `false` and `!false` will give you `true`. Nice and simple. When you use this operator twice, it will not reverse the value. What it will do is it will convert that value to Boolean. If you use it with Boolean, it will do nothing. A very simple and fast way to convert any value to Boolean.
+
+```JavaScript
+console.log(!!true)
+// Output:
+// true
+
+console.log(!!0)
+// Output:
+// false
+
+console.log(!!15)
+// Output:
+// true
+
+console.log(!!'')
+// Output:
+// false
+
+console.log(!!'Code')
+// Output:
+// true
+
+console.log(!!3.14)
+// Output:
+// true
+
+console.log(!!undefined)
+// Output:
+// false
+
+console.log(!!null)
+// Output:
+// false
+
+console.log(!!{})
+// Output:
+// true
+
+console.log(!![])
+// Output:
+// true
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
