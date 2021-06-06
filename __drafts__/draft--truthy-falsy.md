@@ -63,6 +63,81 @@ Infinity // Number infinity positive
 "non-empty double-quote string"
 ```
 
+## A note on Boolean context
+
+As you now know, JavaScript can convert values to Boolean. This happens automatically, but only in a specific situation. This situation is called a Boolean context. Boolean context basically means that JavaScript needs to know the "Boolean" value of a value in order to get the work done.
+
+A simple example of this situation is when you use [if...else] statement. When you use some value in `if...else` statement, and only that value, JavaScript has to convert that value to boolean. It has no other option because the condition of `if...else` has to be a boolean. Well, unless that value is already a boolean.
+
+```JavaScript
+// If...else statement
+if (/* Boolean context */) { /* Some code to execute */ }
+
+if (0) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'falsy'
+
+if (0n) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'falsy'
+
+if (null) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'falsy'
+
+if (undefined) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'falsy'
+
+if (-59) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'truthy'
+
+if ('hello') {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'truthy'
+
+if ({}) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'truthy'
+
+if ([]) {
+  console.log('truthy')
+} else {
+  console.log('falsy')
+}
+// Output:
+// 'truthy'
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
