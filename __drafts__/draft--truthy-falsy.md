@@ -1,6 +1,6 @@
 # How Truthy and Falsy Values in JavaScript Work
 
-Truthy and falsy values are two important concepts for JavaScript developers to understand. In this tutorial, you will learn about what truthy and falsy values in JavaScript are and how they work. You will also learn how to convert values to Boolean with `Boolean()` constructor and NOT NOT operator, and why to avoid `new Boolean`.<!--more-->
+Truthy and falsy values are two important concepts for JavaScript developers to understand. In this tutorial, you will learn about what truthy and falsy values in JavaScript are and how they work. You will also learn how to convert values to Boolean with `Boolean()` constructor and NOT NOT operator, and why avoid `new Boolean`.<!--more-->
 
 <!--
 Table of Contents:
@@ -255,7 +255,7 @@ One thing you should now. There is the `Boolean` constructor and there is also t
 
 The reason is that while primitives (primitive data types) are cheap objects are expensive. Primitives are immutable and can share references. They also don't have to hold any state for each instance. This is not true for objects. Objects have their own unique memory address and can hold their own unique internal state.
 
-All this means that JavaScript needs more resources to create and work with objects than with primitives. When you use object type, such as `new Boolean` you not creating a simple primitive, `true` or `false`. You are creating whole new `Boolean()` object. Save some memory and use the `Boolean` constructor, or NOT NOT (`!!`).
+All this means that JavaScript needs more resources to create and work with objects than with primitives. When you use object type, such as `new Boolean` you are not creating a simple primitive, `true` or `false`. You are creating whole new `Boolean()` object. Save some memory and use the `Boolean` constructor, or NOT NOT (`!!`).
 
 ## Filtering arrays of strings with Boolean
 
