@@ -247,12 +247,22 @@ export default function App() {
 }
 ```
 
+## Conclusion: How to create your own React custom hooks
+
+Official React hooks are very useful tools for every React developer. However, these official hooks can 't do everything you may want or need. Writing your own React custom hooks can help you solve this problem. I hope that this tutorial helped you learn what React custom hooks are, how they work and how to create your own.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 
-[]:
+[hooks]: https://reactjs.org/docs/hooks-intro.html
+[react v16.8]: https://reactjs.org/blog/2019/02/06/react-v16.8.0.html
+[javascript classes]: https://blog.alexdevero.com/get-started-with-javascript-classes/
+[javascript functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[usestate]: https://blog.alexdevero.com/react-usestate-hook-in-action/
+[useeffect]: https://blog.alexdevero.com/react-useeffect-hook/
+[rules of hooks]: https://reactjs.org/docs/hooks-rules.html
+[destructuring assignment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 <!--
 ### Meta:
