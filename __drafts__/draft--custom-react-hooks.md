@@ -121,7 +121,7 @@ export default function App() {
 
 ### Example no.2: useToggle hook
 
-Another simple but useful hook can be hook for managing toggle state. Such a hook could be useful for creating collapsible components for example. It could help you check for current toggle state and switching between "on" and "off" state. It could also allow to reset the state or set it manually.
+Another simple, but useful hook can be hook for managing toggle state. Such a hook could be useful for creating collapsible components for example. It could help you check for current toggle state and switching between "on" and "off" state. It could also allow to reset the state or set it manually.
 
 This hook will be simple. It will use useState hook to store toggle state. Aside to this, it will have two functions, `handleReset` and `handleToggle`. The `handleReset` will reset the toggle state to the initial value. The `handleToggle` will reverse current toggle state. It switch from "on" to "off" and the other way around.
 
@@ -232,7 +232,7 @@ export function useLocalStorage(keyName, initialValue) {
 }
 ```
 
-The way to use this hook will be similar to using useState. When you call it, you pass in the name of the key and data for that key. The hook will return array with the data and handler function for storing new data. The data returned will be either the initial value or any data that are already stored in local storage for that key.
+The way to use this hook will be similar to using useState. When you call it, you pass in the name of the key and data for that key. The hook will return array with the data and handler function for storing new data. The data returned will be either the initial value or any data that is already stored in local storage for that key.
 
 ```jsx
 // Import the useLocalStorage hook:
@@ -257,7 +257,7 @@ export default function App() {
 
 ## Conclusion: How to create your own React custom hooks
 
-Official React hooks are very useful tools for every React developer. However, these official hooks can 't do everything you may want or need. Writing your own React custom hooks can help you solve this problem. I hope that this tutorial helped you learn what React custom hooks are, how they work and how to create your own.
+Official React hooks are very useful tools for every React developer. However, these official hooks can't do everything you may want or need. Writing your own React custom hooks can help you solve this problem. I hope that this tutorial helped you learn what React custom hooks are, how they work and how to create your own.
 
 [xyz-ihs snippet="thank-you-message"]
 
