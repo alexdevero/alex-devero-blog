@@ -5,6 +5,14 @@ React offers a number of built-in hooks you can use right away. Aside to these, 
 <!--more-->
 <!--
 Table of Contents:
+## A quick overview of React hooks
+## An introduction to React custom hooks
+## Rules of hooks
+## Building your own React custom hooks
+### Example no.1: useWindowSize hook
+### Example no.2: useToggle hook
+### Example no.3: useLocalStorage hook
+## Conclusion: How to create your own React custom hooks
 -->
 
 ## A quick overview of React hooks
