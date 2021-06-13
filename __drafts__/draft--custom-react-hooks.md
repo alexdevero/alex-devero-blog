@@ -51,7 +51,7 @@ We can do this by returning a clean up function. This function will call the `re
 // Import useEffect and useState hooks from React:
 import { useEffect, useState } from 'react'
 
-// Create custom hook function:
+// Create custom useWindowSize hook function:
 export function useWindowSize() {
   // Create function to get current window size:
   const getWindowSize = () => ({
@@ -63,6 +63,7 @@ export function useWindowSize() {
 
   // Create state for window size data:
   const [windowSize, setWindowSize] = useState(getWindowSize())
+  // It also uses the getWindowSize() to set the initial state.
 
   // Create handler function for resize event:
   function handleResize() {
@@ -86,7 +87,87 @@ export function useWindowSize() {
 }
 ```
 
-## Conclusion: [...] ...
+When you want to use this hook, import it in your React component and call it. Remember to assign that call to variable so that you can get the window size every time it changes.
+
+```jsx
+// Import the useWindowSize hook:
+import { useWindowSize } from './hook'
+
+export default function App() {
+  // Call the useWindowSize hook and assign it to variable:
+  const windowSize = useWindowSize()
+
+  // Display the current window size:
+  return (
+    <div>
+      <ul>
+        <li>window inner width: {windowSize.innerWidth}</li>
+        <li>window inner height: {windowSize.innerHeight}</li>
+        <li>window outer width: {windowSize.outerWidth}</li>
+        <li>window outer height: {windowSize.outerHeight}</li>
+      </ul>
+    </div>
+  )
+}
+```
+
+### Example no.2: useToggle hook
+
+Another simple but useful hook can be hook for managing toggle state. Such a hook could be useful for creating collapsible components for example. It could help you check for current toggle state and switching between "on" and "off" state. It could also allow to reset the state or set it manually.
+
+This hook will be simple. It will use useState hook to store toggle state. Aside to this, it will have two functions, `handleReset` and `handleToggle`. The `handleReset` will reset the toggle state to the initial value. The `handleToggle` will reverse current toggle state. It switch from "on" to "off" and the other way around.
+
+The value we will return from this hook will be an object. This object will contain all these methods and current value of the toggle state. We will also return the setter method for state to allow setting custom state. When you import this hook, you will be able to import anything inside the object it returns.
+
+```JavaScript
+// Import useEffect and useState hooks from React:
+import { useState } from 'react'
+
+// Create custom useToggle hook function:
+export function useToggle(initialState = false) {
+  // Create toggle state:
+  const [toggle, setToggle] = useState(initialState)
+
+  // Create handler function for resetting the state:
+  const handleReset = () => setToggle(initialState)
+
+  // Create handler function for toggling the state:
+  const handleToggle = () => setToggle(prevState => !prevState)
+
+  // Return the state, state setter function and handler functions:
+  return {
+    on: toggle,
+    set: setToggle,
+    reset: handleReset,
+    toggle: handleToggle
+  }
+}
+```
+
+Just like with the previous hook, you can now import this useToggle in your React component. When you call it, you can use [destructuring assignment] to assign anything from the object this hook returns to a variable so you can use it.
+
+```jsx
+// Import the useToggle hook:
+import { useToggle } from './hook'
+
+export default function App() {
+  // Call the useToggle hook and assign it to variable
+  // with destructuring assignment:
+  const { on, set, reset, toggle } = useToggle()
+
+  // Use any method or state returned from the hook:
+  return (
+    <div>
+      <p>On: {on ? 'true' : 'false'}</p>
+
+      <button onClick={() => set(true)}>Set to on</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={toggle}>Toggle</button>
+    </div>
+  )
+}
+```
+
 
 [xyz-ihs snippet="thank-you-message"]
 
