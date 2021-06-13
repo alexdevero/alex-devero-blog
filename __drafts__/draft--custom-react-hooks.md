@@ -29,7 +29,13 @@ Creating custom hooks will be similar to writing regular JavaScript functions. Y
 
 Before you create your first custom hook, there are two rules you should know. These rules are called [Rules of hooks]. First, you can call hooks only at the top level. Never call hooks inside nested functions, conditions or loops. If you want to use conditions, or loops, use them inside the hook, not the other way around.
 
-The second rule is that you should call hooks only from React function components or other hooks. There is also one practice for creating custom hooks. Always start the name of the hook with "use" prefix. This is a best practice, not a rule. It is good to follow and it can make your code more readable, but it is not required.
+The second rule is that you should call hooks only from React function components or other hooks. There is also one practice for creating custom hooks. Always start the name of the hook with "use" prefix. This is more like a good rule of thumb than a rule. It is good to follow to make code more readable, but it is not required.
+
+## Building your own React custom hooks
+
+React custom hooks are JavaScript functions. This means few things. First, when you create a custom hook you are writing a function. Second, function name should start with "use". Remember, this is a good rule of thumb for creating custom hooks. Third, you can use other React hooks inside your custom hooks.
+
+These are the things to remember. To make this more hands-on, let's put this together and create few examples of React custom hooks. This can make it easier to understand how custom hooks work and how to create them.
 
 ## Conclusion: [...] ...
 
