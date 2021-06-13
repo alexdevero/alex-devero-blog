@@ -151,8 +151,8 @@ Just like with the previous hook, you can now import this useToggle in your Reac
 import { useToggle } from './hook'
 
 export default function App() {
-  // Call the useToggle hook and assign it to variable
-  // with destructuring assignment:
+  // Call the useToggle hook and assign variables,
+  // using destructuring assignment:
   const { on, set, reset, toggle } = useToggle()
 
   // Use any method or state returned from the hook:
@@ -163,6 +163,85 @@ export default function App() {
       <button onClick={() => set(true)}>Set to on</button>
       <button onClick={reset}>Reset</button>
       <button onClick={toggle}>Toggle</button>
+    </div>
+  )
+}
+```
+
+### Example no.3: useLocalStorage hook
+
+Third and last example. It became popular to store application or website data in local or session storage. This hook will accept two parameters: name of the key to store and initial value for this key. When called, this hook will first check if local storage is available in the browser.
+
+If local storage is not available, it will return the initial value passed as argument. If local storage is available, it will check if any key with the same name exists. If it does, it will retrieve its data. Otherwise, it will return the initial value. Whatever is returned will become the state of the hook.
+
+This all will happen during the initial load. It will happen inside initializer function for useState hook. The second part of the hook will be a handler function for storing data in local storage. This function will accept one parameter, the data to store. It will first take this value and store it inside the hook state.
+
+Then, it will store the value in local storage. The name of the key for this data will be the name of the key passed to the hook during the call. The last part, returning something. This hook will return two things: current value of the state, data loaded from local storage, and handler function for storing data in local storage.
+
+```JavaScript
+// Import useState hook from 'react':
+import { useState } from 'react'
+
+export function useLocalStorage(keyName, initialValue) {
+  // Create state for local storage:
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      // Check if local storage is available:
+      if (typeof window === 'undefined') {
+        return initialValue
+      }
+
+      // Check if item with the same name exists in local storage:
+      const item = window.localStorage.getItem(keyName)
+
+      // Return parsed data from storage or return the initialValue:
+      return item !== null ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      // Catch any errors and log them:
+      console.log(error)
+
+      // Return the initialValue:
+      return initialValue
+    }
+  })
+
+  // Create handler function for storing value in local storage:
+  const setValue = (value) => {
+    try {
+      // Store the value in the state:
+      setStoredValue(value)
+
+      // Store the value in local storage:
+      window.localStorage.setItem(keyName, JSON.stringify(value))
+    } catch (error) {
+      // Catch any errors and log them:
+      console.log(error)
+    }
+  }
+
+  // Return latest data and handler function for storing new data:
+  return [storedValue, setValue]
+}
+```
+
+The way to use this hook will be similar to using useState. When you call it, you pass in the name of the key and data for that key. The hook will return array with the data and handler function for storing new data. The data returned will be either the initial value or any data that are already stored in local storage for that key.
+
+```jsx
+// Import the useLocalStorage hook:
+import { useLocalStorage } from './hook'
+
+export default function App() {
+  // Call the useLocalStorage hook and assign variables,
+  // again, using destructuring assignment:
+  const [value, setValue] = useLocalStorage('name', 'Joe')
+
+  // Store data typed in the input in local storage
+  // and also display them in the DOM:
+  return (
+    <div>
+      <p>{value}</p>
+
+      <input type="text" onChange={(e) => setValue(e.currentTarget.value)} />
     </div>
   )
 }
