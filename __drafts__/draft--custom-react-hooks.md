@@ -17,6 +17,14 @@ The word "hook" may sound a bit vague. To make it easier, think about hooks simp
 
 The useState hooks allows you to bring state to function components. With useEffect hook, you can work with component lifecycle. There is a couple of React [hooks] ready to use. However, these hooks can't do everything. They can't cover every possible scenario. Fortunately, these hooks are not the only option.
 
+## An introduction to React custom hooks
+
+Aside to releasing a number of official React hooks, React team made it also possible to create React custom hooks. So, if you can't find a hook that would solve some problem you have, you can create your own. You can also use React custom hooks to make your code that involves stateful logic reusable.
+
+As we already discussed, hooks are basically plain JavaScript functions. One difference is that hooks are used for a specific purpose. Another is that React hooks allow you to use other React hooks, such as useState, and even other custom hooks. So, don't worry that creating custom hooks will be difficult.
+
+Creating custom hooks will be similar to writing regular JavaScript functions. You will probably get a grasp on it quickly. It will be even faster if you know how to use hooks such as useState and useEffect because you are likely to use these hooks in your custom hooks. But before we get into that, there are some rules to learn.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
