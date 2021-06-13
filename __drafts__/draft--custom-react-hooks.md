@@ -1,4 +1,6 @@
-# How to Create Your Own Custom React Hooks
+# How to Create Your Own React Custom Hooks
+
+React offers a number of built-in hooks you can use right away. Aside to these, you can also create your own custom hooks. In this tutorial, you will learn what React custom hooks are and how to create your own. You will also learn what rules you have to follow when creating custom hooks.
 
 <!--more-->
 <!--
