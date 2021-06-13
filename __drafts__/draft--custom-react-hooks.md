@@ -37,6 +37,55 @@ React custom hooks are JavaScript functions. This means few things. First, when 
 
 These are the things to remember. To make this more hands-on, let's put this together and create few examples of React custom hooks. This can make it easier to understand how custom hooks work and how to create them.
 
+### Example no.1: useWindowSize hook
+
+The first example will be a hook that will return current window size. First, the name. The name should be descriptive and start with "use". Something like "useWindowSize" sounds like a good candidate. Second, the logic of the hook. When you call this hook, it will do few things.
+
+The first thing it will do is getting the current window size and returning it. Second, it will attach event listener to `window` object and listen to `resize` event. When this event happens, the hook will detect the new window size and return it again. This will repeat every time the `resize` event happens.
+
+Custom hooks can use other React hooks. This means that we can use useState hook to store the latest window dimension in a state and return the value of this state. We can also use useEffect hook to attach the event listener for `resize` event. We can use this useEffect hook to remove the event listener.
+
+We can do this by returning a clean up function. This function will call the `removeEventListener` method, passing the `resize` event and function for handling the resize.
+
+```JavaScript
+// Import useEffect and useState hooks from React:
+import { useEffect, useState } from 'react'
+
+// Create custom hook function:
+export function useWindowSize() {
+  // Create function to get current window size:
+  const getWindowSize = () => ({
+    innerHeight: window.innerHeight,
+    innerWidth: window.innerWidth,
+    outerHeight: window.outerHeight,
+    outerWidth: window.outerWidth,
+  })
+
+  // Create state for window size data:
+  const [windowSize, setWindowSize] = useState(getWindowSize())
+
+  // Create handler function for resize event:
+  function handleResize() {
+    // Update state value:
+    setWindowSize(getWindowSize())
+  }
+
+  // Create a side-effect
+  useEffect(() => {
+    // Attach event listener for "resize" event:
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      // Remove event listener for "resize" event:
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  // Return current window size:
+  return windowSize
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
