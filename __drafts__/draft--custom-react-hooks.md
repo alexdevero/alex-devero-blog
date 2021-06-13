@@ -25,6 +25,12 @@ As we already discussed, hooks are basically plain JavaScript functions. One dif
 
 Creating custom hooks will be similar to writing regular JavaScript functions. You will probably get a grasp on it quickly. It will be even faster if you know how to use hooks such as useState and useEffect because you are likely to use these hooks in your custom hooks. But before we get into that, there are some rules to learn.
 
+## Rules of hooks
+
+Before you create your first custom hook, there are two rules you should know. These rules are called [Rules of hooks]. First, you can call hooks only at the top level. Never call hooks inside nested functions, conditions or loops. If you want to use conditions, or loops, use them inside the hook, not the other way around.
+
+The second rule is that you should call hooks only from React function components or other hooks. There is also one practice for creating custom hooks. Always start the name of the hook with "use" prefix. This is a best practice, not a rule. It is good to follow and it can make your code more readable, but it is not required.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
