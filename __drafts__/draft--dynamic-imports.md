@@ -1,9 +1,18 @@
-# Blog post title [...]
+# How to Use Dynamic Imports in JavaScript
 
 Dynamic imports are one of the features introduced in JavaScript ES020 specification. This feature makes modules introduced in ES2015, or ES6, more usable and powerful. This tutorial will help you understand what dynamic imports in JavaScript are, how they work and how to use them.<!--more-->
 
 <!--
 Table of Contents:
+## ES modules and chunking
+## The problem with static imports
+## Dynamic imports to the rescue
+## Importing with dynamic imports
+### Default exports
+### Named exports
+### Mixed exports
+## When to use dynamic imports
+## Conclusion: How to use dynamic imports in JavaScript
 -->
 
 ## ES modules and chunking
@@ -18,6 +27,7 @@ The second thing to do comes when she wants to use one of the chunks she exporte
 // File file1.js
 // Export some function with "export" statement:
 export const sumTwoNumbers = (numA, numB) => numA + numB
+
 
 // File file2.js
 // Import exported function sumTwoNumbers with "import" statement:
@@ -105,6 +115,7 @@ What you can do to solve this issue is use [destructuring assignment] and create
 // Use default export to export a function:
 export default (numA, numB) => numA * numB
 
+
 // File 2:
 // Create async function:
 async function loadModule() {
@@ -131,6 +142,7 @@ export default (numA, numB) => numA * numB
 
 
 // File 2:
+// Create async function:
 async function loadModule() {
   // Assign the module to a variable:
   const myExport = await import('./file1')
@@ -180,6 +192,7 @@ export const divideNumbers = (numA, numB) => numA / numB
 
 
 // File 2:
+// Create async function:
 async function loadModule() {
   // Use destructuring to assign the divideNumbers() function:
   const { divideNumbers } = await import('./file1')
@@ -256,7 +269,9 @@ Most of your imports will be for small modules, usually dozens of lines of code.
 
 This is especially if that module is not immediately necessary for the program. Another good use cases are when a) a module may not be available from the beginning and b) the path to the module is built dynamically. Dynamic imports can make handling these rare situations easier. Aside to these situations, stick with static imports.
 
-## Conclusion: [...] ...
+## Conclusion: How to use dynamic imports in JavaScript
+
+Modules can help you make your work easier, your code more manageable and cleaner. Dynamic imports can take this further by helping you load modules only when needed. This can help you improve performance of your code. I hope that this tutorial helped you learn what dynamic imports are, how they work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
@@ -264,6 +279,10 @@ This is especially if that module is not immediately necessary for the program. 
 
 [export statement]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 [import statement]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+[if...else statement]: https://blog.alexdevero.com/javascript-if-else-statement/
+[promise]: https://blog.alexdevero.com/javascript-promises/
+[async/await]: https://blog.alexdevero.com/javascript-async-await/
+[destructuring assignment]: https://blog.alexdevero.com/destructuring-assignment-javascript/
 
 <!--
 ### Meta:
