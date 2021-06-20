@@ -52,6 +52,39 @@ One way to do this is by loading those imported modules conditionally. Instead o
 
 At that moment, when execution context enter the statement, you know for sure the function will be called. This is where dynamic imports can be useful.
 
+## Dynamic imports to the rescue
+
+The idea of dynamic imports is to import some chunk of code only when you know you will need it. For example, to load the `sumTwoNumbers` function right inside the `if...else` statement where the function is called. If the code block inside the statement never executes, the module with `sumTwoNumbers` is never imported.
+
+Sounds good? It is even better. There is really no new syntax. Dynamic imports use almost the same syntax as static imports. One difference is that instead of using `import` as a statement you use `import` as a function. This function accepts one parameter, the path to the module, and returns a [promise].
+
+```JavaScript
+// Dynamic import syntax:
+const module = import('path')
+
+// Examples:
+const module1 = import('./myModule')
+
+const modulePath = './myModule'
+const module2 = import(modulePath)
+```
+
+When the module is loaded successfully, the promise resolves to the module content. When there is some problem, the promise rejects. Since the `import()` function returns a promise, the [async/await] syntax (async function and await operator) can be handy and make your code shorter.
+
+```JavaScript
+// await example with global await:
+const module1 = await import('./myModule')
+
+const modulePath = './myModule'
+const module2 = await import(modulePath)
+
+// await example with async function:
+async function loadImport() {
+  const module1 = await import('./myModule')
+  // ... use the module
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
