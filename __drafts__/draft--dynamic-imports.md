@@ -121,6 +121,79 @@ loadModule()
 // Output:
 // 130410
 ```
+
+Another option is to assign the module to a variable without using the destructuring assignment. This will assign the whole module as an object to the variable. Now, you can use this object's `default` property to access the default export.
+
+```JavaScript
+// File 1:
+// Use default export to export a function:
+export default (numA, numB) => numA * numB
+
+
+// File 2:
+async function loadModule() {
+  // Assign the module to a variable:
+  const myExport = await import('./file1')
+
+  // Use the imported function by using the alias:
+  myExport.default(56, 89)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 4984
+```
+
+### Named exports
+
+Importing named exports with dynamic imports is even easier. There is no need to use aliases. All you have to do is to assign the module to variable, with or without destructuring assignment. Then, you can use whatever you imported. You can do so by accessing the module object if you didn't use the destructuring assignment.
+
+If you used destructuring assignment, you can simply use the variable name you used during the object destructuring.
+
+```JavaScript
+// Example without destructuring:
+// File 1:
+// Use default export to export a function:
+export const divideNumbers = (numA, numB) => numA / numB
+
+
+// File 2:
+// Create async function:
+async function loadModule() {
+  // Assign the module to a variable:
+  const myNExport = await import('./file1')
+
+  // Use the imported function by using the alias:
+  myNExport.divideNumbers(996598, 15)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 66439.86666666667
+
+
+// Example with destructuring:
+// File 1:
+export const divideNumbers = (numA, numB) => numA / numB
+
+
+// File 2:
+async function loadModule() {
+  // Use destructuring to assign the divideNumbers() function:
+  const { divideNumbers } = await import('./file1')
+
+  // Use the imported function by using the alias:
+  divideNumbers(477575, 66)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 7235.984848484848
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
