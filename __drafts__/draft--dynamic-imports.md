@@ -247,6 +247,15 @@ loadModule()
 // 976211
 // 5
 ```
+
+## When to use dynamic imports
+
+It may seem that dynamic imports are a replacement of static modules and should be used often. This is not true. They are not replacing anything. They are just a tool that can help you solve some issues. This also means that they should not become your new default. You should still use primarily static imports.
+
+Most of your imports will be for small modules, usually dozens of lines of code. Loading these modules dynamically will not make such a difference. Situation where dynamic imports might be a good choice is when you work with large modules. When some module takes time to load, loading it dynamically can help with performance.
+
+This is especially if that module is not immediately necessary for the program. Another good use cases are when a) a module may not be available from the beginning and b) the path to the module is built dynamically. Dynamic imports can make handling these rare situations easier. Aside to these situations, stick with static imports.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
