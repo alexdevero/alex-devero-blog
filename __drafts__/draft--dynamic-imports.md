@@ -31,7 +31,7 @@ sumTwoNumbers(15, 98)
 
 // NOTE:
 // You can also export something with default export
-export default sumTwoNumbers = (numA, numB) => numA + numB
+export default (numA, numB) => numA + numB
 
 // File file2.js
 // Import exported function sumTwoNumbers with default "import" statement:
@@ -78,13 +78,49 @@ const module1 = await import('./myModule')
 const modulePath = './myModule'
 const module2 = await import(modulePath)
 
+// Use what imported from module2
+module2.someExportedFunction()
+
 // await example with async function:
 async function loadImport() {
   const module1 = await import('./myModule')
+
   // ... use the module
+  module1.someExportedFunction()
 }
 ```
 
+## Importing with dynamic imports
+
+Similarly to static imports, dynamic imports also allow you to import default exports, named and mix of these two.
+
+### Default exports
+
+You exported something using default export. When you want import it dynamically, you can simply use the `default` property of the object returned by the import promise. Well, almost. The catch is that `default` is reserved keyword in JavaScript. This also means that you can't use it to declare variables, like for imported module.
+
+What you can do to solve this issue is use [destructuring assignment] and create an alias for that default import. Then, you can use that alias to safely use whatever you imported.
+
+```JavaScript
+// File 1:
+// Use default export to export a function:
+export default (numA, numB) => numA * numB
+
+// File 2:
+// Create async function:
+async function loadModule() {
+  // Use dynamic import to import function from "file1"
+  // and use destructuring assignment with alias:
+  const { default: defaultExport } = await import('./file1')
+
+  // Use the imported function by using the alias:
+  defaultExport(315, 414)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 130410
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
