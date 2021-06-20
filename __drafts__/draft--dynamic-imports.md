@@ -194,6 +194,59 @@ loadModule()
 // 7235.984848484848
 ```
 
+### Mixed exports
+
+Importing mixed exports, one default and some named, is basically about combining the previous two approaches. Again, you can use the destructuring assignment to assign all exports to variables. Remember to create an alias for the default export. Otherwise, JavaScript will complain about the `default` keyword.
+
+Otherwise, you can assign all exports, the whole module object, to a single variable. Then, each export will become a property of this module object and you can use them through this module object.
+
+```JavaScript
+// Example with destructuring:
+// File 1:
+export default (numA, numB) => numA % numB
+export const subtractNumbers = (numA, numB) => numA - numB
+
+
+// File 2:
+async function loadModule() {
+  // Use destructuring to assign the named and default exports:
+  const { default: getModulo, subtractNumbers } = await import('./file1')
+
+  // Use the imported functions:
+  subtractNumbers(477575, 66)
+  getModulo(537, 8)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 477509
+// 1
+
+
+// Example without destructuring:
+// File 1:
+export default (numA, numB) => numA % numB
+export const subtractNumbers = (numA, numB) => numA - numB
+
+
+// File 2:
+// Create async function:
+async function loadModule() {
+  // Assign the whole module to a single variable:
+  const myModule = await import('./file1')
+
+  // Use the imported functions:
+  myModule.subtractNumbers(976532, 321)
+  myModule.default(9872, 11)
+}
+
+// Call the loadModule() function:
+loadModule()
+// Output:
+// 976211
+// 5
+```
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
