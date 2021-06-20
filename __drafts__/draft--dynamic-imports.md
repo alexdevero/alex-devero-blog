@@ -40,6 +40,18 @@ import sumTwoNumbers from './file1'
 
 Just two statements with very simple and easy to remember syntax and you can use your code anywhere you want. Unfortunately, nothing is usually perfect and even modules have some downsides.
 
+## The problem with static imports
+
+One big downside of ES modules is that they are static. This means that when you import some module it will be always imported, regardless if the code is executed or not. let's go back to the example above with `sumTwoNumbers` function. Imagine that this function is called only under some specific condition.
+
+There is some [if...else statement] and the function is called only inside it. When you run this code, the module with `sumTwoNumbers` function will be imported. JavaScript will not care if the `if...else` statement calls the function or not. It will import the module and if the function is not executed it is not JavaScript's problem.
+
+What this means for you, and anyone else running your code, is simple. You will have to download and run everything that is imported somewhere, regardless if it is actually used or not. This may be okay in most situations. However, sometimes, you may want to save some of the user's bandwidth.
+
+One way to do this is by loading those imported modules conditionally. Instead of loading them always, by default, you will load them only when you know they will be used. In case of the `sumTwoNumbers` function and `if...else` statement you can import the function inside the statement.
+
+At that moment, when execution context enter the statement, you know for sure the function will be called. This is where dynamic imports can be useful.
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
