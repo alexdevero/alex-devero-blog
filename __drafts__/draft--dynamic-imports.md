@@ -52,7 +52,7 @@ Just two statements with very simple and easy to remember syntax and you can use
 
 ## The problem with static imports
 
-One big downside of ES modules is that they are static. This means that when you import some module it will be always imported, regardless if the code is executed or not. let's go back to the example above with `sumTwoNumbers` function. Imagine that this function is called only under some specific condition.
+One big downside of ES modules is that they are static. This means that when you import some module it will be always imported, regardless if the code is executed or not. Let's go back to the example above with `sumTwoNumbers` function. Imagine that this function is called only under some specific condition.
 
 There is some [if...else statement] and the function is called only inside it. When you run this code, the module with `sumTwoNumbers` function will be imported. JavaScript will not care if the `if...else` statement calls the function or not. It will import the module and if the function is not executed it is not JavaScript's problem.
 
@@ -106,9 +106,9 @@ Similarly to static imports, dynamic imports also allow you to import default ex
 
 ### Default exports
 
-You exported something using default export. When you want import it dynamically, you can simply use the `default` property of the object returned by the import promise. Well, almost. The catch is that `default` is reserved keyword in JavaScript. This also means that you can't use it to declare variables, like for imported module.
+You exported something using default export. When you want to import it dynamically, you can simply use the `default` property of the object returned by the import promise. Well, almost. The catch is that `default` is reserved keyword in JavaScript. This also means that you can't use it to declare variables, like for imported module.
 
-What you can do to solve this issue is use [destructuring assignment] and create an alias for that default import. Then, you can use that alias to safely use whatever you imported.
+What you can do to solve this issue is by using [destructuring assignment] and create an alias for that default import. Then, you can use that alias to safely use whatever you imported.
 
 ```JavaScript
 // File 1:
