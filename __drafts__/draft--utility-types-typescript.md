@@ -187,6 +187,102 @@ sevenPowers.title = 'The Innovator\'s Dilemma'
 // TS error: Cannot assign to 'title' because it is a read-only property.
 ```
 
+## Record<Keys, Type>
+
+Let's say you have a set of properties and values for these properties. Based on this data, the `Record<Keys, Type>` allows you to create a records of key-value pairs. The `Record<Keys, Type>` basically creates a new interface by mapping all unit types specified as `Keys` with their value's types specified as `Type`.
+
+```TypeScript
+// Example no.1:
+// Create type Table with Record:
+type Table = Record<'width' | 'height' | 'length', number>
+
+// type Table is basically ('width' | 'height' | 'length' are keys, number is a value):
+// interface Table {
+//   width: string;
+//   height: string;
+//   length: string;
+// }
+
+// Create new object based on Table type:
+const smallTable: Table = {
+  width: 50,
+  height: 40,
+  length: 30
+}
+
+// Create new object based on Table type:
+const mediumTable: Table = {
+  width: 90,
+  length: 80
+}
+// TS error: Property 'height' is missing in type '{ width: number; length: number; }' but required in type 'Table'.
+
+
+// Example no.2:
+// Create type with some string keys:
+type PersonKeys = 'firstName' | 'lastName' | 'hairColor'
+
+// Create a Record using PersonKeys and type:
+type Person = Record<PersonKeys, string>
+
+// type Person is basically (personKeys are keys, string is a value):
+// interface Person {
+//   firstName: string;
+//   lastName: string;
+//   hairColor: string;
+// }
+
+const jane: Person = {
+    firstName: 'Jane',
+    lastName: 'Doe',
+    hairColor: 'brown'
+}
+
+const james: Person = {
+    firstName: 'James',
+    lastName: 'Doe',
+}
+// TS error: Property 'hairColor' is missing in type '{ firstName: string; lastName: string; }' but required in type 'Person'.
+
+
+// Example no.3:
+type Titles = 'ZeroToOne' | 'Blitzscaling' | 'InnovatorsDilemma'
+
+interface Book {
+  title: string;
+  author: string;
+}
+
+const books: Record<Titles, Book> = {
+  ZeroToOne: {
+    title: 'Zero to One',
+    author: 'Peter Thiel, Blake Masters'
+  },
+  Blitzscaling: {
+    title: 'Blitzscaling',
+    author: 'Reid Hoffman, Chris Yeh'
+  },
+  InnovatorsDilemma: {
+    title: 'The Innovator\'s Dilemma',
+    author: 'Clayton M. Christensen'
+  },
+}
+
+// Record<Titles, Book> translates to:
+ZeroToOne: { // <= "ZeroToOne" key is specified in "Titles".
+  title: string,
+  author: string,
+}, // <= Value of "ZeroToOne" is specified in "Book".
+Blitzscaling: { // <= "Blitzscaling" key is specified in "Titles".
+  title: string,
+  author: string,
+}, // <= Value of "Blitzscaling" is specified in "Book".
+InnovatorsDilemma: { // <= "InnovatorsDilemma" key is specified in "Titles".
+  title: string,
+  author: string,
+} // <= Value of "InnovatorsDilemma" is specified in "Book".
+```
+
 
 ## h2
 
