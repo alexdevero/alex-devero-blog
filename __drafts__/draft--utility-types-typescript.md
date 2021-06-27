@@ -43,6 +43,10 @@ UtilityType<'some type'>
 UtilityType<'some type', 'some type'>
 ```
 
+## Note on availability
+
+The types you will learn about are available in TypeScript from version 4.0. Make sure you use this version. Otherwise, some of the types bellow may not work, or not without some additional packages.
+
 
 ### h3
 
