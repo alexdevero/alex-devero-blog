@@ -22,7 +22,7 @@ Table of Contents:
 
 TypeScript provides a powerful system for working with types. There are the basic types you already know from JavaScript. For example, types such as number, string, boolean, object, symbol, null, undefined. This is not all TypeScript offers. On top of these types are also built-in utility types.
 
-It is sometimes also these utility types that can be the most difficult to understand for developers coming to TypeScript. This is especially true when you see this types for the first time. The good news is that these types are actually not that difficult, if you understand one important thing.
+It is sometimes also these utility types that can be the most difficult to understand for developers coming to TypeScript. This is especially true when you see these types for the first time. The good news is that these types are actually not that difficult, if you understand one important thing.
 
 All those built-in utility types are actually simple functions, function you already know from JavaScript. Main difference here is that these functions, these utility types, work only with types. What these functions do is they transform types from one type to another. They take some input.
 
@@ -32,11 +32,11 @@ There are currently around 17 utility types: `Partial<Type>`, `Required<Type>`, 
 
 ## About the syntax
 
-All utility types in TypeScript use similar syntax. This will make it easier for you to learn it and remember it. It will also make it easier if you try to see these types as something like functions. Then, usually helps to understand the syntax faster, sometimes much faster. About the syntax.
+All utility types in TypeScript use similar syntax. This will make it easier for you to learn it and remember it. It will also make it easier if you try to see these types as something like functions. Thi often helps to understand the syntax faster, sometimes much faster. About the syntax.
 
 Every utility type starts with the name of the type. This name always starts with capital letter. Following the name are left- and right-pointing angle bracket, less than and greater than symbols (`<>`). Between these brackets goes parameters. These parameters are the types you are working with, the input.
 
-When you think about it, using a utility type is like calling a function and passing something as an argument. One difference here is that the function always starts with capital letters. Second difference is that you don't use parentheses after the function name, but those angle brackets.
+When you think about it, using a utility type is like calling a function and passing something as an argument. One difference here is that the function always starts with capital letters. The second difference is that you don't use parentheses after the function name, but those angle brackets.
 
 Some types require one parameter, others require two. Similarly to JavaScript, these parameters are divided by colon (`,`), and passed between the angle brackets. The simple example below illustrates the similarity between plain function and TypeScript utility type.
 
@@ -51,13 +51,13 @@ UtilityType<'some type', 'some type'>
 
 ## Note on availability
 
-The types you will learn about are available in TypeScript from version 4.0. Make sure you use this version. Otherwise, some of the types bellow may not work, or not without some additional packages.
+The types you will learn about are available in TypeScript from version 4.0. Make sure you use this version. Otherwise, some of the types below may not work, or not without some additional packages.
 
 ## Partial<Type>
 
 When you create a [type] or an [interface], all types defined inside will be required as default. If you want to mark some as optional, you can use the `?` and place it after the property name. This will make the property optional. If you want all properties to be optional, do you have to add the `?` after all of them?
 
-You can do this, but it will change the interface. It will also have an impact on everything that works with that interface. Another option you can use is `Partial<Type>`. This type accepts one parameter, the type want to make optional. It returns the same type, but in which all previously required properties are now optional.
+You can do this, but it will change the interface. It will also have an impact on everything that works with that interface. Another option you can use is `Partial<Type>`. This type accepts one parameter, the type you want to make optional. It returns the same type, but in which all previously required properties are now optional.
 
 ```TypeScript
 // Create an interface:
@@ -292,7 +292,7 @@ InnovatorsDilemma: { // <= "InnovatorsDilemma" key is specified in "Titles".
 
 ## Pick<Type, Keys>
 
-Let's say you want to use only some properties of an existing interface. One thing you can do is to create new interface, with only those properties. Another options is to use `Pick<Type, Keys>`. Pick type allows you to take existing type (`Type`) and pick only some specific keys (`Keys`) from it, while ignoring the rest.
+Let's say you want to use only some properties of an existing interface. One thing you can do is to create new interface, with only those properties. Another option is to use `Pick<Type, Keys>`. Pick type allows you to take existing type (`Type`) and pick only some specific keys (`Keys`) from it, while ignoring the rest.
 
 ```TypeScript
 // Create an interface
