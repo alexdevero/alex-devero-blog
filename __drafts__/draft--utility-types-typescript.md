@@ -47,8 +47,59 @@ UtilityType<'some type', 'some type'>
 
 The types you will learn about are available in TypeScript from version 4.0. Make sure you use this version. Otherwise, some of the types bellow may not work, or not without some additional packages.
 
+## Partial<Type>
 
-### h3
+When you create a [type] or an [interface], all types defined inside will be required as default. If you want to mark some as optional, you can use the `?` and place it after the property name. This will make the property optional. If you want all properties to be optional, do you have to add the `?` after all of them?
+
+You can do this, but it will change the interface. It will also have an impact on everything that works with that interface. Another option you can use is `Partial<Type>`. This type accepts one parameter, the type want to make optional. It returns the same type, but in which all previously required properties are now optional.
+
+```TypeScript
+// Create an interface:
+interface Person {
+  name: string;
+  age: number;
+  jobTitle: string;
+  hobbies: string[];
+}
+
+// Create object using Person interface:
+const jack: Person = {
+  name: 'Jack',
+  age: 33,
+  jobTitle: 'CTO',
+  hobbies: ['reading']
+}
+// This works because 'jack' object contains
+// all properties specified in Person interface.
+
+// Create another object using Person interface:
+const andrei: Person = {
+  name: 'Andrei',
+  age: 48,
+}
+// TS error: Type '{ name: string; age: number; }' is missing the following properties from type 'Person': jobTitle, hobbies(2739)
+
+
+// Fix:
+// Use Partial<Type> along with Person interface
+// to make all properties in Person interface optional:
+const andrei: Partial<Person> = {
+  name: 'Andrei',
+  age: 48,
+}
+
+// This will also work:
+const joe: Partial<Person> = {}
+
+// The interface after Partial:
+// interface Person {
+//   name?: string;
+//   age?: number;
+//   jobTitle?: string;
+//   hobbies?: string[];
+// }
+```
+
 
 ## h2
 
