@@ -5,11 +5,6 @@ TypeScript can be difficult to understand for many developers. One area causing 
 <!--more-->
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
 ## A short introduction to utility types
@@ -103,6 +98,7 @@ const joe: Partial<Person> = {}
 The `Required<Type>` is the direct opposite of the `Partial<Type>`. If the `Partial<Type>` makes all properties optional, the `Required<Type>` makes them all required, non-optional. The syntax of `Required<Type>` is the same as of `Partial<Type>`. Only difference is the name of the utility type.
 
 ```TypeScript
+// Create an interface:
 interface Cat {
   name: string;
   age: number;
@@ -189,7 +185,7 @@ sevenPowers.title = 'The Innovator\'s Dilemma'
 
 ## Record<Keys, Type>
 
-Let's say you have a set of properties and values for these properties. Based on this data, the `Record<Keys, Type>` allows you to create a records of key-value pairs. The `Record<Keys, Type>` basically creates a new interface by mapping all unit types specified as `Keys` with their value's types specified as `Type`.
+Let's say you have a set of properties and values for these properties. Based on this data, the `Record<Keys, Type>` allows you to create a records of key-value pairs. The `Record<Keys, Type>` basically creates a new interface by mapping all unit types specified as `Keys` parameter with their value's types specified as `Type` parameter.
 
 ```TypeScript
 // Example no.1:
@@ -268,7 +264,7 @@ const books: Record<Titles, Book> = {
   },
 }
 
-// Record<Titles, Book> translates to:
+// Record<Titles, Book> basically translates to:
 ZeroToOne: { // <= "ZeroToOne" key is specified in "Titles".
   title: string,
   author: string,
@@ -285,7 +281,7 @@ InnovatorsDilemma: { // <= "InnovatorsDilemma" key is specified in "Titles".
 
 ## Pick<Type, Keys>
 
-Let's say you want to use only some properties of an existing interface. One thing you can do is to create new interface, with only those properties. Another options is to use `Pick<Type, Keys>`. Pick type allows you to take existing type and pick only some specific keys from it, while ignoring the rest.
+Let's say you want to use only some properties of an existing interface. One thing you can do is to create new interface, with only those properties. Another options is to use `Pick<Type, Keys>`. Pick type allows you to take existing type (`Type`) and pick only some specific keys (`Keys`) from it, while ignoring the rest.
 
 ```TypeScript
 // Create an interface
@@ -318,7 +314,7 @@ const water: SimpleBeverage = {
 
 ## Omit<Type, Keys>
 
-The `Omit<Type, Keys>` is basically an opposite of `Pick<Type, Keys>`. Instead of picking properties you want, you choose properties you want to omit from existing type.
+The `Omit<Type, Keys>` is basically an opposite of `Pick<Type, Keys>`. You specify some type as an argument for `Type`, but instead of picking properties you want, you choose properties you want to omit from existing type.
 
 ```TypeScript
 // Create interface for car:
@@ -360,7 +356,7 @@ const mosaic: Boat = {
 
 ## Exclude<Type, ExcludedUnion>
 
-The `Exclude<Type, ExcludedUnion>` can be a bit confusing on the first sight. What this utility type does is it returns the type defined as `Type` without any type that is mentioned in `ExcludedUnion`.
+The `Exclude<Type, ExcludedUnion>` can be a bit confusing on the first sight. What this utility type does is it returns the type you used as an argument for `Type` without any type you mentioned as an argument for the `ExcludedUnion`.
 
 ```TypeScript
 // Crete type Colors:
@@ -372,7 +368,7 @@ type ColorsWarm = Exclude<Colors, 'white' | 'blue' | 'black' | 'grey'>
 
 type ColorsCold = Exclude<Colors, 'red' | 'orange' | 'purple'>
 // Translates to:
-// ColorsCold = "white" | "blue" | "black" | "grey"
+// type ColorsCold = "white" | "blue" | "black" | "grey"
 
 // Create warm color:
 const varmColor: ColorsWarm = 'red'
@@ -385,6 +381,31 @@ const coldColorTwp: ColorsCold = 'red'
 // TS error: Type '"red"' is not assignable to type 'ColorsCold'.
 ```
 
+## Extract<Type, Union>
+
+The `Extract<Type, Union>` type does the opposite of the `Exclude<Type, ExcludedUnion>` type. It takes everything you specified as the `Type` argument and uses only parts that you've mentioned in the `Union` argument.
+
+```TypeScript
+type Food = 'banana' | 'pear' | 'spinach' | 'apple' | 'lettuce' | 'broccoli' | 'avocado'
+
+type Fruit= Extract<Food, 'banana' | 'pear' | 'apple'>
+// Translates to:
+// type Fruit = "banana" | "pear" | "apple"
+
+type Vegetable = Extract<Food, 'spinach' | 'lettuce' | 'broccoli' | 'avocado'>
+// Translates to:
+// type Vegetable = "spinach" | "lettuce" | "broccoli" | "avocado"
+
+// Create warm color:
+const someFruit: Fruit = 'pear'
+
+// Create cold color:
+const someVegetable: Vegetable = 'lettuce'
+
+// Try to mix it:
+const notReallyAFruit: Fruit = 'avocado'
+// TS error: Type '"avocado"' is not assignable to type 'Fruit'.
+```
 
 ## Conclusion: [...] ...
 
@@ -392,7 +413,8 @@ const coldColorTwp: ColorsCold = 'red'
 
 <!-- ### Links -->
 
-[]:
+[type]: https://blog.scottlogic.com/2021/06/24/types-vs-interfaces.html
+[interface]: https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
 
 <!--
 ### Meta:
