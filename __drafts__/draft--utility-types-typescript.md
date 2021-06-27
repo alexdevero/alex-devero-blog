@@ -77,10 +77,8 @@ const andrei: Person = {
   name: 'Andrei',
   age: 48,
 }
-// TS error: Type '{ name: string; age: number; }' is missing the following properties from type 'Person': jobTitle, hobbies(2739)
+// TS error: Type '{ name: string; age: number; }' is missing the following properties from type 'Person': jobTitle, hobbies.
 
-
-// Fix:
 // Use Partial<Type> along with Person interface
 // to make all properties in Person interface optional:
 const andrei: Partial<Person> = {
@@ -98,6 +96,49 @@ const joe: Partial<Person> = {}
 //   jobTitle?: string;
 //   hobbies?: string[];
 // }
+```
+
+## Required<Type>
+
+The `Required<Type>` is the direct opposite of the `Partial<Type>`. If the `Partial<Type>` makes all properties optional, the `Required<Type>` makes them all required, non-optional. The syntax of `Required<Type>` is the same as of `Partial<Type>`. Only difference is the name of the utility type.
+
+```TypeScript
+interface Cat {
+  name: string;
+  age: number;
+  hairColor: string; // <= Make "owner" property optional
+  owner?: string; // <= Make "owner" property optional
+}
+
+// This will work:
+const suzzy: Cat = {
+  name: 'Suzzy',
+  age: 2,
+  hairColor: 'white',
+}
+
+// Use Required<Type> along with Cat interface
+// to make all properties in Cat interface required:
+const suzzy: Required<Cat> = {
+  name: 'Suzzy',
+  age: 2,
+  hairColor: 'white',
+}
+// TS error: Property 'owner' is missing in type '{ name: string; age: number; hairColor: string; }' but required in type 'Required<Cat>'.
+
+// Works without errors:
+const lucy: Cat = {
+  name: 'Lucy',
+  age: 1,
+  hairColor: 'brown',
+}
+
+// Make all properties of Cat required:
+const lucy: Required<Cat> = {
+  name: 'Lucy',
+  age: 1,
+}
+// TS error: Type '{ name: string; age: number; }' is missing the following properties from type 'Required<Cat>': hairColor, owner
 ```
 
 
