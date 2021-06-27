@@ -1,10 +1,21 @@
-# Getting Started With Built-in Utility Types in TypeScript Part 1
+# Getting Started With TypeScript Built-in Utility Types Part 1
 
-TypeScript can be difficult to understand for many developers. One area causing troubles are advanced type. Part of this area are built-in utility types provided by TypeScript. They can help you create new types from existing. In this article, you will learn how utility types work and how to use them.
+TypeScript can be difficult to understand for many developers. One area causing troubles are advanced types. Part of this area are utility types built in TypeScript. They can help you create new types from existing. In this article, you will learn how some of these utility types work and how to use them.<!--more-->
 
-<!--more-->
 <!--
 Table of Contents:
+## A short introduction to utility types
+## About the syntax
+## Note on availability
+## Partial<Type>
+## Required<Type>
+## Readonly<Type>
+## Record<Keys, Type>
+## Pick<Type, Keys>
+## Omit<Type, Keys>
+## Exclude<Type, ExcludedUnion>
+## Extract<Type, Union>
+## Conclusion: Getting Started With TypeScript Built-in Utility Types Part 1
 -->
 
 ## A short introduction to utility types
@@ -407,7 +418,9 @@ const notReallyAFruit: Fruit = 'avocado'
 // TS error: Type '"avocado"' is not assignable to type 'Fruit'.
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Getting started with TypeScript built-in utility types part 1
+
+Advanced types in TypeScript, especially built-in utility types, can be very useful. That said, they may also seem daunting. I hope that this tutorial helped you learn about those eight types we discussed today, the `Partial`, `Required`, `Readonly`, `Record`, `Pick`, `Omit`, `Exclude` and `Extract`.
 
 [xyz-ihs snippet="thank-you-message"]
 
