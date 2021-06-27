@@ -141,6 +141,52 @@ const lucy: Required<Cat> = {
 // TS error: Type '{ name: string; age: number; }' is missing the following properties from type 'Required<Cat>': hairColor, owner
 ```
 
+## Readonly<Type>
+
+Sometimes you may want to make some data immutable, prevent them from being changed. The `Readonly<Type>` type helps you make this change for the whole type. For example, you can make all properties in an interface readonly. When you use that interface with some object, and try to change some object property, TypeScript will throw an error.
+
+```TypeScript
+// Create an interface:
+interface Book {
+  title: string;
+  author: string;
+  numOfPages: number;
+}
+
+// Create an object that uses the Book interface:
+const blitzscaling: Book = {
+  title: 'Blitzscaling',
+  author: 'Reid Hoffman, Chris Yeh',
+  numOfPages: 318
+}
+
+// Try to change properties:
+blitzscaling.title = 'High Growth Handbook'
+blitzscaling.author = 'Elad Gil'
+blitzscaling.numOfPages = 353
+
+// Log the value of blitzscaling:
+console.log(blitzscaling)
+// Output:
+// {
+//   "title": "High Growth Handbook",
+//   "author": "Elad Gil",
+//   "numOfPages": 353
+// }
+
+
+// Make all properties of Book readonly
+const sevenPowers: Readonly<Book> = {
+  title: '7 Powers',
+  author: 'Hamilton Helmer',
+  numOfPages: 226
+}
+
+// Try to change properties:
+sevenPowers.title = 'The Innovator\'s Dilemma'
+// TS error: Cannot assign to 'title' because it is a read-only property.
+```
+
 
 ## h2
 
