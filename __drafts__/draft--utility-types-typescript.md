@@ -358,6 +358,33 @@ const mosaic: Boat = {
 }
 ```
 
+## Exclude<Type, ExcludedUnion>
+
+The `Exclude<Type, ExcludedUnion>` can be a bit confusing on the first sight. What this utility type does is it returns the type defined as `Type` without any type that is mentioned in `ExcludedUnion`.
+
+```TypeScript
+// Crete type Colors:
+type Colors = 'white' | 'blue' | 'black' | 'red' | 'orange' | 'grey' | 'purple'
+
+type ColorsWarm = Exclude<Colors, 'white' | 'blue' | 'black' | 'grey'>
+// Translates to:
+// type ColorsWarm = "red" | "orange" | "purple"
+
+type ColorsCold = Exclude<Colors, 'red' | 'orange' | 'purple'>
+// Translates to:
+// ColorsCold = "white" | "blue" | "black" | "grey"
+
+// Create warm color:
+const varmColor: ColorsWarm = 'red'
+
+// Create cold color:
+const coldColor: ColorsCold = 'blue'
+
+// Try to mix it:
+const coldColorTwp: ColorsCold = 'red'
+// TS error: Type '"red"' is not assignable to type 'ColorsCold'.
+```
+
 
 ## Conclusion: [...] ...
 
