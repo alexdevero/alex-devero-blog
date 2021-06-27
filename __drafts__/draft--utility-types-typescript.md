@@ -316,6 +316,48 @@ const water: SimpleBeverage = {
 }
 ```
 
+## Omit<Type, Keys>
+
+The `Omit<Type, Keys>` is basically an opposite of `Pick<Type, Keys>`. Instead of picking properties you want, you choose properties you want to omit from existing type.
+
+```TypeScript
+// Create interface for car:
+interface Car {
+  model: string;
+  bodyType: string;
+  numOfWheels: number;
+  numOfSeats: number;
+  color: string;
+}
+
+// Create type for boat based on Car interface,
+// but omit "numOfWheels" and "bodyType" properties:
+type Boat = Omit<Car, 'numOfWheels' | 'bodyType'>
+
+// Basically translates to:
+// interface Boat {
+//   model: string;
+//   numOfSeats: number;
+//   color: string;
+// }
+
+// Create new object based on Car:
+const tesla: Car = {
+  model: 'S',
+  bodyType: 'sedan',
+  numOfWheels: 4,
+  numOfSeats: 5,
+  color: 'grey',
+}
+
+// Create new object based on Boat:
+const mosaic: Boat = {
+  model: 'Mosaic',
+  numOfSeats: 6,
+  color: 'white'
+}
+```
+
 
 ## Conclusion: [...] ...
 
