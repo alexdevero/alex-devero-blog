@@ -283,8 +283,39 @@ InnovatorsDilemma: { // <= "InnovatorsDilemma" key is specified in "Titles".
 } // <= Value of "InnovatorsDilemma" is specified in "Book".
 ```
 
+## Pick<Type, Keys>
 
-## h2
+Let's say you want to use only some properties of an existing interface. One thing you can do is to create new interface, with only those properties. Another options is to use `Pick<Type, Keys>`. Pick type allows you to take existing type and pick only some specific keys from it, while ignoring the rest.
+
+```TypeScript
+// Create an interface
+interface Beverage {
+  name: string;
+  taste: string;
+  color: string;
+  temperature: number;
+  additives: string[] | [];
+}
+
+// Create type based from Beverage using
+// only "name", "taste" and "color" properties:
+type SimpleBeverage = Pick<Beverage, 'name' | 'taste' | 'color'>
+
+// Basically translates to:
+// interface SimpleBeverage {
+//   name: string;
+//   taste: string;
+//   color: string;
+// }
+
+// Use SimpleBeverage type to create new object:
+const water: SimpleBeverage = {
+  name: 'Water',
+  taste: 'bland',
+  color: 'transparent',
+}
+```
+
 
 ## Conclusion: [...] ...
 
