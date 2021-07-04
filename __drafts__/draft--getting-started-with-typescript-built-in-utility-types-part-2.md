@@ -11,6 +11,11 @@ Table of Contents:
 The goal of this two-part article is to help you understand TypeScript built-in utility types. In this second part, you will learn about the last eight of these types. These are `NonNullable`, `Parameters`, `ConstructorParameters`, `ReturnType`, `InstanceType`, `ThisParameterType`, `OmitThisParameter` and `ThisType`.
 
 If you want to learn about the previous eight, take a look at the [part 1]. Part 1 will help you understand and work with `Partial`, `Required`, `Readonly`, `Record`, `Pick`, `Omit`, `Exclude` and `Extract`. Otherwise, keep reading.
+
+## Note on availability
+
+The types we will talk about in this part are available in TypeScript version 4.0 and newer. Make sure you use this version to avoid potential issues due to compatibility.
+
 ## NonNullable<Type>
 
 ## Parameters<Type>
