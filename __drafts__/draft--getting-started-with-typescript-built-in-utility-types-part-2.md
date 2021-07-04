@@ -1,6 +1,6 @@
 # Getting Started With Built-in Utility Types in TypeScript Part 1
 
-<!--more-->
+TypeScript comes with a number of built-in utility types. These types can be very useful. They can help you create new, and also very advanced, types from existing with only a bit of code. In this article, you will learn about some of these utility types, how they work and also how to use them.<!--more-->
 
 <!--
 Table of Contents:
