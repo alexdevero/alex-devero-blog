@@ -28,6 +28,25 @@ Sometimes, TypeScript utility types require more than one parameter. In that cas
 
 ## NonNullable<Type>
 
+The `NonNullable` utility type works similarly to the [exclude]. It takes some type you specified and returns that type excluding all `null` and `undefined` types.
+
+```TypeScript
+// Create a type:
+type prop = string | number | string[] | number[] | null | undefined
+
+// Create new type based on previous type
+// excluding null and undefined:
+type validProp = NonNullable<prop>
+// Translates to:
+// type validProp = string | number | string[] | number[]
+
+// This is valid.
+let use1: validProp = 'Jack'
+
+let use2: validProp = null
+// TS error: Type 'null' is not assignable to type 'validProp'.
+```
+
 ## Parameters<Type>
 
 ## ConstructorParameters<Type>
