@@ -189,6 +189,31 @@ type CapitalizeStringType = ThisParameterType<typeof capitalizeString>
 
 ## OmitThisParameter<Type>
 
+The `OmitThisParameter` utility type does the opposite of the previous type. It takes a function type as an argument, via the `Type`, and returns the function type without `this` parameter.
+
+```TypeScript
+// Create a function with this parameter:
+function capitalize(this: String) {
+  return this[0].toUpperCase + this.substring(1).toLowerCase()
+}
+
+// Create type based on capitalizeString function:
+type CapitalizeType = OmitThisParameter<typeof capitalize>
+// Translates to:
+// type CapitalizeType = () => string
+
+
+// Create a function without this parameter:
+function sayHi(name: string) {
+  return `Hello, ${name}.`
+}
+
+// Create type based on sayHi function:
+type SayHiType = OmitThisParameter<typeof sayHi>
+// Translates to:
+// type SayHiType = (name: String) => string
+```
+
 ## ThisType<Type>
 
 ## Intrinsic String Manipulation Types
