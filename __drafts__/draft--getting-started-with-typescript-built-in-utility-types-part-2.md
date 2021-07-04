@@ -1,9 +1,21 @@
-# Getting Started With Built-in Utility Types in TypeScript Part 1
+# Getting Started With Built-in Utility Types in TypeScript Part 2
 
 TypeScript comes with a number of built-in utility types. These types can be very useful. They can help you create new, and also very advanced, types from existing with only a bit of code. In this article, you will learn about some of these utility types, how they work and also how to use them.<!--more-->
 
 <!--
 Table of Contents:
+## A quick introduction
+## Note on availability
+## Note on syntax
+## NonNullable<Type>
+## Parameters<Type>
+## ConstructorParameters<Type>
+## ReturnType<Type>
+## InstanceType<Type>
+## ThisParameterType<Type>
+## OmitThisParameter<Type>
+## ThisType<Type>
+## Conclusion: Getting started with built-in utility types in TypeScript part 2
 -->
 
 ## A quick introduction
@@ -40,7 +52,7 @@ type validProp = NonNullable<prop>
 // Translates to:
 // type validProp = string | number | string[] | number[]
 
-// This is valid.
+// This is valid:
 let use1: validProp = 'Jack'
 
 let use2: validProp = null
@@ -49,7 +61,7 @@ let use2: validProp = null
 
 ## Parameters<Type>
 
-The `Parameters` type returns a [tuple] type that contains the types of the parameters function you passed as `Type`. These parameters are returned in the same order in which they appear in the function. NNote that the `Type` in case of this utility type is a function (`(...args) => type`), not a type such as `string`.
+The `Parameters` type returns a [tuple] type that contains the types of the parameters function you passed as `Type`. These parameters are returned in the same order in which they appear in the function. Note that the `Type` argument, in case of this and following types, is a function (`(...args) => type`), not a type such as `string`.
 
 ```TypeScript
 // Declare a function type:
@@ -83,7 +95,7 @@ let invalidNamesParams: StringOnlyParams = [false, true]
 
 ## ConstructorParameters<Type>
 
-The `ConstructorParameters` type is very similar to the `Parameters` type. The difference between these two is that while `Parameters` gets types from function arguments, the `ConstructorParameters` gets types from the constructor.
+The `ConstructorParameters` type is very similar to the `Parameters` type. The difference between these two is that while `Parameters` gets types from function arguments, the `ConstructorParameters` gets types from the constructor you pass as the `Type` argument.
 
 ```TypeScript
 // Create a class:
@@ -289,13 +301,20 @@ const pietro: RegularUser = {
 // Property 'password' is missing in type '{ username: string; }' but required in type 'Required<User>'.(
 ```
 
-## Conclusion: [...] ...
+## Conclusion: Getting started with built-in utility types in TypeScript part 2
+
+These were the last eight built-in utility types in TypeScript. As you can see, these utility types can help you get a lot of work with types done. This, while making it easier for you and doing all the heavy lifting. I hope that this article helped you understand how these built-in utility types work and how to use them.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
 
-[]:
+[part 1]: https://blog.alexdevero.com/typescript-utility-types-part-1/
+[previous part]: https://blog.alexdevero.com/typescript-utility-types-part-1/#about-the-syntax
+[functions]: https://blog.alexdevero.com/javascript-functions-pt1/
+[exclude]: https://blog.alexdevero.com/typescript-utility-types-part-1/#excludelttype-excludeduniongt
+[tuple]: https://www.typescriptlang.org/play#example/tuples
+[union]: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
 
 <!--
 ### Meta:
@@ -309,10 +328,5 @@ const pietro: RegularUser = {
 
 <!--
 ### Resources:
-- https://www.typescriptlang.org/docs/handbook/utility-types.html#intrinsic-string-manipulation-types
-- https://obaranovskyi.medium.com/typescript-understand-built-in-utility-types-5aa9ea44fe45
-- https://medium.com/jspoint/typescript-utility-types-4d9bfc37745c
-- https://www.wisdomgeek.com/development/web-development/typescript/using-utility-types-for-transforming-typescript-types/
-- https://blog.logrocket.com/using-built-in-utility-types-in-typescript/
-- https://www.dslemay.com/blog/2020/04/27/typescript-utility-types-part-1-partial-pick-and-omit
+-
 -->
