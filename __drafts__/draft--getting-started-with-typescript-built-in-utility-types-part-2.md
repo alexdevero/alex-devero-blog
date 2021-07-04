@@ -119,6 +119,38 @@ type StringType = ConstructorParameters<StringConstructor>
 
 ## ReturnType<Type>
 
+The `ReturnType` is also similar to the `Parameters` type. Difference here is that the `ReturnType` extracts the return type of a function you pass as the `Type` argument.
+
+```TypeScript
+// Declare type for function:
+declare function myFunc(name: string): string
+
+// Use ReturnType to extract return type
+// from myFunc type.
+type MyFuncReturnType = ReturnType<typeof myFunc>
+// Translates to:
+// type MyFuncReturnType = string
+
+// This is valid:
+let name1: MyFuncReturnType = 'Victoria'
+
+// This is valid:
+let name2: MyFuncReturnType = 42
+// TS error: Type 'number' is not assignable to type 'string'.
+
+type MyReturnTypeBoolean = ReturnType<() => boolean>
+// Translates to:
+// type MyReturnTypeBoolean = boolean
+
+type MyReturnTypeStringArr = ReturnType<(num: number) => string[]>
+// Translates to:
+// type MyReturnTypeStringArr = string[]
+
+type MyReturnTypeVoid = ReturnType<(num: number, word: string) => void>
+// Translates to:
+// type MyReturnTypeVoid = void
+```
+
 ## InstanceType<Type>
 
 ## ThisParameterType<Type>
