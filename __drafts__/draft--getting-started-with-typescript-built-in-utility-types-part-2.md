@@ -16,6 +16,16 @@ If you want to learn about the previous eight, take a look at the [part 1]. Part
 
 The types we will talk about in this part are available in TypeScript version 4.0 and newer. Make sure you use this version to avoid potential issues due to compatibility.
 
+## Note on syntax
+
+THe utility types in TypeScript we will talk about today all use very similar syntax. It is almost identical. The only difference being the name of each utility type. As we discussed in [previous part], utility types can be confusing at first. What can help you understand them is trying to see these types as [functions].
+
+This is what these types basically are. They are functions that take some input and return some output. In this case, input and output are types. The rest is just a plain function. The types you will learn about in this part all require a single parameter, some type. You pass this parameter between angle brackets.
+
+These angle brackets, the left- and right-pointing (`<>`), follow right after the name of the utility type. The name of the type always starts with capital letter. This is very similar to calling a normal JavaScript function. You only swapped the parentheses for brackets and started the function name with a capital letter.
+
+Sometimes, TypeScript utility types require more than one parameter. In that case, you pass these parameters between the angle brackets a usually and separate them with a colon (`,`). That's about the syntax. Now, let's talk about the actual types.
+
 ## NonNullable<Type>
 
 ## Parameters<Type>
