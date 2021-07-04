@@ -173,6 +173,20 @@ type DogType = Dog
 
 ## ThisParameterType<Type>
 
+The `ThisParameterType` extracts the type of use for the `this` parameter for the function you passed as the `Type` argument. If the function doesn't have `this` parameter, the utility type will return `unknown`.
+
+```TypeScript
+// Create a function with this parameter:
+function capitalizeString(this: String) {
+  return this[0].toUpperCase + this.substring(1).toLowerCase()
+}
+
+// Create type based on capitalizeString function this parameter:
+type CapitalizeStringType = ThisParameterType<typeof capitalizeString>
+// Translates to:
+// type CapitalizeStringType = String
+```
+
 ## OmitThisParameter<Type>
 
 ## ThisType<Type>
