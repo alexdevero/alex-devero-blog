@@ -83,6 +83,40 @@ let invalidNamesParams: StringOnlyParams = [false, true]
 
 ## ConstructorParameters<Type>
 
+The `ConstructorParameters` type is very similar to the `Parameters` type. The difference between these two is that while `Parameters` gets types from function arguments, the `ConstructorParameters` gets types from the constructor.
+
+```TypeScript
+// Create a class:
+class Human {
+  public name
+  public age
+  public gender
+
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+// Create type based on Human constructor:
+type HumanTypes = ConstructorParameters<typeof Human>
+// Translates to:
+// type HumanTypes = [name: string, age: number, gender: string]
+
+const joe: HumanType = ['Joe', 33, 'male']
+const sandra: HumanType = ['Sandra', 41, 'female']
+const thomas: HumanType = ['Thomas', 51]
+// TS error: Type '[string, number]' is not assignable to type '[name: string, age: number, gender: string]'.
+// Source has 2 element(s) but target requires 3.
+
+
+// Create type based on Human constructor:
+type StringType = ConstructorParameters<StringConstructor>
+// Translates to:
+// type StringType = [value?: any]
+```
+
 ## ReturnType<Type>
 
 ## InstanceType<Type>
