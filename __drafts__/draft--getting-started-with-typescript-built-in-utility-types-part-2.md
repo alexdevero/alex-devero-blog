@@ -49,6 +49,38 @@ let use2: validProp = null
 
 ## Parameters<Type>
 
+The `Parameters` type returns a [tuple] type that contains the types of the parameters function you passed as `Type`. These parameters are returned in the same order in which they appear in the function. NNote that the `Type` in case of this utility type is a function (`(...args) => type`), not a type such as `string`.
+
+```TypeScript
+// Declare a function type:
+declare function myFunc(num1: number, num2: number): number
+
+// Use Parameter type to create new tuple type
+// from parameters of myFunc function:
+type myFuncParams = Parameters<typeof myFunc>
+// Translates to:
+// type myFuncParams = [num1: number, num2: number]
+
+//  This is valid.
+let someNumbers: myFuncParams = [13, 15]
+
+let someMix: myFuncParams = [9, 'Hello']
+// TS error: Type 'string' is not assignable to type 'number'.
+
+
+// Use Parameter type to create new tuple type
+// from function type:
+type StringOnlyParams = Parameters<(foo: string, fizz: string) => void>
+// Translates to:
+// type StringOnlyParams = [foo: string, fizz: string]
+
+//  This is valid.
+let validNamesParams: StringOnlyParams = ['Jill', 'Sandy']
+
+let invalidNamesParams: StringOnlyParams = [false, true]
+// TS error: Type 'boolean' is not assignable to type 'string'.
+```
+
 ## ConstructorParameters<Type>
 
 ## ReturnType<Type>
