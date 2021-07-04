@@ -246,12 +246,48 @@ const userObj: ThisType<User> = {
 }
 ```
 
-## Intrinsic String Manipulation Types
+## Combining utility types
 
-- Uppercase<StringType>
-- Lowercase<StringType>
-- Capitalize<StringType>
-- Uncapitalize<StringType>
+One nice thing on TypeScript built-in utility types is that you can also combine them. You can combine one utility type with another utility type. You can also combine one utility type with other types. For example, you can combine types with [union] or intersection types. This allows you to create even more advanced types.
+
+```TypeScript
+// Create User interface:
+interface User {
+  username: string;
+  password: string;
+}
+
+// Create SuperUser interface:
+interface SuperUser {
+  clearanceLevel: string;
+  accesses: string[];
+}
+
+// Create type RegularUser by combining User and SuperUser.
+// Make properties in User required
+// and properties in SuperUser optional:
+type RegularUser = Required<User> & Partial<SuperUser>
+
+// This is valid:
+const joeJoe: RegularUser = {
+  username: 'joejoe',
+  password: 'some_secret_password_unlike_123456',
+}
+
+// Also valid:
+const jane: RegularUser = {
+  username: 'jane',
+  password: 'foo_bar_usually-doesnt_work-that_well',
+  clearanceLevel: 'A'
+}
+
+// This will not work:
+const pietro: RegularUser = {
+  username: 'pietro'
+}
+// TS error: Type '{ username: string; }' is not assignable to type 'RegularUser'.
+// Property 'password' is missing in type '{ username: string; }' but required in type 'Required<User>'.(
+```
 
 ## Conclusion: [...] ...
 
