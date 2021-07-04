@@ -153,6 +153,24 @@ type MyReturnTypeVoid = ReturnType<(num: number, word: string) => void>
 
 ## InstanceType<Type>
 
+The `InstanceType` is a bit complicated. What it does is it creates a new type from the instance type of a constructor function yous passed as argument for `Type`. You will probably don't need this utility type if you work class with a regular class. You can just use the class name to get the instance type you want.
+
+```TypeScript
+class Dog {
+  name = 'Sam'
+  age = 1
+}
+
+type DogInstanceType = InstanceType<typeof Dog>
+// Translates to:
+// type DogInstanceType = Dog
+
+// Similar to using the class declaration:
+type DogType = Dog
+// Translates to:
+// type DogType = Dog
+```
+
 ## ThisParameterType<Type>
 
 ## OmitThisParameter<Type>
