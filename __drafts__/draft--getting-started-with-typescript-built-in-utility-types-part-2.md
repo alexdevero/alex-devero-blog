@@ -216,6 +216,36 @@ type SayHiType = OmitThisParameter<typeof sayHi>
 
 ## ThisType<Type>
 
+The `ThisType` utility type allows you to explicitly set the `this` context. You can use it to set `this` for whole object literals or just a single function. Before you try this, make sure you have the compiler flag `—-noImplicitThis` enabled.
+
+```TypeScript
+// Create interface for this in user object:
+interface User {
+    username: string;
+    email: string;
+    isActivated: boolean;
+    printUserName(): string;
+    printEmail(): string;
+    printStatus(): boolean;
+}
+
+// Create user object and set this type to User interface:
+const userObj: ThisType<User> = {
+  username: 'Andreas',
+  email: 'andreas@foo.com',
+  isActivated: false,
+  printUserName() {
+    return this.username
+  },
+  printEmail() {
+    return this.email
+  },
+  printStatus() {
+    return this.isActivated
+  }
+}
+```
+
 ## Intrinsic String Manipulation Types
 
 - Uppercase<StringType>
