@@ -30,7 +30,7 @@ The types we will talk about in this part are available in TypeScript version 4.
 
 ## Note on syntax
 
-THe utility types in TypeScript we will talk about today all use very similar syntax. It is almost identical. The only difference being the name of each utility type. As we discussed in [previous part], utility types can be confusing at first. What can help you understand them is trying to see these types as [functions].
+The utility types in TypeScript we will talk about today all use very similar syntax. It is almost identical. The only difference being the name of each utility type. As we discussed in [previous part], utility types can be confusing at first. What can help you understand them is trying to see these types as [functions].
 
 This is what these types basically are. They are functions that take some input and return some output. In this case, input and output are types. The rest is just a plain function. The types you will learn about in this part all require a single parameter, some type. You pass this parameter between angle brackets.
 
@@ -165,7 +165,7 @@ type MyReturnTypeVoid = ReturnType<(num: number, word: string) => void>
 
 ## InstanceType<Type>
 
-The `InstanceType` is a bit complicated. What it does is it creates a new type from the instance type of a constructor function yous passed as argument for `Type`. You will probably don't need this utility type if you work class with a regular class. You can just use the class name to get the instance type you want.
+The `InstanceType` is a bit complicated. What it does is it creates a new type from the instance type of a constructor function you passed as argument for `Type`. You will probably don't need this utility type if you work class with a regular class. You can just use the class name to get the instance type you want.
 
 ```TypeScript
 class Dog {
