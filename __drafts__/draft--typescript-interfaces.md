@@ -122,6 +122,48 @@ function getUserEmail(user: User) {
 }
 ```
 
+## Implementing interfaces with classes
+
+TypeScript also allows you to use interface with [JavaScript classes]. With classes, though, the implementation is slightly different. You still specify the interface after the name, class name in this case. However, you don't put colons between the name of the class and the interface.
+
+What you do instead is basically replacing those colons with `implements` keyword. This will tell TypeScript that a given class should use an interface that follows after this keyword.
+
+```TypeScript
+// Create interface Person:
+interface Person {
+  // Define some class properties
+  // of type string and number:
+  firstName: string;
+  lastName: string;
+  age: number;
+  gender: 'male' | 'female';
+  // Define class method that returns a string:
+  sayHello: () => string;
+}
+
+// Annotate class 'Female' with 'Person' interface:
+class Female implements Person {
+  // Define required public properties:
+  firstName: string
+  lastName: string
+  age: number
+  gender: 'male' | 'female'
+
+  // Create constructor and assign existing properties:
+  constructor(firstName: string, lastName: string, age: number, gender: 'male' | 'female') {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+    this.gender = gender
+  }
+
+  // Define required class method:
+  sayHello() {
+    return `Hello, my name is ${this.firstName}.`
+  }
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
