@@ -21,6 +21,16 @@ The problem might not be a missing property. It might be that the type of a valu
 
 The thing is, nobody cares about probability when these events, these [black swans], occur. Your users will not care that wrong type or missing property is not likely to happen when the app they are using crashes. If only there was a way to avoid this. Maybe, TypeScript can help here.
 
+## TypeScript interfaces made simple
+
+The main feature of TypeScript is its powerful type system. This type system allows you to quickly specify primitive data types for variables. These simple types are only one part of this type systems. TypeScript also allows you to do this with objects. With the help of TypeScript, you can define shape of any objects.
+
+Shape of an object specifies what properties a given object contains. This also includes their types, what types should values of these properties be. In TypeScript, you can specify this shape via interface. TypeScript interfaces are abstract types. Interfaces tell the compiler two important things.
+
+First, interfaces tell what properties a given object could have or must have. This means that when some property is optional, TypeScript will know that these properties are not required and will not require you to define them. Second, interfaces specify the types of these properties, types of their values.
+
+With this information, TypeScript can warn you when you accidentally define some object property and use a wrong type. TypeScript will know what type is expected to be used for each object property. If you use different type, TypeScript will tell you about the mismatch, where it happened and also how to fix it.
+
 
 ### h3
 
