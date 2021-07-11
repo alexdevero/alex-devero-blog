@@ -201,6 +201,35 @@ const jack: Person = {
 // TS error: Property 'lastName' is missing in type '{ firstName: string; middleName: string; }' but required in type 'Person'.
 ```
 
+## Specifying read-only properties
+
+When you create an object you may want to prevent some properties from being changed. You can specify this intent also via TypeScript interfaces. You achieve this by placing the `readonly` keyword before the property name. This will tell TypeScript that the property that follows is read-only property.
+
+If you use the interface to annotate some object, you will be able to set the value for the read-only property only during initialization. If you try to change the property value later, TypeScript compiler will throw an error.
+
+```TypeScript
+// Create interface with read-only property:
+interface User {
+  username: string;
+  password: string;
+  readonly email: string; // <= This property will be read-only
+}
+
+// Annotate object 'userFrank' with 'User' interface:
+const userFrank: User = {
+  username: 'frankie',
+  password: '123456782',
+  email: 'frankie@frank.com'
+}
+
+// Try to change username:
+userFrank.username = 'frankman'
+
+// Try to change email:
+userFrank.email = 'frankman@frank.com'
+// TS error: Cannot assign to 'email' because it is a read-only property.
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
