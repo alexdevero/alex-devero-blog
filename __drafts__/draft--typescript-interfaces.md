@@ -270,6 +270,91 @@ const myFunc: MyFunc = (a, b, c) => {
 // "b" to be string and "c" to be boolean.
 ```
 
+## Extending interfaces
+
+One useful thing is that interfaces allow extending, just like JavaScript classes. Let's say you have an existing interface. You also have an object, but this object contains more properties than the interface specifies. One thing you can do is to change the interface to fit this object.
+
+The problem is that this will influence all objects using that interface. Another thing is creating new interface, duplicating the old one and adding new properties. This will bloat your code with duplicates. Luckily, there is the third option. You can create new interface and extend it with the original.
+
+This way, the new interface will inherit all properties defined in the original interface. Best part? You will not have to copy a single line of code. You can extend interface by using the `extends` keyword. This keyword allows you to extend one interface with just one interface as well as with multiple.
+
+When you want to extend interface with multiple interfaces you separate them with commas. The `extends` keyword goes between the first interface, the one you are extending, and the second, the one you are extending with.
+
+```TypeScript
+// Create "Person" interface:
+interface Person {
+  name: string;
+}
+
+// Create "Male" interface that extends "Person" interface:
+interface Male extends Person {
+  gender: 'Male';
+}
+// Basically translates to:
+// interface Male {
+//   name: string;
+//   gender: 'Male';
+// }
+
+// Create "Female" interface that also extends "Person" interface:
+interface Female extends Person {
+  gender: 'Female';
+}
+// Basically translates to:
+// interface Female {
+//   name: string;
+//   gender: 'Female';
+// }
+
+// Create "Boy" interface that extends "Person" and "Male" interfaces:
+interface Boy extends Person, Male {
+  age: number;
+}
+// Basically translates to:
+// interface Boy {
+//   name: string;
+//   gender: 'Male';
+//   age: number;
+// }
+
+// Create "Girl" interface that extends "Person" and "Female" interfaces:
+interface Girl extends Person, Female {
+  age: number;
+}
+// Basically translates to:
+// interface Girl {
+//   name: string;
+//   gender: 'Female';
+//   age: number;
+// }
+
+const stanley: Person = {
+  name: 'Stanley'
+}
+
+const david: Male = {
+  name: 'David',
+  gender: 'Male'
+}
+
+const sarah: Female = {
+  name: 'Sarah',
+  gender: 'Female'
+}
+
+const andreas: Boy = {
+  name: 'Andreas',
+  gender: 'Male',
+  age: 13
+}
+
+const victoria: Girl = {
+  name: 'Victoria',
+  gender: 'Female',
+  age: 6
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
