@@ -1,14 +1,9 @@
-# TypeScript Interfaces: A Quick Guide to Help You Start
+# TypeScript Interfaces: A Quick Guide to Help You Get Started
 
-TypeScript brings many useful improvements to JavaScript language. One of them is static typing system that can help you write type safe code. Interfaces are part of this typing system. This tutorial will help you learn what TypeScript interfaces are, how they work and how to use them.<!--more-->
+TypeScript brings many useful improvements to JavaScript language. One of them is static typing system that can help you write type safe code. Interfaces are part of this typing system. This tutorial will help you understand what TypeScript interfaces are and how to use them.<!--more-->
 
 <!--
 Table of Contents:
-## h2
-### h3
-### h3
-## h2
-## Conclusion: [...] ...
 -->
 
 ## JavaScript, objects and black swans
@@ -23,7 +18,7 @@ The thing is, nobody cares about probability when these events, these [black swa
 
 ## TypeScript interfaces made simple
 
-The main feature of TypeScript is its powerful type system. This type system allows you to quickly specify primitive data types for variables. These simple types are only one part of this type systems. TypeScript also allows you to do this with objects. With the help of TypeScript, you can define shape of any objects.
+The main feature of TypeScript is its powerful type system. This type system allows you to quickly specify [primitive data types] for variables. These simple types are only one part of this type systems. TypeScript also allows you to do this with objects. With the help of TypeScript, you can define shape of any objects.
 
 Shape of an object specifies what properties a given object contains. This also includes their types, what types should values of these properties be. In TypeScript, you can specify this shape via interface. TypeScript interfaces are abstract types. Interfaces tell the compiler two important things.
 
@@ -33,12 +28,12 @@ With this information, TypeScript can warn you when you accidentally define some
 
 ## Creating an interface
 
-When you want to create a new interface, you do it by using the `interface` keyword. This keyword is followed by the name of the interface ad curly brackets. These brackets contain the shape of an object, its properties and types. You specify these properties and types as key-value pairs.
+When you want to create a new interface, you do it by using the `interface` keyword. This keyword is followed by the name of the interface ad curly brackets. These brackets contain the shape of an object, its properties and types. You specify these properties and types as key:value pairs.
 
-This is very similar to creating new [object literal]. However, there are some differences. First, there is no equal sign between the name of the interface and curly brackets. Second, those key-value pairs are separated by semicolons. Below are examples of simple TypeScript interfaces.
+This is very similar to creating new [object literal]. However, there are some differences. First, there is no equal sign between the name of the interface and curly brackets. Second, those key:value pairs are separated by semicolons. Below are examples of simple TypeScript interfaces.
 
 ```TypeScript
-// Create an empty interface
+// Create an empty interface:
 interface EmptyObject {}
 
 // Create interface Cat:
@@ -87,7 +82,7 @@ A simple way to avoid this is by defining interfaces by yourself, explicitly. If
 When you create an interface you also have to tell TypeScript for which object you intend to use it. Doing so is easy. When you assign an object to a variable you can specify its interface by adding colons and the name of the interface between the variable name and equal sign.
 
 ```TypeScript
-// Create an interface:
+// Create an interface User:
 interface User {
   password: string;
   email: string;
@@ -107,7 +102,7 @@ const userJoe: User = {
 This also applies elsewhere. If you want to use an interface for an object used as a function parameter you use the same approach. You specify the parameter, then add colons, and then you specify the interface.
 
 ```TypeScript
-// Create an interface:
+// Create an interface User:
 interface User {
   password: string;
   email: string;
@@ -116,7 +111,7 @@ interface User {
 }
 
 // Create a function with "user" parameter
-// and annotate the "user" parameter with User interface.
+// and annotate the "user" parameter with "User" interface.
 function getUserEmail(user: User) {
   return user.email
 }
@@ -141,7 +136,7 @@ interface Person {
   sayHello: () => string;
 }
 
-// Annotate class 'Female' with 'Person' interface:
+// Annotate class "Female" with "Person" interface:
 class Female implements Person {
   // Define required public properties:
   firstName: string
@@ -185,14 +180,14 @@ const bill: Person = {
   middleName: 'Stevens'
 }
 
-// This will also work because middleName
+// This will also work because "middleName"
 // property is not required:
 const will: Person = {
   firstName: 'William',
   lastName: 'Connors',
 }
 
-// This will not work because lastName
+// This will not work because "lastName"
 // property is required but missing:
 const jack: Person = {
   firstName: 'Jack',
@@ -215,17 +210,17 @@ interface User {
   readonly email: string; // <= This property will be read-only
 }
 
-// Annotate object 'userFrank' with 'User' interface:
+// Annotate object "userFrank" with "User" interface:
 const userFrank: User = {
   username: 'frankie',
   password: '123456782',
   email: 'frankie@frank.com'
 }
 
-// Try to change username:
+// Try to change value of "username" property:
 userFrank.username = 'frankman'
 
-// Try to change email:
+// Try to change value of "email" property:
 userFrank.email = 'frankman@frank.com'
 // TS error: Cannot assign to 'email' because it is a read-only property.
 ```
@@ -355,12 +350,18 @@ const victoria: Girl = {
 }
 ```
 
-## Conclusion: [...] ...
+## Conclusion: TypeScript interfaces
+
+TypeScript interfaces provide an easy way to annotate your objects, including classes, and also functions. This can help you write safer and more maintainable code. I hope that this tutorial helped you understand and learn about what interfaces are and how to use them in your code.
 
 [xyz-ihs snippet="thank-you-message"]
 
 <!-- ### Links -->
-[]:
+
+[black swans]: https://en.wikipedia.org/wiki/Black_Swan_theory
+[primitive data types]: https://blog.alexdevero.com/javascript-basics-data-types-pt1/
+[object literal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+[javascript classes]: https://blog.alexdevero.com/get-started-with-javascript-classes/
 
 <!--
 ### Meta:
@@ -369,7 +370,7 @@ const victoria: Girl = {
 
 <!--
 ### Keywords:
--
+- TypeScript Interfaces
 -->
 
 <!--
