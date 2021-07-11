@@ -350,6 +350,42 @@ const victoria: Girl = {
 }
 ```
 
+## Creating generic interfaces
+
+One more thing. TypeScript also allows to create something called "generic interfaces". These interfaces allow you to specify type of a property based on one or more parameters you provide the interface with when you use it. You can specify these parameters using angle brackets (`<>`) like in the example below.
+
+```TypeScript
+// Create interface for UserData:
+interface UserData {
+  name: string;
+  email: string;
+}
+
+// Create a generic interface:
+interface ApiResponse<T> {
+  date: Date;
+  code: number;
+  payload: T[];
+}
+
+// Create function to fetch API
+async function fetchAPI() {
+  // Use ApiResponse "interface" and pass
+  // the "UserData" interface as argument (for T argument):
+  const data: ApiResponse<UserData> = await fetch('/some_api_endpoint')
+
+  // The "ApiResponse<UserData>" basically translates to:
+  // interface ApiResponse<T> {
+  //   date: Date;
+  //   code: number;
+  //   payload: UserData[];
+
+  //   Or:
+  //   payload: [name: string; email: string;]
+  // }
+}
+```
+
 ## Conclusion: TypeScript interfaces
 
 TypeScript interfaces provide an easy way to annotate your objects, including classes, and also functions. This can help you write safer and more maintainable code. I hope that this tutorial helped you understand and learn about what interfaces are and how to use them in your code.
