@@ -31,8 +31,49 @@ First, interfaces tell what properties a given object could have or must have. T
 
 With this information, TypeScript can warn you when you accidentally define some object property and use a wrong type. TypeScript will know what type is expected to be used for each object property. If you use different type, TypeScript will tell you about the mismatch, where it happened and also how to fix it.
 
+## Creating an interface
 
-### h3
+When you want to create a new interface, you do it by using the `interface` keyword. This keyword is followed by the name of the interface ad curly brackets. These brackets contain the shape of an object, its properties and types. You specify these properties and types as key-value pairs.
+
+This is very similar to creating new [object literal]. However, there are some differences. First, there is no equal sign between the name of the interface and curly brackets. Second, those key-value pairs are separated by semicolons. Below are examples of simple TypeScript interfaces.
+
+```TypeScript
+// Create an empty interface
+interface EmptyObject {}
+
+// Create interface Cat:
+interface Cat {
+  name: string;
+  age: number;
+  hairColor: string;
+  weight: number;
+  height: number;
+}
+
+// Create interface Car:
+interface Car {
+  model: string;
+  manufacturer: string;
+  numberOfWheels: number;
+  type: string;
+}
+
+// Create interface User:
+interface User {
+  username: string;
+  password: string;
+  email: string;
+  isActive: boolean;
+  role: 'admin' | 'user' | 'guest';
+}
+```
+
+The `Cat` interface defines an object that has five properties: `name`, `age`, `hairColor`, `weight` and `height`. All these properties are required. Values of `name` and `hairColor` must be strings. The rest must be numbers. The `Car` interface defines an object that has four properties: `model`, `manufacturer`, `numberOfWheels` and `type`.
+
+These properties are also all required. Value of `numberOfWheels` must be a number. The rest must be strings. Lastly, the `User` interface defines an object that has again five properties: `username`, `password`, `email`, `isActive` and `role`. Values of the first three must be strings.
+
+The value of `isActive` property must be a boolean, either true or false. The value of `role` is more concrete. It says that the value must be one of these three strings: `'admin'`, `'user'` or `'guest'`. If you use any other string, TypeScript will warn you that the value you use is wrong, even though the type is the same.
+
 
 ### h3
 
