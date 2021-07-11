@@ -164,6 +164,43 @@ class Female implements Person {
 }
 ```
 
+## Specifying optional properties
+
+Until now, all examples we were using used only required properties. This will work for many cases. However, it can happen that you may not need some properties in a given object every time. One thing you can do is to create a new interface, without optional properties. Then, you can switch between these interfaces as you need.
+
+This will work, but it will also lead to duplicates and more code to maintain. There is another thing you can do. You can take the original interface and mark the optional properties as optional. You achieve this by placing a question mark (`?`) between the property name and the colons.
+
+```TypeScript
+// Create an interface with optional properties:
+interface Person {
+  firstName: string;
+  lastName: string;
+  middleName?: string; // <= This property will be optional
+}
+
+// This will work:
+const bill: Person = {
+  firstName: 'Bill',
+  lastName: 'Doherty',
+  middleName: 'Stevens'
+}
+
+// This will also work because middleName
+// property is not required:
+const will: Person = {
+  firstName: 'William',
+  lastName: 'Connors',
+}
+
+// This will not work because lastName
+// property is required but missing:
+const jack: Person = {
+  firstName: 'Jack',
+  middleName: 'O\'Conor',
+}
+// TS error: Property 'lastName' is missing in type '{ firstName: string; middleName: string; }' but required in type 'Person'.
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
