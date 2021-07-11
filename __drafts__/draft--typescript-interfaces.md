@@ -4,6 +4,18 @@ TypeScript brings many useful improvements to JavaScript language. One of them i
 
 <!--
 Table of Contents:
+## JavaScript, objects and black swans
+## TypeScript interfaces made simple
+## Creating an interface
+### Implicit interfaces
+## Using interfaces
+## Implementing interfaces with classes
+## Specifying optional properties
+## Specifying read-only properties
+## Interfaces for functions
+## Extending interfaces
+## Creating generic interfaces
+## Conclusion: TypeScript interfaces
 -->
 
 ## JavaScript, objects and black swans
