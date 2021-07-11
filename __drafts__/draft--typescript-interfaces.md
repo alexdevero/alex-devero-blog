@@ -82,6 +82,46 @@ The result will be implicit interface that matches the object you've just create
 
 A simple way to avoid this is by defining interfaces by yourself, explicitly. If create an empty object also create an interface for it. This interface will not specify the current shape of the object, but the shape of it in the future. This will tell TypeScript which properties and types to expect.
 
+## Using interfaces
+
+When you create an interface you also have to tell TypeScript for which object you intend to use it. Doing so is easy. When you assign an object to a variable you can specify its interface by adding colons and the name of the interface between the variable name and equal sign.
+
+```TypeScript
+// Create an interface:
+interface User {
+  password: string;
+  email: string;
+  role: 'admin' | 'user' | 'guest';
+  logUserData: () => string;
+}
+
+// Use interface to annotate an object:
+const userJoe: User = {
+  password: 'some_secret_password123645',
+  email: 'joe@user.co',
+  role: 'user',
+  logUserData: () => `${email}, ${role}`
+}
+```
+
+This also applies elsewhere. If you want to use an interface for an object used as a function parameter you use the same approach. You specify the parameter, then add colons, and then you specify the interface.
+
+```TypeScript
+// Create an interface:
+interface User {
+  password: string;
+  email: string;
+  role: 'admin' | 'user' | 'guest';
+  logUserData: () => string;
+}
+
+// Create a function with "user" parameter
+// and annotate the "user" parameter with User interface.
+function getUserEmail(user: User) {
+  return user.email
+}
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
