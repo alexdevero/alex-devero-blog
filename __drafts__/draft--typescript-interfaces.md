@@ -26,7 +26,7 @@ This makes it easy to create code that is prone to errors. For example, to creat
 
 The problem might not be a missing property. It might be that the type of a value of some property is different from what your program expected. The result is often the same. Code fails and program crashes. One may argue that this is not likely to happen. Well, earthquakes and floods are also not likely to happen.
 
-The thing is, nobody cares about probability when these events, these [black swans], occur. Your users will not care that wrong type or missing property is not likely to happen when the app they are using crashes. If only there was a way to avoid this. Maybe, TypeScript can help here.
+The thing is, nobody cares about probability when these events, these [black swans], occur. Your users will not care that wrong type or missing property is not likely to happen when the app they are using crashes. If only there was a way to avoid this. Maybe, TypeScript can help you here.
 
 ## TypeScript interfaces made simple
 
@@ -40,7 +40,7 @@ With this information, TypeScript can warn you when you accidentally define some
 
 ## Creating an interface
 
-When you want to create a new interface, you do it by using the `interface` keyword. This keyword is followed by the name of the interface ad curly brackets. These brackets contain the shape of an object, its properties and types. You specify these properties and types as key:value pairs.
+When you want to create a new interface, you do it by using the `interface` keyword. This keyword is followed by the name of the interface add curly brackets. These brackets contain the shape of an object, its properties and types. You specify these properties and types as key:value pairs.
 
 This is very similar to creating new [object literal]. However, there are some differences. First, there is no equal sign between the name of the interface and curly brackets. Second, those key:value pairs are separated by semicolons. Below are examples of simple TypeScript interfaces.
 
@@ -87,7 +87,7 @@ TypeScript interfaces don't have to be created only by you, explicitly. TypeScri
 
 The result will be implicit interface that matches the object you've just created. This also applies if you create empty object, without any properties. TypeScript will simply create an empty interface. This can later cause troubles when you try to add properties because TypeScript will expect the object to be, and remain, empty.
 
-A simple way to avoid this is by defining interfaces by yourself, explicitly. If create an empty object also create an interface for it. This interface will not specify the current shape of the object, but the shape of it in the future. This will tell TypeScript which properties and types to expect.
+A simple way to avoid this is by defining interfaces by yourself, explicitly. If you create an empty object also create an interface for it. This interface will not specify the current shape of the object, but the shape of it in the future. This will tell TypeScript which properties and types to expect.
 
 ## Using interfaces
 
@@ -210,7 +210,7 @@ const jack: Person = {
 
 ## Specifying read-only properties
 
-When you create an object you may want to prevent some properties from being changed. You can specify this intent also via TypeScript interfaces. You achieve this by placing the `readonly` keyword before the property name. This will tell TypeScript that the property that follows is read-only property.
+When you create an object you may want to prevent some properties from being changed. You can specify this intent also via TypeScript interfaces. You achieve this by placing the `readonly` keyword before the property name. This will tell TypeScript that the property that follows is a read-only property.
 
 If you use the interface to annotate some object, you will be able to set the value for the read-only property only during initialization. If you try to change the property value later, TypeScript compiler will throw an error.
 
@@ -239,7 +239,7 @@ userFrank.email = 'frankman@frank.com'
 
 ## Interfaces for functions
 
-Objects, including classes, are not the only thing that can use interfaces. You can also use TypeScript interfaces to annotate functions. You can do this by giving the interface a call signature. This means that you will specify only the parameter list and return type of the function.
+Objects, including classes, are not the only things that can use interfaces. You can also use TypeScript interfaces to annotate functions. You can do this by giving the interface a call signature. This means that you will specify only the parameter list and return type of the function.
 
 ```TypeScript
 // Create interface for multiply function:
