@@ -74,10 +74,13 @@ These properties are also all required. Value of `numberOfWheels` must be a numb
 
 The value of `isActive` property must be a boolean, either true or false. The value of `role` is more concrete. It says that the value must be one of these three strings: `'admin'`, `'user'` or `'guest'`. If you use any other string, TypeScript will warn you that the value you use is wrong, even though the type is the same.
 
+### Implicit interfaces
 
-### h3
+TypeScript interfaces don't have to be created only by you, explicitly. TypeScript will also create interfaces on its own when you define an object. TypeScript will look at the properties of that object and values of these properties. Then, it will infer specific types using type inference.
 
-## h2
+The result will be implicit interface that matches the object you've just created. This also applies if you create empty object, without any properties. TypeScript will simply create an empty interface. This can later cause troubles when you try to add properties because TypeScript will expect the object to be, and remain, empty.
+
+A simple way to avoid this is by defining interfaces by yourself, explicitly. If create an empty object also create an interface for it. This interface will not specify the current shape of the object, but the shape of it in the future. This will tell TypeScript which properties and types to expect.
 
 ## Conclusion: [...] ...
 
