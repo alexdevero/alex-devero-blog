@@ -230,6 +230,46 @@ userFrank.email = 'frankman@frank.com'
 // TS error: Cannot assign to 'email' because it is a read-only property.
 ```
 
+## Interfaces for functions
+
+Objects, including classes, are not the only thing that can use interfaces. You can also use TypeScript interfaces to annotate functions. You can do this by giving the interface a call signature. This means that you will specify only the parameter list and return type of the function.
+
+```TypeScript
+// Create interface for multiply function:
+interface MultiplyFunc {
+  // Specify only parameters and return type:
+  (a: number, b: number): number;
+}
+
+// Annotate the "multiply" function
+// with "MultiplyFunc" interface:
+const multiply: MultiplyFunc = (a, b) => {
+  return a * b
+}
+
+// Note:
+// Thanks to MultiplyFunc interface TypeScript
+// will know that "a" and "b" in "multiply" function
+// are numbers so you don't have to type them explicitly.
+```
+
+One thing about interfaces and functions. Name of parameters in an interface doesn't have to match the name of parameters in the actual function. You can use one name for interface parameter and another for the function declaration. TypeScript will connect parameters with their types correctly using their order.
+
+```TypeScript
+interface MyFunc {
+  // Specify only parameters and return type:
+  (a: number, b: string, c: boolean): string;
+}
+
+// Annotate the "multiply" function
+// with "MultiplyFunc" interface:
+const myFunc: MyFunc = (a, b, c) => {
+  return `a is ${a}, b is ${b}, c is ${c}`
+}
+// TypeScript will correctly infer "a" to be number,
+// "b" to be string and "c" to be boolean.
+```
+
 ## Conclusion: [...] ...
 
 [xyz-ihs snippet="thank-you-message"]
